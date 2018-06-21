@@ -1,4 +1,4 @@
-# A simple Augmented Reality shooter implemented in WebXR and SAP UI5
+# Augmented Reality shooter implemented in WebXR and SAP UI5
 
 This repository contains the code of a sample project I've used at some conferences to demonstrate how to develop Augmented Reality apps with WebXR and SAP UI5.
 
