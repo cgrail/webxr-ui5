@@ -1,0 +1,4 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:control="webar-test.control" controllerName="webar-test.controller.Game">
+	<control:ArView id="arView"/>
+	<Button text="Fire" press="shoot" class="sapUiSmallMargin" icon="sap-icon://target-group"/>
+</mvc:View>

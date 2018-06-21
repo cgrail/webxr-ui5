@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta charset="UTF-8">
+		  <meta name="viewport" content="width=device-width, user-scalable=no,minimum-scale=1.0, maximum-scale=1.0">
+
+		<title>WebAR UI5 AR Wars</title>
+
+		<script id="sap-ui-bootstrap"
+			src="//openui5.hana.ondemand.com/resources/sap-ui-core.js"
+			data-sap-ui-libs="sap.m"
+			data-sap-ui-theme="sap_belize"
+			data-sap-ui-compatVersion="edge"
+			data-sap-ui-resourceroots='{"webar-test": ""}'>
+		</script>
+
+	    <script src="//mozilla.github.io/three.xr.js/vendor/three.js"></script>
+	    <script src="//mozilla.github.io/three.xr.js/dist/three.xr.js"></script>
+		<script src="//threejs.org/examples/js/loaders/OBJLoader.js"></script>
+		<script src="//threejs.org/examples/js/loaders/MTLLoader.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
+
+	</head>
+
+	<body class="sapUiBody" id="content" style="background: transparent">
+
+ 		<script>
+			sap.ui.getCore().attachInit(function() {
+				sap.ui.xmlview({
+				  viewName: "webar-test.view.Game"
+				}).placeAt("content");
+			});
+		</script>
+	</body>
+
+</html>
