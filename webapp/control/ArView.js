@@ -7,6 +7,16 @@ sap.ui.core.Control.extend("webar-test.control.ArView", {
 		}
 	},
 
+	getPositionWithOffset: function(offset) {
+		var dirMtx = new THREE.Matrix4();
+		dirMtx.makeRotationFromQuaternion(this.getCamera().quaternion);
+		var push = new THREE.Vector3(0, 0, -1.0);
+		push.transformDirection(dirMtx);
+		var pos = this.getCamera().getWorldPosition();
+		pos.addScaledVector(push, offset);
+		return pos;
+	},
+
 	onAfterRendering: function() {
 
 		if (this.arViewInitialized) {

@@ -18,7 +18,7 @@ sap.ui.define([
 
 		spawnFighter: function() {
 			var fighter = this.fighter;
-			var target = this.getPositionWithOffset(1);
+			var target = this.arView.getPositionWithOffset(1);
 			target.x -= Math.random();
 			var initialPos = target.clone();
 			initialPos.z -= 10;
@@ -40,9 +40,9 @@ sap.ui.define([
 				color: "red"
 			});
 			var laser = new THREE.Mesh(geometry, material);
-			var startPosition = this.getPositionWithOffset(0.5);
+			var startPosition = this.arView.getPositionWithOffset(0.5);
 			startPosition.y -= 0.2;
-			var endPosition = this.getPositionWithOffset(10);
+			var endPosition = this.arView.getPositionWithOffset(10);
 			laser.position.copy(startPosition);
 			laser.quaternion.copy(this.arView.getCamera().quaternion);
 			var tween = new TWEEN.Tween(startPosition).to(endPosition, 2000);
@@ -66,17 +66,6 @@ sap.ui.define([
 			});
 			tween.start();
 			scene.add(laser);
-		},
-
-		getPositionWithOffset: function(offset) {
-			var dirMtx = new THREE.Matrix4();
-			dirMtx.makeRotationFromQuaternion(this.arView.getCamera().quaternion);
-			var push = new THREE.Vector3(0, 0, -1.0);
-			push.transformDirection(dirMtx);
-			var pos = this.arView.getCamera().getWorldPosition();
-			pos.addScaledVector(push, offset);
-			return pos;
 		}
-
 	});
 });
