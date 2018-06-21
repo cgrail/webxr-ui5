@@ -2,20 +2,9 @@
 sap.ui.core.Control.extend("webar-test.control.ArView", {
 	metadata: {
 		properties: {
-			"threeContext": "any"
+			"scene": "any",
+			"camera": "any"
 		}
-	},
-
-	getScene: function() {
-		return this.getThreeContext().scene;
-	},
-
-	getPosition: function() {
-		return this.getThreeContext().camera.getWorldPosition();
-	},
-
-	getOrientation: function() {
-		return this.getThreeContext().camera.quaternion;
 	},
 
 	onAfterRendering: function() {
@@ -40,10 +29,8 @@ sap.ui.core.Control.extend("webar-test.control.ArView", {
 			scene = new THREE.Scene();
 			camera = new THREE.PerspectiveCamera();
 			scene.add(camera);
-			that.setThreeContext({
-				scene: scene,
-				camera: camera
-			});
+			that.setCamera(camera);
+			that.setScene(scene);
 			renderer = new THREE.WebGLRenderer({
 				alpha: true
 			});

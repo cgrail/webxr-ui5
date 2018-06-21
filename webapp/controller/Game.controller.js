@@ -23,7 +23,7 @@ sap.ui.define([
 			var initialPos = target.clone();
 			initialPos.z -= 10;
 			fighter.position.copy(initialPos);
-			fighter.quaternion.copy(this.arView.getOrientation());
+			fighter.quaternion.copy(this.arView.getCamera().quaternion);
 			this.arView.getScene().add(fighter);
 			var tween = new TWEEN.Tween(initialPos).to(target, 2000);
 			tween.onUpdate(function() {
@@ -44,7 +44,7 @@ sap.ui.define([
 			startPosition.y -= 0.2;
 			var endPosition = this.getPositionWithOffset(10);
 			laser.position.copy(startPosition);
-			laser.quaternion.copy(this.arView.getOrientation());
+			laser.quaternion.copy(this.arView.getCamera().quaternion);
 			var tween = new TWEEN.Tween(startPosition).to(endPosition, 2000);
 			tween.onUpdate(function() {
 				laser.position.x = startPosition.x;
@@ -70,10 +70,10 @@ sap.ui.define([
 
 		getPositionWithOffset: function(offset) {
 			var dirMtx = new THREE.Matrix4();
-			dirMtx.makeRotationFromQuaternion(this.arView.getOrientation());
+			dirMtx.makeRotationFromQuaternion(this.arView.getCamera().quaternion);
 			var push = new THREE.Vector3(0, 0, -1.0);
 			push.transformDirection(dirMtx);
-			var pos = this.arView.getPosition();
+			var pos = this.arView.getCamera().getWorldPosition();
 			pos.addScaledVector(push, offset);
 			return pos;
 		}
