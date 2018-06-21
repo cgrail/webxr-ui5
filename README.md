@@ -2,7 +2,13 @@
 
 This repository contains the code of a sample project I've used at some conferences to demonstrate how to develop Augmented Reality apps with WebXR and SAP UI5.
 
-A runnable version can be found here: https://grails.de/webxr-ui5/webapp/
+A runnable version of this initial version can be found here: 
+
+https://grails.de/webxr-ui5/webapp/
+
+A runnable version of the solution can be found here:
+
+https://grails.de/webxr-ui5-solution/webapp/
 
 # Requirements
 
