@@ -24,9 +24,13 @@ On an iPhone or iPad this app requires ARKit which runs on devices with at least
 
 https://developer.apple.com/documentation/arkit/verifying_device_support_and_user_permission
 
-# Solution
+# Tutorial
 
-The code in the master branch contains the initial version of the app. The full game is implemented in the solution branch.
+The code in the master branch contains the initial version of the app. A step by step tutorial is available here:
+
+https://github.com/cgrail/webxr-ui5/blob/master/tutorial.md
+
+The full game is implemented in the solution branch.
 
 https://github.com/cgrail/webxr-ui5/compare/solution
 
