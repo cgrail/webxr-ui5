@@ -3,7 +3,7 @@ sap.ui.define(['sap/ui/base/ManagedObject'], function(ManagedObject) {
 	"use strict";
 	var ArAssets = ManagedObject.extend("webar-test.assets.ArAssets", {
 
-		loadTieFigher: function(doneHandler) {
+		loadTieFighter: function(doneHandler) {
 			new THREE.MTLLoader()
 				.load('assets/materials.mtl', function(materials) {
 					materials.preload();
