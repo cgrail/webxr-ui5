@@ -36,7 +36,13 @@ Remove Toast message and adapt shoot function to look like this:
 
 ```javascript
 shoot: function() {
+  // O------------------------------------------------------------O
+  // |                  INSERT THIS                               |
+  // O------------------------------------------------------------O
   this.assets.playLaserFireSound();
+  // O------------------------------------------------------------O
+  // |                        END                                 |
+  // O------------------------------------------------------------O
 }
 ```
 
@@ -47,7 +53,10 @@ Extend shoot function to create a static laser 3D object:
 ```javascript
 shoot: function() {
   this.assets.playLaserFireSound();
-  // INSERT THIS
+  
+  // O------------------------------------------------------------O
+  // |                  INSERT THIS                               |
+  // O------------------------------------------------------------O
   var scene = this.arView.getScene();
   var geometry = new THREE.BoxGeometry(0.03, 0.03, 2);
   var material = new THREE.MeshBasicMaterial({
@@ -57,7 +66,9 @@ shoot: function() {
   laser.position.copy(this.arView.getCamera().getWorldPosition());
   laser.quaternion.copy(this.arView.getCamera().quaternion);
   scene.add(laser);
-  // END
+  // O------------------------------------------------------------O
+  // |                        END                                 |
+  // O------------------------------------------------------------O
 }
 ```
 
@@ -74,11 +85,15 @@ shoot: function() {
     color: "red"
   });
   var laser = new THREE.Mesh(geometry, material);
-  // INSERT THIS
+  // O------------------------------------------------------------O
+  // |                  INSERT THIS                               |
+  // O------------------------------------------------------------O
   var startPosition = this.arView.getPositionWithOffset(0.5);
   startPosition.y -= 0.2;
   laser.position.copy(startPosition);
-  // END
+  // O------------------------------------------------------------O
+  // |                        END                                 |
+  // O------------------------------------------------------------O
   laser.quaternion.copy(this.arView.getCamera().quaternion);
   scene.add(laser);
 }
@@ -100,7 +115,9 @@ shoot: function() {
   laser.position.copy(startPosition);
   laser.quaternion.copy(this.arView.getCamera().quaternion);
 
-  // INSERT THIS
+  // O------------------------------------------------------------O
+  // |                  INSERT THIS                               |
+  // O------------------------------------------------------------O
   var endPosition = this.arView.getPositionWithOffset(10);
   var tween = new TWEEN.Tween(startPosition).to(endPosition, 2000);
   tween.onUpdate(function() {
@@ -109,7 +126,9 @@ shoot: function() {
     laser.position.z = startPosition.z;
   });
   tween.start();
-  // END
+  // O------------------------------------------------------------O
+  // |                        END                                 |
+  // O------------------------------------------------------------O
 
   scene.add(laser);
 }
@@ -138,11 +157,15 @@ shoot: function() {
     laser.position.z = startPosition.z;
   });
   tween.start();
-  // INSERT THIS
+  // O------------------------------------------------------------O
+  // |                  INSERT THIS                               |
+  // O------------------------------------------------------------O
   tween.onComplete(function() {
     scene.remove(laser);
   });
-  // END
+  // O------------------------------------------------------------O
+  // |                        END                                 |
+  // O------------------------------------------------------------O
   scene.add(laser);
 }
 ```
@@ -155,12 +178,16 @@ Enhance onInit method and load the 3D model of the tie fighter.
 onInit: function() {
   this.arView = this.byId("arView");
   this.assets = new ArAssets();
-  // INSERT THIS
+  // O------------------------------------------------------------O
+  // |                  INSERT THIS                               |
+  // O------------------------------------------------------------O
   this.assets.loadTieFigher(function(fighter) {
     this.fighter = fighter;
     this.spawnFighter();
   }.bind(this));
-  // END
+  // O------------------------------------------------------------O
+  // |                        END                                 |
+  // O------------------------------------------------------------O
 }
 ``` 
 
@@ -206,7 +233,9 @@ shoot: function() {
     laser.position.x = startPosition.x;
     laser.position.y = startPosition.y;
     laser.position.z = startPosition.z;
-    // INSERT THIS
+    // O------------------------------------------------------------O
+    // |                  INSERT THIS                               |
+    // O------------------------------------------------------------O
     var laserBox = new THREE.Box3().setFromObject(laser);
     var tieFighterBox = new THREE.Box3().setFromObject(this.fighter);     
     if (tieFighterBox.intersectsBox(laserBox)) {
@@ -217,7 +246,9 @@ shoot: function() {
       tween.stop();
     }
   }.bind(this));
-  // END
+  // O------------------------------------------------------------O
+  // |                        END                                 |
+  // O------------------------------------------------------------O
 
   tween.start();
   tween.onComplete(function() {
