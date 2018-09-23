@@ -85,6 +85,9 @@ shoot: function() {
     color: "red"
   });
   var laser = new THREE.Mesh(geometry, material);
+  
+  // Remove: laser.position.copy(this.arView.getCamera().getWorldPosition());
+  
   // O------------------------------------------------------------O
   // |                  INSERT THIS                               |
   // O------------------------------------------------------------O
@@ -209,6 +212,7 @@ spawnFighter: function() {
   });
   tween.start();
 },
+```
 
 ## Step 12: Add Laser/Tie Fighter collision detection
 
@@ -257,5 +261,3 @@ shoot: function() {
   scene.add(laser);
 }
 ```
-
-
