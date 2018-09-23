@@ -45,6 +45,8 @@ shoot: function() {
   // O------------------------------------------------------------O
 }
 ```
+[Runnable Step 6](http://grails.de/webxr-ui5-solution/steps/6/)
+[Code Step 6](https://github.com/cgrail/webxr-ui5-solution/blob/master/steps/6/controller/Game.controller.js)
 
 ## Step 7: Create Laser
 
@@ -71,6 +73,9 @@ shoot: function() {
   // O------------------------------------------------------------O
 }
 ```
+
+[Runnable Step 7](http://grails.de/webxr-ui5-solution/steps/7/)
+[Code Step 7](https://github.com/cgrail/webxr-ui5-solution/blob/master/steps/7/controller/Game.controller.js)
 
 ## Step 8: Set correct start position
 
@@ -101,6 +106,10 @@ shoot: function() {
   scene.add(laser);
 }
 ```
+
+
+[Runnable Step 8](http://grails.de/webxr-ui5-solution/steps/8/)
+[Code Step 8](https://github.com/cgrail/webxr-ui5-solution/blob/master/steps/8/controller/Game.controller.js)
 
 ## Step 9: Animate laser fire
 
@@ -137,6 +146,9 @@ shoot: function() {
 }
 ```
 
+[Runnable Step 9](http://grails.de/webxr-ui5-solution/steps/9/)
+[Code Step 9](https://github.com/cgrail/webxr-ui5-solution/blob/master/steps/9/controller/Game.controller.js)
+
 ## Step 10: Remove laser object after animation has finished
 
 ```javascript
@@ -172,6 +184,9 @@ shoot: function() {
   scene.add(laser);
 }
 ```
+
+[Runnable Step 6](http://grails.de/webxr-ui5-solution/steps/10/)
+[Code Step 6](https://github.com/cgrail/webxr-ui5-solution/blob/master/steps/10/controller/Game.controller.js)
 
 ## Step 11: Load TIE Fighter
 
@@ -213,6 +228,9 @@ spawnFighter: function() {
   tween.start();
 },
 ```
+
+[Runnable Step 11](http://grails.de/webxr-ui5-solution/steps/11/)
+[Code Step 11](https://github.com/cgrail/webxr-ui5-solution/blob/master/steps/11/controller/Game.controller.js)
 
 ## Step 12: Add Laser/Tie Fighter collision detection
 
@@ -261,3 +279,6 @@ shoot: function() {
   scene.add(laser);
 }
 ```
+
+[Runnable Step 12](http://grails.de/webxr-ui5-solution/steps/12/)
+[Code Step 12](https://github.com/cgrail/webxr-ui5-solution/blob/master/steps/12/controller/Game.controller.js)
