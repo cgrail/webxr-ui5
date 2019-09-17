@@ -1,4 +1,3 @@
-/*global THREE TWEEN*/
 sap.ui.define(["sap/ui/base/ManagedObject"], function(ManagedObject) {
 	"use strict";
 	var ArAssets = ManagedObject.extend("webar-test.assets.ArAssets", {

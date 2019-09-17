@@ -347,7 +347,9 @@
 		"uxcc": false,
 		"equals": false,
 		"tl": false,
-		"travel": true
+		"travel": true,
+		"THREE": true,
+		"TWEEN": true
 	},
 	"env": {
 		"node": false,
