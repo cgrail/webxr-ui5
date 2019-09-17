@@ -1,0 +1,13 @@
+{
+    "name": "webxr-ui5",
+    "productName": "WebXR UI5",
+    "version": "1.0.0",
+    "description": "WebXR UI5",
+    "scripts": {
+        "start": "live-server --open=webapp --watch=webapp"
+    },
+    "author": "christian.grail@sap.com",
+    "dependencies": {
+        "live-server": "^1.2.1"
+    }
+}
