@@ -2,9 +2,19 @@
 
 This repository contains the code of a sample project I've used at some conferences to demonstrate how to develop Augmented Reality apps with WebXR and SAP UI5.
 
-A runnable version of this initial version can be found here: 
+A runnable version of the solution can be found here: 
 
 https://grails.de/webxr-ui5/webapp/
+
+# Tutorial
+
+The code in the initialVersion branch contains the initial version of the app. A step by step tutorial is available here:
+
+https://github.com/cgrail/webxr-ui5/blob/master/tutorial.md
+
+The full game is implemented in the master branch.
+
+https://github.com/cgrail/webxr-ui5/compare/initialVersion...master
 
 # Requirements
 
@@ -20,15 +30,7 @@ On an iPhone or iPad this app requires ARKit which runs on devices with at least
 
 https://developer.apple.com/documentation/arkit/verifying_device_support_and_user_permission
 
-# Tutorial
 
-The code in the master branch contains the initial version of the app. A step by step tutorial is available here:
-
-https://github.com/cgrail/webxr-ui5/blob/master/tutorial.md
-
-The full game is implemented in the solution branch.
-
-https://github.com/cgrail/webxr-ui5/compare/initialVersion...master
 
 # Technical Background
 
