@@ -6,10 +6,6 @@ A runnable version of this initial version can be found here:
 
 https://grails.de/webxr-ui5/webapp/
 
-A runnable version of the solution can be found here:
-
-https://grails.de/webxr-ui5-solution/webapp/
-
 # Requirements
 
 To be able to run the web app you'll need to install the WebXR Viewer on your iPhone or iPad.
@@ -32,7 +28,7 @@ https://github.com/cgrail/webxr-ui5/blob/master/tutorial.md
 
 The full game is implemented in the solution branch.
 
-https://github.com/cgrail/webxr-ui5/compare/solution
+https://github.com/cgrail/webxr-ui5/compare/initialVersion...master
 
 # Technical Background
 
