@@ -16,23 +16,71 @@
 			data-sap-ui-resourceroots='{"webar-test": ""}'>
 		</script>
 
-	    <script src="//mozilla.github.io/three.xr.js/vendor/three.js"></script>
-	    <script src="//mozilla.github.io/three.xr.js/dist/three.xr.js"></script>
-		<script src="//threejs.org/examples/js/loaders/OBJLoader.js"></script>
-		<script src="//threejs.org/examples/js/loaders/MTLLoader.js"></script>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
-
 	</head>
 
 	<body class="sapUiBody" id="content" style="background: transparent">
 
- 		<script>
-			sap.ui.getCore().attachInit(function() {
-				sap.ui.xmlview({
-				  viewName: "webar-test.view.Game"
-				}).placeAt("content");
-			});
-		</script>
+	<script>
+		sap.ui.getCore().attachInit(function () {
+			function startApp() {
+				loadScript("//threejs.org/examples/js/loaders/OBJLoader.js")
+					.then(() => loadScript("//threejs.org/examples/js/loaders/MTLLoader.js"))
+					.then(() => loadScript("//cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"))
+					.then(() => {
+						sap.ui.xmlview({
+							viewName: "webar-test.view.Game"
+						}).placeAt("content");
+					});
+			}
+			const androidChromeRegex = /Android.+Chrome\/(\d+)/;
+			const minimalAndroidChromeVersion = 76;
+			if (navigator.xr && androidChromeRegex.test(navigator.userAgent) && androidChromeRegex.exec(navigator.userAgent)[1] >= minimalAndroidChromeVersion) {
+				handleAndroid();
+			} else if (/WebXRViewer/.test(navigator.userAgent)) {
+				handleIOS();
+			} else {
+				handleDesktop();
+			}
+			function handleDesktop() {
+				document.body.style.backgroundColor = "black";
+				loadScript("//mozilla.github.io/three.xr.js/vendor/three.js")
+					.then(() => loadScript("assets/OrbitControls.js"))
+					.then(function () {
+						startApp();
+					});
+			}
+			function handleIOS() {
+				document.body.classList.add("xrVersion");
+				loadScript("//mozilla.github.io/three.xr.js/vendor/three.js")
+					.then(() => loadScript("//mozilla.github.io/three.xr.js/dist/three.xr.js"))
+					.then(() => startApp());
+			}
+			function handleAndroid() {
+				loadScript("https://threejs.org/build/three.js")
+					.then(function () {
+						const startXRButton = document.createElement("BUTTON");
+						startXRButton.onclick = () => {
+							navigator.xr.requestSession('immersive-ar').then((session) => {
+								window.arSession = session;
+								startApp();
+							});
+
+						};
+						startXRButton.innerText = "Start AR";
+						document.body.append(startXRButton);
+					});
+			}
+
+			function loadScript(url) {
+				return new Promise(function (resolve) {
+					var s = document.createElement("script");
+					s.setAttribute("src", url);
+					s.onload = resolve;
+					document.body.appendChild(s);
+				});
+			}
+		});
+	</script>
 	</body>
 
 </html>

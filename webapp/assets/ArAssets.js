@@ -1,15 +1,15 @@
 /*global THREE TWEEN*/
-sap.ui.define(['sap/ui/base/ManagedObject'], function(ManagedObject) {
+sap.ui.define(["sap/ui/base/ManagedObject"], function(ManagedObject) {
 	"use strict";
 	var ArAssets = ManagedObject.extend("webar-test.assets.ArAssets", {
 
 		loadTieFighter: function(doneHandler) {
 			new THREE.MTLLoader()
-				.load('assets/materials.mtl', function(materials) {
+				.load("assets/materials.mtl", function(materials) {
 					materials.preload();
 					new THREE.OBJLoader()
 						.setMaterials(materials)
-						.load('assets/tie.obj', function(object) {
+						.load("assets/tie.obj", function(object) {
 							var scale = 0.1;
 							object.scale.set(scale, scale, scale);
 							doneHandler(object);
@@ -41,16 +41,16 @@ sap.ui.define(['sap/ui/base/ManagedObject'], function(ManagedObject) {
 		},
 
 		generateSprite: function() {
-			var canvas = document.createElement('canvas');
+			var canvas = document.createElement("canvas");
 			canvas.width = 16;
 			canvas.height = 16;
-			var context = canvas.getContext('2d');
+			var context = canvas.getContext("2d");
 			var gradient = context.createRadialGradient(canvas.width / 2, canvas.height / 2, 0, canvas.width / 2, canvas.height / 2, canvas.width /
 				2);
-			gradient.addColorStop(0, 'rgba(255,255,255,1)');
-			gradient.addColorStop(0.2, 'rgba(0,255,255,1)');
-			gradient.addColorStop(0.4, 'rgba(0,0,64,1)');
-			gradient.addColorStop(1, 'rgba(0,0,0,1)');
+			gradient.addColorStop(0, "rgba(255,255,255,1)");
+			gradient.addColorStop(0.2, "rgba(0,255,255,1)");
+			gradient.addColorStop(0.4, "rgba(0,0,64,1)");
+			gradient.addColorStop(1, "rgba(0,0,0,1)");
 			context.fillStyle = gradient;
 			context.fillRect(0, 0, canvas.width, canvas.height);
 			return canvas;
