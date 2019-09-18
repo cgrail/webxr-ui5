@@ -41,9 +41,9 @@ sap.ui.define([
 			const laser = new THREE.Mesh(geometry, material);
 			const startPosition = this.arView.getPositionWithOffset(0.5);
 			startPosition.y -= 0.2;
-			const endPosition = this.arView.getPositionWithOffset(10);
 			laser.position.copy(startPosition);
 			laser.quaternion.copy(this.arView.getCamera().quaternion);
+			const endPosition = this.arView.getPositionWithOffset(10);
 			const tween = new TWEEN.Tween(startPosition).to(endPosition, 2000);
 			tween.onUpdate(() => {
 				laser.position.x = startPosition.x;
@@ -58,12 +58,11 @@ sap.ui.define([
 					this.spawnFighter();
 					tween.stop();
 				}
-
 			});
+			tween.start();
 			tween.onComplete(() => {
 				scene.remove(laser);
 			});
-			tween.start();
 			scene.add(laser);
 		}
 	});
