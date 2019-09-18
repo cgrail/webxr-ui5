@@ -124,7 +124,6 @@ shoot() {
     laser.position.x = startPosition.x;
     laser.position.y = startPosition.y;
     laser.position.z = startPosition.z;
-    const laserBox = new THREE.Box3().setFromObject(laser);
   });
   tween.start();
   // O------------------------------------------------------------O
