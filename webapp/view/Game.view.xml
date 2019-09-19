@@ -3,8 +3,7 @@
 	xmlns:control="webar-test.control" 
 	controllerName="webar-test.controller.Game">
 
-	<control:ArView id="arView" 
-		press="shoot"/>
+	<control:ArView id="arView" />
 
 	<Button text="Fire" 
 		press="shoot" 

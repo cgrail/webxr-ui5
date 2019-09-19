@@ -1,50 +1,56 @@
-sap.ui.define(["sap/ui/base/ManagedObject"], function(ManagedObject) {
+sap.ui.define(["sap/ui/base/ManagedObject"], ManagedObject => {
 	"use strict";
-	var ArAssets = ManagedObject.extend("webar-test.assets.ArAssets", {
+	const ArAssets = ManagedObject.extend("webar-test.assets.ArAssets", {
 
-		loadTieFighter: function(doneHandler) {
+		init() {
+			this.explosion = new Audio("assets/Explosion.mp3");
+			this.explosion.load();
+			this.laserFire = new Audio("assets/Laser.mp3");
+			this.laserFire.load();
+		},
+
+		loadTieFighter(doneHandler) {
 			new THREE.MTLLoader()
-				.load("assets/materials.mtl", function(materials) {
+				.load("assets/materials.mtl", materials => {
 					materials.preload();
 					new THREE.OBJLoader()
 						.setMaterials(materials)
-						.load("assets/tie.obj", function(object) {
-							var scale = 0.1;
+						.load("assets/tie.obj", object => {
+							const scale = 0.1;
 							object.scale.set(scale, scale, scale);
 							doneHandler(object);
 						});
 				});
 		},
-		
-		playExplosionSound: function() {
-			var explosion = new Audio("assets/Explosion.mp3");
-			explosion.play();
-		},
-		
-		playLaserFireSound: function() {
-			var laserFire = new Audio("assets/Laser.mp3");
-			laserFire.play();
-		},
-		
-		explode: function(scene) {
 
-			var material = new THREE.SpriteMaterial({
+		playExplosionSound() {
+			this.explosion.currentTime = 0;
+			this.explosion.play();
+		},
+
+		playLaserFireSound() {
+			this.laserFire.currentTime = 0;
+			this.laserFire.play();
+		},
+
+		explode(scene) {
+			const material = new THREE.SpriteMaterial({
 				map: new THREE.CanvasTexture(this.generateSprite()),
 				blending: THREE.AdditiveBlending
 			});
 			for (var i = 0; i < 100; i++) {
-				var particle = new THREE.Sprite(material);
+				const particle = new THREE.Sprite(material);
 				this.initParticle(particle, i * 10);
 				scene.add(particle);
 			}
 		},
 
-		generateSprite: function() {
-			var canvas = document.createElement("canvas");
+		generateSprite() {
+			const canvas = document.createElement("canvas");
 			canvas.width = 16;
 			canvas.height = 16;
-			var context = canvas.getContext("2d");
-			var gradient = context.createRadialGradient(canvas.width / 2, canvas.height / 2, 0, canvas.width / 2, canvas.height / 2, canvas.width /
+			const context = canvas.getContext("2d");
+			const gradient = context.createRadialGradient(canvas.width / 2, canvas.height / 2, 0, canvas.width / 2, canvas.height / 2, canvas.width /
 				2);
 			gradient.addColorStop(0, "rgba(255,255,255,1)");
 			gradient.addColorStop(0.2, "rgba(0,255,255,1)");
@@ -55,10 +61,10 @@ sap.ui.define(["sap/ui/base/ManagedObject"], function(ManagedObject) {
 			return canvas;
 		},
 
-		initParticle: function(particle) {
+		initParticle(particle) {
 			particle.position.set(0, 0, 0);
 			particle.scale.x = particle.scale.y = Math.random() * 32 + 16;
-			var duration = 1000;
+			const duration = 1000;
 			new TWEEN.Tween(particle)
 				.to({}, duration)
 				.start();
