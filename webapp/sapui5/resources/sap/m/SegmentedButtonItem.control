@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>SegmentedButtonItem</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Used for creating buttons for the {@link sap.m.SegmentedButton}.
+It is derived from the {@link sap.ui.core.Item}.</documentation>
+    <since>1.28</since>
+    <baseType>sap.ui.core/Item</baseType>
+    <properties>
+        <property name="icon" type="sap.ui.core/string" group="Appearance">
+            <documentation>The icon, which belongs to the button.
+This can be a URI to an image or an icon font URI.</documentation>
+        </property>
+        <property name="visible" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>Whether the button should be visible on the screen. If set to false, a placeholder is rendered instead of the real button.</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" group="Dimension">
+            <documentation>Sets the width of the buttons.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="press" allowPreventDefault="false">
+            <documentation>Fires when the user clicks on an individual button.</documentation>
+        </event>
+    </events>
+</control>

@@ -1,0 +1,80 @@
+<core:FragmentDefinition xmlns:m="sap.m" xmlns:mdcbaseinfo="sap.ui.mdc.base.info" xmlns:core="sap.ui.core">
+
+	<m:Dialog horizontalScrolling="false"
+			  contentWidth="25rem"
+			  contentHeight="35rem"
+			  draggable="true"
+			  resizable="true"
+			  stretch="{device>/system/phone}"
+			  afterClose="onAfterClose"
+			  class="mdcbaseinfoSelectionDialog">
+		<m:customHeader>
+			<m:Bar>
+				<m:contentMiddle>
+					<m:Title level="H2" text="{$this.i18n>info.SELECTION_DIALOG_TITLE}"/>
+				</m:contentMiddle>
+				<m:contentRight>
+					<m:Button id="idReset" text="{$this.i18n>p13nDialog.RESET}" press="onPressReset"
+							  visible="{$this>showReset}"
+							  enabled="{$this>showResetEnabled}">
+						<m:layoutData>
+							<m:OverflowToolbarLayoutData priority="NeverOverflow"/>
+						</m:layoutData>
+					</m:Button>
+				</m:contentRight>
+			</m:Bar>
+		</m:customHeader>
+		<m:subHeader>
+			<m:Bar>
+				<m:contentMiddle>
+					<m:SearchField id="idSearchField" liveChange="onSearchFieldLiveChange" width="100%">
+						<m:layoutData>
+							<m:OverflowToolbarLayoutData shrinkable="true" moveToOverflow="true" priority="High"/>
+						</m:layoutData>
+					</m:SearchField>
+				</m:contentMiddle>
+			</m:Bar>
+		</m:subHeader>
+		<m:content>
+			<m:List id="idList"
+					mode="MultiSelect"
+					includeItemInSelection="false"
+					selectionChange="onSelectionChange"
+					items="{path:'$this>/items',
+							templateShareable:false}">
+				<m:infoToolbar>
+					<m:Toolbar id="idInfoToolbar" visible="{= ${$this>/@custom/countOfSelectedItems} > 0}">
+						<m:Label id="idInfoToolbarLabel"
+								 text="{$this.i18n>info.SELECTION_DIALOG_INFO_TOOLBAR} {path:'$this>/@custom/countOfSelectedItems'}"/>
+					</m:Toolbar>
+				</m:infoToolbar>
+				<m:items>
+					<m:CustomListItem id="idListItem" selected="{path:'$this>visible'}" class="sapUiSmallMarginBegin">
+						<mdcbaseinfo:PanelListItem visible="true"
+												   text="{$this>text}"
+												   description="{$this>description}"
+												   href="{= ${$this>/showItemAsLink} ? ${$this>href}:null}"
+												   target="{$this>target}"
+												   icon="{$this>icon}"
+												   pressLink="onPressLink"/>
+					</m:CustomListItem>
+				</m:items>
+			</m:List>
+		</m:content>
+
+		<m:buttons>
+			<m:Button id="idOk" text="{$this.i18n>p13nDialog.OK}" press="onPressOk" type="Emphasized">
+				<m:layoutData>
+					<m:OverflowToolbarLayoutData priority="NeverOverflow"/>
+				</m:layoutData>
+			</m:Button>
+			<m:Button id="idCancel" text="{$this.i18n>p13nDialog.CANCEL}" press="onPressCancel">
+				<m:layoutData>
+					<m:OverflowToolbarLayoutData priority="NeverOverflow"/>
+				</m:layoutData>
+			</m:Button>
+		</m:buttons>
+	</m:Dialog>
+
+</core:FragmentDefinition>
+

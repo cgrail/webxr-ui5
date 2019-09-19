@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<interface xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>IScale</name>
+    <derived/>
+    <documentation>Interface for controls which are suitable as a Scale for the Slider/RangeSlider.
+Implementation of this interface should implement the following methods:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;getTickmarksBetweenLabels&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;calcNumberOfTickmarks&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;handleResize&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;getLabel&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+    <since>1.46</since>
+</interface>

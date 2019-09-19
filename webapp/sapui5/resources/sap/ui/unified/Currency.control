@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Currency</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A text view which displays currency values and aligns them at the decimal point.
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+
+The currency control consists of an amount, which is formatted automatically according
+to the user’s locale (using delimiter symbols for the decimal point and thousand separators)
+and to the currency set for this specific number (number of decimal places).
+
+The currency is expressed as a three-letter code.
+
+&lt;h3&gt;Usage&lt;/h3&gt;
+
+&lt;i&gt;When to use&lt;/i&gt;
+&lt;ul&gt;
+&lt;li&gt;To display amounts with different currencies in a vertical layout, such as in a table,
+list, or form, and it is important that the user is able to compare the amounts.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;i&gt;When not to use&lt;/i&gt;
+&lt;ul&gt;
+&lt;li&gt;To display amounts with the same currency in a table. Use the {@link sap.m.ObjectNumber} instead.&lt;/li&gt;
+&lt;li&gt;to display a number with a unit of measurement that is not a currency. Use the
+{@link sap.m.ObjectNumber} instead.&lt;/li&gt;
+&lt;li&gt;To display an amount in a structure other than a list, table, or form.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Responsive behavior&lt;/h3&gt;
+
+The control supports amounts smaller than 100 trillion, which still fit on a phone screen in portrait mode.
+For larger amounts, the unit of measurement wraps to the next line, which makes it difficult to compare the amounts.</documentation>
+    <since>1.21.1</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="value" type="sap.ui.core/float" defaultValue="0" group="Appearance">
+            <documentation>Determines the currency value.</documentation>
+        </property>
+        <property name="stringValue" type="sap.ui.core/string" group="Appearance" since="1.54">
+            <documentation>Determines the currency value as a string.
+
+String value is useful if you want to store really big values. If there are more than 21 digits
+before the decimal point or if the number starts with “0.” followed by more than five zeros, it is
+represented in exponential form. In these cases use the &lt;code&gt;stringValue&lt;/code&gt; property to keep the number in
+decimal format.
+
+&lt;b&gt;Note:&lt;/b&gt; If set, it will take precedence over the &lt;code&gt;value&lt;/code&gt; property.</documentation>
+        </property>
+        <property name="currency" type="sap.ui.core/string" group="Appearance">
+            <documentation>Determines the displayed currency code (ISO 4217).
+
+&lt;b&gt;Note:&lt;/b&gt; If a * character is set instead of currency code,
+only the character itself will be rendered, ignoring the &lt;code&gt;value&lt;/code&gt; property.</documentation>
+        </property>
+        <property name="maxPrecision" type="sap.ui.core/int" defaultValue="3" group="Appearance">
+            <documentation>Defines the space that is available for the precision of the various currencies.</documentation>
+        </property>
+        <property name="useSymbol" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>Displays the currency symbol instead of the ISO currency code.</documentation>
+        </property>
+    </properties>
+    <methods>
+        <method name="getFormattedValue" type="sap.ui.core/string">
+            <documentation>The formatted value.</documentation>
+        </method>
+        <method name="getCurrencySymbol" type="sap.ui.core/string">
+            <documentation>Get symbol of the currency, if available.</documentation>
+        </method>
+    </methods>
+</control>

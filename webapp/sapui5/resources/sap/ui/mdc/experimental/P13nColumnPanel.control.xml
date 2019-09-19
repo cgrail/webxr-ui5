@@ -1,0 +1,90 @@
+<core:FragmentDefinition xmlns:m="sap.m"
+						 xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+	<l:VerticalLayout class="sapMP13nColumnsPanel">
+
+		<m:Table id="IDTable" mode="MultiSelect" rememberSelections="false"
+				 itemPress="onItemPressed" selectionChange="onSelectionChange"
+				 items="{path:'$this>/items', templateShareable:false}">
+			<m:headerToolbar>
+				<m:OverflowToolbar id="IDToolbar">
+					<m:ToolbarSpacer></m:ToolbarSpacer>
+					<m:SearchField id="IDSearchField" liveChange="onSearchFieldLiveChange">
+						<m:layoutData>
+							<m:OverflowToolbarLayoutData maxWidth="23.077rem" shrinkable="true" moveToOverflow="true"
+														 priority="High"/>
+						</m:layoutData>
+					</m:SearchField>
+					<m:Button
+							text="{= ${$this>/showOnlySelectedItems} ? ${i18n>COLUMNSPANEL_SHOW_ALL} : ${i18n>COLUMNSPANEL_SHOW_SELECTED}}"
+							tooltip="{= ${$this>/showOnlySelectedItems} ? ${i18n>COLUMNSPANEL_SHOW_ALL} : ${i18n>COLUMNSPANEL_SHOW_SELECTED}}"
+							press="onSwitchButtonShowSelected" type="Transparent">
+						<!--visible="{path:'$this>/config/isEnabledSelectedButton'}">-->
+						<m:layoutData>
+							<m:OverflowToolbarLayoutData
+									moveToOverflow="true" priority="High"/>
+						</m:layoutData>
+					</m:Button>
+					<m:OverflowToolbarButton id="IDButtonMoveToTop"
+											 type="Transparent" icon="sap-icon://collapse-group"
+											 text="{i18n>COLUMNSPANEL_MOVE_TO_TOP}"
+											 tooltip="{i18n>COLUMNSPANEL_MOVE_TO_TOP}"
+											 enabled="{$this>/@custom/isMoveUpButtonEnabled}"
+											 press="onPressButtonMoveToTop">
+						<m:layoutData>
+							<m:OverflowToolbarLayoutData
+									moveToOverflow="true" priority="Low" group="2"/>
+						</m:layoutData>
+					</m:OverflowToolbarButton>
+					<m:OverflowToolbarButton id="IDButtonMoveUp"
+											 type="Transparent" icon="sap-icon://slim-arrow-up"
+											 text="{i18n>COLUMNSPANEL_MOVE_UP}"
+											 tooltip="{i18n>COLUMNSPANEL_MOVE_UP}"
+											 enabled="{path:'$this>/@custom/isMoveUpButtonEnabled'}"
+											 press="onPressButtonMoveUp">
+						<m:layoutData>
+							<m:OverflowToolbarLayoutData
+									moveToOverflow="true" priority="High" group="1"/>
+						</m:layoutData>
+					</m:OverflowToolbarButton>
+					<m:OverflowToolbarButton id="IDButtonMoveDown"
+											 type="Transparent" icon="sap-icon://slim-arrow-down"
+											 text="{i18n>COLUMNSPANEL_MOVE_DOWN}"
+											 tooltip="{i18n>COLUMNSPANEL_MOVE_DOWN}"
+											 enabled="{path:'$this>/@custom/isMoveDownButtonEnabled'}"
+											 press="onPressButtonMoveDown">
+						<m:layoutData>
+							<m:OverflowToolbarLayoutData
+									moveToOverflow="true" priority="High" group="1"/>
+						</m:layoutData>
+					</m:OverflowToolbarButton>
+					<m:OverflowToolbarButton id="IDButtonMoveToBottom"
+											 type="Transparent" icon="sap-icon://expand-group"
+											 text="{i18n>COLUMNSPANEL_MOVE_TO_BOTTOM}"
+											 tooltip="{i18n>COLUMNSPANEL_MOVE_TO_BOTTOM}"
+											 enabled="{path:'$this>/@custom/isMoveDownButtonEnabled'}"
+											 press="onPressButtonMoveToBottom">
+						<m:layoutData>
+							<m:OverflowToolbarLayoutData
+									moveToOverflow="true" priority="Low" group="2"/>
+						</m:layoutData>
+					</m:OverflowToolbarButton>
+				</m:OverflowToolbar>
+			</m:headerToolbar>
+			<m:columns>
+				<m:Column>
+					<m:header>
+						<m:Text text="{parts:[{path:'$this>/@custom/countOfSelectedItems'}, {path:'$this>/@custom/countOfItems'}], formatter:'.formatter.showCount'}"/>
+					</m:header>
+				</m:Column>
+			</m:columns>
+			<m:items>
+				<m:ColumnListItem selected="{$this>selected}" type="Active">
+					<m:cells>
+						<m:Text text="{$this>text}" tooltip="{$this>tooltip}"/>
+					</m:cells>
+				</m:ColumnListItem>
+			</m:items>
+		</m:Table>
+
+	</l:VerticalLayout>
+</core:FragmentDefinition>

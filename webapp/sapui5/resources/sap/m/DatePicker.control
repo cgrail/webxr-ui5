@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>DatePicker</name>
+    <derived/>
+    <documentation>Enables the users to select a localized date between 0001-01-01 and 9999-12-31.
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+
+The &lt;code&gt;DatePicker&lt;/code&gt; lets the users select a localized date using touch,
+mouse, or keyboard input. It consists of two parts: the date input field and the
+date picker.
+
+&lt;b&gt;Note:&lt;/b&gt; The {@link sap.ui.unified.Calendar} is used internally only if the
+&lt;code&gt;DatePicker&lt;/code&gt; is opened (not used for the initial rendering). If the
+&lt;code&gt;sap.ui.unified&lt;/code&gt; library is not loaded before the
+&lt;code&gt;DatePicker&lt;/code&gt; is opened, it will be loaded upon opening. This could
+lead to a waiting time when the &lt;code&gt;DatePicker&lt;/code&gt; is opened for the
+first time. To prevent this, apps using the &lt;code&gt;DatePicker&lt;/code&gt; should also
+load the &lt;code&gt;sap.ui.unified&lt;/code&gt; library.
+
+&lt;h3&gt;Usage&lt;/h3&gt;
+
+The user can enter a date by:
+&lt;ul&gt;&lt;li&gt;Using the calendar that opens in a popup&lt;/li&gt;
+&lt;li&gt;Typing it in directly in the input field (not available for mobile devices)&lt;/li&gt;&lt;/ul&gt;
+
+On app level, there are two options to provide a date for the
+&lt;code&gt;DatePicker&lt;/code&gt; - as a string to the &lt;code&gt;value&lt;/code&gt; property or as
+a JavaScript Date object to the &lt;code&gt;dateValue&lt;/code&gt; property (only one of
+these properties should be used at a time):
+
+&lt;ul&gt;&lt;li&gt;Use the &lt;code&gt;value&lt;/code&gt; property if you want to bind the
+&lt;code&gt;DatePicker&lt;/code&gt; to a model using the &lt;code&gt;sap.ui.model.type.Date&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Use the &lt;code&gt;value&lt;/code&gt; property if the date is provided as a string from
+the backend or inside the app (for example, as ABAP type DATS field)&lt;/li&gt;
+&lt;li&gt;Use the &lt;code&gt;dateValue&lt;/code&gt; property if the date is already provided as a
+JavaScript Date object or you want to work with a JavaScript Date object.
+Use &lt;code&gt;dateValue&lt;/code&gt; as a helper property to easily obtain the day, month and year
+of the chosen date. Although possible to bind it, the recommendation is not to do it.
+When binding is needed, use &lt;code&gt;value&lt;/code&gt; property instead&lt;/li&gt;&lt;/ul&gt;
+
+&lt;h3&gt;Formatting&lt;/h3&gt;
+
+All formatting and parsing of dates from and to strings is done using the
+{@link sap.ui.core.format.DateFormat}. If a date is entered by typing it into
+the input field, it must fit to the used date format and locale.
+
+Supported format options are pattern-based on Unicode LDML Date Format notation.
+See {@link http://unicode.org/reports/tr35/#Date_Field_Symbol_Table}
+
+For example, if the &lt;code&gt;valueFormat&lt;/code&gt; is "yyyy-MM-dd",
+the &lt;code&gt;displayFormat&lt;/code&gt; is "MMM d, y", and the used locale is English, a
+valid value string is "2015-07-30", which leads to an output of "Jul 30, 2015".
+
+If no placeholder is set to the &lt;code&gt;DatePicker&lt;/code&gt;, the used
+&lt;code&gt;displayFormat&lt;/code&gt; is displayed as a placeholder. If another placeholder
+is needed, it must be set.
+
+&lt;b&gt;Note:&lt;/b&gt; If the string does NOT match the &lt;code&gt;displayFormat&lt;/code&gt;
+(from user input) or the &lt;code&gt;valueFormat&lt;/code&gt; (on app level), the
+{@link sap.ui.core.format.DateFormat} makes an attempt to parse it based on the
+locale settings. For more information, see the respective documentation in the
+API Reference.
+
+&lt;h3&gt;Responsive behavior&lt;/h3&gt;
+
+The &lt;code&gt;DatePicker&lt;/code&gt; is smaller in compact mode and provides a
+touch-friendly size in cozy mode.
+
+On mobile devices, one tap on the input field opens the &lt;code&gt;DatePicker&lt;/code&gt;
+in full screen. To close the window, the user can select a date (which triggers
+the close event), or select Cancel.</documentation>
+    <since>1.22.0</since>
+    <baseType>sap.m/DateTimeField</baseType>
+    <properties>
+        <property name="displayFormatType" type="sap.ui.core/string" defaultValue="" group="Appearance" since="1.28.6">
+            <documentation>Displays date in this given type in input field. Default value is taken from locale settings.
+Accepted are values of &lt;code&gt;sap.ui.core.CalendarType&lt;/code&gt; or an empty string. If no type is set, the default type of the
+configuration is used.
+&lt;b&gt;Note:&lt;/b&gt; If data binding on &lt;code&gt;value&lt;/code&gt; property with type &lt;code&gt;sap.ui.model.type.Date&lt;/code&gt; is used, this property will be ignored.</documentation>
+        </property>
+        <property name="secondaryCalendarType" type="sap.ui.core/CalendarType" group="Appearance" since="1.34.1">
+            <documentation>If set, the days in the calendar popup are also displayed in this calendar type
+If not set, the dates are only displayed in the primary calendar type</documentation>
+        </property>
+        <property name="minDate" type="sap.ui.core/object" group="Misc" since="1.38.0">
+            <documentation>Minimum date that can be shown and selected in the &lt;code&gt;DatePicker&lt;/code&gt;. This must be a JavaScript date object.
+
+&lt;b&gt;Note:&lt;/b&gt; If the &lt;code&gt;minDate&lt;/code&gt; is set to be after the &lt;code&gt;maxDate&lt;/code&gt;,
+the &lt;code&gt;maxDate&lt;/code&gt; and the &lt;code&gt;minDate&lt;/code&gt; are switched before rendering.</documentation>
+        </property>
+        <property name="maxDate" type="sap.ui.core/object" group="Misc" since="1.38.0">
+            <documentation>Maximum date that can be shown and selected in the &lt;code&gt;DatePicker&lt;/code&gt;. This must be a JavaScript date object.
+
+&lt;b&gt;Note:&lt;/b&gt; If the &lt;code&gt;maxDate&lt;/code&gt; is set to be before the &lt;code&gt;minDate&lt;/code&gt;,
+the &lt;code&gt;maxDate&lt;/code&gt; and the &lt;code&gt;minDate&lt;/code&gt; are switched before rendering.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="navigate" since="1.46.0" allowPreventDefault="false">
+            <documentation>Fired when navigating in &lt;code&gt;Calendar&lt;/code&gt; popup.</documentation>
+            <parameters>
+                <parameter name="dateRange" type="sap.ui.unified/DateRange">
+                    <documentation>Date range containing the start and end date displayed in the &lt;code&gt;Calendar&lt;/code&gt; popup.</documentation>
+                </parameter>
+                <parameter name="afterPopupOpened" type="sap.ui.core/boolean">
+                    <documentation>Indicates if the event is fired, due to popup being opened.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="specialDates" type="sap.ui.core/Element" since="1.38.5" cardinality="0..n">
+            <documentation>Date Range with type to visualize special days in the Calendar.
+If one day is assigned to more than one Type, only the first one will be used.
+
+To set a single date (instead of a range), set only the startDate property of the sap.ui.unified.DateRange class.
+
+&lt;b&gt;Note:&lt;/b&gt; Since 1.48 you could set a non-working day via the sap.ui.unified.CalendarDayType.NonWorking
+enum type just as any other special date type using sap.ui.unified.DateRangeType.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="legend" type="sap.ui.core/Control" cardinality="0..1" since="1.38.5">
+            <documentation>Association to the &lt;code&gt;CalendarLegend&lt;/code&gt; explaining the colors of the &lt;code&gt;specialDates&lt;/code&gt;.
+
+&lt;b&gt;Note&lt;/b&gt; The legend does not have to be rendered but must exist, and all required types must be assigned.</documentation>
+        </association>
+    </associations>
+</control>

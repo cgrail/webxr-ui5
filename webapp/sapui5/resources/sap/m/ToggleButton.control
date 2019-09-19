@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ToggleButton</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>An enhanced {@link sap.m.Button} that can be toggled between pressed and normal state.
+
+Clicking or tapping a &lt;code&gt;ToggleButton&lt;/code&gt; changes its state to &lt;code&gt;pressed&lt;/code&gt;. The button returns to
+its initial state when the user clicks or taps it again.</documentation>
+    <baseType>sap.m/Button</baseType>
+    <properties>
+        <property name="pressed" type="sap.ui.core/boolean" defaultValue="false" group="Data">
+            <documentation>The property is “true” when the control is toggled. The default state of this property is "false".</documentation>
+        </property>
+    </properties>
+</control>

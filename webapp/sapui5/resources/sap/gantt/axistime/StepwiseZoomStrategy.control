@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>axistime/StepwiseZoomStrategy</name>
+    <derived/>
+    <documentation>The class allows you to define a zoom strategy whose time line options are stepwise, i.e. the width of each time line option
+is pre-defined and won't be changed during zooming.</documentation>
+    <baseType>sap.gantt/axistime/AxisTimeStrategyBase</baseType>
+</control>

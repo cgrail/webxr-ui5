@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>dnd/DropEffect</name>
+    <derived/>
+    <documentation>Configuration options for visual drop effects that are given during a drag and drop operation.</documentation>
+    <since>1.52.0</since>
+    <enumeration>
+        <value name="Copy">
+            <documentation>A copy of the source item is made at the new location.</documentation>
+        </value>
+        <value name="Move">
+            <documentation>An item is moved to a new location.</documentation>
+        </value>
+        <value name="Link">
+            <documentation>A link is established to the source at the new location.</documentation>
+        </value>
+        <value name="None">
+            <documentation>The item cannot be dropped.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

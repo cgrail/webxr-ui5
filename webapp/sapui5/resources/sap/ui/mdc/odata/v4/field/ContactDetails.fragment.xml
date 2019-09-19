@@ -1,0 +1,66 @@
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	xmlns:core="sap.ui.core"
+	xmlns:mdcBase="sap.ui.mdc.base"
+	xmlns:info="sap.ui.mdc.base.info"
+	template:require="{ MODEL: 'sap/ui/model/odata/v4/AnnotationHelper' }">
+
+	<mdcBase:Field editMode="Display"
+		width="100%"
+		binding="{dataField>Target/$AnnotationPath@@MODEL.getNavigationBinding}"
+		value="{contact>fn@@MODEL.value}">
+		<mdcBase:fieldInfo>
+			<mdcBase:FieldInfo>
+				<info:ContentHandler enablePersonalization="false">
+					<info:linkHandler>
+						<info:LinkHandler>
+							<info:LinkItem
+								isMain="true"
+								text="{contact>fn@@MODEL.value}"
+								description="{contact>title@@MODEL.value}"
+								icon="{contact>photo@@MODEL.value}"/>
+						</info:LinkHandler>
+					</info:linkHandler>
+					<info:additionalContent>
+						<info:ContactDetails>
+							<info:ContactDetailsItem formattedName="{contact>fn@@MODEL.value}"
+								photo="{contact>photo@@MODEL.value}"
+								title="{contact>title@@MODEL.value}"
+								role="{contact>role@@MODEL.value}"
+								org="{contact>org@@MODEL.value}">
+								<template:if test="{contact>tel}">
+									<info:phones>
+										<template:repeat list="{contact>tel}" var="telephone">
+											<info:ContactDetailsPhoneItem uri="{telephone>uri@@MODEL.value}"
+												types="{= ${telephone>type} &amp;&amp; ${telephone>type/$EnumMember}.split('/').pop() || undefined }"/>
+										</template:repeat>
+									</info:phones>
+								</template:if>
+								<template:if test="{contact>email}">
+									<info:emails>
+										<template:repeat list="{contact>email}" var="emailId">
+											<info:ContactDetailsEmailItem uri="{emailId>address@@MODEL.value}"
+												types="{= ${emailId>type} &amp;&amp; ${emailId>type/$EnumMember}.split('/').pop() || undefined }"/>
+										</template:repeat>
+									</info:emails>
+								</template:if>
+								<template:if test="{contact>adr}">
+									<info:addresses>
+										<template:repeat list="{contact>adr}" var="address">
+											<info:ContactDetailsAddressItem street="{address>street@@MODEL.value}"
+												code="{address>code@@MODEL.value}"
+												locality="{address>locality@@MODEL.value}"
+												region="{address>region@@MODEL.value}"
+												country="{address>country@@MODEL.value}"
+												types="{= ${address>type} &amp;&amp; ${address>type/$EnumMember}.split('/').pop() || undefined }"/>
+										</template:repeat>
+									</info:addresses>
+								</template:if>
+							</info:ContactDetailsItem>
+						</info:ContactDetails>
+					</info:additionalContent>
+				</info:ContentHandler>
+			</mdcBase:FieldInfo>
+		</mdcBase:fieldInfo>
+	</mdcBase:Field>
+
+</core:FragmentDefinition>

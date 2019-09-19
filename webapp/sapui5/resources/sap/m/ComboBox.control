@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ComboBox</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A drop-down list for selecting and filtering values.
+&lt;h3&gt;Overview&lt;/h3&gt;
+The control represents a drop-down menu with a list of the available options and a text input field to narrow down the options.
+&lt;h3&gt;Structure&lt;/h3&gt;
+The combo-box consists of the following elements:
+&lt;ul&gt;
+&lt;li&gt; Input field - displays the selected option or a custom user entry. Users can type to narrow down the list or enter their own value.&lt;/li&gt;
+&lt;li&gt; Drop-down arrow - expands\collapses the option list.&lt;/li&gt;
+&lt;li&gt; Option list - the list of available options.&lt;/li&gt;
+&lt;/ul&gt;
+By setting the &lt;code&gt;showSecondaryValues&lt;/code&gt; property, the combo box can display an additional value for each option (if there is one).
+&lt;h3&gt;Usage&lt;/h3&gt;
+&lt;h4&gt;When to use:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;You need to select only one item in a long list of options (between 13 and 200) or your custom user input.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;When not to use:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;You need to select between only two options. Use a {@link sap.m.Switch switch} control instead.&lt;/li&gt;
+&lt;li&gt;You need to select between up to 12 options. Use a {@link sap.m.Select select} control instead.&lt;/li&gt;
+&lt;li&gt;You need to select between more than 200 options. Use a {@link sap.m.Input input} control with value help instead.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Responsive Behavior&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The width of the option list adapts to its content. The minimum width is the input field plus the drop-down arrow.&lt;/li&gt;
+&lt;li&gt;There is no horizontal scrolling in the option list. Entries in the list that are too long will be truncated.&lt;/li&gt;
+&lt;li&gt;On phone devices the combo box option list opens a dialog.&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+    <since>1.22</since>
+    <baseType>sap.m/ComboBoxBase</baseType>
+    <properties>
+        <property name="selectedKey" type="sap.ui.core/string" defaultValue="" group="Data">
+            <documentation>Key of the selected item.
+
+&lt;b&gt;Note:&lt;/b&gt; If duplicate keys exist, the first item matching the key is used.</documentation>
+        </property>
+        <property name="selectedItemId" type="sap.ui.core/string" defaultValue="" group="Misc">
+            <documentation>ID of the selected item.</documentation>
+        </property>
+        <property name="filterSecondaryValues" type="sap.ui.core/boolean" defaultValue="false" group="Misc" since="1.46">
+            <documentation>Indicates whether the filter should check in both the &lt;code&gt;text&lt;/code&gt; and the &lt;code&gt;additionalText&lt;/code&gt; property of the
+{@link sap.ui.core.ListItem} for the suggestion.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="change" allowPreventDefault="false">
+            <documentation>This event is fired when the value in the text input field is changed in combination with one of
+the following actions:
+
+&lt;ul&gt;
+	&lt;li&gt;The focus leaves the text input field&lt;/li&gt;
+	&lt;li&gt;The &lt;i&gt;Enter&lt;/i&gt; key is pressed&lt;/li&gt;
+&lt;/ul&gt;
+
+In addition, this event is also fired when an item in the list is selected.</documentation>
+            <parameters>
+                <parameter name="value" type="sap.ui.core/string">
+                    <documentation>The new &lt;code&gt;value&lt;/code&gt; of the &lt;code&gt;control&lt;/code&gt;</documentation>
+                </parameter>
+                <parameter name="itemPressed" type="sap.ui.core/boolean">
+                    <documentation>Indicates whether the change event was caused by selecting an item in the list</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="selectionChange" allowPreventDefault="false">
+            <documentation>This event is fired when the user types something that matches with an item in the list;
+it is also fired when the user presses on a list item, or when navigating via keyboard.</documentation>
+            <parameters>
+                <parameter name="selectedItem" type="sap.ui.core/Item">
+                    <documentation>The selected item.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <associations>
+        <association name="selectedItem" type="sap.ui.core/Item" cardinality="0..1">
+            <documentation>Sets or retrieves the selected item from the aggregation named items.</documentation>
+        </association>
+    </associations>
+</control>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>InputTextFormatMode</name>
+    <derived/>
+    <documentation>Defines how the input display text should be formatted.</documentation>
+    <since>1.44.0</since>
+    <enumeration>
+        <value name="Value">
+            <documentation>Text</documentation>
+        </value>
+        <value name="Key">
+            <documentation>Key</documentation>
+        </value>
+        <value name="ValueKey">
+            <documentation>A value-key pair formatted like "text (key)"</documentation>
+        </value>
+        <value name="KeyValue">
+            <documentation>A key-value pair formatted like "(key) text"</documentation>
+        </value>
+    </enumeration>
+</simple-type>

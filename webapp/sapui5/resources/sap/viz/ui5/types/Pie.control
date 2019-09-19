@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ui5/types/Pie</name>
+    <derived/>
+    <documentation>Module sap.viz.ui5.types.Pie</documentation>
+    <since>1.7.2</since>
+    <developmentState state="experimental" since="1.7.2">Charting API is not finished yet and might change completely.</developmentState>
+    <deprecation since="1.32.0">The chart controls in the &lt;code&gt;sap.viz.ui5&lt;/code&gt; package (which were always marked as &lt;i&gt;experimental&lt;/i&gt;) have been deprecated since 1.32.0. 
+They are no longer actively developed and won't receive new features or improvements, only important bug fixes. They will only remain in the 
+SAPUI5 distribution for backward compatibility. 
+
+&lt;b&gt;SAP strongly recommends that existing consumers of those controls migrate to the new {@link sap.viz.ui5.controls.VizFrame VizFrame} 
+control to benefit from new charting enhancements and timely support. &lt;/b&gt;
+
+&lt;b&gt;Note&lt;/b&gt;: As the feature set, design and API usage of VizFrame might differ from the old chart controls, make sure you evaluate it thoroughly before migration.</deprecation>
+    <baseType>sap.viz/ui5/core/BaseStructuredType</baseType>
+    <properties>
+        <property name="colorPalette" type="sap.ui.core/string[]" defaultValue="[#748CB2,#9CC677,#EACF5E,#F9AD79,#D16A7C,#8873A2,#3A95B3,#B6D949,#FDD36C,#F47958,#A65084,#0063B1,#0DA841,#FCB71D,#F05620,#B22D6E,#3C368E,#8FB2CF,#95D4AB,#EAE98F,#F9BE92,#EC9A99,#BC98BD,#1EB7B2,#73C03C,#F48323,#EB271B,#D9B5CA,#AED1DA,#DFECB2,#FCDAB0,#F5BCB4]">
+            <documentation>Set the color palette for the sectors of the pie chart</documentation>
+        </property>
+        <property name="isDonut" type="sap.ui.core/boolean" defaultValue="false">
+            <documentation>Set the chart to display as a donut or a pie. If this value is set to 'true', the chart displays as a donut. If this value is set to 'false', the chart displays as a pie.</documentation>
+        </property>
+        <property name="isGeoPie" type="sap.ui.core/boolean" defaultValue="false">
+            <documentation>Set whether the chart displays as a geo pie chart. If this value is set to 'true', the chart displays as a geo pie chart. If this value is set to 'false', the chart does not display as a geo pie chart.</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="valign" type="sap.viz/ui5/types/Pie_valign" defaultValue="top">
+            <documentation>Set the vertical aligment of the chart</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="drawingEffect" type="sap.viz/ui5/types/Pie_drawingEffect" defaultValue="normal">
+            <documentation>Set the drawing effect of the pie</documentation>
+        </property>
+        <property name="formatRules" type="sap.ui.core/object[]">
+            <documentation>Rules to format data points, sample:  [{condition: [{Key1:"Value1", Key2:"Value2"}], color:"#00ff00"}, {condition: [{Key3:"Value3"}], color:"#00ffff"}].  Each rule has two properties: "condition" and "color". The relation among the condition object in "condition" array is "OR",  which means the data point that met any condition in the array will apply the "color".  If multiple rules could apply on the same data point, the last rule would take effect.</documentation>
+        </property>
+        <property name="plotScale" type="sap.ui.core/float" defaultValue="1">
+            <documentation>Set the plot scale of the pie</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+    </properties>
+    <aggregations>
+        <aggregation name="animation" type="sap.viz/ui5/types/Pie_animation" cardinality="0..1">
+            <documentation>Settings for animations in the plot area</documentation>
+        </aggregation>
+        <aggregation name="toolTip" type="sap.viz/ui5/types/Pie_tooltip" cardinality="0..1">
+            <documentation>Settings for tooltip related properties</documentation>
+            <deprecation since="1.19">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </aggregation>
+    </aggregations>
+</control>

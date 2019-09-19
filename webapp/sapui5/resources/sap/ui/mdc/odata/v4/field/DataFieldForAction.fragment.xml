@@ -1,0 +1,31 @@
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+						 xmlns:core="sap.ui.core"
+						 xmlns="sap.m"
+						 xmlns:mdc="sap.ui.mdc">
+
+	<mdc:Column>
+		<!-- TODO: get rid of contexts manager logic here we shall be able to check the instance annotations -->
+
+		<template:if test="{this>onCallBoundAction}">
+			<Button
+					text="{dataField>Label}"
+					press="{= ${this>onCallBoundAction} + '(\'' + ${dataField>Action} + '\',
+												${$source>/}.getBindingContext(),
+												{ invocationGrouping : \'' + (${dataField>InvocationGrouping/$EnumMember} === 'com.sap.vocabularies.UI.v1.OperationGroupingType/ChangeSet' ? 'ChangeSet' : 'Isolated') + '\',
+												label: \'' + ${dataField>Label} + '\'})'}"
+					enabled="{= ${dataField>Action@Org.OData.Core.V1.OperationAvailable} === null
+												 ? (${dataField>Action/0/$IsBound} !== true
+												 	 ? 'true'
+													 : '{= %{$contexts>/template::' + ${collection>@sapui.name} + '::Table/' + ${dataField>Action} + '}
+													 	 ? %{$contexts>/template::' + ${collection>@sapui.name} + '::Table/' + ${dataField>Action} + '}
+														  :false}')
+												: ${dataField>Action/0/$IsBound} !== true
+													? 'true'
+													: '{= %{$contexts>/template::' + ${collection>@sapui.name} + '::Table/numberOfSelectedContexts} > 0}' }"
+					visible="{= ${dataField>Action@Org.OData.Core.V1.OperationAvailable} === false ? 'false' :'true'}"
+			/>
+		</template:if>
+
+	</mdc:Column>
+
+</core:FragmentDefinition>

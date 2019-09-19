@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>mvc/XMLView</name>
+    <derived/>
+    <documentation>A View defined using (P)XML and HTML markup.
+
+&lt;strong&gt;Note:&lt;/strong&gt;&lt;br&gt;
+Be aware that modifications of the content aggregation of this control are not supported due to technical reasons.
+This includes calls to all content modifying methods like &lt;code&gt;addContent&gt;&lt;/code&gt; etc., but also the implicit
+removal of controls contained by the content aggregation. For example the destruction of a Control via the &lt;code&gt;
+destroy&lt;/code&gt; method. All functions can be called but may not work properly or lead to unexpected side effects.
+
+&lt;strong&gt;Note:&lt;/strong&gt;&lt;br&gt;
+On root level, you can only define content for the default aggregation, e.g. without adding the &lt;code&gt;&amp;lt;content&amp;gt;&lt;/code&gt; tag. If
+you want to specify content for another aggregation of a view like &lt;code&gt;dependents&lt;/code&gt;, place it in a child
+control's dependents aggregation or add it by using {@link sap.ui.core.mvc.XMLView#addDependent}.</documentation>
+    <baseType>sap.ui.core/mvc/View</baseType>
+</control>

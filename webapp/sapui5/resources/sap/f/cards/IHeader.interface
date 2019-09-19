@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<interface xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>cards/IHeader</name>
+    <derived/>
+    <documentation>Marker interface for card headers</documentation>
+    <since>1.62</since>
+</interface>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>semantic/SendMessageAction</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A semantic-specific button, eligible for the &lt;code&gt;sendMessageAction&lt;/code&gt; aggregation of the
+{@link sap.f.semantic.SemanticPage} to be placed in the share menu within its title.</documentation>
+    <since>1.46.0</since>
+    <baseType>sap.f/semantic/SemanticButton</baseType>
+</control>

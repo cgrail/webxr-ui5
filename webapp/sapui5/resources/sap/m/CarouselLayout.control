@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>CarouselLayout</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Applies a &lt;code&gt;sap.m.CarouselLayout&lt;/code&gt; to a provided DOM element or Control.</documentation>
+    <since>1.62</since>
+    <properties>
+        <property name="visiblePagesCount" type="sap.ui.core/int" defaultValue="1" group="Misc">
+            <documentation>Defines how many pages are displayed in the visible area of the &lt;code&gt;Carousel&lt;/code&gt; control.
+Value should be a positive number.
+
+&lt;b&gt;Note:&lt;/b&gt; When this property is set to something different than the default value,
+the &lt;code&gt;loop&lt;/code&gt; property of &lt;code&gt;Carousel&lt;/code&gt; is ignored.</documentation>
+        </property>
+    </properties>
+</control>

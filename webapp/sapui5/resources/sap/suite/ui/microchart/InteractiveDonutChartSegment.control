@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>InteractiveDonutChartSegment</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A donut chart segment.</documentation>
+    <since>1.42.0</since>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="label" type="sap.ui.core/string" group="Misc">
+            <documentation>Displayed text for the segment.</documentation>
+        </property>
+        <property name="selected" type="sap.ui.core/boolean" defaultValue="false" group="Appearance">
+            <documentation>Indicator for the selected state.</documentation>
+        </property>
+        <property name="value" type="sap.ui.core/float" group="Data">
+            <documentation>The value representing a percentage or an absolute value.</documentation>
+        </property>
+        <property name="displayedValue" type="sap.ui.core/string" group="Data">
+            <documentation>The value that is directly displayed on the legend.</documentation>
+        </property>
+        <property name="color" type="sap.m/ValueColor" defaultValue="Neutral" group="Misc" since="1.50.0">
+            <documentation>Determines the color of the segment.</documentation>
+        </property>
+    </properties>
+</control>

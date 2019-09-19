@@ -1,0 +1,7 @@
+/*
+ * ! SAP UI development toolkit for HTML5 (SAPUI5)
+
+        (c) Copyright 2009-2015 SAP SE. All rights reserved
+    
+ */
+sap.ui.define(["jquery.sap.global","sap/ui/core/Element"],function(q,S){"use strict";var E=S.extend("sap.ui.vtm.Extension",{metadata:{properties:{enabled:{type:"boolean",defaultValue:true,bindable:true}},events:{enabledChanged:{},initialized:{}}},constructor:function(i,s){S.apply(this,arguments);var f=this.setParent;this.setParent=function(p,a,b){var r=f.apply(this,arguments);this.fireEvent("parentSet",{parent:p});return r;}.bind(this);},init:function(){this.getVtmPromise().then(function(v){this._vtm=v;this.initialize(v);this.fireInitialized();}.bind(this));},initialize:function(v){throw"initialize() needs to be redefined";},setEnabled:function(e){this.setProperty("enabled",e);this.fireEnabledChanged();},applyPanelHandler:function(p){var a=this._vtm.getPanels();a.forEach(p);this._vtm.attachPanelAdded(function(b){p(b.getParameter("panel"));});},getVtmPromise:function(){return new Promise(function(r,a){this.attachEventOnce("parentSet",function(e){var p=e.getParameter("parent");if(p.getMetadata().getName()==="sap.ui.vtm.Vtm"){sap.ui.vtm.measure(this,"getVtmPromise resolve",function(){r(p);});}else{sap.ui.vtm.measure(this,"getVtmPromise reject",function(){a(p);});}}.bind(this));}.bind(this));},getInitializedPromise:function(){return new Promise(function(r,a){this.attachInitialized(function(e){sap.ui.vtm.measure(this,"getInitializedPromise resolve",function(){r();});}.bind(this));}.bind(this));}});return E;});

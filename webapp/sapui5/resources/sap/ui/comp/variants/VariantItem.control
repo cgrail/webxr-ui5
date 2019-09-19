@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>variants/VariantItem</name>
+    <derived/>
+    <documentation>The VariantItem class describes a variant item.</documentation>
+    <baseType>sap.ui.core/Item</baseType>
+    <properties>
+        <property name="executeOnSelection" type="sap.ui.core/boolean" defaultValue="false" group="Misc" since="1.26.0">
+            <documentation>Attribute for usage in &lt;code&gt;SmartFilterBar&lt;/code&gt;</documentation>
+        </property>
+        <property name="readOnly" type="sap.ui.core/boolean" defaultValue="false" group="Misc" since="1.26.0">
+            <documentation>If set to &lt;code&gt;false&lt;/code&gt;, the user is allowed to change the item's data</documentation>
+        </property>
+        <property name="lifecycleTransportId" type="sap.ui.core/string" group="Misc" since="1.26.0">
+            <documentation>Identifier of the transport object the variant is assigned to.</documentation>
+        </property>
+        <property name="global" type="sap.ui.core/boolean" group="Misc" since="1.26.0">
+            <documentation>Indicator if a variant is visible for all users.</documentation>
+        </property>
+        <property name="lifecyclePackage" type="sap.ui.core/string" group="Misc" since="1.26.0">
+            <documentation>ABAP package the variant is assigned to. Used for transport functionality.</documentation>
+        </property>
+        <property name="namespace" type="sap.ui.core/string" group="Misc" since="1.26.0">
+            <documentation>Variant namespace</documentation>
+        </property>
+        <property name="accessOptions" type="sap.ui.core/string" group="Misc" since="1.26.0">
+            <documentation>Flags for a variant to indicate why it might be read-only.</documentation>
+            <deprecation since="1.28.0">Replaced by property &lt;code&gt;labelReadOnly&lt;/code&gt;</deprecation>
+        </property>
+        <property name="labelReadOnly" type="sap.ui.core/boolean" defaultValue="false" group="Misc" since="1.26.0">
+            <documentation>Indicates if the variant title can be changed.</documentation>
+        </property>
+        <property name="author" type="sap.ui.core/string" group="Misc" since="1.38.0">
+            <documentation>Author of the variant</documentation>
+        </property>
+        <property name="favorite" type="sap.ui.core/boolean" defaultValue="false" group="Misc" since="1.50.0">
+            <documentation>Indicates if favorites can be created.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="change" allowPreventDefault="false">
+            <documentation>This event is fired when one of the properties is changed.</documentation>
+            <parameters>
+                <parameter name="propertyName" type="sap.ui.core/string">
+                    <documentation>Name of the changed property</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+</control>

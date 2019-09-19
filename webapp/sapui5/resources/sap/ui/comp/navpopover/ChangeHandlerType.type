@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>navpopover/ChangeHandlerType</name>
+    <derived/>
+    <documentation>Type of change handler type for link personalization.</documentation>
+    <enumeration>
+        <value name="addLink">
+            <documentation>Change handler creating a change for an added link.</documentation>
+        </value>
+        <value name="removeLink">
+            <documentation>Change handler creating a change for a removed link.</documentation>
+        </value>
+        <value name="moveLink">
+            <documentation>Change handler creating a change for a moved link.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>P13nConditionPanel</name>
+    <derived/>
+    <documentation>The ConditionPanel Control will be used to implement the Sorting, Filtering and Grouping panel of the new Personalization dialog.</documentation>
+    <since>1.26.0</since>
+    <developmentState state="experimental" since="1.26">!!! THIS CONTROL IS ONLY FOR INTERNAL USE !!!</developmentState>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="maxConditions" type="sap.ui.core/string" defaultValue="-1" group="Misc">
+            <documentation>defines the max number of conditions on the ConditionPanel</documentation>
+        </property>
+        <property name="exclude" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>exclude options for filter</documentation>
+        </property>
+        <property name="containerQuery" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>defines if the mediaQuery or a ContainerResize will be used for layout update.
+When the &lt;code&gt;P13nConditionPanel&lt;/code&gt; is used on a dialog the property should be set to &lt;code&gt;true&lt;/code&gt;!</documentation>
+        </property>
+        <property name="autoAddNewRow" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>adds initial a new empty condition row</documentation>
+        </property>
+        <property name="disableFirstRemoveIcon" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>makes the remove icon on the first condition row disabled when only one condition exist.</documentation>
+        </property>
+        <property name="alwaysShowAddIcon" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>makes the Add icon visible on each condition row. If is set to false the Add is only visible at the end and you can only append a
+new condition.</documentation>
+        </property>
+        <property name="usePrevConditionSetting" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>new added condition use the settings from the previous condition as default.</documentation>
+        </property>
+        <property name="autoReduceKeyFieldItems" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>KeyField value can only be selected once. When you set the property to &lt;code&gt;true&lt;/code&gt; the ConditionPanel will automatically offers on the
+KeyField drop down only the keyFields which are not used. The default behavior is that in each keyField dropdown all keyfields are
+listed.</documentation>
+        </property>
+        <property name="layoutMode" type="sap.ui.core/string" group="Misc">
+            <documentation>can be used to control the layout behavior. Default is "" which will automatically change the layout. With "Desktop", "Table"
+or "Phone" you can set a fixed layout.</documentation>
+        </property>
+        <property name="showLabel" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>show additional labels in the condition</documentation>
+        </property>
+        <property name="displayFormat" type="sap.ui.core/string" group="Misc">
+            <documentation>This represents the displayFormat of the condition Values. With the value "UpperCase" the entered value of the condition will be
+converted to upperCase.</documentation>
+        </property>
+        <property name="validationExecutor" type="sap.ui.core/object" group="Misc">
+            <documentation>Calls the validation listener tbd...</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="dataChange" allowPreventDefault="false">
+            <documentation>Workaround for updating the binding</documentation>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="content" type="sap.ui.core/Control" cardinality="0..n" visibility="hidden">
+            <documentation>Content for the ConditionPanel. This aggregation is not public!</documentation>
+        </aggregation>
+    </aggregations>
+</control>

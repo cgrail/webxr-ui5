@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>BusyIndicator</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Informs the user about an ongoing operation.
+&lt;h3&gt;Overview&lt;/h3&gt;
+The busy indicator implies that an action is taking place within a single control.
+You can set the size of the icon, the text, but also define a custom icon to be used instead.
+&lt;h3&gt;Usage&lt;/h3&gt;
+&lt;h4&gt;When to use&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;The user needs to be able to cancel the operation.&lt;/li&gt;
+&lt;li&gt;Only part of the application or a particular control is affected.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;When not to use&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;The operation takes less than one second.&lt;/li&gt;
+&lt;li&gt;You need to block the screen and prevent the user from starting another activity. In this case, use the {@link sap.m.BusyDialog busy dialog}.&lt;/li&gt;
+&lt;li&gt;Do not change the mouse cursor to indicate the ongoing operation.&lt;/li&gt;
+&lt;li&gt;Do not show multiple busy indicators at once&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="text" type="sap.ui.core/string" defaultValue="" group="Data">
+            <documentation>Defines text to be displayed below the busy indicator.
+It can be used to inform the user of the current operation.</documentation>
+        </property>
+        <property name="textDirection" type="sap.ui.core/TextDirection" defaultValue="Inherit" group="Appearance">
+            <documentation>Options for the text direction are RTL and LTR.
+Alternatively, the control can inherit the text direction from its parent container.</documentation>
+        </property>
+        <property name="customIcon" type="sap.ui.core/URI" defaultValue="" group="Misc">
+            <documentation>Icon URL if an icon is used as the busy indicator.</documentation>
+        </property>
+        <property name="customIconRotationSpeed" type="sap.ui.core/int" defaultValue="1000" group="Appearance">
+            <documentation>Defines the rotation speed of the given image.
+If a .gif is used, the speed has to be set to 0.
+The unit is in ms.
+&lt;b&gt;Note:&lt;/b&gt; Values are considered valid when greater than or equal to 0.
+If invalid value is provided the speed defaults to 0.</documentation>
+        </property>
+        <property name="customIconDensityAware" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>If this is set to false, the src image will be loaded directly without attempting
+to fetch the density perfect image for high density device.
+By default, this is set to true but then one or more requests are sent to the server,
+trying to get the density perfect version of the specified image.
+If bandwidth is the key for the application, set this value to false.</documentation>
+        </property>
+        <property name="customIconWidth" type="sap.ui.core/CSSSize" defaultValue="44px" group="Appearance">
+            <documentation>Width of the provided icon. By default 44px are used.</documentation>
+        </property>
+        <property name="customIconHeight" type="sap.ui.core/CSSSize" defaultValue="44px" group="Appearance">
+            <documentation>Height of the provided icon. By default 44px are used.</documentation>
+        </property>
+        <property name="size" type="sap.ui.core/CSSSize" defaultValue="1rem" group="Misc">
+            <documentation>Defines the size of the busy indicator.
+The animation consists of three circles, each of which will be this size.
+Therefore the total width of the control amounts to three times the given size.</documentation>
+        </property>
+        <property name="design" type="sap.ui.core/string" defaultValue="auto" group="Appearance">
+            <documentation>Setting this property will not have any effect on the appearance of the BusyIndicator
+in versions greater than or equal to 1.32.1</documentation>
+            <deprecation since="1.32.1"></deprecation>
+        </property>
+    </properties>
+    <associations>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n" since="1.27.0">
+            <documentation>Association to controls / ids which label this control (see WAI-ARIA attribute aria-labelledby).</documentation>
+        </association>
+    </associations>
+</control>

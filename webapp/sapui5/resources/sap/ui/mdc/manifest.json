@@ -1,0 +1,77 @@
+{
+  "_version": "1.9.0",
+  "sap.app": {
+    "id": "sap.ui.mdc",
+    "type": "library",
+    "embeds": [],
+    "applicationVersion": {
+      "version": "1.64.0"
+    },
+    "title": "UI5 library: sap.ui.mdc",
+    "description": "UI5 library: sap.ui.mdc",
+    "ach": "CA-UI5-CMP",
+    "resources": "resources.json",
+    "offline": true
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "supportedThemes": [
+      "base",
+      "sap_belize",
+      "sap_belize_plus",
+      "sap_bluecrystal"
+    ]
+  },
+  "sap.ui5": {
+    "dependencies": {
+      "minUI5Version": "1.64",
+      "libs": {
+        "sap.ui.core": {
+          "minVersion": "1.64.0"
+        },
+        "sap.m": {
+          "minVersion": "1.64.0"
+        }
+      }
+    },
+    "library": {
+      "i18n": "messagebundle.properties",
+      "content": {
+        "controls": [
+          "sap.ui.mdc.Chart",
+          "sap.ui.mdc.Table",
+          "sap.ui.mdc.base.Field",
+          "sap.ui.mdc.base.FieldBase",
+          "sap.ui.mdc.base.FilterField",
+          "sap.ui.mdc.odata.v4.microchart.MicroChart",
+          "sap.ui.mdc.base.info.Panel",
+          "sap.ui.mdc.base.filterbar.FilterBar"
+        ],
+        "elements": [
+          "sap.ui.mdc.Column",
+          "sap.ui.mdc.chart.MeasureItem",
+          "sap.ui.mdc.chart.DimensionItem",
+          "sap.ui.mdc.base.FieldHelpBase",
+          "sap.ui.mdc.base.FieldInfoBase",
+          "sap.ui.mdc.base.CustomFieldHelp",
+          "sap.ui.mdc.base.CustomFieldInfo",
+          "sap.ui.mdc.base.ListFieldHelp",
+          "sap.ui.mdc.base.FieldValueHelp",
+          "sap.ui.mdc.base.FieldValueHelpContentWrapperBase",
+          "sap.ui.mdc.base.FieldValueHelpMTableWrapper",
+          "sap.ui.mdc.base.state.SelectOption",
+          "sap.ui.mdc.base.state.SortOrder",
+          "sap.ui.mdc.base.state.UiState"
+        ],
+        "types": [
+          "sap.ui.mdc.TableType",
+          "sap.ui.mdc.SelectionMode",
+          "sap.ui.mdc.TableRowAction",
+          "sap.ui.mdc.FieldDisplay",
+          "sap.ui.mdc.EditMode"
+        ],
+        "interfaces": []
+      }
+    }
+  }
+}

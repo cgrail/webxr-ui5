@@ -1,0 +1,56 @@
+{
+  "_version": "1.9.0",
+  "sap.app": {
+    "id": "sap.ui.richtexteditor",
+    "type": "library",
+    "embeds": [],
+    "applicationVersion": {
+      "version": "1.64.0"
+    },
+    "title": "A rich text editor (RTE) control.",
+    "description": "A rich text editor (RTE) control. Requires installation of an additional rich text editor library.",
+    "ach": "CA-UI5-CTR-RIL",
+    "resources": "resources.json",
+    "offline": true
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "supportedThemes": [
+      "base",
+      "sap_belize",
+      "sap_belize_hcb",
+      "sap_belize_hcw",
+      "sap_belize_plus",
+      "sap_bluecrystal",
+      "sap_hcb",
+      "sap_ux"
+    ]
+  },
+  "sap.ui5": {
+    "dependencies": {
+      "minUI5Version": "1.64",
+      "libs": {
+        "sap.ui.core": {
+          "minVersion": "1.64.0"
+        }
+      }
+    },
+    "library": {
+      "i18n": "messagebundle.properties",
+      "content": {
+        "controls": [
+          "sap.ui.richtexteditor.RichTextEditor",
+          "sap.ui.richtexteditor.ToolbarWrapper",
+          "sap.ui.richtexteditor.RTESplitButton"
+        ],
+        "elements": [],
+        "types": [
+          "sap.ui.richtexteditor.EditorType"
+        ],
+        "interfaces": [
+          "sap.ui.richtexteditor.IToolbar"
+        ]
+      }
+    }
+  }
+}

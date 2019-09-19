@@ -1,0 +1,408 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": ".theming",
+			"theme": "base"
+		},
+		{
+			"name": "AnalyticMap.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "Cluster.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "DetailWindow.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "GeoMap.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "VBI.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "Viewport.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "fonts/VBI-Icons.eot",
+			"theme": "base"
+		},
+		{
+			"name": "fonts/VBI-Icons.ttf",
+			"theme": "base"
+		},
+		{
+			"name": "fonts/VBI-Icons.woff",
+			"theme": "base"
+		},
+		{
+			"name": "fonts/VBI-Icons.woff2",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Blue_Pin.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Green_Pin.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Grey_Pin.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Hidden.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Orange_Pin.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Pin_Blue.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Pin_Blue_0_Icon.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Pin_Blue_1-digit.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Pin_Blue_1_Icon.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Pin_Blue_3-digit_space.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Pin_Blue_5-digit_space.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Pin_Green.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Pin_Green_0_Icon.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Pin_Green_1-digit.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Pin_Green_1_Icon.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Pin_Green_3-digit_space.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Pin_Green_5-digit_space.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Pin_Grey.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Pin_Grey_0_Icon.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Pin_Grey_1-digit.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Pin_Grey_1_Icon.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Pin_Grey_3-digit_space.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Pin_Grey_5-digit_space.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Pin_Hidden.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Pin_Orange.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Pin_Orange_0_Icon.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Pin_Orange_1-digit.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Pin_Orange_1_Icon.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Pin_Orange_3-digit_space.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Pin_Orange_5-digit_space.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Pin_Red.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Pin_Red_0_Icon.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Pin_Red_1-digit.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Pin_Red_1_Icon.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Pin_Red_3-digit_space.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Pin_Red_5-digit_space.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/Red_Pin.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/sapvisualbusiness.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/scrollline.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Blue_Pin.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Green_Pin.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Grey_Pin.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Hidden.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Orange_Pin.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Pin_Blue.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Pin_Blue_0_Icon.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Pin_Blue_1-digit.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Pin_Blue_1_Icon.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Pin_Blue_3-digit_space.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Pin_Blue_5-digit_space.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Pin_Green.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Pin_Green_0_Icon.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Pin_Green_1-digit.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Pin_Green_1_Icon.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Pin_Green_3-digit_space.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Pin_Green_5-digit_space.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Pin_Grey.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Pin_Grey_0_Icon.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Pin_Grey_1-digit.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Pin_Grey_1_Icon.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Pin_Grey_3-digit_space.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Pin_Grey_5-digit_space.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Pin_Hidden.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Pin_Orange.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Pin_Orange_0_Icon.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Pin_Orange_1-digit.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Pin_Orange_1_Icon.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Pin_Orange_3-digit_space.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Pin_Orange_5-digit_space.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Pin_Red.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Pin_Red_0_Icon.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Pin_Red_1-digit.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Pin_Red_1_Icon.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Pin_Red_3-digit_space.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Pin_Red_5-digit_space.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/Pin_images.json",
+			"theme": "base"
+		},
+		{
+			"name": "img/Red_Pin.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/sapvisualbusiness.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/scrollline.png",
+			"theme": "base"
+		},
+		{
+			"name": "library-RTL-dbg.css",
+			"isDebug": true,
+			"theme": "base"
+		},
+		{
+			"name": "library-RTL.css",
+			"theme": "base"
+		},
+		{
+			"name": "library-dbg.css",
+			"isDebug": true,
+			"theme": "base"
+		},
+		{
+			"name": "library-parameters.json",
+			"theme": "base"
+		},
+		{
+			"name": "library.css",
+			"theme": "base"
+		},
+		{
+			"name": "library.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "library.source.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "shared.less",
+			"designtime": true,
+			"theme": "base"
+		}
+	]
+}

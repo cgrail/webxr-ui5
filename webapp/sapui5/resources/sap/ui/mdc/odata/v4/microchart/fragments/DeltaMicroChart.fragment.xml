@@ -1,0 +1,17 @@
+<core:FragmentDefinition
+	xmlns="sap.suite.ui.microchart"
+	xmlns:core="sap.ui.core"
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1">
+	<template:with path="deltaMicroChart>MeasureAttributes/0/" var="MeasureAttribute">
+		<DeltaMicroChart class="sapUiSmallMargin"
+			value1="{MeasureAttribute>Measure@@.MODEL.value}"
+			value2="{MeasureAttribute>DataPoint/$AnnotationPath/TargetValue@@.MODEL.value}"
+			displayValue1="{MeasureAttribute>Measure@@.MODEL.value}"
+			displayValue2="{MeasureAttribute>DataPoint/$AnnotationPath/TargetValue@@.MODEL.value}"
+			title1="{MeasureAttribute>Measure@@.MODEL.value}"
+			title2="{MeasureAttribute>DataPoint/$AnnotationPath/TargetValue@@.MODEL.value}"
+			color="{parts:[{path: 'MeasureAttribute>DataPoint/$AnnotationPath/'},{path:'MeasureAttribute>Measure/'}],
+				formatter: 'sap.ui.mdc.odata.v4.microchart.MicroChart._helper.getMicroChartColor'}">
+		</DeltaMicroChart>
+	</template:with>
+</core:FragmentDefinition>

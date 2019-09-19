@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<interface xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>mvc/IControllerExtension</name>
+    <derived/>
+    <documentation>Marker interface for a ControllerExtension.</documentation>
+    <since>1.56.0</since>
+</interface>

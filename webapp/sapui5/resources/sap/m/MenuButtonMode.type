@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>MenuButtonMode</name>
+    <derived/>
+    <documentation>Different modes for a MenuButton (predefined types).</documentation>
+    <since>1.38.0</since>
+    <enumeration>
+        <value name="Regular">
+            <documentation>Default regular type (Menu button appears as a regular button, pressing opens a menu)</documentation>
+        </value>
+        <value name="Split">
+            <documentation>Split type (Menu button appears as a split button, pressing fires the default action a menu,
+pressing the arrow part opens a menu)</documentation>
+        </value>
+    </enumeration>
+</simple-type>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartmicrochart/SmartComparisonMicroChart</name>
+    <derived/>
+    <documentation>The SmartComparisonMicroChart control creates a ComparisonMicroChart based on OData metadata and the configuration
+       specified. The &lt;code&gt;entitySet&lt;/code&gt; property is required to use the control.
+       The entity set you specify in this property is used to feetch OData metadata and to generate the micro chart's UI.
+       This property can also be used to fetch actual data.&lt;br&gt;
+       &lt;b&gt;&lt;i&gt;Notes:&lt;/i&gt;&lt;/b&gt;&lt;br&gt;
+       &lt;ol&gt;&lt;li&gt;Most properties are not dynamic and cannot be changed, once the control has been
+       initialized.&lt;/li&gt;&lt;li&gt;
+       SmartComparisonMicroChart does not have its own ChartType/Enum annotation.
+       This means that ChartType annotation is not specified and SmartComparisonMicroChart cannot be created with a &lt;code&gt;SmartMicroChart&lt;/code&gt;.&lt;/li&gt;&lt;/ol&gt;</documentation>
+    <since>1.58</since>
+    <baseType>sap.ui.comp/smartmicrochart/SmartMicroChartBase</baseType>
+</control>

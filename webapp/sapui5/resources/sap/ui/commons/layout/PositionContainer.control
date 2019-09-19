@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>layout/PositionContainer</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Is used to specify the position of a control in the AbsoluteLayout</documentation>
+    <deprecation since="1.38"></deprecation>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="top" type="sap.ui.core/CSSSize" group="Dimension">
+            <documentation>Defines the distance to the top of the layout (as specified in HTML)</documentation>
+        </property>
+        <property name="bottom" type="sap.ui.core/CSSSize" group="Dimension">
+            <documentation>Defines the distance to the bottom of the layout (as specified in HTML)</documentation>
+        </property>
+        <property name="left" type="sap.ui.core/CSSSize" group="Dimension">
+            <documentation>Defines the distance to the left of the layout (as specified in HTML)</documentation>
+        </property>
+        <property name="right" type="sap.ui.core/CSSSize" group="Dimension">
+            <documentation>Defines the distance to the right of the layout (as specified in HTML)</documentation>
+        </property>
+        <property name="centerHorizontally" type="sap.ui.core/boolean" defaultValue="false" group="Dimension">
+            <documentation>Indicates whether this container shall be centered horizontally within the AbsoluteLayout area.
+The values of the attributes left and right are ignored when this feature is activated.</documentation>
+        </property>
+        <property name="centerVertically" type="sap.ui.core/boolean" defaultValue="false" group="Dimension">
+            <documentation>Indicates whether this container should be centered vertically within the AbsoluteLayout area.
+The values of the attributes top and bottom are ignored when this feature is activated.</documentation>
+        </property>
+    </properties>
+    <aggregations default="control">
+        <aggregation name="control" type="sap.ui.core/Control" cardinality="0..1">
+            <documentation>Child control of the position container</documentation>
+        </aggregation>
+    </aggregations>
+    <methods>
+        <method name="updatePosition" type="sap.ui.core/void">
+            <documentation>Updates the position properties of the container according to the given position in JSON style.</documentation>
+            <parameters>
+                <parameter name="pos" type="sap.ui.core/object">
+                    <documentation>JSON-like object which defines the position of the child control in the absolute layout. The object is expected</documentation>
+                </parameter>
+            </parameters>
+        </method>
+    </methods>
+</control>

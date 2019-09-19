@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartmicrochart/SmartRadialMicroChart</name>
+    <derived/>
+    <documentation>The SmartRadialMicroChart control creates a &lt;code&gt;sap.suite.ui.microchart.RadialMicroChart&lt;/code&gt;
+based on OData metadata and the configuration specified by &lt;code&gt;mSettings&lt;/code&gt;.
+The entitySet attribute must be specified to use the control. This attribute is used to fetch metadata and
+annotation information from the given default OData model. Based on this, the RadialMicroChart UI
+is created.
+&lt;br&gt;
+&lt;b&gt;&lt;i&gt;Note:&lt;/i&gt;&lt;/b&gt;&lt;br&gt;
+Most of the attributes/properties are not dynamic and cannot be changed once the control has been
+initialized.</documentation>
+    <since>1.42.0</since>
+    <baseType>sap.ui.comp/smartmicrochart/SmartMicroChartBase</baseType>
+    <properties>
+        <property name="enableAutoBinding" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>If set to &lt;code&gt;true&lt;/code&gt;, this enables automatic binding of the chart using the chartBindingPath (if it exists)
+property.</documentation>
+        </property>
+    </properties>
+    <associations>
+        <association name="freeText" type="sap.m/Label" cardinality="0..1">
+            <documentation>If the associated control is provided, its &lt;code&gt;text&lt;/code&gt; property is set to
+the free text provided by annotations. The Value property of the DataPoint
+annotation should be annotated with this free text. The Label annotation from the
+OData Common vocabulary can be used.</documentation>
+        </association>
+    </associations>
+</control>

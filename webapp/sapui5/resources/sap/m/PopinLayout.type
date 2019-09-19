@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>PopinLayout</name>
+    <derived/>
+    <documentation>Defines the layout options of the table popins.</documentation>
+    <since>1.52</since>
+    <enumeration>
+        <value name="Block" since="1.52">
+            <documentation>Sets block layout for rendering the table popins. The elements inside the popin container are rendered one below the other.
+&lt;b&gt;Note:&lt;/b&gt; This option enables the former rendering behavior of the table popins.</documentation>
+        </value>
+        <value name="GridSmall" since="1.52">
+            <documentation>Sets grid layout for rendering the table popins.
+The grid width for each table popin is small, hence this allows more content to be rendered in a single popin row.
+This value defines small grid width for the table popins.
+
+&lt;b&gt;Note:&lt;/b&gt; This feature is currently not supported with Internet Explorer and Edge (version lower than 16) browsers.</documentation>
+        </value>
+        <value name="GridLarge" since="1.52">
+            <documentation>Sets grid layout for rendering the table popins.
+The grid width for each table popin is comparatively larger than &lt;code&gt;GridSmall&lt;/code&gt;, hence this allows less content to be rendered in a single popin row.
+
+&lt;b&gt;Note:&lt;/b&gt; This feature is currently not supported with Internet Explorer and Edge (version lower than 16) browsers.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

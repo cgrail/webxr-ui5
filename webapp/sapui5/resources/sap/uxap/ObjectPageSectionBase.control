@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ObjectPageSectionBase</name>
+    <derived/>
+    <documentation>An abstract container for sections and subsections in the {@link sap.uxap.ObjectPageLayout}.</documentation>
+    <since>1.26</since>
+    <abstract/>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="title" type="sap.ui.core/string" group="Appearance">
+            <documentation>Section Title</documentation>
+        </property>
+        <property name="titleLevel" type="sap.ui.core/TitleLevel" defaultValue="Auto" group="Appearance" since="1.44.0">
+            <documentation>Determines the ARIA level of the &lt;code&gt;ObjectPageSectionBase&lt;/code&gt; title.
+The ARIA level is used by assisting technologies, such as screen readers, to create a hierarchical site map for faster navigation.
+
+&lt;b&gt;Note:&lt;/b&gt; Defining a &lt;code&gt;titleLevel&lt;/code&gt; will add &lt;code&gt;aria-level&lt;/code&gt; attribute from 1 to 6,
+instead of changing the &lt;code&gt;ObjectPageSectionBase&lt;/code&gt; title HTML tag from H1 to H6.
+&lt;br&gt;For example: if &lt;code&gt;titleLevel&lt;/code&gt; is &lt;code&gt;TitleLevel.H1&lt;/code&gt;,
+it will result as aria-level of 1 added to the &lt;code&gt;ObjectPageSectionBase&lt;/code&gt; title.</documentation>
+        </property>
+        <property name="visible" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>Invisible ObjectPageSectionBase are not rendered</documentation>
+        </property>
+        <property name="importance" type="sap.uxap/Importance" defaultValue="High" group="Behavior" since="1.32.0">
+            <documentation>Determines whether the section will be hidden on low resolutions.</documentation>
+        </property>
+    </properties>
+    <aggregations>
+        <aggregation name="customAnchorBarButton" type="sap.m/Button" cardinality="0..1">
+            <documentation>The custom button that will provide a link to the section in the ObjectPageLayout anchor bar.
+This button will be used as a custom template to be into the ObjectPageLayout anchorBar area, therefore property changes happening on this button template after the first rendering won't affect the actual button copy used in the anchorBar.
+
+If you want to change some of the button properties, you would need to bind them to a model.</documentation>
+        </aggregation>
+    </aggregations>
+    <methods>
+        <method name="connectToModels" type="sap.ui.core/void">
+            <documentation>Explicitly ask to connect to the UI5 model tree</documentation>
+        </method>
+    </methods>
+</control>

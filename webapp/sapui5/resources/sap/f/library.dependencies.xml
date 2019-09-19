@@ -1,0 +1,1639 @@
+<?xml version="1.0" ?>
+<library  version="2.0" name="sap.f">
+  <module name="sap/f/Avatar.js" size="13258" compressedSize="4967">
+    <description>Provides control sap.f.Avatar.</description>
+    <requires>
+      <module name="sap/base/Log.js"/>
+      <module name="sap/f/AvatarRenderer.js"/>
+      <module name="sap/f/library.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/core/IconPool.js"/>
+      <module name="sap/ui/events/KeyCodes.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/AvatarRenderer.js" size="4135" compressedSize="1914">
+    <description>Provides default renderer for control sap.f.Avatar</description>
+    <requires>
+      <module name="sap/base/security/encodeCSS.js"/>
+      <module name="sap/f/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/Card.js" size="3741" compressedSize="754">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/CardRenderer.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/CardContainer.js" size="7641" compressedSize="4163">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/CardContainerRenderer.js"/>
+      <module name="sap/ui/Device.js"/>
+      <module name="sap/ui/base/ManagedObjectObserver.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/core/ResizeHandler.js"/>
+      <module name="sap/ui/core/delegate/ItemNavigation.js"/>
+      <module name="sap/ui/layout/cssgrid/VirtualGrid.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/CardContainerRenderer.js" size="1415" compressedSize="645">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/CardItemLayoutData.js" size="1235" compressedSize="364">
+    <description>Provides element sap.f.CardItemLayoutData</description>
+    <requires>
+      <module name="sap/ui/core/LayoutData.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/CardRenderer.js" size="2361" compressedSize="1073">
+    <description>Provides default renderer for control sap.f.Card</description>
+    <requires>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/DynamicPage.js" size="64865" compressedSize="26288">
+    <description>Provides control sap.f.DynamicPage.</description>
+    <requires>
+      <module name="sap/base/Log.js"/>
+      <module name="sap/f/DynamicPageRenderer.js"/>
+      <module name="sap/f/DynamicPageTitle.js"/>
+      <module name="sap/f/library.js"/>
+      <module name="sap/m/ScrollBar.js"/>
+      <module name="sap/ui/Device.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/core/ResizeHandler.js"/>
+      <module name="sap/ui/core/delegate/ScrollEnablement.js"/>
+      <module name="sap/ui/core/library.js"/>
+      <module name="sap/ui/dom/getScrollbarSize.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/DynamicPageAccessibleLandmarkInfo.js" size="4023" compressedSize="823">
+    <description>Provides control sap.f.DynamicPageAccessibleLandmarkInfo.</description>
+    <requires>
+      <module name="sap/f/library.js"/>
+      <module name="sap/ui/core/Element.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/DynamicPageHeader.js" size="12498" compressedSize="4800">
+    <description>Provides control sap.f.DynamicPageHeader.</description>
+    <requires>
+      <module name="sap/f/DynamicPageHeaderRenderer.js"/>
+      <module name="sap/f/library.js"/>
+      <module name="sap/m/Button.js"/>
+      <module name="sap/m/ToggleButton.js"/>
+      <module name="sap/ui/Device.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/DynamicPageHeaderRenderer.js" size="2229" compressedSize="978">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/DynamicPageRenderer.js" size="5310" compressedSize="2746">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/ui/Device.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/DynamicPageTitle.js" size="52209" compressedSize="19918">
+    <description>Provides control sap.f.DynamicPageTitle.</description>
+    <requires>
+      <module name="sap/base/Log.js"/>
+      <module name="sap/f/DynamicPageTitleRenderer.js"/>
+      <module name="sap/f/library.js"/>
+      <module name="sap/m/Button.js"/>
+      <module name="sap/m/OverflowToolbar.js"/>
+      <module name="sap/m/Toolbar.js"/>
+      <module name="sap/m/ToolbarSeparator.js"/>
+      <module name="sap/m/library.js"/>
+      <module name="sap/ui/Device.js"/>
+      <module name="sap/ui/base/ManagedObjectObserver.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/core/HTML.js"/>
+      <module name="sap/ui/core/Icon.js"/>
+      <module name="sap/ui/core/InvisibleText.js"/>
+      <module name="sap/ui/events/KeyCodes.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/DynamicPageTitleRenderer.js" size="9921" compressedSize="5529">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/FlexibleColumnLayout.js" size="75515" compressedSize="20951">
+    <description>Provides control sap.f.FlexibleColumnLayout.</description>
+    <requires>
+      <module name="sap/base/assert.js"/>
+      <module name="sap/f/FlexibleColumnLayoutRenderer.js"/>
+      <module name="sap/f/library.js"/>
+      <module name="sap/m/Button.js"/>
+      <module name="sap/m/NavContainer.js"/>
+      <module name="sap/m/library.js"/>
+      <module name="sap/ui/Device.js"/>
+      <module name="sap/ui/core/Configuration.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/core/ResizeHandler.js"/>
+      <module name="sap/ui/thirdparty/jquery.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/FlexibleColumnLayoutRenderer.js" size="3607" compressedSize="2207">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/m/library.js"/>
+      <module name="sap/ui/Device.js"/>
+      <module name="sap/ui/core/InvisibleText.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/FlexibleColumnLayoutSemanticHelper.js" size="19407" compressedSize="4917">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/base/assert.js"/>
+      <module name="sap/f/FlexibleColumnLayout.js"/>
+      <module name="sap/f/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/GridList.js" size="6685" compressedSize="1955">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/GridListRenderer.js"/>
+      <module name="sap/m/ListBase.js"/>
+      <module name="sap/ui/base/ManagedObjectObserver.js"/>
+      <module name="sap/ui/layout/cssgrid/GridItemLayoutData.js"/>
+      <module name="sap/ui/layout/cssgrid/GridLayoutDelegate.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/GridListRenderer.js" size="1509" compressedSize="742">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/m/ListBaseRenderer.js"/>
+      <module name="sap/ui/core/Renderer.js"/>
+      <module name="sap/ui/layout/cssgrid/GridLayoutBase.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/ShellBar.js" size="13129" compressedSize="7015">
+    <description>Provides control sap.f.ShellBar</description>
+    <requires>
+      <module name="sap/f/ShellBarRenderer.js"/>
+      <module name="sap/f/shellBar/Accessibility.js"/>
+      <module name="sap/f/shellBar/AdditionalContentSupport.js"/>
+      <module name="sap/f/shellBar/Factory.js"/>
+      <module name="sap/f/shellBar/ResponsiveHandler.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/ShellBarRenderer.js" size="1040" compressedSize="740">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/ui/core/Renderer.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/cards/ActionEnablement.js" size="7736" compressedSize="3648">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/base/Log.js"/>
+      <module name="sap/f/cards/BindingResolver.js"/>
+      <module name="sap/ui/base/ManagedObject.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/cards/AnalyticalContent.js" size="6106" compressedSize="2640">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/base/Log.js"/>
+      <module name="sap/f/cards/BaseContent.js"/>
+      <module name="sap/viz/ui5/controls/VizFrame.js"/>
+      <module name="sap/viz/ui5/controls/common/feeds/FeedItem.js"/>
+      <module name="sap/viz/ui5/data/FlattenedDataset.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/cards/BaseContent.js" size="6409" compressedSize="3409">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/base/Log.js"/>
+      <module name="sap/f/cards/Data.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/model/json/JSONModel.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/cards/BindingResolver.js" size="4073" compressedSize="1305">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/base/Log.js"/>
+      <module name="sap/ui/base/ManagedObject.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/cards/ComponentContent.js" size="1615" compressedSize="688">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/cards/BaseContent.js"/>
+      <module name="sap/ui/core/ComponentContainer.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/cards/Data.js" size="1528" compressedSize="902">
+    <description>Card request handler @private</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/base/Log.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/cards/Header.js" size="7118" compressedSize="2969">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/Avatar.js"/>
+      <module name="sap/f/cards/ActionEnablement.js"/>
+      <module name="sap/f/cards/Data.js"/>
+      <module name="sap/f/cards/HeaderRenderer.js"/>
+      <module name="sap/f/library.js"/>
+      <module name="sap/m/Text.js"/>
+      <module name="sap/ui/Device.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/model/json/JSONModel.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/cards/HeaderRenderer.js" size="1717" compressedSize="1048">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/cards/ListContent.js" size="5996" compressedSize="2501">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/cards/ActionEnablement.js"/>
+      <module name="sap/f/cards/BaseContent.js"/>
+      <module name="sap/m/List.js"/>
+      <module name="sap/m/StandardListItem.js"/>
+      <module name="sap/ui/base/ManagedObject.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/cards/NumericHeader.js" size="13751" compressedSize="4877">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/cards/ActionEnablement.js"/>
+      <module name="sap/f/cards/Data.js"/>
+      <module name="sap/f/cards/NumericHeaderRenderer.js"/>
+      <module name="sap/f/cards/NumericSideIndicator.js"/>
+      <module name="sap/m/NumericContent.js"/>
+      <module name="sap/m/Text.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/model/json/JSONModel.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/cards/NumericHeaderRenderer.js" size="4253" compressedSize="1966">
+    <description>Provides default renderer for control sap.f.cards.NumericHeader</description>
+    <requires>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/cards/NumericSideIndicator.js" size="4201" compressedSize="1487">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/cards/NumericSideIndicatorRenderer.js"/>
+      <module name="sap/m/Text.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/cards/NumericSideIndicatorRenderer.js" size="1461" compressedSize="707">
+    <description>Provides default renderer for control sap.f.cards.NumericSideIndicatorRenderer</description>
+    <requires>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/cards/ObjectContent.js" size="6109" compressedSize="2734">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/Avatar.js"/>
+      <module name="sap/f/cards/BaseContent.js"/>
+      <module name="sap/m/HBox.js"/>
+      <module name="sap/m/Label.js"/>
+      <module name="sap/m/Link.js"/>
+      <module name="sap/m/Text.js"/>
+      <module name="sap/m/Title.js"/>
+      <module name="sap/m/VBox.js"/>
+      <module name="sap/ui/core/ResizeHandler.js"/>
+      <module name="sap/ui/dom/units/Rem.js"/>
+      <module name="sap/ui/layout/AlignedFlowLayout.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/cards/TableContent.js" size="3778" compressedSize="1814">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/Avatar.js"/>
+      <module name="sap/f/cards/ActionEnablement.js"/>
+      <module name="sap/f/cards/BaseContent.js"/>
+      <module name="sap/m/Column.js"/>
+      <module name="sap/m/ColumnListItem.js"/>
+      <module name="sap/m/Link.js"/>
+      <module name="sap/m/ObjectIdentifier.js"/>
+      <module name="sap/m/ObjectStatus.js"/>
+      <module name="sap/m/ProgressIndicator.js"/>
+      <module name="sap/m/Table.js"/>
+      <module name="sap/m/Text.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/cards/TimelineContent.js" size="5218" compressedSize="2116">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/base/Log.js"/>
+      <module name="sap/f/cards/BaseContent.js"/>
+      <module name="sap/f/cards/Data.js"/>
+      <module name="sap/suite/ui/commons/Timeline.js"/>
+      <module name="sap/suite/ui/commons/TimelineItem.js"/>
+      <module name="sap/suite/ui/commons/library.js"/>
+      <module name="sap/ui/base/ManagedObject.js"/>
+      <module name="sap/ui/model/json/JSONModel.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/changeHandler/MoveDynamicPageTitleActions.js" size="4152" compressedSize="1194">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/ui/fl/Utils.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/designtime/Avatar.create.fragment.xml" size="107">
+    <requires>
+      <module name="sap/f/Avatar.js"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/designtime/Avatar.designtime.js" size="389" compressedSize="275">
+    <description>Provides the Design Time Metadata for the sap.f.Avatar control</description>
+    <requires>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/designtime/DynamicPage.create.fragment.xml" size="876">
+    <requires>
+      <module name="sap/f/DynamicPage.js"/>
+      <module name="sap/f/DynamicPageHeader.js"/>
+      <module name="sap/f/DynamicPageTitle.js"/>
+      <module name="sap/m/Button.js"/>
+      <module name="sap/m/OverflowToolbar.js"/>
+      <module name="sap/m/Text.js"/>
+      <module name="sap/m/Title.js"/>
+      <module name="sap/m/ToolbarSpacer.js"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/designtime/DynamicPage.designtime.js" size="968" compressedSize="698">
+    <description>Provides the Design Time Metadata for the sap.f.DynamicPage control</description>
+    <requires>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/designtime/DynamicPageHeader.designtime.js" size="720" compressedSize="493">
+    <description>Provides the Design Time Metadata for the sap.f.DynamicPageHeader control</description>
+    <requires>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/designtime/DynamicPageTitle.designtime.js" size="2074" compressedSize="1325">
+    <description>Provides the Design Time Metadata for the sap.f.DynamicPageTitle control</description>
+    <requires>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/designtime/SemanticPage.create.fragment.xml" size="812">
+    <requires>
+      <module name="sap/f/semantic/SemanticPage.js"/>
+      <module name="sap/f/semantic/TitleMainAction.js"/>
+      <module name="sap/m/Button.js"/>
+      <module name="sap/m/OverflowToolbarButton.js"/>
+      <module name="sap/m/Text.js"/>
+      <module name="sap/m/Title.js"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/designtime/SemanticPage.designtime.js" size="10072" compressedSize="5605">
+    <description>Provides the Design Time Metadata for the sap.f.semantic.SemanticPage control</description>
+    <requires>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/designtime/library-preload.designtime.js" size="8234">
+    <requires>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+    <includes>
+      <module name="sap/f/designtime/Avatar.designtime.js"/>
+      <module name="sap/f/designtime/DynamicPage.designtime.js"/>
+      <module name="sap/f/designtime/DynamicPageHeader.designtime.js"/>
+      <module name="sap/f/designtime/DynamicPageTitle.designtime.js"/>
+      <module name="sap/f/designtime/SemanticPage.designtime.js"/>
+      <module name="sap/f/designtime/library.designtime.js"/>
+    </includes>
+  </module>
+  <module name="sap/f/designtime/library.designtime.js" size="308" compressedSize="205">
+    <description>Initialization of designtime Code and shared classes for the library sap.ui.layout.</description>
+    <requires>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/designtime/messagebundle.properties" size="501">
+  </module>
+  <module name="sap/f/designtime/messagebundle_ar.properties" size="678">
+  </module>
+  <module name="sap/f/designtime/messagebundle_bg.properties" size="918">
+  </module>
+  <module name="sap/f/designtime/messagebundle_ca.properties" size="496">
+  </module>
+  <module name="sap/f/designtime/messagebundle_cs.properties" size="478">
+  </module>
+  <module name="sap/f/designtime/messagebundle_da.properties" size="421">
+  </module>
+  <module name="sap/f/designtime/messagebundle_de.properties" size="434">
+  </module>
+  <module name="sap/f/designtime/messagebundle_el.properties" size="732">
+  </module>
+  <module name="sap/f/designtime/messagebundle_en.properties" size="430">
+  </module>
+  <module name="sap/f/designtime/messagebundle_en_US_sappsd.properties" size="816">
+  </module>
+  <module name="sap/f/designtime/messagebundle_en_US_saptrc.properties" size="522">
+  </module>
+  <module name="sap/f/designtime/messagebundle_es.properties" size="486">
+  </module>
+  <module name="sap/f/designtime/messagebundle_et.properties" size="437">
+  </module>
+  <module name="sap/f/designtime/messagebundle_fi.properties" size="462">
+  </module>
+  <module name="sap/f/designtime/messagebundle_fr.properties" size="454">
+  </module>
+  <module name="sap/f/designtime/messagebundle_hi.properties" size="654">
+  </module>
+  <module name="sap/f/designtime/messagebundle_hr.properties" size="453">
+  </module>
+  <module name="sap/f/designtime/messagebundle_hu.properties" size="448">
+  </module>
+  <module name="sap/f/designtime/messagebundle_it.properties" size="440">
+  </module>
+  <module name="sap/f/designtime/messagebundle_iw.properties" size="607">
+  </module>
+  <module name="sap/f/designtime/messagebundle_ja.properties" size="542">
+  </module>
+  <module name="sap/f/designtime/messagebundle_kk.properties" size="690">
+  </module>
+  <module name="sap/f/designtime/messagebundle_ko.properties" size="510">
+  </module>
+  <module name="sap/f/designtime/messagebundle_lt.properties" size="491">
+  </module>
+  <module name="sap/f/designtime/messagebundle_lv.properties" size="444">
+  </module>
+  <module name="sap/f/designtime/messagebundle_ms.properties" size="446">
+  </module>
+  <module name="sap/f/designtime/messagebundle_nl.properties" size="430">
+  </module>
+  <module name="sap/f/designtime/messagebundle_no.properties" size="424">
+  </module>
+  <module name="sap/f/designtime/messagebundle_pl.properties" size="469">
+  </module>
+  <module name="sap/f/designtime/messagebundle_pt.properties" size="498">
+  </module>
+  <module name="sap/f/designtime/messagebundle_ro.properties" size="457">
+  </module>
+  <module name="sap/f/designtime/messagebundle_ru.properties" size="774">
+  </module>
+  <module name="sap/f/designtime/messagebundle_sh.properties" size="453">
+  </module>
+  <module name="sap/f/designtime/messagebundle_sk.properties" size="477">
+  </module>
+  <module name="sap/f/designtime/messagebundle_sl.properties" size="437">
+  </module>
+  <module name="sap/f/designtime/messagebundle_sv.properties" size="424">
+  </module>
+  <module name="sap/f/designtime/messagebundle_th.properties" size="710">
+  </module>
+  <module name="sap/f/designtime/messagebundle_tr.properties" size="496">
+  </module>
+  <module name="sap/f/designtime/messagebundle_uk.properties" size="798">
+  </module>
+  <module name="sap/f/designtime/messagebundle_vi.properties" size="522">
+  </module>
+  <module name="sap/f/designtime/messagebundle_zh_CN.properties" size="458">
+  </module>
+  <module name="sap/f/designtime/messagebundle_zh_TW.properties" size="482">
+  </module>
+  <module name="sap/f/flexibility/DynamicPageTitle.flexibility.js" size="828" compressedSize="578">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/changeHandler/MoveDynamicPageTitleActions.js"/>
+      <module name="sap/m/changeHandler/CombineButtons.js"/>
+      <module name="sap/m/changeHandler/SplitMenuButton.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/library-h2-preload.js" size="16539">
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/base/Log.js"/>
+      <module name="sap/base/assert.js"/>
+      <module name="sap/base/security/encodeCSS.js"/>
+      <module name="sap/m/ActionSheet.js"/>
+      <module name="sap/m/Button.js"/>
+      <module name="sap/m/ButtonRenderer.js"/>
+      <module name="sap/m/Column.js"/>
+      <module name="sap/m/ColumnListItem.js"/>
+      <module name="sap/m/HBox.js"/>
+      <module name="sap/m/Image.js"/>
+      <module name="sap/m/InstanceManager.js"/>
+      <module name="sap/m/Label.js"/>
+      <module name="sap/m/Link.js"/>
+      <module name="sap/m/List.js"/>
+      <module name="sap/m/ListBase.js"/>
+      <module name="sap/m/ListBaseRenderer.js"/>
+      <module name="sap/m/MenuButton.js"/>
+      <module name="sap/m/NavContainer.js"/>
+      <module name="sap/m/NumericContent.js"/>
+      <module name="sap/m/ObjectIdentifier.js"/>
+      <module name="sap/m/ObjectStatus.js"/>
+      <module name="sap/m/OverflowToolbar.js"/>
+      <module name="sap/m/OverflowToolbarButton.js"/>
+      <module name="sap/m/OverflowToolbarLayoutData.js"/>
+      <module name="sap/m/ProgressIndicator.js"/>
+      <module name="sap/m/ScrollBar.js"/>
+      <module name="sap/m/StandardListItem.js"/>
+      <module name="sap/m/Table.js"/>
+      <module name="sap/m/Text.js"/>
+      <module name="sap/m/Title.js"/>
+      <module name="sap/m/ToggleButton.js"/>
+      <module name="sap/m/Toolbar.js"/>
+      <module name="sap/m/ToolbarSeparator.js"/>
+      <module name="sap/m/ToolbarSpacer.js"/>
+      <module name="sap/m/VBox.js"/>
+      <module name="sap/m/changeHandler/CombineButtons.js"/>
+      <module name="sap/m/changeHandler/SplitMenuButton.js"/>
+      <module name="sap/m/library.js"/>
+      <module name="sap/suite/ui/commons/Timeline.js"/>
+      <module name="sap/suite/ui/commons/TimelineItem.js"/>
+      <module name="sap/suite/ui/commons/library.js"/>
+      <module name="sap/tnt/InfoLabel.js"/>
+      <module name="sap/ui/Device.js"/>
+      <module name="sap/ui/Global.js"/>
+      <module name="sap/ui/base/DataType.js"/>
+      <module name="sap/ui/base/EventProvider.js"/>
+      <module name="sap/ui/base/ManagedObject.js"/>
+      <module name="sap/ui/base/ManagedObjectObserver.js"/>
+      <module name="sap/ui/base/Metadata.js"/>
+      <module name="sap/ui/base/Object.js"/>
+      <module name="sap/ui/core/ComponentContainer.js"/>
+      <module name="sap/ui/core/Configuration.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/core/Core.js"/>
+      <module name="sap/ui/core/Element.js"/>
+      <module name="sap/ui/core/Fragment.js"/>
+      <module name="sap/ui/core/HTML.js"/>
+      <module name="sap/ui/core/Icon.js"/>
+      <module name="sap/ui/core/IconPool.js"/>
+      <module name="sap/ui/core/InvisibleText.js"/>
+      <module name="sap/ui/core/LayoutData.js"/>
+      <module name="sap/ui/core/Renderer.js"/>
+      <module name="sap/ui/core/ResizeHandler.js"/>
+      <module name="sap/ui/core/delegate/ItemNavigation.js"/>
+      <module name="sap/ui/core/delegate/ScrollEnablement.js"/>
+      <module name="sap/ui/core/library.js"/>
+      <module name="sap/ui/core/routing/History.js"/>
+      <module name="sap/ui/core/routing/Router.js"/>
+      <module name="sap/ui/core/routing/Target.js"/>
+      <module name="sap/ui/core/routing/Targets.js"/>
+      <module name="sap/ui/core/theming/Parameters.js"/>
+      <module name="sap/ui/dom/getScrollbarSize.js"/>
+      <module name="sap/ui/dom/units/Rem.js"/>
+      <module name="sap/ui/events/KeyCodes.js"/>
+      <module name="sap/ui/fl/Utils.js"/>
+      <module name="sap/ui/layout/AlignedFlowLayout.js"/>
+      <module name="sap/ui/layout/cssgrid/GridItemLayoutData.js"/>
+      <module name="sap/ui/layout/cssgrid/GridLayoutBase.js"/>
+      <module name="sap/ui/layout/cssgrid/GridLayoutDelegate.js"/>
+      <module name="sap/ui/layout/cssgrid/VirtualGrid.js"/>
+      <module name="sap/ui/layout/library.js"/>
+      <module name="sap/ui/model/json/JSONModel.js"/>
+      <module name="sap/ui/support/library.js"/>
+      <module name="sap/ui/thirdparty/jquery.js"/>
+      <module name="sap/viz/ui5/controls/VizFrame.js"/>
+      <module name="sap/viz/ui5/controls/common/feeds/FeedItem.js"/>
+      <module name="sap/viz/ui5/data/FlattenedDataset.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+    <includes>
+      <module name="sap/f/library.js"/>
+      <module name="sap/f/manifest.json"/>
+      <module name="sap/f/Avatar.js"/>
+      <module name="sap/f/AvatarRenderer.js"/>
+      <module name="sap/f/Card.js"/>
+      <module name="sap/f/CardContainer.js"/>
+      <module name="sap/f/CardContainerRenderer.js"/>
+      <module name="sap/f/CardItemLayoutData.js"/>
+      <module name="sap/f/CardRenderer.js"/>
+      <module name="sap/f/DynamicPage.js"/>
+      <module name="sap/f/DynamicPageAccessibleLandmarkInfo.js"/>
+      <module name="sap/f/DynamicPageHeader.js"/>
+      <module name="sap/f/DynamicPageHeaderRenderer.js"/>
+      <module name="sap/f/DynamicPageRenderer.js"/>
+      <module name="sap/f/DynamicPageTitle.js"/>
+      <module name="sap/f/DynamicPageTitleRenderer.js"/>
+      <module name="sap/f/FlexibleColumnLayout.js"/>
+      <module name="sap/f/FlexibleColumnLayoutRenderer.js"/>
+      <module name="sap/f/FlexibleColumnLayoutSemanticHelper.js"/>
+      <module name="sap/f/GridList.js"/>
+      <module name="sap/f/GridListRenderer.js"/>
+      <module name="sap/f/ShellBar.js"/>
+      <module name="sap/f/ShellBarRenderer.js"/>
+      <module name="sap/f/cards/ActionEnablement.js"/>
+      <module name="sap/f/cards/AnalyticalContent.js"/>
+      <module name="sap/f/cards/BaseContent.js"/>
+      <module name="sap/f/cards/BindingResolver.js"/>
+      <module name="sap/f/cards/ComponentContent.js"/>
+      <module name="sap/f/cards/Data.js"/>
+      <module name="sap/f/cards/Header.js"/>
+      <module name="sap/f/cards/HeaderRenderer.js"/>
+      <module name="sap/f/cards/ListContent.js"/>
+      <module name="sap/f/cards/NumericHeader.js"/>
+      <module name="sap/f/cards/NumericHeaderRenderer.js"/>
+      <module name="sap/f/cards/NumericSideIndicator.js"/>
+      <module name="sap/f/cards/NumericSideIndicatorRenderer.js"/>
+      <module name="sap/f/cards/ObjectContent.js"/>
+      <module name="sap/f/cards/TableContent.js"/>
+      <module name="sap/f/cards/TimelineContent.js"/>
+      <module name="sap/f/changeHandler/MoveDynamicPageTitleActions.js"/>
+      <module name="sap/f/designtime/Avatar.create.fragment.xml"/>
+      <module name="sap/f/designtime/Avatar.designtime.js"/>
+      <module name="sap/f/designtime/DynamicPage.create.fragment.xml"/>
+      <module name="sap/f/designtime/DynamicPage.designtime.js"/>
+      <module name="sap/f/designtime/DynamicPageHeader.designtime.js"/>
+      <module name="sap/f/designtime/DynamicPageTitle.designtime.js"/>
+      <module name="sap/f/designtime/SemanticPage.create.fragment.xml"/>
+      <module name="sap/f/designtime/SemanticPage.designtime.js"/>
+      <module name="sap/f/designtime/library.designtime.js"/>
+      <module name="sap/f/flexibility/DynamicPageTitle.flexibility.js"/>
+      <module name="sap/f/library.support.js"/>
+      <module name="sap/f/routing/Router.js"/>
+      <module name="sap/f/routing/Target.js"/>
+      <module name="sap/f/routing/TargetHandler.js"/>
+      <module name="sap/f/routing/Targets.js"/>
+      <module name="sap/f/routing/async/Target.js"/>
+      <module name="sap/f/routing/async/Targets.js"/>
+      <module name="sap/f/rules/Avatar.support.js"/>
+      <module name="sap/f/rules/DynamicPage.support.js"/>
+      <module name="sap/f/semantic/AddAction.js"/>
+      <module name="sap/f/semantic/CloseAction.js"/>
+      <module name="sap/f/semantic/CopyAction.js"/>
+      <module name="sap/f/semantic/DeleteAction.js"/>
+      <module name="sap/f/semantic/DiscussInJamAction.js"/>
+      <module name="sap/f/semantic/EditAction.js"/>
+      <module name="sap/f/semantic/ExitFullScreenAction.js"/>
+      <module name="sap/f/semantic/FavoriteAction.js"/>
+      <module name="sap/f/semantic/FlagAction.js"/>
+      <module name="sap/f/semantic/FooterMainAction.js"/>
+      <module name="sap/f/semantic/FullScreenAction.js"/>
+      <module name="sap/f/semantic/MainAction.js"/>
+      <module name="sap/f/semantic/MessagesIndicator.js"/>
+      <module name="sap/f/semantic/NegativeAction.js"/>
+      <module name="sap/f/semantic/PositiveAction.js"/>
+      <module name="sap/f/semantic/PrintAction.js"/>
+      <module name="sap/f/semantic/SemanticButton.js"/>
+      <module name="sap/f/semantic/SemanticConfiguration.js"/>
+      <module name="sap/f/semantic/SemanticContainer.js"/>
+      <module name="sap/f/semantic/SemanticControl.js"/>
+      <module name="sap/f/semantic/SemanticFooter.js"/>
+      <module name="sap/f/semantic/SemanticPage.js"/>
+      <module name="sap/f/semantic/SemanticPageRenderer.js"/>
+      <module name="sap/f/semantic/SemanticShareMenu.js"/>
+      <module name="sap/f/semantic/SemanticTitle.js"/>
+      <module name="sap/f/semantic/SemanticToggleButton.js"/>
+      <module name="sap/f/semantic/SendEmailAction.js"/>
+      <module name="sap/f/semantic/SendMessageAction.js"/>
+      <module name="sap/f/semantic/ShareInJamAction.js"/>
+      <module name="sap/f/semantic/TitleMainAction.js"/>
+      <module name="sap/f/shellBar/Accessibility.js"/>
+      <module name="sap/f/shellBar/AdditionalContentSupport.js"/>
+      <module name="sap/f/shellBar/CoPilot.js"/>
+      <module name="sap/f/shellBar/CoPilotRenderer.js"/>
+      <module name="sap/f/shellBar/ContentButton.js"/>
+      <module name="sap/f/shellBar/ContentButtonRenderer.js"/>
+      <module name="sap/f/shellBar/ControlSpacer.js"/>
+      <module name="sap/f/shellBar/ControlSpacerRenderer.js"/>
+      <module name="sap/f/shellBar/Factory.js"/>
+      <module name="sap/f/shellBar/ResponsiveHandler.js"/>
+    </includes>
+  </module>
+  <module name="sap/f/library-preload.js" size="241976">
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/base/Log.js"/>
+      <module name="sap/base/assert.js"/>
+      <module name="sap/base/security/encodeCSS.js"/>
+      <module name="sap/m/ActionSheet.js"/>
+      <module name="sap/m/Button.js"/>
+      <module name="sap/m/ButtonRenderer.js"/>
+      <module name="sap/m/Column.js"/>
+      <module name="sap/m/ColumnListItem.js"/>
+      <module name="sap/m/HBox.js"/>
+      <module name="sap/m/Image.js"/>
+      <module name="sap/m/InstanceManager.js"/>
+      <module name="sap/m/Label.js"/>
+      <module name="sap/m/Link.js"/>
+      <module name="sap/m/List.js"/>
+      <module name="sap/m/ListBase.js"/>
+      <module name="sap/m/ListBaseRenderer.js"/>
+      <module name="sap/m/MenuButton.js"/>
+      <module name="sap/m/NavContainer.js"/>
+      <module name="sap/m/NumericContent.js"/>
+      <module name="sap/m/ObjectIdentifier.js"/>
+      <module name="sap/m/ObjectStatus.js"/>
+      <module name="sap/m/OverflowToolbar.js"/>
+      <module name="sap/m/OverflowToolbarButton.js"/>
+      <module name="sap/m/OverflowToolbarLayoutData.js"/>
+      <module name="sap/m/ProgressIndicator.js"/>
+      <module name="sap/m/ScrollBar.js"/>
+      <module name="sap/m/StandardListItem.js"/>
+      <module name="sap/m/Table.js"/>
+      <module name="sap/m/Text.js"/>
+      <module name="sap/m/Title.js"/>
+      <module name="sap/m/ToggleButton.js"/>
+      <module name="sap/m/Toolbar.js"/>
+      <module name="sap/m/ToolbarSeparator.js"/>
+      <module name="sap/m/ToolbarSpacer.js"/>
+      <module name="sap/m/VBox.js"/>
+      <module name="sap/m/changeHandler/CombineButtons.js"/>
+      <module name="sap/m/changeHandler/SplitMenuButton.js"/>
+      <module name="sap/m/library.js"/>
+      <module name="sap/suite/ui/commons/Timeline.js"/>
+      <module name="sap/suite/ui/commons/TimelineItem.js"/>
+      <module name="sap/suite/ui/commons/library.js"/>
+      <module name="sap/tnt/InfoLabel.js"/>
+      <module name="sap/ui/Device.js"/>
+      <module name="sap/ui/Global.js"/>
+      <module name="sap/ui/base/DataType.js"/>
+      <module name="sap/ui/base/EventProvider.js"/>
+      <module name="sap/ui/base/ManagedObject.js"/>
+      <module name="sap/ui/base/ManagedObjectObserver.js"/>
+      <module name="sap/ui/base/Metadata.js"/>
+      <module name="sap/ui/base/Object.js"/>
+      <module name="sap/ui/core/ComponentContainer.js"/>
+      <module name="sap/ui/core/Configuration.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/core/Core.js"/>
+      <module name="sap/ui/core/Element.js"/>
+      <module name="sap/ui/core/HTML.js"/>
+      <module name="sap/ui/core/Icon.js"/>
+      <module name="sap/ui/core/IconPool.js"/>
+      <module name="sap/ui/core/InvisibleText.js"/>
+      <module name="sap/ui/core/LayoutData.js"/>
+      <module name="sap/ui/core/Renderer.js"/>
+      <module name="sap/ui/core/ResizeHandler.js"/>
+      <module name="sap/ui/core/delegate/ItemNavigation.js"/>
+      <module name="sap/ui/core/delegate/ScrollEnablement.js"/>
+      <module name="sap/ui/core/library.js"/>
+      <module name="sap/ui/core/routing/History.js"/>
+      <module name="sap/ui/core/routing/Router.js"/>
+      <module name="sap/ui/core/routing/Target.js"/>
+      <module name="sap/ui/core/routing/Targets.js"/>
+      <module name="sap/ui/core/theming/Parameters.js"/>
+      <module name="sap/ui/dom/getScrollbarSize.js"/>
+      <module name="sap/ui/dom/units/Rem.js"/>
+      <module name="sap/ui/events/KeyCodes.js"/>
+      <module name="sap/ui/fl/Utils.js"/>
+      <module name="sap/ui/layout/AlignedFlowLayout.js"/>
+      <module name="sap/ui/layout/cssgrid/GridItemLayoutData.js"/>
+      <module name="sap/ui/layout/cssgrid/GridLayoutBase.js"/>
+      <module name="sap/ui/layout/cssgrid/GridLayoutDelegate.js"/>
+      <module name="sap/ui/layout/cssgrid/VirtualGrid.js"/>
+      <module name="sap/ui/layout/library.js"/>
+      <module name="sap/ui/model/json/JSONModel.js"/>
+      <module name="sap/ui/thirdparty/jquery.js"/>
+      <module name="sap/viz/ui5/controls/VizFrame.js"/>
+      <module name="sap/viz/ui5/controls/common/feeds/FeedItem.js"/>
+      <module name="sap/viz/ui5/data/FlattenedDataset.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+    <includes>
+      <module name="sap/f/Avatar.js"/>
+      <module name="sap/f/AvatarRenderer.js"/>
+      <module name="sap/f/Card.js"/>
+      <module name="sap/f/CardContainer.js"/>
+      <module name="sap/f/CardContainerRenderer.js"/>
+      <module name="sap/f/CardItemLayoutData.js"/>
+      <module name="sap/f/CardRenderer.js"/>
+      <module name="sap/f/DynamicPage.js"/>
+      <module name="sap/f/DynamicPageAccessibleLandmarkInfo.js"/>
+      <module name="sap/f/DynamicPageHeader.js"/>
+      <module name="sap/f/DynamicPageHeaderRenderer.js"/>
+      <module name="sap/f/DynamicPageRenderer.js"/>
+      <module name="sap/f/DynamicPageTitle.js"/>
+      <module name="sap/f/DynamicPageTitleRenderer.js"/>
+      <module name="sap/f/FlexibleColumnLayout.js"/>
+      <module name="sap/f/FlexibleColumnLayoutRenderer.js"/>
+      <module name="sap/f/FlexibleColumnLayoutSemanticHelper.js"/>
+      <module name="sap/f/GridList.js"/>
+      <module name="sap/f/GridListRenderer.js"/>
+      <module name="sap/f/ShellBar.js"/>
+      <module name="sap/f/ShellBarRenderer.js"/>
+      <module name="sap/f/cards/ActionEnablement.js"/>
+      <module name="sap/f/cards/AnalyticalContent.js"/>
+      <module name="sap/f/cards/BaseContent.js"/>
+      <module name="sap/f/cards/BindingResolver.js"/>
+      <module name="sap/f/cards/ComponentContent.js"/>
+      <module name="sap/f/cards/Data.js"/>
+      <module name="sap/f/cards/Header.js"/>
+      <module name="sap/f/cards/HeaderRenderer.js"/>
+      <module name="sap/f/cards/ListContent.js"/>
+      <module name="sap/f/cards/NumericHeader.js"/>
+      <module name="sap/f/cards/NumericHeaderRenderer.js"/>
+      <module name="sap/f/cards/NumericSideIndicator.js"/>
+      <module name="sap/f/cards/NumericSideIndicatorRenderer.js"/>
+      <module name="sap/f/cards/ObjectContent.js"/>
+      <module name="sap/f/cards/TableContent.js"/>
+      <module name="sap/f/cards/TimelineContent.js"/>
+      <module name="sap/f/changeHandler/MoveDynamicPageTitleActions.js"/>
+      <module name="sap/f/flexibility/DynamicPageTitle.flexibility.js"/>
+      <module name="sap/f/library.js"/>
+      <module name="sap/f/manifest.json"/>
+      <module name="sap/f/routing/Router.js"/>
+      <module name="sap/f/routing/Target.js"/>
+      <module name="sap/f/routing/TargetHandler.js"/>
+      <module name="sap/f/routing/Targets.js"/>
+      <module name="sap/f/routing/async/Target.js"/>
+      <module name="sap/f/routing/async/Targets.js"/>
+      <module name="sap/f/semantic/AddAction.js"/>
+      <module name="sap/f/semantic/CloseAction.js"/>
+      <module name="sap/f/semantic/CopyAction.js"/>
+      <module name="sap/f/semantic/DeleteAction.js"/>
+      <module name="sap/f/semantic/DiscussInJamAction.js"/>
+      <module name="sap/f/semantic/EditAction.js"/>
+      <module name="sap/f/semantic/ExitFullScreenAction.js"/>
+      <module name="sap/f/semantic/FavoriteAction.js"/>
+      <module name="sap/f/semantic/FlagAction.js"/>
+      <module name="sap/f/semantic/FooterMainAction.js"/>
+      <module name="sap/f/semantic/FullScreenAction.js"/>
+      <module name="sap/f/semantic/MainAction.js"/>
+      <module name="sap/f/semantic/MessagesIndicator.js"/>
+      <module name="sap/f/semantic/NegativeAction.js"/>
+      <module name="sap/f/semantic/PositiveAction.js"/>
+      <module name="sap/f/semantic/PrintAction.js"/>
+      <module name="sap/f/semantic/SemanticButton.js"/>
+      <module name="sap/f/semantic/SemanticConfiguration.js"/>
+      <module name="sap/f/semantic/SemanticContainer.js"/>
+      <module name="sap/f/semantic/SemanticControl.js"/>
+      <module name="sap/f/semantic/SemanticFooter.js"/>
+      <module name="sap/f/semantic/SemanticPage.js"/>
+      <module name="sap/f/semantic/SemanticPageRenderer.js"/>
+      <module name="sap/f/semantic/SemanticShareMenu.js"/>
+      <module name="sap/f/semantic/SemanticTitle.js"/>
+      <module name="sap/f/semantic/SemanticToggleButton.js"/>
+      <module name="sap/f/semantic/SendEmailAction.js"/>
+      <module name="sap/f/semantic/SendMessageAction.js"/>
+      <module name="sap/f/semantic/ShareInJamAction.js"/>
+      <module name="sap/f/semantic/TitleMainAction.js"/>
+      <module name="sap/f/shellBar/Accessibility.js"/>
+      <module name="sap/f/shellBar/AdditionalContentSupport.js"/>
+      <module name="sap/f/shellBar/CoPilot.js"/>
+      <module name="sap/f/shellBar/CoPilotRenderer.js"/>
+      <module name="sap/f/shellBar/ContentButton.js"/>
+      <module name="sap/f/shellBar/ContentButtonRenderer.js"/>
+      <module name="sap/f/shellBar/ControlSpacer.js"/>
+      <module name="sap/f/shellBar/ControlSpacerRenderer.js"/>
+      <module name="sap/f/shellBar/Factory.js"/>
+      <module name="sap/f/shellBar/ResponsiveHandler.js"/>
+    </includes>
+  </module>
+  <module name="sap/f/library-preload.json" size="0">
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/base/Log.js"/>
+      <module name="sap/base/assert.js"/>
+      <module name="sap/base/security/encodeCSS.js"/>
+      <module name="sap/m/ActionSheet.js"/>
+      <module name="sap/m/Button.js"/>
+      <module name="sap/m/ButtonRenderer.js"/>
+      <module name="sap/m/Column.js"/>
+      <module name="sap/m/ColumnListItem.js"/>
+      <module name="sap/m/HBox.js"/>
+      <module name="sap/m/Image.js"/>
+      <module name="sap/m/InstanceManager.js"/>
+      <module name="sap/m/Label.js"/>
+      <module name="sap/m/Link.js"/>
+      <module name="sap/m/List.js"/>
+      <module name="sap/m/ListBase.js"/>
+      <module name="sap/m/ListBaseRenderer.js"/>
+      <module name="sap/m/MenuButton.js"/>
+      <module name="sap/m/NavContainer.js"/>
+      <module name="sap/m/NumericContent.js"/>
+      <module name="sap/m/ObjectIdentifier.js"/>
+      <module name="sap/m/ObjectStatus.js"/>
+      <module name="sap/m/OverflowToolbar.js"/>
+      <module name="sap/m/OverflowToolbarButton.js"/>
+      <module name="sap/m/OverflowToolbarLayoutData.js"/>
+      <module name="sap/m/ProgressIndicator.js"/>
+      <module name="sap/m/ScrollBar.js"/>
+      <module name="sap/m/StandardListItem.js"/>
+      <module name="sap/m/Table.js"/>
+      <module name="sap/m/Text.js"/>
+      <module name="sap/m/Title.js"/>
+      <module name="sap/m/ToggleButton.js"/>
+      <module name="sap/m/Toolbar.js"/>
+      <module name="sap/m/ToolbarSeparator.js"/>
+      <module name="sap/m/ToolbarSpacer.js"/>
+      <module name="sap/m/VBox.js"/>
+      <module name="sap/m/changeHandler/CombineButtons.js"/>
+      <module name="sap/m/changeHandler/SplitMenuButton.js"/>
+      <module name="sap/m/library-preload.json"/>
+      <module name="sap/m/library.js"/>
+      <module name="sap/suite/ui/commons/Timeline.js"/>
+      <module name="sap/suite/ui/commons/TimelineItem.js"/>
+      <module name="sap/suite/ui/commons/library.js"/>
+      <module name="sap/tnt/InfoLabel.js"/>
+      <module name="sap/ui/Device.js"/>
+      <module name="sap/ui/Global.js"/>
+      <module name="sap/ui/base/DataType.js"/>
+      <module name="sap/ui/base/EventProvider.js"/>
+      <module name="sap/ui/base/ManagedObject.js"/>
+      <module name="sap/ui/base/ManagedObjectObserver.js"/>
+      <module name="sap/ui/base/Metadata.js"/>
+      <module name="sap/ui/base/Object.js"/>
+      <module name="sap/ui/core/ComponentContainer.js"/>
+      <module name="sap/ui/core/Configuration.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/core/Core.js"/>
+      <module name="sap/ui/core/Element.js"/>
+      <module name="sap/ui/core/HTML.js"/>
+      <module name="sap/ui/core/Icon.js"/>
+      <module name="sap/ui/core/IconPool.js"/>
+      <module name="sap/ui/core/InvisibleText.js"/>
+      <module name="sap/ui/core/LayoutData.js"/>
+      <module name="sap/ui/core/Renderer.js"/>
+      <module name="sap/ui/core/ResizeHandler.js"/>
+      <module name="sap/ui/core/delegate/ItemNavigation.js"/>
+      <module name="sap/ui/core/delegate/ScrollEnablement.js"/>
+      <module name="sap/ui/core/library-preload.json"/>
+      <module name="sap/ui/core/library.js"/>
+      <module name="sap/ui/core/routing/History.js"/>
+      <module name="sap/ui/core/routing/Router.js"/>
+      <module name="sap/ui/core/routing/Target.js"/>
+      <module name="sap/ui/core/routing/Targets.js"/>
+      <module name="sap/ui/core/theming/Parameters.js"/>
+      <module name="sap/ui/dom/getScrollbarSize.js"/>
+      <module name="sap/ui/dom/units/Rem.js"/>
+      <module name="sap/ui/events/KeyCodes.js"/>
+      <module name="sap/ui/fl/Utils.js"/>
+      <module name="sap/ui/layout/AlignedFlowLayout.js"/>
+      <module name="sap/ui/layout/cssgrid/GridItemLayoutData.js"/>
+      <module name="sap/ui/layout/cssgrid/GridLayoutBase.js"/>
+      <module name="sap/ui/layout/cssgrid/GridLayoutDelegate.js"/>
+      <module name="sap/ui/layout/cssgrid/VirtualGrid.js"/>
+      <module name="sap/ui/layout/library-preload.json"/>
+      <module name="sap/ui/layout/library.js"/>
+      <module name="sap/ui/model/json/JSONModel.js"/>
+      <module name="sap/ui/thirdparty/jquery.js"/>
+      <module name="sap/viz/ui5/controls/VizFrame.js"/>
+      <module name="sap/viz/ui5/controls/common/feeds/FeedItem.js"/>
+      <module name="sap/viz/ui5/data/FlattenedDataset.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+    <includes>
+      <module name="sap/f/Avatar.js"/>
+      <module name="sap/f/AvatarRenderer.js"/>
+      <module name="sap/f/Card.js"/>
+      <module name="sap/f/CardContainer.js"/>
+      <module name="sap/f/CardContainerRenderer.js"/>
+      <module name="sap/f/CardItemLayoutData.js"/>
+      <module name="sap/f/CardRenderer.js"/>
+      <module name="sap/f/DynamicPage.js"/>
+      <module name="sap/f/DynamicPageAccessibleLandmarkInfo.js"/>
+      <module name="sap/f/DynamicPageHeader.js"/>
+      <module name="sap/f/DynamicPageHeaderRenderer.js"/>
+      <module name="sap/f/DynamicPageRenderer.js"/>
+      <module name="sap/f/DynamicPageTitle.js"/>
+      <module name="sap/f/DynamicPageTitleRenderer.js"/>
+      <module name="sap/f/FlexibleColumnLayout.js"/>
+      <module name="sap/f/FlexibleColumnLayoutRenderer.js"/>
+      <module name="sap/f/FlexibleColumnLayoutSemanticHelper.js"/>
+      <module name="sap/f/GridList.js"/>
+      <module name="sap/f/GridListRenderer.js"/>
+      <module name="sap/f/ShellBar.js"/>
+      <module name="sap/f/ShellBarRenderer.js"/>
+      <module name="sap/f/cards/ActionEnablement.js"/>
+      <module name="sap/f/cards/AnalyticalContent.js"/>
+      <module name="sap/f/cards/BaseContent.js"/>
+      <module name="sap/f/cards/BindingResolver.js"/>
+      <module name="sap/f/cards/ComponentContent.js"/>
+      <module name="sap/f/cards/Data.js"/>
+      <module name="sap/f/cards/Header.js"/>
+      <module name="sap/f/cards/HeaderRenderer.js"/>
+      <module name="sap/f/cards/ListContent.js"/>
+      <module name="sap/f/cards/NumericHeader.js"/>
+      <module name="sap/f/cards/NumericHeaderRenderer.js"/>
+      <module name="sap/f/cards/NumericSideIndicator.js"/>
+      <module name="sap/f/cards/NumericSideIndicatorRenderer.js"/>
+      <module name="sap/f/cards/ObjectContent.js"/>
+      <module name="sap/f/cards/TableContent.js"/>
+      <module name="sap/f/cards/TimelineContent.js"/>
+      <module name="sap/f/changeHandler/MoveDynamicPageTitleActions.js"/>
+      <module name="sap/f/flexibility/DynamicPageTitle.flexibility.js"/>
+      <module name="sap/f/library.js"/>
+      <module name="sap/f/manifest.json"/>
+      <module name="sap/f/routing/Router.js"/>
+      <module name="sap/f/routing/Target.js"/>
+      <module name="sap/f/routing/TargetHandler.js"/>
+      <module name="sap/f/routing/Targets.js"/>
+      <module name="sap/f/routing/async/Target.js"/>
+      <module name="sap/f/routing/async/Targets.js"/>
+      <module name="sap/f/semantic/AddAction.js"/>
+      <module name="sap/f/semantic/CloseAction.js"/>
+      <module name="sap/f/semantic/CopyAction.js"/>
+      <module name="sap/f/semantic/DeleteAction.js"/>
+      <module name="sap/f/semantic/DiscussInJamAction.js"/>
+      <module name="sap/f/semantic/EditAction.js"/>
+      <module name="sap/f/semantic/ExitFullScreenAction.js"/>
+      <module name="sap/f/semantic/FavoriteAction.js"/>
+      <module name="sap/f/semantic/FlagAction.js"/>
+      <module name="sap/f/semantic/FooterMainAction.js"/>
+      <module name="sap/f/semantic/FullScreenAction.js"/>
+      <module name="sap/f/semantic/MainAction.js"/>
+      <module name="sap/f/semantic/MessagesIndicator.js"/>
+      <module name="sap/f/semantic/NegativeAction.js"/>
+      <module name="sap/f/semantic/PositiveAction.js"/>
+      <module name="sap/f/semantic/PrintAction.js"/>
+      <module name="sap/f/semantic/SemanticButton.js"/>
+      <module name="sap/f/semantic/SemanticConfiguration.js"/>
+      <module name="sap/f/semantic/SemanticContainer.js"/>
+      <module name="sap/f/semantic/SemanticControl.js"/>
+      <module name="sap/f/semantic/SemanticFooter.js"/>
+      <module name="sap/f/semantic/SemanticPage.js"/>
+      <module name="sap/f/semantic/SemanticPageRenderer.js"/>
+      <module name="sap/f/semantic/SemanticShareMenu.js"/>
+      <module name="sap/f/semantic/SemanticTitle.js"/>
+      <module name="sap/f/semantic/SemanticToggleButton.js"/>
+      <module name="sap/f/semantic/SendEmailAction.js"/>
+      <module name="sap/f/semantic/SendMessageAction.js"/>
+      <module name="sap/f/semantic/ShareInJamAction.js"/>
+      <module name="sap/f/semantic/TitleMainAction.js"/>
+      <module name="sap/f/shellBar/Accessibility.js"/>
+      <module name="sap/f/shellBar/AdditionalContentSupport.js"/>
+      <module name="sap/f/shellBar/CoPilot.js"/>
+      <module name="sap/f/shellBar/CoPilotRenderer.js"/>
+      <module name="sap/f/shellBar/ContentButton.js"/>
+      <module name="sap/f/shellBar/ContentButtonRenderer.js"/>
+      <module name="sap/f/shellBar/ControlSpacer.js"/>
+      <module name="sap/f/shellBar/ControlSpacerRenderer.js"/>
+      <module name="sap/f/shellBar/Factory.js"/>
+      <module name="sap/f/shellBar/ResponsiveHandler.js"/>
+    </includes>
+  </module>
+  <module name="sap/f/library-preload.support.js" size="6034">
+    <requires>
+      <module name="sap/f/library.js"/>
+      <module name="sap/ui/support/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+    <includes>
+      <module name="sap/f/library.support.js"/>
+      <module name="sap/f/rules/Avatar.support.js"/>
+      <module name="sap/f/rules/DynamicPage.support.js"/>
+    </includes>
+  </module>
+  <module name="sap/f/library.js" size="12733" compressedSize="3126">
+    <description>Initialization Code and shared classes of library sap.f.</description>
+    <requires>
+      <module name="sap/m/library.js"/>
+      <module name="sap/ui/Global.js"/>
+      <module name="sap/ui/base/DataType.js"/>
+      <module name="sap/ui/core/library.js"/>
+      <module name="sap/ui/layout/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/library.support.js" size="545" compressedSize="349">
+    <description>Adds support rules of the sap.f library to the support infrastructure.</description>
+    <requires>
+      <module name="sap/f/rules/Avatar.support.js"/>
+      <module name="sap/f/rules/DynamicPage.support.js"/>
+      <module name="sap/ui/support/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/manifest.json" size="2620">
+  </module>
+  <module name="sap/f/messagebundle.properties" size="4746">
+  </module>
+  <module name="sap/f/messagebundle_ar.properties" size="6869">
+  </module>
+  <module name="sap/f/messagebundle_bg.properties" size="7955">
+  </module>
+  <module name="sap/f/messagebundle_ca.properties" size="4786">
+  </module>
+  <module name="sap/f/messagebundle_cs.properties" size="4911">
+  </module>
+  <module name="sap/f/messagebundle_da.properties" size="4635">
+  </module>
+  <module name="sap/f/messagebundle_de.properties" size="4695">
+  </module>
+  <module name="sap/f/messagebundle_el.properties" size="7846">
+  </module>
+  <module name="sap/f/messagebundle_en.properties" size="4561">
+  </module>
+  <module name="sap/f/messagebundle_en_US_sappsd.properties" size="8923">
+  </module>
+  <module name="sap/f/messagebundle_en_US_saptrc.properties" size="5647">
+  </module>
+  <module name="sap/f/messagebundle_es.properties" size="4734">
+  </module>
+  <module name="sap/f/messagebundle_et.properties" size="4717">
+  </module>
+  <module name="sap/f/messagebundle_fi.properties" size="4811">
+  </module>
+  <module name="sap/f/messagebundle_fr.properties" size="4836">
+  </module>
+  <module name="sap/f/messagebundle_hi.properties" size="7423">
+  </module>
+  <module name="sap/f/messagebundle_hr.properties" size="4719">
+  </module>
+  <module name="sap/f/messagebundle_hu.properties" size="5113">
+  </module>
+  <module name="sap/f/messagebundle_it.properties" size="4655">
+  </module>
+  <module name="sap/f/messagebundle_iw.properties" size="6597">
+  </module>
+  <module name="sap/f/messagebundle_ja.properties" size="5451">
+  </module>
+  <module name="sap/f/messagebundle_kk.properties" size="7412">
+  </module>
+  <module name="sap/f/messagebundle_ko.properties" size="5174">
+  </module>
+  <module name="sap/f/messagebundle_lt.properties" size="5064">
+  </module>
+  <module name="sap/f/messagebundle_lv.properties" size="4994">
+  </module>
+  <module name="sap/f/messagebundle_ms.properties" size="4620">
+  </module>
+  <module name="sap/f/messagebundle_nl.properties" size="4645">
+  </module>
+  <module name="sap/f/messagebundle_no.properties" size="4625">
+  </module>
+  <module name="sap/f/messagebundle_pl.properties" size="4885">
+  </module>
+  <module name="sap/f/messagebundle_pt.properties" size="4798">
+  </module>
+  <module name="sap/f/messagebundle_ro.properties" size="4778">
+  </module>
+  <module name="sap/f/messagebundle_ru.properties" size="7838">
+  </module>
+  <module name="sap/f/messagebundle_sh.properties" size="4768">
+  </module>
+  <module name="sap/f/messagebundle_sk.properties" size="5017">
+  </module>
+  <module name="sap/f/messagebundle_sl.properties" size="4744">
+  </module>
+  <module name="sap/f/messagebundle_sv.properties" size="4674">
+  </module>
+  <module name="sap/f/messagebundle_th.properties" size="6991">
+  </module>
+  <module name="sap/f/messagebundle_tr.properties" size="4996">
+  </module>
+  <module name="sap/f/messagebundle_uk.properties" size="8115">
+  </module>
+  <module name="sap/f/messagebundle_vi.properties" size="5718">
+  </module>
+  <module name="sap/f/messagebundle_zh_CN.properties" size="5038">
+  </module>
+  <module name="sap/f/messagebundle_zh_TW.properties" size="5105">
+  </module>
+  <module name="sap/f/routing/Router.js" size="3897" compressedSize="1417">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/routing/TargetHandler.js"/>
+      <module name="sap/f/routing/Targets.js"/>
+      <module name="sap/ui/core/routing/Router.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/routing/Target.js" size="1944" compressedSize="720">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/FlexibleColumnLayout.js"/>
+      <module name="sap/f/routing/async/Target.js"/>
+      <module name="sap/ui/core/routing/Target.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/routing/TargetHandler.js" size="7647" compressedSize="2679">
+    <description>global Promise</description>
+    <requires>
+      <module name="sap/base/Log.js"/>
+      <module name="sap/f/FlexibleColumnLayout.js"/>
+      <module name="sap/m/InstanceManager.js"/>
+      <module name="sap/ui/base/Object.js"/>
+      <module name="sap/ui/core/routing/History.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/routing/Targets.js" size="17183" compressedSize="1043">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/routing/Target.js"/>
+      <module name="sap/f/routing/TargetHandler.js"/>
+      <module name="sap/f/routing/async/Targets.js"/>
+      <module name="sap/ui/core/routing/Targets.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/routing/async/Target.js" size="1098" compressedSize="630">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/routing/async/Targets.js" size="1352" compressedSize="763">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/rules/Avatar.support.js" size="3030" compressedSize="1849">
+    <description>Defines support rules of the Avatar control of sap.f library.</description>
+    <requires>
+      <module name="sap/f/library.js"/>
+      <module name="sap/ui/support/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/rules/DynamicPage.support.js" size="2262" compressedSize="1392">
+    <description>Defines support rules of the DynamicPage control of sap.f library.</description>
+    <requires>
+      <module name="sap/ui/support/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/semantic/AddAction.js" size="1091" compressedSize="309">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/semantic/SemanticButton.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/semantic/CloseAction.js" size="1092" compressedSize="298">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/semantic/SemanticButton.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/semantic/CopyAction.js" size="1085" compressedSize="297">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/semantic/SemanticButton.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/semantic/DeleteAction.js" size="1113" compressedSize="312">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/semantic/SemanticButton.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/semantic/DiscussInJamAction.js" size="1176" compressedSize="318">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/semantic/SemanticButton.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/semantic/EditAction.js" size="1083" compressedSize="297">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/semantic/SemanticButton.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/semantic/ExitFullScreenAction.js" size="1155" compressedSize="307">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/semantic/SemanticButton.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/semantic/FavoriteAction.js" size="1138" compressedSize="307">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/semantic/SemanticToggleButton.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/semantic/FlagAction.js" size="1110" compressedSize="303">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/semantic/SemanticToggleButton.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/semantic/FooterMainAction.js" size="1114" compressedSize="299">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/semantic/MainAction.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/semantic/FullScreenAction.js" size="1127" compressedSize="303">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/semantic/SemanticButton.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/semantic/MainAction.js" size="1200" compressedSize="375">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/semantic/SemanticButton.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/semantic/MessagesIndicator.js" size="1136" compressedSize="304">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/semantic/SemanticButton.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/semantic/NegativeAction.js" size="1325" compressedSize="379">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/semantic/SemanticButton.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/semantic/PositiveAction.js" size="1325" compressedSize="379">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/semantic/SemanticButton.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/semantic/PrintAction.js" size="1129" compressedSize="311">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/semantic/SemanticButton.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/semantic/SemanticButton.js" size="2425" compressedSize="981">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/semantic/SemanticControl.js"/>
+      <module name="sap/m/Button.js"/>
+      <module name="sap/m/OverflowToolbarButton.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/semantic/SemanticConfiguration.js" size="12967" compressedSize="6610">
+    <description>Provides a private class &lt;code&gt;sap.f.semantic.SemanticConfiguration&lt;/code&gt;.</description>
+    <requires>
+      <module name="sap/m/OverflowToolbarLayoutData.js"/>
+      <module name="sap/m/library.js"/>
+      <module name="sap/ui/base/Metadata.js"/>
+      <module name="sap/ui/core/IconPool.js"/>
+      <module name="sap/ui/core/InvisibleText.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/semantic/SemanticContainer.js" size="4845" compressedSize="1579">
+    <description>Provides a private class &lt;code&gt;sap.f.semantic.SemanticContainer&lt;/code&gt;.</description>
+    <requires>
+      <module name="sap/base/Log.js"/>
+      <module name="sap/f/semantic/SemanticConfiguration.js"/>
+      <module name="sap/ui/base/Metadata.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/semantic/SemanticControl.js" size="6067" compressedSize="2963">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/semantic/SemanticConfiguration.js"/>
+      <module name="sap/ui/base/ManagedObject.js"/>
+      <module name="sap/ui/core/Element.js"/>
+      <module name="sap/ui/thirdparty/jquery.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/semantic/SemanticFooter.js" size="9547" compressedSize="4195">
+    <description>Provides a private class &lt;code&gt;sap.f.semantic.SemanticFooter&lt;/code&gt;.</description>
+    <requires>
+      <module name="sap/f/semantic/SemanticContainer.js"/>
+      <module name="sap/m/ToolbarSpacer.js"/>
+      <module name="sap/m/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/semantic/SemanticPage.js" size="46000" compressedSize="12751">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/DynamicPage.js"/>
+      <module name="sap/f/DynamicPageHeader.js"/>
+      <module name="sap/f/DynamicPageTitle.js"/>
+      <module name="sap/f/library.js"/>
+      <module name="sap/f/semantic/SemanticConfiguration.js"/>
+      <module name="sap/f/semantic/SemanticFooter.js"/>
+      <module name="sap/f/semantic/SemanticPageRenderer.js"/>
+      <module name="sap/f/semantic/SemanticShareMenu.js"/>
+      <module name="sap/f/semantic/SemanticTitle.js"/>
+      <module name="sap/m/ActionSheet.js"/>
+      <module name="sap/m/OverflowToolbar.js"/>
+      <module name="sap/ui/base/ManagedObject.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/semantic/SemanticPageRenderer.js" size="1056" compressedSize="391">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/semantic/SemanticShareMenu.js" size="10192" compressedSize="4621">
+    <description>Provides a private class &lt;code&gt;sap.f.semantic.SemanticShareMenu&lt;/code&gt;.</description>
+    <requires>
+      <module name="sap/f/semantic/SemanticContainer.js"/>
+      <module name="sap/m/OverflowToolbarButton.js"/>
+      <module name="sap/m/OverflowToolbarLayoutData.js"/>
+      <module name="sap/m/library.js"/>
+      <module name="sap/ui/base/EventProvider.js"/>
+      <module name="sap/ui/core/IconPool.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/semantic/SemanticTitle.js" size="15703" compressedSize="6548">
+    <description>Provides a private class &lt;code&gt;sap.f.semantic.SemanticTitle&lt;/code&gt;.</description>
+    <requires>
+      <module name="sap/f/semantic/SemanticContainer.js"/>
+      <module name="sap/m/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/semantic/SemanticToggleButton.js" size="3427" compressedSize="1118">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/semantic/SemanticButton.js"/>
+      <module name="sap/m/library.js"/>
+      <module name="sap/ui/events/KeyCodes.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/semantic/SendEmailAction.js" size="1156" compressedSize="315">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/semantic/SemanticButton.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/semantic/SendMessageAction.js" size="1170" compressedSize="317">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/semantic/SemanticButton.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/semantic/ShareInJamAction.js" size="1163" compressedSize="316">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/semantic/SemanticButton.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/semantic/TitleMainAction.js" size="1105" compressedSize="298">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/semantic/MainAction.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/shellBar/Accessibility.js" size="5765" compressedSize="3826">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/ui/core/Core.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/shellBar/AdditionalContentSupport.js" size="3523" compressedSize="1842">
+    <description>Provides helper sap.f.shellBar.AdditionalContentSupport</description>
+    <requires>
+      <module name="sap/base/Log.js"/>
+      <module name="sap/m/OverflowToolbarLayoutData.js"/>
+      <module name="sap/m/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/shellBar/CoPilot.js" size="1735" compressedSize="579">
+    <description>Provides control sap.f.shellBar.CoPilot.</description>
+    <requires>
+      <module name="sap/f/shellBar/CoPilotRenderer.js"/>
+      <module name="sap/ui/core/Configuration.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/shellBar/CoPilotRenderer.js" size="21202" compressedSize="20838">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/shellBar/Accessibility.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/shellBar/ContentButton.js" size="1748" compressedSize="647">
+    <description>Provides control sap.f.shellBar.ContentButton</description>
+    <requires>
+      <module name="sap/f/library.js"/>
+      <module name="sap/f/shellBar/ContentButtonRenderer.js"/>
+      <module name="sap/m/Button.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/shellBar/ContentButtonRenderer.js" size="605" compressedSize="353">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/m/ButtonRenderer.js"/>
+      <module name="sap/ui/core/Renderer.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/shellBar/ControlSpacer.js" size="1479" compressedSize="438">
+    <description>Provides control sap.f.ControlSpacer.</description>
+    <requires>
+      <module name="sap/f/shellBar/ControlSpacerRenderer.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/shellBar/ControlSpacerRenderer.js" size="645" compressedSize="409">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/shellBar/Factory.js" size="7832" compressedSize="5186">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/f/shellBar/Accessibility.js"/>
+      <module name="sap/f/shellBar/CoPilot.js"/>
+      <module name="sap/f/shellBar/ContentButton.js"/>
+      <module name="sap/f/shellBar/ControlSpacer.js"/>
+      <module name="sap/m/Image.js"/>
+      <module name="sap/m/Label.js"/>
+      <module name="sap/m/MenuButton.js"/>
+      <module name="sap/m/OverflowToolbar.js"/>
+      <module name="sap/m/OverflowToolbarButton.js"/>
+      <module name="sap/m/OverflowToolbarLayoutData.js"/>
+      <module name="sap/m/ToolbarSpacer.js"/>
+      <module name="sap/m/library.js"/>
+      <module name="sap/tnt/InfoLabel.js"/>
+      <module name="sap/ui/core/Element.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/f/shellBar/ResponsiveHandler.js" size="15054" compressedSize="6460">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/m/OverflowToolbarLayoutData.js"/>
+      <module name="sap/m/library.js"/>
+      <module name="sap/ui/Device.js"/>
+      <module name="sap/ui/core/theming/Parameters.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+</library>

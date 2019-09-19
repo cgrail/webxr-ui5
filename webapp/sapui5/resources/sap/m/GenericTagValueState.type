@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>GenericTagValueState</name>
+    <derived/>
+    <documentation>Value states for the &lt;code&gt;GenericTag&lt;/code&gt; control.</documentation>
+    <since>1.62.0</since>
+    <enumeration>
+        <value name="None">
+            <documentation>The value is rendered in its normal state.</documentation>
+        </value>
+        <value name="Error">
+            <documentation>Warning icon is rendered that overrides the control set in the &lt;code&gt;value&lt;/code&gt;
+aggregation of the &lt;code&gt;GenericTag&lt;/code&gt; control.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

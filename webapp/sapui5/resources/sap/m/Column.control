@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Column</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The &lt;code&gt;sap.m.Column&lt;/code&gt; allows to define column specific properties that will be applied when rendering the &lt;code&gt;sap.m.Table&lt;/code&gt;.
+
+See section "{@link topic:6f778a805bc3453dbb66e246d8271839 Defining Column Width}"
+in the documentation to understand how to define the &lt;code&gt;width&lt;/code&gt; property of the &lt;code&gt;sap.m.Column&lt;/code&gt; to render a &lt;code&gt;sap.m.Table&lt;/code&gt; control properly.</documentation>
+    <since>1.12</since>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="width" type="sap.ui.core/CSSSize" group="Dimension">
+            <documentation>Defines the width of the column. If you leave it empty then this column covers the remaining space.</documentation>
+        </property>
+        <property name="hAlign" type="sap.ui.core/TextAlign" defaultValue="Begin" group="Appearance">
+            <documentation>Defines the horizontal alignment of the column content.
+
+&lt;b&gt;Note:&lt;/b&gt; Text controls with a &lt;code&gt;textAlign&lt;/code&gt; property inherits the horizontal alignment.</documentation>
+        </property>
+        <property name="vAlign" type="sap.ui.core/VerticalAlign" defaultValue="Inherit" group="Appearance">
+            <documentation>Defines the vertical alignment of the cells in a column.
+This property does not affect the vertical alignment of header and footer.</documentation>
+        </property>
+        <property name="styleClass" type="sap.ui.core/string" group="Appearance">
+            <documentation>CSS class name for column contents(header, cells and footer of column). This property can be used for different column styling. If column is shown as pop-in then this class name is applied to related pop-in row.</documentation>
+        </property>
+        <property name="visible" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>Specifies whether or not the column is visible. Invisible columns are not rendered.</documentation>
+        </property>
+        <property name="minScreenWidth" type="sap.ui.core/string" group="Behavior">
+            <documentation>Defines the minimum screen width to show or hide this column. By default column is always shown.
+The responsive behavior of the &lt;code&gt;sap.m.Table&lt;/code&gt; is determined by this property. As an example by setting &lt;code&gt;minScreenWidth&lt;/code&gt; property to "40em" (or "640px" or "Tablet") shows this column on tablet (and desktop) but hides on mobile.
+As you can give specific CSS sizes (e.g: "480px" or "40em"), you can also use the {@link sap.m.ScreenSize} enumeration (e.g: "Phone", "Tablet", "Desktop", "Small", "Medium", "Large", ....).
+Please also see &lt;code&gt;demandPopin&lt;/code&gt; property for further responsive design options.</documentation>
+        </property>
+        <property name="demandPopin" type="sap.ui.core/boolean" defaultValue="false" group="Behavior">
+            <documentation>According to your minScreenWidth settings, the column can be hidden in different screen sizes.
+Setting this property to true, shows this column as pop-in instead of hiding it.</documentation>
+        </property>
+        <property name="popinHAlign" type="sap.ui.core/TextAlign" defaultValue="Begin" group="Appearance">
+            <documentation>Horizontal alignment of the pop-in content. Available alignment settings are "Begin", "Center", "End", "Left", and "Right".
+
+&lt;b&gt;Note:&lt;/b&gt; Controls with a text align do not inherit the horizontal alignment.</documentation>
+            <deprecation since="1.14">Use popinDisplay property instead.</deprecation>
+        </property>
+        <property name="popinDisplay" type="sap.m/PopinDisplay" defaultValue="Block" group="Appearance" since="1.13.2">
+            <documentation>Defines enumerated display options for the pop-in.</documentation>
+        </property>
+        <property name="mergeDuplicates" type="sap.ui.core/boolean" defaultValue="false" group="Behavior" since="1.16">
+            <documentation>Set &lt;code&gt;true&lt;/code&gt; to merge repeating/duplicate cells into one cell block. See &lt;code&gt;mergeFunctionName&lt;/code&gt; property to customize.
+&lt;b&gt;Note:&lt;/b&gt; Merging only happens at the rendering of the &lt;code&gt;sap.m.Table&lt;/code&gt; control, subsequent changes on the cell or item do not have any effect on the merged state of the cells, therefore this feature should not be used together with two-way binding.
+This property is ignored if any column is configured to be shown as a pop-in.</documentation>
+        </property>
+        <property name="mergeFunctionName" type="sap.ui.core/string" defaultValue="getText" group="Misc" since="1.16">
+            <documentation>Defines the control serialization function if &lt;code&gt;mergeDuplicates&lt;code&gt; property is set to &lt;code&gt;true&lt;/code&gt;. The control itself uses this function to compare values of two repeating cells.
+Default value "getText" is suitable for &lt;code&gt;sap.m.Label&lt;/code&gt; and &lt;code&gt;sap.m.Text&lt;/code&gt; controls but for the &lt;code&gt;sap.ui.core.Icon&lt;/code&gt; control "getSrc" function should be used to merge icons.
+&lt;b&gt;Note:&lt;/b&gt; You can pass one string parameter to given function after "#" sign. e.g. "data#myparameter"</documentation>
+        </property>
+        <property name="sortIndicator" type="sap.ui.core/SortOrder" defaultValue="None" group="Appearance" since="1.61">
+            <documentation>Defines if a column is sorted by setting the sort indicator for this column.
+
+&lt;b&gt;Note:&lt;/b&gt; Defining this property does not trigger the sorting.</documentation>
+        </property>
+    </properties>
+    <aggregations default="header">
+        <aggregation name="header" type="sap.ui.core/Control" cardinality="0..1">
+            <documentation>Control to be displayed in the column header.</documentation>
+        </aggregation>
+        <aggregation name="footer" type="sap.ui.core/Control" cardinality="0..1">
+            <documentation>Control to be displayed in the column footer.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

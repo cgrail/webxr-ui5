@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ObjectMarker</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The &lt;code&gt;sap.m.ObjectMarker&lt;/code&gt; control represents one of the following predefined types:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Flagged&lt;/code&gt;
+&lt;li&gt;&lt;code&gt;Favorite&lt;/code&gt;
+&lt;li&gt;&lt;code&gt;Draft&lt;/code&gt;
+&lt;li&gt;&lt;code&gt;Locked&lt;/code&gt;
+&lt;li&gt;&lt;code&gt;LockedBy&lt;/code&gt;
+&lt;li&gt;&lt;code&gt;Unsaved&lt;/code&gt;
+&lt;li&gt;&lt;code&gt;UnsavedBy&lt;/code&gt;
+&lt;/ul&gt;
+&lt;b&gt;Note&lt;/b&gt;: Use the &lt;code&gt;LockedBy/UnsavedBy&lt;/code&gt; type along with the &lt;code&gt;additionalInfo&lt;/code&gt; property to display the name of the user who locked/changed the object.
+If &lt;code&gt;additionalInfo&lt;/code&gt; property is not set when using &lt;code&gt;LockedBy/UnsavedBy&lt;/code&gt; types, the string "Locked by another user"/"Unsaved changes by another user" will be displayed.
+If you don't want to display name of the user, simply use the &lt;code&gt;Locked/Unsaved&lt;/code&gt; types.</documentation>
+    <since>1.38</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="type" type="sap.m/ObjectMarkerType" group="Misc">
+            <documentation>Sets one of the predefined types.
+
+&lt;b&gt;Note&lt;/b&gt;: If the &lt;code&gt;visibility&lt;/code&gt; property is not specified explicitly, every &lt;code&gt;type&lt;/code&gt; comes with predefined one as follows:
+&lt;ul&gt;
+                &lt;li&gt;For &lt;code&gt;Flagged&lt;/code&gt; and &lt;code&gt;Favorite&lt;/code&gt; the icon is visible and the text is not displayed&lt;/li&gt;
+                &lt;li&gt;For &lt;code&gt;Draft&lt;/code&gt; the text is visible and the icon is not displayed&lt;/li&gt;
+                &lt;li&gt;For &lt;code&gt;Locked&lt;/code&gt;, &lt;code&gt;LockedBy&lt;/code&gt;, &lt;code&gt;Unsaved&lt;/code&gt; and &lt;code&gt;UnsavedBy&lt;/code&gt; - on screens larger than 600px both icon and text are visible, otherwise only the icon&lt;/li&gt;
+
+&lt;/ul&gt;</documentation>
+        </property>
+        <property name="visibility" type="sap.m/ObjectMarkerVisibility" group="Misc">
+            <documentation>Sets one of the visibility states.
+Visibility states are as follows:
+&lt;ul&gt;
+                &lt;li&gt;&lt;code&gt;IconOnly&lt;/code&gt; - displays only icon, regardless of the screen size&lt;/li&gt;
+                &lt;li&gt;&lt;code&gt;TextOnly&lt;/code&gt; - displays only text, regardless of the screen size&lt;/li&gt;
+                &lt;li&gt;&lt;code&gt;IconAndText&lt;/code&gt; - displays both icon and text, regardless of the screen size&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+        </property>
+        <property name="additionalInfo" type="sap.ui.core/string" defaultValue="" group="Misc">
+            <documentation>Sets additional information to the displayed &lt;code&gt;type&lt;/code&gt;.
+
+&lt;b&gt;Note:&lt;/b&gt; If no type is set, the additional information will not be displayed.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="press" allowPreventDefault="false">
+            <documentation>Event is fired when the &lt;code&gt;ObjectMarker&lt;/code&gt; is interactive and the user taps/clicks on it.</documentation>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="_innerControl" type="sap.ui.core/Control" cardinality="0..1" visibility="hidden">
+            <documentation>Internal control that should be &lt;code&gt;sap.m.Link&lt;/code&gt; for interactive and &lt;code&gt;sap.m.Text&lt;/code&gt;
+for non-interactive &lt;code&gt;ObjectMarker&lt;/code&gt;.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="ariaDescribedBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / ids which describe this control (see WAI-ARIA attribute aria-describedby).</documentation>
+        </association>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / ids which label this control (see WAI-ARIA attribute aria-labelledby).</documentation>
+        </association>
+    </associations>
+</control>

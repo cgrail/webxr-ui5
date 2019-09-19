@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>QuickView</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>QuickView is a small popup with a short overview of a Thing.
+QuickView is shown when a user holds the mouse pointer over a related screen element.</documentation>
+    <deprecation since="1.38">Instead, use the &lt;code&gt;sap.m.QuickView&lt;/code&gt; control.</deprecation>
+    <baseType>sap.ui.commons/CalloutBase</baseType>
+    <properties>
+        <property name="type" type="sap.ui.core/string" group="Misc">
+            <documentation>Thing type (mandatory) like Account, Material, Employee etc. is displayed in a header at the top part of the QuickView.</documentation>
+        </property>
+        <property name="firstTitle" type="sap.ui.core/string" group="Misc">
+            <documentation>Thing name shown in the header of the QuickView</documentation>
+        </property>
+        <property name="firstTitleHref" type="sap.ui.core/string" group="Misc">
+            <documentation>URI to Thing Inspector</documentation>
+        </property>
+        <property name="secondTitle" type="sap.ui.core/string" group="Misc">
+            <documentation>Optional short text shown under the firstTitle</documentation>
+        </property>
+        <property name="icon" type="sap.ui.core/URI" group="Misc">
+            <documentation>URI of the Thing icon image (mandatory). The image is scaled down to the maximal size of 32 pixel (vertical or horizontal).</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" group="Dimension">
+            <documentation>Control width as common CSS-size (px or % as unit, for example).</documentation>
+        </property>
+        <property name="showActionBar" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Show Action Bar</documentation>
+        </property>
+        <property name="followState" type="sap.ui.ux3/FollowActionState" defaultValue="Default" group="Misc">
+            <documentation>Follow State of a Thing</documentation>
+        </property>
+        <property name="flagState" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>State of Flag Action</documentation>
+        </property>
+        <property name="favoriteState" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>State Of favorite Action</documentation>
+        </property>
+        <property name="favoriteActionEnabled" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Favorite action enabled/disabled. If disabled the action will be invisible.</documentation>
+        </property>
+        <property name="updateActionEnabled" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Update action enabled/disabled. If disabled the action will be invisible.</documentation>
+        </property>
+        <property name="followActionEnabled" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Follow action enabled/disabled. If disabled the action will be invisible.</documentation>
+        </property>
+        <property name="flagActionEnabled" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Flag action enabled/disabled. If disabled the action will be invisible.</documentation>
+        </property>
+        <property name="openActionEnabled" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Open Thing action enabled/disabled. If disabled the action will be invisible.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="actionSelected" allowPreventDefault="false">
+            <documentation>Action is selected in Action Bar</documentation>
+            <parameters>
+                <parameter name="id" type="sap.ui.core/string">
+                    <documentation>Id of selected ThingAction</documentation>
+                </parameter>
+                <parameter name="action" type="sap.ui.ux3/ThingAction">
+                    <documentation>Selected ThingAction</documentation>
+                </parameter>
+                <parameter name="newState" type="sap.ui.core/string">
+                    <documentation>New State of the selected action. Only filled if the respective action maintains a state property, for example 'FollowUp' or 'Favorite'</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="feedSubmit" allowPreventDefault="false">
+            <documentation>Fired when a new feed entry is submitted.</documentation>
+            <parameters>
+                <parameter name="text" type="sap.ui.core/string">
+                    <documentation>Feed text</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="navigate" allowPreventDefault="true">
+            <documentation>Event is fired when a user clicks on the firstTitle link. Call the preventDefault method of the event object to cancel browser navigation.</documentation>
+            <parameters>
+                <parameter name="href" type="sap.ui.core/string">
+                    <documentation>URI of the Thing Inspector application.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="content" type="sap.ui.core/Element" cardinality="0..n">
+            <documentation>Body content of the QuickView</documentation>
+        </aggregation>
+        <aggregation name="actions" type="sap.ui.ux3/ThingAction" cardinality="0..n">
+            <documentation>Actions of a Thing</documentation>
+        </aggregation>
+        <aggregation name="actionBar" type="sap.ui.ux3/ActionBar" cardinality="0..1">
+            <documentation>ActionBar. If no actionBar is set a default ActionBar will be created.
+In any case, ActionBar is displayed only when the showActionBar property is set to true.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

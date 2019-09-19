@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartvariants/ChangeHandlerType</name>
+    <derived/>
+    <documentation>Enumeration for changes for personalization of variant favorites.</documentation>
+    <enumeration>
+        <value name="addFavorite">
+            <documentation>Change handler creating a change for an added favorite.</documentation>
+        </value>
+        <value name="removeFavorite">
+            <documentation>Change handler creating a change for a removed favorite.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

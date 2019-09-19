@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>personalization/ColumnType</name>
+    <derived/>
+    <documentation>Provides enumeration sap.ui.comp.personalization.ColumnType. A subset of column types that fit for table personalization.</documentation>
+    <enumeration>
+        <value name="ResponsiveColumn">
+            <documentation>Represents &lt;code&gt;sap.m.Column&lt;/code&gt;.</documentation>
+        </value>
+        <value name="TableColumn">
+            <documentation>Represents &lt;code&gt;sap.ui.table.Column&lt;/code&gt;.</documentation>
+        </value>
+        <value name="ColumnWrapper">
+            <documentation>Represents &lt;code&gt;sap.ui.comp.personalization.ColumnWrapper&lt;/code&gt;.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

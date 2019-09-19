@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<interface xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>dnd/IDragInfo</name>
+    <derived/>
+    <documentation>Marker interface for drag configuration providing information about the source of the drag operation.</documentation>
+    <since>1.52.0</since>
+</interface>

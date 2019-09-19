@@ -1,0 +1,71 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": ".theming",
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "AreaMicroChart.less",
+			"designtime": true,
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "InteractiveBarChart.less",
+			"designtime": true,
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "InteractiveDonutChart.less",
+			"designtime": true,
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "InteractiveLineChart.less",
+			"designtime": true,
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "SharedStyles.less",
+			"designtime": true,
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "StackedBarMicroChart.less",
+			"designtime": true,
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "library-RTL-dbg.css",
+			"isDebug": true,
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "library-RTL.css",
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "library-dbg.css",
+			"isDebug": true,
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "library-parameters.json",
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "library.css",
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "library.less",
+			"designtime": true,
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "library.source.less",
+			"designtime": true,
+			"theme": "sap_belize_plus"
+		}
+	]
+}

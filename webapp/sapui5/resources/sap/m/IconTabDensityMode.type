@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>IconTabDensityMode</name>
+    <derived/>
+    <documentation>Specifies &lt;code&gt;IconTabBar&lt;/code&gt; tab density mode.</documentation>
+    <enumeration>
+        <value name="Inherit">
+            <documentation>Inherit. In this mode the global configuration of the density mode will be applied.</documentation>
+        </value>
+        <value name="Compact">
+            <documentation>Compact. In this mode the tabs will be set explicitly to compact mode independent of what mode is applied globally.</documentation>
+        </value>
+        <value name="Cozy">
+            <documentation>Cozy. In this mode the tabs will be set explicitly to compact mode independent of what mode is applied globally.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

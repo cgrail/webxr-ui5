@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>navpopover/LinkData</name>
+    <derived/>
+    <documentation>Stores display text together with a navigation target hyperlink.&lt;br&gt;
+       The LinkData class is used by {@link sap.ui.comp.navpopover.SmartLink SmartLink} and
+       {@link sap.ui.comp.navpopover.SemanticObjectController SemanticObjectController} to define the visible links on
+       {@link sap.ui.comp.navpopover.NavigationPopover NavigationPopover}.</documentation>
+    <since>1.28.0</since>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="text" type="sap.ui.core/string">
+            <documentation>Text which can be displayed on the UI</documentation>
+        </property>
+        <property name="href" type="sap.ui.core/string">
+            <documentation>Destination link for a navigation operation in internal format. &lt;b&gt;Note&lt;/b&gt;: The link will be encoded before it is shown in
+external format using the &lt;code&gt;hrefForExternal&lt;/code&gt; method of the CrossApplicationNavigation service.</documentation>
+        </property>
+        <property name="target" type="sap.ui.core/string">
+            <documentation>The standard values for the &lt;code&gt;target&lt;/code&gt; property are: _self, _top, _blank, _parent, _search. Alternatively, a frame name
+can be entered. This property is only used if the &lt;code&gt;href&lt;/code&gt; property is set.</documentation>
+        </property>
+        <property name="description" type="sap.ui.core/string" defaultValue="undefined" since="1.42.0">
+            <documentation>Description of the link.</documentation>
+        </property>
+        <property name="visible" type="sap.ui.core/boolean" defaultValue="true" since="1.44.0">
+            <documentation>Describes whether the link should be visible on the screen.</documentation>
+        </property>
+        <property name="key" type="sap.ui.core/string" defaultValue="undefined" since="1.44.0">
+            <documentation>Key of link.</documentation>
+        </property>
+        <property name="press" type="sap.ui.core/object" since="1.46.0">
+            <documentation>Callback for &lt;code&gt;press&lt;/code&gt; event.</documentation>
+        </property>
+        <property name="isSuperiorAction" type="sap.ui.core/boolean" since="1.48.0">
+            <documentation>Marker for superior action.</documentation>
+        </property>
+        <property name="visibleChangedByUser" type="sap.ui.core/boolean" since="1.58.0">
+            <documentation>Describes whether the visibility is changed by end user or not.</documentation>
+        </property>
+    </properties>
+</control>

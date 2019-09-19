@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartfield/ControlProposalType</name>
+    <derived/>
+    <documentation>Enumeration of the different control proposals supported by the Smart Field, if it is using an OData model.</documentation>
+    <enumeration>
+        <value name="None" value="">
+            <documentation>No special context is selected. The Smart Field applies its internal defaults.</documentation>
+        </value>
+        <value name="ObjectNumber">
+            <documentation>If this is selected, the sap.m.ObjectNumber control is used to display units of measure. If the value property of the Smart Field is not
+bound to a unit of measure, the property is ignored.</documentation>
+        </value>
+        <value name="ObjectIdentifier">
+            <documentation>If this is selected, the sap.m.ObjectIdentifier control is used to display IDs, if they are not editable. The current OData property is
+assumed to have a text annotation. Otherwise the configuration is ignored.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

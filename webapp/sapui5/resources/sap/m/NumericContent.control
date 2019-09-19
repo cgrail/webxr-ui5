@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>NumericContent</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Shows numeric values used for example in tiles colored according to their meaning and displays deviations.</documentation>
+    <since>1.34</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="animateTextChange" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>If set to true, the change of the value will be animated.</documentation>
+        </property>
+        <property name="formatterValue" type="sap.ui.core/boolean" defaultValue="false" group="Data">
+            <documentation>If set to true, the value parameter contains a numeric value and scale. If set to false (default), the value parameter contains a numeric value only.</documentation>
+        </property>
+        <property name="icon" type="sap.ui.core/URI" group="Appearance">
+            <documentation>The icon to be displayed as a graphical element within the control. This can be an image or an icon from the icon font.</documentation>
+        </property>
+        <property name="iconDescription" type="sap.ui.core/string" group="Accessibility">
+            <documentation>Description of an icon that is used in the tooltip.</documentation>
+        </property>
+        <property name="indicator" type="sap.m/DeviationIndicator" defaultValue="None" group="Appearance">
+            <documentation>The indicator arrow that shows value deviation.</documentation>
+        </property>
+        <property name="nullifyValue" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>If set to true, the omitted value property is set to 0.</documentation>
+        </property>
+        <property name="scale" type="sap.ui.core/string" group="Appearance">
+            <documentation>The scaling prefix. Financial characters can be used for currencies and counters. The SI prefixes can be used for units. If the scaling prefix contains more than three characters, only the first three characters are displayed.</documentation>
+        </property>
+        <property name="size" type="sap.m/Size" defaultValue="Auto" group="Appearance">
+            <documentation>Updates the size of the control. If not set, then the default size is applied based on the device tile.</documentation>
+            <deprecation since="1.38.0">The NumericContent control has now a fixed size, depending on the used media (desktop, tablet or phone).</deprecation>
+        </property>
+        <property name="truncateValueTo" type="sap.ui.core/int" defaultValue="4" group="Appearance">
+            <documentation>The number of characters of the &lt;code&gt;value&lt;/code&gt; property to display.</documentation>
+        </property>
+        <property name="value" type="sap.ui.core/string" group="Data">
+            <documentation>The actual value.</documentation>
+        </property>
+        <property name="valueColor" type="sap.m/ValueColor" defaultValue="Neutral" group="Appearance">
+            <documentation>The semantic color of the value.</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" group="Appearance">
+            <documentation>The width of the control. If it is not set, the size of the control is defined by the 'size' property.</documentation>
+        </property>
+        <property name="withMargin" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>If the value is set to false, the content is adjusted to the whole size of the control.</documentation>
+        </property>
+        <property name="state" type="sap.m/LoadState" defaultValue="Loaded" group="Behavior">
+            <documentation>Indicates the load status.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="press" allowPreventDefault="false">
+            <documentation>The event is fired when the user chooses the numeric content.</documentation>
+        </event>
+    </events>
+</control>

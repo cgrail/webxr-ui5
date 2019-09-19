@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>SegmentedButton</name>
+    <derived/>
+    <documentation>The SegmentedButton provides a group of multiple buttons. Only one button can be active. The behaviour is more ore less like a radio button group.</documentation>
+    <deprecation since="1.38">replaced by {@link sap.m.SegmentedButton}</deprecation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="enabled" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>enabled</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="select" allowPreventDefault="false">
+            <documentation>Event fired when button selected</documentation>
+            <parameters>
+                <parameter name="selectedButtonId" type="sap.ui.core/string">
+                    <documentation>Id of selected ToggleButton</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="buttons" type="sap.ui.commons/Button" cardinality="0..n">
+            <documentation>Buttons</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="selectedButton" type="sap.ui.commons/Button" cardinality="0..1">
+            <documentation>Selected Button</documentation>
+        </association>
+    </associations>
+</control>

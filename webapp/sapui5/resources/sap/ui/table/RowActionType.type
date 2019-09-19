@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>RowActionType</name>
+    <derived/>
+    <documentation>Row Action types.</documentation>
+    <enumeration>
+        <value name="Custom">
+            <documentation>Custom defined Row Action.</documentation>
+        </value>
+        <value name="Navigation">
+            <documentation>Navigation Row Action.</documentation>
+        </value>
+        <value name="Delete">
+            <documentation>Delete Row Action.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

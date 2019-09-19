@@ -1,0 +1,90 @@
+{
+  "_version": "1.9.0",
+  "sap.app": {
+    "id": "sap.suite.ui.generic.template",
+    "type": "library",
+    "embeds": [
+      "AnalyticalListPage",
+      "Canvas",
+      "ListReport",
+      "ObjectPage",
+      "QuickCreate",
+      "QuickView",
+      "app/blankAnalyticalListPage"
+    ],
+    "applicationVersion": {
+      "version": "1.64.0"
+    },
+    "title": "Library with generic Suite UI templates.",
+    "description": "Library with generic Suite UI templates.",
+    "resources": "resources.json",
+    "offline": true
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "supportedThemes": [
+      "base",
+      "sap_belize",
+      "sap_belize_hcb",
+      "sap_belize_hcw",
+      "sap_belize_plus",
+      "sap_bluecrystal",
+      "sap_hcb"
+    ]
+  },
+  "sap.ui5": {
+    "dependencies": {
+      "minUI5Version": "1.64",
+      "libs": {
+        "sap.ui.core": {
+          "minVersion": "1.64.0"
+        },
+        "sap.ui.table": {
+          "minVersion": "1.64.0",
+          "lazy": true
+        },
+        "sap.ui.comp": {
+          "minVersion": "1.64.0",
+          "lazy": true
+        },
+        "sap.uxap": {
+          "minVersion": "1.64.0",
+          "lazy": true
+        },
+        "sap.ui.layout": {
+          "minVersion": "1.64.0",
+          "lazy": true
+        },
+        "sap.suite.ui.microchart": {
+          "minVersion": "1.64.0",
+          "lazy": true
+        },
+        "sap.viz": {
+          "minVersion": "1.64.0",
+          "lazy": true
+        },
+        "sap.ui.generic.app": {
+          "minVersion": "1.64.0"
+        },
+        "sap.ushell": {
+          "minVersion": "1.64.0"
+        },
+        "sap.m": {
+          "minVersion": "1.64.0"
+        },
+        "sap.f": {
+          "minVersion": "1.64.0"
+        }
+      }
+    },
+    "library": {
+      "i18n": false,
+      "content": {
+        "controls": [],
+        "elements": [],
+        "types": [],
+        "interfaces": []
+      }
+    }
+  }
+}

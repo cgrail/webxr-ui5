@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Bar</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Used as a header, sub-header and a footer of a page.
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+
+The &lt;code&gt;Bar&lt;/code&gt; control consists of three areas to hold its content. It has the capability
+to center content, such as a title, while having other controls on the left and right side.
+
+&lt;h3&gt;Usage&lt;/h3&gt;
+
+With the use of the &lt;code&gt;design&lt;/code&gt; property, you can set the style of the &lt;code&gt;Bar&lt;/code&gt; to appear
+as a header, sub-header and footer.
+
+&lt;b&gt;Note:&lt;/b&gt; Do not place a &lt;code&gt;sap.m.Bar&lt;/code&gt; inside another &lt;code&gt;sap.m.Bar&lt;/code&gt;
+or inside any bar-like control. Doing so causes unpredictable behavior.
+
+&lt;h3&gt;Responsive Behavior&lt;/h3&gt;
+
+The content in the middle area is centrally positioned if there is enough space. If the right
+or left content overlaps the middle content, the middle content will be centered in the space between.</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="enableFlexBox" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>If this flag is set to true, contentMiddle will be rendered as a HBox and layoutData can be used to allocate available space.</documentation>
+            <deprecation since="1.16">replaced by &lt;code&gt;contentMiddle&lt;/code&gt; aggregation.
+&lt;code&gt;contentMiddle&lt;/code&gt; will always occupy of the 100% width when no &lt;code&gt;contentLeft&lt;/code&gt; and &lt;code&gt;contentRight&lt;/code&gt; are being set.</deprecation>
+        </property>
+        <property name="translucent" type="sap.ui.core/boolean" defaultValue="false" group="Appearance" since="1.12">
+            <documentation>Indicates whether the Bar is partially translucent.
+It is only applied for touch devices.</documentation>
+            <deprecation since="1.18.6">This property has no effect since release 1.18.6 and should not be used. Translucent bar may overlay an input and make it difficult to edit.</deprecation>
+        </property>
+        <property name="design" type="sap.m/BarDesign" defaultValue="Auto" group="Appearance" since="1.22">
+            <documentation>Determines the design of the bar. If set to auto, it becomes dependent on the place where the bar is placed.</documentation>
+        </property>
+    </properties>
+    <aggregations>
+        <aggregation name="contentLeft" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Represents the left content area, usually containing a button or an app icon. If it is overlapped by the right content, its content will disappear and the text will show an ellipsis.</documentation>
+        </aggregation>
+        <aggregation name="contentMiddle" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Represents the middle content area. Controls such as label, segmented buttons or select can be placed here. The content is centrally positioned if there is enough space. If the right or left content overlaps the middle content, the middle content will be centered in the space between the left and the right content.</documentation>
+        </aggregation>
+        <aggregation name="contentRight" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Represents the right content area. Controls such as action buttons or search field can be placed here.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / ids which label this control (see WAI-ARIA attribute aria-labelledby).</documentation>
+        </association>
+    </associations>
+</control>

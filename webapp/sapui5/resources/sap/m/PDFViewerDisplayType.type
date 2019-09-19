@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>PDFViewerDisplayType</name>
+    <derived/>
+    <documentation>PDF viewer display types.</documentation>
+    <enumeration>
+        <value name="Auto">
+            <documentation>The PDF viewer switches between the &lt;code&gt;Link&lt;/code&gt; display type and the &lt;code&gt;Embedded&lt;/code&gt; display type,
+depending on the device being used.</documentation>
+        </value>
+        <value name="Embedded">
+            <documentation>The PDF viewer appears embedded in the parent container and displays the PDF file.</documentation>
+        </value>
+        <value name="Link">
+            <documentation>The PDF viewer appears as a toolbar with a download button that can be used to download the PDF file or
+open it in a new tab.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

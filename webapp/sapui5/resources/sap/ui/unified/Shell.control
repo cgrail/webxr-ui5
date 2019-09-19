@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Shell</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The shell control is meant as root control (full-screen) of an application.
+It was build as root control of the Fiori Launchpad application and provides the basic capabilities
+for this purpose. Do not use this control within applications which run inside the Fiori Lauchpad and
+do not use it for other scenarios than the root control usecase.</documentation>
+    <since>1.15.1</since>
+    <deprecation since="1.44.0"></deprecation>
+    <baseType>sap.ui.unified/ShellLayout</baseType>
+    <properties>
+        <property name="icon" type="sap.ui.core/URI" group="Appearance">
+            <documentation>The application icon. If a custom header is set this property has no effect.</documentation>
+        </property>
+        <property name="showCurtain" type="sap.ui.core/boolean" group="Appearance">
+            <documentation>Shows / Hides the curtain.</documentation>
+            <deprecation since="1.16.3">Curtain is deprecated and replaced by ShellOverlay mechanism.</deprecation>
+        </property>
+        <property name="showCurtainPane" type="sap.ui.core/boolean" group="Appearance">
+            <documentation>Shows / Hides the side pane on the curtain.</documentation>
+            <deprecation since="1.16.3">Curtain is deprecated and replaced by ShellOverlay mechanism.</deprecation>
+        </property>
+        <property name="searchVisible" type="sap.ui.core/boolean" defaultValue="true" group="Appearance" since="1.18">
+            <documentation>If set to false, the search area (aggregation 'search') is hidden. If a custom header is set this property has no effect.</documentation>
+        </property>
+    </properties>
+    <aggregations>
+        <aggregation name="curtainContent" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>The content to appear in the curtain area.</documentation>
+        </aggregation>
+        <aggregation name="curtainPaneContent" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>The content to appear in the pane area of the curtain.</documentation>
+        </aggregation>
+        <aggregation name="headItems" type="sap.ui.unified/ShellHeadItem" cardinality="0..n">
+            <documentation>The buttons shown in the begin (left in left-to-right case) of the Shell header. Currently max. 3 visible buttons are supported. If a custom header is set this aggregation has no effect.</documentation>
+        </aggregation>
+        <aggregation name="headEndItems" type="sap.ui.unified/ShellHeadItem" cardinality="0..n">
+            <documentation>The buttons shown in the end (right in left-to-right case) of the Shell header. Currently max. 3 visible buttons are supported (when user is set only 1). If a custom header is set this aggregation has no effect.</documentation>
+        </aggregation>
+        <aggregation name="search" type="sap.ui.core/Control" cardinality="0..1">
+            <documentation>Experimental (This aggregation might change in future!): The search control which should be displayed in the shell header. If a custom header is set this aggregation has no effect.</documentation>
+        </aggregation>
+        <aggregation name="user" type="sap.ui.unified/ShellHeadUserItem" since="1.22.0" cardinality="0..1">
+            <documentation>The user item which is rendered in the shell header beside the items. If a custom header is set this aggregation has no effect.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

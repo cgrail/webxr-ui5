@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ui5/types/controller/Interaction_selectability</name>
+    <derived/>
+    <documentation>Settings for selectability</documentation>
+    <since>1.7.2</since>
+    <developmentState state="experimental" since="1.7.2">Charting API is not finished yet and might change completely.</developmentState>
+    <deprecation since="1.32.0">The chart controls in the &lt;code&gt;sap.viz.ui5&lt;/code&gt; package (which were always marked as &lt;i&gt;experimental&lt;/i&gt;) have been deprecated since 1.32.0. 
+They are no longer actively developed and won't receive new features or improvements, only important bug fixes. They will only remain in the 
+SAPUI5 distribution for backward compatibility. 
+
+&lt;b&gt;SAP strongly recommends that existing consumers of those controls migrate to the new {@link sap.viz.ui5.controls.VizFrame VizFrame} 
+control to benefit from new charting enhancements and timely support. &lt;/b&gt;
+
+&lt;b&gt;Note&lt;/b&gt;: As the feature set, design and API usage of VizFrame might differ from the old chart controls, make sure you evaluate it thoroughly before migration.</deprecation>
+    <baseType>sap.viz/ui5/core/BaseStructuredType</baseType>
+    <properties>
+        <property name="mode" type="sap.viz/ui5/types/controller/Interaction_selectability_mode" defaultValue="inclusive">
+            <documentation>Set the selection mode. If this value is set to 'exclusive' or 'single', only one set of data points can be selected at once. If this value is set to 'inclusive' or 'multiple', multiple sets of data points can be selected at once. If this value is set to 'none', no sets of data points can be selected. The values 'single' and 'multiple' are deprecated; please remove them from your chart.</documentation>
+        </property>
+        <property name="axisLabelSelection" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>Set whether axis labels can be selected</documentation>
+        </property>
+        <property name="legendSelection" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>Set whether the legend can be selected</documentation>
+        </property>
+        <property name="plotLassoSelection" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>Set whether lasso selection can be used in the plot area</documentation>
+        </property>
+        <property name="plotStdSelection" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>Set whether selection can be done in the plot area by clicking and tapping</documentation>
+        </property>
+        <property name="lassoWithCtrlKey" type="sap.ui.core/boolean" defaultValue="false">
+            <documentation>Set whether the user must hold the ctrl key to use lasso selection</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="dataPointsCacheable" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>Set whether data points can be cached. If it's true, data points might be cached by Interaction for better performance.</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+    </properties>
+</control>

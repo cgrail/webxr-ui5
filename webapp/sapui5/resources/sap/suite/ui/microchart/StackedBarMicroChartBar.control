@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>StackedBarMicroChartBar</name>
+    <derived/>
+    <documentation>Contains the values of the stacked bar chart.</documentation>
+    <since>1.44.0</since>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="value" type="sap.ui.core/float" defaultValue="0" group="Data">
+            <documentation>The value for stacked bar chart. It is used in order to determine the width of the bar</documentation>
+        </property>
+        <property name="valueColor" type="sap.m/ValueCSSColor" group="Appearance">
+            <documentation>The color of the bar.</documentation>
+        </property>
+        <property name="displayValue" type="sap.ui.core/string" group="Data">
+            <documentation>If this property is set, then it will be displayed instead of value.</documentation>
+        </property>
+    </properties>
+</control>

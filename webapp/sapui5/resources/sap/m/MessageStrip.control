@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>MessageStrip</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>MessageStrip is a control that enables the embedding of application-related messages in the application.
+&lt;h3&gt;Overview&lt;/h3&gt;
+The message strip displays 4 types of messages, each with a corresponding semantic color and icon: Information, Success, Warning and Error.
+
+Each message can have a close button, so that it can be removed from the UI if needed.
+
+With version 1.50 you can use a limited set of formatting tags for the message text by setting &lt;code&gt;enableFormattedText&lt;/code&gt;. The allowed tags are:
+&lt;ul&gt;
+&lt;li&gt;&amp;lt;a&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;em&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;strong&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;u&amp;gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Usage&lt;/h3&gt;
+&lt;h4&gt;When to use&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;You want to provide information or status update within the detail area of an object&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;When not to use&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;You want to display information within the object page header, within a control, in the master list, or above the page header.&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+    <since>1.30</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="text" type="sap.ui.core/string" defaultValue="" group="Appearance">
+            <documentation>Determines the text of the message.</documentation>
+        </property>
+        <property name="type" type="sap.ui.core/MessageType" defaultValue="Information" group="Appearance">
+            <documentation>Determines the type of messages that are displayed in the MessageStrip.
+Possible values are: Information (default), Success, Warning, Error.
+If None is passed, the value is set to Information and a warning is displayed in the console.</documentation>
+        </property>
+        <property name="customIcon" type="sap.ui.core/URI" defaultValue="" group="Appearance">
+            <documentation>Determines a custom icon which is displayed.
+If none is set, the default icon for this message type is used.</documentation>
+        </property>
+        <property name="showIcon" type="sap.ui.core/boolean" defaultValue="false" group="Appearance">
+            <documentation>Determines if an icon is displayed for the message.</documentation>
+        </property>
+        <property name="showCloseButton" type="sap.ui.core/boolean" defaultValue="false" group="Appearance">
+            <documentation>Determines if the message has a close button in the upper right corner.</documentation>
+        </property>
+        <property name="enableFormattedText" type="sap.ui.core/boolean" defaultValue="false" group="Appearance">
+            <documentation>Determines the limited collection of HTML elements passed to the &lt;code&gt;text&lt;/code&gt; property should be
+evaluated.
+
+&lt;b&gt;Note:&lt;/b&gt; If this property is set to true the string passed to &lt;code&gt;text&lt;/code&gt; property
+can evaluate the following list of limited HTML elements. All other HTML elements and their nested
+content will not be rendered by the control:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;a&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;em&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;strong&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;u&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="close" allowPreventDefault="false">
+            <documentation>This event will be fired after the container is closed.</documentation>
+        </event>
+    </events>
+    <aggregations default="link">
+        <aggregation name="link" type="sap.m/Link" cardinality="0..1">
+            <documentation>Adds an sap.m.Link control which will be displayed at the end of the message.</documentation>
+        </aggregation>
+        <aggregation name="_formattedText" type="sap.m/FormattedText" cardinality="0..1" visibility="hidden">
+            <documentation>Hidden aggregation which is used to transform the string message into sap.m.Text control.</documentation>
+        </aggregation>
+        <aggregation name="_text" type="sap.m/Text" cardinality="0..1" visibility="hidden">
+            <documentation>Hidden aggregation which is used to transform the string message into sap.m.Text control.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

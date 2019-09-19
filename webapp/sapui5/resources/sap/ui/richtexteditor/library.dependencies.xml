@@ -1,0 +1,344 @@
+<?xml version="1.0" ?>
+<library  version="2.0" name="sap.ui.richtexteditor">
+  <module name="sap/ui/richtexteditor/RTESplitButton.js" size="3432" compressedSize="1423">
+    <description>Provides control sap.ui.richtexteditor.RTESplitButton.</description>
+    <requires>
+      <module name="sap/m/SplitButton.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/richtexteditor/RTESplitButtonRenderer.js" size="1027" compressedSize="281">
+    <description>Provides default renderer for control sap.ui.richtexteditor.RTESplitButton</description>
+    <requires>
+      <module name="sap/m/SplitButtonRenderer.js"/>
+      <module name="sap/ui/core/Renderer.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/richtexteditor/RichTextEditor.js" size="66903" compressedSize="29736">
+    <description>Provides control sap.ui.richtexteditor.RichTextEditor.</description>
+    <requires>
+      <module name="sap/base/Log.js"/>
+      <module name="sap/base/security/encodeXML.js"/>
+      <module name="sap/base/security/sanitizeHTML.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/core/RenderManager.js"/>
+      <module name="sap/ui/core/ResizeHandler.js"/>
+      <module name="sap/ui/dom/includeScript.js"/>
+      <module name="sap/ui/dom/jquery/Selectors.js"/>
+      <module name="sap/ui/dom/jquery/control.js"/>
+      <module name="sap/ui/events/KeyCodes.js"/>
+      <module name="sap/ui/richtexteditor/ToolbarWrapper.js"/>
+      <module name="sap/ui/richtexteditor/library.js"/>
+      <module name="sap/ui/thirdparty/jquery.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/richtexteditor/RichTextEditorRenderer.js" size="2227" compressedSize="971">
+    <description>Provides default renderer for control sap.ui.richtexteditor.RichTextEditor</description>
+    <requires>
+      <module name="sap/ui/core/Renderer.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/richtexteditor/ToolbarWrapper.js" size="67347" compressedSize="28123">
+    <description>Provides control sap.ui.richtexteditor.ToolbarWrapper.</description>
+    <requires>
+      <module name="sap/base/Log.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/core/IconPool.js"/>
+      <module name="sap/ui/core/Item.js"/>
+      <module name="sap/ui/richtexteditor/RTESplitButton.js"/>
+      <module name="sap/ui/richtexteditor/library.js"/>
+      <module name="sap/ui/thirdparty/jquery.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/richtexteditor/ToolbarWrapperRenderer.js" size="952" compressedSize="301">
+    <description>Provides default renderer for control sap.ui.richtexteditor.ToolbarWrapper</description>
+    <requires>
+      <module name="sap/ui/core/Renderer.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/richtexteditor/library-h2-preload.js" size="10467">
+    <requires>
+      <module name="sap/base/Log.js"/>
+      <module name="sap/base/security/encodeXML.js"/>
+      <module name="sap/base/security/sanitizeHTML.js"/>
+      <module name="sap/base/util/ObjectPath.js"/>
+      <module name="sap/m/Button.js" conditional="true"/>
+      <module name="sap/m/CheckBox.js" conditional="true"/>
+      <module name="sap/m/ColorPalettePopover.js" conditional="true"/>
+      <module name="sap/m/Dialog.js" conditional="true"/>
+      <module name="sap/m/HBox.js" conditional="true"/>
+      <module name="sap/m/Input.js" conditional="true"/>
+      <module name="sap/m/Label.js" conditional="true"/>
+      <module name="sap/m/Menu.js" conditional="true"/>
+      <module name="sap/m/MenuButton.js" conditional="true"/>
+      <module name="sap/m/MenuItem.js" conditional="true"/>
+      <module name="sap/m/OverflowToolbar.js" conditional="true"/>
+      <module name="sap/m/OverflowToolbarButton.js" conditional="true"/>
+      <module name="sap/m/OverflowToolbarLayoutData.js" conditional="true"/>
+      <module name="sap/m/OverflowToolbarToggleButton.js" conditional="true"/>
+      <module name="sap/m/Select.js" conditional="true"/>
+      <module name="sap/m/SplitButton.js"/>
+      <module name="sap/m/SplitButtonRenderer.js"/>
+      <module name="sap/m/StepInput.js" conditional="true"/>
+      <module name="sap/m/Text.js" conditional="true"/>
+      <module name="sap/m/ToolbarSeparator.js" conditional="true"/>
+      <module name="sap/m/VBox.js" conditional="true"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/core/Core.js"/>
+      <module name="sap/ui/core/IconPool.js"/>
+      <module name="sap/ui/core/InvisibleText.js" conditional="true"/>
+      <module name="sap/ui/core/Item.js"/>
+      <module name="sap/ui/core/RenderManager.js"/>
+      <module name="sap/ui/core/Renderer.js"/>
+      <module name="sap/ui/core/ResizeHandler.js"/>
+      <module name="sap/ui/core/library.js"/>
+      <module name="sap/ui/dom/includeScript.js"/>
+      <module name="sap/ui/dom/jquery/Selectors.js"/>
+      <module name="sap/ui/dom/jquery/control.js"/>
+      <module name="sap/ui/events/KeyCodes.js"/>
+      <module name="sap/ui/thirdparty/jquery.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+    <includes>
+      <module name="sap/ui/richtexteditor/library.js"/>
+      <module name="sap/ui/richtexteditor/manifest.json"/>
+      <module name="sap/ui/richtexteditor/RTESplitButton.js"/>
+      <module name="sap/ui/richtexteditor/RTESplitButtonRenderer.js"/>
+      <module name="sap/ui/richtexteditor/RichTextEditor.js"/>
+      <module name="sap/ui/richtexteditor/RichTextEditorRenderer.js"/>
+      <module name="sap/ui/richtexteditor/ToolbarWrapper.js"/>
+      <module name="sap/ui/richtexteditor/ToolbarWrapperRenderer.js"/>
+    </includes>
+  </module>
+  <module name="sap/ui/richtexteditor/library-preload.js" size="70063">
+    <requires>
+      <module name="sap/base/Log.js"/>
+      <module name="sap/base/security/encodeXML.js"/>
+      <module name="sap/base/security/sanitizeHTML.js"/>
+      <module name="sap/base/util/ObjectPath.js"/>
+      <module name="sap/m/Button.js" conditional="true"/>
+      <module name="sap/m/CheckBox.js" conditional="true"/>
+      <module name="sap/m/ColorPalettePopover.js" conditional="true"/>
+      <module name="sap/m/Dialog.js" conditional="true"/>
+      <module name="sap/m/HBox.js" conditional="true"/>
+      <module name="sap/m/Input.js" conditional="true"/>
+      <module name="sap/m/Label.js" conditional="true"/>
+      <module name="sap/m/Menu.js" conditional="true"/>
+      <module name="sap/m/MenuButton.js" conditional="true"/>
+      <module name="sap/m/MenuItem.js" conditional="true"/>
+      <module name="sap/m/OverflowToolbar.js" conditional="true"/>
+      <module name="sap/m/OverflowToolbarButton.js" conditional="true"/>
+      <module name="sap/m/OverflowToolbarLayoutData.js" conditional="true"/>
+      <module name="sap/m/OverflowToolbarToggleButton.js" conditional="true"/>
+      <module name="sap/m/Select.js" conditional="true"/>
+      <module name="sap/m/SplitButton.js"/>
+      <module name="sap/m/SplitButtonRenderer.js"/>
+      <module name="sap/m/StepInput.js" conditional="true"/>
+      <module name="sap/m/Text.js" conditional="true"/>
+      <module name="sap/m/ToolbarSeparator.js" conditional="true"/>
+      <module name="sap/m/VBox.js" conditional="true"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/core/Core.js"/>
+      <module name="sap/ui/core/IconPool.js"/>
+      <module name="sap/ui/core/InvisibleText.js" conditional="true"/>
+      <module name="sap/ui/core/Item.js"/>
+      <module name="sap/ui/core/RenderManager.js"/>
+      <module name="sap/ui/core/Renderer.js"/>
+      <module name="sap/ui/core/ResizeHandler.js"/>
+      <module name="sap/ui/core/library.js"/>
+      <module name="sap/ui/dom/includeScript.js"/>
+      <module name="sap/ui/dom/jquery/Selectors.js"/>
+      <module name="sap/ui/dom/jquery/control.js"/>
+      <module name="sap/ui/events/KeyCodes.js"/>
+      <module name="sap/ui/thirdparty/jquery.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+    <includes>
+      <module name="sap/ui/richtexteditor/RTESplitButton.js"/>
+      <module name="sap/ui/richtexteditor/RTESplitButtonRenderer.js"/>
+      <module name="sap/ui/richtexteditor/RichTextEditor.js"/>
+      <module name="sap/ui/richtexteditor/RichTextEditorRenderer.js"/>
+      <module name="sap/ui/richtexteditor/ToolbarWrapper.js"/>
+      <module name="sap/ui/richtexteditor/ToolbarWrapperRenderer.js"/>
+      <module name="sap/ui/richtexteditor/library.js"/>
+      <module name="sap/ui/richtexteditor/manifest.json"/>
+    </includes>
+  </module>
+  <module name="sap/ui/richtexteditor/library-preload.json" size="0">
+    <requires>
+      <module name="sap/base/Log.js"/>
+      <module name="sap/base/security/encodeXML.js"/>
+      <module name="sap/base/security/sanitizeHTML.js"/>
+      <module name="sap/base/util/ObjectPath.js"/>
+      <module name="sap/m/Button.js" conditional="true"/>
+      <module name="sap/m/CheckBox.js" conditional="true"/>
+      <module name="sap/m/ColorPalettePopover.js" conditional="true"/>
+      <module name="sap/m/Dialog.js" conditional="true"/>
+      <module name="sap/m/HBox.js" conditional="true"/>
+      <module name="sap/m/Input.js" conditional="true"/>
+      <module name="sap/m/Label.js" conditional="true"/>
+      <module name="sap/m/Menu.js" conditional="true"/>
+      <module name="sap/m/MenuButton.js" conditional="true"/>
+      <module name="sap/m/MenuItem.js" conditional="true"/>
+      <module name="sap/m/OverflowToolbar.js" conditional="true"/>
+      <module name="sap/m/OverflowToolbarButton.js" conditional="true"/>
+      <module name="sap/m/OverflowToolbarLayoutData.js" conditional="true"/>
+      <module name="sap/m/OverflowToolbarToggleButton.js" conditional="true"/>
+      <module name="sap/m/Select.js" conditional="true"/>
+      <module name="sap/m/SplitButton.js"/>
+      <module name="sap/m/SplitButtonRenderer.js"/>
+      <module name="sap/m/StepInput.js" conditional="true"/>
+      <module name="sap/m/Text.js" conditional="true"/>
+      <module name="sap/m/ToolbarSeparator.js" conditional="true"/>
+      <module name="sap/m/VBox.js" conditional="true"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/core/Core.js"/>
+      <module name="sap/ui/core/IconPool.js"/>
+      <module name="sap/ui/core/InvisibleText.js" conditional="true"/>
+      <module name="sap/ui/core/Item.js"/>
+      <module name="sap/ui/core/RenderManager.js"/>
+      <module name="sap/ui/core/Renderer.js"/>
+      <module name="sap/ui/core/ResizeHandler.js"/>
+      <module name="sap/ui/core/library-preload.json"/>
+      <module name="sap/ui/core/library.js"/>
+      <module name="sap/ui/dom/includeScript.js"/>
+      <module name="sap/ui/dom/jquery/Selectors.js"/>
+      <module name="sap/ui/dom/jquery/control.js"/>
+      <module name="sap/ui/events/KeyCodes.js"/>
+      <module name="sap/ui/thirdparty/jquery.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+    <includes>
+      <module name="sap/ui/richtexteditor/RTESplitButton.js"/>
+      <module name="sap/ui/richtexteditor/RTESplitButtonRenderer.js"/>
+      <module name="sap/ui/richtexteditor/RichTextEditor.js"/>
+      <module name="sap/ui/richtexteditor/RichTextEditorRenderer.js"/>
+      <module name="sap/ui/richtexteditor/ToolbarWrapper.js"/>
+      <module name="sap/ui/richtexteditor/ToolbarWrapperRenderer.js"/>
+      <module name="sap/ui/richtexteditor/library.js"/>
+      <module name="sap/ui/richtexteditor/manifest.json"/>
+    </includes>
+  </module>
+  <module name="sap/ui/richtexteditor/library.js" size="14573" compressedSize="8090">
+    <description>Initialization Code and shared classes of library sap.ui.richtexteditor.</description>
+    <requires>
+      <module name="sap/base/util/ObjectPath.js"/>
+      <module name="sap/m/Button.js" conditional="true"/>
+      <module name="sap/m/CheckBox.js" conditional="true"/>
+      <module name="sap/m/ColorPalettePopover.js" conditional="true"/>
+      <module name="sap/m/Dialog.js" conditional="true"/>
+      <module name="sap/m/HBox.js" conditional="true"/>
+      <module name="sap/m/Input.js" conditional="true"/>
+      <module name="sap/m/Label.js" conditional="true"/>
+      <module name="sap/m/Menu.js" conditional="true"/>
+      <module name="sap/m/MenuButton.js" conditional="true"/>
+      <module name="sap/m/MenuItem.js" conditional="true"/>
+      <module name="sap/m/OverflowToolbar.js" conditional="true"/>
+      <module name="sap/m/OverflowToolbarButton.js" conditional="true"/>
+      <module name="sap/m/OverflowToolbarLayoutData.js" conditional="true"/>
+      <module name="sap/m/OverflowToolbarToggleButton.js" conditional="true"/>
+      <module name="sap/m/Select.js" conditional="true"/>
+      <module name="sap/m/SplitButton.js" conditional="true"/>
+      <module name="sap/m/StepInput.js" conditional="true"/>
+      <module name="sap/m/Text.js" conditional="true"/>
+      <module name="sap/m/ToolbarSeparator.js" conditional="true"/>
+      <module name="sap/m/VBox.js" conditional="true"/>
+      <module name="sap/ui/core/Core.js"/>
+      <module name="sap/ui/core/InvisibleText.js" conditional="true"/>
+      <module name="sap/ui/core/library.js"/>
+      <module name="sap/ui/thirdparty/jquery.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/richtexteditor/manifest.json" size="1298">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle.properties" size="3784">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_ar.properties" size="5626">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_bg.properties" size="6893">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_ca.properties" size="3961">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_cs.properties" size="3990">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_da.properties" size="3854">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_de.properties" size="3954">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_el.properties" size="6720">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_en.properties" size="3731">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_en_US_sappsd.properties" size="7557">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_en_US_saptrc.properties" size="4832">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_es.properties" size="3890">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_et.properties" size="3817">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_fi.properties" size="3966">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_fr.properties" size="3917">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_hi.properties" size="6250">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_hr.properties" size="3816">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_hu.properties" size="4230">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_it.properties" size="3877">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_iw.properties" size="5428">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_ja.properties" size="4464">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_kk.properties" size="6062">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_ko.properties" size="4323">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_lt.properties" size="4159">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_lv.properties" size="4018">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_ms.properties" size="3792">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_nl.properties" size="3855">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_no.properties" size="3810">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_pl.properties" size="4017">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_pt.properties" size="3916">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_ro.properties" size="3939">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_ru.properties" size="6656">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_sh.properties" size="3817">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_sk.properties" size="4073">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_sl.properties" size="3927">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_sv.properties" size="3824">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_th.properties" size="6010">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_tr.properties" size="4016">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_uk.properties" size="6576">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_vi.properties" size="4588">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_zh_CN.properties" size="4110">
+  </module>
+  <module name="sap/ui/richtexteditor/messagebundle_zh_TW.properties" size="4134">
+  </module>
+</library>

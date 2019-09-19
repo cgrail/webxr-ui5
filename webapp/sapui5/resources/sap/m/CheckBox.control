@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>CheckBox</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Allows the user to set a binary value, such as true/false or yes/no for an item.
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+
+The &lt;code&gt;CheckBox&lt;/code&gt; control consists of a box and a label that describes its purpose.
+If it's checked, an indicator is displayed inside the box.
+
+To select/deselect the &lt;code&gt;CheckBox&lt;/code&gt;, the user has to click or tap the square box or its label.
+Clicking or tapping toggles the &lt;code&gt;CheckBox&lt;/code&gt; between checked and unchecked state.
+The &lt;code&gt;CheckBox&lt;/code&gt; control only has 3 states - checked, unchecked and partially selected.
+
+&lt;h3&gt;Usage&lt;/h3&gt;
+
+You can set the width of the element containing the box and the label manually with the use
+of the &lt;code&gt;width&lt;/code&gt; property. If the text exceeds the available width, it is truncated.
+
+&lt;b&gt;Note:&lt;/b&gt; When &lt;code&gt;useEntireWidth&lt;/code&gt; property is set to &lt;code&gt;true&lt;/code&gt;, the value of the
+&lt;code&gt;width&lt;/code&gt; property is applied to the control as a whole (box and label). If
+&lt;code&gt;useEntireWidth&lt;/code&gt; is set to &lt;code&gt;false&lt;/code&gt;, the &lt;code&gt;width&lt;/code&gt; is applied to the label only.
+
+The touchable area for toggling the &lt;code&gt;CheckBox&lt;/code&gt; ends where the text ends.
+
+If the width allows more space than the text requires, white space is added.
+The text can be positioned manually in this space using the &lt;code&gt;textAlign&lt;/code&gt; property.
+
+&lt;b&gt;Note:&lt;/b&gt; Keep in mind that setting the &lt;code&gt;textAlign&lt;/code&gt; property to &lt;code&gt;Right&lt;/code&gt;
+can result in a large amount of white space between the box and the text.
+
+You can disable the &lt;code&gt;CheckBox&lt;/code&gt; by setting the &lt;code&gt;enabled&lt;/code&gt; property to &lt;code&gt;false&lt;/code&gt;,
+or use the &lt;code&gt;CheckBox&lt;/code&gt; in read-only mode by setting the &lt;code&gt;editable&lt;/code&gt; property to false.
+
+&lt;b&gt;Note:&lt;/b&gt; Disabled and read-only states shouldn't be used together.</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="selected" type="sap.ui.core/boolean" defaultValue="false" group="Data">
+            <documentation>Determines whether the &lt;code&gt;CheckBox&lt;/code&gt; is selected (checked).
+
+When this property is set to &lt;code&gt;true&lt;/code&gt;, the control is displayed as selected,
+unless the value of the &lt;code&gt;partiallySelected&lt;/code&gt; property is also set to &lt;code&gt;true&lt;/code&gt;.
+In this case, the control is displayed as partially selected.</documentation>
+        </property>
+        <property name="partiallySelected" type="sap.ui.core/boolean" defaultValue="false" group="Data" since="1.58">
+            <documentation>Determines whether the &lt;code&gt;CheckBox&lt;/code&gt; is displayed as partially selected.
+
+&lt;b&gt;Note:&lt;/b&gt; This property leads only to visual change of the checkbox and the
+state cannot be achieved by user interaction. The visual state depends on
+the value of the &lt;code&gt;selected&lt;/code&gt; property:
+&lt;ul&gt;
+&lt;li&gt;If &lt;code&gt;selected&lt;/code&gt; = &lt;code&gt;true&lt;/code&gt; and &lt;code&gt;partiallySelected&lt;/code&gt;
+= &lt;code&gt;true&lt;/code&gt;, the control is displayed as partially selected&lt;/li&gt;
+&lt;li&gt;If &lt;code&gt;selected&lt;/code&gt; = &lt;code&gt;true&lt;/code&gt; and &lt;code&gt;partiallySelected&lt;/code&gt;
+= &lt;code&gt;false&lt;/code&gt;, the control is displayed as selected&lt;/li&gt;
+&lt;li&gt;If &lt;code&gt;selected&lt;/code&gt; = &lt;code&gt;false&lt;/code&gt;, the control is displayed as not
+selected regardless of what is set for &lt;code&gt;partiallySelected&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+        </property>
+        <property name="enabled" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Disables the Checkbox. Disabled controls are not interactive and are rendered differently according to the theme.</documentation>
+        </property>
+        <property name="name" type="sap.ui.core/string" group="Misc">
+            <documentation>The 'name' property to be used in the HTML code, for example for HTML forms that send data to the server via submit.</documentation>
+        </property>
+        <property name="text" type="sap.ui.core/string" group="Appearance">
+            <documentation>Defines the text displayed next to the checkbox</documentation>
+        </property>
+        <property name="textDirection" type="sap.ui.core/TextDirection" defaultValue="Inherit" group="Appearance">
+            <documentation>Options for the text direction are RTL and LTR. Alternatively, the control can inherit the text direction from its parent container.</documentation>
+        </property>
+        <property name="textAlign" type="sap.ui.core/TextAlign" defaultValue="Begin" group="Appearance">
+            <documentation>Aligns the text of the checkbox. Available alignment settings are "Begin", "Center", "End", "Left", and "Right".</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" defaultValue="" group="Dimension">
+            <documentation>Determines the total width of the control or the width of its label only, depending on the value of &lt;code&gt;useEntireWidth&lt;/code&gt;.
+
+&lt;b&gt;Note:&lt;/b&gt; When &lt;code&gt;useEntireWidth&lt;/code&gt; is set to &lt;code&gt;true&lt;/code&gt;, &lt;code&gt;width&lt;/code&gt; is applied to the control as a whole (checkbox and label). Otherwise, &lt;code&gt;width&lt;/code&gt; is applied to the label only.</documentation>
+        </property>
+        <property name="useEntireWidth" type="sap.ui.core/boolean" defaultValue="false" group="Appearance" since="1.52">
+            <documentation>Indicates if the given width will be applied to the control as a whole or to its label only.
+
+&lt;b&gt;Note:&lt;/b&gt; by default the width is set to the label</documentation>
+        </property>
+        <property name="activeHandling" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Flag to switch on activeHandling, when it is switched off, there will be no visual changes on active state. Default value is 'true'</documentation>
+        </property>
+        <property name="editable" type="sap.ui.core/boolean" defaultValue="true" group="Behavior" since="1.25">
+            <documentation>Specifies whether the user shall be allowed to edit the state of the checkbox</documentation>
+        </property>
+        <property name="valueState" type="sap.ui.core/ValueState" defaultValue="None" group="Data" since="1.38">
+            <documentation>Accepts the core enumeration ValueState.type that supports 'None', 'Error', 'Warning', 'Success' and 'Information'.</documentation>
+        </property>
+        <property name="displayOnly" type="sap.ui.core/boolean" defaultValue="false" group="Behavior" since="1.54">
+            <documentation>Determines whether the &lt;code&gt;CheckBox&lt;/code&gt; is in display only state.
+
+When set to &lt;code&gt;true&lt;/code&gt;, the &lt;code&gt;CheckBox&lt;/code&gt; is not interactive, not editable, not focusable
+and not in the tab chain. This setting is used for forms in review mode.
+
+&lt;Note:&gt; When the property &lt;code&gt;enabled&lt;/code&gt; is set to &lt;code&gt;false&lt;/code&gt; this property has no effect.</documentation>
+        </property>
+        <property name="wrapping" type="sap.ui.core/boolean" defaultValue="false" group="Appearance" since="1.54">
+            <documentation>Determines whether the label's text is wrapped.
+
+When set to &lt;code&gt;false&lt;/code&gt; (default), the label's text
+is truncated with ellipsis at the end.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="select" allowPreventDefault="false">
+            <documentation>Event is triggered when the control status is changed by the user by selecting or deselecting the checkbox.</documentation>
+            <parameters>
+                <parameter name="selected" type="sap.ui.core/boolean">
+                    <documentation>Checks whether the CheckBox is marked or not .</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="_label" type="sap.m/Label" cardinality="0..1" visibility="hidden">
+            <documentation>The label that represents the text of the checkbox control</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="ariaDescribedBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / IDs which describe this control (see WAI-ARIA attribute aria-describedby).</documentation>
+        </association>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / IDs which label this control (see WAI-ARIA attribute aria-labelledby).</documentation>
+        </association>
+    </associations>
+</control>

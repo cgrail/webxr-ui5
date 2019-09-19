@@ -1,0 +1,394 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": ".theming",
+			"theme": "base"
+		},
+		{
+			"name": "BusinessCard.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "CalculationBuilder.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "CalculationBuilderExpression.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "CalculationBuilderInput.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "CalculationBuilderItem.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "ChartContainer.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "ChartTile.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "DateRangeScroller.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "DateRangeSlider.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "DateRangeSliderInternal.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "FacetOverview.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "FeedItemHeader.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "FeedTile.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "GenericTile2X2.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "HeaderCell.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "HeaderContainer.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "InfoTile.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "InfoTileSize.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "KpiTile.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "LaunchTile.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "LinkActionSheet.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "MicroProcessFlow.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "MonitoringContent.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "MonitoringTile.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "NetworkGraph.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "NetworkGroup.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "NetworkLine.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "NetworkNode.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "NetworkTooltip.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "NoteTaker.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "NoteTakerCard.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "NoteTakerFeeder.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "NumericTile.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "PictureZoomIn.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "ProcessFlow.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "ProcessFlowConnection.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "ProcessFlowConnectionLabel.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "ProcessFlowLaneHeader.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "ProcessFlowNode.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "SplitButton.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "StatusIndicator.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "TAccount.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "TargetFilter.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "ThingCollection.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "ThreePanelThingViewer.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "TileContent2X2.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "Timeline.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "TimelineItem.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "UnifiedThingGroup.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "UnifiedThingInspector.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "VerticalNavigationBar.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "ViewRepeater.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "fonts/PFBusinessSuiteInAppSymbols.eot",
+			"theme": "base"
+		},
+		{
+			"name": "fonts/PFBusinessSuiteInAppSymbols.ttf",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/btn_actions_hover.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/btn_actions_regular.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/btn_nav_left_a.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/btn_nav_right_a.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/bubble_1.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/decline_16.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/edit_grey_24.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/error.gif",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/img_bg.png",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/img_bg_ti.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/btn_actions_hover.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/btn_actions_regular.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/btn_nav_left_a.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/btn_nav_right_a.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/bubble_1.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/decline_16.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/edit_grey_24.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/error.gif",
+			"theme": "base"
+		},
+		{
+			"name": "img/img_bg.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/img_bg_ti.png",
+			"theme": "base"
+		},
+		{
+			"name": "library-RTL-dbg.css",
+			"isDebug": true,
+			"theme": "base"
+		},
+		{
+			"name": "library-RTL.css",
+			"theme": "base"
+		},
+		{
+			"name": "library-dbg.css",
+			"isDebug": true,
+			"theme": "base"
+		},
+		{
+			"name": "library-parameters.json",
+			"theme": "base"
+		},
+		{
+			"name": "library.css",
+			"theme": "base"
+		},
+		{
+			"name": "library.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "library.source.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "shared.less",
+			"designtime": true,
+			"theme": "base"
+		}
+	]
+}

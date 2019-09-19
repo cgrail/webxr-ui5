@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<library xmlns="http://www.sap.com/sap.ui.library.xsd">
+
+	<name>sap.ui.export</name>
+	<vendor>SAP SE</vendor>
+	<copyright>SAPUI5
+
+		(c) Copyright 2009-2019 SAP SE. All rights reserved
+	</copyright>
+	<version>1.64.0</version>
+
+	<documentation>UI5 library: sap.ui.export</documentation>
+
+	<dependencies>
+		<dependency>
+			<libraryName>sap.ui.core</libraryName>
+		</dependency>
+	</dependencies>
+
+	<appData>
+		<!-- excludes for the JSDoc -->
+		<jsdoc xmlns="http://www.sap.com/ui5/buildext/jsdoc">
+			<exclude name="sap.ui.export.js."/>
+		</jsdoc>
+		<documentation xmlns="http://www.sap.com/ui5/buildext/documentation" indexUrl="../../../../test-resources/sap/ui/export/demokit/docuindex.json" resolve="lib"/>
+		<!-- excludes for the JSCoverage -->
+		<jscoverage xmlns="http://www.sap.com/ui5/buildext/jscoverage">
+			<exclude name="sap.ui.export.js."/>
+		</jscoverage>
+		<packaging xmlns="http://www.sap.com/ui5/buildext/packaging" version="2.0">
+			<all-in-one>
+				<!-- exclude third party bundles and the worker code -->
+				<exclude name="sap/ui/export/js/**" />
+			</all-in-one>
+		</packaging>
+		<ownership xmlns="http://www.sap.com/ui5/buildext/ownership">
+			<component>CA-UI5-TBL</component><!-- default component for library -->
+		</ownership>
+	</appData>
+
+</library>

@@ -1,0 +1,28 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout">
+	<Dialog class="sapUiNoContentPadding" id="ShowConfirmationOnDraftActivate" state="{model>/state}" afterClose="afterClose" type="Message" initialFocus="Close" 
+		showHeader="true" horizontalScrolling="false" draggable="true"
+		contentHeight="440px" contentWidth="440px" verticalScrolling="false">
+		<content>
+			<MessageView id="messageView" items="{msg>/}" showDetailsPageHeader="false" itemSelect="onMessageSelect" activeTitlePress="titlePressed" groupItems="true">
+				<MessageItem id="messageItem" type="{msg>type}" title="{msg>message}" description="{msg>description}" subtitle="{msg>additionalText}" 
+						longtextUrl="{msg>descriptionUrl}" activeTitle="{path: 'msg>controlIds', formatter: '.isPositionable'}" />
+			</MessageView>
+		</content>
+		<customHeader>
+			<Bar>
+				<contentMiddle>
+					<Text text="{= (${model>/situation} === 3 || ${model>/situation} === 4) ? ${i18n>ST_DETAIL_TITLE_SAVE} : ${i18n>ST_DETAIL_TITLE_VALIDATION} }" />
+				</contentMiddle>
+				<contentLeft>
+					<Button icon="sap-icon://nav-back" visible="{model>/backbtnvisibility}" press="onBackButtonPress" tooltip="{i18n>BACK}" />
+				</contentLeft>
+			</Bar>
+		</customHeader>
+		<beginButton>
+			<Button id="saveText" text="{i18n>SAVE}" visible="{= ${model>/situation} === 4 }" press="onAccept"/>
+		</beginButton>
+		<endButton>
+			<Button text="{i18n>CANCEL}" press="onReject"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<interface xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>IBreadcrumbs</name>
+    <derived/>
+    <documentation>Interface for controls which have the meaning of a breadcrumbs navigation.</documentation>
+    <since>1.52</since>
+</interface>

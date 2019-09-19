@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>simple/LegendRowConfig</name>
+    <derived/>
+    <documentation>Shapes in one horizontal line(row) share the same shape class and shape name. Each LegendRowConfig affects one row.</documentation>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property type="sap.ui.core/string" name="shapeClass">
+            <documentation>Specifies the shape class name of dimension legend row
+It's a full shape module name</documentation>
+        </property>
+        <property type="sap.ui.core/string" name="shapeName">
+            <documentation>Specifies the name of the dimension legend row</documentation>
+        </property>
+        <property type="sap.ui.core/string" name="stroke">
+            <documentation>Stroke of the legend row</documentation>
+        </property>
+        <property type="sap.ui.core/float" name="strokeWidth">
+            <documentation>The strokeWidth property is a presentation property defining the width of the stroke to be applied to the shape.</documentation>
+        </property>
+        <property type="sap.ui.core/string" name="text">
+            <documentation>The text content</documentation>
+        </property>
+    </properties>
+</control>

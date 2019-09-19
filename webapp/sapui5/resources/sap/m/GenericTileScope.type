@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>GenericTileScope</name>
+    <derived/>
+    <documentation>Defines the scopes of GenericTile enabling the developer to implement different "flavors" of tiles.</documentation>
+    <since>1.46.0</since>
+    <enumeration>
+        <value name="Display">
+            <documentation>Default scope (The default scope of the tile, no action icons are rendered).</documentation>
+        </value>
+        <value name="Actions">
+            <documentation>Action scope (Possible footer and Error State information is overlaid, "Remove" and "More" icons are added to the tile).</documentation>
+        </value>
+    </enumeration>
+</simple-type>

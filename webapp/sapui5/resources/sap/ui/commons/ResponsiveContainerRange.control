@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ResponsiveContainerRange</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Defines a range for the ResponsiveContainer</documentation>
+    <deprecation since="1.38"></deprecation>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="width" type="sap.ui.core/CSSSize" defaultValue="" group="Dimension">
+            <documentation>The minimal width for this range to be displayed.</documentation>
+        </property>
+        <property name="height" type="sap.ui.core/CSSSize" defaultValue="" group="Dimension">
+            <documentation>The minimal height for this range to be displayed.</documentation>
+        </property>
+        <property name="key" type="sap.ui.core/string" defaultValue="" group="Misc">
+            <documentation>A key which can be used to identify the range (optional).</documentation>
+        </property>
+    </properties>
+    <associations>
+        <association name="content" type="sap.ui.core/Control" cardinality="0..1">
+            <documentation>The content to show for this range (optional).</documentation>
+        </association>
+    </associations>
+</control>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ObjectPageAccessibleLandmarkInfo</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Settings for accessible landmarks which can be applied to the container elements of a &lt;code&gt;sap.uxap.ObjectPageLayout&lt;/code&gt; control.
+These landmarks are used by assistive technologies (such as screenreaders) to provide a meaningful page overview.</documentation>
+    <since>1.61</since>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="rootRole" type="sap.ui.core/AccessibleLandmarkRole" defaultValue="Main">
+            <documentation>Landmark role of the root container of the corresponding &lt;code&gt;sap.uxap.ObjectPageLayout&lt;/code&gt; control.
+
+If set to &lt;code&gt;sap.ui.core.AccessibleLandmarkRole.None&lt;/code&gt;, no landmark will be added to the container.</documentation>
+        </property>
+        <property name="rootLabel" type="sap.ui.core/string">
+            <documentation>Texts which describe the landmark of the root container of the corresponding &lt;code&gt;sap.uxap.ObjectPageLayout&lt;/code&gt; control.
+
+If not set (and a landmark different than &lt;code&gt;sap.ui.core.AccessibleLandmarkRole.None&lt;/code&gt; is defined), no label is set.</documentation>
+        </property>
+        <property name="contentRole" type="sap.ui.core/AccessibleLandmarkRole" defaultValue="None">
+            <documentation>Landmark role of the content container of the corresponding &lt;code&gt;sap.uxap.ObjectPageLayout&lt;/code&gt; control.
+
+If set to &lt;code&gt;sap.ui.core.AccessibleLandmarkRole.None&lt;/code&gt;, no landmark will be added to the container.</documentation>
+        </property>
+        <property name="contentLabel" type="sap.ui.core/string">
+            <documentation>Texts which describe the landmark of the content container of the corresponding &lt;code&gt;sap.uxap.ObjectPageLayout&lt;/code&gt; control.
+
+If not set (and a landmark different than &lt;code&gt;sap.ui.core.AccessibleLandmarkRole.None&lt;/code&gt; is defined), no label is set.</documentation>
+        </property>
+        <property name="navigationRole" type="sap.ui.core/AccessibleLandmarkRole" defaultValue="Navigation">
+            <documentation>Landmark role of the navigation container of the corresponding &lt;code&gt;sap.uxap.ObjectPageLayout&lt;/code&gt; control.
+
+If set to &lt;code&gt;sap.ui.core.AccessibleLandmarkRole.None&lt;/code&gt;, no landmark will be added to the container.</documentation>
+        </property>
+        <property name="navigationLabel" type="sap.ui.core/string">
+            <documentation>Texts which describe the landmark of the navigation container of the corresponding &lt;code&gt;sap.uxap.ObjectPageLayout&lt;/code&gt; control.
+
+If not set (and a landmark different than &lt;code&gt;sap.ui.core.AccessibleLandmarkRole.None&lt;/code&gt; is defined), no label is set.</documentation>
+        </property>
+        <property name="headerRole" type="sap.ui.core/AccessibleLandmarkRole" defaultValue="Banner">
+            <documentation>Landmark role of the header container of the corresponding &lt;code&gt;sap.uxap.ObjectPageLayout&lt;/code&gt; control.
+
+If set to &lt;code&gt;sap.ui.core.AccessibleLandmarkRole.None&lt;/code&gt;, no landmark will be added to the container.</documentation>
+        </property>
+        <property name="headerLabel" type="sap.ui.core/string">
+            <documentation>Texts which describe the landmark of the header container of the corresponding &lt;code&gt;sap.uxap.ObjectPageLayout&lt;/code&gt; control.
+
+If not set (and a landmark different than &lt;code&gt;sap.ui.core.AccessibleLandmarkRole.None&lt;/code&gt; is defined), no label is set.</documentation>
+        </property>
+        <property name="footerRole" type="sap.ui.core/AccessibleLandmarkRole" defaultValue="Region">
+            <documentation>Landmark role of the footer container of the corresponding &lt;code&gt;sap.uxap.ObjectPageLayout&lt;/code&gt; control.
+
+If set to &lt;code&gt;sap.ui.core.AccessibleLandmarkRole.None&lt;/code&gt;, no landmark will be added to the container.</documentation>
+        </property>
+        <property name="footerLabel" type="sap.ui.core/string">
+            <documentation>Texts which describe the landmark of the header container of the corresponding &lt;code&gt;sap.uxap.ObjectPageLayout&lt;/code&gt; control.
+
+If not set (and a landmark different than &lt;code&gt;sap.ui.core.AccessibleLandmarkRole.None&lt;/code&gt; is defined), no label is set.</documentation>
+        </property>
+    </properties>
+</control>

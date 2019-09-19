@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>BlockLayoutCell</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The BlockLayoutCell is used as an aggregation of the BlockLayoutRow. It contains Controls.
+The BlockLayoutCell should be used only as aggregation of the BlockLayoutRow.</documentation>
+    <since>1.34</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="title" type="sap.ui.core/string" group="Appearance">
+            <documentation>Defines the title of the cell.
+&lt;b&gt;Note:&lt;/b&gt; When the &lt;code&gt;titleLink&lt;/code&gt; aggregation is provided, the title of the cell will be replaced with the text from the &lt;code&gt;titleLink&lt;/code&gt;.</documentation>
+        </property>
+        <property name="titleAlignment" type="sap.ui.core/HorizontalAlign" defaultValue="Begin" group="Appearance">
+            <documentation>Defines the alignment of the cell title</documentation>
+        </property>
+        <property name="titleLevel" type="sap.ui.core/TitleLevel" defaultValue="Auto" group="Appearance">
+            <documentation>Defines the aria level of the title
+This information is e.g. used by assistive technologies like screenreaders to create a hierarchical site map for faster navigation.</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/int" defaultValue="0" group="Appearance">
+            <documentation>Defines the width of the cell. Depending on the context of the cell - whether it's in scrollable,
+or non scrollable row, this property is interpreted in two different ways.
+If the cell is placed inside a scrollable row - this property defines the width of the cell in
+percentages. If no value is provided - the default is 40%.
+If the cell is placed inside a non scrollable row - this property defines the grow factor of the cell
+compared to the whole row.
+&lt;b&gt;For example:&lt;/b&gt; If you have 2 cells, each with width of 1, this means that they should be of equal size,
+and they need to fill the whole row. This results in 50% width for each cell. If you have 2 cells,
+one with width of 1, the other with width of 3, this means that the whole row width is 4, so the first
+cell will have a width of 25%, the second - 75%.
+According to the visual guidelines, it is suggested that you only use 25%, 50%, 75% or 100% cells in
+you applications. For example, 12,5% width is not desirable (1 cell with width 1, and another with width 7)</documentation>
+        </property>
+        <property name="backgroundColorSet" type="sap.ui.layout/BlockLayoutCellColorSet" group="Appearance" since="1.48">
+            <documentation>The Background color set from which the background color will be selected.
+By using background colors from the predefined sets your colors could later be customized from the Theme Designer.
+&lt;b&gt;Note:&lt;/b&gt; backgroundColorSet should be used only in combination with backgroundColorShade.</documentation>
+        </property>
+        <property name="backgroundColorShade" type="sap.ui.layout/BlockLayoutCellColorShade" group="Appearance" since="1.48">
+            <documentation>The index of the background color in the color set from which the color will be selected.
+By using background colors from the predefined sets your colors could later be customized from the Theme Designer.
+&lt;b&gt;Note:&lt;/b&gt; backgroundColorShade should be used only in combination with backgroundColorSet.</documentation>
+        </property>
+    </properties>
+    <aggregations default="content">
+        <aggregation name="content" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>The content to be included inside the cell</documentation>
+        </aggregation>
+        <aggregation name="titleLink" type="sap.ui.core/Control" since="1.56" cardinality="0..1">
+            <documentation>The link that will replace the title of the cell.
+&lt;b&gt;Note:&lt;/b&gt; The only possible value is the &lt;code&gt;sap.m.Link&lt;/code&gt; control.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

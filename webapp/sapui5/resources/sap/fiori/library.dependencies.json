@@ -1,0 +1,59 @@
+{
+  "modules" : [
+    {
+      "name" : "sap/fiori/core-ext-dbg.js",
+      "size" : 98,
+      "compressedSize" : 76,
+      "required" : [],
+      "includes" : [],
+      "excludeFromAllInOne" : true
+    },
+    {
+      "name" : "sap/fiori/core-ext-light-dbg.js",
+      "size" : 98,
+      "compressedSize" : 76,
+      "required" : [],
+      "includes" : [],
+      "excludeFromAllInOne" : true
+    },
+    {
+      "name" : "sap/fiori/flp-controls-dbg.js",
+      "size" : 98,
+      "compressedSize" : 76,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/fiori/library-h2-preload.js",
+      "size" : 1671,
+      "required" : ["jquery.sap.global.js", "jquery.sap.resources.js", "sap/ui/core/Core.js", "sap/ui/core/library.js", "ui5loader-autoconfig.js"],
+      "includes" : ["sap/fiori/library.js", "sap/fiori/manifest.json", "sap/fiori/core-ext-dbg.js", "sap/fiori/core-ext-light-dbg.js", "sap/fiori/flp-controls-dbg.js"]
+    },
+    {
+      "name" : "sap/fiori/library-preload.js",
+      "size" : 1548,
+      "required" : ["jquery.sap.global.js", "jquery.sap.resources.js", "sap/ui/core/Core.js", "sap/ui/core/library.js", "ui5loader-autoconfig.js"],
+      "includes" : ["sap/fiori/flp-controls-dbg.js", "sap/fiori/library.js", "sap/fiori/manifest.json"]
+    },
+    {
+      "name" : "sap/fiori/library-preload.json",
+      "size" : 0,
+      "required" : ["jquery.sap.global.js", "jquery.sap.resources.js", "sap/ui/core/Core.js", "sap/ui/core/library-preload.json", "sap/ui/core/library.js", "ui5loader-autoconfig.js"],
+      "includes" : ["sap/fiori/flp-controls-dbg.js", "sap/fiori/library.js", "sap/fiori/manifest.json"]
+    },
+    {
+      "name" : "sap/fiori/library.js",
+      "description" : "Initialization Code and shared classes of library sap.fiori.",
+      "size" : 1254,
+      "compressedSize" : 598,
+      "required" : ["jquery.sap.global.js", "jquery.sap.resources.js", "sap/ui/core/Core.js", "sap/ui/core/library.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/fiori/manifest.json",
+      "size" : 997,
+      "required" : [],
+      "includes" : []
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ui5/types/Heatmap_tooltip</name>
+    <derived/>
+    <documentation>Settings for tooltip</documentation>
+    <since>1.7.2</since>
+    <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+    <baseType>sap.viz/ui5/core/BaseStructuredType</baseType>
+    <properties>
+        <property name="enabled" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>Set whether the tooltip is enabled</documentation>
+        </property>
+    </properties>
+</control>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ObjectMarkerType</name>
+    <derived/>
+    <documentation>Predefined types for ObjectMarker.</documentation>
+    <enumeration>
+        <value name="Flagged">
+            <documentation>Flagged type</documentation>
+        </value>
+        <value name="Favorite">
+            <documentation>Favorite type</documentation>
+        </value>
+        <value name="Draft">
+            <documentation>Draft type</documentation>
+        </value>
+        <value name="Locked">
+            <documentation>Locked type</documentation>
+        </value>
+        <value name="Unsaved">
+            <documentation>Unsaved type</documentation>
+        </value>
+        <value name="LockedBy">
+            <documentation>LockedBy type
+Use when you need to display the name of the user who locked the object.</documentation>
+        </value>
+        <value name="UnsavedBy">
+            <documentation>UnsavedBy type
+Use when you need to display the name of the user whose changes were unsaved.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

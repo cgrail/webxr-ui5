@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<interface xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>IDScope</name>
+    <derived/>
+    <documentation>Marker interface to flag controls that provide access to substructures from a byId method.</documentation>
+    <since>1.56.0</since>
+</interface>

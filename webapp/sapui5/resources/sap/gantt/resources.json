@@ -1,0 +1,5193 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": ".library"
+		},
+		{
+			"name": ".theming"
+		},
+		{
+			"name": "AdhocLine-dbg.js",
+			"module": "sap/gantt/AdhocLine.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "AdhocLine.js",
+			"module": "sap/gantt/AdhocLine.js",
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "GanttChart-dbg.js",
+			"module": "sap/gantt/GanttChart.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/GanttChartBase.js",
+				"sap/gantt/axistime/ProportionZoomStrategy.js",
+				"sap/gantt/config/TimeHorizon.js",
+				"sap/gantt/drawer/AdhocLine.js",
+				"sap/gantt/drawer/CalendarPattern.js",
+				"sap/gantt/drawer/CursorLine.js",
+				"sap/gantt/drawer/ExpandedBackground.js",
+				"sap/gantt/drawer/NowLine.js",
+				"sap/gantt/drawer/ShapeCrossRow.js",
+				"sap/gantt/drawer/ShapeInRow.js",
+				"sap/gantt/drawer/VerticalLine.js",
+				"sap/gantt/eventHandler/AutoScrollHandler.js",
+				"sap/gantt/eventHandler/BirdEyeHandler.js",
+				"sap/gantt/eventHandler/MouseWheelHandler.js",
+				"sap/gantt/eventHandler/ShapeHoverHandler.js",
+				"sap/gantt/eventHandler/ShapeResizeHandler.js",
+				"sap/gantt/eventHandler/TimePeriodZoomHandler.js",
+				"sap/gantt/eventHandler/TimePopoverHandler.js",
+				"sap/gantt/misc/AxisOrdinal.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/misc/ShapeManager.js",
+				"sap/gantt/misc/ShapeSelectionModel.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/table/TreeTable.js",
+				"sap/ui/thirdparty/d3.js"
+			]
+		},
+		{
+			"name": "GanttChart.js",
+			"module": "sap/gantt/GanttChart.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/GanttChartBase.js",
+				"sap/gantt/axistime/ProportionZoomStrategy.js",
+				"sap/gantt/config/TimeHorizon.js",
+				"sap/gantt/drawer/AdhocLine.js",
+				"sap/gantt/drawer/CalendarPattern.js",
+				"sap/gantt/drawer/CursorLine.js",
+				"sap/gantt/drawer/ExpandedBackground.js",
+				"sap/gantt/drawer/NowLine.js",
+				"sap/gantt/drawer/ShapeCrossRow.js",
+				"sap/gantt/drawer/ShapeInRow.js",
+				"sap/gantt/drawer/VerticalLine.js",
+				"sap/gantt/eventHandler/AutoScrollHandler.js",
+				"sap/gantt/eventHandler/BirdEyeHandler.js",
+				"sap/gantt/eventHandler/MouseWheelHandler.js",
+				"sap/gantt/eventHandler/ShapeHoverHandler.js",
+				"sap/gantt/eventHandler/ShapeResizeHandler.js",
+				"sap/gantt/eventHandler/TimePeriodZoomHandler.js",
+				"sap/gantt/eventHandler/TimePopoverHandler.js",
+				"sap/gantt/misc/AxisOrdinal.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/misc/ShapeManager.js",
+				"sap/gantt/misc/ShapeSelectionModel.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/table/TreeTable.js",
+				"sap/ui/thirdparty/d3.js"
+			]
+		},
+		{
+			"name": "GanttChartBase-dbg.js",
+			"module": "sap/gantt/GanttChartBase.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/library.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/ui/core/Control.js"
+			]
+		},
+		{
+			"name": "GanttChartBase.js",
+			"module": "sap/gantt/GanttChartBase.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/library.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/ui/core/Control.js"
+			]
+		},
+		{
+			"name": "GanttChartContainer-dbg.js",
+			"module": "sap/gantt/GanttChartContainer.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/config/TimeHorizon.js",
+				"sap/gantt/control/AssociateContainer.js",
+				"sap/gantt/control/Toolbar.js",
+				"sap/gantt/library.js",
+				"sap/gantt/misc/Format.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Orientation.js",
+				"sap/ui/layout/Splitter.js",
+				"sap/ui/layout/SplitterLayoutData.js"
+			]
+		},
+		{
+			"name": "GanttChartContainer.control",
+			"designtime": true
+		},
+		{
+			"name": "GanttChartContainer.js",
+			"module": "sap/gantt/GanttChartContainer.js",
+			"required": [
+				"sap/gantt/config/TimeHorizon.js",
+				"sap/gantt/control/AssociateContainer.js",
+				"sap/gantt/control/Toolbar.js",
+				"sap/gantt/library.js",
+				"sap/gantt/misc/Format.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Orientation.js",
+				"sap/ui/layout/Splitter.js",
+				"sap/ui/layout/SplitterLayoutData.js"
+			]
+		},
+		{
+			"name": "GanttChartContainerRenderer-dbg.js",
+			"module": "sap/gantt/GanttChartContainerRenderer.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/misc/Utility.js"
+			]
+		},
+		{
+			"name": "GanttChartContainerRenderer.js",
+			"module": "sap/gantt/GanttChartContainerRenderer.js",
+			"required": [
+				"sap/gantt/misc/Utility.js"
+			]
+		},
+		{
+			"name": "GanttChartRenderer-dbg.js",
+			"module": "sap/gantt/GanttChartRenderer.js",
+			"isDebug": true
+		},
+		{
+			"name": "GanttChartRenderer.js",
+			"module": "sap/gantt/GanttChartRenderer.js"
+		},
+		{
+			"name": "GanttChartWithTable-dbg.js",
+			"module": "sap/gantt/GanttChartWithTable.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/GanttChart.js",
+				"sap/gantt/GanttChartBase.js",
+				"sap/gantt/control/AssociateContainer.js",
+				"sap/gantt/control/Cell.js",
+				"sap/gantt/control/Toolbar.js",
+				"sap/gantt/drawer/SelectionPanel.js",
+				"sap/gantt/eventHandler/MouseWheelHandler.js",
+				"sap/ui/Device.js",
+				"sap/ui/layout/Splitter.js",
+				"sap/ui/layout/SplitterLayoutData.js",
+				"sap/ui/table/Column.js",
+				"sap/ui/table/TreeTable.js",
+				"sap/ui/thirdparty/d3.js"
+			]
+		},
+		{
+			"name": "GanttChartWithTable.js",
+			"module": "sap/gantt/GanttChartWithTable.js",
+			"required": [
+				"sap/gantt/GanttChart.js",
+				"sap/gantt/GanttChartBase.js",
+				"sap/gantt/control/AssociateContainer.js",
+				"sap/gantt/control/Cell.js",
+				"sap/gantt/control/Toolbar.js",
+				"sap/gantt/drawer/SelectionPanel.js",
+				"sap/gantt/eventHandler/MouseWheelHandler.js",
+				"sap/ui/Device.js",
+				"sap/ui/layout/Splitter.js",
+				"sap/ui/layout/SplitterLayoutData.js",
+				"sap/ui/table/Column.js",
+				"sap/ui/table/TreeTable.js",
+				"sap/ui/thirdparty/d3.js"
+			]
+		},
+		{
+			"name": "GanttChartWithTableRenderer-dbg.js",
+			"module": "sap/gantt/GanttChartWithTableRenderer.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/misc/Utility.js",
+				"sap/ui/core/theming/Parameters.js"
+			]
+		},
+		{
+			"name": "GanttChartWithTableRenderer.js",
+			"module": "sap/gantt/GanttChartWithTableRenderer.js",
+			"required": [
+				"sap/gantt/misc/Utility.js",
+				"sap/ui/core/theming/Parameters.js"
+			]
+		},
+		{
+			"name": "GenericArray.type",
+			"designtime": true
+		},
+		{
+			"name": "SVGLength.type",
+			"designtime": true
+		},
+		{
+			"name": "ValueSVGPaintServer.type",
+			"designtime": true
+		},
+		{
+			"name": "axistime/AxisTimeStrategyBase-dbg.js",
+			"module": "sap/gantt/axistime/AxisTimeStrategyBase.js",
+			"isDebug": true,
+			"required": [
+				"sap/base/util/ObjectPath.js",
+				"sap/gantt/config/TimeHorizon.js",
+				"sap/gantt/library.js",
+				"sap/gantt/misc/AxisTime.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/misc/RelativeTimeFormatter.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/core/Locale.js",
+				"sap/ui/core/format/DateFormat.js"
+			]
+		},
+		{
+			"name": "axistime/AxisTimeStrategyBase.js",
+			"module": "sap/gantt/axistime/AxisTimeStrategyBase.js",
+			"required": [
+				"sap/base/util/ObjectPath.js",
+				"sap/gantt/config/TimeHorizon.js",
+				"sap/gantt/library.js",
+				"sap/gantt/misc/AxisTime.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/misc/RelativeTimeFormatter.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/core/Locale.js",
+				"sap/ui/core/format/DateFormat.js"
+			]
+		},
+		{
+			"name": "axistime/FullScreenStrategy-dbg.js",
+			"module": "sap/gantt/axistime/FullScreenStrategy.js",
+			"isDebug": true,
+			"required": [
+				"sap/base/util/ObjectPath.js",
+				"sap/gantt/axistime/AxisTimeStrategyBase.js",
+				"sap/gantt/library.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "axistime/FullScreenStrategy.js",
+			"module": "sap/gantt/axistime/FullScreenStrategy.js",
+			"required": [
+				"sap/base/util/ObjectPath.js",
+				"sap/gantt/axistime/AxisTimeStrategyBase.js",
+				"sap/gantt/library.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "axistime/ProportionZoomStrategy-dbg.js",
+			"module": "sap/gantt/axistime/ProportionZoomStrategy.js",
+			"isDebug": true,
+			"required": [
+				"sap/base/util/ObjectPath.js",
+				"sap/gantt/axistime/AxisTimeStrategyBase.js",
+				"sap/gantt/library.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/misc/Utility.js"
+			]
+		},
+		{
+			"name": "axistime/ProportionZoomStrategy.js",
+			"module": "sap/gantt/axistime/ProportionZoomStrategy.js",
+			"required": [
+				"sap/base/util/ObjectPath.js",
+				"sap/gantt/axistime/AxisTimeStrategyBase.js",
+				"sap/gantt/library.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/misc/Utility.js"
+			]
+		},
+		{
+			"name": "axistime/StepwiseZoomStrategy-dbg.js",
+			"module": "sap/gantt/axistime/StepwiseZoomStrategy.js",
+			"isDebug": true,
+			"required": [
+				"sap/base/util/ObjectPath.js",
+				"sap/gantt/axistime/AxisTimeStrategyBase.js",
+				"sap/gantt/library.js",
+				"sap/gantt/misc/Format.js"
+			]
+		},
+		{
+			"name": "axistime/StepwiseZoomStrategy.control",
+			"designtime": true
+		},
+		{
+			"name": "axistime/StepwiseZoomStrategy.js",
+			"module": "sap/gantt/axistime/StepwiseZoomStrategy.js",
+			"required": [
+				"sap/base/util/ObjectPath.js",
+				"sap/gantt/axistime/AxisTimeStrategyBase.js",
+				"sap/gantt/library.js",
+				"sap/gantt/misc/Format.js"
+			]
+		},
+		{
+			"name": "config/BirdEyeGroup-dbg.js",
+			"module": "sap/gantt/config/BirdEyeGroup.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/config/ToolbarGroup.js"
+			]
+		},
+		{
+			"name": "config/BirdEyeGroup.js",
+			"module": "sap/gantt/config/BirdEyeGroup.js",
+			"required": [
+				"sap/gantt/config/ToolbarGroup.js"
+			]
+		},
+		{
+			"name": "config/ChartScheme-dbg.js",
+			"module": "sap/gantt/config/ChartScheme.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "config/ChartScheme.js",
+			"module": "sap/gantt/config/ChartScheme.js",
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "config/ColumnAttribute-dbg.js",
+			"module": "sap/gantt/config/ColumnAttribute.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "config/ColumnAttribute.js",
+			"module": "sap/gantt/config/ColumnAttribute.js",
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "config/ContainerLayout-dbg.js",
+			"module": "sap/gantt/config/ContainerLayout.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/Element.js",
+				"sap/ui/core/Orientation.js"
+			]
+		},
+		{
+			"name": "config/ContainerLayout.js",
+			"module": "sap/gantt/config/ContainerLayout.js",
+			"required": [
+				"sap/ui/core/Element.js",
+				"sap/ui/core/Orientation.js"
+			]
+		},
+		{
+			"name": "config/ExpandChart-dbg.js",
+			"module": "sap/gantt/config/ExpandChart.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "config/ExpandChart.js",
+			"module": "sap/gantt/config/ExpandChart.js",
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "config/ExpandChartGroup-dbg.js",
+			"module": "sap/gantt/config/ExpandChartGroup.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/config/ToolbarGroup.js"
+			]
+		},
+		{
+			"name": "config/ExpandChartGroup.js",
+			"module": "sap/gantt/config/ExpandChartGroup.js",
+			"required": [
+				"sap/gantt/config/ToolbarGroup.js"
+			]
+		},
+		{
+			"name": "config/GanttChartLayout-dbg.js",
+			"module": "sap/gantt/config/GanttChartLayout.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "config/GanttChartLayout.js",
+			"module": "sap/gantt/config/GanttChartLayout.js",
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "config/Hierarchy-dbg.js",
+			"module": "sap/gantt/config/Hierarchy.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "config/Hierarchy.js",
+			"module": "sap/gantt/config/Hierarchy.js",
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "config/HierarchyColumn-dbg.js",
+			"module": "sap/gantt/config/HierarchyColumn.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "config/HierarchyColumn.js",
+			"module": "sap/gantt/config/HierarchyColumn.js",
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "config/LayoutGroup-dbg.js",
+			"module": "sap/gantt/config/LayoutGroup.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/config/ToolbarGroup.js"
+			]
+		},
+		{
+			"name": "config/LayoutGroup.js",
+			"module": "sap/gantt/config/LayoutGroup.js",
+			"required": [
+				"sap/gantt/config/ToolbarGroup.js"
+			]
+		},
+		{
+			"name": "config/Locale-dbg.js",
+			"module": "sap/gantt/config/Locale.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "config/Locale.js",
+			"module": "sap/gantt/config/Locale.js",
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "config/Mode-dbg.js",
+			"module": "sap/gantt/config/Mode.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "config/Mode.js",
+			"module": "sap/gantt/config/Mode.js",
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "config/ModeGroup-dbg.js",
+			"module": "sap/gantt/config/ModeGroup.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/config/ToolbarGroup.js"
+			]
+		},
+		{
+			"name": "config/ModeGroup.js",
+			"module": "sap/gantt/config/ModeGroup.js",
+			"required": [
+				"sap/gantt/config/ToolbarGroup.js"
+			]
+		},
+		{
+			"name": "config/ObjectType-dbg.js",
+			"module": "sap/gantt/config/ObjectType.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "config/ObjectType.js",
+			"module": "sap/gantt/config/ObjectType.js",
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "config/SettingGroup-dbg.js",
+			"module": "sap/gantt/config/SettingGroup.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/config/SettingItem.js",
+				"sap/gantt/config/ToolbarGroup.js"
+			]
+		},
+		{
+			"name": "config/SettingGroup.js",
+			"module": "sap/gantt/config/SettingGroup.js",
+			"required": [
+				"sap/gantt/config/SettingItem.js",
+				"sap/gantt/config/ToolbarGroup.js"
+			]
+		},
+		{
+			"name": "config/SettingItem-dbg.js",
+			"module": "sap/gantt/config/SettingItem.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "config/SettingItem.js",
+			"module": "sap/gantt/config/SettingItem.js",
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "config/Shape-dbg.js",
+			"module": "sap/gantt/config/Shape.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/library.js",
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "config/Shape.js",
+			"module": "sap/gantt/config/Shape.js",
+			"required": [
+				"sap/gantt/library.js",
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "config/TimeAxis-dbg.js",
+			"module": "sap/gantt/config/TimeAxis.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "config/TimeAxis.js",
+			"module": "sap/gantt/config/TimeAxis.js",
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "config/TimeHorizon-dbg.js",
+			"module": "sap/gantt/config/TimeHorizon.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "config/TimeHorizon.js",
+			"module": "sap/gantt/config/TimeHorizon.js",
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "config/TimeZoomGroup-dbg.js",
+			"module": "sap/gantt/config/TimeZoomGroup.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/config/ToolbarGroup.js"
+			]
+		},
+		{
+			"name": "config/TimeZoomGroup.js",
+			"module": "sap/gantt/config/TimeZoomGroup.js",
+			"required": [
+				"sap/gantt/config/ToolbarGroup.js"
+			]
+		},
+		{
+			"name": "config/ToolbarGroup-dbg.js",
+			"module": "sap/gantt/config/ToolbarGroup.js",
+			"isDebug": true,
+			"required": [
+				"sap/m/OverflowToolbarPriority.js",
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "config/ToolbarGroup.js",
+			"module": "sap/gantt/config/ToolbarGroup.js",
+			"required": [
+				"sap/m/OverflowToolbarPriority.js",
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "config/ToolbarScheme-dbg.js",
+			"module": "sap/gantt/config/ToolbarScheme.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "config/ToolbarScheme.js",
+			"module": "sap/gantt/config/ToolbarScheme.js",
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "control/AssociateContainer-dbg.js",
+			"module": "sap/gantt/control/AssociateContainer.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "control/AssociateContainer.js",
+			"module": "sap/gantt/control/AssociateContainer.js",
+			"required": [
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "control/AssociateContainerRenderer-dbg.js",
+			"module": "sap/gantt/control/AssociateContainerRenderer.js",
+			"isDebug": true
+		},
+		{
+			"name": "control/AssociateContainerRenderer.js",
+			"module": "sap/gantt/control/AssociateContainerRenderer.js"
+		},
+		{
+			"name": "control/Cell-dbg.js",
+			"module": "sap/gantt/control/Cell.js",
+			"isDebug": true,
+			"required": [
+				"sap/m/Label.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/model/Context.js"
+			]
+		},
+		{
+			"name": "control/Cell.js",
+			"module": "sap/gantt/control/Cell.js",
+			"required": [
+				"sap/m/Label.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/model/Context.js"
+			]
+		},
+		{
+			"name": "control/CellRenderer-dbg.js",
+			"module": "sap/gantt/control/CellRenderer.js",
+			"isDebug": true
+		},
+		{
+			"name": "control/CellRenderer.js",
+			"module": "sap/gantt/control/CellRenderer.js"
+		},
+		{
+			"name": "control/Toolbar-dbg.js",
+			"module": "sap/gantt/control/Toolbar.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/library.js",
+				"sap/m/Button.js",
+				"sap/m/CheckBox.js",
+				"sap/m/FlexBox.js",
+				"sap/m/FlexDirection.js",
+				"sap/m/Menu.js",
+				"sap/m/MenuButton.js",
+				"sap/m/MenuItem.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/OverflowToolbarLayoutData.js",
+				"sap/m/PlacementType.js",
+				"sap/m/Popover.js",
+				"sap/m/SegmentedButton.js",
+				"sap/m/Select.js",
+				"sap/m/Slider.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/m/ViewSettingsCustomTab.js",
+				"sap/m/ViewSettingsDialog.js",
+				"sap/ui/base/ManagedObjectMetadata.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/Item.js",
+				"sap/ui/core/Orientation.js"
+			]
+		},
+		{
+			"name": "control/Toolbar.js",
+			"module": "sap/gantt/control/Toolbar.js",
+			"required": [
+				"sap/gantt/library.js",
+				"sap/m/Button.js",
+				"sap/m/CheckBox.js",
+				"sap/m/FlexBox.js",
+				"sap/m/FlexDirection.js",
+				"sap/m/Menu.js",
+				"sap/m/MenuButton.js",
+				"sap/m/MenuItem.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/OverflowToolbarLayoutData.js",
+				"sap/m/PlacementType.js",
+				"sap/m/Popover.js",
+				"sap/m/SegmentedButton.js",
+				"sap/m/Select.js",
+				"sap/m/Slider.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/m/ViewSettingsCustomTab.js",
+				"sap/m/ViewSettingsDialog.js",
+				"sap/ui/base/ManagedObjectMetadata.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/Item.js",
+				"sap/ui/core/Orientation.js"
+			]
+		},
+		{
+			"name": "control/ToolbarRenderer-dbg.js",
+			"module": "sap/gantt/control/ToolbarRenderer.js",
+			"isDebug": true
+		},
+		{
+			"name": "control/ToolbarRenderer.js",
+			"module": "sap/gantt/control/ToolbarRenderer.js"
+		},
+		{
+			"name": "def/DefBase-dbg.js",
+			"module": "sap/gantt/def/DefBase.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "def/DefBase.js",
+			"module": "sap/gantt/def/DefBase.js",
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "def/SvgDefs-dbg.js",
+			"module": "sap/gantt/def/SvgDefs.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/base/ManagedObject.js",
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "def/SvgDefs.js",
+			"module": "sap/gantt/def/SvgDefs.js",
+			"required": [
+				"sap/ui/base/ManagedObject.js",
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "def/cal/Calendar-dbg.js",
+			"module": "sap/gantt/def/cal/Calendar.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/def/DefBase.js",
+				"sap/gantt/misc/Format.js"
+			]
+		},
+		{
+			"name": "def/cal/Calendar.js",
+			"module": "sap/gantt/def/cal/Calendar.js",
+			"required": [
+				"sap/gantt/def/DefBase.js",
+				"sap/gantt/misc/Format.js"
+			]
+		},
+		{
+			"name": "def/cal/CalendarDefs-dbg.js",
+			"module": "sap/gantt/def/cal/CalendarDefs.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/def/SvgDefs.js"
+			]
+		},
+		{
+			"name": "def/cal/CalendarDefs.js",
+			"module": "sap/gantt/def/cal/CalendarDefs.js",
+			"required": [
+				"sap/gantt/def/SvgDefs.js"
+			]
+		},
+		{
+			"name": "def/cal/TimeInterval-dbg.js",
+			"module": "sap/gantt/def/cal/TimeInterval.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/def/DefBase.js",
+				"sap/gantt/misc/Format.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "def/cal/TimeInterval.js",
+			"module": "sap/gantt/def/cal/TimeInterval.js",
+			"required": [
+				"sap/gantt/def/DefBase.js",
+				"sap/gantt/misc/Format.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "def/filter/MorphologyFilter-dbg.js",
+			"module": "sap/gantt/def/filter/MorphologyFilter.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/def/DefBase.js",
+				"sap/gantt/library.js"
+			]
+		},
+		{
+			"name": "def/filter/MorphologyFilter.js",
+			"module": "sap/gantt/def/filter/MorphologyFilter.js",
+			"required": [
+				"sap/gantt/def/DefBase.js",
+				"sap/gantt/library.js"
+			]
+		},
+		{
+			"name": "def/gradient/LinearGradient-dbg.js",
+			"module": "sap/gantt/def/gradient/LinearGradient.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/def/DefBase.js"
+			]
+		},
+		{
+			"name": "def/gradient/LinearGradient.js",
+			"module": "sap/gantt/def/gradient/LinearGradient.js",
+			"required": [
+				"sap/gantt/def/DefBase.js"
+			]
+		},
+		{
+			"name": "def/gradient/RadialGradient-dbg.js",
+			"module": "sap/gantt/def/gradient/RadialGradient.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/def/DefBase.js"
+			]
+		},
+		{
+			"name": "def/gradient/RadialGradient.js",
+			"module": "sap/gantt/def/gradient/RadialGradient.js",
+			"required": [
+				"sap/gantt/def/DefBase.js"
+			]
+		},
+		{
+			"name": "def/gradient/Stop-dbg.js",
+			"module": "sap/gantt/def/gradient/Stop.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/def/DefBase.js"
+			]
+		},
+		{
+			"name": "def/gradient/Stop.js",
+			"module": "sap/gantt/def/gradient/Stop.js",
+			"required": [
+				"sap/gantt/def/DefBase.js"
+			]
+		},
+		{
+			"name": "def/pattern/BackSlashPattern-dbg.js",
+			"module": "sap/gantt/def/pattern/BackSlashPattern.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/def/pattern/PatternBase.js"
+			]
+		},
+		{
+			"name": "def/pattern/BackSlashPattern.js",
+			"module": "sap/gantt/def/pattern/BackSlashPattern.js",
+			"required": [
+				"sap/gantt/def/pattern/PatternBase.js"
+			]
+		},
+		{
+			"name": "def/pattern/PatternBase-dbg.js",
+			"module": "sap/gantt/def/pattern/PatternBase.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/def/DefBase.js"
+			]
+		},
+		{
+			"name": "def/pattern/PatternBase.js",
+			"module": "sap/gantt/def/pattern/PatternBase.js",
+			"required": [
+				"sap/gantt/def/DefBase.js"
+			]
+		},
+		{
+			"name": "def/pattern/SlashPattern-dbg.js",
+			"module": "sap/gantt/def/pattern/SlashPattern.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/def/pattern/PatternBase.js"
+			]
+		},
+		{
+			"name": "def/pattern/SlashPattern.js",
+			"module": "sap/gantt/def/pattern/SlashPattern.js",
+			"required": [
+				"sap/gantt/def/pattern/PatternBase.js"
+			]
+		},
+		{
+			"name": "designtime/GanttChart.designtime-dbg.js",
+			"module": "sap/gantt/designtime/GanttChart.designtime.js",
+			"isDebug": true,
+			"designtime": true
+		},
+		{
+			"name": "designtime/GanttChart.designtime.js",
+			"module": "sap/gantt/designtime/GanttChart.designtime.js",
+			"designtime": true
+		},
+		{
+			"name": "designtime/GanttChartWithTable.designtime-dbg.js",
+			"module": "sap/gantt/designtime/GanttChartWithTable.designtime.js",
+			"isDebug": true,
+			"designtime": true
+		},
+		{
+			"name": "designtime/GanttChartWithTable.designtime.js",
+			"module": "sap/gantt/designtime/GanttChartWithTable.designtime.js",
+			"designtime": true
+		},
+		{
+			"name": "designtime/library-preload.designtime.js",
+			"module": "sap/gantt/designtime/library-preload.designtime.js",
+			"merged": true,
+			"designtime": true,
+			"included": [
+				"sap/gantt/designtime/GanttChart.designtime.js",
+				"sap/gantt/designtime/GanttChartWithTable.designtime.js"
+			]
+		},
+		{
+			"name": "designtime/library-preload.designtime.js.map",
+			"isDebug": true,
+			"designtime": true
+		},
+		{
+			"name": "drawer/AdhocLine-dbg.js",
+			"module": "sap/gantt/drawer/AdhocLine.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/drawer/Drawer.js",
+				"sap/gantt/library.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/thirdparty/d3.js"
+			]
+		},
+		{
+			"name": "drawer/AdhocLine.js",
+			"module": "sap/gantt/drawer/AdhocLine.js",
+			"required": [
+				"sap/gantt/drawer/Drawer.js",
+				"sap/gantt/library.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/thirdparty/d3.js"
+			]
+		},
+		{
+			"name": "drawer/CalendarPattern-dbg.js",
+			"module": "sap/gantt/drawer/CalendarPattern.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/drawer/Drawer.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/format/DateFormat.js",
+				"sap/ui/thirdparty/d3.js"
+			]
+		},
+		{
+			"name": "drawer/CalendarPattern.js",
+			"module": "sap/gantt/drawer/CalendarPattern.js",
+			"required": [
+				"sap/gantt/drawer/Drawer.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/format/DateFormat.js",
+				"sap/ui/thirdparty/d3.js"
+			]
+		},
+		{
+			"name": "drawer/CursorLine-dbg.js",
+			"module": "sap/gantt/drawer/CursorLine.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/drawer/Drawer.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/thirdparty/d3.js"
+			]
+		},
+		{
+			"name": "drawer/CursorLine.js",
+			"module": "sap/gantt/drawer/CursorLine.js",
+			"required": [
+				"sap/gantt/drawer/Drawer.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/thirdparty/d3.js"
+			]
+		},
+		{
+			"name": "drawer/Drawer-dbg.js",
+			"module": "sap/gantt/drawer/Drawer.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/base/Object.js"
+			]
+		},
+		{
+			"name": "drawer/Drawer.js",
+			"module": "sap/gantt/drawer/Drawer.js",
+			"required": [
+				"sap/ui/base/Object.js"
+			]
+		},
+		{
+			"name": "drawer/ExpandedBackground-dbg.js",
+			"module": "sap/gantt/drawer/ExpandedBackground.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/drawer/Drawer.js",
+				"sap/ui/thirdparty/d3.js"
+			]
+		},
+		{
+			"name": "drawer/ExpandedBackground.js",
+			"module": "sap/gantt/drawer/ExpandedBackground.js",
+			"required": [
+				"sap/gantt/drawer/Drawer.js",
+				"sap/ui/thirdparty/d3.js"
+			]
+		},
+		{
+			"name": "drawer/Legend-dbg.js",
+			"module": "sap/gantt/drawer/Legend.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/drawer/Drawer.js",
+				"sap/gantt/misc/Format.js",
+				"sap/ui/thirdparty/d3.js"
+			]
+		},
+		{
+			"name": "drawer/Legend.js",
+			"module": "sap/gantt/drawer/Legend.js",
+			"required": [
+				"sap/gantt/drawer/Drawer.js",
+				"sap/gantt/misc/Format.js",
+				"sap/ui/thirdparty/d3.js"
+			]
+		},
+		{
+			"name": "drawer/NowLine-dbg.js",
+			"module": "sap/gantt/drawer/NowLine.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/drawer/Drawer.js"
+			]
+		},
+		{
+			"name": "drawer/NowLine.js",
+			"module": "sap/gantt/drawer/NowLine.js",
+			"required": [
+				"sap/gantt/drawer/Drawer.js"
+			]
+		},
+		{
+			"name": "drawer/SelectionPanel-dbg.js",
+			"module": "sap/gantt/drawer/SelectionPanel.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/drawer/Drawer.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/IconPool.js",
+				"sap/ui/thirdparty/d3.js"
+			]
+		},
+		{
+			"name": "drawer/SelectionPanel.js",
+			"module": "sap/gantt/drawer/SelectionPanel.js",
+			"required": [
+				"sap/gantt/drawer/Drawer.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/IconPool.js",
+				"sap/ui/thirdparty/d3.js"
+			]
+		},
+		{
+			"name": "drawer/ShapeCrossRow-dbg.js",
+			"module": "sap/gantt/drawer/ShapeCrossRow.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/drawer/Drawer.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/ui/thirdparty/d3.js"
+			]
+		},
+		{
+			"name": "drawer/ShapeCrossRow.js",
+			"module": "sap/gantt/drawer/ShapeCrossRow.js",
+			"required": [
+				"sap/gantt/drawer/Drawer.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/ui/thirdparty/d3.js"
+			]
+		},
+		{
+			"name": "drawer/ShapeInRow-dbg.js",
+			"module": "sap/gantt/drawer/ShapeInRow.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/drawer/Drawer.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/ui/thirdparty/d3.js"
+			]
+		},
+		{
+			"name": "drawer/ShapeInRow.js",
+			"module": "sap/gantt/drawer/ShapeInRow.js",
+			"required": [
+				"sap/gantt/drawer/Drawer.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/ui/thirdparty/d3.js"
+			]
+		},
+		{
+			"name": "drawer/TimePeriodZoomRectangle-dbg.js",
+			"module": "sap/gantt/drawer/TimePeriodZoomRectangle.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/drawer/Drawer.js",
+				"sap/ui/thirdparty/d3.js"
+			]
+		},
+		{
+			"name": "drawer/TimePeriodZoomRectangle.js",
+			"module": "sap/gantt/drawer/TimePeriodZoomRectangle.js",
+			"required": [
+				"sap/gantt/drawer/Drawer.js",
+				"sap/ui/thirdparty/d3.js"
+			]
+		},
+		{
+			"name": "drawer/VerticalLine-dbg.js",
+			"module": "sap/gantt/drawer/VerticalLine.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/drawer/Drawer.js",
+				"sap/ui/thirdparty/d3.js"
+			]
+		},
+		{
+			"name": "drawer/VerticalLine.js",
+			"module": "sap/gantt/drawer/VerticalLine.js",
+			"required": [
+				"sap/gantt/drawer/Drawer.js",
+				"sap/ui/thirdparty/d3.js"
+			]
+		},
+		{
+			"name": "eventHandler/AutoScrollHandler-dbg.js",
+			"module": "sap/gantt/eventHandler/AutoScrollHandler.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "eventHandler/AutoScrollHandler.js",
+			"module": "sap/gantt/eventHandler/AutoScrollHandler.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "eventHandler/BirdEyeHandler-dbg.js",
+			"module": "sap/gantt/eventHandler/BirdEyeHandler.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/config/TimeHorizon.js",
+				"sap/gantt/misc/Format.js",
+				"sap/ui/base/Object.js"
+			]
+		},
+		{
+			"name": "eventHandler/BirdEyeHandler.js",
+			"module": "sap/gantt/eventHandler/BirdEyeHandler.js",
+			"required": [
+				"sap/gantt/config/TimeHorizon.js",
+				"sap/gantt/misc/Format.js",
+				"sap/ui/base/Object.js"
+			]
+		},
+		{
+			"name": "eventHandler/MouseWheelHandler-dbg.js",
+			"module": "sap/gantt/eventHandler/MouseWheelHandler.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/Device.js",
+				"sap/ui/base/Object.js"
+			]
+		},
+		{
+			"name": "eventHandler/MouseWheelHandler.js",
+			"module": "sap/gantt/eventHandler/MouseWheelHandler.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/Device.js",
+				"sap/ui/base/Object.js"
+			]
+		},
+		{
+			"name": "eventHandler/ShapeHoverHandler-dbg.js",
+			"module": "sap/gantt/eventHandler/ShapeHoverHandler.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/base/Object.js"
+			]
+		},
+		{
+			"name": "eventHandler/ShapeHoverHandler.js",
+			"module": "sap/gantt/eventHandler/ShapeHoverHandler.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/base/Object.js"
+			]
+		},
+		{
+			"name": "eventHandler/ShapeResizeHandler-dbg.js",
+			"module": "sap/gantt/eventHandler/ShapeResizeHandler.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/drawer/ShapeInRow.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/misc/ShapeManager.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/ui/Device.js",
+				"sap/ui/base/Object.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "eventHandler/ShapeResizeHandler.js",
+			"module": "sap/gantt/eventHandler/ShapeResizeHandler.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/drawer/ShapeInRow.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/misc/ShapeManager.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/ui/Device.js",
+				"sap/ui/base/Object.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "eventHandler/TimePeriodZoomHandler-dbg.js",
+			"module": "sap/gantt/eventHandler/TimePeriodZoomHandler.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/config/TimeHorizon.js",
+				"sap/gantt/drawer/TimePeriodZoomRectangle.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/ui/base/Object.js",
+				"sap/ui/core/Orientation.js"
+			]
+		},
+		{
+			"name": "eventHandler/TimePeriodZoomHandler.js",
+			"module": "sap/gantt/eventHandler/TimePeriodZoomHandler.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/config/TimeHorizon.js",
+				"sap/gantt/drawer/TimePeriodZoomRectangle.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/ui/base/Object.js",
+				"sap/ui/core/Orientation.js"
+			]
+		},
+		{
+			"name": "eventHandler/TimePopoverHandler-dbg.js",
+			"module": "sap/gantt/eventHandler/TimePopoverHandler.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/misc/Format.js",
+				"sap/ui/base/Object.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "eventHandler/TimePopoverHandler.js",
+			"module": "sap/gantt/eventHandler/TimePopoverHandler.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/misc/Format.js",
+				"sap/ui/base/Object.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "legend/DimensionLegend-dbg.js",
+			"module": "sap/gantt/legend/DimensionLegend.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/drawer/Legend.js",
+				"sap/gantt/legend/LegendBase.js",
+				"sap/ui/core/Control.js"
+			]
+		},
+		{
+			"name": "legend/DimensionLegend.js",
+			"module": "sap/gantt/legend/DimensionLegend.js",
+			"required": [
+				"sap/gantt/drawer/Legend.js",
+				"sap/gantt/legend/LegendBase.js",
+				"sap/ui/core/Control.js"
+			]
+		},
+		{
+			"name": "legend/DimensionLegendRenderer-dbg.js",
+			"module": "sap/gantt/legend/DimensionLegendRenderer.js",
+			"isDebug": true
+		},
+		{
+			"name": "legend/DimensionLegendRenderer.js",
+			"module": "sap/gantt/legend/DimensionLegendRenderer.js"
+		},
+		{
+			"name": "legend/LegendBase-dbg.js",
+			"module": "sap/gantt/legend/LegendBase.js",
+			"isDebug": true,
+			"required": [
+				"sap/base/util/ObjectPath.js",
+				"sap/gantt/misc/AxisTime.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/gantt/shape/cal/Calendar.js",
+				"sap/ui/core/Control.js"
+			]
+		},
+		{
+			"name": "legend/LegendBase.js",
+			"module": "sap/gantt/legend/LegendBase.js",
+			"required": [
+				"sap/base/util/ObjectPath.js",
+				"sap/gantt/misc/AxisTime.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/gantt/shape/cal/Calendar.js",
+				"sap/ui/core/Control.js"
+			]
+		},
+		{
+			"name": "legend/LegendContainer-dbg.js",
+			"module": "sap/gantt/legend/LegendContainer.js",
+			"isDebug": true,
+			"required": [
+				"sap/m/List.js",
+				"sap/m/NavContainer.js",
+				"sap/m/Page.js",
+				"sap/m/StandardListItem.js",
+				"sap/ui/core/Control.js"
+			]
+		},
+		{
+			"name": "legend/LegendContainer.js",
+			"module": "sap/gantt/legend/LegendContainer.js",
+			"required": [
+				"sap/m/List.js",
+				"sap/m/NavContainer.js",
+				"sap/m/Page.js",
+				"sap/m/StandardListItem.js",
+				"sap/ui/core/Control.js"
+			]
+		},
+		{
+			"name": "legend/LegendContainerRenderer-dbg.js",
+			"module": "sap/gantt/legend/LegendContainerRenderer.js",
+			"isDebug": true
+		},
+		{
+			"name": "legend/LegendContainerRenderer.js",
+			"module": "sap/gantt/legend/LegendContainerRenderer.js"
+		},
+		{
+			"name": "legend/ListLegend-dbg.js",
+			"module": "sap/gantt/legend/ListLegend.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/drawer/Legend.js",
+				"sap/gantt/legend/LegendBase.js",
+				"sap/m/CheckBox.js"
+			]
+		},
+		{
+			"name": "legend/ListLegend.js",
+			"module": "sap/gantt/legend/ListLegend.js",
+			"required": [
+				"sap/gantt/drawer/Legend.js",
+				"sap/gantt/legend/LegendBase.js",
+				"sap/m/CheckBox.js"
+			]
+		},
+		{
+			"name": "legend/ListLegendRenderer-dbg.js",
+			"module": "sap/gantt/legend/ListLegendRenderer.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/theming/Parameters.js"
+			]
+		},
+		{
+			"name": "legend/ListLegendRenderer.js",
+			"module": "sap/gantt/legend/ListLegendRenderer.js",
+			"required": [
+				"sap/ui/core/theming/Parameters.js"
+			]
+		},
+		{
+			"name": "library-dbg.js",
+			"module": "sap/gantt/library.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/base/DataType.js",
+				"sap/ui/core/theming/Parameters.js"
+			]
+		},
+		{
+			"name": "library-h2-preload-dbg.js",
+			"module": "sap/gantt/library-h2-preload.js",
+			"isDebug": true,
+			"merged": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/base/Log.js",
+				"sap/base/util/ObjectPath.js",
+				"sap/base/util/values.js",
+				"sap/m/Button.js",
+				"sap/m/ButtonType.js",
+				"sap/m/CheckBox.js",
+				"sap/m/FlexBox.js",
+				"sap/m/FlexDirection.js",
+				"sap/m/Label.js",
+				"sap/m/List.js",
+				"sap/m/Menu.js",
+				"sap/m/MenuButton.js",
+				"sap/m/MenuItem.js",
+				"sap/m/NavContainer.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/OverflowToolbarLayoutData.js",
+				"sap/m/OverflowToolbarPriority.js",
+				"sap/m/OverflowToolbarRenderer.js",
+				"sap/m/Page.js",
+				"sap/m/PlacementType.js",
+				"sap/m/Popover.js",
+				"sap/m/SegmentedButton.js",
+				"sap/m/SegmentedButtonItem.js",
+				"sap/m/Select.js",
+				"sap/m/Slider.js",
+				"sap/m/StandardListItem.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/m/ViewSettingsCustomTab.js",
+				"sap/m/ViewSettingsDialog.js",
+				"sap/ui/Device.js",
+				"sap/ui/base/DataType.js",
+				"sap/ui/base/EventProvider.js",
+				"sap/ui/base/ManagedObject.js",
+				"sap/ui/base/ManagedObjectMetadata.js",
+				"sap/ui/base/ManagedObjectObserver.js",
+				"sap/ui/base/Object.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/CustomStyleClassSupport.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/core/IconPool.js",
+				"sap/ui/core/Item.js",
+				"sap/ui/core/Locale.js",
+				"sap/ui/core/LocaleData.js",
+				"sap/ui/core/Orientation.js",
+				"sap/ui/core/Renderer.js",
+				"sap/ui/core/format/DateFormat.js",
+				"sap/ui/core/format/NumberFormat.js",
+				"sap/ui/core/theming/Parameters.js",
+				"sap/ui/events/KeyCodes.js",
+				"sap/ui/layout/Splitter.js",
+				"sap/ui/layout/SplitterLayoutData.js",
+				"sap/ui/model/ChangeReason.js",
+				"sap/ui/model/Context.js",
+				"sap/ui/table/Column.js",
+				"sap/ui/table/RowSettings.js",
+				"sap/ui/table/TreeTable.js",
+				"sap/ui/thirdparty/d3.js"
+			],
+			"included": [
+				"sap/gantt/library.js",
+				"sap/gantt/manifest.json",
+				"sap/gantt/AdhocLine.js",
+				"sap/gantt/GanttChart.js",
+				"sap/gantt/GanttChartBase.js",
+				"sap/gantt/GanttChartContainer.js",
+				"sap/gantt/GanttChartContainerRenderer.js",
+				"sap/gantt/GanttChartRenderer.js",
+				"sap/gantt/GanttChartWithTable.js",
+				"sap/gantt/GanttChartWithTableRenderer.js",
+				"sap/gantt/axistime/AxisTimeStrategyBase.js",
+				"sap/gantt/axistime/FullScreenStrategy.js",
+				"sap/gantt/axistime/ProportionZoomStrategy.js",
+				"sap/gantt/axistime/StepwiseZoomStrategy.js",
+				"sap/gantt/config/BirdEyeGroup.js",
+				"sap/gantt/config/ChartScheme.js",
+				"sap/gantt/config/ColumnAttribute.js",
+				"sap/gantt/config/ContainerLayout.js",
+				"sap/gantt/config/ExpandChart.js",
+				"sap/gantt/config/ExpandChartGroup.js",
+				"sap/gantt/config/GanttChartLayout.js",
+				"sap/gantt/config/Hierarchy.js",
+				"sap/gantt/config/HierarchyColumn.js",
+				"sap/gantt/config/LayoutGroup.js",
+				"sap/gantt/config/Locale.js",
+				"sap/gantt/config/Mode.js",
+				"sap/gantt/config/ModeGroup.js",
+				"sap/gantt/config/ObjectType.js",
+				"sap/gantt/config/SettingGroup.js",
+				"sap/gantt/config/SettingItem.js",
+				"sap/gantt/config/Shape.js",
+				"sap/gantt/config/TimeAxis.js",
+				"sap/gantt/config/TimeHorizon.js",
+				"sap/gantt/config/TimeZoomGroup.js",
+				"sap/gantt/config/ToolbarGroup.js",
+				"sap/gantt/config/ToolbarScheme.js",
+				"sap/gantt/control/AssociateContainer.js",
+				"sap/gantt/control/AssociateContainerRenderer.js",
+				"sap/gantt/control/Cell.js",
+				"sap/gantt/control/CellRenderer.js",
+				"sap/gantt/control/Toolbar.js",
+				"sap/gantt/control/ToolbarRenderer.js",
+				"sap/gantt/def/DefBase.js",
+				"sap/gantt/def/SvgDefs.js",
+				"sap/gantt/def/cal/Calendar.js",
+				"sap/gantt/def/cal/CalendarDefs.js",
+				"sap/gantt/def/cal/TimeInterval.js",
+				"sap/gantt/def/filter/MorphologyFilter.js",
+				"sap/gantt/def/gradient/LinearGradient.js",
+				"sap/gantt/def/gradient/RadialGradient.js",
+				"sap/gantt/def/gradient/Stop.js",
+				"sap/gantt/def/pattern/BackSlashPattern.js",
+				"sap/gantt/def/pattern/PatternBase.js",
+				"sap/gantt/def/pattern/SlashPattern.js",
+				"sap/gantt/designtime/GanttChart.designtime.js",
+				"sap/gantt/designtime/GanttChartWithTable.designtime.js",
+				"sap/gantt/drawer/AdhocLine.js",
+				"sap/gantt/drawer/CalendarPattern.js",
+				"sap/gantt/drawer/CursorLine.js",
+				"sap/gantt/drawer/Drawer.js",
+				"sap/gantt/drawer/ExpandedBackground.js",
+				"sap/gantt/drawer/Legend.js",
+				"sap/gantt/drawer/NowLine.js",
+				"sap/gantt/drawer/SelectionPanel.js",
+				"sap/gantt/drawer/ShapeCrossRow.js",
+				"sap/gantt/drawer/ShapeInRow.js",
+				"sap/gantt/drawer/TimePeriodZoomRectangle.js",
+				"sap/gantt/drawer/VerticalLine.js",
+				"sap/gantt/eventHandler/AutoScrollHandler.js",
+				"sap/gantt/eventHandler/BirdEyeHandler.js",
+				"sap/gantt/eventHandler/MouseWheelHandler.js",
+				"sap/gantt/eventHandler/ShapeHoverHandler.js",
+				"sap/gantt/eventHandler/ShapeResizeHandler.js",
+				"sap/gantt/eventHandler/TimePeriodZoomHandler.js",
+				"sap/gantt/eventHandler/TimePopoverHandler.js",
+				"sap/gantt/legend/DimensionLegend.js",
+				"sap/gantt/legend/DimensionLegendRenderer.js",
+				"sap/gantt/legend/LegendBase.js",
+				"sap/gantt/legend/LegendContainer.js",
+				"sap/gantt/legend/LegendContainerRenderer.js",
+				"sap/gantt/legend/ListLegend.js",
+				"sap/gantt/legend/ListLegendRenderer.js",
+				"sap/gantt/misc/AxisOrdinal.js",
+				"sap/gantt/misc/AxisTime.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/misc/RelativeTimeFormatter.js",
+				"sap/gantt/misc/ShapeManager.js",
+				"sap/gantt/misc/ShapeSelectionModel.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/gantt/shape/Circle.js",
+				"sap/gantt/shape/ClipPath.js",
+				"sap/gantt/shape/Definitions.js",
+				"sap/gantt/shape/Group.js",
+				"sap/gantt/shape/Image.js",
+				"sap/gantt/shape/Line.js",
+				"sap/gantt/shape/Path.js",
+				"sap/gantt/shape/Polygon.js",
+				"sap/gantt/shape/Polyline.js",
+				"sap/gantt/shape/Rectangle.js",
+				"sap/gantt/shape/ResizeShadowShape.js",
+				"sap/gantt/shape/SelectedShape.js",
+				"sap/gantt/shape/Shape.js",
+				"sap/gantt/shape/Text.js",
+				"sap/gantt/shape/cal/Calendar.js",
+				"sap/gantt/shape/ext/Chevron.js",
+				"sap/gantt/shape/ext/Cursor.js",
+				"sap/gantt/shape/ext/Diamond.js",
+				"sap/gantt/shape/ext/Iconfont.js",
+				"sap/gantt/shape/ext/Pentangle.js",
+				"sap/gantt/shape/ext/TextRepeat.js",
+				"sap/gantt/shape/ext/Triangle.js",
+				"sap/gantt/shape/ext/rls/Relationship.js",
+				"sap/gantt/shape/ext/rls/SelectedRelationship.js",
+				"sap/gantt/shape/ext/ubc/UbcBorderPath.js",
+				"sap/gantt/shape/ext/ubc/UbcOverCapacityZonePolygon.js",
+				"sap/gantt/shape/ext/ubc/UbcPolygon.js",
+				"sap/gantt/shape/ext/ubc/UbcShortageCapacityPolygon.js",
+				"sap/gantt/shape/ext/ubc/UbcTooltipRectangle.js",
+				"sap/gantt/shape/ext/ubc/UbcUnderCapacityZonePolygon.js",
+				"sap/gantt/shape/ext/ubc/UbcUsedPolygon.js",
+				"sap/gantt/shape/ext/ubc/UtilizationBarChart.js",
+				"sap/gantt/shape/ext/ulc/UlcBorderPath.js",
+				"sap/gantt/shape/ext/ulc/UlcClipPath.js",
+				"sap/gantt/shape/ext/ulc/UlcClipingPath.js",
+				"sap/gantt/shape/ext/ulc/UlcDimension.js",
+				"sap/gantt/shape/ext/ulc/UlcMiddleLine.js",
+				"sap/gantt/shape/ext/ulc/UlcOverCapacityZoneRectangle.js",
+				"sap/gantt/shape/ext/ulc/UlcOverClipRectangle.js",
+				"sap/gantt/shape/ext/ulc/UlcRectangle.js",
+				"sap/gantt/shape/ext/ulc/UlcTooltipRectangle.js",
+				"sap/gantt/shape/ext/ulc/UlcUnderClipRectangle.js",
+				"sap/gantt/shape/ext/ulc/UtilizationLineChart.js",
+				"sap/gantt/simple/AggregationUtils.js",
+				"sap/gantt/simple/BaseCalendar.js",
+				"sap/gantt/simple/BaseChevron.js",
+				"sap/gantt/simple/BaseConditionalShape.js",
+				"sap/gantt/simple/BaseCursor.js",
+				"sap/gantt/simple/BaseDiamond.js",
+				"sap/gantt/simple/BaseGroup.js",
+				"sap/gantt/simple/BaseImage.js",
+				"sap/gantt/simple/BaseLine.js",
+				"sap/gantt/simple/BasePath.js",
+				"sap/gantt/simple/BaseRectangle.js",
+				"sap/gantt/simple/BaseShape.js",
+				"sap/gantt/simple/BaseText.js",
+				"sap/gantt/simple/ContainerToolbar.js",
+				"sap/gantt/simple/ContainerToolbarRenderer.js",
+				"sap/gantt/simple/CoordinateUtils.js",
+				"sap/gantt/simple/DimensionLegend.js",
+				"sap/gantt/simple/DimensionLegendRenderer.js",
+				"sap/gantt/simple/ExpandModel.js",
+				"sap/gantt/simple/GanttChartContainer.js",
+				"sap/gantt/simple/GanttChartContainerRenderer.js",
+				"sap/gantt/simple/GanttChartWithTable.js",
+				"sap/gantt/simple/GanttChartWithTableRenderer.js",
+				"sap/gantt/simple/GanttConnectExtension.js",
+				"sap/gantt/simple/GanttDragDropExtension.js",
+				"sap/gantt/simple/GanttExtension.js",
+				"sap/gantt/simple/GanttHeader.js",
+				"sap/gantt/simple/GanttPointerExtension.js",
+				"sap/gantt/simple/GanttPopoverExtension.js",
+				"sap/gantt/simple/GanttResizeExtension.js",
+				"sap/gantt/simple/GanttRowSettings.js",
+				"sap/gantt/simple/GanttScrollExtension.js",
+				"sap/gantt/simple/GanttSyncedControl.js",
+				"sap/gantt/simple/GanttUtils.js",
+				"sap/gantt/simple/GanttZoomExtension.js",
+				"sap/gantt/simple/InnerGanttChart.js",
+				"sap/gantt/simple/InnerGanttChartRenderer.js",
+				"sap/gantt/simple/LegendColumnConfig.js",
+				"sap/gantt/simple/LegendContainer.js",
+				"sap/gantt/simple/LegendContainerRenderer.js",
+				"sap/gantt/simple/LegendRowConfig.js",
+				"sap/gantt/simple/ListLegend.js",
+				"sap/gantt/simple/ListLegendItem.js",
+				"sap/gantt/simple/ListLegendRenderer.js",
+				"sap/gantt/simple/Relationship.js",
+				"sap/gantt/simple/RenderUtils.js",
+				"sap/gantt/simple/SelectionModel.js",
+				"sap/gantt/simple/ShapeScheme.js",
+				"sap/gantt/simple/TitlePropagator.js",
+				"sap/gantt/simple/UtilizationBarChart.js",
+				"sap/gantt/simple/UtilizationChart.js",
+				"sap/gantt/simple/UtilizationDimension.js",
+				"sap/gantt/simple/UtilizationLineChart.js",
+				"sap/gantt/simple/UtilizationPeriod.js"
+			]
+		},
+		{
+			"name": "library-h2-preload.js",
+			"module": "sap/gantt/library-h2-preload.js",
+			"merged": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/base/Log.js",
+				"sap/base/util/ObjectPath.js",
+				"sap/base/util/values.js",
+				"sap/m/Button.js",
+				"sap/m/ButtonType.js",
+				"sap/m/CheckBox.js",
+				"sap/m/FlexBox.js",
+				"sap/m/FlexDirection.js",
+				"sap/m/Label.js",
+				"sap/m/List.js",
+				"sap/m/Menu.js",
+				"sap/m/MenuButton.js",
+				"sap/m/MenuItem.js",
+				"sap/m/NavContainer.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/OverflowToolbarLayoutData.js",
+				"sap/m/OverflowToolbarPriority.js",
+				"sap/m/OverflowToolbarRenderer.js",
+				"sap/m/Page.js",
+				"sap/m/PlacementType.js",
+				"sap/m/Popover.js",
+				"sap/m/SegmentedButton.js",
+				"sap/m/SegmentedButtonItem.js",
+				"sap/m/Select.js",
+				"sap/m/Slider.js",
+				"sap/m/StandardListItem.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/m/ViewSettingsCustomTab.js",
+				"sap/m/ViewSettingsDialog.js",
+				"sap/ui/Device.js",
+				"sap/ui/base/DataType.js",
+				"sap/ui/base/EventProvider.js",
+				"sap/ui/base/ManagedObject.js",
+				"sap/ui/base/ManagedObjectMetadata.js",
+				"sap/ui/base/ManagedObjectObserver.js",
+				"sap/ui/base/Object.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/CustomStyleClassSupport.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/core/IconPool.js",
+				"sap/ui/core/Item.js",
+				"sap/ui/core/Locale.js",
+				"sap/ui/core/LocaleData.js",
+				"sap/ui/core/Orientation.js",
+				"sap/ui/core/Renderer.js",
+				"sap/ui/core/format/DateFormat.js",
+				"sap/ui/core/format/NumberFormat.js",
+				"sap/ui/core/theming/Parameters.js",
+				"sap/ui/events/KeyCodes.js",
+				"sap/ui/layout/Splitter.js",
+				"sap/ui/layout/SplitterLayoutData.js",
+				"sap/ui/model/ChangeReason.js",
+				"sap/ui/model/Context.js",
+				"sap/ui/table/Column.js",
+				"sap/ui/table/RowSettings.js",
+				"sap/ui/table/TreeTable.js",
+				"sap/ui/thirdparty/d3.js"
+			],
+			"included": [
+				"sap/gantt/library.js",
+				"sap/gantt/manifest.json",
+				"sap/gantt/AdhocLine.js",
+				"sap/gantt/GanttChart.js",
+				"sap/gantt/GanttChartBase.js",
+				"sap/gantt/GanttChartContainer.js",
+				"sap/gantt/GanttChartContainerRenderer.js",
+				"sap/gantt/GanttChartRenderer.js",
+				"sap/gantt/GanttChartWithTable.js",
+				"sap/gantt/GanttChartWithTableRenderer.js",
+				"sap/gantt/axistime/AxisTimeStrategyBase.js",
+				"sap/gantt/axistime/FullScreenStrategy.js",
+				"sap/gantt/axistime/ProportionZoomStrategy.js",
+				"sap/gantt/axistime/StepwiseZoomStrategy.js",
+				"sap/gantt/config/BirdEyeGroup.js",
+				"sap/gantt/config/ChartScheme.js",
+				"sap/gantt/config/ColumnAttribute.js",
+				"sap/gantt/config/ContainerLayout.js",
+				"sap/gantt/config/ExpandChart.js",
+				"sap/gantt/config/ExpandChartGroup.js",
+				"sap/gantt/config/GanttChartLayout.js",
+				"sap/gantt/config/Hierarchy.js",
+				"sap/gantt/config/HierarchyColumn.js",
+				"sap/gantt/config/LayoutGroup.js",
+				"sap/gantt/config/Locale.js",
+				"sap/gantt/config/Mode.js",
+				"sap/gantt/config/ModeGroup.js",
+				"sap/gantt/config/ObjectType.js",
+				"sap/gantt/config/SettingGroup.js",
+				"sap/gantt/config/SettingItem.js",
+				"sap/gantt/config/Shape.js",
+				"sap/gantt/config/TimeAxis.js",
+				"sap/gantt/config/TimeHorizon.js",
+				"sap/gantt/config/TimeZoomGroup.js",
+				"sap/gantt/config/ToolbarGroup.js",
+				"sap/gantt/config/ToolbarScheme.js",
+				"sap/gantt/control/AssociateContainer.js",
+				"sap/gantt/control/AssociateContainerRenderer.js",
+				"sap/gantt/control/Cell.js",
+				"sap/gantt/control/CellRenderer.js",
+				"sap/gantt/control/Toolbar.js",
+				"sap/gantt/control/ToolbarRenderer.js",
+				"sap/gantt/def/DefBase.js",
+				"sap/gantt/def/SvgDefs.js",
+				"sap/gantt/def/cal/Calendar.js",
+				"sap/gantt/def/cal/CalendarDefs.js",
+				"sap/gantt/def/cal/TimeInterval.js",
+				"sap/gantt/def/filter/MorphologyFilter.js",
+				"sap/gantt/def/gradient/LinearGradient.js",
+				"sap/gantt/def/gradient/RadialGradient.js",
+				"sap/gantt/def/gradient/Stop.js",
+				"sap/gantt/def/pattern/BackSlashPattern.js",
+				"sap/gantt/def/pattern/PatternBase.js",
+				"sap/gantt/def/pattern/SlashPattern.js",
+				"sap/gantt/designtime/GanttChart.designtime.js",
+				"sap/gantt/designtime/GanttChartWithTable.designtime.js",
+				"sap/gantt/drawer/AdhocLine.js",
+				"sap/gantt/drawer/CalendarPattern.js",
+				"sap/gantt/drawer/CursorLine.js",
+				"sap/gantt/drawer/Drawer.js",
+				"sap/gantt/drawer/ExpandedBackground.js",
+				"sap/gantt/drawer/Legend.js",
+				"sap/gantt/drawer/NowLine.js",
+				"sap/gantt/drawer/SelectionPanel.js",
+				"sap/gantt/drawer/ShapeCrossRow.js",
+				"sap/gantt/drawer/ShapeInRow.js",
+				"sap/gantt/drawer/TimePeriodZoomRectangle.js",
+				"sap/gantt/drawer/VerticalLine.js",
+				"sap/gantt/eventHandler/AutoScrollHandler.js",
+				"sap/gantt/eventHandler/BirdEyeHandler.js",
+				"sap/gantt/eventHandler/MouseWheelHandler.js",
+				"sap/gantt/eventHandler/ShapeHoverHandler.js",
+				"sap/gantt/eventHandler/ShapeResizeHandler.js",
+				"sap/gantt/eventHandler/TimePeriodZoomHandler.js",
+				"sap/gantt/eventHandler/TimePopoverHandler.js",
+				"sap/gantt/legend/DimensionLegend.js",
+				"sap/gantt/legend/DimensionLegendRenderer.js",
+				"sap/gantt/legend/LegendBase.js",
+				"sap/gantt/legend/LegendContainer.js",
+				"sap/gantt/legend/LegendContainerRenderer.js",
+				"sap/gantt/legend/ListLegend.js",
+				"sap/gantt/legend/ListLegendRenderer.js",
+				"sap/gantt/misc/AxisOrdinal.js",
+				"sap/gantt/misc/AxisTime.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/misc/RelativeTimeFormatter.js",
+				"sap/gantt/misc/ShapeManager.js",
+				"sap/gantt/misc/ShapeSelectionModel.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/gantt/shape/Circle.js",
+				"sap/gantt/shape/ClipPath.js",
+				"sap/gantt/shape/Definitions.js",
+				"sap/gantt/shape/Group.js",
+				"sap/gantt/shape/Image.js",
+				"sap/gantt/shape/Line.js",
+				"sap/gantt/shape/Path.js",
+				"sap/gantt/shape/Polygon.js",
+				"sap/gantt/shape/Polyline.js",
+				"sap/gantt/shape/Rectangle.js",
+				"sap/gantt/shape/ResizeShadowShape.js",
+				"sap/gantt/shape/SelectedShape.js",
+				"sap/gantt/shape/Shape.js",
+				"sap/gantt/shape/Text.js",
+				"sap/gantt/shape/cal/Calendar.js",
+				"sap/gantt/shape/ext/Chevron.js",
+				"sap/gantt/shape/ext/Cursor.js",
+				"sap/gantt/shape/ext/Diamond.js",
+				"sap/gantt/shape/ext/Iconfont.js",
+				"sap/gantt/shape/ext/Pentangle.js",
+				"sap/gantt/shape/ext/TextRepeat.js",
+				"sap/gantt/shape/ext/Triangle.js",
+				"sap/gantt/shape/ext/rls/Relationship.js",
+				"sap/gantt/shape/ext/rls/SelectedRelationship.js",
+				"sap/gantt/shape/ext/ubc/UbcBorderPath.js",
+				"sap/gantt/shape/ext/ubc/UbcOverCapacityZonePolygon.js",
+				"sap/gantt/shape/ext/ubc/UbcPolygon.js",
+				"sap/gantt/shape/ext/ubc/UbcShortageCapacityPolygon.js",
+				"sap/gantt/shape/ext/ubc/UbcTooltipRectangle.js",
+				"sap/gantt/shape/ext/ubc/UbcUnderCapacityZonePolygon.js",
+				"sap/gantt/shape/ext/ubc/UbcUsedPolygon.js",
+				"sap/gantt/shape/ext/ubc/UtilizationBarChart.js",
+				"sap/gantt/shape/ext/ulc/UlcBorderPath.js",
+				"sap/gantt/shape/ext/ulc/UlcClipPath.js",
+				"sap/gantt/shape/ext/ulc/UlcClipingPath.js",
+				"sap/gantt/shape/ext/ulc/UlcDimension.js",
+				"sap/gantt/shape/ext/ulc/UlcMiddleLine.js",
+				"sap/gantt/shape/ext/ulc/UlcOverCapacityZoneRectangle.js",
+				"sap/gantt/shape/ext/ulc/UlcOverClipRectangle.js",
+				"sap/gantt/shape/ext/ulc/UlcRectangle.js",
+				"sap/gantt/shape/ext/ulc/UlcTooltipRectangle.js",
+				"sap/gantt/shape/ext/ulc/UlcUnderClipRectangle.js",
+				"sap/gantt/shape/ext/ulc/UtilizationLineChart.js",
+				"sap/gantt/simple/AggregationUtils.js",
+				"sap/gantt/simple/BaseCalendar.js",
+				"sap/gantt/simple/BaseChevron.js",
+				"sap/gantt/simple/BaseConditionalShape.js",
+				"sap/gantt/simple/BaseCursor.js",
+				"sap/gantt/simple/BaseDiamond.js",
+				"sap/gantt/simple/BaseGroup.js",
+				"sap/gantt/simple/BaseImage.js",
+				"sap/gantt/simple/BaseLine.js",
+				"sap/gantt/simple/BasePath.js",
+				"sap/gantt/simple/BaseRectangle.js",
+				"sap/gantt/simple/BaseShape.js",
+				"sap/gantt/simple/BaseText.js",
+				"sap/gantt/simple/ContainerToolbar.js",
+				"sap/gantt/simple/ContainerToolbarRenderer.js",
+				"sap/gantt/simple/CoordinateUtils.js",
+				"sap/gantt/simple/DimensionLegend.js",
+				"sap/gantt/simple/DimensionLegendRenderer.js",
+				"sap/gantt/simple/ExpandModel.js",
+				"sap/gantt/simple/GanttChartContainer.js",
+				"sap/gantt/simple/GanttChartContainerRenderer.js",
+				"sap/gantt/simple/GanttChartWithTable.js",
+				"sap/gantt/simple/GanttChartWithTableRenderer.js",
+				"sap/gantt/simple/GanttConnectExtension.js",
+				"sap/gantt/simple/GanttDragDropExtension.js",
+				"sap/gantt/simple/GanttExtension.js",
+				"sap/gantt/simple/GanttHeader.js",
+				"sap/gantt/simple/GanttPointerExtension.js",
+				"sap/gantt/simple/GanttPopoverExtension.js",
+				"sap/gantt/simple/GanttResizeExtension.js",
+				"sap/gantt/simple/GanttRowSettings.js",
+				"sap/gantt/simple/GanttScrollExtension.js",
+				"sap/gantt/simple/GanttSyncedControl.js",
+				"sap/gantt/simple/GanttUtils.js",
+				"sap/gantt/simple/GanttZoomExtension.js",
+				"sap/gantt/simple/InnerGanttChart.js",
+				"sap/gantt/simple/InnerGanttChartRenderer.js",
+				"sap/gantt/simple/LegendColumnConfig.js",
+				"sap/gantt/simple/LegendContainer.js",
+				"sap/gantt/simple/LegendContainerRenderer.js",
+				"sap/gantt/simple/LegendRowConfig.js",
+				"sap/gantt/simple/ListLegend.js",
+				"sap/gantt/simple/ListLegendItem.js",
+				"sap/gantt/simple/ListLegendRenderer.js",
+				"sap/gantt/simple/Relationship.js",
+				"sap/gantt/simple/RenderUtils.js",
+				"sap/gantt/simple/SelectionModel.js",
+				"sap/gantt/simple/ShapeScheme.js",
+				"sap/gantt/simple/TitlePropagator.js",
+				"sap/gantt/simple/UtilizationBarChart.js",
+				"sap/gantt/simple/UtilizationChart.js",
+				"sap/gantt/simple/UtilizationDimension.js",
+				"sap/gantt/simple/UtilizationLineChart.js",
+				"sap/gantt/simple/UtilizationPeriod.js"
+			]
+		},
+		{
+			"name": "library-h2-preload.js.map",
+			"isDebug": true
+		},
+		{
+			"name": "library-preload.js",
+			"module": "sap/gantt/library-preload.js",
+			"merged": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/base/Log.js",
+				"sap/base/util/ObjectPath.js",
+				"sap/base/util/values.js",
+				"sap/m/Button.js",
+				"sap/m/ButtonType.js",
+				"sap/m/CheckBox.js",
+				"sap/m/FlexBox.js",
+				"sap/m/FlexDirection.js",
+				"sap/m/Label.js",
+				"sap/m/List.js",
+				"sap/m/Menu.js",
+				"sap/m/MenuButton.js",
+				"sap/m/MenuItem.js",
+				"sap/m/NavContainer.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/OverflowToolbarLayoutData.js",
+				"sap/m/OverflowToolbarPriority.js",
+				"sap/m/OverflowToolbarRenderer.js",
+				"sap/m/Page.js",
+				"sap/m/PlacementType.js",
+				"sap/m/Popover.js",
+				"sap/m/SegmentedButton.js",
+				"sap/m/SegmentedButtonItem.js",
+				"sap/m/Select.js",
+				"sap/m/Slider.js",
+				"sap/m/StandardListItem.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/m/ViewSettingsCustomTab.js",
+				"sap/m/ViewSettingsDialog.js",
+				"sap/ui/Device.js",
+				"sap/ui/base/DataType.js",
+				"sap/ui/base/EventProvider.js",
+				"sap/ui/base/ManagedObject.js",
+				"sap/ui/base/ManagedObjectMetadata.js",
+				"sap/ui/base/ManagedObjectObserver.js",
+				"sap/ui/base/Object.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/CustomStyleClassSupport.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/core/IconPool.js",
+				"sap/ui/core/Item.js",
+				"sap/ui/core/Locale.js",
+				"sap/ui/core/LocaleData.js",
+				"sap/ui/core/Orientation.js",
+				"sap/ui/core/Renderer.js",
+				"sap/ui/core/format/DateFormat.js",
+				"sap/ui/core/format/NumberFormat.js",
+				"sap/ui/core/theming/Parameters.js",
+				"sap/ui/events/KeyCodes.js",
+				"sap/ui/layout/Splitter.js",
+				"sap/ui/layout/SplitterLayoutData.js",
+				"sap/ui/model/ChangeReason.js",
+				"sap/ui/model/Context.js",
+				"sap/ui/table/Column.js",
+				"sap/ui/table/RowSettings.js",
+				"sap/ui/table/TreeTable.js",
+				"sap/ui/thirdparty/d3.js"
+			],
+			"included": [
+				"sap/gantt/AdhocLine.js",
+				"sap/gantt/GanttChart.js",
+				"sap/gantt/GanttChartBase.js",
+				"sap/gantt/GanttChartContainer.js",
+				"sap/gantt/GanttChartContainerRenderer.js",
+				"sap/gantt/GanttChartRenderer.js",
+				"sap/gantt/GanttChartWithTable.js",
+				"sap/gantt/GanttChartWithTableRenderer.js",
+				"sap/gantt/axistime/AxisTimeStrategyBase.js",
+				"sap/gantt/axistime/FullScreenStrategy.js",
+				"sap/gantt/axistime/ProportionZoomStrategy.js",
+				"sap/gantt/axistime/StepwiseZoomStrategy.js",
+				"sap/gantt/config/BirdEyeGroup.js",
+				"sap/gantt/config/ChartScheme.js",
+				"sap/gantt/config/ColumnAttribute.js",
+				"sap/gantt/config/ContainerLayout.js",
+				"sap/gantt/config/ExpandChart.js",
+				"sap/gantt/config/ExpandChartGroup.js",
+				"sap/gantt/config/GanttChartLayout.js",
+				"sap/gantt/config/Hierarchy.js",
+				"sap/gantt/config/HierarchyColumn.js",
+				"sap/gantt/config/LayoutGroup.js",
+				"sap/gantt/config/Locale.js",
+				"sap/gantt/config/Mode.js",
+				"sap/gantt/config/ModeGroup.js",
+				"sap/gantt/config/ObjectType.js",
+				"sap/gantt/config/SettingGroup.js",
+				"sap/gantt/config/SettingItem.js",
+				"sap/gantt/config/Shape.js",
+				"sap/gantt/config/TimeAxis.js",
+				"sap/gantt/config/TimeHorizon.js",
+				"sap/gantt/config/TimeZoomGroup.js",
+				"sap/gantt/config/ToolbarGroup.js",
+				"sap/gantt/config/ToolbarScheme.js",
+				"sap/gantt/control/AssociateContainer.js",
+				"sap/gantt/control/AssociateContainerRenderer.js",
+				"sap/gantt/control/Cell.js",
+				"sap/gantt/control/CellRenderer.js",
+				"sap/gantt/control/Toolbar.js",
+				"sap/gantt/control/ToolbarRenderer.js",
+				"sap/gantt/def/DefBase.js",
+				"sap/gantt/def/SvgDefs.js",
+				"sap/gantt/def/cal/Calendar.js",
+				"sap/gantt/def/cal/CalendarDefs.js",
+				"sap/gantt/def/cal/TimeInterval.js",
+				"sap/gantt/def/filter/MorphologyFilter.js",
+				"sap/gantt/def/gradient/LinearGradient.js",
+				"sap/gantt/def/gradient/RadialGradient.js",
+				"sap/gantt/def/gradient/Stop.js",
+				"sap/gantt/def/pattern/BackSlashPattern.js",
+				"sap/gantt/def/pattern/PatternBase.js",
+				"sap/gantt/def/pattern/SlashPattern.js",
+				"sap/gantt/drawer/AdhocLine.js",
+				"sap/gantt/drawer/CalendarPattern.js",
+				"sap/gantt/drawer/CursorLine.js",
+				"sap/gantt/drawer/Drawer.js",
+				"sap/gantt/drawer/ExpandedBackground.js",
+				"sap/gantt/drawer/Legend.js",
+				"sap/gantt/drawer/NowLine.js",
+				"sap/gantt/drawer/SelectionPanel.js",
+				"sap/gantt/drawer/ShapeCrossRow.js",
+				"sap/gantt/drawer/ShapeInRow.js",
+				"sap/gantt/drawer/TimePeriodZoomRectangle.js",
+				"sap/gantt/drawer/VerticalLine.js",
+				"sap/gantt/eventHandler/AutoScrollHandler.js",
+				"sap/gantt/eventHandler/BirdEyeHandler.js",
+				"sap/gantt/eventHandler/MouseWheelHandler.js",
+				"sap/gantt/eventHandler/ShapeHoverHandler.js",
+				"sap/gantt/eventHandler/ShapeResizeHandler.js",
+				"sap/gantt/eventHandler/TimePeriodZoomHandler.js",
+				"sap/gantt/eventHandler/TimePopoverHandler.js",
+				"sap/gantt/legend/DimensionLegend.js",
+				"sap/gantt/legend/DimensionLegendRenderer.js",
+				"sap/gantt/legend/LegendBase.js",
+				"sap/gantt/legend/LegendContainer.js",
+				"sap/gantt/legend/LegendContainerRenderer.js",
+				"sap/gantt/legend/ListLegend.js",
+				"sap/gantt/legend/ListLegendRenderer.js",
+				"sap/gantt/library.js",
+				"sap/gantt/manifest.json",
+				"sap/gantt/misc/AxisOrdinal.js",
+				"sap/gantt/misc/AxisTime.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/misc/RelativeTimeFormatter.js",
+				"sap/gantt/misc/ShapeManager.js",
+				"sap/gantt/misc/ShapeSelectionModel.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/gantt/shape/Circle.js",
+				"sap/gantt/shape/ClipPath.js",
+				"sap/gantt/shape/Definitions.js",
+				"sap/gantt/shape/Group.js",
+				"sap/gantt/shape/Image.js",
+				"sap/gantt/shape/Line.js",
+				"sap/gantt/shape/Path.js",
+				"sap/gantt/shape/Polygon.js",
+				"sap/gantt/shape/Polyline.js",
+				"sap/gantt/shape/Rectangle.js",
+				"sap/gantt/shape/ResizeShadowShape.js",
+				"sap/gantt/shape/SelectedShape.js",
+				"sap/gantt/shape/Shape.js",
+				"sap/gantt/shape/Text.js",
+				"sap/gantt/shape/cal/Calendar.js",
+				"sap/gantt/shape/ext/Chevron.js",
+				"sap/gantt/shape/ext/Cursor.js",
+				"sap/gantt/shape/ext/Diamond.js",
+				"sap/gantt/shape/ext/Iconfont.js",
+				"sap/gantt/shape/ext/Pentangle.js",
+				"sap/gantt/shape/ext/TextRepeat.js",
+				"sap/gantt/shape/ext/Triangle.js",
+				"sap/gantt/shape/ext/rls/Relationship.js",
+				"sap/gantt/shape/ext/rls/SelectedRelationship.js",
+				"sap/gantt/shape/ext/ubc/UbcBorderPath.js",
+				"sap/gantt/shape/ext/ubc/UbcOverCapacityZonePolygon.js",
+				"sap/gantt/shape/ext/ubc/UbcPolygon.js",
+				"sap/gantt/shape/ext/ubc/UbcShortageCapacityPolygon.js",
+				"sap/gantt/shape/ext/ubc/UbcTooltipRectangle.js",
+				"sap/gantt/shape/ext/ubc/UbcUnderCapacityZonePolygon.js",
+				"sap/gantt/shape/ext/ubc/UbcUsedPolygon.js",
+				"sap/gantt/shape/ext/ubc/UtilizationBarChart.js",
+				"sap/gantt/shape/ext/ulc/UlcBorderPath.js",
+				"sap/gantt/shape/ext/ulc/UlcClipPath.js",
+				"sap/gantt/shape/ext/ulc/UlcClipingPath.js",
+				"sap/gantt/shape/ext/ulc/UlcDimension.js",
+				"sap/gantt/shape/ext/ulc/UlcMiddleLine.js",
+				"sap/gantt/shape/ext/ulc/UlcOverCapacityZoneRectangle.js",
+				"sap/gantt/shape/ext/ulc/UlcOverClipRectangle.js",
+				"sap/gantt/shape/ext/ulc/UlcRectangle.js",
+				"sap/gantt/shape/ext/ulc/UlcTooltipRectangle.js",
+				"sap/gantt/shape/ext/ulc/UlcUnderClipRectangle.js",
+				"sap/gantt/shape/ext/ulc/UtilizationLineChart.js",
+				"sap/gantt/simple/AggregationUtils.js",
+				"sap/gantt/simple/BaseCalendar.js",
+				"sap/gantt/simple/BaseChevron.js",
+				"sap/gantt/simple/BaseConditionalShape.js",
+				"sap/gantt/simple/BaseCursor.js",
+				"sap/gantt/simple/BaseDiamond.js",
+				"sap/gantt/simple/BaseGroup.js",
+				"sap/gantt/simple/BaseImage.js",
+				"sap/gantt/simple/BaseLine.js",
+				"sap/gantt/simple/BasePath.js",
+				"sap/gantt/simple/BaseRectangle.js",
+				"sap/gantt/simple/BaseShape.js",
+				"sap/gantt/simple/BaseText.js",
+				"sap/gantt/simple/ContainerToolbar.js",
+				"sap/gantt/simple/ContainerToolbarRenderer.js",
+				"sap/gantt/simple/CoordinateUtils.js",
+				"sap/gantt/simple/DimensionLegend.js",
+				"sap/gantt/simple/DimensionLegendRenderer.js",
+				"sap/gantt/simple/ExpandModel.js",
+				"sap/gantt/simple/GanttChartContainer.js",
+				"sap/gantt/simple/GanttChartContainerRenderer.js",
+				"sap/gantt/simple/GanttChartWithTable.js",
+				"sap/gantt/simple/GanttChartWithTableRenderer.js",
+				"sap/gantt/simple/GanttConnectExtension.js",
+				"sap/gantt/simple/GanttDragDropExtension.js",
+				"sap/gantt/simple/GanttExtension.js",
+				"sap/gantt/simple/GanttHeader.js",
+				"sap/gantt/simple/GanttPointerExtension.js",
+				"sap/gantt/simple/GanttPopoverExtension.js",
+				"sap/gantt/simple/GanttResizeExtension.js",
+				"sap/gantt/simple/GanttRowSettings.js",
+				"sap/gantt/simple/GanttScrollExtension.js",
+				"sap/gantt/simple/GanttSyncedControl.js",
+				"sap/gantt/simple/GanttUtils.js",
+				"sap/gantt/simple/GanttZoomExtension.js",
+				"sap/gantt/simple/InnerGanttChart.js",
+				"sap/gantt/simple/InnerGanttChartRenderer.js",
+				"sap/gantt/simple/LegendColumnConfig.js",
+				"sap/gantt/simple/LegendContainer.js",
+				"sap/gantt/simple/LegendContainerRenderer.js",
+				"sap/gantt/simple/LegendRowConfig.js",
+				"sap/gantt/simple/ListLegend.js",
+				"sap/gantt/simple/ListLegendItem.js",
+				"sap/gantt/simple/ListLegendRenderer.js",
+				"sap/gantt/simple/Relationship.js",
+				"sap/gantt/simple/RenderUtils.js",
+				"sap/gantt/simple/SelectionModel.js",
+				"sap/gantt/simple/ShapeScheme.js",
+				"sap/gantt/simple/TitlePropagator.js",
+				"sap/gantt/simple/UtilizationBarChart.js",
+				"sap/gantt/simple/UtilizationChart.js",
+				"sap/gantt/simple/UtilizationDimension.js",
+				"sap/gantt/simple/UtilizationLineChart.js",
+				"sap/gantt/simple/UtilizationPeriod.js"
+			]
+		},
+		{
+			"name": "library-preload.js.map",
+			"isDebug": true
+		},
+		{
+			"name": "library-preload.json",
+			"module": "sap/gantt/library-preload.json",
+			"merged": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/base/Log.js",
+				"sap/base/util/ObjectPath.js",
+				"sap/base/util/values.js",
+				"sap/m/Button.js",
+				"sap/m/ButtonType.js",
+				"sap/m/CheckBox.js",
+				"sap/m/FlexBox.js",
+				"sap/m/FlexDirection.js",
+				"sap/m/Label.js",
+				"sap/m/List.js",
+				"sap/m/Menu.js",
+				"sap/m/MenuButton.js",
+				"sap/m/MenuItem.js",
+				"sap/m/NavContainer.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/OverflowToolbarLayoutData.js",
+				"sap/m/OverflowToolbarPriority.js",
+				"sap/m/OverflowToolbarRenderer.js",
+				"sap/m/Page.js",
+				"sap/m/PlacementType.js",
+				"sap/m/Popover.js",
+				"sap/m/SegmentedButton.js",
+				"sap/m/SegmentedButtonItem.js",
+				"sap/m/Select.js",
+				"sap/m/Slider.js",
+				"sap/m/StandardListItem.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/m/ViewSettingsCustomTab.js",
+				"sap/m/ViewSettingsDialog.js",
+				"sap/m/library-preload.json",
+				"sap/ui/Device.js",
+				"sap/ui/base/DataType.js",
+				"sap/ui/base/EventProvider.js",
+				"sap/ui/base/ManagedObject.js",
+				"sap/ui/base/ManagedObjectMetadata.js",
+				"sap/ui/base/ManagedObjectObserver.js",
+				"sap/ui/base/Object.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/CustomStyleClassSupport.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/core/IconPool.js",
+				"sap/ui/core/Item.js",
+				"sap/ui/core/Locale.js",
+				"sap/ui/core/LocaleData.js",
+				"sap/ui/core/Orientation.js",
+				"sap/ui/core/Renderer.js",
+				"sap/ui/core/format/DateFormat.js",
+				"sap/ui/core/format/NumberFormat.js",
+				"sap/ui/core/library-preload.json",
+				"sap/ui/core/theming/Parameters.js",
+				"sap/ui/events/KeyCodes.js",
+				"sap/ui/layout/Splitter.js",
+				"sap/ui/layout/SplitterLayoutData.js",
+				"sap/ui/layout/library-preload.json",
+				"sap/ui/model/ChangeReason.js",
+				"sap/ui/model/Context.js",
+				"sap/ui/table/Column.js",
+				"sap/ui/table/RowSettings.js",
+				"sap/ui/table/TreeTable.js",
+				"sap/ui/table/library-preload.json",
+				"sap/ui/thirdparty/d3.js"
+			],
+			"included": [
+				"sap/gantt/AdhocLine.js",
+				"sap/gantt/GanttChart.js",
+				"sap/gantt/GanttChartBase.js",
+				"sap/gantt/GanttChartContainer.js",
+				"sap/gantt/GanttChartContainerRenderer.js",
+				"sap/gantt/GanttChartRenderer.js",
+				"sap/gantt/GanttChartWithTable.js",
+				"sap/gantt/GanttChartWithTableRenderer.js",
+				"sap/gantt/axistime/AxisTimeStrategyBase.js",
+				"sap/gantt/axistime/FullScreenStrategy.js",
+				"sap/gantt/axistime/ProportionZoomStrategy.js",
+				"sap/gantt/axistime/StepwiseZoomStrategy.js",
+				"sap/gantt/config/BirdEyeGroup.js",
+				"sap/gantt/config/ChartScheme.js",
+				"sap/gantt/config/ColumnAttribute.js",
+				"sap/gantt/config/ContainerLayout.js",
+				"sap/gantt/config/ExpandChart.js",
+				"sap/gantt/config/ExpandChartGroup.js",
+				"sap/gantt/config/GanttChartLayout.js",
+				"sap/gantt/config/Hierarchy.js",
+				"sap/gantt/config/HierarchyColumn.js",
+				"sap/gantt/config/LayoutGroup.js",
+				"sap/gantt/config/Locale.js",
+				"sap/gantt/config/Mode.js",
+				"sap/gantt/config/ModeGroup.js",
+				"sap/gantt/config/ObjectType.js",
+				"sap/gantt/config/SettingGroup.js",
+				"sap/gantt/config/SettingItem.js",
+				"sap/gantt/config/Shape.js",
+				"sap/gantt/config/TimeAxis.js",
+				"sap/gantt/config/TimeHorizon.js",
+				"sap/gantt/config/TimeZoomGroup.js",
+				"sap/gantt/config/ToolbarGroup.js",
+				"sap/gantt/config/ToolbarScheme.js",
+				"sap/gantt/control/AssociateContainer.js",
+				"sap/gantt/control/AssociateContainerRenderer.js",
+				"sap/gantt/control/Cell.js",
+				"sap/gantt/control/CellRenderer.js",
+				"sap/gantt/control/Toolbar.js",
+				"sap/gantt/control/ToolbarRenderer.js",
+				"sap/gantt/def/DefBase.js",
+				"sap/gantt/def/SvgDefs.js",
+				"sap/gantt/def/cal/Calendar.js",
+				"sap/gantt/def/cal/CalendarDefs.js",
+				"sap/gantt/def/cal/TimeInterval.js",
+				"sap/gantt/def/filter/MorphologyFilter.js",
+				"sap/gantt/def/gradient/LinearGradient.js",
+				"sap/gantt/def/gradient/RadialGradient.js",
+				"sap/gantt/def/gradient/Stop.js",
+				"sap/gantt/def/pattern/BackSlashPattern.js",
+				"sap/gantt/def/pattern/PatternBase.js",
+				"sap/gantt/def/pattern/SlashPattern.js",
+				"sap/gantt/drawer/AdhocLine.js",
+				"sap/gantt/drawer/CalendarPattern.js",
+				"sap/gantt/drawer/CursorLine.js",
+				"sap/gantt/drawer/Drawer.js",
+				"sap/gantt/drawer/ExpandedBackground.js",
+				"sap/gantt/drawer/Legend.js",
+				"sap/gantt/drawer/NowLine.js",
+				"sap/gantt/drawer/SelectionPanel.js",
+				"sap/gantt/drawer/ShapeCrossRow.js",
+				"sap/gantt/drawer/ShapeInRow.js",
+				"sap/gantt/drawer/TimePeriodZoomRectangle.js",
+				"sap/gantt/drawer/VerticalLine.js",
+				"sap/gantt/eventHandler/AutoScrollHandler.js",
+				"sap/gantt/eventHandler/BirdEyeHandler.js",
+				"sap/gantt/eventHandler/MouseWheelHandler.js",
+				"sap/gantt/eventHandler/ShapeHoverHandler.js",
+				"sap/gantt/eventHandler/ShapeResizeHandler.js",
+				"sap/gantt/eventHandler/TimePeriodZoomHandler.js",
+				"sap/gantt/eventHandler/TimePopoverHandler.js",
+				"sap/gantt/legend/DimensionLegend.js",
+				"sap/gantt/legend/DimensionLegendRenderer.js",
+				"sap/gantt/legend/LegendBase.js",
+				"sap/gantt/legend/LegendContainer.js",
+				"sap/gantt/legend/LegendContainerRenderer.js",
+				"sap/gantt/legend/ListLegend.js",
+				"sap/gantt/legend/ListLegendRenderer.js",
+				"sap/gantt/library.js",
+				"sap/gantt/manifest.json",
+				"sap/gantt/misc/AxisOrdinal.js",
+				"sap/gantt/misc/AxisTime.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/misc/RelativeTimeFormatter.js",
+				"sap/gantt/misc/ShapeManager.js",
+				"sap/gantt/misc/ShapeSelectionModel.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/gantt/shape/Circle.js",
+				"sap/gantt/shape/ClipPath.js",
+				"sap/gantt/shape/Definitions.js",
+				"sap/gantt/shape/Group.js",
+				"sap/gantt/shape/Image.js",
+				"sap/gantt/shape/Line.js",
+				"sap/gantt/shape/Path.js",
+				"sap/gantt/shape/Polygon.js",
+				"sap/gantt/shape/Polyline.js",
+				"sap/gantt/shape/Rectangle.js",
+				"sap/gantt/shape/ResizeShadowShape.js",
+				"sap/gantt/shape/SelectedShape.js",
+				"sap/gantt/shape/Shape.js",
+				"sap/gantt/shape/Text.js",
+				"sap/gantt/shape/cal/Calendar.js",
+				"sap/gantt/shape/ext/Chevron.js",
+				"sap/gantt/shape/ext/Cursor.js",
+				"sap/gantt/shape/ext/Diamond.js",
+				"sap/gantt/shape/ext/Iconfont.js",
+				"sap/gantt/shape/ext/Pentangle.js",
+				"sap/gantt/shape/ext/TextRepeat.js",
+				"sap/gantt/shape/ext/Triangle.js",
+				"sap/gantt/shape/ext/rls/Relationship.js",
+				"sap/gantt/shape/ext/rls/SelectedRelationship.js",
+				"sap/gantt/shape/ext/ubc/UbcBorderPath.js",
+				"sap/gantt/shape/ext/ubc/UbcOverCapacityZonePolygon.js",
+				"sap/gantt/shape/ext/ubc/UbcPolygon.js",
+				"sap/gantt/shape/ext/ubc/UbcShortageCapacityPolygon.js",
+				"sap/gantt/shape/ext/ubc/UbcTooltipRectangle.js",
+				"sap/gantt/shape/ext/ubc/UbcUnderCapacityZonePolygon.js",
+				"sap/gantt/shape/ext/ubc/UbcUsedPolygon.js",
+				"sap/gantt/shape/ext/ubc/UtilizationBarChart.js",
+				"sap/gantt/shape/ext/ulc/UlcBorderPath.js",
+				"sap/gantt/shape/ext/ulc/UlcClipPath.js",
+				"sap/gantt/shape/ext/ulc/UlcClipingPath.js",
+				"sap/gantt/shape/ext/ulc/UlcDimension.js",
+				"sap/gantt/shape/ext/ulc/UlcMiddleLine.js",
+				"sap/gantt/shape/ext/ulc/UlcOverCapacityZoneRectangle.js",
+				"sap/gantt/shape/ext/ulc/UlcOverClipRectangle.js",
+				"sap/gantt/shape/ext/ulc/UlcRectangle.js",
+				"sap/gantt/shape/ext/ulc/UlcTooltipRectangle.js",
+				"sap/gantt/shape/ext/ulc/UlcUnderClipRectangle.js",
+				"sap/gantt/shape/ext/ulc/UtilizationLineChart.js",
+				"sap/gantt/simple/AggregationUtils.js",
+				"sap/gantt/simple/BaseCalendar.js",
+				"sap/gantt/simple/BaseChevron.js",
+				"sap/gantt/simple/BaseConditionalShape.js",
+				"sap/gantt/simple/BaseCursor.js",
+				"sap/gantt/simple/BaseDiamond.js",
+				"sap/gantt/simple/BaseGroup.js",
+				"sap/gantt/simple/BaseImage.js",
+				"sap/gantt/simple/BaseLine.js",
+				"sap/gantt/simple/BasePath.js",
+				"sap/gantt/simple/BaseRectangle.js",
+				"sap/gantt/simple/BaseShape.js",
+				"sap/gantt/simple/BaseText.js",
+				"sap/gantt/simple/ContainerToolbar.js",
+				"sap/gantt/simple/ContainerToolbarRenderer.js",
+				"sap/gantt/simple/CoordinateUtils.js",
+				"sap/gantt/simple/DimensionLegend.js",
+				"sap/gantt/simple/DimensionLegendRenderer.js",
+				"sap/gantt/simple/ExpandModel.js",
+				"sap/gantt/simple/GanttChartContainer.js",
+				"sap/gantt/simple/GanttChartContainerRenderer.js",
+				"sap/gantt/simple/GanttChartWithTable.js",
+				"sap/gantt/simple/GanttChartWithTableRenderer.js",
+				"sap/gantt/simple/GanttConnectExtension.js",
+				"sap/gantt/simple/GanttDragDropExtension.js",
+				"sap/gantt/simple/GanttExtension.js",
+				"sap/gantt/simple/GanttHeader.js",
+				"sap/gantt/simple/GanttPointerExtension.js",
+				"sap/gantt/simple/GanttPopoverExtension.js",
+				"sap/gantt/simple/GanttResizeExtension.js",
+				"sap/gantt/simple/GanttRowSettings.js",
+				"sap/gantt/simple/GanttScrollExtension.js",
+				"sap/gantt/simple/GanttSyncedControl.js",
+				"sap/gantt/simple/GanttUtils.js",
+				"sap/gantt/simple/GanttZoomExtension.js",
+				"sap/gantt/simple/InnerGanttChart.js",
+				"sap/gantt/simple/InnerGanttChartRenderer.js",
+				"sap/gantt/simple/LegendColumnConfig.js",
+				"sap/gantt/simple/LegendContainer.js",
+				"sap/gantt/simple/LegendContainerRenderer.js",
+				"sap/gantt/simple/LegendRowConfig.js",
+				"sap/gantt/simple/ListLegend.js",
+				"sap/gantt/simple/ListLegendItem.js",
+				"sap/gantt/simple/ListLegendRenderer.js",
+				"sap/gantt/simple/Relationship.js",
+				"sap/gantt/simple/RenderUtils.js",
+				"sap/gantt/simple/SelectionModel.js",
+				"sap/gantt/simple/ShapeScheme.js",
+				"sap/gantt/simple/TitlePropagator.js",
+				"sap/gantt/simple/UtilizationBarChart.js",
+				"sap/gantt/simple/UtilizationChart.js",
+				"sap/gantt/simple/UtilizationDimension.js",
+				"sap/gantt/simple/UtilizationLineChart.js",
+				"sap/gantt/simple/UtilizationPeriod.js"
+			]
+		},
+		{
+			"name": "library.dependencies.json",
+			"designtime": true
+		},
+		{
+			"name": "library.dependencies.xml",
+			"designtime": true
+		},
+		{
+			"name": "library.js",
+			"module": "sap/gantt/library.js",
+			"required": [
+				"sap/ui/base/DataType.js",
+				"sap/ui/core/theming/Parameters.js"
+			]
+		},
+		{
+			"name": "manifest.json",
+			"module": "sap/gantt/manifest.json"
+		},
+		{
+			"name": "messagebundle.properties",
+			"module": "sap/gantt/messagebundle.properties",
+			"locale": "",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_ar.properties",
+			"module": "sap/gantt/messagebundle_ar.properties",
+			"locale": "ar",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_bg.properties",
+			"module": "sap/gantt/messagebundle_bg.properties",
+			"locale": "bg",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_ca.properties",
+			"module": "sap/gantt/messagebundle_ca.properties",
+			"locale": "ca",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_cs.properties",
+			"module": "sap/gantt/messagebundle_cs.properties",
+			"locale": "cs",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_da.properties",
+			"module": "sap/gantt/messagebundle_da.properties",
+			"locale": "da",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_de.properties",
+			"module": "sap/gantt/messagebundle_de.properties",
+			"locale": "de",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_el.properties",
+			"module": "sap/gantt/messagebundle_el.properties",
+			"locale": "el",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_en.properties",
+			"module": "sap/gantt/messagebundle_en.properties",
+			"locale": "en",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_en_US_sappsd.properties",
+			"module": "sap/gantt/messagebundle_en_US_sappsd.properties",
+			"locale": "en_US_sappsd",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_en_US_saptrc.properties",
+			"module": "sap/gantt/messagebundle_en_US_saptrc.properties",
+			"locale": "en_US_saptrc",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_es.properties",
+			"module": "sap/gantt/messagebundle_es.properties",
+			"locale": "es",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_et.properties",
+			"module": "sap/gantt/messagebundle_et.properties",
+			"locale": "et",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_fi.properties",
+			"module": "sap/gantt/messagebundle_fi.properties",
+			"locale": "fi",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_fr.properties",
+			"module": "sap/gantt/messagebundle_fr.properties",
+			"locale": "fr",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_hi.properties",
+			"module": "sap/gantt/messagebundle_hi.properties",
+			"locale": "hi",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_hr.properties",
+			"module": "sap/gantt/messagebundle_hr.properties",
+			"locale": "hr",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_hu.properties",
+			"module": "sap/gantt/messagebundle_hu.properties",
+			"locale": "hu",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_it.properties",
+			"module": "sap/gantt/messagebundle_it.properties",
+			"locale": "it",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_iw.properties",
+			"module": "sap/gantt/messagebundle_iw.properties",
+			"locale": "iw",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_ja.properties",
+			"module": "sap/gantt/messagebundle_ja.properties",
+			"locale": "ja",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_kk.properties",
+			"module": "sap/gantt/messagebundle_kk.properties",
+			"locale": "kk",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_ko.properties",
+			"module": "sap/gantt/messagebundle_ko.properties",
+			"locale": "ko",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_lt.properties",
+			"module": "sap/gantt/messagebundle_lt.properties",
+			"locale": "lt",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_lv.properties",
+			"module": "sap/gantt/messagebundle_lv.properties",
+			"locale": "lv",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_ms.properties",
+			"module": "sap/gantt/messagebundle_ms.properties",
+			"locale": "ms",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_nl.properties",
+			"module": "sap/gantt/messagebundle_nl.properties",
+			"locale": "nl",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_no.properties",
+			"module": "sap/gantt/messagebundle_no.properties",
+			"locale": "no",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_pl.properties",
+			"module": "sap/gantt/messagebundle_pl.properties",
+			"locale": "pl",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_pt.properties",
+			"module": "sap/gantt/messagebundle_pt.properties",
+			"locale": "pt",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_ro.properties",
+			"module": "sap/gantt/messagebundle_ro.properties",
+			"locale": "ro",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_ru.properties",
+			"module": "sap/gantt/messagebundle_ru.properties",
+			"locale": "ru",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_sh.properties",
+			"module": "sap/gantt/messagebundle_sh.properties",
+			"locale": "sh",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_sk.properties",
+			"module": "sap/gantt/messagebundle_sk.properties",
+			"locale": "sk",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_sl.properties",
+			"module": "sap/gantt/messagebundle_sl.properties",
+			"locale": "sl",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_sv.properties",
+			"module": "sap/gantt/messagebundle_sv.properties",
+			"locale": "sv",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_th.properties",
+			"module": "sap/gantt/messagebundle_th.properties",
+			"locale": "th",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_tr.properties",
+			"module": "sap/gantt/messagebundle_tr.properties",
+			"locale": "tr",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_uk.properties",
+			"module": "sap/gantt/messagebundle_uk.properties",
+			"locale": "uk",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_vi.properties",
+			"module": "sap/gantt/messagebundle_vi.properties",
+			"locale": "vi",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_zh_CN.properties",
+			"module": "sap/gantt/messagebundle_zh_CN.properties",
+			"locale": "zh_CN",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_zh_TW.properties",
+			"module": "sap/gantt/messagebundle_zh_TW.properties",
+			"locale": "zh_TW",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "misc/AxisOrdinal-dbg.js",
+			"module": "sap/gantt/misc/AxisOrdinal.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/misc/Utility.js",
+				"sap/ui/thirdparty/d3.js"
+			]
+		},
+		{
+			"name": "misc/AxisOrdinal.js",
+			"module": "sap/gantt/misc/AxisOrdinal.js",
+			"required": [
+				"sap/gantt/misc/Utility.js",
+				"sap/ui/thirdparty/d3.js"
+			]
+		},
+		{
+			"name": "misc/AxisTime-dbg.js",
+			"module": "sap/gantt/misc/AxisTime.js",
+			"isDebug": true,
+			"required": [
+				"sap/base/util/ObjectPath.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/LocaleData.js"
+			]
+		},
+		{
+			"name": "misc/AxisTime.js",
+			"module": "sap/gantt/misc/AxisTime.js",
+			"required": [
+				"sap/base/util/ObjectPath.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/LocaleData.js"
+			]
+		},
+		{
+			"name": "misc/Format-dbg.js",
+			"module": "sap/gantt/misc/Format.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/format/DateFormat.js",
+				"sap/ui/thirdparty/d3.js"
+			]
+		},
+		{
+			"name": "misc/Format.js",
+			"module": "sap/gantt/misc/Format.js",
+			"required": [
+				"sap/ui/core/format/DateFormat.js",
+				"sap/ui/thirdparty/d3.js"
+			]
+		},
+		{
+			"name": "misc/RelativeTimeFormatter-dbg.js",
+			"module": "sap/gantt/misc/RelativeTimeFormatter.js",
+			"isDebug": true,
+			"required": [
+				"sap/base/util/ObjectPath.js"
+			]
+		},
+		{
+			"name": "misc/RelativeTimeFormatter.js",
+			"module": "sap/gantt/misc/RelativeTimeFormatter.js",
+			"required": [
+				"sap/base/util/ObjectPath.js"
+			]
+		},
+		{
+			"name": "misc/ShapeManager-dbg.js",
+			"module": "sap/gantt/misc/ShapeManager.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/base/util/ObjectPath.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/gantt/shape/Group.js",
+				"sap/gantt/shape/ResizeShadowShape.js",
+				"sap/gantt/shape/SelectedShape.js",
+				"sap/gantt/shape/Text.js",
+				"sap/gantt/shape/ext/rls/SelectedRelationship.js",
+				"sap/ui/base/EventProvider.js"
+			]
+		},
+		{
+			"name": "misc/ShapeManager.js",
+			"module": "sap/gantt/misc/ShapeManager.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/base/util/ObjectPath.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/gantt/shape/Group.js",
+				"sap/gantt/shape/ResizeShadowShape.js",
+				"sap/gantt/shape/SelectedShape.js",
+				"sap/gantt/shape/Text.js",
+				"sap/gantt/shape/ext/rls/SelectedRelationship.js",
+				"sap/ui/base/EventProvider.js"
+			]
+		},
+		{
+			"name": "misc/ShapeSelectionModel-dbg.js",
+			"module": "sap/gantt/misc/ShapeSelectionModel.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/ui/base/ManagedObject.js"
+			]
+		},
+		{
+			"name": "misc/ShapeSelectionModel.js",
+			"module": "sap/gantt/misc/ShapeSelectionModel.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/ui/base/ManagedObject.js"
+			]
+		},
+		{
+			"name": "misc/Utility-dbg.js",
+			"module": "sap/gantt/misc/Utility.js",
+			"isDebug": true,
+			"required": [
+				"sap/base/Log.js",
+				"sap/gantt/config/TimeHorizon.js",
+				"sap/gantt/misc/Format.js"
+			]
+		},
+		{
+			"name": "misc/Utility.js",
+			"module": "sap/gantt/misc/Utility.js",
+			"required": [
+				"sap/base/Log.js",
+				"sap/gantt/config/TimeHorizon.js",
+				"sap/gantt/misc/Format.js"
+			]
+		},
+		{
+			"name": "resources.json"
+		},
+		{
+			"name": "shape/Circle-dbg.js",
+			"module": "sap/gantt/shape/Circle.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/shape/Shape.js"
+			]
+		},
+		{
+			"name": "shape/Circle.js",
+			"module": "sap/gantt/shape/Circle.js",
+			"required": [
+				"sap/gantt/shape/Shape.js"
+			]
+		},
+		{
+			"name": "shape/ClipPath-dbg.js",
+			"module": "sap/gantt/shape/ClipPath.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/shape/Shape.js"
+			]
+		},
+		{
+			"name": "shape/ClipPath.js",
+			"module": "sap/gantt/shape/ClipPath.js",
+			"required": [
+				"sap/gantt/shape/Shape.js"
+			]
+		},
+		{
+			"name": "shape/Definitions-dbg.js",
+			"module": "sap/gantt/shape/Definitions.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/shape/Shape.js"
+			]
+		},
+		{
+			"name": "shape/Definitions.js",
+			"module": "sap/gantt/shape/Definitions.js",
+			"required": [
+				"sap/gantt/shape/Shape.js"
+			]
+		},
+		{
+			"name": "shape/Group-dbg.js",
+			"module": "sap/gantt/shape/Group.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/shape/Shape.js"
+			]
+		},
+		{
+			"name": "shape/Group.js",
+			"module": "sap/gantt/shape/Group.js",
+			"required": [
+				"sap/gantt/shape/Shape.js"
+			]
+		},
+		{
+			"name": "shape/Image-dbg.js",
+			"module": "sap/gantt/shape/Image.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/gantt/shape/Shape.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "shape/Image.js",
+			"module": "sap/gantt/shape/Image.js",
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/gantt/shape/Shape.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "shape/Line-dbg.js",
+			"module": "sap/gantt/shape/Line.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/shape/Shape.js"
+			]
+		},
+		{
+			"name": "shape/Line.js",
+			"module": "sap/gantt/shape/Line.js",
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/shape/Shape.js"
+			]
+		},
+		{
+			"name": "shape/Path-dbg.js",
+			"module": "sap/gantt/shape/Path.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/misc/Utility.js",
+				"sap/gantt/shape/Shape.js"
+			]
+		},
+		{
+			"name": "shape/Path.js",
+			"module": "sap/gantt/shape/Path.js",
+			"required": [
+				"sap/gantt/misc/Utility.js",
+				"sap/gantt/shape/Shape.js"
+			]
+		},
+		{
+			"name": "shape/Polygon-dbg.js",
+			"module": "sap/gantt/shape/Polygon.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/misc/Utility.js",
+				"sap/gantt/shape/Shape.js"
+			]
+		},
+		{
+			"name": "shape/Polygon.js",
+			"module": "sap/gantt/shape/Polygon.js",
+			"required": [
+				"sap/gantt/misc/Utility.js",
+				"sap/gantt/shape/Shape.js"
+			]
+		},
+		{
+			"name": "shape/Polyline-dbg.js",
+			"module": "sap/gantt/shape/Polyline.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/misc/Utility.js",
+				"sap/gantt/shape/Shape.js"
+			]
+		},
+		{
+			"name": "shape/Polyline.js",
+			"module": "sap/gantt/shape/Polyline.js",
+			"required": [
+				"sap/gantt/misc/Utility.js",
+				"sap/gantt/shape/Shape.js"
+			]
+		},
+		{
+			"name": "shape/Rectangle-dbg.js",
+			"module": "sap/gantt/shape/Rectangle.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/shape/Shape.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "shape/Rectangle.js",
+			"module": "sap/gantt/shape/Rectangle.js",
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/shape/Shape.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "shape/ResizeShadowShape-dbg.js",
+			"module": "sap/gantt/shape/ResizeShadowShape.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/shape/Path.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "shape/ResizeShadowShape.js",
+			"module": "sap/gantt/shape/ResizeShadowShape.js",
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/shape/Path.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "shape/SelectedShape-dbg.js",
+			"module": "sap/gantt/shape/SelectedShape.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/shape/Path.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "shape/SelectedShape.js",
+			"module": "sap/gantt/shape/SelectedShape.js",
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/shape/Path.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "shape/Shape-dbg.js",
+			"module": "sap/gantt/shape/Shape.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/library.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/core/format/NumberFormat.js"
+			]
+		},
+		{
+			"name": "shape/Shape.js",
+			"module": "sap/gantt/shape/Shape.js",
+			"required": [
+				"sap/gantt/library.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/core/format/NumberFormat.js"
+			]
+		},
+		{
+			"name": "shape/Text-dbg.js",
+			"module": "sap/gantt/shape/Text.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/shape/Shape.js"
+			]
+		},
+		{
+			"name": "shape/Text.js",
+			"module": "sap/gantt/shape/Text.js",
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/shape/Shape.js"
+			]
+		},
+		{
+			"name": "shape/cal/Calendar-dbg.js",
+			"module": "sap/gantt/shape/cal/Calendar.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/shape/Rectangle.js"
+			]
+		},
+		{
+			"name": "shape/cal/Calendar.js",
+			"module": "sap/gantt/shape/cal/Calendar.js",
+			"required": [
+				"sap/gantt/shape/Rectangle.js"
+			]
+		},
+		{
+			"name": "shape/ext/Chevron-dbg.js",
+			"module": "sap/gantt/shape/ext/Chevron.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/shape/Path.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "shape/ext/Chevron.js",
+			"module": "sap/gantt/shape/ext/Chevron.js",
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/shape/Path.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "shape/ext/Cursor-dbg.js",
+			"module": "sap/gantt/shape/ext/Cursor.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/shape/Path.js"
+			]
+		},
+		{
+			"name": "shape/ext/Cursor.js",
+			"module": "sap/gantt/shape/ext/Cursor.js",
+			"required": [
+				"sap/gantt/shape/Path.js"
+			]
+		},
+		{
+			"name": "shape/ext/Diamond-dbg.js",
+			"module": "sap/gantt/shape/ext/Diamond.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/shape/Path.js"
+			]
+		},
+		{
+			"name": "shape/ext/Diamond.js",
+			"module": "sap/gantt/shape/ext/Diamond.js",
+			"required": [
+				"sap/gantt/shape/Path.js"
+			]
+		},
+		{
+			"name": "shape/ext/Iconfont-dbg.js",
+			"module": "sap/gantt/shape/ext/Iconfont.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/shape/Text.js",
+				"sap/ui/core/IconPool.js"
+			]
+		},
+		{
+			"name": "shape/ext/Iconfont.js",
+			"module": "sap/gantt/shape/ext/Iconfont.js",
+			"required": [
+				"sap/gantt/shape/Text.js",
+				"sap/ui/core/IconPool.js"
+			]
+		},
+		{
+			"name": "shape/ext/Pentangle-dbg.js",
+			"module": "sap/gantt/shape/ext/Pentangle.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/misc/Utility.js",
+				"sap/gantt/shape/Polygon.js"
+			]
+		},
+		{
+			"name": "shape/ext/Pentangle.js",
+			"module": "sap/gantt/shape/ext/Pentangle.js",
+			"required": [
+				"sap/gantt/misc/Utility.js",
+				"sap/gantt/shape/Polygon.js"
+			]
+		},
+		{
+			"name": "shape/ext/TextRepeat-dbg.js",
+			"module": "sap/gantt/shape/ext/TextRepeat.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/shape/Definitions.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "shape/ext/TextRepeat.js",
+			"module": "sap/gantt/shape/ext/TextRepeat.js",
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/shape/Definitions.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "shape/ext/Triangle-dbg.js",
+			"module": "sap/gantt/shape/ext/Triangle.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/shape/Path.js"
+			]
+		},
+		{
+			"name": "shape/ext/Triangle.js",
+			"module": "sap/gantt/shape/ext/Triangle.js",
+			"required": [
+				"sap/gantt/shape/Path.js"
+			]
+		},
+		{
+			"name": "shape/ext/rls/Relationship-dbg.js",
+			"module": "sap/gantt/shape/ext/rls/Relationship.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/shape/Path.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "shape/ext/rls/Relationship.js",
+			"module": "sap/gantt/shape/ext/rls/Relationship.js",
+			"required": [
+				"sap/gantt/shape/Path.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "shape/ext/rls/SelectedRelationship-dbg.js",
+			"module": "sap/gantt/shape/ext/rls/SelectedRelationship.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/shape/ext/rls/Relationship.js"
+			]
+		},
+		{
+			"name": "shape/ext/rls/SelectedRelationship.js",
+			"module": "sap/gantt/shape/ext/rls/SelectedRelationship.js",
+			"required": [
+				"sap/gantt/shape/ext/rls/Relationship.js"
+			]
+		},
+		{
+			"name": "shape/ext/ubc/UbcBorderPath-dbg.js",
+			"module": "sap/gantt/shape/ext/ubc/UbcBorderPath.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/shape/Path.js"
+			]
+		},
+		{
+			"name": "shape/ext/ubc/UbcBorderPath.js",
+			"module": "sap/gantt/shape/ext/ubc/UbcBorderPath.js",
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/shape/Path.js"
+			]
+		},
+		{
+			"name": "shape/ext/ubc/UbcOverCapacityZonePolygon-dbg.js",
+			"module": "sap/gantt/shape/ext/ubc/UbcOverCapacityZonePolygon.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/shape/ext/ubc/UbcPolygon.js"
+			]
+		},
+		{
+			"name": "shape/ext/ubc/UbcOverCapacityZonePolygon.js",
+			"module": "sap/gantt/shape/ext/ubc/UbcOverCapacityZonePolygon.js",
+			"required": [
+				"sap/gantt/shape/ext/ubc/UbcPolygon.js"
+			]
+		},
+		{
+			"name": "shape/ext/ubc/UbcPolygon-dbg.js",
+			"module": "sap/gantt/shape/ext/ubc/UbcPolygon.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/shape/Polygon.js"
+			]
+		},
+		{
+			"name": "shape/ext/ubc/UbcPolygon.js",
+			"module": "sap/gantt/shape/ext/ubc/UbcPolygon.js",
+			"required": [
+				"sap/gantt/shape/Polygon.js"
+			]
+		},
+		{
+			"name": "shape/ext/ubc/UbcShortageCapacityPolygon-dbg.js",
+			"module": "sap/gantt/shape/ext/ubc/UbcShortageCapacityPolygon.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/shape/ext/ubc/UbcPolygon.js"
+			]
+		},
+		{
+			"name": "shape/ext/ubc/UbcShortageCapacityPolygon.js",
+			"module": "sap/gantt/shape/ext/ubc/UbcShortageCapacityPolygon.js",
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/shape/ext/ubc/UbcPolygon.js"
+			]
+		},
+		{
+			"name": "shape/ext/ubc/UbcTooltipRectangle-dbg.js",
+			"module": "sap/gantt/shape/ext/ubc/UbcTooltipRectangle.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/shape/Rectangle.js"
+			]
+		},
+		{
+			"name": "shape/ext/ubc/UbcTooltipRectangle.js",
+			"module": "sap/gantt/shape/ext/ubc/UbcTooltipRectangle.js",
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/shape/Rectangle.js"
+			]
+		},
+		{
+			"name": "shape/ext/ubc/UbcUnderCapacityZonePolygon-dbg.js",
+			"module": "sap/gantt/shape/ext/ubc/UbcUnderCapacityZonePolygon.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/shape/ext/ubc/UbcPolygon.js"
+			]
+		},
+		{
+			"name": "shape/ext/ubc/UbcUnderCapacityZonePolygon.js",
+			"module": "sap/gantt/shape/ext/ubc/UbcUnderCapacityZonePolygon.js",
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/shape/ext/ubc/UbcPolygon.js"
+			]
+		},
+		{
+			"name": "shape/ext/ubc/UbcUsedPolygon-dbg.js",
+			"module": "sap/gantt/shape/ext/ubc/UbcUsedPolygon.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/shape/ext/ubc/UbcPolygon.js"
+			]
+		},
+		{
+			"name": "shape/ext/ubc/UbcUsedPolygon.js",
+			"module": "sap/gantt/shape/ext/ubc/UbcUsedPolygon.js",
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/shape/ext/ubc/UbcPolygon.js"
+			]
+		},
+		{
+			"name": "shape/ext/ubc/UtilizationBarChart-dbg.js",
+			"module": "sap/gantt/shape/ext/ubc/UtilizationBarChart.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/shape/Group.js"
+			]
+		},
+		{
+			"name": "shape/ext/ubc/UtilizationBarChart.js",
+			"module": "sap/gantt/shape/ext/ubc/UtilizationBarChart.js",
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/shape/Group.js"
+			]
+		},
+		{
+			"name": "shape/ext/ulc/UlcBorderPath-dbg.js",
+			"module": "sap/gantt/shape/ext/ulc/UlcBorderPath.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/shape/Path.js"
+			]
+		},
+		{
+			"name": "shape/ext/ulc/UlcBorderPath.js",
+			"module": "sap/gantt/shape/ext/ulc/UlcBorderPath.js",
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/shape/Path.js"
+			]
+		},
+		{
+			"name": "shape/ext/ulc/UlcClipPath-dbg.js",
+			"module": "sap/gantt/shape/ext/ulc/UlcClipPath.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/shape/ClipPath.js"
+			]
+		},
+		{
+			"name": "shape/ext/ulc/UlcClipPath.js",
+			"module": "sap/gantt/shape/ext/ulc/UlcClipPath.js",
+			"required": [
+				"sap/gantt/shape/ClipPath.js"
+			]
+		},
+		{
+			"name": "shape/ext/ulc/UlcClipingPath-dbg.js",
+			"module": "sap/gantt/shape/ext/ulc/UlcClipingPath.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/shape/Path.js"
+			]
+		},
+		{
+			"name": "shape/ext/ulc/UlcClipingPath.js",
+			"module": "sap/gantt/shape/ext/ulc/UlcClipingPath.js",
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/shape/Path.js"
+			]
+		},
+		{
+			"name": "shape/ext/ulc/UlcDimension-dbg.js",
+			"module": "sap/gantt/shape/ext/ulc/UlcDimension.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/shape/Group.js"
+			]
+		},
+		{
+			"name": "shape/ext/ulc/UlcDimension.js",
+			"module": "sap/gantt/shape/ext/ulc/UlcDimension.js",
+			"required": [
+				"sap/gantt/shape/Group.js"
+			]
+		},
+		{
+			"name": "shape/ext/ulc/UlcMiddleLine-dbg.js",
+			"module": "sap/gantt/shape/ext/ulc/UlcMiddleLine.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/shape/Line.js"
+			]
+		},
+		{
+			"name": "shape/ext/ulc/UlcMiddleLine.js",
+			"module": "sap/gantt/shape/ext/ulc/UlcMiddleLine.js",
+			"required": [
+				"sap/gantt/shape/Line.js"
+			]
+		},
+		{
+			"name": "shape/ext/ulc/UlcOverCapacityZoneRectangle-dbg.js",
+			"module": "sap/gantt/shape/ext/ulc/UlcOverCapacityZoneRectangle.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/shape/ext/ulc/UlcRectangle.js"
+			]
+		},
+		{
+			"name": "shape/ext/ulc/UlcOverCapacityZoneRectangle.js",
+			"module": "sap/gantt/shape/ext/ulc/UlcOverCapacityZoneRectangle.js",
+			"required": [
+				"sap/gantt/shape/ext/ulc/UlcRectangle.js"
+			]
+		},
+		{
+			"name": "shape/ext/ulc/UlcOverClipRectangle-dbg.js",
+			"module": "sap/gantt/shape/ext/ulc/UlcOverClipRectangle.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/shape/ext/ulc/UlcRectangle.js"
+			]
+		},
+		{
+			"name": "shape/ext/ulc/UlcOverClipRectangle.js",
+			"module": "sap/gantt/shape/ext/ulc/UlcOverClipRectangle.js",
+			"required": [
+				"sap/gantt/shape/ext/ulc/UlcRectangle.js"
+			]
+		},
+		{
+			"name": "shape/ext/ulc/UlcRectangle-dbg.js",
+			"module": "sap/gantt/shape/ext/ulc/UlcRectangle.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/shape/Rectangle.js"
+			]
+		},
+		{
+			"name": "shape/ext/ulc/UlcRectangle.js",
+			"module": "sap/gantt/shape/ext/ulc/UlcRectangle.js",
+			"required": [
+				"sap/gantt/shape/Rectangle.js"
+			]
+		},
+		{
+			"name": "shape/ext/ulc/UlcTooltipRectangle-dbg.js",
+			"module": "sap/gantt/shape/ext/ulc/UlcTooltipRectangle.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/shape/ext/ulc/UlcRectangle.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "shape/ext/ulc/UlcTooltipRectangle.js",
+			"module": "sap/gantt/shape/ext/ulc/UlcTooltipRectangle.js",
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/shape/ext/ulc/UlcRectangle.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "shape/ext/ulc/UlcUnderClipRectangle-dbg.js",
+			"module": "sap/gantt/shape/ext/ulc/UlcUnderClipRectangle.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/shape/ext/ulc/UlcRectangle.js"
+			]
+		},
+		{
+			"name": "shape/ext/ulc/UlcUnderClipRectangle.js",
+			"module": "sap/gantt/shape/ext/ulc/UlcUnderClipRectangle.js",
+			"required": [
+				"sap/gantt/shape/ext/ulc/UlcRectangle.js"
+			]
+		},
+		{
+			"name": "shape/ext/ulc/UtilizationLineChart-dbg.js",
+			"module": "sap/gantt/shape/ext/ulc/UtilizationLineChart.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/shape/Group.js"
+			]
+		},
+		{
+			"name": "shape/ext/ulc/UtilizationLineChart.js",
+			"module": "sap/gantt/shape/ext/ulc/UtilizationLineChart.js",
+			"required": [
+				"sap/gantt/shape/Group.js"
+			]
+		},
+		{
+			"name": "simple/AggregationUtils-dbg.js",
+			"module": "sap/gantt/simple/AggregationUtils.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js"
+			]
+		},
+		{
+			"name": "simple/AggregationUtils.js",
+			"module": "sap/gantt/simple/AggregationUtils.js",
+			"required": [
+				"jquery.sap.global.js"
+			]
+		},
+		{
+			"name": "simple/BaseCalendar-dbg.js",
+			"module": "sap/gantt/simple/BaseCalendar.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/simple/BaseRectangle.js"
+			]
+		},
+		{
+			"name": "simple/BaseCalendar.js",
+			"module": "sap/gantt/simple/BaseCalendar.js",
+			"required": [
+				"sap/gantt/simple/BaseRectangle.js"
+			]
+		},
+		{
+			"name": "simple/BaseChevron-dbg.js",
+			"module": "sap/gantt/simple/BaseChevron.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/simple/BasePath.js",
+				"sap/gantt/simple/BaseRectangle.js",
+				"sap/gantt/simple/TitlePropagator.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "simple/BaseChevron.js",
+			"module": "sap/gantt/simple/BaseChevron.js",
+			"required": [
+				"sap/gantt/simple/BasePath.js",
+				"sap/gantt/simple/BaseRectangle.js",
+				"sap/gantt/simple/TitlePropagator.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "simple/BaseConditionalShape-dbg.js",
+			"module": "sap/gantt/simple/BaseConditionalShape.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/simple/BaseShape.js"
+			]
+		},
+		{
+			"name": "simple/BaseConditionalShape.js",
+			"module": "sap/gantt/simple/BaseConditionalShape.js",
+			"required": [
+				"sap/gantt/simple/BaseShape.js"
+			]
+		},
+		{
+			"name": "simple/BaseCursor-dbg.js",
+			"module": "sap/gantt/simple/BaseCursor.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/simple/BasePath.js",
+				"sap/gantt/simple/BaseRectangle.js",
+				"sap/gantt/simple/RenderUtils.js"
+			]
+		},
+		{
+			"name": "simple/BaseCursor.js",
+			"module": "sap/gantt/simple/BaseCursor.js",
+			"required": [
+				"sap/gantt/simple/BasePath.js",
+				"sap/gantt/simple/BaseRectangle.js",
+				"sap/gantt/simple/RenderUtils.js"
+			]
+		},
+		{
+			"name": "simple/BaseDiamond-dbg.js",
+			"module": "sap/gantt/simple/BaseDiamond.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/simple/BasePath.js",
+				"sap/gantt/simple/BaseRectangle.js"
+			]
+		},
+		{
+			"name": "simple/BaseDiamond.js",
+			"module": "sap/gantt/simple/BaseDiamond.js",
+			"required": [
+				"sap/gantt/simple/BasePath.js",
+				"sap/gantt/simple/BaseRectangle.js"
+			]
+		},
+		{
+			"name": "simple/BaseGroup-dbg.js",
+			"module": "sap/gantt/simple/BaseGroup.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/simple/AggregationUtils.js",
+				"sap/gantt/simple/BaseShape.js",
+				"sap/gantt/simple/RenderUtils.js"
+			]
+		},
+		{
+			"name": "simple/BaseGroup.js",
+			"module": "sap/gantt/simple/BaseGroup.js",
+			"required": [
+				"sap/gantt/simple/AggregationUtils.js",
+				"sap/gantt/simple/BaseShape.js",
+				"sap/gantt/simple/RenderUtils.js"
+			]
+		},
+		{
+			"name": "simple/BaseImage-dbg.js",
+			"module": "sap/gantt/simple/BaseImage.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/simple/BaseRectangle.js",
+				"sap/gantt/simple/BaseText.js",
+				"sap/gantt/simple/RenderUtils.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/IconPool.js"
+			]
+		},
+		{
+			"name": "simple/BaseImage.js",
+			"module": "sap/gantt/simple/BaseImage.js",
+			"required": [
+				"sap/gantt/simple/BaseRectangle.js",
+				"sap/gantt/simple/BaseText.js",
+				"sap/gantt/simple/RenderUtils.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/IconPool.js"
+			]
+		},
+		{
+			"name": "simple/BaseLine-dbg.js",
+			"module": "sap/gantt/simple/BaseLine.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/simple/BaseRectangle.js",
+				"sap/gantt/simple/BaseShape.js",
+				"sap/gantt/simple/RenderUtils.js"
+			]
+		},
+		{
+			"name": "simple/BaseLine.js",
+			"module": "sap/gantt/simple/BaseLine.js",
+			"required": [
+				"sap/gantt/simple/BaseRectangle.js",
+				"sap/gantt/simple/BaseShape.js",
+				"sap/gantt/simple/RenderUtils.js"
+			]
+		},
+		{
+			"name": "simple/BasePath-dbg.js",
+			"module": "sap/gantt/simple/BasePath.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/simple/BaseShape.js",
+				"sap/gantt/simple/RenderUtils.js"
+			]
+		},
+		{
+			"name": "simple/BasePath.js",
+			"module": "sap/gantt/simple/BasePath.js",
+			"required": [
+				"sap/gantt/simple/BaseShape.js",
+				"sap/gantt/simple/RenderUtils.js"
+			]
+		},
+		{
+			"name": "simple/BaseRectangle-dbg.js",
+			"module": "sap/gantt/simple/BaseRectangle.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/simple/BaseShape.js",
+				"sap/gantt/simple/GanttUtils.js",
+				"sap/gantt/simple/RenderUtils.js",
+				"sap/gantt/simple/TitlePropagator.js"
+			]
+		},
+		{
+			"name": "simple/BaseRectangle.js",
+			"module": "sap/gantt/simple/BaseRectangle.js",
+			"required": [
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/simple/BaseShape.js",
+				"sap/gantt/simple/GanttUtils.js",
+				"sap/gantt/simple/RenderUtils.js",
+				"sap/gantt/simple/TitlePropagator.js"
+			]
+		},
+		{
+			"name": "simple/BaseShape-dbg.js",
+			"module": "sap/gantt/simple/BaseShape.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/library.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/simple/AggregationUtils.js",
+				"sap/gantt/simple/CoordinateUtils.js",
+				"sap/gantt/simple/GanttUtils.js",
+				"sap/ui/base/ManagedObjectMetadata.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/CustomStyleClassSupport.js",
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "simple/BaseShape.js",
+			"module": "sap/gantt/simple/BaseShape.js",
+			"required": [
+				"sap/gantt/library.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/simple/AggregationUtils.js",
+				"sap/gantt/simple/CoordinateUtils.js",
+				"sap/gantt/simple/GanttUtils.js",
+				"sap/ui/base/ManagedObjectMetadata.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/CustomStyleClassSupport.js",
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "simple/BaseText-dbg.js",
+			"module": "sap/gantt/simple/BaseText.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/simple/BaseShape.js",
+				"sap/gantt/simple/GanttUtils.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "simple/BaseText.js",
+			"module": "sap/gantt/simple/BaseText.js",
+			"required": [
+				"sap/gantt/simple/BaseShape.js",
+				"sap/gantt/simple/GanttUtils.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "simple/ContainerToolbar-dbg.js",
+			"module": "sap/gantt/simple/ContainerToolbar.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/control/AssociateContainer.js",
+				"sap/gantt/library.js",
+				"sap/m/Button.js",
+				"sap/m/ButtonType.js",
+				"sap/m/CheckBox.js",
+				"sap/m/FlexBox.js",
+				"sap/m/FlexDirection.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/OverflowToolbarLayoutData.js",
+				"sap/m/PlacementType.js",
+				"sap/m/Popover.js",
+				"sap/m/SegmentedButton.js",
+				"sap/m/SegmentedButtonItem.js",
+				"sap/m/Select.js",
+				"sap/m/Slider.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/m/ViewSettingsCustomTab.js",
+				"sap/m/ViewSettingsDialog.js",
+				"sap/ui/base/ManagedObjectObserver.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/Item.js"
+			]
+		},
+		{
+			"name": "simple/ContainerToolbar.js",
+			"module": "sap/gantt/simple/ContainerToolbar.js",
+			"required": [
+				"sap/gantt/control/AssociateContainer.js",
+				"sap/gantt/library.js",
+				"sap/m/Button.js",
+				"sap/m/ButtonType.js",
+				"sap/m/CheckBox.js",
+				"sap/m/FlexBox.js",
+				"sap/m/FlexDirection.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/OverflowToolbarLayoutData.js",
+				"sap/m/PlacementType.js",
+				"sap/m/Popover.js",
+				"sap/m/SegmentedButton.js",
+				"sap/m/SegmentedButtonItem.js",
+				"sap/m/Select.js",
+				"sap/m/Slider.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/m/ViewSettingsCustomTab.js",
+				"sap/m/ViewSettingsDialog.js",
+				"sap/ui/base/ManagedObjectObserver.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/Item.js"
+			]
+		},
+		{
+			"name": "simple/ContainerToolbarRenderer-dbg.js",
+			"module": "sap/gantt/simple/ContainerToolbarRenderer.js",
+			"isDebug": true,
+			"required": [
+				"sap/m/OverflowToolbarRenderer.js",
+				"sap/ui/core/Renderer.js"
+			]
+		},
+		{
+			"name": "simple/ContainerToolbarRenderer.js",
+			"module": "sap/gantt/simple/ContainerToolbarRenderer.js",
+			"required": [
+				"sap/m/OverflowToolbarRenderer.js",
+				"sap/ui/core/Renderer.js"
+			]
+		},
+		{
+			"name": "simple/CoordinateUtils-dbg.js",
+			"module": "sap/gantt/simple/CoordinateUtils.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/Device.js"
+			]
+		},
+		{
+			"name": "simple/CoordinateUtils.js",
+			"module": "sap/gantt/simple/CoordinateUtils.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/Device.js"
+			]
+		},
+		{
+			"name": "simple/DimensionLegend-dbg.js",
+			"module": "sap/gantt/simple/DimensionLegend.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/library.js",
+				"sap/ui/core/Control.js"
+			]
+		},
+		{
+			"name": "simple/DimensionLegend.control",
+			"designtime": true
+		},
+		{
+			"name": "simple/DimensionLegend.js",
+			"module": "sap/gantt/simple/DimensionLegend.js",
+			"required": [
+				"sap/gantt/library.js",
+				"sap/ui/core/Control.js"
+			]
+		},
+		{
+			"name": "simple/DimensionLegendRenderer-dbg.js",
+			"module": "sap/gantt/simple/DimensionLegendRenderer.js",
+			"isDebug": true,
+			"required": [
+				"sap/base/util/ObjectPath.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/gantt/simple/BasePath.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "simple/DimensionLegendRenderer.js",
+			"module": "sap/gantt/simple/DimensionLegendRenderer.js",
+			"required": [
+				"sap/base/util/ObjectPath.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/gantt/simple/BasePath.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "simple/ExpandModel-dbg.js",
+			"module": "sap/gantt/simple/ExpandModel.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/simple/AggregationUtils.js",
+				"sap/gantt/simple/GanttUtils.js",
+				"sap/ui/base/ManagedObject.js"
+			]
+		},
+		{
+			"name": "simple/ExpandModel.js",
+			"module": "sap/gantt/simple/ExpandModel.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/simple/AggregationUtils.js",
+				"sap/gantt/simple/GanttUtils.js",
+				"sap/ui/base/ManagedObject.js"
+			]
+		},
+		{
+			"name": "simple/GanttChartContainer-dbg.js",
+			"module": "sap/gantt/simple/GanttChartContainer.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/config/TimeHorizon.js",
+				"sap/gantt/control/AssociateContainer.js",
+				"sap/gantt/library.js",
+				"sap/ui/base/ManagedObjectObserver.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Orientation.js",
+				"sap/ui/layout/Splitter.js",
+				"sap/ui/layout/SplitterLayoutData.js"
+			]
+		},
+		{
+			"name": "simple/GanttChartContainer.js",
+			"module": "sap/gantt/simple/GanttChartContainer.js",
+			"required": [
+				"sap/gantt/config/TimeHorizon.js",
+				"sap/gantt/control/AssociateContainer.js",
+				"sap/gantt/library.js",
+				"sap/ui/base/ManagedObjectObserver.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Orientation.js",
+				"sap/ui/layout/Splitter.js",
+				"sap/ui/layout/SplitterLayoutData.js"
+			]
+		},
+		{
+			"name": "simple/GanttChartContainerRenderer-dbg.js",
+			"module": "sap/gantt/simple/GanttChartContainerRenderer.js",
+			"isDebug": true
+		},
+		{
+			"name": "simple/GanttChartContainerRenderer.js",
+			"module": "sap/gantt/simple/GanttChartContainerRenderer.js"
+		},
+		{
+			"name": "simple/GanttChartWithTable-dbg.js",
+			"module": "sap/gantt/simple/GanttChartWithTable.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/base/util/values.js",
+				"sap/gantt/axistime/ProportionZoomStrategy.js",
+				"sap/gantt/config/TimeHorizon.js",
+				"sap/gantt/control/AssociateContainer.js",
+				"sap/gantt/library.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/gantt/simple/ExpandModel.js",
+				"sap/gantt/simple/GanttConnectExtension.js",
+				"sap/gantt/simple/GanttDragDropExtension.js",
+				"sap/gantt/simple/GanttExtension.js",
+				"sap/gantt/simple/GanttHeader.js",
+				"sap/gantt/simple/GanttPointerExtension.js",
+				"sap/gantt/simple/GanttPopoverExtension.js",
+				"sap/gantt/simple/GanttResizeExtension.js",
+				"sap/gantt/simple/GanttScrollExtension.js",
+				"sap/gantt/simple/GanttSyncedControl.js",
+				"sap/gantt/simple/GanttZoomExtension.js",
+				"sap/gantt/simple/InnerGanttChart.js",
+				"sap/gantt/simple/RenderUtils.js",
+				"sap/gantt/simple/SelectionModel.js",
+				"sap/gantt/simple/ShapeScheme.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/layout/Splitter.js",
+				"sap/ui/model/ChangeReason.js"
+			]
+		},
+		{
+			"name": "simple/GanttChartWithTable.js",
+			"module": "sap/gantt/simple/GanttChartWithTable.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/base/util/values.js",
+				"sap/gantt/axistime/ProportionZoomStrategy.js",
+				"sap/gantt/config/TimeHorizon.js",
+				"sap/gantt/control/AssociateContainer.js",
+				"sap/gantt/library.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/gantt/simple/ExpandModel.js",
+				"sap/gantt/simple/GanttConnectExtension.js",
+				"sap/gantt/simple/GanttDragDropExtension.js",
+				"sap/gantt/simple/GanttExtension.js",
+				"sap/gantt/simple/GanttHeader.js",
+				"sap/gantt/simple/GanttPointerExtension.js",
+				"sap/gantt/simple/GanttPopoverExtension.js",
+				"sap/gantt/simple/GanttResizeExtension.js",
+				"sap/gantt/simple/GanttScrollExtension.js",
+				"sap/gantt/simple/GanttSyncedControl.js",
+				"sap/gantt/simple/GanttZoomExtension.js",
+				"sap/gantt/simple/InnerGanttChart.js",
+				"sap/gantt/simple/RenderUtils.js",
+				"sap/gantt/simple/SelectionModel.js",
+				"sap/gantt/simple/ShapeScheme.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/layout/Splitter.js",
+				"sap/ui/model/ChangeReason.js"
+			]
+		},
+		{
+			"name": "simple/GanttChartWithTableRenderer-dbg.js",
+			"module": "sap/gantt/simple/GanttChartWithTableRenderer.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/library.js"
+			]
+		},
+		{
+			"name": "simple/GanttChartWithTableRenderer.js",
+			"module": "sap/gantt/simple/GanttChartWithTableRenderer.js",
+			"required": [
+				"sap/gantt/library.js"
+			]
+		},
+		{
+			"name": "simple/GanttConnectExtension-dbg.js",
+			"module": "sap/gantt/simple/GanttConnectExtension.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/library.js",
+				"sap/gantt/simple/CoordinateUtils.js",
+				"sap/gantt/simple/GanttExtension.js",
+				"sap/gantt/simple/GanttUtils.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "simple/GanttConnectExtension.js",
+			"module": "sap/gantt/simple/GanttConnectExtension.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/library.js",
+				"sap/gantt/simple/CoordinateUtils.js",
+				"sap/gantt/simple/GanttExtension.js",
+				"sap/gantt/simple/GanttUtils.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "simple/GanttDragDropExtension-dbg.js",
+			"module": "sap/gantt/simple/GanttDragDropExtension.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/library.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/simple/CoordinateUtils.js",
+				"sap/gantt/simple/GanttExtension.js",
+				"sap/gantt/simple/GanttUtils.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "simple/GanttDragDropExtension.js",
+			"module": "sap/gantt/simple/GanttDragDropExtension.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/library.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/simple/CoordinateUtils.js",
+				"sap/gantt/simple/GanttExtension.js",
+				"sap/gantt/simple/GanttUtils.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "simple/GanttExtension-dbg.js",
+			"module": "sap/gantt/simple/GanttExtension.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/base/Object.js"
+			]
+		},
+		{
+			"name": "simple/GanttExtension.js",
+			"module": "sap/gantt/simple/GanttExtension.js",
+			"required": [
+				"sap/ui/base/Object.js"
+			]
+		},
+		{
+			"name": "simple/GanttHeader-dbg.js",
+			"module": "sap/gantt/simple/GanttHeader.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/misc/Utility.js",
+				"sap/gantt/simple/RenderUtils.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "simple/GanttHeader.js",
+			"module": "sap/gantt/simple/GanttHeader.js",
+			"required": [
+				"sap/gantt/misc/Utility.js",
+				"sap/gantt/simple/RenderUtils.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "simple/GanttPointerExtension-dbg.js",
+			"module": "sap/gantt/simple/GanttPointerExtension.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/drawer/CursorLine.js",
+				"sap/gantt/simple/CoordinateUtils.js",
+				"sap/gantt/simple/GanttExtension.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "simple/GanttPointerExtension.js",
+			"module": "sap/gantt/simple/GanttPointerExtension.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/drawer/CursorLine.js",
+				"sap/gantt/simple/CoordinateUtils.js",
+				"sap/gantt/simple/GanttExtension.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "simple/GanttPopoverExtension-dbg.js",
+			"module": "sap/gantt/simple/GanttPopoverExtension.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/simple/CoordinateUtils.js",
+				"sap/gantt/simple/GanttExtension.js",
+				"sap/gantt/simple/GanttUtils.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "simple/GanttPopoverExtension.js",
+			"module": "sap/gantt/simple/GanttPopoverExtension.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/simple/CoordinateUtils.js",
+				"sap/gantt/simple/GanttExtension.js",
+				"sap/gantt/simple/GanttUtils.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "simple/GanttResizeExtension-dbg.js",
+			"module": "sap/gantt/simple/GanttResizeExtension.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/simple/CoordinateUtils.js",
+				"sap/gantt/simple/GanttExtension.js",
+				"sap/gantt/simple/GanttUtils.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "simple/GanttResizeExtension.js",
+			"module": "sap/gantt/simple/GanttResizeExtension.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/simple/CoordinateUtils.js",
+				"sap/gantt/simple/GanttExtension.js",
+				"sap/gantt/simple/GanttUtils.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "simple/GanttRowSettings-dbg.js",
+			"module": "sap/gantt/simple/GanttRowSettings.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/misc/Utility.js",
+				"sap/gantt/simple/AggregationUtils.js",
+				"sap/gantt/simple/RenderUtils.js",
+				"sap/ui/table/RowSettings.js"
+			]
+		},
+		{
+			"name": "simple/GanttRowSettings.js",
+			"module": "sap/gantt/simple/GanttRowSettings.js",
+			"required": [
+				"sap/gantt/misc/Utility.js",
+				"sap/gantt/simple/AggregationUtils.js",
+				"sap/gantt/simple/RenderUtils.js",
+				"sap/ui/table/RowSettings.js"
+			]
+		},
+		{
+			"name": "simple/GanttScrollExtension-dbg.js",
+			"module": "sap/gantt/simple/GanttScrollExtension.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/config/TimeHorizon.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/simple/GanttExtension.js",
+				"sap/gantt/simple/RenderUtils.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "simple/GanttScrollExtension.js",
+			"module": "sap/gantt/simple/GanttScrollExtension.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/config/TimeHorizon.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/simple/GanttExtension.js",
+				"sap/gantt/simple/RenderUtils.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "simple/GanttSyncedControl-dbg.js",
+			"module": "sap/gantt/simple/GanttSyncedControl.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/simple/GanttUtils.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "simple/GanttSyncedControl.js",
+			"module": "sap/gantt/simple/GanttSyncedControl.js",
+			"required": [
+				"sap/gantt/simple/GanttUtils.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "simple/GanttUtils-dbg.js",
+			"module": "sap/gantt/simple/GanttUtils.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/Locale.js",
+				"sap/ui/core/format/DateFormat.js"
+			]
+		},
+		{
+			"name": "simple/GanttUtils.js",
+			"module": "sap/gantt/simple/GanttUtils.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/misc/Utility.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/Locale.js",
+				"sap/ui/core/format/DateFormat.js"
+			]
+		},
+		{
+			"name": "simple/GanttZoomExtension-dbg.js",
+			"module": "sap/gantt/simple/GanttZoomExtension.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/config/TimeHorizon.js",
+				"sap/gantt/simple/AggregationUtils.js",
+				"sap/gantt/simple/CoordinateUtils.js",
+				"sap/gantt/simple/GanttExtension.js",
+				"sap/ui/events/KeyCodes.js"
+			]
+		},
+		{
+			"name": "simple/GanttZoomExtension.js",
+			"module": "sap/gantt/simple/GanttZoomExtension.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/config/TimeHorizon.js",
+				"sap/gantt/simple/AggregationUtils.js",
+				"sap/gantt/simple/CoordinateUtils.js",
+				"sap/gantt/simple/GanttExtension.js",
+				"sap/ui/events/KeyCodes.js"
+			]
+		},
+		{
+			"name": "simple/InnerGanttChart-dbg.js",
+			"module": "sap/gantt/simple/InnerGanttChart.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/simple/GanttExtension.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "simple/InnerGanttChart.js",
+			"module": "sap/gantt/simple/InnerGanttChart.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/simple/GanttExtension.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "simple/InnerGanttChartRenderer-dbg.js",
+			"module": "sap/gantt/simple/InnerGanttChartRenderer.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/simple/BaseLine.js",
+				"sap/gantt/simple/GanttExtension.js",
+				"sap/gantt/simple/RenderUtils.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "simple/InnerGanttChartRenderer.js",
+			"module": "sap/gantt/simple/InnerGanttChartRenderer.js",
+			"required": [
+				"sap/gantt/simple/BaseLine.js",
+				"sap/gantt/simple/GanttExtension.js",
+				"sap/gantt/simple/RenderUtils.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "simple/LegendColumnConfig-dbg.js",
+			"module": "sap/gantt/simple/LegendColumnConfig.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "simple/LegendColumnConfig.control",
+			"designtime": true
+		},
+		{
+			"name": "simple/LegendColumnConfig.js",
+			"module": "sap/gantt/simple/LegendColumnConfig.js",
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "simple/LegendContainer-dbg.js",
+			"module": "sap/gantt/simple/LegendContainer.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/control/AssociateContainer.js",
+				"sap/m/List.js",
+				"sap/m/NavContainer.js",
+				"sap/m/Page.js",
+				"sap/m/StandardListItem.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "simple/LegendContainer.js",
+			"module": "sap/gantt/simple/LegendContainer.js",
+			"required": [
+				"sap/gantt/control/AssociateContainer.js",
+				"sap/m/List.js",
+				"sap/m/NavContainer.js",
+				"sap/m/Page.js",
+				"sap/m/StandardListItem.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "simple/LegendContainerRenderer-dbg.js",
+			"module": "sap/gantt/simple/LegendContainerRenderer.js",
+			"isDebug": true
+		},
+		{
+			"name": "simple/LegendContainerRenderer.js",
+			"module": "sap/gantt/simple/LegendContainerRenderer.js"
+		},
+		{
+			"name": "simple/LegendRowConfig-dbg.js",
+			"module": "sap/gantt/simple/LegendRowConfig.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "simple/LegendRowConfig.control",
+			"designtime": true
+		},
+		{
+			"name": "simple/LegendRowConfig.js",
+			"module": "sap/gantt/simple/LegendRowConfig.js",
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "simple/ListLegend-dbg.js",
+			"module": "sap/gantt/simple/ListLegend.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/library.js",
+				"sap/ui/core/Control.js"
+			]
+		},
+		{
+			"name": "simple/ListLegend.control",
+			"designtime": true
+		},
+		{
+			"name": "simple/ListLegend.js",
+			"module": "sap/gantt/simple/ListLegend.js",
+			"required": [
+				"sap/gantt/library.js",
+				"sap/ui/core/Control.js"
+			]
+		},
+		{
+			"name": "simple/ListLegendItem-dbg.js",
+			"module": "sap/gantt/simple/ListLegendItem.js",
+			"isDebug": true,
+			"required": [
+				"sap/m/CheckBox.js",
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "simple/ListLegendItem.control",
+			"designtime": true
+		},
+		{
+			"name": "simple/ListLegendItem.js",
+			"module": "sap/gantt/simple/ListLegendItem.js",
+			"required": [
+				"sap/m/CheckBox.js",
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "simple/ListLegendRenderer-dbg.js",
+			"module": "sap/gantt/simple/ListLegendRenderer.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/misc/Utility.js"
+			]
+		},
+		{
+			"name": "simple/ListLegendRenderer.js",
+			"module": "sap/gantt/simple/ListLegendRenderer.js",
+			"required": [
+				"sap/gantt/misc/Utility.js"
+			]
+		},
+		{
+			"name": "simple/Relationship-dbg.js",
+			"module": "sap/gantt/simple/Relationship.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/simple/BasePath.js",
+				"sap/gantt/simple/GanttUtils.js",
+				"sap/gantt/simple/RenderUtils.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/IconPool.js"
+			]
+		},
+		{
+			"name": "simple/Relationship.js",
+			"module": "sap/gantt/simple/Relationship.js",
+			"required": [
+				"sap/gantt/simple/BasePath.js",
+				"sap/gantt/simple/GanttUtils.js",
+				"sap/gantt/simple/RenderUtils.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/IconPool.js"
+			]
+		},
+		{
+			"name": "simple/RenderUtils-dbg.js",
+			"module": "sap/gantt/simple/RenderUtils.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/simple/AggregationUtils.js",
+				"sap/gantt/simple/BaseText.js",
+				"sap/gantt/simple/GanttUtils.js"
+			]
+		},
+		{
+			"name": "simple/RenderUtils.js",
+			"module": "sap/gantt/simple/RenderUtils.js",
+			"required": [
+				"sap/gantt/simple/AggregationUtils.js",
+				"sap/gantt/simple/BaseText.js",
+				"sap/gantt/simple/GanttUtils.js"
+			]
+		},
+		{
+			"name": "simple/SelectionModel-dbg.js",
+			"module": "sap/gantt/simple/SelectionModel.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/library.js",
+				"sap/ui/base/EventProvider.js"
+			]
+		},
+		{
+			"name": "simple/SelectionModel.js",
+			"module": "sap/gantt/simple/SelectionModel.js",
+			"required": [
+				"sap/gantt/library.js",
+				"sap/ui/base/EventProvider.js"
+			]
+		},
+		{
+			"name": "simple/ShapeScheme-dbg.js",
+			"module": "sap/gantt/simple/ShapeScheme.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "simple/ShapeScheme.js",
+			"module": "sap/gantt/simple/ShapeScheme.js",
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "simple/TitlePropagator-dbg.js",
+			"module": "sap/gantt/simple/TitlePropagator.js",
+			"isDebug": true,
+			"required": [
+				"sap/gantt/simple/BaseShape.js"
+			]
+		},
+		{
+			"name": "simple/TitlePropagator.js",
+			"module": "sap/gantt/simple/TitlePropagator.js",
+			"required": [
+				"sap/gantt/simple/BaseShape.js"
+			]
+		},
+		{
+			"name": "simple/UtilizationBarChart-dbg.js",
+			"module": "sap/gantt/simple/UtilizationBarChart.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/simple/BaseRectangle.js",
+				"sap/gantt/simple/UtilizationChart.js"
+			]
+		},
+		{
+			"name": "simple/UtilizationBarChart.js",
+			"module": "sap/gantt/simple/UtilizationBarChart.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/simple/BaseRectangle.js",
+				"sap/gantt/simple/UtilizationChart.js"
+			]
+		},
+		{
+			"name": "simple/UtilizationChart-dbg.js",
+			"module": "sap/gantt/simple/UtilizationChart.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/simple/BaseRectangle.js",
+				"sap/gantt/simple/BaseShape.js"
+			]
+		},
+		{
+			"name": "simple/UtilizationChart.js",
+			"module": "sap/gantt/simple/UtilizationChart.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/misc/Format.js",
+				"sap/gantt/simple/BaseRectangle.js",
+				"sap/gantt/simple/BaseShape.js"
+			]
+		},
+		{
+			"name": "simple/UtilizationDimension-dbg.js",
+			"module": "sap/gantt/simple/UtilizationDimension.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "simple/UtilizationDimension.js",
+			"module": "sap/gantt/simple/UtilizationDimension.js",
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "simple/UtilizationLineChart-dbg.js",
+			"module": "sap/gantt/simple/UtilizationLineChart.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/def/pattern/BackSlashPattern.js",
+				"sap/gantt/simple/UtilizationChart.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "simple/UtilizationLineChart.js",
+			"module": "sap/gantt/simple/UtilizationLineChart.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/gantt/def/pattern/BackSlashPattern.js",
+				"sap/gantt/simple/UtilizationChart.js",
+				"sap/ui/core/Core.js"
+			]
+		},
+		{
+			"name": "simple/UtilizationPeriod-dbg.js",
+			"module": "sap/gantt/simple/UtilizationPeriod.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "simple/UtilizationPeriod.js",
+			"module": "sap/gantt/simple/UtilizationPeriod.js",
+			"required": [
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "themes/base/.theming",
+			"theme": "base"
+		},
+		{
+			"name": "themes/base/Gantt.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "themes/base/GanttSyncedControl.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "themes/base/library-RTL-dbg.css",
+			"isDebug": true,
+			"theme": "base"
+		},
+		{
+			"name": "themes/base/library-RTL.css",
+			"theme": "base"
+		},
+		{
+			"name": "themes/base/library-dbg.css",
+			"isDebug": true,
+			"theme": "base"
+		},
+		{
+			"name": "themes/base/library-parameters.json",
+			"theme": "base"
+		},
+		{
+			"name": "themes/base/library.css",
+			"theme": "base"
+		},
+		{
+			"name": "themes/base/library.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "themes/base/library.source.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "themes/sap_belize/.theming",
+			"theme": "sap_belize"
+		},
+		{
+			"name": "themes/sap_belize/library-RTL-dbg.css",
+			"isDebug": true,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "themes/sap_belize/library-RTL.css",
+			"theme": "sap_belize"
+		},
+		{
+			"name": "themes/sap_belize/library-dbg.css",
+			"isDebug": true,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "themes/sap_belize/library-parameters.json",
+			"theme": "sap_belize"
+		},
+		{
+			"name": "themes/sap_belize/library.css",
+			"theme": "sap_belize"
+		},
+		{
+			"name": "themes/sap_belize/library.less",
+			"designtime": true,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "themes/sap_belize/library.source.less",
+			"designtime": true,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "themes/sap_belize_hcb/.theming",
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "themes/sap_belize_hcb/Gantt.less",
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "themes/sap_belize_hcb/library-RTL-dbg.css",
+			"isDebug": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "themes/sap_belize_hcb/library-RTL.css",
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "themes/sap_belize_hcb/library-dbg.css",
+			"isDebug": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "themes/sap_belize_hcb/library-parameters.json",
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "themes/sap_belize_hcb/library.css",
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "themes/sap_belize_hcb/library.less",
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "themes/sap_belize_hcb/library.source.less",
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "themes/sap_belize_hcw/.theming",
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "themes/sap_belize_hcw/Gantt.less",
+			"designtime": true,
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "themes/sap_belize_hcw/library-RTL-dbg.css",
+			"isDebug": true,
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "themes/sap_belize_hcw/library-RTL.css",
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "themes/sap_belize_hcw/library-dbg.css",
+			"isDebug": true,
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "themes/sap_belize_hcw/library-parameters.json",
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "themes/sap_belize_hcw/library.css",
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "themes/sap_belize_hcw/library.less",
+			"designtime": true,
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "themes/sap_belize_hcw/library.source.less",
+			"designtime": true,
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "themes/sap_belize_plus/.theming",
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "themes/sap_belize_plus/library-RTL-dbg.css",
+			"isDebug": true,
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "themes/sap_belize_plus/library-RTL.css",
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "themes/sap_belize_plus/library-dbg.css",
+			"isDebug": true,
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "themes/sap_belize_plus/library-parameters.json",
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "themes/sap_belize_plus/library.css",
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "themes/sap_belize_plus/library.less",
+			"designtime": true,
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "themes/sap_belize_plus/library.source.less",
+			"designtime": true,
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "themes/sap_bluecrystal/.theming",
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/Gantt.less",
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library-RTL-dbg.css",
+			"isDebug": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library-RTL.css",
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library-dbg.css",
+			"isDebug": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library-parameters.json",
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library.css",
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library.less",
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library.source.less",
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_fiori_3/.theming",
+			"theme": "sap_fiori_3"
+		},
+		{
+			"name": "themes/sap_fiori_3/library-RTL-dbg.css",
+			"isDebug": true,
+			"theme": "sap_fiori_3"
+		},
+		{
+			"name": "themes/sap_fiori_3/library-RTL.css",
+			"theme": "sap_fiori_3"
+		},
+		{
+			"name": "themes/sap_fiori_3/library-dbg.css",
+			"isDebug": true,
+			"theme": "sap_fiori_3"
+		},
+		{
+			"name": "themes/sap_fiori_3/library-parameters.json",
+			"theme": "sap_fiori_3"
+		},
+		{
+			"name": "themes/sap_fiori_3/library.css",
+			"theme": "sap_fiori_3"
+		},
+		{
+			"name": "themes/sap_fiori_3/library.less",
+			"designtime": true,
+			"theme": "sap_fiori_3"
+		},
+		{
+			"name": "themes/sap_fiori_3/library.source.less",
+			"designtime": true,
+			"theme": "sap_fiori_3"
+		},
+		{
+			"name": "themes/sap_hcb/.theming",
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/Gantt.less",
+			"designtime": true,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/library-RTL-dbg.css",
+			"isDebug": true,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/library-RTL.css",
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/library-dbg.css",
+			"isDebug": true,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/library-parameters.json",
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/library.css",
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/library.less",
+			"designtime": true,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/library.source.less",
+			"designtime": true,
+			"theme": "sap_hcb"
+		}
+	]
+}

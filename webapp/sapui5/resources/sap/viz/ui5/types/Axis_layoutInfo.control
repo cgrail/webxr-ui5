@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ui5/types/Axis_layoutInfo</name>
+    <derived/>
+    <documentation>Settings for the layout of the category axis. This property only works for category type axes.</documentation>
+    <since>1.7.2</since>
+    <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+    <baseType>sap.viz/ui5/core/BaseStructuredType</baseType>
+    <properties>
+        <property name="width" type="sap.ui.core/float" defaultValue="0">
+            <documentation>Set the width of the xAxis</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="height" type="sap.ui.core/float" defaultValue="0">
+            <documentation>Set the height of the xAxis</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+    </properties>
+</control>

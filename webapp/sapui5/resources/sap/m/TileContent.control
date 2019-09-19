@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>TileContent</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>This control is used within the GenericTile control.</documentation>
+    <since>1.34.0</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="footer" type="sap.ui.core/string" group="Appearance">
+            <documentation>The footer text of the tile.</documentation>
+        </property>
+        <property name="footerColor" type="sap.m/ValueColor" defaultValue="Neutral" group="Appearance" since="1.44">
+            <documentation>The semantic color of the footer.</documentation>
+        </property>
+        <property name="size" type="sap.m/Size" defaultValue="Auto" group="Appearance">
+            <documentation>Updates the size of the tile. If it is not set, then the default size is applied based on the device tile.</documentation>
+            <deprecation since="1.38.0">The TileContent control has now a fixed size, depending on the used media (desktop, tablet or phone).</deprecation>
+        </property>
+        <property name="unit" type="sap.ui.core/string" group="Data">
+            <documentation>The percent sign, the currency symbol, or the unit of measure.</documentation>
+        </property>
+        <property name="disabled" type="sap.ui.core/boolean" defaultValue="false" group="Behavior">
+            <documentation>Disables control if true.</documentation>
+        </property>
+        <property name="frameType" type="sap.m/FrameType" defaultValue="Auto" group="Appearance">
+            <documentation>Frame types: 1x1, 2x1, and auto.</documentation>
+        </property>
+    </properties>
+    <aggregations default="content">
+        <aggregation name="content" type="sap.ui.core/Control" cardinality="0..1" bindable="bindable">
+            <documentation>The switchable view that depends on the tile type.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

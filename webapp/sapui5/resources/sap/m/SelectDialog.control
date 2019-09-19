@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>SelectDialog</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>&lt;h3&gt;Overview&lt;/h3&gt;
+A SelectDialog is a dialog containing a list, search functionality to filter it and a confirmation/cancel button.
+The list used in the dialog is a growing list and can be filled with any kind of list item.
+&lt;h3&gt;Structure&lt;/h3&gt;
+&lt;h4&gt;Dialog structure&lt;/h4&gt;
+The select dialog has the following components:
+&lt;ul&gt;
+&lt;li&gt;Header - title of the dialog&lt;/li&gt;
+&lt;li&gt;Search field - input field to enter search terms&lt;/li&gt;
+&lt;li&gt;Info toolbar (only in multi-select) - displays the number of currently selected items&lt;/li&gt;
+&lt;li&gt;Content - {@link sap.m.StandardListItem  standard list items}, {@link sap.m.DisplayListItem
+display list items} or {@link sap.m.FeedListItem feed list items}&lt;/li&gt;
+&lt;li&gt;Button toolbar - for confirmation/cancellation buttons &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;List structure &amp; selection&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt; The search field triggers the events &lt;code&gt;search&lt;/code&gt; and &lt;code&gt;liveChange&lt;/code&gt;
+where a filter function can be applied to the list binding. &lt;/li&gt;
+&lt;li&gt; The growing functionality of the list does not support two-way Binding, so if you use this control with a JSON model
+make sure the binding mode is set to &lt;code&gt;OneWay&lt;/code&gt; and that you update the selection model manually with
+the items passed in the &lt;code&gt;confirm&lt;/code&gt; event. &lt;/li&gt;
+&lt;li&gt; In the multi-select mode of the select dialog, checkboxes are provided for choosing multiple entries. &lt;/li&gt;
+&lt;li&gt; You can set &lt;code&gt;rememberSelections&lt;/code&gt; to true to store the current selection and load this state
+when the dialog is opened again. &lt;/li&gt;
+&lt;li&gt; When cancelling the selection, the event &lt;code&gt;change&lt;/code&gt; will be fired and the selection is restored
+to the state when the dialog was opened. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Usage&lt;/h3&gt;
+&lt;h4&gt;When to use:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;You  need to select one or more entries from a comprehensive list that contains multiple attributes or values. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;When not to use:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt; You need to pick one item from a predefined set of options. Use {@link sap.m.Select select}
+or {@link sap.m.ComboBox combobox} instead. &lt;/li&gt;
+&lt;li&gt; You need to select a range of item. Use {@link sap.ui.comp.valuehelpdialog.ValueHelpDialog value help dialog} instead. &lt;/li&gt;
+&lt;li&gt; You need to be able to add your own values to an existing list. Use a {@link sap.m.Dialog dialog} instead. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Note:&lt;/h4&gt;
+The property &lt;code&gt;growing&lt;/code&gt; determines the progressive loading. If it's set to true (the default value), the
+&lt;code&gt;selected count&lt;/code&gt; in info bar and search  will work only for the currently loaded items.
+To make sure that all items in the list are loaded at once and the above feature works properly,
+we recommend setting the &lt;code&gt;growing&lt;/code&gt; property to false.
+&lt;h3&gt;Responsive Behavior&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt; On phones, the select dialog takes up the whole screen. &lt;/li&gt;
+&lt;li&gt; On desktop and tablet devices, the select dialog appears as a popover. &lt;/li&gt;
+&lt;/ul&gt;</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="title" type="sap.ui.core/string" group="Appearance">
+            <documentation>Determines the title text that appears in the dialog header</documentation>
+        </property>
+        <property name="noDataText" type="sap.ui.core/string" group="Appearance">
+            <documentation>Determines the text shown when the list has no data</documentation>
+        </property>
+        <property name="multiSelect" type="sap.ui.core/boolean" defaultValue="false" group="Dimension">
+            <documentation>Determines if the user can select several options from the list</documentation>
+        </property>
+        <property name="growingThreshold" type="sap.ui.core/int" group="Misc">
+            <documentation>Determines the number of items initially displayed in the list. Also defines the number of items to be requested from the model for each grow.
+&lt;b&gt;Note:&lt;/b&gt; This property could take affect only be used if the property &lt;code&gt;growing&lt;/code&gt; is set to &lt;code&gt;true&lt;/code&gt;.</documentation>
+        </property>
+        <property name="growing" type="sap.ui.core/boolean" defaultValue="true" group="Behavior" since="1.56">
+            <documentation>If set to &lt;code&gt;true&lt;/code&gt;, enables the growing feature of the control to load more items by requesting from the bound model (progressive loading).
+&lt;b&gt;Note:&lt;/b&gt; This feature only works when an &lt;code&gt;items&lt;/code&gt; aggregation is bound.
+&lt;b&gt;Note:&lt;/b&gt; Growing property, must not be used together with two-way binding.</documentation>
+        </property>
+        <property name="contentWidth" type="sap.ui.core/CSSSize" group="Dimension" since="1.18">
+            <documentation>Determines the content width of the inner dialog. For more information, see the dialog documentation.</documentation>
+        </property>
+        <property name="rememberSelections" type="sap.ui.core/boolean" defaultValue="false" group="Behavior" since="1.18">
+            <documentation>This flag controls whether the dialog clears the selection after the confirm event has been fired. If the dialog needs to be opened multiple times in the same context to allow for corrections of previous user inputs, set this flag to "true".
+
+&lt;b&gt;Note:&lt;/b&gt; The sap.m.SelectDialog uses {@link sap.m.ListBase#rememberSelections this} property of the ListBase and therefore its limitations also apply here.</documentation>
+        </property>
+        <property name="contentHeight" type="sap.ui.core/CSSSize" group="Dimension">
+            <documentation>Determines the content height of the inner dialog. For more information, see the dialog documentation.</documentation>
+        </property>
+        <property name="showClearButton" type="sap.ui.core/boolean" defaultValue="false" group="Behavior" since="1.58">
+            <documentation>This flag controls whether the Clear button is shown. When set to &lt;code&gt;true&lt;/code&gt;, it provides a way to clear selection mode in Select Dialog.
+We recommended enabling of the Clear button in the following cases, where a mechanism to clear the value is needed:
+In case of single selection mode(default mode) for Select Dialog and &lt;code&gt;rememberSelections&lt;/code&gt; is set to &lt;code&gt;true&lt;/code&gt;. Clear button needs to be enabled in order to allow users to clear the selection.
+In case of using &lt;code&gt;sap.m.Input&lt;/code&gt; with &lt;code&gt;valueHelpOnly&lt;/code&gt; set to &lt;code&gt;true&lt;/code&gt;, the Clear button could be used for clearing selection.
+In case the application stores a value and uses only Select Dialog to edit/maintain it.
+&lt;b&gt;Note:&lt;/b&gt;When used with oData, only the loaded selections will be cleared.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="confirm" allowPreventDefault="false">
+            <documentation>This event will be fired when the dialog is confirmed by selecting an item in single selection mode or by pressing the confirmation button in multi selection mode . The items being selected are returned as event parameters.</documentation>
+            <parameters>
+                <parameter name="selectedItem" type="sap.m/StandardListItem">
+                    <documentation>Returns the selected list item. When no item is selected, "null" is returned. When multi-selection is enabled and multiple items are selected, only the first selected item is returned.</documentation>
+                </parameter>
+                <parameter name="selectedItems" type="sap.m/StandardListItem[]">
+                    <documentation>Returns an array containing the visible selected list items. If no items are selected, an empty array is returned.</documentation>
+                </parameter>
+                <parameter name="selectedContexts" type="sap.ui.core/object[]">
+                    <documentation>Returns the binding contexts of the selected items including the non-visible items. See {@link sap.m.ListBase#getSelectedContexts getSelectedContexts} of &lt;code&gt;sap.m.ListBase&lt;/code&gt;.
+NOTE: In contrast to the parameter "selectedItems", this parameter will also include the selected but NOT visible items (e.g. due to list filtering). An empty array will be set for this parameter if no data binding is used.
+NOTE: When the list binding is pre-filtered and there are items in the selection that are not visible upon opening the dialog, these contexts are not loaded. Therefore, these items will not be included in the selectedContexts array unless they are displayed at least once.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="search" allowPreventDefault="false">
+            <documentation>This event will be fired when the search button has been clicked on the searchfield on the visual control</documentation>
+            <parameters>
+                <parameter name="value" type="sap.ui.core/string">
+                    <documentation>The value entered in the search</documentation>
+                </parameter>
+                <parameter name="itemsBinding" type="sap.ui.core/any">
+                    <documentation>The Items binding of the Select Dialog for search purposes. It will only be available if the items aggregation is bound to a model.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="liveChange" allowPreventDefault="false">
+            <documentation>This event will be fired when the value of the search field is changed by a user - e.g. at each key press</documentation>
+            <parameters>
+                <parameter name="value" type="sap.ui.core/string">
+                    <documentation>The value to search for, which can change at any keypress</documentation>
+                </parameter>
+                <parameter name="itemsBinding" type="sap.ui.core/any">
+                    <documentation>The Items binding of the Select Dialog. It will only be available if the items aggregation is bound to a model.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="cancel" allowPreventDefault="false">
+            <documentation>This event will be fired when the cancel button is clicked or ESC key is pressed</documentation>
+        </event>
+    </events>
+    <aggregations default="items">
+        <aggregation name="items" type="sap.m/ListItemBase" cardinality="0..n">
+            <documentation>The items of the list shown in the search dialog. It is recommended to use a StandardListItem for the dialog but other combinations are also possible.</documentation>
+        </aggregation>
+        <aggregation name="_dialog" type="sap.ui.core/Control" cardinality="0..1" visibility="hidden">
+            <documentation>The internal dialog that will be shown when method open is called</documentation>
+        </aggregation>
+    </aggregations>
+    <methods>
+        <method name="open" type="sap.m/SelectDialog">
+            <documentation>Opens the internal dialog with a searchfield and a list.</documentation>
+            <parameters>
+                <parameter name="searchValue" type="sap.ui.core/string">
+                    <documentation>A value for the search can be passed to match with the filter applied to the list binding.</documentation>
+                </parameter>
+            </parameters>
+        </method>
+    </methods>
+</control>

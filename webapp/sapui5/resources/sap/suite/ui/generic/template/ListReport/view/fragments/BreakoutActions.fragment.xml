@@ -1,0 +1,19 @@
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+						 xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:build="sap.build">
+
+	<template:if test="{= ${tmpEntitySet>EntitySet} === ${parameter>/entitySet} }">
+		<template:repeat list="{tmpEntitySet>Actions}" var="customaction">
+			<!--all break out actions which are neither determining nor global-->
+			<template:if test="{= !${customaction>determining} &amp;&amp; !${customaction>global}}">
+				<Button id="{parts: [{path: 'customaction>'}, {path: 'tabItem>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getBreakoutActionButtonId'}"
+						enabled="{parts: [{path: 'customaction>'}, {path: 'tabItem>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getBreakoutActionEnabledKey'}"
+						text="{customaction>text}"
+						press="{customaction>press}" type="Transparent">
+					<layoutData>
+						<OverflowToolbarLayoutData priority = "{customaction>importance}"/>
+					</layoutData>
+				</Button>
+            </template:if>
+		</template:repeat>
+	</template:if>
+</core:FragmentDefinition>

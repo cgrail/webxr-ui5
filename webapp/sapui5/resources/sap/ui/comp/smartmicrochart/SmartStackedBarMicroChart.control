@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartmicrochart/SmartStackedBarMicroChart</name>
+    <derived/>
+    <documentation>The SmartStackedBarMicroChart control creates a StackedBarMicroChart based on OData metadata and the configuration
+       specified. The &lt;code&gt;entitySet&lt;/code&gt; property is required. The entity set you specify in this property is used
+       to fetch OData metadata and to generate the micro chart's UI. This property can also be used to fetch actual chart data.&lt;br&gt;
+       &lt;b&gt;&lt;i&gt;Note:&lt;/i&gt;&lt;/b&gt;&lt;br&gt;
+       Most properties are not dynamic and cannot be changed, once the control has been
+       initialised.</documentation>
+    <since>1.58</since>
+    <baseType>sap.ui.comp/smartmicrochart/SmartMicroChartBase</baseType>
+</control>

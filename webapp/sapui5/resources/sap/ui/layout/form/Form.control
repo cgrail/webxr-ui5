@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>form/Form</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A &lt;code&gt;Form&lt;/code&gt; control arranges labels and fields (like input fields) into groups and rows.
+There are different ways to visualize forms for different screen sizes.
+
+A &lt;code&gt;Form&lt;/code&gt; is structured into &lt;code&gt;FormContainers&lt;/code&gt;. Each &lt;code&gt;FormContainer&lt;/code&gt; consists of &lt;code&gt;FormElements&lt;/code&gt;.
+The &lt;code&gt;FormElements&lt;/code&gt; consists of a label and the form fields.
+A &lt;code&gt;Form&lt;/code&gt; doesn't render its content by itself. The rendering is done by the assigned &lt;code&gt;FormLayout&lt;/code&gt;.
+This is so that the rendering can be adopted to new UI requirements without changing the &lt;code&gt;Form&lt;/code&gt; itself.
+
+For the content of a &lt;code&gt;Form&lt;/code&gt;, &lt;code&gt;VariantLayoutData&lt;/code&gt; are supported to allow simple switching of the &lt;code&gt;FormLayout&lt;/code&gt;.
+&lt;code&gt;LayoutData&lt;/code&gt; on the content can be used to overwrite the default layout of the &lt;code&gt;Form&lt;/code&gt;.
+
+The &lt;code&gt;Form&lt;/code&gt; (and its sub-controls) automatically add label and field assignment to enable screen reader support.
+It also adds keyboard support to navigate between the fields and groups inside the form.
+
+&lt;b&gt;Warning:&lt;/b&gt; Do not put any layout or other container controls into the &lt;code&gt;FormElement&lt;/code&gt;.
+Views are also not supported. This could damage the visual layout, keyboard support and screen-reader support.
+
+If editable controls are used as content, the &lt;code&gt;editable&lt;/code&gt; property must be set to &lt;code&gt;true&lt;/code&gt;,
+otherwise to &lt;code&gt;false&lt;/code&gt;. If the &lt;code&gt;editable&lt;/code&gt; property is set incorrectly, there will be visual issues
+like wrong label alignment or wrong spacing between the controls.</documentation>
+    <since>1.16.0</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="width" type="sap.ui.core/CSSSize" group="Dimension">
+            <documentation>Width of the &lt;code&gt;Form&lt;/code&gt;.</documentation>
+        </property>
+        <property name="editable" type="sap.ui.core/boolean" defaultValue="false" group="Misc" since="1.20.0">
+            <documentation>Applies a device-specific and theme-specific line height and label alignment to the form rows if the form has editable content.
+If set, all (not only the editable) rows of the form will get the line height of editable fields.
+
+The labels inside the form will be rendered by default in the according mode.
+
+&lt;b&gt;Note:&lt;/b&gt; The setting of this property does not change the content of the form.
+For example, &lt;code&gt;Input&lt;/code&gt; controls in a form with &lt;code&gt;editable&lt;/code&gt; set to false are still editable.
+
+&lt;b&gt;Warning:&lt;/b&gt; If this property is wrongly set, this might lead to visual issues.
+The labels and fields might be misaligned, the labels might be rendered in the wrong mode,
+and the spacing between the single controls might be wrong.
+Also, controls that do not fit the mode might be rendered incorrectly.</documentation>
+        </property>
+    </properties>
+    <aggregations default="formContainers">
+        <aggregation name="formContainers" type="sap.ui.layout/form/FormContainer" cardinality="0..n">
+            <documentation>Containers with the content of the form. A &lt;code&gt;FormContainer&lt;/code&gt; represents a group inside the &lt;code&gt;Form&lt;/code&gt;.</documentation>
+        </aggregation>
+        <aggregation name="title" type="sap.ui.core/Title" cardinality="0..1">
+            <documentation>Title of the &lt;code&gt;Form&lt;/code&gt;. Can either be a &lt;code&gt;Title&lt;/code&gt; element or a string.
+If a &lt;code&gt;Title&lt;/code&gt; element it used, the style of the title can be set.
+
+&lt;b&gt;Note:&lt;/b&gt; If a &lt;code&gt;Toolbar&lt;/code&gt; is used, the &lt;code&gt;Title&lt;/code&gt; is ignored.</documentation>
+        </aggregation>
+        <aggregation name="toolbar" type="sap.ui.core/Toolbar" since="1.36.0" cardinality="0..1">
+            <documentation>Toolbar of the &lt;code&gt;Form&lt;/code&gt;.
+
+&lt;b&gt;Note:&lt;/b&gt; If a &lt;code&gt;Toolbar&lt;/code&gt; is used, the &lt;code&gt;Title&lt;/code&gt; is ignored.
+If a title is needed inside the &lt;code&gt;Toolbar&lt;/code&gt; it must be added at content to the &lt;code&gt;Toolbar&lt;/code&gt;.
+In this case add the &lt;code&gt;Title&lt;/code&gt; to the &lt;code&gt;ariaLabelledBy&lt;/code&gt; association.</documentation>
+        </aggregation>
+        <aggregation name="layout" type="sap.ui.layout/form/FormLayout" cardinality="0..1">
+            <documentation>Layout of the &lt;code&gt;Form&lt;/code&gt;. The assigned &lt;code&gt;Layout&lt;/code&gt; renders the &lt;code&gt;Form&lt;/code&gt;.
+We recommend using the &lt;code&gt;ResponsiveGridLayout&lt;/code&gt; for rendering a &lt;code&gt;Form&lt;/code&gt;,
+as its responsiveness allows the available space to be used in the best way possible.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n" since="1.28.0">
+            <documentation>Association to controls / IDs that label this control (see WAI-ARIA attribute &lt;code&gt;aria-labelledby&lt;/code&gt;).</documentation>
+        </association>
+    </associations>
+</control>

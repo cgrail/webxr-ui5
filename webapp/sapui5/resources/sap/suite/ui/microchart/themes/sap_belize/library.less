@@ -1,0 +1,160 @@
+/* NOTE: This file was generated as an optimized version of "library.source.less" for the Theme Designer. */
+
+/*!
+ * ${copyright}
+ */
+
+@import "../base/library.less";
+@import "../../../../../../../Base/baseLib/sap_belize/base.less"; /* ORIGINAL IMPORT PATH: "../../../../../../sap/ui/core/themes/sap_belize/base.less" */
+
+@import "../../../../../../sap/ui/core/themes/sap_belize/global.less";
+
+/* START "SharedStyles.less" */
+/* =================================================================== */
+/* CSS Styles which are used in more than one control within this lib. */
+/* =================================================================== */
+.sapSuiteUiMicroChartNoData {
+  background: fade(@sapUiGroupContentBackground , 80%);
+  border-color: @sapUiGroupContentBorderColor;
+}
+
+/* END "SharedStyles.less" */
+
+
+/* START "AreaMicroChart.less" */
+/* ====================================================== */
+/* CSS for control sap.suite.ui.microchart/AreaMicroChart */
+/* Belize Theme                                           */
+/* ====================================================== */
+
+.sapSuiteAMCCanvasContainer.sapSuiteAMCWithThreshold {
+	background-color: @sapUiChoroplethRegionBG;
+}
+
+.sapSuiteAMCTarget {
+	outline-width: 2px;
+}
+
+/* END "AreaMicroChart.less" */
+
+/* START "BulletMicroChart.less" */
+/* ======================================================== */
+/* CSS for control sap.suite.ui.microchart/BulletMicroChart */
+/* Belize Theme                                             */
+/* ======================================================== */
+
+.sapSuiteBMCTargetValue {
+	color: @sapUiChartCategoryAxisLabelFontColor;
+}
+
+.sapSuiteBMCForecastBarValue {
+	border-right: 1px solid @sapUiBaseBG;
+}
+
+/* Scale Colors Start */
+
+.sapSuiteBMCBar.sapSuiteBMCScaleColorLightest {
+	background-color: #ffffff;
+}
+
+.sapSuiteBMCBar.sapSuiteBMCScaleColorExtraLight {
+	background-color: #f2f2f2;
+}
+
+.sapSuiteBMCBar.sapSuiteBMCScaleColorLight {
+	background-color: #e5e5e5;
+}
+
+.sapSuiteBMCBar.sapSuiteBMCScaleColorMedium {
+	background-color: #dddddd;
+}
+
+.sapSuiteBMCBar.sapSuiteBMCScaleColorMediumLight {
+	background-color: @sapUiChartDataPointBG;
+}
+
+.sapSuiteBMCBar.sapSuiteBMCScaleColorDark {
+	background-color: #777777;
+}
+
+.sapSuiteBMCBar.sapSuiteBMCScaleColorExtraDark {
+	background-color: #333333;
+}
+
+.sapSuiteBMCBar.sapSuiteBMCScaleColorDarkest {
+	background-color: #000000;
+}
+
+/* Scale Colors End */
+/* END "BulletMicroChart.less" */
+
+/* START "ComparisonMicroChart.less" */
+/* ============================================================ */
+/* CSS for control sap.suite.ui.microchart/ComparisonMicroChart */
+/* Belize Theme                                                 */
+/* ============================================================ */
+
+/* Make sure that if there is no middle bar (sapSuiteCpMCChartBarValue) a double left border wouldn't appear. */
+.sapSuiteCpMCChartBarNegNoValue + .sapSuiteCpMCChartBarNoValue {
+	border-left: none;
+}
+
+.sapSuiteCpMCChartItemTitle {
+	color: @sapUiChartCategoryAxisLabelFontColor;
+}
+/* END "ComparisonMicroChart.less" */
+
+/* START "DeltaMicroChart.less" */
+/* =============================================================== */
+/* CSS for control sap.suite.ui.microchart/DeltaMicroChart.control */
+/* Belize Theme                                                    */
+/* =============================================================== */
+
+.sapSuiteDMC {
+	font-family: @sapUiFontHeaderFamily;
+	font-weight: @sapUiFontHeaderWeight;
+	color: @sapUiChartCategoryAxisLabelFontColor;
+}
+
+/* END "DeltaMicroChart.less" */
+
+/* START "HarveyBallMicroChart.less" */
+/* ============================================================ */
+/* CSS for control sap.suite.ui.microchart/HarveyBallMicroChart */
+/* Belize Theme                                                 */
+/* ============================================================ */
+
+.sapSuiteHBMCSegment {
+	stroke: #ffffff; // as specified without variable
+}
+
+/* END "HarveyBallMicroChart.less" */
+
+/* START "StackedBarMicroChart.less" */
+/* ==================================================== */
+/* CSS for sap.suite.ui.microchart/StackedBarMicroChart */
+/* Belize Theme                                         */
+/* ==================================================== */
+
+.sapSuiteStackedMC:focus:not([tabindex]) {
+	outline: none;
+}
+
+.sapSuiteStackedMCBarSemanticColorNeutral {
+	background-color: @sapUiChartPaletteSemanticNeutral;
+}
+
+.sapSuiteStackedMCBarSemanticColorGood {
+	background-color: @sapUiChartPaletteSemanticGood;
+}
+
+.sapSuiteStackedMCBarSemanticColorCritical {
+	background-color: @sapUiChartPaletteSemanticCritical;
+}
+
+.sapSuiteStackedMCBarSemanticColorError {
+	background-color: @sapUiChartPaletteSemanticBad;
+}
+
+/* END "StackedBarMicroChart.less" */
+

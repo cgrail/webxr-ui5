@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<library xmlns="http://www.sap.com/sap.ui.library.xsd">
+
+    <name>sap.ui.vtm</name>
+    <vendor>SAP SE</vendor>
+    <copyright>SAP UI development toolkit for HTML5 (SAPUI5)
+
+        (c) Copyright 2009-2015 SAP SE. All rights reserved
+    </copyright>
+    <version>1.64.0</version>
+
+    <documentation>SAPUI5 Visual Tree Mapper.</documentation>
+
+    <dependencies>
+        <dependency>
+            <libraryName>sap.ui.core</libraryName>
+        </dependency>
+        <dependency>
+            <libraryName>sap.ui.unified</libraryName>
+            <lazy>true</lazy>
+        </dependency>
+        <dependency>
+            <libraryName>sap.m</libraryName>
+            <lazy>true</lazy>
+        </dependency>
+        <dependency>
+            <libraryName>sap.ui.layout</libraryName>
+            <lazy>true</lazy>
+        </dependency>
+    </dependencies>
+
+    <appData>
+        <documentation xmlns="http://www.sap.com/ui5/buildext/documentation"
+                       indexUrl="../../../../test-resources/sap/ui/vtm/demokit/docuindex.json"
+                       resolve="lib" />
+
+        <releasenotes xmlns="http://www.sap.com/ui5/buildext/releasenotes"
+                      url="../../../test-resources/sap/ui/vtm/relnotes/changes-{major}.{minor}.json"
+                      resolve="lib" />
+    </appData>
+
+</library>

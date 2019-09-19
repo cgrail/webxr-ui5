@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>RowSettings</name>
+    <derived/>
+    <documentation>The &lt;code&gt;RowSettings&lt;/code&gt; control allows you to configure a row.
+You can only use this control in the context of the &lt;code&gt;sap.ui.table.Table&lt;/code&gt; control to define row settings.</documentation>
+    <since>1.48.0</since>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="highlight" type="sap.ui.core/string" defaultValue="None" group="Appearance" since="1.48.0">
+            <documentation>The highlight state of the rows.
+
+If the highlight is set to {@link sap.ui.core.MessageType sap.ui.core.MessageType.None} (default), no highlights are visible.
+Valid values for the &lt;code&gt;highlight&lt;/code&gt; property are values of the enumerations {@link sap.ui.core.MessageType} or
+{@link sap.ui.core.IndicationColor}.
+
+Accessibility support is provided through the associated {@link sap.ui.table.RowSettings#setHighlightText highlightText} property.
+If the &lt;code&gt;highlight&lt;/code&gt; property is set to a value of {@link sap.ui.core.MessageType}, the &lt;code&gt;highlightText&lt;/code&gt;
+property does not need to be set because a default text is used. However, the default text can be overridden by setting the
+&lt;code&gt;highlightText&lt;/code&gt; property.
+In all other cases the &lt;code&gt;highlightText&lt;/code&gt; property must be set.</documentation>
+        </property>
+        <property name="highlightText" type="sap.ui.core/string" defaultValue="" group="Misc" since="1.62">
+            <documentation>Defines the semantics of the {@link sap.ui.table.RowSettings#setHighlight highlight} property for accessibility purposes.</documentation>
+        </property>
+    </properties>
+</control>

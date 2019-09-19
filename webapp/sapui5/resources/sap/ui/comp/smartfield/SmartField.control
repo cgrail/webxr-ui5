@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartfield/SmartField</name>
+    <derived/>
+    <documentation>The &lt;code&gt;SmartField&lt;/code&gt; control interprets metadata that represents entity relationship models, data types,
+service capabilities, and annotations in OData services to automatically generate the underlying inner controls
+and reduce the amount of code needed for developing applications.
+In some cases, the OData entity is derived from the control's binding context. The OData entity's property that
+is changed or displayed with the control is derived from the control's &lt;code&gt;value&lt;/code&gt; property.
+
+&lt;b&gt;Note:&lt;/b&gt; For interoperability and accessibility reasons, the &lt;code&gt;SmartField&lt;/code&gt; control must be labeled
+by the &lt;code&gt;sap.ui.comp.smartfield.SmartLabel&lt;/code&gt; control instead of the &lt;code&gt;sap.m.Label&lt;/code&gt; control, as
+the &lt;code&gt;sap.m.Label&lt;/code&gt; control does not know of the inner structure of a &lt;code&gt;SmartField&lt;/code&gt; control.
+If the &lt;code&gt;SmartField&lt;/code&gt; control is rendered inside a smart container control, for example, the &lt;code&gt;SmartForm&lt;/code&gt;
+control, the &lt;code&gt;SmartLabel&lt;/code&gt; control is automatically generated to reduce the amount of code needed on
+the application side.
+However, in other scenarios when &lt;code&gt;SmartField&lt;/code&gt; is used stand-alone or outside a smart container
+control, for example, a &lt;code&gt;SimpleForm&lt;/code&gt; control, the &lt;code&gt;SmartLabel&lt;/code&gt; control is not automatically
+generated in these cases.
+Although the &lt;code&gt;sap.ui.comp.smartfield.SmartLabel&lt;/code&gt; is a private/internal control, the following basic use
+is allowed by applications for labeling the &lt;code&gt;SmartField&lt;/code&gt; control.
+
+&lt;i&gt;XML Example of a &lt;code&gt;SmartField&lt;/code&gt; control labeled by a &lt;code&gt;SmartLabel&lt;/code&gt; control&lt;/i&gt;
+
+&lt;pre&gt;
+&amp;lt;sap.ui.comp.smartfield.SmartLabel labelFor=&amp;quot;IDProduct&amp;quot;/&amp;gt;
+&amp;lt;sap.ui.comp.smartfield.SmartField id=&amp;quot;IDProduct&amp;quot; value=&amp;quot;{ProductId}&amp;quot;/&amp;gt;
+&lt;/pre&gt;
+
+&lt;b&gt;Note&lt;/b&gt;: By default, the &lt;code&gt;com.sap.vocabularies.UI.v1.TextArrangement&lt;/code&gt; annotation and the value of
+the &lt;code&gt;displayBehaviour&lt;/code&gt; property of the aggregation named &lt;code&gt;configuration&lt;/code&gt; are not evaluated
+in edit mode. To enable these features, set the &lt;code&gt;textInEditModeSource&lt;/code&gt; control property to a non-default
+value.</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="value" type="sap.ui.core/any" group="Misc">
+            <documentation>The value property keeps the current value of the control. If a binding expression is configured, this is used to determine the
+property of an OData entity.</documentation>
+        </property>
+        <property name="enabled" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Indicates whether the user can interact with the control or not. &lt;b&gt;Note:&lt;/b&gt; Disabled controls cannot be focused and they are out
+of the tab order.</documentation>
+        </property>
+        <property name="entitySet" type="sap.ui.core/string" defaultValue="" group="Misc">
+            <documentation>The name of an entity set for which the control manages values. This is an optional property.</documentation>
+        </property>
+        <property name="editable" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Sets the control into an editable mode or a display mode.</documentation>
+        </property>
+        <property name="contextEditable" type="sap.ui.core/boolean" defaultValue="true" group="Misc" since="1.32.0">
+            <documentation>Notifies the control whether controls using the &lt;code&gt;SmartField&lt;/code&gt; control are editable.</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" defaultValue="" group="Misc">
+            <documentation>Defines the width of the control.</documentation>
+        </property>
+        <property name="textAlign" type="sap.ui.core/TextAlign" defaultValue="Initial" group="Misc">
+            <documentation>Horizontal alignment of the text.</documentation>
+        </property>
+        <property name="placeholder" type="sap.ui.core/string" defaultValue="" group="Misc">
+            <documentation>Text shown when no value available.</documentation>
+        </property>
+        <property name="name" type="sap.ui.core/string" defaultValue="" group="Misc">
+            <documentation>To be used in the HTML code (for example, for HTML forms that send data to the server via 'submit').</documentation>
+        </property>
+        <property name="valueState" type="sap.ui.core/ValueState" defaultValue="None" group="Appearance">
+            <documentation>Visualizes the validation state of the control, e.g. &lt;code&gt;Error&lt;/code&gt;, &lt;code&gt;Warning&lt;/code&gt;, &lt;code&gt;Success&lt;/code&gt;.</documentation>
+        </property>
+        <property name="valueStateText" type="sap.ui.core/string" defaultValue="" group="Appearance">
+            <documentation>The text which is shown in the value state message popup.</documentation>
+        </property>
+        <property name="showValueStateMessage" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>Defines whether the value state message is shown or not.</documentation>
+        </property>
+        <property name="jsontype" type="sap.ui.comp/smartfield/JSONType" group="Misc">
+            <documentation>Data types to be used, if the &lt;code&gt;SmartField&lt;/code&gt; control is interacting with a JSON model. If the value property of the
+control is bound to a property of an OData entity set, this property is not taken into consideration.</documentation>
+            <deprecation since="1.31.0"></deprecation>
+        </property>
+        <property name="mandatory" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>If set to &lt;code&gt;true&lt;/code&gt;, a user input is required.</documentation>
+        </property>
+        <property name="maxLength" type="sap.ui.core/int" defaultValue="0" group="Misc">
+            <documentation>Maximum number of characters. Value &lt;code&gt;0&lt;/code&gt; means the feature is switched off.</documentation>
+        </property>
+        <property name="showSuggestion" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>If set to &lt;code&gt;true&lt;/code&gt;, the suggestion feature for a hosted control is enabled, if the hosted control supports it.</documentation>
+        </property>
+        <property name="showValueHelp" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>If set to &lt;code&gt;true&lt;/code&gt;, a value help indicator will be displayed inside the hosted control, if the hosted control supports
+this.</documentation>
+        </property>
+        <property name="showLabel" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>If set to &lt;code&gt;false&lt;/code&gt; the label is not displayed.</documentation>
+        </property>
+        <property name="textLabel" type="sap.ui.core/string" defaultValue="" group="Misc">
+            <documentation>This property contains the text of an associated &lt;code&gt;SmartLabel&lt;/code&gt;.</documentation>
+        </property>
+        <property name="tooltipLabel" type="sap.ui.core/string" defaultValue="" group="Misc">
+            <documentation>This property contains the tool tip of the associated &lt;code&gt;SmartLabel&lt;/code&gt; control.</documentation>
+        </property>
+        <property name="uomVisible" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Visible state of the unit, if the &lt;code&gt;SmartField&lt;/code&gt; control addresses unit of measure use cases, for example, an amount and
+its associated currency.</documentation>
+        </property>
+        <property name="uomEditable" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Editable state of the unit, if the &lt;code&gt;SmartField&lt;/code&gt; control addresses unit of measure use cases, for example, an amount
+and its associated currency.</documentation>
+        </property>
+        <property name="uomEnabled" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Enabled state of the unit, if the &lt;code&gt;SmartField&lt;/code&gt; control addresses unit of measure use cases, for example, an amount and
+its associated currency.</documentation>
+        </property>
+        <property name="url" type="sap.ui.core/string" defaultValue="" group="Misc">
+            <documentation>Contains a URL which is used to render a link. The link is rendered, if the OData property, to which the value property of the
+control is bound, is of type &lt;code&gt;Edm.String&lt;/code&gt; and the &lt;code&gt;SmartField&lt;/code&gt; is in display mode.</documentation>
+        </property>
+        <property name="uomEditState" type="sap.ui.core/int" defaultValue="-1" group="Misc" since="1.32.0">
+            <documentation>This property is for internal use only.</documentation>
+        </property>
+        <property name="controlContext" type="sap.ui.comp/smartfield/ControlContextType" defaultValue="None" group="Misc" since="1.32.0">
+            <documentation>Defines the context in which the layout of the &lt;code&gt;SmartField&lt;/code&gt; control has to be interpreted.</documentation>
+        </property>
+        <property name="proposedControl" type="sap.ui.comp/smartfield/ControlProposalType" defaultValue="None" group="Misc" since="1.32.0">
+            <documentation>Proposes a control to be rendered. The &lt;code&gt;SmartField&lt;/code&gt; control can ignore the proposal.</documentation>
+            <deprecation since="1.32.0"></deprecation>
+        </property>
+        <property name="wrapping" type="sap.ui.core/boolean" defaultValue="true" group="Misc" since="1.36.6">
+            <documentation>Indicates whether the control break lines (in display mode) to prevent overflow.</documentation>
+        </property>
+        <property name="clientSideMandatoryCheck" type="sap.ui.core/boolean" defaultValue="true" group="Misc" since="1.38.3">
+            <documentation>Determines if the mandatory check happens on the client side &lt;code&gt;true&lt;/code&gt; or on the server side
+&lt;code&gt;false&lt;/code&gt;.
+
+&lt;b&gt;Note:&lt;/b&gt; If the {@link sap.ui.comp.smartfield.SmartField#value} property of the
+&lt;code&gt;SmartField&lt;/code&gt; control is bound to an Entity Data Model (EDM) property annotated as
+&lt;code&gt;Nullable="false"&lt;/code&gt;, the mandatory validation is performed on the client side regardless of
+the &lt;code&gt;clientSideMandatoryCheck&lt;/code&gt; setting.
+
+&lt;i&gt;Example:&lt;/i&gt;
+
+&lt;pre&gt;
+    &amp;lt;Property Name=&amp;quot;CategoryID&amp;quot; Type=&amp;quot;Edm.String&amp;quot; Nullable=&amp;quot;false&amp;quot;/&amp;gt;
+&lt;/pre&gt;</documentation>
+        </property>
+        <property name="fetchValueListReadOnly" type="sap.ui.core/boolean" defaultValue="true" group="Misc" since="1.42.0">
+            <documentation>Indicates whether the value list collection is fetched in display mode from the resource path
+specified in the &lt;code&gt;com.sap.vocabularies.Common.v1.ValueList&lt;/code&gt; annotation.
+
+This collection data is used to infer a descriptive text for the value of the &lt;code&gt;SmartField&lt;/code&gt;
+control. However, fetching the value list collection for every &lt;code&gt;SmartField&lt;/code&gt; instance
+individually may not be ideal in some performance-critical scenarios.
+To optimize this default behavior, you can set this property to &lt;code&gt;false&lt;/code&gt; and provide the
+&lt;code&gt;com.sap.vocabularies.Common.v1.Text&lt;/code&gt; annotation, which is used to specify the URL path
+name to the Entity Data Model (EDM) property from which the descriptive text for the value of the
+&lt;code&gt;SmartField&lt;/code&gt; control is fetched, for example, LT (Laptop).
+
+&lt;b&gt;Note:&lt;/b&gt; Setting this property to &lt;code&gt;false&lt;/code&gt; only has an effect if the &lt;code&gt;value&lt;/code&gt;
+property of the &lt;code&gt;SmartField&lt;/code&gt; control is bound to an Entity Data Model (EDM) property typed
+as &lt;code&gt;Edm.String&lt;/code&gt;. In addition, applications or frameworks have to make sure the descriptive
+text is fetched, for example, by expanding a navigation property.</documentation>
+        </property>
+        <property name="expandNavigationProperties" type="sap.ui.core/boolean" defaultValue="false" group="Behavior" since="1.48">
+            <documentation>Indicates if entities related to navigation properties inside the metadata are requested.
+If set to &lt;code&gt;true&lt;/code&gt;, then these related entities are loaded with an &lt;code&gt;$expand&lt;/code&gt; request.
+
+Annotations that can have navigation properties are the following:
+&lt;ul&gt;
+	&lt;li&gt; &lt;code&gt;com.sap.vocabularies.Common.v1.Text&lt;/code&gt; for text arrangements
+	&lt;li&gt; &lt;code&gt;Org.OData.Measures.V1.Unit&lt;/code&gt; and &lt;code&gt;Org.OData.Measures.V1.ISOCurrency&lt;/code&gt; for units
+	&lt;li&gt; &lt;code&gt;com.sap.vocabularies.Common.v1.FieldControl&lt;/code&gt; for field control
+&lt;/ul&gt;
+
+&lt;b&gt;Note:&lt;/b&gt; Independent of the &lt;code&gt;fetchValueListReadOnly&lt;/code&gt; value, setting this flag to &lt;code&gt;true&lt;/code&gt;
+requests data from the backend.
+
+&lt;b&gt;Note:&lt;/b&gt; The back-end request to expand the navigation properties is sent only if the entity to which
+&lt;code&gt;SmartField&lt;/code&gt; is bound is persisted.
+For transient entities, there is no back-end request since no such data is available.</documentation>
+            <developmentState state="experimental" since="1.48"></developmentState>
+        </property>
+        <property name="textInEditModeSource" type="sap.ui.comp/smartfield/TextInEditModeSource" defaultValue="None" group="Behavior" since="1.54">
+            <documentation>Sets the source from which text descriptions for &lt;code&gt;IDs&lt;/code&gt; are fetched in edit mode, for example,
+for LT (Laptop).
+
+&lt;b&gt;Note&lt;/b&gt;: The &lt;code&gt;sap.ui.comp.smartfield.TextInEditModeSource.NavigationProperty&lt;/code&gt; and
+&lt;code&gt;sap.ui.comp.smartfield.TextInEditModeSource.ValueList&lt;/code&gt; enumeration members are only supported if the
+following applies:
+
+&lt;ul&gt;
+ &lt;li&gt;The &lt;code&gt;value&lt;/code&gt; property of the &lt;code&gt;SmartField&lt;/code&gt; control instance
+is bound to an Entity Data Model (EDM) property typed as &lt;code&gt;Edm.String&lt;/code&gt; or &lt;code&gt;Edm.Guid&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;com.sap.vocabularies.Common.v1.Text&lt;/code&gt; annotation for the bound EDM property is specified in the
+service metadata document or annotation file whose &lt;code&gt;Path&lt;/code&gt; attribute points to a navigation EDM property
+of a lookup entity set/type whose single key property is the &lt;code&gt;ID&lt;/code&gt;, which contains (among other properties)
+the descriptive value.&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;com.sap.vocabularies.UI.v1.TextArrangement&lt;/code&gt; annotation for the bound EDM property or entity
+type is specified in the (service metadata document/annotation file).&lt;/li&gt;
+&lt;li&gt;The binding mode for the &lt;code&gt;value&lt;/code&gt; property of the &lt;code&gt;SmartField&lt;/code&gt; control is the two-way binding
+mode.&lt;/li&gt;
+&lt;li&gt;The field from which the description is fetch is filterable.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Note&lt;/b&gt;: In addition, the &lt;code&gt;sap.ui.comp.smartfield.TextInEditModeSource.NavigationProperty&lt;/code&gt; enumeration
+member is only supported if the following applies:
+
+&lt;ul&gt;
+&lt;li&gt;The navigation EDM property association is defined in the service metadata document.&lt;/li&gt;
+	&lt;li&gt;The navigation EDM property association defines a referential constraint that ties values of the dependent editable
+entity type/set to the lookup entity type/set in the service metadata document.&lt;/li&gt;
+&lt;li&gt;The navigation EDM property association end multiplicity of the lookup entity type/set is defined as &lt;code&gt;1&lt;/code&gt;
+in the service metadata document. There must be a single-valued navigation from the editable entity set/type
+to the lookup entity set/type.&lt;/li&gt;
+&lt;li&gt;The lookup entity type/set from which the descriptive value is fetched contains a single key property.&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+            <developmentState state="experimental" since="1.54"></developmentState>
+        </property>
+    </properties>
+    <events>
+        <event name="entitySetFound" allowPreventDefault="false">
+            <documentation>The OData entity set is either derived from the control's binding context or from control's entity set property, if a value for it
+is specified. In both cases this event is fired.</documentation>
+            <parameters>
+                <parameter name="entitySet" type="sap.ui.core/string">
+                    <documentation>The path to the found entity set</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="change" allowPreventDefault="false">
+            <documentation>The event is fired after the text in the field has been changed and the focus leaves the field, or after the Enter key has been
+pressed.</documentation>
+            <parameters>
+                <parameter name="value" type="sap.ui.core/string">
+                    <documentation>The current value inside the text field</documentation>
+                </parameter>
+                <parameter name="newValue" type="sap.ui.core/string">
+                    <documentation>The new value inside the text field</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="initialise" allowPreventDefault="false">
+            <documentation>The event is fired after the smart field has calculated its metadata.</documentation>
+        </event>
+        <event name="visibleChanged" allowPreventDefault="false">
+            <documentation>The event is fired after the visibility of the control has changed.</documentation>
+            <parameters>
+                <parameter name="visible" type="sap.ui.core/boolean">
+                    <documentation>If &lt;code&gt;true&lt;/code&gt;, the control is visible</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="editableChanged" since="1.30.0" allowPreventDefault="false">
+            <documentation>The event is fired after the value of editable property of the control has changed.</documentation>
+            <parameters>
+                <parameter name="editable" type="sap.ui.core/boolean">
+                    <documentation>If &lt;code&gt;true&lt;/code&gt;, the control is in edit mode</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="contextEditableChanged" since="1.32.0" allowPreventDefault="false">
+            <documentation>The event is fired after the context editable property of the control has changed.</documentation>
+            <parameters>
+                <parameter name="editable" type="sap.ui.core/boolean">
+                    <documentation>The value of the context editable property of the control</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="innerControlsCreated" allowPreventDefault="false">
+            <documentation>The event is fired after the inner controls have been created. The created controls can be obtained via oControl.getInnerControls().</documentation>
+        </event>
+        <event name="valueListChanged" since="1.31.0" allowPreventDefault="false">
+            <documentation>The event is fired when after selection of values with value help or auto-suggest, the model is updated with the selected data.</documentation>
+            <parameters>
+                <parameter name="changes" type="sap.ui.core/Control[]">
+                    <documentation>An array of selected values</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="press" since="1.36.0" allowPreventDefault="false">
+            <documentation>Fires when the user triggers the link control or taps/clicks on an active title of the object identifier control.</documentation>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="_content" type="sap.ui.core/Control" cardinality="0..1" visibility="hidden">
+            <documentation>The content aggregation is used to hold the control that is hosted by the &lt;code&gt;SmartField&lt;/code&gt; control.</documentation>
+        </aggregation>
+        <aggregation name="configuration" type="sap.ui.comp/smartfield/Configuration" cardinality="0..1">
+            <documentation>Optional configuration for &lt;code&gt;SmartField&lt;/code&gt;.</documentation>
+        </aggregation>
+        <aggregation name="controlProposal" type="sap.ui.comp/smartfield/ControlProposal" since="1.32.0" cardinality="0..1">
+            <documentation>Proposes a control to be rendered. The &lt;code&gt;SmartField&lt;/code&gt; control can ignore the proposal.</documentation>
+            <deprecation since="1.34.0"></deprecation>
+        </aggregation>
+        <aggregation name="_ariaLabelInvisibleText" type="sap.ui.core/InvisibleText" since="1.34.2" cardinality="0..n" visibility="hidden">
+            <documentation>Collects the texts to be used for the ARIA labels.&lt;br&gt;
+The InvisibleText controls will be added to the DOM by the &lt;code&gt;SmartField&lt;/code&gt; control.</documentation>
+        </aggregation>
+        <aggregation name="semanticObjectController" type="sap.ui.comp/navpopover/SemanticObjectController" cardinality="0..1">
+            <documentation>The Semantic Object Controller allows the user to specify and overwrite functionality for semantic object navigation.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n" since="1.34.2">
+            <documentation>Association to controls / IDs which label this control (see WAI-ARIA attribute &lt;code&gt;aria-labelledby&lt;/code&gt;).</documentation>
+        </association>
+    </associations>
+</control>

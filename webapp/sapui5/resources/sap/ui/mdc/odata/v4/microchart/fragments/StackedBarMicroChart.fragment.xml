@@ -1,0 +1,17 @@
+<core:FragmentDefinition
+		xmlns="sap.suite.ui.microchart"
+		xmlns:core="sap.ui.core"
+		xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1">
+	<StackedBarMicroChart class="sapUiSmallMargin">
+		<bars>
+			<template:repeat list="{stackedBarMicroChart>MeasureAttributes}" var="MeasureAttribute">
+				<StackedBarMicroChartBar
+					value="{MeasureAttribute>Measure@@.MODEL.value}"
+					displayValue="{MeasureAttribute>Measure@@.MODEL.value}"
+					valueColor="{parts:[{path: 'MeasureAttribute>DataPoint/$AnnotationPath/'},{path:'MeasureAttribute>Measure/'}],
+						formatter: 'sap.ui.mdc.odata.v4.microchart.MicroChart._helper.getMicroChartColor'}">
+				</StackedBarMicroChartBar>
+			</template:repeat>
+		</bars>
+	</StackedBarMicroChart>
+</core:FragmentDefinition>

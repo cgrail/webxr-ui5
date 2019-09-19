@@ -1,0 +1,19 @@
+<core:FragmentDefinition
+		xmlns="sap.suite.ui.microchart"
+		xmlns:core="sap.ui.core"
+		xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1">
+
+	<LineMicroChart class="sapUiSmallMargin" showThresholdLine="false">
+		<lines>
+			<template:repeat list="{lineMicroChart>MeasureAttributes}" var="MeasureAttribute">
+				<LineMicroChartLine points="{lineMicroChart>@@sap.ui.mdc.odata.v4.microchart.MicroChart._helper.getEntitySetPathBinding}">
+					<points>
+						<LineMicroChartPoint x="{MeasureAttribute>@@sap.ui.mdc.odata.v4.microchart.MicroChart._helper.getDimension}"
+											 y="{MeasureAttribute>DataPoint/$AnnotationPath/Value@@.MODEL.value}"/>
+					</points>
+				</LineMicroChartLine>
+			</template:repeat>
+		</lines>
+	</LineMicroChart>
+
+</core:FragmentDefinition>

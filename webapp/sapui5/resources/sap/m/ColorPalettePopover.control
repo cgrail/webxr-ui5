@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ColorPalettePopover</name>
+    <derived/>
+    <documentation>A thin wrapper over {@link sap.m.ColorPalette} allowing the latter to be used in a popover.</documentation>
+    <since>1.54</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="defaultColor" type="sap.ui.core/CSSColor" group="Appearance">
+            <documentation>The color, which the app developer will receive when end-user chooses the "Default color" button.
+See event {@link #event:colorSelect colorSelect}.</documentation>
+        </property>
+        <property name="colors" type="sap.ui.core/CSSColor[]" defaultValue="[gold,darkorange,indianred,darkmagenta,cornflowerblue,deepskyblue,darkcyan,olivedrab,darkslategray,azure,white,lightgray,darkgray,dimgray,black]" group="Appearance">
+            <documentation>Defines the List of colors displayed in the palette. Minimum is 2 colors, maximum is 15 colors.</documentation>
+        </property>
+        <property name="showDefaultColorButton" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>Indicates if the button for default color selection is available.</documentation>
+        </property>
+        <property name="showMoreColorsButton" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>Denotes if the color has been chosen by selecting the "Default Color" button (true or false)</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="colorSelect" allowPreventDefault="false">
+            <documentation>Fired when the user selects a color.</documentation>
+            <parameters>
+                <parameter name="value" type="sap.ui.core/CSSColor">
+                    <documentation>The color that is returned when user chooses the "Default color" button.</documentation>
+                </parameter>
+                <parameter name="defaultAction" type="sap.ui.core/boolean">
+                    <documentation>Denotes if the color has been chosen by selecting the "Default Color" button (true or false).</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <methods>
+        <method name="openBy" type="any">
+            <documentation>Opens the &lt;code&gt;ColorPalettePopover&lt;/code&gt;.
+The popover is positioned relative to the control parameter on tablet or desktop and is full screen on phone.
+Therefore the control parameter is only used on tablet or desktop and is ignored on phone.</documentation>
+            <parameters>
+                <parameter name="openBy" type="any">
+                    <documentation>When this control is displayed on tablet or desktop, the &lt;code&gt;ColorPalettePopover&lt;/code&gt;</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="close" type="sap.ui.core/Control">
+            <documentation>Closes the &lt;code&gt;ColorPalettePopover&lt;/code&gt;.</documentation>
+        </method>
+    </methods>
+</control>

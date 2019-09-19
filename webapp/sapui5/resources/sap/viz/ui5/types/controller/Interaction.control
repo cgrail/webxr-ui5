@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ui5/types/controller/Interaction</name>
+    <derived/>
+    <documentation>Module sap.viz.ui5.types.controller.Interaction</documentation>
+    <since>1.7.2</since>
+    <developmentState state="experimental" since="1.7.2">Charting API is not finished yet and might change completely.</developmentState>
+    <deprecation since="1.32.0">The chart controls in the &lt;code&gt;sap.viz.ui5&lt;/code&gt; package (which were always marked as &lt;i&gt;experimental&lt;/i&gt;) have been deprecated since 1.32.0. 
+They are no longer actively developed and won't receive new features or improvements, only important bug fixes. They will only remain in the 
+SAPUI5 distribution for backward compatibility. 
+
+&lt;b&gt;SAP strongly recommends that existing consumers of those controls migrate to the new {@link sap.viz.ui5.controls.VizFrame VizFrame} 
+control to benefit from new charting enhancements and timely support. &lt;/b&gt;
+
+&lt;b&gt;Note&lt;/b&gt;: As the feature set, design and API usage of VizFrame might differ from the old chart controls, make sure you evaluate it thoroughly before migration.</deprecation>
+    <baseType>sap.viz/ui5/core/BaseStructuredType</baseType>
+    <properties>
+        <property name="supportedEventNames" type="sap.ui.core/string[]" defaultValue="[mouseup,mousedown,mousemove,mouseout,mouseover,touchstart]">
+            <documentation>Set supported event names</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="enableMouseMove" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>Set whether mouse move is enabled</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="enableMouseOver" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>Set whether mouse over is enabled</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="enableMouseOut" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>Set whether mouse out is enabled</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="supportLassoEvent" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>Set whether support lasso event is enabled</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="holdSelection" type="sap.ui.core/boolean" defaultValue="false">
+            <documentation>Set whether hold selection is enabled</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="preserveSelectionWhenDragging" type="sap.ui.core/boolean" defaultValue="false">
+            <documentation>Set whether preserve selection when dragging is enabled</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="decorations" type="sap.ui.core/any">
+            <documentation>Set decorations relating to interaction. Each item 
+                that is an object of {name: 'decoration name', fn: 'decoration callback function'} is a decoration. 
+                Currently two decorations are supported: showDetail and hideDetail. 
+                These two decorations can be used to create a user-defined tooltip. 
+                    
+If these 2 decorations are used, the default tooltip is not used, 
+                and the user should implement a custom tooltip. 
+                The showDetail decoration is called when the tooltip is shown, 
+                and the hideDetail decoration is called when the tooltip is hidden.
+                    
+The arguments of showDetail are one object of {mode: 'tooltip mode', 
+                data: 'data of hovering selected data point', position: 'mouse position', 
+                container: 'chart container dom element', selectedNumber: 'number of selected data points'}. 
+                'tooltip mode' is either 'infoMode' or 'actionMode'. Hovering over an unselected data point displays the infoMode tooltip, 
+                while hovering over a selected data point displays the actionMode tooltip.
+                'data' is an array of dimensions and measures, where each item is an object of 
+                {name: 'dimension name or measure name', value: 'dimension member or measure value',
+                type: 'literal string of dimension or measure'}. For instance, 
+                {name: 'Country', value: 'China', type: 'dimension'}, or 
+                {name: 'Profit', value: 159, type: 'measure'}.
+                    
+The arguments of hideDetail are a string representing tooltip mode, 
+                i.e. what kind of tooltip should be hidden.</documentation>
+        </property>
+        <property name="triggers" type="sap.ui.core/any">
+            <documentation>Set triggers for behavior decration.</documentation>
+            <deprecation since="1.20">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="handlers" type="sap.ui.core/any">
+            <documentation>Set handlers for behavior decration.</documentation>
+            <deprecation since="1.20">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+    </properties>
+    <aggregations>
+        <aggregation name="selectability" type="sap.viz/ui5/types/controller/Interaction_selectability" cardinality="0..1">
+            <documentation>Settings for selectability</documentation>
+        </aggregation>
+        <aggregation name="pan" type="sap.viz/ui5/types/controller/Interaction_pan" cardinality="0..1">
+            <documentation>add documentation for aggregation pan</documentation>
+            <deprecation since="1.19">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </aggregation>
+    </aggregations>
+</control>

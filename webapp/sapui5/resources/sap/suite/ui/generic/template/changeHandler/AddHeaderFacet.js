@@ -1,0 +1,7 @@
+/*!
+ * SAP UI development toolkit for HTML5 (SAPUI5)
+
+		(c) Copyright 2009-2015 SAP SE. All rights reserved
+	
+ */
+sap.ui.define(["jquery.sap.global","sap/suite/ui/generic/template/changeHandler/util/ChangeHandlerUtils","sap/suite/ui/generic/template/changeHandler/generic/AddElement","sap/suite/ui/generic/template/changeHandler/util/AnnotationChangeUtilsV2"],function(q,U,A,a){"use strict";var b={};var H="com.sap.vocabularies.UI.v1.HeaderFacets";var D="com.sap.vocabularies.UI.v1.DataField";var F="com.sap.vocabularies.UI.v1.FieldGroupType";var R="com.sap.vocabularies.UI.v1.ReferenceFacet";b.applyChange=function(c,C,p){};b.completeChangeContent=function(c,s,p){var h=p.modifier.bySelector(s.parentId,p.appComponent);var m=U.getMetaModel(s,p);var e=U.getODataEntitySet(U.getComponent(h)).entityType;var E=m.getODataEntityType(e);var f=U.createFieldGroupTerm(E);var o={};o[f]={"Data":[{"Label":{"String":"New Field"},"Value":{"Path":""},"RecordType":D}],"RecordType":F};var n={"Label":{"String":"New Header Facet"},"Target":{"AnnotationPath":"@"+f},"RecordType":R};var d=function(h,g){var i=[],u,j;i=JSON.parse(JSON.stringify(g));var k=s.index-1;u=U.getUIHeaderFacets(h);j=U.getHeaderFacetIndex(u[k],g,u,k);g.splice(j+1,0,n);var C={customChanges:[]};var l=a.createCustomAnnotationTermChange(e,g,i,H);var r=a.createCustomAnnotationTermChange(e,o[f],{},f);C.customChanges.push(l);C.customChanges.push(r);q.extend(true,c.getContent(),C);};s.custom={};s.custom.annotation=H;s.custom.fnPerformSpecificAddAction=d;A.completeChangeContent(c,s,p);};return b;},true);

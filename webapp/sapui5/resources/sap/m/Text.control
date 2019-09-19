@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Text</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The &lt;code&gt;Text&lt;/code&gt; control can be used for embedding longer text paragraphs,
+that need text wrapping, into your app.
+If the configured text value contains HTML code or script tags, those will be
+escaped.
+
+As of version 1.60, you can hyphenate the text with the use of the
+&lt;code&gt;wrappingType&lt;/code&gt; property. For more information, see
+{@link topic:6322164936f047de941ec522b95d7b70 Text Controls Hyphenation}.
+
+&lt;b&gt;Note:&lt;/b&gt; Line breaks will always be visualized except when the
+&lt;code&gt;wrapping&lt;/code&gt; property is set to &lt;code&gt;false&lt;/code&gt;. In addition, tabs and
+whitespace can be preserved by setting the &lt;code&gt;renderWhitespace&lt;/code&gt; property
+to &lt;code&gt;true&lt;/code&gt;.</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="text" type="sap.ui.core/string" defaultValue="" bindable="bindable">
+            <documentation>Determines the text to be displayed.</documentation>
+        </property>
+        <property name="textDirection" type="sap.ui.core/TextDirection" defaultValue="Inherit" group="Appearance">
+            <documentation>Available options for the text direction are LTR and RTL. By default the control inherits the text direction from its parent control.</documentation>
+        </property>
+        <property name="wrapping" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>Enables text wrapping.</documentation>
+        </property>
+        <property name="wrappingType" type="sap.m/WrappingType" defaultValue="Normal" group="Appearance" since="1.60">
+            <documentation>Defines the type of text wrapping to be used (hyphenated or normal).
+
+&lt;b&gt;Note:&lt;/b&gt; This property takes effect only when the &lt;code&gt;wrapping&lt;/code&gt;
+property is set to &lt;code&gt;true&lt;/code&gt;.</documentation>
+        </property>
+        <property name="textAlign" type="sap.ui.core/TextAlign" defaultValue="Begin" group="Appearance">
+            <documentation>Sets the horizontal alignment of the text.</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" group="Dimension">
+            <documentation>Sets the width of the Text control. By default, the Text control uses the full width available. Set this property to restrict the width to a custom value.</documentation>
+        </property>
+        <property name="maxLines" type="sap.ui.core/int" group="Appearance" since="1.13.2">
+            <documentation>Limits the number of lines for wrapping texts.
+
+&lt;b&gt;Note&lt;/b&gt;: The multi-line overflow indicator depends on the browser line clamping support. For such browsers, this will be shown as ellipsis, for the other browsers the overflow will just be hidden.</documentation>
+        </property>
+        <property name="renderWhitespace" type="sap.ui.core/boolean" defaultValue="false" group="Appearance" since="1.51">
+            <documentation>Specifies how whitespace and tabs inside the control are handled. If true, whitespace will be preserved by the browser.
+Depending on wrapping property text will either only wrap on line breaks or wrap when necessary, and on line breaks.</documentation>
+        </property>
+    </properties>
+</control>

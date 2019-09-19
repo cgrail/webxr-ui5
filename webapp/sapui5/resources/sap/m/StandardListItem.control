@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>StandardListItem</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>&lt;code&gt;sap.m.StandardListItem&lt;/code&gt; is a list item providing the most common use cases, e.g. image, title and description.</documentation>
+    <baseType>sap.m/ListItemBase</baseType>
+    <properties>
+        <property name="title" type="sap.ui.core/string" group="Misc">
+            <documentation>Defines the title of the list item.</documentation>
+        </property>
+        <property name="description" type="sap.ui.core/string" group="Misc">
+            <documentation>Defines the additional information for the title.
+&lt;b&gt;Note:&lt;/b&gt; This is only visible when the &lt;code&gt;title&lt;/code&gt; property is not empty.</documentation>
+        </property>
+        <property name="icon" type="sap.ui.core/URI" group="Misc">
+            <documentation>Defines the list item icon.</documentation>
+        </property>
+        <property name="iconInset" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>Defines the indentation of the icon. If set to &lt;code&gt;false&lt;/code&gt;, the icon will not be shown as embedded. Instead it will take the full height of the list item.</documentation>
+        </property>
+        <property name="iconDensityAware" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>By default, one or more requests are sent to get the density perfect version of the icon if the given version of the icon doesn't exist on the server.
+&lt;b&gt;Note:&lt;/b&gt; If bandwidth is a key factor for the application, set this value to &lt;code&gt;false&lt;/code&gt;.</documentation>
+        </property>
+        <property name="activeIcon" type="sap.ui.core/URI" group="Misc">
+            <documentation>Defines the icon that is shown while the list item is pressed.</documentation>
+        </property>
+        <property name="info" type="sap.ui.core/string" group="Misc">
+            <documentation>Defines an additional information text.</documentation>
+        </property>
+        <property name="infoState" type="sap.ui.core/ValueState" defaultValue="None" group="Misc">
+            <documentation>Defines the state of the information text, e.g. &lt;code&gt;Error&lt;/code&gt;, &lt;code&gt;Warning&lt;/code&gt;, &lt;code&gt;Success&lt;/code&gt;.</documentation>
+        </property>
+        <property name="adaptTitleSize" type="sap.ui.core/boolean" defaultValue="true" group="Appearance" since="1.16.3">
+            <documentation>By default, the title size adapts to the available space and gets bigger if the description is empty. If you have list items with and without descriptions, this results in titles with different sizes. In this case, it can be better to switch the size adaption off by setting this property to &lt;code&gt;false&lt;/code&gt;.</documentation>
+        </property>
+        <property name="titleTextDirection" type="sap.ui.core/TextDirection" defaultValue="Inherit" group="Appearance" since="1.28.0">
+            <documentation>Defines the &lt;code&gt;title&lt;/code&gt; text directionality with enumerated options. By default, the control inherits text direction from the DOM.</documentation>
+        </property>
+        <property name="infoTextDirection" type="sap.ui.core/TextDirection" defaultValue="Inherit" group="Appearance" since="1.28.0">
+            <documentation>Defines the &lt;code&gt;info&lt;/code&gt; directionality with enumerated options. By default, the control inherits text direction from the DOM.</documentation>
+        </property>
+    </properties>
+</control>

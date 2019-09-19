@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ObjectPageDynamicHeaderContent</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Header content for the dynamic header of the {@link sap.uxap.ObjectPageLayout}.
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+
+The &lt;code&gt;ObjectPageDynamicHeaderContent&lt;/code&gt; represents the movable part of
+the &lt;code&gt;ObjectPageLayout&lt;/code&gt;'s dynamic header. It can contain any control and
+scrolls along with the content of the page until it disappears (collapsed header).
+When scrolled back to the top it becomes visible again (expanded header).
+It contains all the additional information of the object.
+
+Documentation links:
+&lt;ul&gt;
+&lt;li&gt;{@link topic:d2ef0099542d44dc868719d908e576d0 Object Page Headers}&lt;/li&gt;
+&lt;li&gt;{@link topic:6e340c119ddd4c778b315f65a0432420 Object Page Dynamic Header}&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+    <since>1.52</since>
+    <baseType>sap.f/DynamicPageHeader</baseType>
+</control>

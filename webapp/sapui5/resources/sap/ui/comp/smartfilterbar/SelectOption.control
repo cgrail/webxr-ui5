@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartfilterbar/SelectOption</name>
+    <derived/>
+    <documentation>A Select Option can be used to specify default filter values for a control configuration of the SmartFilterBar.</documentation>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="sign" type="sap.ui.comp/smartfilterbar/SelectOptionSign" defaultValue="I" group="Misc">
+            <documentation>The sign for a Select Option. Possible values are I for include or E for exclude.</documentation>
+        </property>
+        <property name="operator" type="any" defaultValue="EQ" group="Misc">
+            <documentation>The operator for a select option. The default value is EQ "for equals".</documentation>
+        </property>
+        <property name="low" type="sap.ui.core/string" group="Misc">
+            <documentation>The low value for a select option.</documentation>
+        </property>
+        <property name="high" type="sap.ui.core/string" group="Misc">
+            <documentation>The high value for a select option. The high value is only required for a few operators, e.g. BT (between).</documentation>
+        </property>
+    </properties>
+</control>

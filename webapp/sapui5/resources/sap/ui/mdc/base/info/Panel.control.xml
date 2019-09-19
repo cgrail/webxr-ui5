@@ -1,0 +1,57 @@
+<core:FragmentDefinition xmlns:mdcbaseinfo="sap.ui.mdc.base.info" xmlns:m="sap.m" xmlns:core="sap.ui.core"
+						 xmlns:l="sap.ui.layout">
+
+	<l:VerticalLayout width="100%" class="mdcbaseinfoPanel">
+
+		<!-- Determination of 'visible' property of PanelListItem rely on some prerequisites:                           -->
+		<!-- If link personalization is not enabled we have to show all links independent whether they are valid or not -->
+		<!-- The item without valid <code>key</code> property should always be shown.                                   -->
+		<m:VBox id="idSectionHeader" fitContainer="false"
+				class="mdcbaseinfoPanelTitleH1 mdcbaseinfoPanelHeader mdcbaseinfoPanelThumbnail"
+				items="{path:'$sapuimdcbaseinfoPanel>/runtimeItems',
+						templateShareable:false,
+						filters:[{path:'isMain', operator:'EQ', value1:true}]
+				}" visible="{= ${$sapuimdcbaseinfoPanel>/countMainItems} > 0}">
+
+			<mdcbaseinfo:PanelListItem key="{$sapuimdcbaseinfoPanel>id}"
+									   visible="{$sapuimdcbaseinfoPanel>visible}"
+									   text="{$sapuimdcbaseinfoPanel>text}"
+									   description="{$sapuimdcbaseinfoPanel>description}"
+									   href="{$sapuimdcbaseinfoPanel>href}"
+									   icon="{$sapuimdcbaseinfoPanel>icon}"
+									   target="{$sapuimdcbaseinfoPanel>target}"
+			/>
+		</m:VBox>
+
+		<m:VBox id="idSectionExtraContent" fitContainer="false"/>
+
+		<m:VBox fitContainer="false" class="mdcbaseinfoPanelSeparator"
+				visible="{= ${$sapuimdcbaseinfoPanel>/countNonMainItemsWithIcon} > 0 || ${$sapuimdcbaseinfoPanel>/countNonMainItemsWithoutIcon} > 0}"/>
+
+		<!-- Determination of 'visible' property of PanelListItem rely on some prerequisites:                           -->
+		<!-- If link personalization is not enabled we have to show all links independent whether they are valid or not -->
+		<!-- The item without valid <code>key</code> property should always be shown.                                   -->
+		<m:VBox id="idSectionLinks" fitContainer="false"
+				items="{
+					path:'$sapuimdcbaseinfoPanel>/runtimeItems',
+					templateShareable:false,
+					filters:[{path:'isMain', operator:'NE', value1:true}]
+				}">
+			<mdcbaseinfo:PanelListItem key="{$sapuimdcbaseinfoPanel>id}"
+									   visible="{$sapuimdcbaseinfoPanel>visible}"
+									   text="{$sapuimdcbaseinfoPanel>text}"
+									   description="{$sapuimdcbaseinfoPanel>description}"
+									   href="{$sapuimdcbaseinfoPanel>href}"
+									   icon="{$sapuimdcbaseinfoPanel>icon}"
+									   target="{$sapuimdcbaseinfoPanel>target}"
+			/>
+		</m:VBox>
+
+		<m:HBox justifyContent="End" class="mdcbaseinfoPanelPersonalizationButton"
+				visible="{path:'$this>enablePersonalization'}">
+			<m:Button id="idPersonalizationButton" type="Transparent" text="{$this.i18n>info.POPOVER_DEFINE_LINKS}"
+					  press="onPressLinkPersonalization"/>
+		</m:HBox>
+
+	</l:VerticalLayout>
+</core:FragmentDefinition>

@@ -1,0 +1,1 @@
+(function(q){var M="The file jquery-ui-core.js has been moved to sap.ui.thirdparty.jqueryui! Please update the dependencies accordingly.";if(q&&q.sap&&q.sap.require){q.sap.require("sap.ui.thirdparty.jqueryui.jquery-ui-core");q.sap.log.warning(M);}else{throw new Error(M);}})(window.jQuery);

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>variants/VariantManagement</name>
+    <derived/>
+    <documentation>The &lt;code&gt;VariantManagement&lt;/code&gt; control can be used to manage variants.
+       &lt;h3&gt;Usage&lt;/h3&gt;
+       You can use this control in most controls that are enabled for &lt;i&gt;UI adaptation at runtime&lt;/i&gt;.</documentation>
+    <since>1.56</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="showExecuteOnSelection" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>Indicates that Execute on Selection is visible in the Save Variant and the Manage Variants dialogs.</documentation>
+        </property>
+        <property name="showSetAsDefault" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Indicates that set as default is visible in the Save Variant and the Manage Variants dialogs.</documentation>
+        </property>
+        <property name="manualVariantKey" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>If set to&lt;code&gt;true&lt;/code&gt;, the key for a vendor variant will be added manually.&lt;br&gt;
+&lt;b&gt;Node:&lt;/b&gt;This flag is only used internally in the app variant scenarios.</documentation>
+        </property>
+        <property name="inErrorState" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>Indicates that the control is in error state. If set to &lt;code&gt;true&lt;/code&gt; error message will be displayed whenever the variant is
+opened.</documentation>
+        </property>
+        <property name="editable" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Indicates that the control is in edit state. If set to &lt;code&gt;false&lt;/code&gt; the footer of the views list will be hidden.</documentation>
+        </property>
+        <property name="modelName" type="sap.ui.core/string" group="Misc">
+            <documentation>Determines the name of the model. The binding context will be defined by the current ID.
+&lt;p&gt;
+&lt;b&gt;Note:&lt;/b&gt; In a UI adaptation scenario, this property is not used at all because the model name is &lt;i&gt;$FlexVariants&lt;/i&gt;</documentation>
+        </property>
+        <property name="updateVariantInURL" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>Determines the intention of setting the current variant based on passed information.
+&lt;p&gt;
+&lt;b&gt;Note:&lt;/b&gt; The VariantManagement control does not react in any way to this property.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="save" allowPreventDefault="false">
+            <documentation>This event is fired when the Save Variant dialog is closed with OK for a variant.</documentation>
+            <parameters>
+                <parameter name="name" type="sap.ui.core/string">
+                    <documentation>The variant title</documentation>
+                </parameter>
+                <parameter name="overwrite" type="sap.ui.core/boolean">
+                    <documentation>Indicates if an existing variant is overwritten or if a new variant is created</documentation>
+                </parameter>
+                <parameter name="key" type="sap.ui.core/string">
+                    <documentation>The variant key</documentation>
+                </parameter>
+                <parameter name="execute" type="sap.ui.core/boolean">
+                    <documentation>The Execute on Selection indicator</documentation>
+                </parameter>
+                <parameter name="def" type="sap.ui.core/boolean">
+                    <documentation>The default variant indicator</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="manage" allowPreventDefault="false">
+            <documentation>This event is fired when users apply changes to variants in the Manage Variants dialog.</documentation>
+        </event>
+        <event name="initialized" allowPreventDefault="false">
+            <documentation>This event is fired when the model and context are set.</documentation>
+        </event>
+        <event name="select" allowPreventDefault="false">
+            <documentation>This event is fired when a new variant is selected.</documentation>
+            <parameters>
+                <parameter name="key" type="sap.ui.core/string">
+                    <documentation>The variant key</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <associations>
+        <association name="for" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Contains the controls, for which the variant management is responsible.</documentation>
+        </association>
+    </associations>
+</control>

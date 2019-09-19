@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>GroupAppointmentsMode</name>
+    <derived/>
+    <documentation>Types of display mode for overlapping appointments.</documentation>
+    <since>1.48.0</since>
+    <enumeration>
+        <value name="Collapsed">
+            <documentation>Overlapping appointments are displayed as a collapsed group appointment.</documentation>
+        </value>
+        <value name="Expanded">
+            <documentation>Overlapping appointments are displayed individually (expanded from a group).</documentation>
+        </value>
+    </enumeration>
+</simple-type>

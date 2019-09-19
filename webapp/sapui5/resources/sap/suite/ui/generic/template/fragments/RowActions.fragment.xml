@@ -1,0 +1,46 @@
+<core:FragmentDefinition
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	xmlns="sap.m" xmlns:table="sap.ui.table" xmlns:build="sap.build" xmlns:core="sap.ui.core">
+
+	<template:if test="{= ${path: 'parameter>/settings/routeConfig/', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.isAnalyticalListPageOrListReportTemplate'}}">
+		<template:then>
+			<table:RowAction
+				id="rowActions{= ${parameter>/settings/quickVariantSelectionX} ? ${path: 'tabItem>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getSuffixFromIconTabFilterKey'} : ''}"
+				visible="{= !${_templPriv>/listReport/isLeaf}}">
+				<table:items>
+					<table:RowActionItem
+						type="Navigation"
+						press="._templateEventHandlers.onListNavigate">
+						<template:if
+							test="{parts: [{path: 'parameter>/entitySet'}, {path: 'parameter>/settings/subPages/'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getDisplayNavigationIntent'}">
+							<table:customData>
+								<core:CustomData key="CrossNavigation"
+									value="{parts: [{path: 'parameter>/entitySet'}, {path: 'parameter>/settings/subPages/'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getDisplayNavigationIntent'}" />
+							</table:customData>
+						</template:if>
+					</table:RowActionItem>
+				</table:items>
+			</table:RowAction>
+		</template:then>
+		<template:else>
+			<table:RowAction
+				id="{path: 'facet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}::rowAction{= ${parameter>/settings/quickVariantSelectionX} ? ${path: 'tabItem>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getSuffixFromIconTabFilterKey'} : ''}"
+				visible="{parts: [{path: 'listEntitySet>'}, {path: 'parameter>/settings/subPages/'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.hasSubObjectPage'}">
+				<table:items>
+					<table:RowActionItem
+						type="Navigation"
+						press="._templateEventHandlers.onListNavigate">
+						<template:if
+							test="{parts: [{path: 'listEntitySet>name'}, {path: 'parameter>/settings/subPages/'}, {path: 'facet>Target/AnnotationPath'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getDisplayNavigationIntent'}">
+							<table:customData>
+								<core:CustomData key="CrossNavigation"
+									value="{parts: [{path: 'listEntitySet>name'}, {path: 'parameter>/settings/subPages/'}, {path: 'facet>Target/AnnotationPath'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getDisplayNavigationIntent'}" />
+							</table:customData>
+						</template:if>
+					</table:RowActionItem>
+				</table:items>
+			</table:RowAction>
+		</template:else>
+	</template:if>
+
+</core:FragmentDefinition>

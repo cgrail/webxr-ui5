@@ -1,0 +1,7 @@
+/*!
+ * 
+		SAP UI development toolkit for HTML5 (SAPUI5)
+		(c) Copyright 2009-2015 SAP SE. All rights reserved
+	
+ */
+sap.ui.define(["sap/ui/thirdparty/jquery",'./DateUtils','sap/ui/model/json/JSONModel','sap/ui/model/xml/XMLModel'],function(q,D,J,X){"use strict";var F=function(){throw new Error();};F.filterItems=function($,I,e){var f=function(a,b){var c=$.find("rss>channel>item");if(c.length>0){for(var i=c.length-1;i>=0;i--){var d=q(c[i]);var g=d.find("title");var m=false;for(var j=0;j<a.length;j++){var f=a[j];if(f){if(g.text().toLowerCase().indexOf(f.toLowerCase())!==-1){m=true;break;}}}if(m!==b){d.remove();}}}};if(I&&I.length>0){f(I,true);}if(e&&e.length>0){f(e,false);}};F.getFeeds=function(f,I,e,c,a){var j={items:[]};var r=new J();var b=f.length;var d=0;var C=function(o){var $=q(this.getData());F.filterItems($,I,e);if($.find("rss>channel>item>title").length>0){var g=$.find("rss>channel>item");var s=q($.find("rss>channel>title")).text();var h=q($.find("rss>channel>image>url")).text();for(var i=0;i<g.length;i++){var k=q(g[i]);var l=new Date(k.children("pubDate").text());var m=k.children("image").text();if(m){h=m;}if(!D.isValidDate(l)){l=null;}j.items.push({title:k.children("title").text(),link:k.children("link").text(),description:k.children("description").text(),pubDate:l,source:s,image:h});}}d++;if(d===b){r.setData(j);if(c){c();}}};for(var i=0;i<f.length;i++){var t=new X();t.attachRequestCompleted(C);t.loadData(f[i]);}return r;};return F;},true);

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>BoxesPerRowConfig</name>
+    <derived/>
+    <documentation>A string type that represents how many boxes per row should be displayed for each screen size. The breakpoints are for extra large (XL), large (L), medium (M) and small (S) screen sizes.
+
+&lt;b&gt;Note:&lt;/b&gt; The parameters must be provided in the order &lt;XL L M S&gt;.</documentation>
+    <since>1.61.0</since>
+    <final/>
+    <pattern>([Xx][Ll](?:[1-9]|1[0-2]))? ?([Ll](?:[1-9]|1[0-2]))? ?([Mm](?:[1-9]|1[0-2]))? ?([Ss](?:[1-9]|1[0-2]))?</pattern>
+</simple-type>

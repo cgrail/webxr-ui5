@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>FeedListItemAction</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>An action item of FeedListItem</documentation>
+    <since>1.52.0</since>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="icon" type="sap.ui.core/URI" group="Appearance">
+            <documentation>The icon of the action.</documentation>
+        </property>
+        <property name="text" type="sap.ui.core/string" defaultValue="" group="Misc">
+            <documentation>The text of the item. It is used as a tooltip and for accessibility reasons.</documentation>
+        </property>
+        <property name="key" type="sap.ui.core/string" defaultValue="" group="Misc">
+            <documentation>The key of the item.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="press" allowPreventDefault="false">
+            <documentation>The &lt;code&gt;press&lt;/code&gt; event is fired when the user triggers the corresponding action.</documentation>
+        </event>
+    </events>
+</control>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>BulletMicroChartModeType</name>
+    <derived/>
+    <documentation>Defines if the horizontal bar represents a current value only or if it represents the delta between a current value and a threshold value.</documentation>
+    <since>1.34</since>
+    <enumeration>
+        <value name="Actual">
+            <documentation>Displays the Actual value.</documentation>
+        </value>
+        <value name="Delta">
+            <documentation>Displays delta between the Actual and Threshold values.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

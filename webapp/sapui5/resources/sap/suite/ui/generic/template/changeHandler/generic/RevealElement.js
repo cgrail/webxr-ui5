@@ -1,0 +1,7 @@
+/*!
+ * SAP UI development toolkit for HTML5 (SAPUI5)
+
+		(c) Copyright 2009-2015 SAP SE. All rights reserved
+	
+*/
+sap.ui.define(["jquery.sap.global","sap/suite/ui/generic/template/changeHandler/util/ChangeHandlerUtils","sap/suite/ui/generic/template/changeHandler/util/AnnotationChangeUtilsV2","sap/ui/fl/changeHandler/UnhideControl"],function(q,U,A,a){"use strict";var R={};R.applyChange=function(c,C,p){var e=p.modifier.byId(c.getContent().customChanges[0].revealedElementId);a.applyChange(c,e,p);};R.completeChangeContent=function(c,s,p){var r=s.revealedElementId;var m=U.getMetaModel(s,p);var o=p.modifier.bySelector(r,p.appComponent);var P=o.getParent().getAggregation(o.sParentAggregationName);var b=s.custom.fnGetRelevantElement?s.custom.fnGetRelevantElement(o):o;var e="";var E={};var d=[];var f=[];var g="";var t=U.getTemplatingInfo(b);if(t&&t.target&&t.annotation){e=t.target;E=m.getODataEntityType(e);g=t.annotation;d=E[g];}else{e=U.getEntityType(b);E=m.getODataEntityType(e);g=s.custom.annotation;d=E[g];}f=d.slice();var i,I=-1;for(i=0;i<P.length;i++){if(P[i].getId()&&P[i].getId()===r){I=i;break;}}var h=-1;if(I+1<P.length){I++;h=s.custom.fnGetAnnotationIndex(P[I],d);}else{h=d.length;}if(h<0){h=0;}if(s.custom.oRevealedAnnotationTerm){d.splice(h,0,s.custom.oRevealedAnnotationTerm);a.completeChangeContent(c,s,p);var C=A.createCustomAnnotationTermChange(e,d,f,g);C.revealedElementId=r;var j=A.createCustomChanges(C);q.extend(true,c.getContent(),j);}U.isReveal=true;};return R;},true);

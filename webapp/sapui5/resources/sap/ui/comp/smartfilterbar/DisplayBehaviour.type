@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartfilterbar/DisplayBehaviour</name>
+    <derived/>
+    <documentation>The different options to define display behavior for fields in the SmartFilter control.</documentation>
+    <enumeration>
+        <value name="auto">
+            <documentation>Shows values based on metadata.</documentation>
+        </value>
+        <value name="descriptionOnly">
+            <documentation>Shows only the description for values.</documentation>
+        </value>
+        <value name="descriptionAndId">
+            <documentation>Shows description and then an id in values.</documentation>
+        </value>
+        <value name="idAndDescription">
+            <documentation>Shows id and then a description in values.</documentation>
+        </value>
+        <value name="idOnly">
+            <documentation>Shows only the id for values.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

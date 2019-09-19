@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>RadialMicroChart</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Displays a ring chart highlighting a current status. The status is displayed with a semantically colored radial bar and a percentage value.
+&lt;br&gt;Note: You can assign a custom tooltip for this microchart. The custom tooltip can be set using expression binding. When no custom tooltip is defined, the tooltip is generated automatically based on the logic described in {@link sap.ui.core.Element#getTooltip_AsString}. For a combination of a generated and a custom tooltip, use &lt;code&gt;((AltText))&lt;/code&gt; inside of the tooltip string.</documentation>
+    <since>1.36.0</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="total" type="sap.ui.core/float" group="Data">
+            <documentation>The total value. This is taken as 360 degrees value on the chart.</documentation>
+        </property>
+        <property name="fraction" type="sap.ui.core/float" group="Data">
+            <documentation>The fraction of the total value that is displayed.</documentation>
+        </property>
+        <property name="percentage" type="sap.ui.core/float" group="Data">
+            <documentation>The percentage that is displayed.
+When a percentage is set, properties total and fraction are not considered.</documentation>
+        </property>
+        <property name="valueColor" type="sap.m/ValueCSSColor" defaultValue="Neutral" group="Appearance">
+            <documentation>The color shown in the completed path.</documentation>
+        </property>
+        <property name="size" type="sap.m/Size" defaultValue="Auto" group="Misc" since="1.44.0">
+            <documentation>The size of the chart. If it is not set, the Auto size is used.</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" group="Misc" since="1.62.0">
+            <documentation>The width of the chart. Overrides the width specified in the &lt;code&gt;size&lt;/code&gt; property.</documentation>
+        </property>
+        <property name="height" type="sap.ui.core/CSSSize" group="Misc" since="1.62.0">
+            <documentation>The height of the chart. Overrides the height specified in the &lt;code&gt;size&lt;/code&gt; property.</documentation>
+        </property>
+        <property name="alignContent" type="sap.suite.ui.microchart/HorizontalAlignmentType" defaultValue="Left" group="Misc" since="1.62.0">
+            <documentation>The alignment of the content. If it is not set, the &lt;code&gt;Left&lt;/code&gt; alignment type is used.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="press" allowPreventDefault="false">
+            <documentation>The event is triggered when the chart is pressed.</documentation>
+        </event>
+    </events>
+    <associations>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n" since="1.60.0">
+            <documentation>Controls or IDs that label this control. Can be used by screen reader software.</documentation>
+        </association>
+    </associations>
+</control>

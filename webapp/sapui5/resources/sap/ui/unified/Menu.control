@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Menu</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A menu is an interactive element which provides a choice of different actions to the user. These actions (items) can also be organized in submenus.
+Like other dialog-like controls, the menu is not rendered within the control hierarchy. Instead it can be opened at a specified position via a function call.</documentation>
+    <since>1.21.0</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="enabled" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>When a menu is disabled none of its items can be selected by the user.
+The enabled property of an item (@link sap.ui.unified.MenuItemBase#getEnabled) has no effect when the menu of the item is disabled.</documentation>
+        </property>
+        <property name="ariaDescription" type="sap.ui.core/string" group="Accessibility">
+            <documentation>Accessible label / description of the menu for assistive technologies like screenreaders.</documentation>
+            <deprecation since="1.27.0">replaced by &lt;code&gt;ariaLabelledBy&lt;/code&gt; association</deprecation>
+        </property>
+        <property name="maxVisibleItems" type="sap.ui.core/int" defaultValue="0" group="Behavior">
+            <documentation>The maximum number of items which are displayed before an overflow mechanism takes effect.
+A value smaller than 1 means an infinite number of visible items.
+The overall height of the menu is limited by the height of the screen. If the maximum possible height is reached, an
+overflow takes effect, even if the maximum number of visible items is not yet reached.</documentation>
+        </property>
+        <property name="pageSize" type="sap.ui.core/int" defaultValue="5" group="Behavior" since="1.25.0">
+            <documentation>The keyboard can be used to navigate through the items of a menu. Beside the arrow keys for single steps and the &lt;i&gt;Home&lt;/i&gt; / &lt;i&gt;End&lt;/i&gt; keys for jumping
+to the first / last item, the &lt;i&gt;Page Up&lt;/i&gt; / &lt;i&gt;Page Down&lt;/i&gt; keys can be used to jump an arbitrary number of items up or down. This number can be defined via the &lt;code&gt;pageSize&lt;/code&gt; property.
+For values smaller than 1, paging behaves in a similar way to when using the &lt;i&gt;Home&lt;/i&gt; / &lt;i&gt;End&lt;/i&gt; keys. If the value equals 1, the paging behavior is similar to that of the arrow keys.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="itemSelect" allowPreventDefault="false">
+            <documentation>Fired on the root menu of a menu hierarchy whenever a user selects an item within the menu or within one of its direct or indirect submenus.
+&lt;b&gt;Note:&lt;/b&gt; There is also a select event available for each single menu item. This event and the event of the menu items are redundant.</documentation>
+            <parameters>
+                <parameter name="item" type="sap.ui.unified/MenuItemBase">
+                    <documentation>The action (item) which was selected by the user.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations default="items">
+        <aggregation name="items" type="sap.ui.unified/MenuItemBase" cardinality="0..n">
+            <documentation>The available actions to be displayed as items of the menu.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n" since="1.26.3">
+            <documentation>Reference to accessible labels (ids of existing DOM elements or controls) for assistive technologies like screenreaders.</documentation>
+        </association>
+    </associations>
+    <methods>
+        <method name="open" type="sap.ui.core/void">
+            <documentation>Opens the menu at the specified position.
+
+The position of the menu is defined relative to an element in the visible DOM by specifying
+the docking location of the menu and of the related element.
+
+See {@link sap.ui.core.Popup#open Popup#open} for further details about popup positioning.</documentation>
+            <parameters>
+                <parameter name="withKeyboard" type="sap.ui.core/boolean">
+                    <documentation>Indicates whether or not the first item shall be highlighted when the menu is opened (keyboard case)</documentation>
+                </parameter>
+                <parameter name="openerRef" type="sap.ui.core/Element">
+                    <documentation>The element which will get the focus back again after the menu was closed</documentation>
+                </parameter>
+                <parameter name="my" type="sap.ui.core/Dock">
+                    <documentation>The reference docking location of the menu for positioning the menu on the screen</documentation>
+                </parameter>
+                <parameter name="at" type="sap.ui.core/Dock">
+                    <documentation>The 'of' element's reference docking location for positioning the menu on the screen</documentation>
+                </parameter>
+                <parameter name="of" type="sap.ui.core/Element">
+                    <documentation>The menu is positioned relatively to this element based on the given dock locations</documentation>
+                </parameter>
+                <parameter name="offset" type="sap.ui.core/string">
+                    <documentation>The offset relative to the docking point, specified as a string with space-separated pixel values (e.g. "10 0" to move the popup 10 pixels to the right)</documentation>
+                </parameter>
+                <parameter name="collision" type="sap.ui.core/Collision">
+                    <documentation>The collision defines how the position of the menu should be adjusted in case it overflows the window in some direction</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="close" type="sap.ui.core/void">
+            <documentation>Closes the menu.</documentation>
+        </method>
+    </methods>
+</control>

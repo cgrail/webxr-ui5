@@ -1,0 +1,39 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:build="sap.build">
+	<QuickView class="sapSmartTemplatesObjectPageContactsQuickView" placement="Auto">
+		<QuickViewPage icon="{= ${contact>/photo} ? ${contact>/photo} : 'sap-icon://person-placeholder'}"
+			title="{contact>/fn}"
+			description="{contact>/role}">
+			<QuickViewGroup>
+				<QuickViewGroupElement label="{i18n>CONTACT_JOB_TITLE}" type="text"
+					value="{contact>/title}"
+					visible="{= !!${contact>/title}}"
+					build:metadata="#pattern:ContactList;prop:value:JobTitle"/>
+
+				<QuickViewGroupElement label="{i18n>CONTACT_DEPARTMENT}" type="text"
+					value="{contact>/org}"
+					visible="{= !!${contact>/org}}"
+					build:metadata="#pattern:ContactList;prop:value:Department"/>
+
+				<QuickViewGroupElement label="{i18n>CONTACT_EMAIL}" type="email"
+					value="{contact>/email}"
+					visible="{= !!${contact>/email}}"
+					build:metadata="#pattern:ContactList;prop:value:Email:{contact>email/0/address};set:contact>email/0/type/EnumMember:work"/>
+
+				<QuickViewGroupElement label="{i18n>CONTACT_PHONE}" type="phone"
+					value="{contact>/work}"
+					visible="{= !!${contact>/work}}"
+					build:metadata="#pattern:ContactList;prop:value:Phone:{contact>tel/0/uri};set:contact>tel/0/type/EnumMember:work"/>
+
+				<QuickViewGroupElement  label="{i18n>CONTACT_MOBILE}" type="{= (${device>/system/phone} || ${device>/system/tablet})  ? 'mobile'  : 'phone' }"
+					value="{contact>/cell}"
+					visible="{= !!${contact>/cell}}"
+					build:metadata="#pattern:ContactList;prop:value:Mobile:{contact>tel/1/uri};set:contact>tel/1/type/EnumMember:cell"/>
+
+				<QuickViewGroupElement label="{i18n>CONTACT_FAX}" type="text"
+					value="{contact>/fax}"
+					visible="{= !!${contact>/fax}}"
+					build:metadata="#pattern:ContactList;prop:value:Fax:{contact>tel/2/uri};set:contact>tel/2/type/EnumMember:fax"/>
+			</QuickViewGroup>
+		</QuickViewPage>
+	</QuickView>
+</core:FragmentDefinition>

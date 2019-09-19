@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>StepInputStepModeType</name>
+    <derived/>
+    <documentation>Available step modes for {@link sap.m.StepInput}.</documentation>
+    <since>1.54</since>
+    <enumeration>
+        <value name="AdditionAndSubtraction">
+            <documentation>Choosing increase/decrease button will add/subtract the &lt;code&gt;step&lt;/code&gt; value
+to/from the current value. For example, if &lt;code&gt;step&lt;/code&gt; is 5, current
+&lt;code&gt;value&lt;/code&gt; is 17 and increase button is chosen, the result will be 22 (5+17).
+
+&lt;b&gt;Note:&lt;/b&gt; Using keyboard PageUp/PageDown will add/subtract the &lt;code&gt;step&lt;/code&gt;
+multiplied by the &lt;code&gt;largerStep&lt;/code&gt; values to/from the current
+&lt;code&gt;value&lt;/code&gt;. For example, if &lt;code&gt;step&lt;/code&gt; is 5, &lt;code&gt;largerStep&lt;/code&gt;
+is 3, current &lt;code&gt;value&lt;/code&gt; is 17 and PageUp is chosen, the result would be 32 (5*3+17).
+
+For more information, see {@link sap.m.StepInput}'s &lt;code&gt;step&lt;/code&gt;,
+&lt;code&gt;largerStep&lt;/code&gt; and &lt;code&gt;stepMode&lt;/code&gt; properties.</documentation>
+        </value>
+        <value name="Multiple">
+            <documentation>Pressing increase/decrease button will increase/decrease the current
+&lt;code&gt;value&lt;/code&gt; to the closest number that is divisible by the
+&lt;code&gt;step&lt;/code&gt;.
+
+For example, if &lt;code&gt;step&lt;/code&gt; is 5, current &lt;code&gt;value&lt;/code&gt; is 17 and
+increase button is chosen, the result will be 20 as it is the closest larger number
+that is divisible by 5.
+
+&lt;b&gt;Note:&lt;/b&gt; Using keyboard PageUp/PageDown will increase/decrease the current
+&lt;code&gt;value&lt;/code&gt; to the closest number that is divisible by the multiplication of
+the &lt;code&gt;step&lt;/code&gt; and the &lt;code&gt;largerStep&lt;/code&gt; values. For example, if
+&lt;code&gt;step&lt;/code&gt; is 5, &lt;code&gt;largerStep&lt;/code&gt; is 3, current &lt;code&gt;value&lt;/code&gt; is
+17 and PageUp is chosen, the result would be 30 as it is the closest larger number
+that is divisible by 15.
+
+The logic above will work only if both &lt;code&gt;step&lt;/code&gt; and
+&lt;code&gt;largerStep&lt;/code&gt; are integers.
+
+For more information, see {@link sap.m.StepInput}'s &lt;code&gt;step&lt;/code&gt;,
+&lt;code&gt;largerStep&lt;/code&gt; and &lt;code&gt;stepMode&lt;/code&gt; properties.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Button</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Enables users to trigger actions.
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+
+The user triggers an action by clicking or tapping the &lt;code&gt;Button&lt;/code&gt; or by pressing
+certain keyboard keys, such as Enter.
+
+&lt;h3&gt;Usage&lt;/h3&gt;
+
+For the &lt;code&gt;Button&lt;/code&gt; UI, you can define text, icon, or both. You can also specify
+whether the text or the icon is displayed first.
+
+You can choose from a set of predefined {@link sap.m.ButtonType ButtonTypes} that offer
+different styling to correspond to the triggered action.
+
+You can set the &lt;code&gt;Button&lt;/code&gt; as enabled or disabled. An enabled &lt;code&gt;Button&lt;/code&gt; can be
+pressed by clicking or tapping it and it changes its style to provide visual feedback to the user
+that it is pressed or hovered over with the mouse cursor. A disabled &lt;code&gt;Button&lt;/code&gt; appears
+inactive and cannot be pressed.</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="text" type="sap.ui.core/string" group="Misc">
+            <documentation>Determines the text of the &lt;code&gt;Button&lt;/code&gt;.</documentation>
+        </property>
+        <property name="type" type="sap.m/ButtonType" defaultValue="Default" group="Appearance">
+            <documentation>Defines the &lt;code&gt;Button&lt;/code&gt; type.</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" group="Misc">
+            <documentation>Defines the &lt;code&gt;Button&lt;/code&gt; width.</documentation>
+        </property>
+        <property name="enabled" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Determines whether the &lt;code&gt;Button&lt;/code&gt; is enabled (default is set to &lt;code&gt;true&lt;/code&gt;).
+A disabled &lt;code&gt;Button&lt;/code&gt; has different colors depending on the {@link sap.m.ButtonType ButtonType}.</documentation>
+        </property>
+        <property name="icon" type="sap.ui.core/URI" group="Appearance">
+            <documentation>Defines the icon to be displayed as graphical element within the &lt;code&gt;Button&lt;/code&gt;.
+It can be an image or an icon from the icon font.</documentation>
+        </property>
+        <property name="iconFirst" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>Determines whether the icon is displayed before the text.</documentation>
+        </property>
+        <property name="activeIcon" type="sap.ui.core/URI" group="Misc">
+            <documentation>The source property of an alternative icon for the active (depressed) state of the button.
+Both active and default icon properties should be defined and have the same type: image or icon font.
+If the &lt;code&gt;icon&lt;/code&gt; property is not set or has a different type, the active icon is not displayed.</documentation>
+        </property>
+        <property name="iconDensityAware" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>By default, this is set to true but then one or more requests are sent trying to get the density perfect version of image if this version of image doesn't exist on the server.
+
+If only one version of image is provided, set this value to false to avoid the attempt of fetching density perfect image.</documentation>
+        </property>
+        <property name="textDirection" type="sap.ui.core/TextDirection" defaultValue="Inherit" group="Appearance" since="1.28.0">
+            <documentation>This property specifies the element's text directionality with enumerated options. By default, the control inherits text direction from the DOM.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="tap" allowPreventDefault="false">
+            <documentation>Fired when the user taps the control.</documentation>
+            <deprecation since="1.20">replaced by &lt;code&gt;press&lt;/code&gt; event</deprecation>
+        </event>
+        <event name="press" allowPreventDefault="false">
+            <documentation>Fired when the user clicks or taps on the control.</documentation>
+        </event>
+    </events>
+    <associations>
+        <association name="ariaDescribedBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / ids which describe this control (see WAI-ARIA attribute aria-describedby).</documentation>
+        </association>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / ids which label this control (see WAI-ARIA attribute aria-labelledby).</documentation>
+        </association>
+    </associations>
+</control>

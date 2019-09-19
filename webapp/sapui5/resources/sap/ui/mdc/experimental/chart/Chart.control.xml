@@ -1,0 +1,14 @@
+<core:FragmentDefinition
+		xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+		xmlns="sap.m"
+		xmlns:l="sap.ui.layout"
+		xmlns:core="sap.ui.core"
+		xmlns:chart="sap.chart"
+		xmlns:chartData="sap.chart.data"
+		xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<l:VerticalLayout id="innerVLayout">
+		<chart:Chart id="innerChart">
+
+		</chart:Chart>
+	</l:VerticalLayout>
+</core:FragmentDefinition>

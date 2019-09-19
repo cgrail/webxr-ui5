@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>dnd/DropLayout</name>
+    <derived/>
+    <documentation>Configuration options for the layout of the droppable controls.</documentation>
+    <since>1.52.0</since>
+    <enumeration>
+        <value name="Default">
+            <documentation>Default {@link sap.ui.core.Element.extend layout} definition of the aggregations.</documentation>
+        </value>
+        <value name="Vertical">
+            <documentation>Droppable controls are arranged vertically.</documentation>
+        </value>
+        <value name="Horizontal">
+            <documentation>Droppable controls are arranged horizontally.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

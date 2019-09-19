@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>AnalyticalColumn</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>This column adds additional properties to the table column which are needed for the analytical binding and table</documentation>
+    <developmentState state="experimental" since="1.21">The AnalyticalColumn will be productized soon. Some attributes will be added to Column.</developmentState>
+    <baseType>sap.ui.table/Column</baseType>
+    <properties>
+        <property name="leadingProperty" type="sap.ui.core/string" group="Misc">
+            <documentation>Defines the primary model property which is used inside the Column. In case of the analytical extension this means the property which is grouped by for dimensions or the property which is summed for measures.</documentation>
+        </property>
+        <property name="summed" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>If defined a sum for this column is calculated</documentation>
+        </property>
+        <property name="inResult" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>Specifies that the dimension referred to by the column shall be included in the granularity of the data result. It allows a finer distinction between a visible/grouped/(included)inResult column.</documentation>
+        </property>
+        <property name="showIfGrouped" type="sap.ui.core/boolean" defaultValue="false" group="Appearance">
+            <documentation>Specifies whether the column is displayed within the table even if it is grouped or not. A grouped column has the same value for every rows within the group.</documentation>
+        </property>
+        <property name="groupHeaderFormatter" type="sap.ui.core/any" group="Behavior">
+            <documentation>If the column is grouped, this formatter is used to format the value in the group header</documentation>
+        </property>
+    </properties>
+</control>

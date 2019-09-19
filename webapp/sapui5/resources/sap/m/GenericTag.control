@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>GenericTag</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The &lt;code&gt;sap.m.GenericTag&lt;/code&gt; control displays app-specific, essential
+information.
+&lt;h3&gt;Structure&lt;/h3&gt;
+The control consists of four different parts:
+&lt;ul&gt;
+&lt;li&gt;Status indicator with semantic colors (required)&lt;/li&gt;
+&lt;li&gt;Icon that is displayed in the same color as the status indicator (optional)&lt;/li&gt;
+&lt;li&gt;Text that is truncated automatically (required)&lt;/li&gt;
+&lt;li&gt;Content area that can display either a control of type {@link sap.m.ObjectNumber} or a warning icon (optional)&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+    <since>1.62.0</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="text" type="sap.ui.core/string" defaultValue="">
+            <documentation>Defines the text rendered by the control. It's a value-descriptive text rendered on one line.</documentation>
+        </property>
+        <property name="status" type="sap.ui.core/ValueState" defaultValue="None">
+            <documentation>Determines the control status that is represented in different colors,
+including the the color bar and the color and type of the displayed icon.</documentation>
+        </property>
+        <property name="design" type="sap.m/GenericTagDesign" defaultValue="Full">
+            <documentation>Determines the visual mode of the control.</documentation>
+        </property>
+        <property name="valueState" type="sap.m/GenericTagValueState" defaultValue="None">
+            <documentation>Determines the state of the control.
+
+&lt;b&gt;Note:&lt;/b&gt; When the error state is set, a warning type of icon is displayed that
+overrides the control set through the &lt;code&gt;value&lt;/code&gt; aggregation.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="press" allowPreventDefault="false">
+            <documentation>Fired when the user clicks/taps on the control.</documentation>
+        </event>
+    </events>
+    <aggregations default="value">
+        <aggregation name="value" type="sap.m/ObjectNumber" cardinality="0..1">
+            <documentation>Numeric value rendered by the control.</documentation>
+        </aggregation>
+        <aggregation name="_statusIcon" type="sap.ui.core/Icon" cardinality="0..1" visibility="hidden">
+            <documentation>Icon indicating the status of the control.</documentation>
+        </aggregation>
+        <aggregation name="_errorIcon" type="sap.ui.core/Icon" cardinality="0..1" visibility="hidden">
+            <documentation>Icon for visualization when error is thrown.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Sticky</name>
+    <derived/>
+    <documentation>Defines which area of the control remains fixed at the top of the page during vertical scrolling
+as long as the control is in the viewport.</documentation>
+    <since>1.54</since>
+    <enumeration>
+        <value name="ColumnHeaders">
+            <documentation>The column headers remain in a fixed position.</documentation>
+        </value>
+        <value name="HeaderToolbar" since="1.56">
+            <documentation>The header toolbar remains in a fixed position.</documentation>
+        </value>
+        <value name="InfoToolbar" since="1.56">
+            <documentation>The info toolbar remains in a fixed position.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

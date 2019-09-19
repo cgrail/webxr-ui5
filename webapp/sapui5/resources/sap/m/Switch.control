@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Switch</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A switch is a user interface control on mobile devices that is used for change between binary states.
+The user can also drag the button handle or tap to change the state.</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="state" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>A boolean value indicating whether the switch is on or off.</documentation>
+        </property>
+        <property name="customTextOn" type="sap.ui.core/string" defaultValue="" group="Misc">
+            <documentation>Custom text for the "ON" state.
+
+"ON" translated to the current language is the default value.
+Beware that the given text will be cut off if available space is exceeded.</documentation>
+        </property>
+        <property name="customTextOff" type="sap.ui.core/string" defaultValue="" group="Misc">
+            <documentation>Custom text for the "OFF" state.
+
+"OFF" translated to the current language is the default value.
+Beware that the given text will be cut off if available space is exceeded.</documentation>
+        </property>
+        <property name="enabled" type="sap.ui.core/boolean" defaultValue="true" group="Data">
+            <documentation>Whether the switch is enabled.</documentation>
+        </property>
+        <property name="name" type="sap.ui.core/string" defaultValue="" group="Misc">
+            <documentation>The name to be used in the HTML code for the switch (e.g. for HTML forms that send data to the server via submit).</documentation>
+        </property>
+        <property name="type" type="sap.m/SwitchType" defaultValue="Default" group="Appearance">
+            <documentation>Type of a Switch. Possibles values "Default", "AcceptReject".</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="change" allowPreventDefault="false">
+            <documentation>Triggered when a switch changes the state.</documentation>
+            <parameters>
+                <parameter name="state" type="sap.ui.core/boolean">
+                    <documentation>The new state of the switch.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <associations>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n" since="1.27.0">
+            <documentation>Association to controls / ids which label this control (see WAI-ARIA attribute aria-labelledby).</documentation>
+        </association>
+    </associations>
+</control>

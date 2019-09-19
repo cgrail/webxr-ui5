@@ -1,0 +1,69 @@
+<core:FragmentDefinition xmlns:m="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:drag="sap.ui.core.dnd"
+	xmlns:l="sap.ui.layout">
+	<l:VerticalLayout>
+		<m:Bar>
+			<m:contentMiddle>
+				<m:OverflowToolbar>
+					<m:SearchField id="idSearchField" liveChange="onSearchFieldLiveChange" width="100%">
+						<m:layoutData>
+							<m:OverflowToolbarLayoutData shrinkable="true" moveToOverflow="true" priority="High" maxWidth="8rem"/>
+						</m:layoutData>
+					</m:SearchField>
+					<m:OverflowToolbarButton id="IDButtonMoveToTop" type="Transparent" icon="sap-icon://collapse-group" text="{$this.i18n>p13nDialog.MOVE_TO_TOP}" tooltip="{$this.i18n>p13nDialog.MOVE_TO_TOP}" enabled="{$this>/@custom/isMoveUpButtonEnabled}" press="onPressButtonMoveToTop">
+						<m:layoutData>
+							<m:OverflowToolbarLayoutData moveToOverflow="true" priority="Low" group="2"/>
+						</m:layoutData>
+					</m:OverflowToolbarButton>
+					<m:OverflowToolbarButton id="IDButtonMoveUp" type="Transparent" icon="sap-icon://slim-arrow-up" text="{$this.i18n>p13nDialog.MOVE_UP}" tooltip="{$this.i18n>p13nDialog.MOVE_UP}" enabled="{path:'$this>/@custom/isMoveUpButtonEnabled'}" press="onPressButtonMoveUp">
+						<m:layoutData>
+							<m:OverflowToolbarLayoutData moveToOverflow="true" priority="High" group="1"/>
+						</m:layoutData>
+					</m:OverflowToolbarButton>
+					<m:OverflowToolbarButton id="IDButtonMoveDown" type="Transparent" icon="sap-icon://slim-arrow-down" text="{$this.i18n>p13nDialog.MOVE_DOWN}" tooltip="{$this.i18n>p13nDialog.MOVE_DOWN}" enabled="{path:'$this>/@custom/isMoveDownButtonEnabled'}" press="onPressButtonMoveDown">
+						<m:layoutData>
+							<m:OverflowToolbarLayoutData moveToOverflow="true" priority="High" group="1"/>
+						</m:layoutData>
+					</m:OverflowToolbarButton>
+					<m:OverflowToolbarButton id="IDButtonMoveToBottom" type="Transparent" icon="sap-icon://expand-group" text="{$this.i18n>p13nDialog.MOVE_TO_BOTTOM}" tooltip="{$this.i18n>p13nDialog.MOVE_TO_BOTTOM}" enabled="{path:'$this>/@custom/isMoveDownButtonEnabled'}" press="onPressButtonMoveToBottom">
+						<m:layoutData>
+							<m:OverflowToolbarLayoutData moveToOverflow="true" priority="Low" group="2"/>
+						</m:layoutData>
+					</m:OverflowToolbarButton>
+				</m:OverflowToolbar>
+			</m:contentMiddle>
+		</m:Bar>
+		<m:ScrollContainer id="idScrollContainer" horizontal="false" vertical="true" width="100%" height="100%">
+			<m:Table id="idList" mode="MultiSelect" rememberSelections="false" itemPress="onItemPressed" selectionChange="onSelectionChange" items="{path:'$this>/items', templateShareable:false}">
+				<m:columns>
+					<m:Column vAlign="Middle">
+						<m:Text text="{$this.i18n>sort.PERSONALIZATION_DIALOG_COLUMN_DESCRIPTION}"/>
+					</m:Column>
+					<m:Column vAlign="Middle">
+						<m:Text text="{$this.i18n>sort.PERSONALIZATION_DIALOG_COLUMN_SORTORDER}"/>
+					</m:Column>
+				</m:columns>
+				<m:items>
+					<m:ColumnListItem type="Active" selected="{$this>selected}" class="sapUiSmallMarginBegin">
+						<m:cells>
+							<m:Label wrapping="true" text="{$this>label}" tooltip="{$this>tooltip}"/>
+							<m:Select width="100%" selectedKey="{$this>sortOrder}" change="onChangeOfSortOrder" enabled="{$this>selected}">
+								<m:items>
+									<core:Item key="Ascending" text="{$this.i18n>sort.PERSONALIZATION_DIALOG_OPTION_ASCENDING}"/>
+									<core:Item key="Descending" text="{$this.i18n>sort.PERSONALIZATION_DIALOG_OPTION_DESCENDING}"/>
+								</m:items>
+							</m:Select>
+						</m:cells>
+					</m:ColumnListItem>
+				</m:items>
+				<m:dragDropConfig>
+					<drag:DragDropInfo sourceAggregation="items" targetAggregation="items" dropPosition="Between" drop="onDrop"/>
+					<drag:DragInfo sourceAggregation="items" dragStart="onDragStart"/>
+					<drag:DropInfo targetAggregation="items" dropPosition="Between"/>
+				</m:dragDropConfig>
+			</m:Table>
+		</m:ScrollContainer>
+	</l:VerticalLayout>
+</core:FragmentDefinition>
+

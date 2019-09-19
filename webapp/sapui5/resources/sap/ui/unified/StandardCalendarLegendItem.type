@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>StandardCalendarLegendItem</name>
+    <derived/>
+    <documentation>Standard day types visualized in a {@link sap.m.PlanningCalendarLegend}, which correspond to days in a {@link sap.ui.unified.Calendar}.</documentation>
+    <since>1.50</since>
+    <enumeration>
+        <value name="Today">
+            <documentation>Type used for visualization of the current date.</documentation>
+        </value>
+        <value name="WorkingDay">
+            <documentation>Type used for visualization of the regular work days.</documentation>
+        </value>
+        <value name="NonWorkingDay">
+            <documentation>Type used for visualization of the non-working days.</documentation>
+        </value>
+        <value name="Selected">
+            <documentation>Type used for visualization of the currently selected day.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>simple/DimensionLegend</name>
+    <derived/>
+    <documentation>Dimension Legend provides a template for two-dimension legends. This template defines the representation (shape,
+pattern, and color) of individual legend items and their corresponding meanings in both dimensions.
+
+Consider that you need to create a legend where legend items represent both the type and status of an object.
+In this case, you can configure column to indicate object statuses and row to indicate object types.
+Assume that valid object types are &quot;Freight Order&quot;, &quot;Freight Unit&quot;, and &quot;Trailer Unit&quot;; valid object statuses are
+&quot;Executed&quot;, &quot;In Execution&quot;, &quot;Fixed&quot;, &quot;Planned&quot;, and “Unplanned”. You will have a three by four two-dimension legend
+containing twelve legend items. Each them represents an object in a specific type and a specific status. For
+example, a red square stands for executed freight orders.</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property group="Data" type="sap.ui.core/string" name="title">
+            <documentation>Title of Legend Page &amp; text of navigation list item (if not set it will be empty)</documentation>
+        </property>
+    </properties>
+    <aggregations>
+        <aggregation cardinality="0..n" type="sap.gantt/simple/LegendColumnConfig" name="columnConfigs">
+            <documentation>Legend column configuration</documentation>
+        </aggregation>
+        <aggregation cardinality="0..n" type="sap.gantt/simple/LegendRowConfig" name="rowConfigs">
+            <documentation>Legend row configuration</documentation>
+        </aggregation>
+    </aggregations>
+</control>

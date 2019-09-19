@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+						 xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog id="ShowConfirmationOnDraftActivate" title="{i18n>SAVE}" class="sapUiContentPadding" ariaLabelledBy="{i18n>SAVE}" >
+		<beginButton>
+			<Button id="saveText" text="{i18n>SAVE}" press="onSave"/>
+		</beginButton>
+		<endButton>
+			<Button text="{i18n>CANCEL}" press="onCancel"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

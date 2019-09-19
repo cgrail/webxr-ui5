@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>FileUploaderXHRSettings</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Properties for the &lt;code&gt;XMLHttpRequest&lt;/code&gt; object used for file uploads.</documentation>
+    <since>1.52</since>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="withCredentials" type="sap.ui.core/boolean" defaultValue="false" group="Data" since="1.52">
+            <documentation>Determines the value of the &lt;code&gt;XMLHttpRequest.withCredentials&lt;/code&gt; property</documentation>
+        </property>
+    </properties>
+</control>

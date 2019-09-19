@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Breadcrumbs</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Enables users to navigate between items by providing a list of links to previous steps in the user's
+navigation path. The last three steps can be accessed as links directly, while the remaining links prior to them
+are available in a drop-down menu.</documentation>
+    <since>1.34</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="currentLocationText" type="sap.ui.core/string" group="Behavior" since="1.34">
+            <documentation>Determines the text of current/last element in the Breadcrumbs path.</documentation>
+        </property>
+    </properties>
+    <aggregations default="links">
+        <aggregation name="links" type="sap.m/Link" since="1.34" cardinality="0..n">
+            <documentation>A list of all the active link elements in the Breadcrumbs control.
+&lt;b&gt;Note:&lt;/b&gt; Enabling the property &lt;code&gt;wrapping&lt;/code&gt; of the link will not work
+since it's incompatible with the concept of the control.
+The other properties will work, but their effect may be undesirable.</documentation>
+        </aggregation>
+        <aggregation name="_currentLocation" type="sap.m/Text" cardinality="0..1" visibility="hidden">
+            <documentation>Private aggregations</documentation>
+        </aggregation>
+        <aggregation name="_select" type="sap.m/Select" cardinality="0..1" visibility="hidden"/>
+    </aggregations>
+</control>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>OverlayDialog</name>
+    <derived/>
+    <documentation>Dialog implementation based on the Overlay. If used in a Shell it leaves the Tool-Palette, Pane-Bar and Header-Items accessible.</documentation>
+    <deprecation since="1.38"></deprecation>
+    <baseType>sap.ui.ux3/Overlay</baseType>
+    <properties>
+        <property name="width" type="sap.ui.core/CSSSize" defaultValue="auto" group="Dimension">
+            <documentation>Determines the width of the Overlay Dialog. If the width is set to "auto" it is always 50% of the overlay width.</documentation>
+        </property>
+        <property name="height" type="sap.ui.core/CSSSize" defaultValue="auto" group="Dimension">
+            <documentation>Determines the height of the Overlay Dialog. If the height is set to "auto" it is always 50% of the overlay height.</documentation>
+        </property>
+    </properties>
+    <aggregations>
+        <aggregation name="content" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Content for the OverlayDialog.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

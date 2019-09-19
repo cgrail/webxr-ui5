@@ -1,0 +1,22 @@
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+						 xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:uxap="sap.uxap" xmlns:build="sap.build">
+
+	<uxap:actions>
+		<!-- Breakout Actions for SubSection Toolbar -->
+		<template:repeat list="{parameter>/manifest/sap.ui5/extends/extensions/sap.ui.controllerExtensions/sap.suite.ui.generic.template.ObjectPage.view.Details/sap.ui.generic.app}" var="tmpEntitySet">
+			<template:if test="{= ${tmpEntitySet>EntitySet} === ${parameter>/entitySet} }">
+				<template:repeat list="{tmpEntitySet>Sections}" var="section">
+					<template:if test="{parts: [{path: 'facetCandidate>'}, {path: 'section>id'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.containsFormWithBreakoutAction'}">
+						<template:repeat list="{section>Actions}" var="customAction">
+							<Button id="{customAction>id}"
+							        text="{customAction>text}"
+									type="Transparent"
+                                    press="{customAction>press}">
+							</Button>
+						</template:repeat>
+					</template:if>
+				</template:repeat>
+			</template:if>
+		</template:repeat>
+	</uxap:actions>
+</core:FragmentDefinition>

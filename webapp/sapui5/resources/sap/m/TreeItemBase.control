@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>TreeItemBase</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The &lt;code&gt;sap.m.TreeItemBase&lt;/code&gt; contains the basic features of all specific tree items.</documentation>
+    <since>1.42.0</since>
+    <baseType>sap.m/ListItemBase</baseType>
+</control>

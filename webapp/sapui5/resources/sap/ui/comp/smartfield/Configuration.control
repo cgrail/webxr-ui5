@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartfield/Configuration</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The configuration allows to further define the behavior of a &lt;code&gt;SmartField&lt;/code&gt;.</documentation>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="controlType" type="sap.ui.comp/smartfield/ControlType" group="Misc">
+            <documentation>By default the SmartField chooses the controls it hosts by interpreting OData metadata. This property allows to overwrite the
+default behavior to some extent. For example makes it possible to define that an OData property of type Edm.Boolean is displayed as
+a combo box.</documentation>
+        </property>
+        <property name="displayBehaviour" type="sap.ui.comp/smartfield/DisplayBehaviour" group="Misc">
+            <documentation>The property specifies how value help, that is available for input fields, is presented. For example, it specifies whether the
+descriptions of the values shown in the result after a query are displayed.</documentation>
+        </property>
+        <property name="preventInitialDataFetchInValueHelpDialog" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>If there are value help annotations for a smart field, it is possible to specify whether the table in the value help dialog for
+this field will be filled initially. The default value is &lt;code&gt;true&lt;/code&gt;, which means the table will not be filled as the
+data fetch is prevented.</documentation>
+        </property>
+    </properties>
+</control>

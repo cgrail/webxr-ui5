@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>LineType</name>
+    <derived/>
+    <documentation>Type of the microchart line.</documentation>
+    <since>1.60</since>
+    <enumeration>
+        <value name="Solid">
+            <documentation>Solid line.</documentation>
+        </value>
+        <value name="Dashed">
+            <documentation>Dashed line.</documentation>
+        </value>
+        <value name="Dotted">
+            <documentation>Dotted line.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

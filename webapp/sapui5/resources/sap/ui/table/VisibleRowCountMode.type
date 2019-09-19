@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>VisibleRowCountMode</name>
+    <derived/>
+    <documentation>VisibleRowCountMode of the table</documentation>
+    <enumeration>
+        <value name="Fixed">
+            <documentation>The table always has as many rows as defined in the &lt;code&gt;visibleRowCount&lt;/code&gt; property.</documentation>
+        </value>
+        <value name="Interactive">
+            <documentation>The user can change the &lt;code&gt;visibleRowCount&lt;/code&gt; by dragging a resizer.</documentation>
+        </value>
+        <value name="Auto">
+            <documentation>The table automatically fills the height of the surrounding container.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

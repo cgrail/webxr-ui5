@@ -1,0 +1,39 @@
+<core:View xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+		   xmlns="sap.m"
+		   xmlns:core="sap.ui.core"
+		   xmlns:mdc="sap.ui.mdc"
+		   template:require="sap.ui.mdc.odata.v4.CommonHelper"
+>
+	<template:alias name=".HELPER" value="sap.ui.mdc.odata.v4.CommonHelper">
+	
+		<!-- PLEASE NOTE: this is a workaround until field can be used for ValueHelps -->
+	
+		<mdc:FilterBar
+				id="template::valueListFilterBar"
+				metadataContexts="{ model: 'entitySet', path:'',  name: 'entitySet'},{ model: 'entitySet', path:'$Type', name: 'selectionFields'}"
+				listBindingNames="{model : 'valueList', path: '/$mdc/qualifier'}"
+				conditionModelName="{model : 'valueList', path: '/$mdc/qualifier'}"
+				searchOnStart="false"
+				liveUpdate="true"
+				hideBasicSearch="true"
+				enablePersonalization="false"
+		/>
+	
+		<mdc:Table
+				id="template::valueListTable"
+				type="ResponsiveTable"
+				height="100%"
+				width="100%"
+				selectionMode="{path: 'valueList>/$mdc/sSelectionMode'}">
+				<template:repeat list="{valueList>/Parameters}" var="param">
+					<template:if test="{= ${param>$Type} === 'com.sap.vocabularies.Common.v1.ValueListParameterInOut' || ${param>$Type} === 'com.sap.vocabularies.Common.v1.ValueListParameterOut' || ${param>$Type} === 'com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly'}">
+						<template:with path="param>ValueListProperty" helper=".HELPER._resolveValueHelpField" var="dataField">				
+							<mdc:Column header="{= ${dataField>@com.sap.vocabularies.Common.v1.Label} }">
+								<Text text="{= '{' + ${param>ValueListProperty} + '}'}"/>
+							</mdc:Column>
+						</template:with>
+					</template:if>
+				</template:repeat>
+		</mdc:Table>
+	</template:alias>
+</core:View>

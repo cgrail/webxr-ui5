@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ToggleButton</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The ToggleButton Control is a Button that can be toggled between pressed and normal state</documentation>
+    <deprecation since="1.38">replaced by {@link sap.m.ToggleButton}</deprecation>
+    <baseType>sap.ui.commons/Button</baseType>
+    <properties>
+        <property name="pressed" type="sap.ui.core/boolean" defaultValue="false" group="Data">
+            <documentation>The property is “true” when the control is toggled. The default state of this property is "false".</documentation>
+        </property>
+    </properties>
+</control>

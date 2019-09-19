@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>form/ColumnsL</name>
+    <derived/>
+    <documentation>An &lt;code&gt;int&lt;/code&gt; type that defines how many columns a &lt;code&gt;Form&lt;/code&gt; control using
+the &lt;code&gt;ColumnLayout&lt;/code&gt; as layout can have if it has large size
+
+Allowed values are numbers from 1 to 3.</documentation>
+    <since>1.56.0</since>
+    <baseType>any</baseType>
+    <final/>
+</simple-type>

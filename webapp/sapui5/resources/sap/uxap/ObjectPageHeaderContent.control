@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ObjectPageHeaderContent</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Header content for the classic header of the {@link sap.uxap.ObjectPageLayout}.
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+
+The &lt;code&gt;ObjectPageHeaderContent&lt;/code&gt; represents the movable part of the
+&lt;code&gt;ObjectPageLayout&lt;/code&gt;'s classic header. It can contain any control and scrolls along with
+the content of the page until it disappears (collapsed header). When scrolled back to the
+top it becomes visible again (expanded header). It contains all the additional information of the object.
+
+Documentation links:
+&lt;ul&gt;
+&lt;li&gt;{@link topic:d2ef0099542d44dc868719d908e576d0 Object Page Headers}&lt;/li&gt;
+&lt;li&gt;{@link topic:0fecbce45e39406aa939bd25e89823f4 Object Page Classic Header}&lt;/li&gt;
+&lt;li&gt;{@link https://experience.sap.com/fiori-design-web/object-page/ UX Guidelines: Object Page}&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+    <since>1.30</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="contentDesign" type="sap.uxap/ObjectPageHeaderDesign" defaultValue="Light" group="Misc">
+            <documentation>Determines the design of the header - Light or Dark.
+&lt;b&gt;Note: &lt;/b&gt;This property is deprecated. It will continue to work in the Blue Crystal theme,
+but it will not be taken into account for the Belize themes.</documentation>
+            <deprecation since="1.40.1"></deprecation>
+        </property>
+    </properties>
+    <aggregations>
+        <aggregation name="content" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>The list of Objects of type sap.ui.core.Control.</documentation>
+        </aggregation>
+        <aggregation name="_editHeaderButton" type="sap.m/Button" cardinality="0..1" visibility="hidden">
+            <documentation>Internal aggregation for the "Edit Header" button.</documentation>
+        </aggregation>
+        <aggregation name="_objectImage" type="sap.ui.core/Control" cardinality="0..1" visibility="hidden"/>
+        <aggregation name="_placeholder" type="sap.ui.core/Icon" cardinality="0..1" visibility="hidden"/>
+    </aggregations>
+</control>

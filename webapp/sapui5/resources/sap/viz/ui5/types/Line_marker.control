@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ui5/types/Line_marker</name>
+    <derived/>
+    <documentation>Settings for marker/data point graphics</documentation>
+    <since>1.7.2</since>
+    <developmentState state="experimental" since="1.7.2">Charting API is not finished yet and might change completely.</developmentState>
+    <deprecation since="1.32.0">The chart controls in the &lt;code&gt;sap.viz.ui5&lt;/code&gt; package (which were always marked as &lt;i&gt;experimental&lt;/i&gt;) have been deprecated since 1.32.0. 
+They are no longer actively developed and won't receive new features or improvements, only important bug fixes. They will only remain in the 
+SAPUI5 distribution for backward compatibility. 
+
+&lt;b&gt;SAP strongly recommends that existing consumers of those controls migrate to the new {@link sap.viz.ui5.controls.VizFrame VizFrame} 
+control to benefit from new charting enhancements and timely support. &lt;/b&gt;
+
+&lt;b&gt;Note&lt;/b&gt;: As the feature set, design and API usage of VizFrame might differ from the old chart controls, make sure you evaluate it thoroughly before migration.</deprecation>
+    <baseType>sap.viz/ui5/core/BaseStructuredType</baseType>
+    <properties>
+        <property name="visible" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>Set the visibility of the markers</documentation>
+        </property>
+        <property name="shape" type="sap.viz/ui5/types/Line_marker_shape" defaultValue="circle">
+            <documentation>Set the shape of the markers</documentation>
+        </property>
+        <property name="size" type="sap.ui.core/int" defaultValue="6">
+            <documentation>Set the marker size for data points, ranging from '4' to '32'. If you enter a value outside that range, the marker size defaults to '6'.</documentation>
+        </property>
+        <property name="number" type="sap.ui.core/int">
+            <documentation>Set the number to enable events for markers when they are invisible. If the total amount of markers is bigger than this value, markers will remain hidden when selected or hovered over. The default value is Number.POSITIVE_INFINITY, which is the largest possible value.</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+    </properties>
+</control>

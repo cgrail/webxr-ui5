@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<library xmlns="http://www.sap.com/sap.ui.library.xsd">
+
+	<name>sap.ui.support</name>
+	<vendor>SAP SE</vendor>
+	<copyright>OpenUI5
+ * (c) Copyright 2009-2019 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</copyright>
+	<version>1.64.0</version>
+
+	<documentation>UI5 library: sap.ui.support</documentation>
+
+	<dependencies>
+		<dependency>
+			<libraryName>sap.ui.core</libraryName>
+		</dependency>
+	</dependencies>
+
+	<appData>
+		<!-- excludes for the JSDoc -->
+		<jsdoc xmlns="http://www.sap.com/ui5/buildext/jsdoc">
+			<exclude name="sap.ui.support.js."/>
+		</jsdoc>
+		<!-- excludes for the JSCoverage -->
+		<jscoverage xmlns="http://www.sap.com/ui5/buildext/jscoverage">
+			<exclude name="sap.ui.support.js."/>
+		</jscoverage>
+	</appData>
+
+</library>

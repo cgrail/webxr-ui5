@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<interface xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>IProcessableBlobs</name>
+    <derived/>
+    <documentation>Marker interface for controls that process instances of &lt;code&gt;window.Blob&lt;/code&gt;, such as &lt;code&gt;window.File&lt;/code&gt;.
+The implementation of this Interface should implement the following Interface methods:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;getProcessedBlobsFromArray&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+</interface>

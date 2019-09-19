@@ -1,0 +1,7 @@
+/*
+ * ! SAPUI5
+
+		(c) Copyright 2009-2019 SAP SE. All rights reserved
+	
+ */
+sap.ui.define(["sap/ui/mdc/library"],function(M,O){"use strict";var C={};C.Metadata={items:[],properties:[],sortable:true,filterable:true};C.MetadataProperty={name:"SalesAmount",propertyPath:"sumSalesAmount",label:"Total Sales Amount",textProperty:null,sortable:true,sortDirection:"both",filterable:true,allowedExpressions:[],inChart:true,chartItems:[]};C.MetadataProperty={kind:"Measure",role:"axis1",contextDefiningProperties:[],className:"sap.ui.mcd.chart.MeasureItem",aggregationMethod:"sum","default":true,custom:false,name:"sumSalesAmount",propertyPath:"SalesAmount",label:"Total Sales Amount",textProperty:null,sortable:true,sortDirection:"both",filterable:true,allowedExpressions:[]};C.retrieveAllMetadata=function(m,c){var d={properties:[],attributes:[],sortable:true,filterable:true};return new Promise(function(r){r(d);});};C.fetchProperties=function(m,c){return C.retrieveAllMetadata(m,c).then(function(a){return a.properties;});};C.retrieveAggregationItem=function(a,m){var A={className:"",settings:{}};if(m.kind==M.ChartItemType.Dimension){A.className="sap.ui.mdc.chart.DimensionItem";A.settings={key:m.name,label:m.label,textProperty:m.textProperty,type:m.type,timeUnit:m.timeUnit,displayText:true,criticality:m.criticality};}else{A.className="sap.ui.mdc.chart.MeasureItem";A.settings={key:m.name,propertyPath:m.propertyPath,label:m.label,type:m.type,aggregationMethod:m.aggregationMethod};}return A;};return C;},true);

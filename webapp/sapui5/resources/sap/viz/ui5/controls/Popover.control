@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ui5/controls/Popover</name>
+    <derived/>
+    <documentation>Viz Chart Popover</documentation>
+    <since>1.22.0</since>
+    <developmentState state="experimental" since="1.22.0">API is not finished yet and might change completely</developmentState>
+    <baseType>sap.viz/ui5/controls/common/BaseControl</baseType>
+    <properties>
+        <property name="customDataControl" type="sap.ui.core/any">
+            <documentation>A callback function let user customize Popover's content panel.</documentation>
+        </property>
+        <property name="actionItems" type="sap.ui.core/object[]">
+            <documentation>The items of this list or rows of Action List in Home Page inside the Popover.</documentation>
+        </property>
+        <property name="formatString" type="sap.ui.core/any">
+            <documentation>The pattern is used to format the measures displayed in Popover. 
+If value type of format string is String, the format string will be used to format all measures. 
+If value type is Object, each format string in the Object will be used to format the specified measure or time dimension.</documentation>
+        </property>
+        <property name="showLine" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>Show line with popover marker in line/combination charts.</documentation>
+        </property>
+    </properties>
+    <methods>
+        <method name="close" type="sap.ui.core/void">
+            <documentation>Close Chart's Popover.</documentation>
+        </method>
+        <method name="connect" type="sap.ui.core/void">
+            <documentation>Connect Chart's Popover with VizFrame.</documentation>
+            <parameters>
+                <parameter name="vizFrameId" type="sap.ui.core/string">
+                    <documentation>Set Uid of VizFrame.</documentation>
+                </parameter>
+            </parameters>
+        </method>
+    </methods>
+</control>

@@ -1,0 +1,57 @@
+<core:FragmentDefinition
+		xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+		xmlns:core="sap.ui.core" xmlns="sap.m"
+>
+
+	<template:if test="{= ${this>onCallBoundAction} &amp;&amp; ${this>selectedContextsModel} &amp;&amp; ${this>id}}">
+		<template:repeat list="{collection>./@com.sap.vocabularies.UI.v1.LineItem}" var="dataField">
+			<template:if
+					test="{= ${dataField>$Type} === 'com.sap.vocabularies.UI.v1.DataFieldForAction' &amp;&amp; ${dataField>Inline} !== true }">
+				<Button
+						text="{dataField>Label}"
+						press="{= ${this>onCallBoundAction} + '(\'' + ${dataField>Action} + '\' ,
+												${' + ${this>selectedContextsModel} + '>/$contexts/' + ${this>id} + '/selectedContexts},
+												{ invocationGrouping : \'' + (${dataField>InvocationGrouping/$EnumMember} === 'com.sap.vocabularies.UI.v1.OperationGroupingType/ChangeSet' ?'ChangeSet' : 'Isolated') + '\',
+												label: \'' + ${dataField>Label} + '\'})'}"
+						enabled="{= ${dataField>Action@Org.OData.Core.V1.OperationAvailable} === null
+												? (${dataField>Action/0/$IsBound} !== true
+													? 'true'
+													: '{= %{' + ${this>selectedContextsModel} + '>/$contexts/' + ${this>id} + '/' + ${dataField>Action} + '}
+														 ? %{' + ${this>selectedContextsModel} + '>/$contexts/' + ${this>id} + '/' + ${dataField>Action} + '}
+														 :false}')
+												: ${dataField>Action/0/$IsBound} !== true
+													? 'true'
+													: '{= %{' + ${this>selectedContextsModel} + '>/$contexts/' + ${this>id} + '/numberOfSelectedContexts} > 0}' }"
+						visible="{= ${dataField>Action@Org.OData.Core.V1.OperationAvailable} === false ? 'false' :'true'}"
+				>
+				</Button>
+			</template:if>
+		</template:repeat>
+	</template:if>
+	<template:if test="{this>onCreate}">
+		<template:if test="{= !(${collection>@Org.OData.Capabilities.V1.InsertRestrictions/Insertable} === false)}">
+			<!-- temporary check to disable create document option in non-draft -->
+			<!-- template:if test="{= ${collection>@com.sap.vocabularies.Common.v1.DraftRoot} || ${collection>@com.sap.vocabularies.Common.v1.DraftNode} }" -->
+
+			<Button
+					icon="sap-icon://add"
+					press="{= ${this>onCreate} + '(\'' + ${this>id} +'\')'}"
+					type="Transparent"
+					visible="{= ${this>creatable} ? ${this>creatable} : 'true'}"
+			/>
+			<!-- /template:if -->
+		</template:if>
+	</template:if>
+	<template:if test="{= !(${collection>@Org.OData.Capabilities.V1.DeleteRestrictions/Deletable} === false)}">
+		<template:if test="{= ${this>selectedContextsModel} &amp;&amp; ${this>id} &amp;&amp; ${this>onDelete} }">
+			<Button
+					icon="sap-icon://delete"
+					press="{= ${this>onDelete} + '(${' + ${this>selectedContextsModel} + '>/$contexts/' + ${this>id} + '/deletableContexts},{id:\'' + ${this>id} +'\', numberOfSelectedContexts:${' + ${this>selectedContextsModel} + '>/$contexts/' + ${this>id} + '/selectedContexts}.length , title:\''+ (${collection>./@com.sap.vocabularies.UI.v1.HeaderInfo} &amp;&amp; ${collection>./@com.sap.vocabularies.UI.v1.HeaderInfo/TypeNamePlural} ? ${collection>./@com.sap.vocabularies.UI.v1.HeaderInfo/TypeNamePlural} : ${this.i18n>table.DELETE_OBJECT}) +'\'})'}"
+					type="Transparent"
+					visible="{this>showDelete}"
+					enabled="{= '{= %{' + ${this>selectedContextsModel} + '>/$contexts/' + ${this>id} + '/deletableContexts} &amp;&amp; %{' + ${this>selectedContextsModel} + '>/$contexts/' + ${this>id} + '/deletableContexts}.length > 0 ? %{' + ${this>selectedContextsModel} + '>/$contexts/' + ${this>id} + '/deleteEnabled} : false}' }"
+			/>
+		</template:if>
+	</template:if>
+
+</core:FragmentDefinition>

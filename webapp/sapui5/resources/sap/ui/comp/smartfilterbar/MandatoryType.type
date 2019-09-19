@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartfilterbar/MandatoryType</name>
+    <derived/>
+    <documentation>The different options to define mandatory state for fields in the SmartFilter control.</documentation>
+    <enumeration>
+        <value name="auto">
+            <documentation>Shows values based on metadata.</documentation>
+        </value>
+        <value name="mandatory">
+            <documentation>Shows field as mandatory.</documentation>
+        </value>
+        <value name="notMandatory">
+            <documentation>Shows field as not mandatory.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

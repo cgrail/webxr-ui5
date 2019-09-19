@@ -1,0 +1,7 @@
+/*!
+ * SAP UI development toolkit for HTML5 (SAPUI5)
+
+		(c) Copyright 2009-2015 SAP SE. All rights reserved
+	
+ */
+sap.ui.define(["sap/gantt/drawer/Drawer","sap/ui/thirdparty/d3"],function(D,U,C){"use strict";var E=D.extend("sap.gantt.drawer.ExpandedBackground");E.prototype.drawSvg=function(s,d,c){if(!d){return null;}var e=[];for(var i=0;i<d.length;i++){if((d[i].index&&d[i].index!==0)||c.hasOwnProperty(d[i].chartScheme)){e.push(d[i]);}}var b=s.selectAll(".sapGanttChartRowBackground").remove();b=s.insert("g",":first-child").classed("sapGanttChartRowBackground",true);var S=b.selectAll(".expandedRow").data(e);S.enter().append("g").classed("expandedRow",true);S.exit().remove();if(!S.empty()){var a=jQuery(s.node()).width();this._drawExpandedBackground(s,a,c);}};E.prototype._drawExpandedBackground=function(s,w,c){s.selectAll(".expandedRow").selectAll("rect").remove();s.selectAll(".expandedRow").append("rect").attr("x",function(d){return 0;}).attr("y",function(d){return d.y;}).attr("height",function(d){return d.rowHeight-1;}).attr("width",function(d){return"100%";}).attr("class",function(d){var b=c[d.chartScheme];if(b&&b!==""){return b;}else{return"sapGanttExpandChartCntBG";}});s.selectAll(".expandedRow").selectAll("path").remove();s.selectAll(".expandedRow").append("path").classed("sapGanttExpandChartLine",true).attr("d",function(d){return"M0 "+(d.y-1)+" H"+(w-1);});};return E;},true);

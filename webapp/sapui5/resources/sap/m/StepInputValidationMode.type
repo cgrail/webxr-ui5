@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>StepInputValidationMode</name>
+    <derived/>
+    <documentation>Available validation modes for {@link sap.m.StepInput}.</documentation>
+    <enumeration>
+        <value name="FocusOut">
+            <documentation>Validation happens on &lt;code&gt;FocusOut&lt;/code&gt;.</documentation>
+        </value>
+        <value name="LiveChange">
+            <documentation>Validation happens on &lt;code&gt;LiveChange&lt;/code&gt;.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

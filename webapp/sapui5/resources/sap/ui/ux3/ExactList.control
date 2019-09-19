@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ExactList</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Internal sub-control of the ExactBrowser. The control is not intended to be used stand alone. For this purpose, the ExactBrowser control can be used.</documentation>
+    <deprecation since="1.38"></deprecation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="showClose" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>Defines whether the close icon shall be displayed in the header.</documentation>
+        </property>
+        <property name="topTitle" type="sap.ui.core/string" group="Misc">
+            <documentation>The title of this list is the top of the list hierarchy.</documentation>
+        </property>
+        <property name="topHeight" type="sap.ui.core/int" defaultValue="290" group="Appearance">
+            <documentation>The height in px if this list is the top of the list hierarchy.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="attributeSelected" allowPreventDefault="false">
+            <documentation>Event which is fired when an attribute is selected/unselected</documentation>
+            <parameters>
+                <parameter name="attribute" type="sap.ui.ux3/ExactAttribute">
+                    <documentation>The attribute which was selected/unselected recently</documentation>
+                </parameter>
+                <parameter name="allAttributes" type="sap.ui.core/object">
+                    <documentation>Array of all ExactAttributes</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="subLists" type="sap.ui.ux3/ExactList" cardinality="0..n">
+            <documentation>The sub-ExactLists of this list. This aggregation must not be maintained from outside.
+The control automatically takes care to fill this aggregation according to the given ExactAttribute.</documentation>
+        </aggregation>
+        <aggregation name="controls" type="sap.ui.commons/ListBox" cardinality="0..n" visibility="hidden">
+            <documentation>Hidden aggregation for internal Listbox</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="data" type="sap.ui.ux3/ExactAttribute" cardinality="0..1">
+            <documentation>The associated ExactAttribute</documentation>
+        </association>
+    </associations>
+</control>

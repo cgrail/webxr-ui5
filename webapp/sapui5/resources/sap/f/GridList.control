@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>GridList</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A list-based control with grid layout capabilities.
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+
+The control is based on {@link sap.m.ListBase} and adds the flexibility to configure different grid layouts. The layout used is based
+on the CSS display grid and the control has a default configuration.
+
+With &lt;code&gt;customLayout&lt;/code&gt; aggregation it is possible to use:
+&lt;ul&gt;
+&lt;li&gt;Predefined simple grid layouts such as {@link sap.ui.layout.cssgrid.GridBoxLayout GridBoxLayout}&lt;/li&gt;
+&lt;li&gt;Flexible grid layouts, such as {@link sap.ui.layout.cssgrid.GridBasicLayout GridBasicLayout} or {@link sap.ui.layout.cssgrid.GridResponsiveLayout GridResponsiveLayout} which reveal the native-browser CSS display grid APIs. For more information, see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout MDN web docs: CSS Grid Layout}&lt;/li&gt;
+&lt;/ul&gt;
+
+Every item can override its size by specifying the number of columns and/or rows it will take in the grid.
+This is done using {@link sap.ui.layout.cssgrid.GridItemLayoutData GridItemLayoutData}.
+
+&lt;h3&gt;Usage&lt;/h3&gt;
+
+For general cases, use the default grid configuration of the &lt;code&gt;GridList&lt;/code&gt;.
+For Box case (equal sized items), use &lt;code&gt;customLayout&lt;/code&gt; aggregation with {@link sap.ui.layout.cssgrid.GridBoxLayout GridBoxLayout}
+For Grids which need different configurations based on available width, use &lt;code&gt;customLayout&lt;/code&gt; aggregation with {@link sap.ui.layout.cssgrid.GridResponsiveLayout GridResponsiveLayout}
+To set a specific position to an item or define its dimensions in the grid, pass &lt;code&gt;layoutData&lt;/code&gt; of type {@link sap.ui.layout.cssgrid.GridItemLayoutData GridItemLayoutData}
+
+&lt;i&gt;When to use&lt;/i&gt;
+&lt;ul&gt;
+&lt;li&gt;If {@link sap.m.ListBase} features are required and the items must be positioned in a grid layout&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;i&gt;When not to use&lt;/i&gt;
+&lt;ul&gt;
+&lt;li&gt;If a list layout is required, use {@link sap.m.List} instead.
+&lt;li&gt;If only the layout is required, use {@link sap.ui.layout.cssgrid.CSSGrid} instead.
+&lt;/ul&gt;
+
+&lt;h3&gt;Current Limitations&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;For Microsoft Internet Explorer some layouts are not supported, due to browser specifics.&lt;/li&gt;
+&lt;li&gt;For Microsoft Edge 15 and older versions some layouts are not supported, due to browser specifics.&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+    <since>1.60</since>
+    <baseType>sap.m/ListBase</baseType>
+    <aggregations>
+        <aggregation name="customLayout" type="sap.ui.layout/cssgrid/GridLayoutBase" cardinality="0..1">
+            <documentation>Defines a custom grid layout</documentation>
+        </aggregation>
+    </aggregations>
+</control>

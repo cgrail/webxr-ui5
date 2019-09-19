@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>InteractiveLineChartPoint</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A point element for the InteractiveLineChart.</documentation>
+    <since>1.42.0</since>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="label" type="sap.ui.core/string" group="Misc">
+            <documentation>The bottom label for the chart point.</documentation>
+        </property>
+        <property name="secondaryLabel" type="sap.ui.core/string" group="Misc">
+            <documentation>The label that is displayed right below the &lt;code&gt;label&lt;/code&gt;..</documentation>
+        </property>
+        <property name="selected" type="sap.ui.core/boolean" defaultValue="false" group="Appearance">
+            <documentation>Determines if the chart point is selected.</documentation>
+        </property>
+        <property name="value" type="sap.ui.core/float" group="Data">
+            <documentation>The numeric value of the chart point.</documentation>
+        </property>
+        <property name="displayedValue" type="sap.ui.core/string" group="Data">
+            <documentation>The value label to be displayed near the point in the chart.</documentation>
+        </property>
+        <property name="color" type="sap.m/ValueColor" defaultValue="Neutral" group="Misc" since="1.50.0">
+            <documentation>Determines the color of the point.</documentation>
+        </property>
+    </properties>
+</control>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ObjectPageLazyLoader</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A helper element that enables a "stashed-based" lazy loading approach for the content of
+the {@link sap.uxap.ObjectPageSubSection} control.
+
+&lt;code&gt;ObjectPageLazyLoader&lt;/code&gt; is intended to be used in a declarative way only
+(for example, in a view) with the &lt;code&gt;stashed&lt;/code&gt; property set to &lt;code&gt;true&lt;/code&gt;,
+and is recommended to be used only once per subsection as its sole content.
+
+&lt;code&gt;ObjectPageLazyLoader&lt;/code&gt; utilizes UI5's stashing mechanism and is a lightweight
+alternative to the native block-based Lazy Loading of the &lt;code&gt;ObjectPageLayout&lt;/code&gt;.
+Wrapping the content of a subsection in an &lt;code&gt;ObjectPageLazyLoader&lt;/code&gt; with
+&lt;code&gt;stashed=true&lt;/code&gt; will make the content unstash automatically as the user scrolls.
+
+&lt;b&gt;Note:&lt;/b&gt; Subsections are required to have an ID when used with &lt;code&gt;ObjectPageLazyLoader&lt;/code&gt;.</documentation>
+    <since>1.38</since>
+    <baseType>sap.ui.core/Element</baseType>
+    <aggregations default="content">
+        <aggregation name="content" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Controls to be displayed after this element is unstashed</documentation>
+        </aggregation>
+    </aggregations>
+</control>

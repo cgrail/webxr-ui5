@@ -1,0 +1,46 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": ".theming",
+			"theme": "sap_mvi"
+		},
+		{
+			"name": "empty.less",
+			"designtime": true,
+			"theme": "sap_mvi"
+		},
+		{
+			"name": "library-RTL-dbg.css",
+			"isDebug": true,
+			"theme": "sap_mvi"
+		},
+		{
+			"name": "library-RTL.css",
+			"theme": "sap_mvi"
+		},
+		{
+			"name": "library-dbg.css",
+			"isDebug": true,
+			"theme": "sap_mvi"
+		},
+		{
+			"name": "library-parameters.json",
+			"theme": "sap_mvi"
+		},
+		{
+			"name": "library.css",
+			"theme": "sap_mvi"
+		},
+		{
+			"name": "library.less",
+			"designtime": true,
+			"theme": "sap_mvi"
+		},
+		{
+			"name": "library.source.less",
+			"designtime": true,
+			"theme": "sap_mvi"
+		}
+	]
+}

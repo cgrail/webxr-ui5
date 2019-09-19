@@ -1,0 +1,169 @@
+/* NOTE: This file was generated as an optimized version of "library.source.less" for the Theme Designer. */
+
+/*!
+ * OpenUI5
+ * (c) Copyright 2009-2019 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+
+@import "../../../../../../Base/baseLib/baseTheme/base.less"; /* ORIGINAL IMPORT PATH: "../../../../../sap/ui/core/themes/base/base.less" */
+
+@import "../../../../../sap/ui/core/themes/base/global.less";
+/* START "Overlay.less" */
+/******************************************************************
+	Style of the DT Overlays - base Theme
+*******************************************************************/
+@_sap_ui_dt_Overlay_FocusColor : @sapUiContentFocusColor;
+@_sap_ui_dt_Overlay_TargetZoneColor : @sapUiSelected;
+@_sap_ui_dt_Overlay_SelectionColor : lighten(@sapUiBlue,10);
+@_sap_ui_dt_Overlay_CuttedColor : @sapUiWhite;
+
+#overlay-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.sapUiDtOverlay {
+	position: absolute;
+	outline: none;
+
+	// please, don't use border property, it cause the size change of an overtla and box-sizing: border box doesn't work with position: absolute and absolute sizing
+	// please, don't use outline property, outline can be invisible due to overflow:hidden of parent
+	// instead you should use pseudo elements to special border-like styling:
+	// :before pseudoelement should be used for focus visualisation
+	// :after pseudoelement should be used for other border-like visualisations
+
+	&:before, &:after {
+		position: absolute;
+		pointer-events: none;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		box-sizing: border-box;
+		z-index: 2;
+	}
+}
+
+.sapUiDtOverlayFocusable {
+	&:focus {
+		&:before {
+			content: " ";
+			border: 1px dotted @_sap_ui_dt_Overlay_FocusColor;
+		}
+	}
+}
+
+.sapUiDtDummyScrollContainer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+}
+
+.sapUiDtOverlayDropZone {
+	z-index: 9999999 !important;
+}
+
+.sapUiDtOverlayTargetZone {
+	&:after {
+		content: " ";
+		border: 1px dashed @_sap_ui_dt_Overlay_TargetZoneColor;
+	}
+}
+
+.sapUiDtOverlaySelected {
+	&:after {
+		content: " ";
+		border: 1px solid @_sap_ui_dt_Overlay_SelectionColor;
+	}
+}
+
+.sapUiDtOverlayMovable {
+	cursor: move;
+}
+
+.sapUiDtOverlayCutted {
+	background-color: @_sap_ui_dt_Overlay_CuttedColor !important;
+	opacity: 0.5;
+}
+
+.sapUiDtDragGhostWrapper {
+	position: fixed;
+	pointer-events: none;
+}
+
+/* fix ghost blinking in FireFox */
+.sap-desktop[data-sap-ui-browser^="ff"] .sapUiDtDragGhostWrapper {
+	top: -9999px;
+	left: -9999px;
+}
+
+/* fix for chrome */
+.sap-desktop[data-sap-ui-browser^="cr"] {
+
+	.sapUiDtDragGhostWrapper {
+		padding-left : -500px;
+		padding-bottom: 500px;
+		bottom: -1000px;
+	}
+
+}
+
+.sapUiDtClonedDom {
+	position: absolute;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+
+	* {
+		pointer-events: none !important;
+	}
+}
+
+.sapUiDtOverlayScrollContainer {
+	position: absolute;
+}
+/* END "Overlay.less" */
+
+/* START "ContextMenu.less" */
+/******************************************************************
+	Style of the DT Contextmenu - base Theme
+*******************************************************************/
+@_sap_ui_dt_ContextMenu_InnerShadow: lighten(@sapInformativeColor, 42); //#d5e3ef
+@_sap_ui_dt_ContextMenu_Border: @sapUiBlackBG; //#000
+
+.sapUiDtContextMenu .sapMPopoverScroll {
+	margin-right: 0 !important;
+}
+
+.sapUiDtContextMenu .sapMBtnInner {
+	text-align: left;
+}
+
+.sapUiDtContextMenu.sapContrast.sapMPopover, .sapUiDtContextMenu.sapContrast .sapMPopover {
+	opacity: 0;
+	min-width: 0;
+	border: 1px solid @_sap_ui_dt_ContextMenu_Border;
+	box-shadow: 0 0 0 1px @_sap_ui_dt_ContextMenu_InnerShadow inset, 3px 3px 8px 0 rgba(0, 0, 0, 0.3);
+	padding: 0.2rem;
+}
+
+.sapUiDtContextMenu.sapContrast.sapMPopoverArr:after, .sapUiDtContextMenu.sapContrast .sapMPopoverArr:after {
+	border: 1px solid @_sap_ui_dt_ContextMenu_Border;
+	box-shadow: 0 0 0 1px @_sap_ui_dt_ContextMenu_InnerShadow inset;
+}
+
+.sapUiDtContextMenu.sapContrast.sapMPopoverArr, .sapUiDtContextMenu.sapContrast .sapMPopoverArr{
+	bottom: -8px;
+}
+
+.sapUiDtContextMenu.sapContrast.sapMPopover.sapUiDtContextMenuVisible, .sapUiDtContextMenu.sapContrast .sapMPopover.sapUiDtContextMenuVisible {
+	opacity: 1;
+}
+/* END "ContextMenu.less" */
+
+/* START "shared.less" */
+/* This CSS shares it rules with all other CSS of this library */
+/* END "shared.less" */

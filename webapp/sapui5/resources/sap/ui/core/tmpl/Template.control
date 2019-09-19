@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>tmpl/Template</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Base Class for Template.</documentation>
+    <since>1.15</since>
+    <deprecation since="1.56">use an {@link sap.ui.core.mvc.XMLView XMLView} or {@link sap.ui.core.mvc.JSView JSView} instead.</deprecation>
+    <abstract/>
+    <properties>
+        <property name="content" type="sap.ui.core/string" group="Data">
+            <documentation>The Template definition as a String.</documentation>
+        </property>
+    </properties>
+</control>

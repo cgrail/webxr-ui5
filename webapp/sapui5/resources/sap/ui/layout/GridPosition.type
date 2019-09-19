@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>GridPosition</name>
+    <derived/>
+    <documentation>The position of the {@link sap.ui.layout.Grid}. Can be &lt;code&gt;Left&lt;/code&gt; (default), &lt;code&gt;Center&lt;/code&gt;
+or &lt;code&gt;Right&lt;/code&gt;.</documentation>
+    <enumeration>
+        <value name="Left">
+            <documentation>&lt;code&gt;Grid&lt;/code&gt; is aligned left.</documentation>
+        </value>
+        <value name="Right">
+            <documentation>&lt;code&gt;Grid&lt;/code&gt; is aligned to the right.</documentation>
+        </value>
+        <value name="Center">
+            <documentation>&lt;code&gt;Grid&lt;/code&gt; is centered on the screen.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

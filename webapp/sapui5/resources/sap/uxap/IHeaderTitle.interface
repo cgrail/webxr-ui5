@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<interface xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>IHeaderTitle</name>
+    <derived/>
+    <documentation>Interface for controls that are eligible for the &lt;code&gt;headerTitle&lt;/code&gt; aggregation
+of the &lt;code&gt;{@link sap.uxap.ObjectPageLayout}&lt;/code&gt;.
+
+Controls that implement this interface:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;{@link sap.uxap.ObjectPageHeader}&lt;/code&gt; - &lt;code&gt;ObjectPageLayout&lt;/code&gt;'s classic header&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;{@link sap.uxap.ObjectPageDynamicHeaderTitle}&lt;/code&gt; - &lt;code&gt;ObjectPageLayout&lt;/code&gt;'s dynamic header&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+For more information on the types of header available for the &lt;code&gt;{@link sap.uxap.ObjectPageLayout ObjectPageLayout}&lt;/code&gt;,
+see {@link topic:d2ef0099542d44dc868719d908e576d0 Object Page Headers}.
+
+For details regarding the differences and similarities between the available headers,
+see {@link topic:9c9d94fd28284539a9a5a57e9caf82a8 Object Page Headers Comparison}.</documentation>
+    <since>1.52</since>
+</interface>

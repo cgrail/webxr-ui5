@@ -1,0 +1,128 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": ".theming",
+			"theme": "base"
+		},
+		{
+			"name": "ALPConstants.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "AnalyticalListPage.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "ListReport.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "ObjectPage.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "QuickCreate.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "QuickView.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "alr_zen.css",
+			"theme": "base"
+		},
+		{
+			"name": "base.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "crosstab_library.css",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/sort_asc.gif",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/sort_desc.gif",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/sort_none.gif",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/treenode_collapse.gif",
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/treenode_expand.gif",
+			"theme": "base"
+		},
+		{
+			"name": "img/readme.txt",
+			"theme": "base"
+		},
+		{
+			"name": "img/sort_asc.gif",
+			"theme": "base"
+		},
+		{
+			"name": "img/sort_desc.gif",
+			"theme": "base"
+		},
+		{
+			"name": "img/sort_none.gif",
+			"theme": "base"
+		},
+		{
+			"name": "img/treenode_collapse.gif",
+			"theme": "base"
+		},
+		{
+			"name": "img/treenode_expand.gif",
+			"theme": "base"
+		},
+		{
+			"name": "library-RTL-dbg.css",
+			"isDebug": true,
+			"theme": "base"
+		},
+		{
+			"name": "library-RTL.css",
+			"theme": "base"
+		},
+		{
+			"name": "library-dbg.css",
+			"isDebug": true,
+			"theme": "base"
+		},
+		{
+			"name": "library-parameters.json",
+			"theme": "base"
+		},
+		{
+			"name": "library.css",
+			"theme": "base"
+		},
+		{
+			"name": "library.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "library.source.less",
+			"designtime": true,
+			"theme": "base"
+		}
+	]
+}

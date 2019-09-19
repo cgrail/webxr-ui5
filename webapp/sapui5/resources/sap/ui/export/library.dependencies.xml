@@ -1,0 +1,275 @@
+<?xml version="1.0" ?>
+<library  version="2.0" name="sap.ui.export">
+  <module name="sap/ui/export/ExportDialog.js" size="3985" compressedSize="1677">
+    <description>Export progress dialog @private</description>
+    <requires>
+      <module name="sap/m/Button.js"/>
+      <module name="sap/m/Dialog.js"/>
+      <module name="sap/m/MessageBox.js"/>
+      <module name="sap/m/ProgressIndicator.js"/>
+      <module name="sap/m/Text.js"/>
+      <module name="sap/m/library.js"/>
+      <module name="sap/ui/core/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/export/ExportUtils.js" size="17840" compressedSize="6479">
+    <description>! SAPUI5&#xA;&#xA;		(c) Copyright 2009-2019 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="sap/base/Log.js"/>
+      <module name="sap/base/util/uid.js"/>
+      <module name="sap/m/Button.js"/>
+      <module name="sap/m/CheckBox.js"/>
+      <module name="sap/m/Dialog.js"/>
+      <module name="sap/m/Input.js"/>
+      <module name="sap/m/Label.js"/>
+      <module name="sap/m/Select.js"/>
+      <module name="sap/m/Text.js"/>
+      <module name="sap/m/VBox.js"/>
+      <module name="sap/m/library.js"/>
+      <module name="sap/ui/core/Item.js"/>
+      <module name="sap/ui/core/library.js"/>
+      <module name="sap/ui/core/syncStyleClass.js"/>
+      <module name="sap/ui/model/json/JSONModel.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/export/Spreadsheet.js" size="27870" compressedSize="4791">
+    <description>! SAPUI5&#xA;&#xA;		(c) Copyright 2009-2019 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/base/Log.js"/>
+      <module name="sap/base/assert.js"/>
+      <module name="sap/ui/Device.js"/>
+      <module name="sap/ui/base/EventProvider.js"/>
+      <module name="sap/ui/export/ExportDialog.js"/>
+      <module name="sap/ui/export/ExportUtils.js"/>
+      <module name="sap/ui/export/SpreadsheetExport.js"/>
+      <module name="sap/ui/export/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/export/SpreadsheetExport.js" size="6212" compressedSize="2721">
+    <description>Spreadsheet export utility @private</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/base/Log.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/export/js/SpreadsheetWorker.js" size="1275" compressedSize="853" excludeFromAllInOne="true" requiresTopLevelScope="true" exposedGlobals="spreadsheet,request,origin,processCallback,saveSpreadsheet" raw="true">
+  </module>
+  <module name="sap/ui/export/js/XLSXBuilder.js" size="42389" compressedSize="42350" excludeFromAllInOne="true" requiresTopLevelScope="true" exposedGlobals="XLSXBuilder" raw="true">
+  </module>
+  <module name="sap/ui/export/js/XLSXExportUtils.js" size="4883" compressedSize="4840" excludeFromAllInOne="true" requiresTopLevelScope="true" exposedGlobals="XLSXExportUtils" raw="true">
+  </module>
+  <module name="sap/ui/export/js/libs/es6-promise.js" size="34725" compressedSize="7375" excludeFromAllInOne="true" raw="true">
+  </module>
+  <module name="sap/ui/export/js/libs/jszip.min.js" size="101953" compressedSize="101937" excludeFromAllInOne="true" raw="true">
+  </module>
+  <module name="sap/ui/export/js/libs/uri.all.min.js" size="15078" compressedSize="15037" excludeFromAllInOne="true" raw="true">
+  </module>
+  <module name="sap/ui/export/library-h2-preload.js" size="2650">
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/base/Log.js"/>
+      <module name="sap/base/assert.js"/>
+      <module name="sap/base/util/uid.js"/>
+      <module name="sap/m/Button.js"/>
+      <module name="sap/m/CheckBox.js"/>
+      <module name="sap/m/Dialog.js"/>
+      <module name="sap/m/Input.js"/>
+      <module name="sap/m/Label.js"/>
+      <module name="sap/m/MessageBox.js"/>
+      <module name="sap/m/ProgressIndicator.js"/>
+      <module name="sap/m/Select.js"/>
+      <module name="sap/m/Text.js"/>
+      <module name="sap/m/VBox.js"/>
+      <module name="sap/m/library.js"/>
+      <module name="sap/ui/Device.js"/>
+      <module name="sap/ui/base/EventProvider.js"/>
+      <module name="sap/ui/core/Item.js"/>
+      <module name="sap/ui/core/library.js"/>
+      <module name="sap/ui/core/syncStyleClass.js"/>
+      <module name="sap/ui/model/json/JSONModel.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+    <includes>
+      <module name="sap/ui/export/library.js"/>
+      <module name="sap/ui/export/manifest.json"/>
+      <module name="sap/ui/export/ExportDialog.js"/>
+      <module name="sap/ui/export/ExportUtils.js"/>
+      <module name="sap/ui/export/Spreadsheet.js"/>
+      <module name="sap/ui/export/SpreadsheetExport.js"/>
+      <module name="sap/ui/export/js/SpreadsheetWorker.js"/>
+      <module name="sap/ui/export/js/XLSXBuilder.js"/>
+      <module name="sap/ui/export/js/XLSXExportUtils.js"/>
+      <module name="sap/ui/export/js/libs/es6-promise.js"/>
+      <module name="sap/ui/export/js/libs/jszip.min.js"/>
+      <module name="sap/ui/export/js/libs/uri.all.min.js"/>
+    </includes>
+  </module>
+  <module name="sap/ui/export/library-preload.js" size="17233">
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/base/Log.js"/>
+      <module name="sap/base/assert.js"/>
+      <module name="sap/base/util/uid.js"/>
+      <module name="sap/m/Button.js"/>
+      <module name="sap/m/CheckBox.js"/>
+      <module name="sap/m/Dialog.js"/>
+      <module name="sap/m/Input.js"/>
+      <module name="sap/m/Label.js"/>
+      <module name="sap/m/MessageBox.js"/>
+      <module name="sap/m/ProgressIndicator.js"/>
+      <module name="sap/m/Select.js"/>
+      <module name="sap/m/Text.js"/>
+      <module name="sap/m/VBox.js"/>
+      <module name="sap/m/library.js"/>
+      <module name="sap/ui/Device.js"/>
+      <module name="sap/ui/base/EventProvider.js"/>
+      <module name="sap/ui/core/Item.js"/>
+      <module name="sap/ui/core/library.js"/>
+      <module name="sap/ui/core/syncStyleClass.js"/>
+      <module name="sap/ui/model/json/JSONModel.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+    <includes>
+      <module name="sap/ui/export/ExportDialog.js"/>
+      <module name="sap/ui/export/ExportUtils.js"/>
+      <module name="sap/ui/export/Spreadsheet.js"/>
+      <module name="sap/ui/export/SpreadsheetExport.js"/>
+      <module name="sap/ui/export/library.js"/>
+      <module name="sap/ui/export/manifest.json"/>
+    </includes>
+  </module>
+  <module name="sap/ui/export/library-preload.json" size="0">
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/base/Log.js"/>
+      <module name="sap/base/assert.js"/>
+      <module name="sap/base/util/uid.js"/>
+      <module name="sap/m/Button.js"/>
+      <module name="sap/m/CheckBox.js"/>
+      <module name="sap/m/Dialog.js"/>
+      <module name="sap/m/Input.js"/>
+      <module name="sap/m/Label.js"/>
+      <module name="sap/m/MessageBox.js"/>
+      <module name="sap/m/ProgressIndicator.js"/>
+      <module name="sap/m/Select.js"/>
+      <module name="sap/m/Text.js"/>
+      <module name="sap/m/VBox.js"/>
+      <module name="sap/m/library.js"/>
+      <module name="sap/ui/Device.js"/>
+      <module name="sap/ui/base/EventProvider.js"/>
+      <module name="sap/ui/core/Item.js"/>
+      <module name="sap/ui/core/library-preload.json"/>
+      <module name="sap/ui/core/library.js"/>
+      <module name="sap/ui/core/syncStyleClass.js"/>
+      <module name="sap/ui/model/json/JSONModel.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+    <includes>
+      <module name="sap/ui/export/ExportDialog.js"/>
+      <module name="sap/ui/export/ExportUtils.js"/>
+      <module name="sap/ui/export/Spreadsheet.js"/>
+      <module name="sap/ui/export/SpreadsheetExport.js"/>
+      <module name="sap/ui/export/library.js"/>
+      <module name="sap/ui/export/manifest.json"/>
+    </includes>
+  </module>
+  <module name="sap/ui/export/library.js" size="2213" compressedSize="767">
+    <description>Initialization Code and shared classes of library sap.ui.export.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/core/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/export/manifest.json" size="989">
+  </module>
+  <module name="sap/ui/export/messagebundle.properties" size="2107">
+  </module>
+  <module name="sap/ui/export/messagebundle_ar.properties" size="4158">
+  </module>
+  <module name="sap/ui/export/messagebundle_bg.properties" size="5066">
+  </module>
+  <module name="sap/ui/export/messagebundle_ca.properties" size="2335">
+  </module>
+  <module name="sap/ui/export/messagebundle_cs.properties" size="2398">
+  </module>
+  <module name="sap/ui/export/messagebundle_da.properties" size="2111">
+  </module>
+  <module name="sap/ui/export/messagebundle_de.properties" size="2193">
+  </module>
+  <module name="sap/ui/export/messagebundle_el.properties" size="5201">
+  </module>
+  <module name="sap/ui/export/messagebundle_en.properties" size="2052">
+  </module>
+  <module name="sap/ui/export/messagebundle_en_US_sappsd.properties" size="5919">
+  </module>
+  <module name="sap/ui/export/messagebundle_en_US_saptrc.properties" size="2466">
+  </module>
+  <module name="sap/ui/export/messagebundle_es.properties" size="2253">
+  </module>
+  <module name="sap/ui/export/messagebundle_et.properties" size="2117">
+  </module>
+  <module name="sap/ui/export/messagebundle_fi.properties" size="2236">
+  </module>
+  <module name="sap/ui/export/messagebundle_fr.properties" size="2303">
+  </module>
+  <module name="sap/ui/export/messagebundle_hi.properties" size="4896">
+  </module>
+  <module name="sap/ui/export/messagebundle_hr.properties" size="2218">
+  </module>
+  <module name="sap/ui/export/messagebundle_hu.properties" size="2490">
+  </module>
+  <module name="sap/ui/export/messagebundle_it.properties" size="2174">
+  </module>
+  <module name="sap/ui/export/messagebundle_iw.properties" size="3830">
+  </module>
+  <module name="sap/ui/export/messagebundle_ja.properties" size="3265">
+  </module>
+  <module name="sap/ui/export/messagebundle_kk.properties" size="4781">
+  </module>
+  <module name="sap/ui/export/messagebundle_ko.properties" size="2921">
+  </module>
+  <module name="sap/ui/export/messagebundle_lt.properties" size="2288">
+  </module>
+  <module name="sap/ui/export/messagebundle_lv.properties" size="2397">
+  </module>
+  <module name="sap/ui/export/messagebundle_ms.properties" size="2071">
+  </module>
+  <module name="sap/ui/export/messagebundle_nl.properties" size="2162">
+  </module>
+  <module name="sap/ui/export/messagebundle_no.properties" size="2064">
+  </module>
+  <module name="sap/ui/export/messagebundle_pl.properties" size="2303">
+  </module>
+  <module name="sap/ui/export/messagebundle_pt.properties" size="2253">
+  </module>
+  <module name="sap/ui/export/messagebundle_ro.properties" size="2248">
+  </module>
+  <module name="sap/ui/export/messagebundle_ru.properties" size="4857">
+  </module>
+  <module name="sap/ui/export/messagebundle_sh.properties" size="2161">
+  </module>
+  <module name="sap/ui/export/messagebundle_sk.properties" size="2376">
+  </module>
+  <module name="sap/ui/export/messagebundle_sl.properties" size="2089">
+  </module>
+  <module name="sap/ui/export/messagebundle_sv.properties" size="2111">
+  </module>
+  <module name="sap/ui/export/messagebundle_th.properties" size="4811">
+  </module>
+  <module name="sap/ui/export/messagebundle_tr.properties" size="2427">
+  </module>
+  <module name="sap/ui/export/messagebundle_uk.properties" size="4974">
+  </module>
+  <module name="sap/ui/export/messagebundle_vi.properties" size="3023">
+  </module>
+  <module name="sap/ui/export/messagebundle_zh_CN.properties" size="2516">
+  </module>
+  <module name="sap/ui/export/messagebundle_zh_TW.properties" size="2558">
+  </module>
+</library>

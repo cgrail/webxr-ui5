@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ui5/VizContainer</name>
+    <derived/>
+    <documentation>Controls ui5/VizContainer</documentation>
+    <since>1.19.0</since>
+    <developmentState state="experimental" since="1.19.0">API is not finished yet and might change completely</developmentState>
+    <deprecation since="1.32.0">The chart controls in the &lt;code&gt;sap.viz.ui5&lt;/code&gt; package (which were always marked as &lt;i&gt;experimental&lt;/i&gt;) have been deprecated since 1.32.0.
+They are no longer actively developed and won't receive new features or improvements, only important bug fixes. They will only remain in the
+SAPUI5 distribution for backward compatibility.
+
+&lt;b&gt;SAP strongly recommends that existing consumers of those controls migrate to the new {@link sap.viz.ui5.controls.VizFrame VizFrame}
+control to benefit from new charting enhancements and timely support. &lt;/b&gt;
+
+&lt;b&gt;Note&lt;/b&gt;: As the feature set, design and API usage of VizFrame might differ from the old chart controls, make sure you evaluate it thoroughly before migration.</deprecation>
+    <baseType>sap.viz/ui5/controls/common/BaseControl</baseType>
+    <properties>
+        <property name="vizType" type="sap.ui.core/string" group="Misc">
+            <documentation>Type for visualization.</documentation>
+        </property>
+        <property name="vizCss" type="sap.ui.core/string" group="Misc">
+            <documentation>Css for visualization.</documentation>
+        </property>
+        <property name="vizProperties" type="sap.ui.core/object" group="Misc">
+            <documentation>Properties for visualization.</documentation>
+        </property>
+        <property name="enableMorphing" type="sap.ui.core/boolean" group="Misc">
+            <documentation>Enable morphing for visualization.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="feedsChanged" allowPreventDefault="false">
+            <documentation>Dispatches "feedsChanged" event when the feeding changes due to add/remove/change feeding items on feeding panel, drag and drop object onto VizFrame, or switch chart type by UI operation.
+Application should listen to "feedsChanged" event to get the corresponding data and set it back to VizFrame to to update the visualization with the new data.</documentation>
+            <parameters>
+                <parameter name="feeds" type="sap.viz/ui5/controls/common/feeds/FeedItem[]">
+                    <documentation>An array of changed feeds.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="vizTypeChanged" allowPreventDefault="false">
+            <documentation>Dispatches "vizTypeChanged" event when viz type was changed</documentation>
+        </event>
+        <event name="vizDefinitionChanged" allowPreventDefault="false">
+            <documentation>Dispatches "vizDefinitionChanged" event when viz definition was changed.</documentation>
+        </event>
+        <event name="selectData" allowPreventDefault="false">
+            <documentation>Event fires when certain data point(s) is(are) selected, data context of selected item(s) would be passed in accordance with the following format.&lt;code&gt;{name: "selectData",data:[{
+//selected element's detail
+target:"Dom Element",//an object pointed to corresponding dom element
+data:[{val: "...",//value of this element
+ctx:{type:"Dimension"||"Measure"||"MND",
+//for Dimension
+path:{aa:"...",di:"...",dii:"..."},
+//for Measure
+path:{mg:"...",mi:"...",dii_a1:"...",dii_a2:"..."},
+//for MND
+path:{mg:"...",mi:"..."}
+//path: analysis path
+//aa: analysis axis index // 0 for analysis axis 1, 1 for analysis 2
+//di: dimension index //zero based
+//dii: dimension item index //zero based
+//mg: measure group index // 0 for measure group 1,1 for measure group 2
+//mi: measure index // measure index in measure group zero based
+//dii_a1: each dii of di in analysis axis 1 index
+//dii_a2: each dii of di in analysis axis 2 index
+}},{
+//for bubble, tagcloud and scatter, there will be more than one values in one selected element.
+var:"...",ctx:"..."}]},{
+//if under multi selection, there will be more than one selected elements
+target:"...",data:["..."]}]}</documentation>
+        </event>
+        <event name="deselectData" allowPreventDefault="false">
+            <documentation>Event fires when certain data point(s) is(are) deselected, data context of deselected item(s) would be passed in accordance with the following format.&lt;code&gt;{name: "deselectData",data:["---the same as selectedData---"]}</documentation>
+        </event>
+        <event name="showTooltip" allowPreventDefault="false">
+            <documentation>Event fires when the mouse hover onto the specific part of chart, data context of tooltip would be passed in accordance with the following format.&lt;code&gt;{name:"showTooltip",data:{body:[{
+//data of one group
+name:"...",val:[{
+//data of one row
+color:"...",label:"...",shape:"...",value:"..."},"..."]},"..."],footer:[{label:"...",value:"..."},"..."],plotArea:{
+//this object specifies the plot area of the chart
+height:"...",width:"...",x:"...",y:"..."},point:{
+//this object specifies a point which affects the position of tooltip
+x:"...",y:"..."}}}</documentation>
+        </event>
+        <event name="hideTooltip" allowPreventDefault="false">
+            <documentation>Event fires when the mouse hover out of the specific part of chart, no data is passed.</documentation>
+        </event>
+        <event name="initialized" allowPreventDefault="false">
+            <documentation>Event fires when the loading ends. To use the event listener when creating charts, you must use an event that is passed by the events option. For more information on events options, see the usrOptions section of the &lt;a href="sap.viz.core.html#createViz" target="_blank"&gt;createViz&lt;/a&gt; function in the API document.</documentation>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="vizData" type="sap.viz/ui5/data/Dataset" cardinality="0..1">
+            <documentation>Dataset for chart.</documentation>
+        </aggregation>
+        <aggregation name="analysisObjectsForPicker" type="sap.viz/ui5/controls/common/feeds/AnalysisObject" cardinality="0..n">
+            <documentation>Available sap.viz.ui5.controls.common.feeds.AnalysisObject for object picker popup UI</documentation>
+        </aggregation>
+        <aggregation name="feeds" type="sap.viz/ui5/controls/common/feeds/FeedItem" cardinality="0..n">
+            <documentation>All feeds for chart.</documentation>
+        </aggregation>
+    </aggregations>
+    <methods>
+        <method name="vizSelection" type="sap.ui.core/object">
+            <documentation>Selections for the chart instance of the VizContainer.</documentation>
+            <parameters>
+                <parameter name="aPoints" type="sap.ui.core/object[]">
+                    <documentation>Some data points of the chart</documentation>
+                </parameter>
+                <parameter name="oAction" type="sap.ui.core/object">
+                    <documentation>A flag 'clearSelection', whether to clear previous selection, by default the selection will be incremental selection</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="vizUpdate" type="sap.ui.core/void">
+            <documentation>Update VizContainer according to a JSON object, it can update css, properties, feeds and data model.</documentation>
+            <parameters>
+                <parameter name="oJson" type="sap.ui.core/object">
+                    <documentation>A JSON object contains combination of css, properties, feeds and data model.</documentation>
+                </parameter>
+            </parameters>
+        </method>
+    </methods>
+</control>

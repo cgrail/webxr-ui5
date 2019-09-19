@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>semantic/FilterSelect</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A FilterSelect is a {@link sap.m.Select} control enhanced with styling according to the semantics of a common "Filter" acton.
+
+A FilterSelect cannot be used independently but only as aggregation content of a {@link sap.m.semantic.SemanticPage}.
+
+The filtering options should be added to the &lt;code&gt;items&lt;/code&gt; aggregation of {@link sap.m.semantic.FilterSelect} and will be displayed as a pop-up list with support for single-item selection.
+If this simple popup list is not sufficient for your use case, you can implement your own custom dialog by using {@link sap.m.semantic.FilterAction} to trigger the dialog opening.</documentation>
+    <since>1.30.0</since>
+    <baseType>sap.m/semantic/SemanticSelect</baseType>
+</control>

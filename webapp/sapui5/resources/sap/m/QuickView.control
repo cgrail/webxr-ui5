@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>QuickView</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A responsive popover that displays information on an object in a business-card format.
+&lt;h3&gt;Overview&lt;/h3&gt;
+The quick view is used to show business information on either a person or an entity (e.g. a company). It uses a set of pre-defined controls.
+Objects can be linked together and you can navigate between several objects. An unlimited number of objects can be linked.
+&lt;h3&gt;Structure&lt;/h3&gt;
+Each card is represented by a {@link sap.m.QuickViewPage} which holds all the information (icon, title, header, description) for the object.
+A single quick view can hold multiple objects, each showing information on a single entity.
+&lt;h3&gt;Usage&lt;/h3&gt;
+&lt;h4&gt;When to use&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;You want to display a concise overview of an object (an employee or a company).&lt;/li&gt;
+&lt;li&gt;Information on the object can be split into concrete groups.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;When not to use&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;You want to display complex information about an object.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Responsive Behavior&lt;/h3&gt;
+The quick view is displayed in a {@link sap.m.Popover popover} on desktop and a full-screen {@link sap.m.Dialog dialog} on mobile devices.</documentation>
+    <since>1.28.11</since>
+    <baseType>sap.m/QuickViewBase</baseType>
+    <properties>
+        <property name="placement" type="sap.m/PlacementType" defaultValue="Right" group="Misc">
+            <documentation>This property is reused from sap.m.Popover and only takes effect when running on desktop or tablet. Please refer the documentation of the placement property of sap.m.Popover.</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" defaultValue="320px" group="Dimension">
+            <documentation>The width of the QuickView. The property takes effect only when running on desktop or tablet.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="afterOpen" allowPreventDefault="false">
+            <documentation>This event fires after the QuickView is opened.</documentation>
+            <parameters>
+                <parameter name="openBy" type="sap.ui.core/Control">
+                    <documentation>This parameter refers to the control, which opens the QuickView.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="afterClose" allowPreventDefault="false">
+            <documentation>This event fires after the QuickView is closed.</documentation>
+            <parameters>
+                <parameter name="openBy" type="sap.ui.core/Control">
+                    <documentation>This parameter refers to the control, which opens the QuickView.</documentation>
+                </parameter>
+                <parameter name="origin" type="sap.m/Button">
+                    <documentation>This parameter contains the control,
+which triggers the close of the QuickView.
+It is undefined when running on desktop or tablet.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="beforeOpen" allowPreventDefault="false">
+            <documentation>This event fires before the QuickView is opened.</documentation>
+            <parameters>
+                <parameter name="openBy" type="sap.ui.core/Control">
+                    <documentation>This parameter refers to the control, which opens the QuickView.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="beforeClose" allowPreventDefault="false">
+            <documentation>This event fires before the QuickView is closed.</documentation>
+            <parameters>
+                <parameter name="openBy" type="sap.ui.core/Control">
+                    <documentation>This parameter refers to the control, which opens the QuickView.</documentation>
+                </parameter>
+                <parameter name="origin" type="sap.m/Button">
+                    <documentation>This parameter contains the control,
+which triggers the close of the QuickView.
+It is undefined when running on desktop or tablet.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+</control>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>semantic/GroupAction</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A GroupAction is a {@link sap.m.Button} control enhanced with styling according to the semantics of a common "Group" action.
+
+A GroupAction cannot be used independently but only as aggregation content of a {@link sap.m.semantic.SemanticPage}.
+
+Your app should listen to the &lt;code&gt;press&lt;/code&gt; event of {@link sap.m.semantic.GroupAction} in order to trigger the display of the grouping options.
+
+If your grouping options are a simple list of items and require single choice only, then you can consider using a {@link sap.m.semantic.GroupSelect} instead.</documentation>
+    <since>1.30.0</since>
+    <baseType>sap.m/semantic/SemanticButton</baseType>
+</control>

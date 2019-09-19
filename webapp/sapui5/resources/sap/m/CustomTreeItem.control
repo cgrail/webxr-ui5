@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>CustomTreeItem</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The &lt;code&gt;CustomTreeItem&lt;/code&gt; control with a content aggregation is used to customize the tree items within the &lt;code&gt;Tree&lt;/code&gt;
+       control.&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; Even though the content aggregation can be used for any control, complex responsive layout controls, such as
+       &lt;code&gt;Table, Form&lt;/code&gt; etc, should not be aggregated as content.</documentation>
+    <since>1.48.0</since>
+    <baseType>sap.m/TreeItemBase</baseType>
+    <aggregations default="content">
+        <aggregation name="content" type="sap.ui.core/Control" cardinality="0..n" bindable="bindable">
+            <documentation>The content of this tree item.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

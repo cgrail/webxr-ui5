@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ui5/controls/common/feeds/FeedItem</name>
+    <derived/>
+    <documentation>FeedItem Class</documentation>
+    <since>1.21.0</since>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="uid" type="sap.ui.core/string" group="Misc">
+            <documentation>Uid of a feed item.
+Please reference to bindings section in VIZDOCS to get the exact sUid string for each chart type.
+
+For example:
+	Bar chart &gt; bindings &gt; categoryAxis ; color ; valueAxis.
+	The 'categoryAxis' should be the sUid for x axis feeding for bar chart.</documentation>
+        </property>
+        <property name="type" type="sap.ui.core/string" group="Misc">
+            <documentation>Type of a feed item. Enumeration: Measure, Dimension</documentation>
+        </property>
+        <property name="values" type="sap.ui.core/any[]" group="Misc">
+            <documentation>Value of a feed item.</documentation>
+        </property>
+    </properties>
+</control>

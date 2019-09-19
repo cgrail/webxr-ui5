@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>DatePicker</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Allows end users to interact with dates.
+Entries can directly be written in, or selected from a calendar pad.
+Note: Dates can always be manually entered in the fix YYYYMMDD format, on top of the flexible "locale" format.
+If the value is provided via data binding, using a Date.type the formatter of the Date.type is used.
+Since version 1.22 the unified.Calendar is used inside the datePicker. So applications using the DatePicker should load the unified library. Otherwise it will be loaded the first time a DatePicker is opened.</documentation>
+    <deprecation since="1.38">replaced by {@link sap.m.DatePicker}</deprecation>
+    <baseType>sap.ui.commons/TextField</baseType>
+    <properties>
+        <property name="locale" type="sap.ui.core/string" group="Misc">
+            <documentation>Defines the locale (language and country), e.g. "en-US", whose translations and Date formatters should be used to render the DatePicker.If the value property is bound to a model using a Date type the locale will be ignored, because the locale information of the model are used.</documentation>
+        </property>
+        <property name="yyyymmdd" type="sap.ui.core/string" group="Misc">
+            <documentation>Defines the date as a "yyyymmdd" string, independent from the format used. The inherited textField "value" attribute uses the date format as configured via the locale.
+The date is interpreted as gregorian date</documentation>
+        </property>
+    </properties>
+</control>

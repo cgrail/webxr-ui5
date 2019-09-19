@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>base/state/SortOrder</name>
+    <derived/>
+    <documentation>Type for...</documentation>
+    <since>1.61.0</since>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="propertyName" type="sap.ui.core/string">
+            <documentation>Name of property</documentation>
+        </property>
+        <property name="descending" type="sap.ui.core/boolean">
+            <documentation>Order of sorting</documentation>
+        </property>
+    </properties>
+</control>

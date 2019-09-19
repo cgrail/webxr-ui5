@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>semantic/MasterPage</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A MasterPage is a {@link sap.m.semantic.SemanticPage} that supports semantic content of the following types:
+
+&lt;ul&gt;
+	&lt;li&gt;{@link sap.m.semantic.AddAction}&lt;/li&gt;
+	&lt;li&gt;{@link sap.m.semantic.MainAction}&lt;/li&gt;
+	&lt;li&gt;{@link sap.m.semantic.PositiveAction}&lt;/li&gt;
+	&lt;li&gt;{@link sap.m.semantic.NegativeAction}&lt;/li&gt;
+	&lt;li&gt;{@link sap.m.semantic.ForwardAction}&lt;/li&gt;
+	&lt;li&gt;{@link sap.m.semantic.EditAction}&lt;/li&gt;
+	&lt;li&gt;{@link sap.m.semantic.SaveAction}&lt;/li&gt;
+	&lt;li&gt;{@link sap.m.semantic.DeleteAction}&lt;/li&gt;
+	&lt;li&gt;{@link sap.m.semantic.CancelAction}&lt;/li&gt;
+	&lt;li&gt;{@link sap.m.semantic.MultiSelectAction}&lt;/li&gt;
+	&lt;li&gt;{@link sap.m.semantic.FlagAction}&lt;/li&gt;
+	&lt;li&gt;{@link sap.m.semantic.FavoriteAction}&lt;/li&gt;
+	&lt;li&gt;{@link sap.m.semantic.SortAction}&lt;/li&gt;
+	&lt;li&gt;{@link sap.m.semantic.SortSelect}&lt;/li&gt;
+	&lt;li&gt;{@link sap.m.semantic.FilterAction}&lt;/li&gt;
+	&lt;li&gt;{@link sap.m.semantic.FilterSelect}&lt;/li&gt;
+	&lt;li&gt;{@link sap.m.semantic.GroupAction}&lt;/li&gt;
+	&lt;li&gt;{@link sap.m.semantic.GroupSelect}&lt;/li&gt;
+	&lt;li&gt;{@link sap.m.semantic.MessagesIndicator}&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+    <since>1.30.0</since>
+    <baseType>sap.m/semantic/SemanticPage</baseType>
+    <aggregations>
+        <aggregation name="addAction" type="sap.m/semantic/AddAction" cardinality="0..1">
+            <documentation>Add action</documentation>
+        </aggregation>
+        <aggregation name="mainAction" type="sap.m/semantic/MainAction" cardinality="0..1">
+            <documentation>Main action</documentation>
+        </aggregation>
+        <aggregation name="positiveAction" type="sap.m/semantic/PositiveAction" cardinality="0..1">
+            <documentation>Positive action</documentation>
+        </aggregation>
+        <aggregation name="negativeAction" type="sap.m/semantic/NegativeAction" cardinality="0..1">
+            <documentation>Negative action</documentation>
+        </aggregation>
+        <aggregation name="multiSelectAction" type="sap.m/semantic/MultiSelectAction" cardinality="0..1">
+            <documentation>MultiSelect action</documentation>
+        </aggregation>
+        <aggregation name="forwardAction" type="sap.m/semantic/ForwardAction" cardinality="0..1">
+            <documentation>Forward action</documentation>
+        </aggregation>
+        <aggregation name="editAction" type="sap.m/semantic/EditAction" cardinality="0..1">
+            <documentation>Edit action</documentation>
+        </aggregation>
+        <aggregation name="saveAction" type="sap.m/semantic/SaveAction" cardinality="0..1">
+            <documentation>Save action</documentation>
+        </aggregation>
+        <aggregation name="deleteAction" type="sap.m/semantic/DeleteAction" cardinality="0..1">
+            <documentation>Delete action</documentation>
+        </aggregation>
+        <aggregation name="cancelAction" type="sap.m/semantic/CancelAction" cardinality="0..1">
+            <documentation>Cancel action</documentation>
+        </aggregation>
+        <aggregation name="sort" type="sap.m/semantic/ISort" cardinality="0..1">
+            <documentation>Sort action</documentation>
+        </aggregation>
+        <aggregation name="filter" type="sap.m/semantic/IFilter" cardinality="0..1">
+            <documentation>Filter action</documentation>
+        </aggregation>
+        <aggregation name="group" type="sap.m/semantic/IGroup" cardinality="0..1">
+            <documentation>Group action</documentation>
+        </aggregation>
+        <aggregation name="messagesIndicator" type="sap.m/semantic/MessagesIndicator" cardinality="0..1">
+            <documentation>MessagesIndicator</documentation>
+        </aggregation>
+    </aggregations>
+</control>

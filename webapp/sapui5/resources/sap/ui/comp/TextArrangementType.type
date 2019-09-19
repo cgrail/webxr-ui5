@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>TextArrangementType</name>
+    <derived/>
+    <documentation>Enumeration of text arrangement types.</documentation>
+    <since>1.60</since>
+    <enumeration>
+        <value name="TextFirst" value="com.sap.vocabularies.UI.v1.TextArrangementType/TextFirst">
+            <documentation>Text comes first, followed by the ID.</documentation>
+        </value>
+        <value name="TextLast" value="com.sap.vocabularies.UI.v1.TextArrangementType/TextLast">
+            <documentation>ID comes first, followed by the description.</documentation>
+        </value>
+        <value name="TextSeparate" value="com.sap.vocabularies.UI.v1.TextArrangementType/TextSeparate">
+            <documentation>ID and description are represented separately.</documentation>
+        </value>
+        <value name="TextOnly" value="com.sap.vocabularies.UI.v1.TextArrangementType/TextOnly">
+            <documentation>Only description is represented, ID is hidden (for example, for &lt;code&gt;UUIDs&lt;/code&gt;).</documentation>
+        </value>
+    </enumeration>
+</simple-type>

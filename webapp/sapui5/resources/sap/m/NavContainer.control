@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>NavContainer</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Handles hierarchical navigation between Pages or other fullscreen controls.
+
+All children of this control receive navigation events, such as {@link sap.m.NavContainerChild#beforeShow beforeShow},
+they are documented in the pseudo interface {@link sap.m.NavContainerChild sap.m.NavContainerChild}.</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="autoFocus" type="sap.ui.core/boolean" defaultValue="true" group="Behavior" since="1.30">
+            <documentation>Determines whether the initial focus is set automatically on first rendering and after navigating to a new page.
+This is useful when on touch devices the keyboard pops out due to the focus being automatically set on an input field.
+If necessary, the &lt;code&gt;afterShow&lt;/code&gt; event can be used to focus another element, only if &lt;code&gt;autoFocus&lt;/code&gt; is set to &lt;code&gt;false&lt;/code&gt;.
+
+&lt;b&gt;Note:&lt;/b&gt;  The following scenarios are possible, depending on where the focus
+was before navigation to a new page:
+&lt;ul&gt;&lt;li&gt;If &lt;code&gt;autoFocus&lt;/code&gt; is set to &lt;code&gt;true&lt;/code&gt; and the focus was
+inside the current page, the focus will be moved automatically on the new page.&lt;/li&gt;
+&lt;li&gt;If &lt;code&gt;autoFocus&lt;/code&gt; is set to &lt;code&gt;false&lt;/code&gt; and the focus was inside
+the current page, the focus will disappear.
+&lt;li&gt;If the focus was outside the current page, after the navigation it will remain
+unchanged regardless of what is set to the &lt;code&gt;autoFocus&lt;/code&gt; property.&lt;/li&gt;&lt;/ul&gt;</documentation>
+        </property>
+        <property name="height" type="sap.ui.core/CSSSize" defaultValue="100%" group="Dimension">
+            <documentation>The height of the NavContainer. Can be changed when the NavContainer should not cover the whole available area.</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" defaultValue="100%" group="Dimension">
+            <documentation>The width of the NavContainer. Can be changed when the NavContainer should not cover the whole available area.</documentation>
+        </property>
+        <property name="visible" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>Whether the NavContainer is visible.</documentation>
+        </property>
+        <property name="defaultTransitionName" type="sap.ui.core/string" defaultValue="slide" group="Appearance" since="1.7.1">
+            <documentation>The type of the transition/animation to apply when "to()" is called without defining a transition type to use. The default is "slide". Other options are: "fade", "flip" and "show" - and the names of any registered custom transitions.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="navigate" since="1.7.1" allowPreventDefault="true">
+            <documentation>The event is fired when navigation between two pages has been triggered. The transition (if any) to the new page has not started yet.
+This event can be aborted by the application with preventDefault(), which means that there will be no navigation.</documentation>
+            <parameters>
+                <parameter name="from" type="sap.ui.core/Control">
+                    <documentation>The page which was shown before the current navigation.</documentation>
+                </parameter>
+                <parameter name="fromId" type="sap.ui.core/string">
+                    <documentation>The ID of the page which was shown before the current navigation.</documentation>
+                </parameter>
+                <parameter name="to" type="sap.ui.core/Control">
+                    <documentation>The page which will be shown after the current navigation.</documentation>
+                </parameter>
+                <parameter name="toId" type="sap.ui.core/string">
+                    <documentation>The ID of the page which will be shown after the current navigation.</documentation>
+                </parameter>
+                <parameter name="firstTime" type="sap.ui.core/boolean">
+                    <documentation>Whether the "to" page (more precisely: a control with the ID of the page which is currently navigated to) has not been shown/navigated to before.</documentation>
+                </parameter>
+                <parameter name="isTo" type="sap.ui.core/boolean">
+                    <documentation>Whether this is a forward navigation, triggered by "to()".</documentation>
+                </parameter>
+                <parameter name="isBack" type="sap.ui.core/boolean">
+                    <documentation>Whether this is a back navigation, triggered by "back()".</documentation>
+                </parameter>
+                <parameter name="isBackToTop" type="sap.ui.core/boolean">
+                    <documentation>Whether this is a navigation to the root page, triggered by "backToTop()".</documentation>
+                </parameter>
+                <parameter name="isBackToPage" type="sap.ui.core/boolean" since="1.7.2">
+                    <documentation>Whether this was a navigation to a specific page, triggered by "backToPage()".</documentation>
+                </parameter>
+                <parameter name="direction" type="sap.ui.core/string">
+                    <documentation>How the navigation was triggered, possible values are "to", "back", "backToPage", and "backToTop".</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="afterNavigate" since="1.7.1" allowPreventDefault="false">
+            <documentation>The event is fired when navigation between two pages has completed. In case of animated transitions this event is fired with some delay after the "navigate" event.</documentation>
+            <parameters>
+                <parameter name="from" type="sap.ui.core/Control">
+                    <documentation>The page which had been shown before navigation.</documentation>
+                </parameter>
+                <parameter name="fromId" type="sap.ui.core/string">
+                    <documentation>The ID of the page which had been shown before navigation.</documentation>
+                </parameter>
+                <parameter name="to" type="sap.ui.core/Control">
+                    <documentation>The page which is now shown after navigation.</documentation>
+                </parameter>
+                <parameter name="toId" type="sap.ui.core/string">
+                    <documentation>The ID of the page which is now shown after navigation.</documentation>
+                </parameter>
+                <parameter name="firstTime" type="sap.ui.core/boolean">
+                    <documentation>Whether the "to" page (more precisely: a control with the ID of the page which has been navigated to) had not been shown/navigated to before.</documentation>
+                </parameter>
+                <parameter name="isTo" type="sap.ui.core/boolean">
+                    <documentation>Whether was a forward navigation, triggered by "to()".</documentation>
+                </parameter>
+                <parameter name="isBack" type="sap.ui.core/boolean">
+                    <documentation>Whether this was a back navigation, triggered by "back()".</documentation>
+                </parameter>
+                <parameter name="isBackToTop" type="sap.ui.core/boolean">
+                    <documentation>Whether this was a navigation to the root page, triggered by "backToTop()".</documentation>
+                </parameter>
+                <parameter name="isBackToPage" type="sap.ui.core/boolean" since="1.7.2">
+                    <documentation>Whether this was a navigation to a specific page, triggered by "backToPage()".</documentation>
+                </parameter>
+                <parameter name="direction" type="sap.ui.core/string">
+                    <documentation>How the navigation was triggered, possible values are "to", "back", "backToPage", and "backToTop".</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations default="pages">
+        <aggregation name="pages" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>The content entities between which this NavContainer navigates. These can be of type sap.m.Page, sap.ui.core.View, sap.m.Carousel or any other control with fullscreen/page semantics.
+
+These aggregated controls will receive navigation events like {@link sap.m.NavContainerChild#beforeShow beforeShow}, they are documented in the pseudo interface {@link sap.m.NavContainerChild sap.m.NavContainerChild}</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="initialPage" type="sap.ui.core/Control" cardinality="0..1">
+            <documentation>This association can be used to define which page is displayed initially. If the given page does not exist or no page is given, the first page which has been added is considered as initial page.
+This value should be set initially and not set/modified while the application is running.
+
+This could be used not only for the initial display, but also if the user wants to navigate "up to top", so this page serves as a sort of "home/root page".</documentation>
+        </association>
+    </associations>
+    <methods>
+        <method name="getPage" type="sap.ui.core/Control">
+            <documentation>Returns the control with the given ID from the "pages" aggregation (if available).</documentation>
+            <parameters>
+                <parameter name="pageId" type="sap.ui.core/string">
+                    <documentation>The ID of the aggregated control to find</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="getCurrentPage" type="sap.ui.core/Control">
+            <documentation>Returns the currently displayed page-level control.
+
+&lt;b&gt;Note:&lt;/b&gt; Returns &lt;code&gt;undefined&lt;/code&gt; if no page has been added yet,
+otherwise returns an instance of &lt;code&gt;sap.m.Page&lt;/code&gt;,
+&lt;code&gt;sap.ui.core.View&lt;/code&gt;, &lt;code&gt;sap.m.Carousel&lt;/code&gt; or whatever is aggregated.</documentation>
+        </method>
+        <method name="getPreviousPage" type="sap.ui.core/Control" since="1.7.1">
+            <documentation>Returns the previous page (the page from which the user drilled down to the current page with "to()").
+
+&lt;b&gt;Note:&lt;/b&gt; this is not the page which the user has seen before, but the page which is the target of the next "back()" navigation.
+If there is no previous page, &lt;code&gt;undefined&lt;/code&gt; is returned.</documentation>
+        </method>
+        <method name="currentPageIsTopPage" type="sap.ui.core/boolean">
+            <documentation>Returns whether the current page is the top/initial page.
+
+&lt;b&gt;Note:&lt;/b&gt; going to the initial page again with a row of "to" navigations causes the initial page to be displayed again,
+but logically one is not at the top level, so this method returns "false" in this case.</documentation>
+        </method>
+        <method name="insertPreviousPage" type="sap.m/NavContainer" since="1.16.1">
+            <documentation>Inserts the page/control with the specified ID into the navigation history stack of the NavContainer.
+
+This can be used for deep-linking when the user directly reached a drilldown detail page using a bookmark and then wants to navigate up in the drilldown hierarchy. Normally such a back navigation would not be possible because there is no previous page in the NavContainer's history stack.</documentation>
+            <parameters>
+                <parameter name="pageId" type="sap.ui.core/string">
+                    <documentation>The ID of the control/page/screen which is inserted into the history stack. The respective control must be aggregated by the NavContainer, otherwise this will cause an error.</documentation>
+                </parameter>
+                <parameter name="transitionName" type="sap.ui.core/string">
+                    <documentation>The type of the transition/animation which would have been used to navigate from the (inserted) previous page to the current page. When navigating back, the inverse animation will be applied.</documentation>
+                </parameter>
+                <parameter name="data" type="sap.ui.core/object">
+                    <documentation>This optional object can carry any payload data which would have been given to the inserted previous page if the user would have done a normal forward navigation to it.</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="to" type="sap.m/NavContainer">
+            <documentation>Navigates to the next page (with drill-down semantic) with the given (or default) animation. This creates a new history item inside the NavContainer and allows going back.
+
+Note that any modifications to the target page (like setting its title, or anything else that could cause a re-rendering) should be done BEFORE calling to(), in order to avoid unwanted side effects, e.g. related to the page animation.
+
+Available transitions currently include "slide" (default), "fade", "flip", and "show". None of these is currently making use of any given transitionParameters.
+
+Calling this navigation method triggers first the (cancelable) "navigate" event on the NavContainer, then the "beforeHide" pseudo event on the source page and "beforeFirstShow" (if applicable) and"beforeShow" on the target page. Later - after the transition has completed - the "afterShow" pseudo event is triggered on the target page and "afterHide" on the page which has been left. The given data object is available in the "beforeFirstShow", "beforeShow" and "afterShow" event object as "data" property.</documentation>
+            <parameters>
+                <parameter name="pageId" type="sap.ui.core/string">
+                    <documentation>The screen to which drilldown should happen. The ID or the control itself can be given.</documentation>
+                </parameter>
+                <parameter name="transitionName" type="sap.ui.core/string">
+                    <documentation>The type of the transition/animation to apply. This parameter can be omitted; then the default is "slide" (horizontal movement from the right).</documentation>
+                </parameter>
+                <parameter name="data" type="sap.ui.core/object">
+                    <documentation>Since version 1.7.1. This optional object can carry any payload data which should be made available to the target page.</documentation>
+                </parameter>
+                <parameter name="transitionParameters" type="sap.ui.core/object">
+                    <documentation>Since version 1.7.1. This optional object can contain additional information for the transition function, like the DOM element which triggered the transition or the desired transition duration.</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="back" type="sap.m/NavContainer">
+            <documentation>Navigates back one level. If already on the initial page and there is no place to go back, nothing happens.
+
+Calling this navigation method triggers first the (cancelable) "navigate" event on the NavContainer, then the "beforeHide" pseudo event on the source page and "beforeFirstShow" (if applicable) and"beforeShow" on the target page. Later - after the transition has completed - the "afterShow" pseudo event is triggered on the target page and "afterHide" on the page which has been left. The given backData object is available in the "beforeFirstShow", "beforeShow" and "afterShow" event object as "data" property. The original "data" object from the "to" navigation is also available in these event objects.</documentation>
+            <parameters>
+                <parameter name="backData" type="sap.ui.core/object">
+                    <documentation>Since version 1.7.1. This optional object can carry any payload data which should be made available to the target page of the back navigation. The event on the target page will contain this data object as "backData" property. (The original data from the "to()" navigation will still be available as "data" property.)</documentation>
+                </parameter>
+                <parameter name="transitionParameters" type="sap.ui.core/object">
+                    <documentation>Since version 1.7.1. This optional object can give additional information to the transition function, like the DOM element which triggered the transition or the desired transition duration.</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="backToPage" type="sap.m/NavContainer" since="1.7.2">
+            <documentation>Navigates back to the nearest previous page in the NavContainer history with the given ID. If there is no such page among the previous pages, nothing happens.
+The transition effect which had been used to get to the current page is inverted and used for this navigation.
+
+Calling this navigation method triggers first the (cancelable) "navigate" event on the NavContainer, then the "beforeHide" pseudo event on the source page and "beforeFirstShow" (if applicable) and"beforeShow" on the target page. Later - after the transition has completed - the "afterShow" pseudo event is triggered on the target page and "afterHide" on the page which has been left. The given backData object is available in the "beforeFirstShow", "beforeShow" and "afterShow" event object as "data" property. The original "data" object from the "to" navigation is also available in these event objects.</documentation>
+            <parameters>
+                <parameter name="pageId" type="sap.ui.core/string">
+                    <documentation>The ID of the screen to which back navigation should happen. The ID or the control itself can be given. The nearest such page among the previous pages in the history stack will be used.</documentation>
+                </parameter>
+                <parameter name="backData" type="sap.ui.core/object">
+                    <documentation>This optional object can carry any payload data which should be made available to the target page of the "backToPage" navigation. The event on the target page will contain this data object as "backData" property.</documentation>
+                </parameter>
+                <parameter name="transitionParameters" type="sap.ui.core/object">
+                    <documentation>This optional object can give additional information to the transition function, like the DOM element which triggered the transition or the desired transition duration.</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="backToTop" type="sap.m/NavContainer" since="1.7.1">
+            <documentation>Navigates back to the initial/top level (this is the element aggregated as "initialPage", or the first added element). If already on the initial page, nothing happens.
+The transition effect which had been used to get to the current page is inverted and used for this navigation.
+
+Calling this navigation method triggers first the (cancelable) "navigate" event on the NavContainer, then the "beforeHide" pseudo event on the source page and "beforeFirstShow" (if applicable) and"beforeShow" on the target page. Later - after the transition has completed - the "afterShow" pseudo event is triggered on the target page and "afterHide" on the page which has been left. The given backData object is available in the "beforeFirstShow", "beforeShow" and "afterShow" event object as "data" property.</documentation>
+            <parameters>
+                <parameter name="backData" type="sap.ui.core/object">
+                    <documentation>This optional object can carry any payload data which should be made available to the target page of the "backToTop" navigation. The event on the target page will contain this data object as "backData" property.</documentation>
+                </parameter>
+                <parameter name="transitionParameters" type="sap.ui.core/object">
+                    <documentation>This optional object can give additional information to the transition function, like the DOM element which triggered the transition or the desired transition duration.</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="addCustomTransition" type="sap.m/NavContainer">
+            <documentation>Adds a custom transition to the NavContainer type (not to a particular instance!). The transition is identified by a "name". Make sure to only use names that will not collide with transitions which may be added to the NavContainer later. A suggestion is to use the prefix "c_" or "_" for your custom transitions to ensure this.
+
+"to" and "back" are the transition functions for the forward and backward navigation.
+Both will be called with the following parameters:
+- oFromPage: the Control which is currently being displayed by the NavContainer
+- oToPage: the Control which should be displayed by the NavContainer after the transition
+- fCallback: a function which MUST be called when the transition has completed
+- oTransitionParameters: a data object that can be given by application code when triggering the transition by calling to() or back(); this object could give additional information to the transition function, like the DOM element which triggered the transition or the desired transition duration
+
+The contract for "to" and "back" is that they may do an animation of their choice, but it should not take "too long". At the beginning of the transition the target page "oToPage" does have the CSS class "sapMNavItemHidden" which initially hides the target page (visibility:hidden). The transition can do any preparation (e.g. move that page out of the screen or make it transparent) and then should remove this CSS class.
+After the animation the target page "oToPage" should cover the entire screen and the source page "oFromPage" should not be visible anymore. This page should then have the CSS class "sapMNavItemHidden".
+For adding/removing this or other CSS classes, the transition can use the addStyleClass/removeStyleClass method:
+oFromPage.addStyleClass("sapMNavItemHidden");
+When the transition is complete, it MUST call the given fCallback method to inform the NavContainer that navigation has finished!
+
+Hint: if the target page of your transition stays black on iPhone, try wrapping the animation start into a
+setTimeout(..., 0)
+block (delayed, but without waiting).
+
+This method can be called on any NavContainer instance or statically on the sap.m.NavContainer type. However, the transition will always be registered for the type (and ALL instances), not for the single instance on which this method was invoked.
+
+Returns the sap.m.NavContainer type if called statically, or "this" (to allow method chaining) if called on a particular NavContainer instance.</documentation>
+            <parameters>
+                <parameter name="name" type="sap.ui.core/string">
+                    <documentation>The name of the transition. This name can be used by the application to choose this transition when navigating "to()" or "back()": the "transitionName" parameter of "NavContainer.to()" corresponds to this name, the back() navigation will automatically use the same transition.</documentation>
+                </parameter>
+                <parameter name="to" type="sap.ui.core/object">
+                    <documentation>The function which will be called by the NavContainer when the application navigates "to()", using this animation's name. The NavContainer instance is the "this" context within the animation function.</documentation>
+                </parameter>
+                <parameter name="back" type="sap.ui.core/object">
+                    <documentation>The function which will be called by the NavContainer when the application navigates "back()" from a page where it had navigated to using this animation's name. The NavContainer instance is the "this" context within the animation function.</documentation>
+                </parameter>
+            </parameters>
+        </method>
+    </methods>
+</control>

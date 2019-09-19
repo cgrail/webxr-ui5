@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:uxap="sap.uxap"
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1">
+	
+<template:alias name=".AH" value="sap.suite.ui.generic.template.js.AnnotationHelperReuseComponents">
+					<uxap:ObjectPageSubSection  id="{path: 'component>', formatter: '.AH.formatIdComponentSubSection'}"  class="sapSmartTemplatesObjectPageSubSection" title="{component>title}">
+							<uxap:customData>
+								<core:CustomData key="strategyForVisibilityChange" value="reuseComponent"/>
+							</uxap:customData>
+							<core:ComponentContainer id="{path: 'component>', formatter: '.AH.formatIdComponentContainer'}" binding="{= '{' + ( ${component>binding} || '' ) + '}' }" 
+								propagateModel="true"
+								settings="{parts: [{path: 'entitySet>'}, {path: 'component>'}, {path: 'parameter>/routingSpec'}], formatter: '.AH.formatComponentSettingsSubSection'}"/>
+						</uxap:ObjectPageSubSection>
+	</template:alias>
+</core:FragmentDefinition>

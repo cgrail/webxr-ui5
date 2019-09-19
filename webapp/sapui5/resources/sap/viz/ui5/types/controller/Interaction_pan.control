@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ui5/types/controller/Interaction_pan</name>
+    <derived/>
+    <documentation>Structured Type sap.viz.ui5.types.controller.Interaction_pan</documentation>
+    <since>1.7.2</since>
+    <deprecation since="1.19">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+    <baseType>sap.viz/ui5/core/BaseStructuredType</baseType>
+    <properties>
+        <property name="enable" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>Enable/disable pan</documentation>
+        </property>
+        <property name="orientation" type="sap.viz/ui5/types/controller/Interaction_pan_orientation" defaultValue="both">
+            <documentation>Set orientation of pan</documentation>
+            <deprecation since="1.19">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+    </properties>
+</control>

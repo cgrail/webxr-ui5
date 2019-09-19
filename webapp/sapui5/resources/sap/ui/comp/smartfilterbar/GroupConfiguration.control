@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartfilterbar/GroupConfiguration</name>
+    <derived/>
+    <documentation>A GroupConfiguration can be used to add additional configurations for groups in the SmartFilterBar. A group in the SmartFilterBar is a group of filter fields in the advanced search.</documentation>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="key" type="sap.ui.core/string" group="Misc">
+            <documentation>The key property shall correspond to the name EntityTypeName from the OData service $metadata document.</documentation>
+        </property>
+        <property name="index" type="sap.ui.core/any" defaultValue="undefined" group="Misc">
+            <documentation>Zero based integer index.
+The index can be used to specify the order of groups. If no index is specified, the order like in the OData metadata will be used.</documentation>
+        </property>
+        <property name="label" type="sap.ui.core/any" defaultValue="undefined" group="Misc">
+            <documentation>Using this property it is possible to overwrite the label of a group in the advanced area of the SmartFilterBar.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="change" allowPreventDefault="false">
+            <documentation>Fired when the value of a property, for example label, has changed</documentation>
+            <parameters>
+                <parameter name="propertyName" type="sap.ui.core/string">
+                    <documentation>Name of the changed property</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+</control>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartfield/ControlType</name>
+    <derived/>
+    <documentation>The available control types to configure the internal control selection of a SmartField control.</documentation>
+    <enumeration>
+        <value name="auto">
+            <documentation>The &lt;code&gt;SmartField&lt;/code&gt; control chooses the control to be displayed.</documentation>
+        </value>
+        <value name="dropDownList">
+            <documentation>The &lt;code&gt;SmartField&lt;/code&gt; control displays a combo box control.</documentation>
+        </value>
+        <value name="input">
+            <documentation>The &lt;code&gt;SmartField&lt;/code&gt; control displays a text input field control.</documentation>
+        </value>
+        <value name="datePicker">
+            <documentation>The &lt;code&gt;SmartField&lt;/code&gt; control displays a date picker control.</documentation>
+        </value>
+        <value name="checkBox">
+            <documentation>The &lt;code&gt;SmartField&lt;/code&gt; control displays a check box control.</documentation>
+        </value>
+        <value name="selection">
+            <documentation>The &lt;code&gt;SmartField&lt;/code&gt; control displays a select control.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

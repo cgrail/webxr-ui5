@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>AvatarShape</name>
+    <derived/>
+    <documentation>Types of shape for the {@link sap.f.Avatar} control.</documentation>
+    <since>1.46</since>
+    <enumeration>
+        <value name="Circle">
+            <documentation>Circular shape.</documentation>
+        </value>
+        <value name="Square">
+            <documentation>Square shape.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

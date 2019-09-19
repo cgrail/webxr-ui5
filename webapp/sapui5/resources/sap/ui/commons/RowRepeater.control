@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>RowRepeater</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>This control displays items in a stacked list format, allowing the user to page in order to see more items or to use the offered filtering and sorting capabilities in order to manipulate the displayed data.</documentation>
+    <deprecation since="1.38">Instead, use the &lt;code&gt;sap.ui.table.Table&lt;/code&gt; control.</deprecation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="numberOfRows" type="sap.ui.core/int" defaultValue="5" group="Dimension">
+            <documentation>Number of rows displayed.</documentation>
+        </property>
+        <property name="currentPage" type="sap.ui.core/int" defaultValue="1" group="Data">
+            <documentation>The index of the page currently displayed. The index starts at 1.</documentation>
+        </property>
+        <property name="showMoreSteps" type="sap.ui.core/int" defaultValue="0" group="Behavior">
+            <documentation>Step size used to increase the numberOfRows value. This feature is only active if value is greater than 0. This will deactivate the paging feature.</documentation>
+        </property>
+        <property name="fixedRowHeight" type="sap.ui.core/CSSSize" defaultValue="" group="Appearance">
+            <documentation>Row height adapts to rendered content. If a fixed height is specified the cells have a maximum height and the overflow will be hidden.</documentation>
+        </property>
+        <property name="design" type="sap.ui.commons/RowRepeaterDesign" defaultValue="Standard" group="Appearance">
+            <documentation>The visual design of the control.</documentation>
+        </property>
+        <property name="threshold" type="sap.ui.core/int">
+            <documentation>Threshold to fetch the next chunk of data. The minimal threshold can be the numberOfRows of the RR.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="filter" allowPreventDefault="false">
+            <documentation>This event is triggered when a filter is set.</documentation>
+            <parameters>
+                <parameter name="filterId" type="sap.ui.core/string">
+                    <documentation>The ID of the filter that has just been applied.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="sort" allowPreventDefault="false">
+            <documentation>This event is triggered when a sorting is applied.</documentation>
+            <parameters>
+                <parameter name="sorterId" type="sap.ui.core/string">
+                    <documentation>The ID of the sorter that has just been applied.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="page" allowPreventDefault="false">
+            <documentation>This event is triggered when paging was executed.</documentation>
+            <parameters>
+                <parameter name="currentPage" type="sap.ui.core/int">
+                    <documentation>The value of the currentPage property after the change.</documentation>
+                </parameter>
+                <parameter name="previousPage" type="sap.ui.core/int">
+                    <documentation>The value of the currentPage property before the change.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="resize" allowPreventDefault="false">
+            <documentation>This event is triggered when the number of rows was changed.</documentation>
+            <parameters>
+                <parameter name="numberOfRows" type="sap.ui.core/int">
+                    <documentation>The value of the numberOfRows property after the change.</documentation>
+                </parameter>
+                <parameter name="previousNumberOfRows" type="sap.ui.core/int">
+                    <documentation>The value of the numberOfRows property before the change.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations default="rows">
+        <aggregation name="rows" type="sap.ui.core/Control" cardinality="0..n" bindable="bindable">
+            <documentation>Rows to be repeated.</documentation>
+        </aggregation>
+        <aggregation name="title" type="sap.ui.core/Title" cardinality="0..1">
+            <documentation>Title to be displayed in top left corner. Either text or icon.</documentation>
+        </aggregation>
+        <aggregation name="filters" type="sap.ui.commons/RowRepeaterFilter" cardinality="0..n">
+            <documentation>Filters to be provided in toolbar.</documentation>
+        </aggregation>
+        <aggregation name="sorters" type="sap.ui.commons/RowRepeaterSorter" cardinality="0..n">
+            <documentation>Sorters to be provided in secondary toolbar.</documentation>
+        </aggregation>
+        <aggregation name="noData" type="sap.ui.core/Control" cardinality="0..1">
+            <documentation>This control is shown, in case there is no data available to be displayed in the RowRepeater.</documentation>
+        </aggregation>
+        <aggregation name="filterToolbar" type="sap.ui.commons/Toolbar" cardinality="0..1" visibility="hidden">
+            <documentation>A Toolbar which used internally by the RowRepeater</documentation>
+        </aggregation>
+        <aggregation name="sorterToolbar" type="sap.ui.commons/Toolbar" cardinality="0..1" visibility="hidden">
+            <documentation>A Toolbar which used internally by the RowRepeater</documentation>
+        </aggregation>
+        <aggregation name="headerShowMoreButton" type="sap.ui.commons/Button" cardinality="0..1" visibility="hidden">
+            <documentation>A Button which used internally by the RowRepeater</documentation>
+        </aggregation>
+        <aggregation name="footerShowMoreButton" type="sap.ui.commons/Button" cardinality="0..1" visibility="hidden">
+            <documentation>A Button which used internally by the RowRepeater</documentation>
+        </aggregation>
+        <aggregation name="footerPager" type="sap.ui.commons/Paginator" cardinality="0..1" visibility="hidden">
+            <documentation>A Paginator which used internally by the RowRepeater</documentation>
+        </aggregation>
+    </aggregations>
+    <methods>
+        <method name="triggerShowMore" type="sap.ui.commons/RowRepeater">
+            <documentation>The &lt;code&gt;triggerShowMore&lt;/code&gt; function increments the number of rows by the
+value of &lt;code&gt;showMoreSteps&lt;/code&gt;.
+
+This method will only trigger a showMore if the property showMoreSteps is set.</documentation>
+        </method>
+        <method name="resize" type="sap.ui.core/void">
+            <documentation>Resizes the row repeater by changing the number of displayed rows. This method will only resize the RowRepeater if the property showMoreSteps is set.</documentation>
+            <parameters>
+                <parameter name="numberOfRows" type="sap.ui.core/int">
+                    <documentation>The new value of number of rows displayed.</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="applyFilter" type="sap.ui.core/void">
+            <documentation>Applies a filter.</documentation>
+            <parameters>
+                <parameter name="id" type="sap.ui.core/string">
+                    <documentation>The ID if the filter.</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="triggerSort" type="sap.ui.core/void">
+            <documentation>Sort the data.</documentation>
+            <parameters>
+                <parameter name="id" type="sap.ui.core/string">
+                    <documentation>The ID of the sorter.</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="firstPage" type="sap.ui.core/void">
+            <documentation>Switch to first page.</documentation>
+        </method>
+        <method name="lastPage" type="sap.ui.core/void">
+            <documentation>Switch to last page.</documentation>
+        </method>
+        <method name="previousPage" type="sap.ui.core/void">
+            <documentation>Switch to previous page.</documentation>
+        </method>
+        <method name="nextPage" type="sap.ui.core/void">
+            <documentation>Switch to next page.</documentation>
+        </method>
+        <method name="gotoPage" type="sap.ui.core/void">
+            <documentation>Switch to specified page.</documentation>
+            <parameters>
+                <parameter name="pageNumber" type="sap.ui.core/int">
+                    <documentation>The index of the page to go to.</documentation>
+                </parameter>
+            </parameters>
+        </method>
+    </methods>
+</control>

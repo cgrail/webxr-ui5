@@ -1,0 +1,143 @@
+<core:FragmentDefinition xmlns:m="sap.m" xmlns:core="sap.ui.core">
+
+	<m:Dialog horizontalScrolling="false"
+			  contentWidth="40rem"
+			  contentHeight="55rem"
+			  draggable="true"
+			  resizable="true"
+			  stretch="{device>/system/phone}"
+			  afterClose="onAfterClose"
+			  class="sapUiMdcBaseFilterBarAdaptFiltersDialog">
+		<m:customHeader>
+			<m:Bar>
+				<m:contentMiddle>
+					<m:Title level="H2" text="{$this.i18n>filterbar.ADAPT_TITLE}"/>
+				</m:contentMiddle>
+				<m:contentRight>
+					<m:Button id="idReset" text="{$this.i18n>filterbar.ADAPT_RESTORE}" press="onPressReset"
+							  visible="{$this>showReset}"
+							  enabled="{$this>showResetEnabled}">
+						<m:layoutData>
+							<m:OverflowToolbarLayoutData priority="NeverOverflow"/>
+						</m:layoutData>
+					</m:Button>
+				</m:contentRight>
+			</m:Bar>
+		</m:customHeader>
+		<m:subHeader>
+			<m:Bar>
+				<m:contentMiddle>
+					<m:OverflowToolbar id="IDToolbar">
+						<m:SearchField id="idSearchField" liveChange="onSearchFieldLiveChange" width="100%">
+							<m:layoutData>
+								<m:OverflowToolbarLayoutData shrinkable="true" moveToOverflow="true" priority="High"
+															 maxWidth="18rem"/>
+							</m:layoutData>
+						</m:SearchField>
+						<m:ToggleButton id="idShowSelected"
+										type="Transparent"
+										text="{$this.i18n>filterbar.ADAPT_SHOW_VISIBLE}"
+										tooltip="{$this.i18n>filterbar.ADAPT_SHOW_VISIBLE}"
+										press="onSwitchButtonShowSelected">
+							<m:layoutData>
+								<m:OverflowToolbarLayoutData moveToOverflow="true" priority="High"/>
+							</m:layoutData>
+						</m:ToggleButton>
+						<m:OverflowToolbarButton id="IDButtonMoveToTop"
+												 type="Transparent" icon="sap-icon://collapse-group"
+												 text="{$this.i18n>filterbar.ADAPT_MOVE_TO_TOP}"
+												 tooltip="{$this.i18n>filterbar.ADAPT_MOVE_TO_TOP}"
+												 enabled="{$this>/@custom/isMoveUpButtonEnabled}"
+												 press="onPressButtonMoveToTop">
+							<m:layoutData>
+								<m:OverflowToolbarLayoutData
+										moveToOverflow="true" priority="Low" group="2"/>
+							</m:layoutData>
+						</m:OverflowToolbarButton>
+						<m:OverflowToolbarButton id="IDButtonMoveUp"
+												 type="Transparent" icon="sap-icon://slim-arrow-up"
+												 text="{$this.i18n>filterbar.ADAPT_MOVE_UP}"
+												 tooltip="{$this.i18n>filterbar.ADAPT_MOVE_UP}"
+												 enabled="{path:'$this>/@custom/isMoveUpButtonEnabled'}"
+												 press="onPressButtonMoveUp">
+							<m:layoutData>
+								<m:OverflowToolbarLayoutData
+										moveToOverflow="true" priority="High" group="1"/>
+							</m:layoutData>
+						</m:OverflowToolbarButton>
+						<m:OverflowToolbarButton id="IDButtonMoveDown"
+												 type="Transparent" icon="sap-icon://slim-arrow-down"
+												 text="{$this.i18n>filterbar.ADAPT_MOVE_DOWN}"
+												 tooltip="{$this.i18n>filterbar.ADAPT_MOVE_DOWN}"
+												 enabled="{path:'$this>/@custom/isMoveDownButtonEnabled'}"
+												 press="onPressButtonMoveDown">
+							<m:layoutData>
+								<m:OverflowToolbarLayoutData
+										moveToOverflow="true" priority="High" group="1"/>
+							</m:layoutData>
+						</m:OverflowToolbarButton>
+						<m:OverflowToolbarButton id="IDButtonMoveToBottom"
+												 type="Transparent" icon="sap-icon://expand-group"
+												 text="{$this.i18n>filterbar.ADAPT_MOVE_TO_BOTTOM}"
+												 tooltip="{$this.i18n>filterbar.ADAPT_MOVE_TO_BOTTOM}"
+												 enabled="{path:'$this>/@custom/isMoveDownButtonEnabled'}"
+												 press="onPressButtonMoveToBottom">
+							<m:layoutData>
+								<m:OverflowToolbarLayoutData
+										moveToOverflow="true" priority="Low" group="2"/>
+							</m:layoutData>
+						</m:OverflowToolbarButton>
+					</m:OverflowToolbar>
+				</m:contentMiddle>
+			</m:Bar>
+		</m:subHeader>
+		<m:content>
+			<m:Table id="idList"
+					 mode="MultiSelect"
+					 rememberSelections="false"
+					 itemPress="onItemPressed"
+					 selectionChange="onSelectionChange"
+					 items="{path:'$this>/items',
+							templateShareable:false}"
+			>
+				<m:infoToolbar>
+					<m:Toolbar id="idInfoToolbar" visible="{= ${$this>/@custom/countOfSelectedItems} > 0}">
+						<m:Label id="idInfoToolbarLabel"
+								 text="{$this.i18n>filterbar.ADAPT_INFO_TOOLBAR} {path:'$this>/@custom/countOfSelectedItems'}"/>
+					</m:Toolbar>
+				</m:infoToolbar>
+				<m:columns>
+					<m:Column>
+						<m:Text text="{$this.i18n>filterbar.ADAPT_COLUMN_DESCRIPTION}"/>
+					</m:Column>
+					<m:Column>
+						<m:Text text="{$this.i18n>filterbar.ADAPT_COLUMN_VALUE}"/>
+					</m:Column>
+				</m:columns>
+				<m:items>
+					<m:ColumnListItem type="Active" selected="{path:'$this>visible'}" class="sapUiSmallMarginBegin">
+						<m:cells>
+							<m:Label required="{$this>required}" text="{$this>text}" tooltip="{$this>text}"/>
+							<!--<m:Input will be added during the runtime -->
+						</m:cells>
+					</m:ColumnListItem>
+				</m:items>
+			</m:Table>
+		</m:content>
+
+		<m:buttons>
+			<m:Button id="idOk" text="{$this.i18n>filterbar.ADAPT_OK}" press="onPressOk" type="Emphasized">
+				<m:layoutData>
+					<m:OverflowToolbarLayoutData priority="NeverOverflow"/>
+				</m:layoutData>
+			</m:Button>
+			<m:Button id="idCancel" text="{$this.i18n>p13nDialog.CANCEL}" press="onPressCancel">
+				<m:layoutData>
+					<m:OverflowToolbarLayoutData priority="NeverOverflow"/>
+				</m:layoutData>
+			</m:Button>
+		</m:buttons>
+	</m:Dialog>
+
+</core:FragmentDefinition>
+

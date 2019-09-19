@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ui5/types/Area_marker</name>
+    <derived/>
+    <documentation>Settings for marker and data point graphics</documentation>
+    <since>1.7.2</since>
+    <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+    <baseType>sap.viz/ui5/core/BaseStructuredType</baseType>
+    <properties>
+        <property name="visible" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>Set the visibility of the markers</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="shape" type="sap.viz/ui5/types/Area_marker_shape" defaultValue="circle">
+            <documentation>Set the shape of the markers</documentation>
+        </property>
+        <property name="size" type="sap.ui.core/int" defaultValue="8">
+            <documentation>Set the marker size for data points, ranging from '4' and '32'. If you enter a value outside that range, the marker size defaults to '4'.</documentation>
+        </property>
+        <property name="number" type="sap.ui.core/int">
+            <documentation>Set the number to enable events for markers when they are invisible. If the total amount of markers is bigger than this value, markers will remain hidden when selected or hovered over. The default value is Number.POSITIVE_INFINITY, which is the largest possible value.</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+    </properties>
+</control>

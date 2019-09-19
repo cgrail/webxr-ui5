@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>personalization/ChangeType</name>
+    <derived/>
+    <documentation>Provides enumeration sap.ui.comp.personalization.ChangeType. A subset of changes done during table personalization.</documentation>
+    <enumeration>
+        <value name="Unchanged">
+            <documentation>Not changed</documentation>
+        </value>
+        <value name="ModelChanged">
+            <documentation>Change is applied to model but not applied to table</documentation>
+        </value>
+        <value name="TableChanged">
+            <documentation>Change is applied to model and to table</documentation>
+        </value>
+    </enumeration>
+</simple-type>

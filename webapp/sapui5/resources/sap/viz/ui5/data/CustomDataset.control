@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ui5/data/CustomDataset</name>
+    <derived/>
+    <documentation>A dataset for raw data format.</documentation>
+    <since>1.31</since>
+    <baseType>sap.viz/ui5/data/Dataset</baseType>
+    <properties>
+        <property name="data" type="sap.ui.core/object" group="Misc">
+            <documentation>Data containing dimensions and measures. The format and structure of this data is depends on the chart.</documentation>
+        </property>
+    </properties>
+</control>

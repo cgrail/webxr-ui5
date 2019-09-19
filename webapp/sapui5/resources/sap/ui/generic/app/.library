@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<library xmlns="http://www.sap.com/sap.ui.library.xsd">
+
+    <name>sap.ui.generic.app</name>
+    <vendor>SAP SE</vendor>
+    <copyright>SAPUI5
+
+(c) Copyright 2009-2019 SAP SE. All rights reserved</copyright>
+    <version>1.64.0</version>
+
+    <documentation>The SAPUI5 library contains classes that are mainly used in smart template applications, but can also be used in any Fiori/UI5 application
+                   that uses the OData protocol to communicate with an application server.</documentation>
+
+    <dependencies>
+        <dependency>
+            <libraryName>sap.ui.core</libraryName>
+        </dependency>
+        <dependency>
+            <libraryName>sap.ui.comp</libraryName>
+			<lazy>true</lazy>
+        </dependency>
+        <dependency>
+            <libraryName>sap.m</libraryName>
+			<lazy>true</lazy>
+        </dependency>
+    </dependencies>
+
+    <appData>
+        <!-- package name for selenium -->
+        <selenium xmlns="http://www.sap.com/ui5/buildext/selenium" package="com.sap.ui5.selenium.generic.app"/>
+        <!-- excludes for the JSDoc -->
+        <jsdoc xmlns="http://www.sap.com/ui5/buildext/jsdoc">
+            <exclude name="sap.ui.generic.app.js."/>
+        </jsdoc>
+        <!-- excludes for the JSCoverage -->
+        <jscoverage xmlns="http://www.sap.com/ui5/buildext/jscoverage">
+            <exclude name="sap.ui.generic.app.js."/>
+        </jscoverage>
+		<documentation xmlns="http://www.sap.com/ui5/buildext/documentation"
+			indexUrl="../../../../../test-resources/sap/ui/generic/app/demokit/docuindex.json"
+			resolve="lib" />
+        <releasenotes xmlns="http://www.sap.com/ui5/buildext/releasenotes"
+                      url="../../../../../test-resources/sap/ui/generic/app/relnotes/changes-{major}.{minor}.json"
+                      resolve="lib" />
+    </appData>
+
+</library>

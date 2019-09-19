@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<ObjectMarker
+		type="{= ${parts: [{path: 'DraftAdministrativeData'}, {path: 'IsActiveEntity'}, {path: 'HasDraftEntity'}], formatter: '._templateFormatters.formatDraftType'}}"
+		visibility="{= ${parts: [{path: 'DraftAdministrativeData'}, {path: 'IsActiveEntity'}], formatter: '._templateFormatters.formatDraftVisibility'}}"
+		press="._templateEventHandlers.onDraftLinkPressed"
+		visible="{path: 'DraftAdministrativeData', formatter: '._templateFormatters.formatDraftLineItemVisible'}" />
+</core:FragmentDefinition>

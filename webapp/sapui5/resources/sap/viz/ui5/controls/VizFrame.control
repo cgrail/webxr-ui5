@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ui5/controls/VizFrame</name>
+    <derived/>
+    <documentation>VizFrame is a viz control that manages a visualization’s initialization, layout, feeding, customization and interactions.</documentation>
+    <since>1.22.0</since>
+    <baseType>sap.viz/ui5/controls/common/BaseControl</baseType>
+    <properties>
+        <property name="vizType" type="sap.ui.core/string" defaultValue="column" group="Misc">
+            <documentation>Type for viz frame. User can pass 'chartType' or 'info/chartType'. For example both 'bar' and 'info/bar' will create a info bar chart.
+Supported chart type: column, dual_column, bar, dual_bar, stacked_bar, stacked_column, line, dual_line, combination, bullet, time_bullet, bubble, time_bubble, pie, donut,
+timeseries_column, timeseries_line, timeseries_scatter, timeseries_bubble, timeseries_stacked_column, timeseries_100_stacked_column, timeseries_bullet, timeseries_waterfall, timeseries_stacked_combination
+scatter, vertical_bullet, dual_stacked_bar, 100_stacked_bar, 100_dual_stacked_bar, dual_stacked_column, 100_stacked_column,
+100_dual_stacked_column, stacked_combination, horizontal_stacked_combination, dual_stacked_combination, dual_horizontal_stacked_combination, heatmap, treemap,
+waterfall, horizontal_waterfall, area, radar</documentation>
+        </property>
+        <property name="vizProperties" type="sap.ui.core/object" group="Misc">
+            <documentation>Chart properties, refer to chart property doc for more details.</documentation>
+        </property>
+        <property name="vizScales" type="sap.ui.core/object" group="Misc" since="1.25">
+            <documentation>Chart scales, refer to chart property doc for more details.</documentation>
+        </property>
+        <property name="vizCustomizations" type="sap.ui.core/object" group="Misc">
+            <documentation>Chart customizations property, aim to customize existing (build-in) charts
+to meet specific LoB requirements.
+Currently, supported chart type : column, dual_column, bar, dual_bar, stacked_column, stacked_bar, 100_stacked_bar, 100_stacked_column, 100_dual_stacked_bar, 100_dual_stacked_column, dual_stacked_bar, dual_stacked_column, line, horizontal_line, dual_line, dual_horizontal_line, combination, horizontal_combination, stacked_combination, horizontal_stacked_combination, dual_stacked_combination, dual_horizontal_stacked_combination, scatter, bubble.</documentation>
+        </property>
+        <property name="legendVisible" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Set chart's legend properties.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="renderComplete" allowPreventDefault="false">
+            <documentation>Event fires when the rendering ends.</documentation>
+        </event>
+        <event name="selectData" allowPreventDefault="false">
+            <documentation>Event fires when certain data point(s) is(are) selected, data context of selected item(s) would be passed in.</documentation>
+        </event>
+        <event name="deselectData" allowPreventDefault="false">
+            <documentation>Event fires when certain data point(s) is(are) deselected, data context of deselected item(s) would be passed in</documentation>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="dataset" type="sap.viz/ui5/data/Dataset" cardinality="0..1">
+            <documentation>Dataset for chart.</documentation>
+        </aggregation>
+        <aggregation name="feeds" type="sap.viz/ui5/controls/common/feeds/FeedItem" cardinality="0..n">
+            <documentation>All feeds for chart.</documentation>
+        </aggregation>
+    </aggregations>
+    <methods>
+        <method name="getVizUid" type="sap.ui.core/string">
+            <documentation>Uid for viz frame. It supports other controls to connect to a viz instance.</documentation>
+        </method>
+        <method name="getResponsiveLegend" type="sap.ui.core/void">
+            <documentation>Get ResponsiveLegend Control. (For fiori application set only. It has been deprecated since 1.28.)</documentation>
+            <deprecation since="1.28">This API has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </method>
+        <method name="zoom">
+            <documentation>Zoom the chart plot.</documentation>
+            <parameters>
+                <parameter name="contains" type="sap.ui.core/object">
+                    <documentation>a "direction" attribute with value "in" or "out" indicating zoom to enlarge or shrink respectively</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="vizSelection" type="sap.viz/ui5/controls/VizFrame">
+            <documentation>Selections for viz frame.</documentation>
+            <parameters>
+                <parameter name="points" type="sap.ui.core/object[]">
+                    <documentation>some data points of the chart</documentation>
+                </parameter>
+                <parameter name="action" type="sap.ui.core/object">
+                    <documentation>whether to clear previous selection, by default the selection will be incremental selection</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="vizUpdate" type="sap.viz/ui5/controls/VizFrame">
+            <documentation>Update viz frame according to a JSON object, it can update css, properties,
+feeds and data model.
+
+VizFrame instance has to be placed at its corresponding parent at first to make this API work.</documentation>
+            <parameters>
+                <parameter name="options" type="sap.ui.core/object">
+                    <documentation>a JSON object contains combination of properties, feeds</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="exportToSVGString" type="sap.ui.core/string">
+            <documentation>Export the current viz as SVG String.</documentation>
+            <parameters>
+                <parameter name="option" type="any">
+                    <documentation>the option defines the width and height of exported svg and if the exported svg includes the orignal title,legend and title</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="setBlocked">
+            <documentation>Set whether to enable overlay or not.
+If the value is true, the chart will be blocked with a transparent overlay.</documentation>
+            <parameters>
+                <parameter name="blocked" type="sap.ui.core/boolean">
+                    <documentation>New value for whether to enable visibility of overlay.</documentation>
+                </parameter>
+            </parameters>
+        </method>
+    </methods>
+</control>

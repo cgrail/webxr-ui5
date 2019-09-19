@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>CalendarAppointmentVisualization</name>
+    <derived/>
+    <documentation>Visualization types for {@link sap.ui.unified.CalendarAppointment}.</documentation>
+    <since>1.40.0</since>
+    <enumeration>
+        <value name="Standard">
+            <documentation>Standard visualization with no fill color.</documentation>
+        </value>
+        <value name="Filled">
+            <documentation>Visualization with fill color depending on the used theme.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

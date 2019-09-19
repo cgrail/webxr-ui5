@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartmultiedit/Container</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The SmartMultiEdit.Container control provides a layout for the smart multi edit fields
+({@link sap.ui.comp.smartmultiedit.Field}) it includes and enables them to access the updated binding contexts.</documentation>
+    <since>1.52.0</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="entitySet" type="sap.ui.core/string">
+            <documentation>The entity set name to fetch metadata for. This entity set should have &lt;code&gt;sap:creatable&lt;/code&gt; annotation set to &lt;code&gt;true&lt;/code&gt;
+as this control needs to create an entry internally for a short period of time.&lt;br&gt;
+Please note that this is not a dynamic SAP UI5 property: setting it twice will not result in an update of the property.</documentation>
+        </property>
+        <property name="contexts" type="any[]" defaultValue="[]">
+            <documentation>The binding contexts relevant to this mass editing operation.</documentation>
+        </property>
+    </properties>
+    <aggregations default="layout">
+        <aggregation name="layout" type="sap.ui.comp/smartform/SmartForm" cardinality="0..1">
+            <documentation>The form that contains smart multi edit fields ({@link sap.ui.comp.smartmultiedit.Field} controls).</documentation>
+        </aggregation>
+    </aggregations>
+</control>

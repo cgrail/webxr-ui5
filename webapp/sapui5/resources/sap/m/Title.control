@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Title</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A simple, large-sized text with explicit header / title semantics.
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+The &lt;code&gt;Title&lt;/code&gt; control is a simple, large-sized text containing additional
+semantic information for accessibility purposes.
+
+As of version 1.52, you can truncate or wrap long titles if the screen is narrower
+than the full title by using the with the use of the &lt;code&gt;wrapping&lt;/code&gt;
+property.
+
+As of version 1.60, you can hyphenate the label's text with the use of the
+&lt;code&gt;wrappingType&lt;/code&gt; property. For more information, see
+{@link topic:6322164936f047de941ec522b95d7b70 Text Controls Hyphenation}.
+
+&lt;h3&gt;Usage&lt;/h3&gt;
+&lt;h4&gt;When to use&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;If you want to set the title above a table or form.&lt;/li&gt;
+&lt;li&gt;If you want to show text in the page header.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;When not to use&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;If the text is inside a text block.&lt;/li&gt;
+&lt;li&gt;If The text is inside a form element.&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+    <since>1.27.0</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="text" type="sap.ui.core/string" group="Appearance">
+            <documentation>Defines the text which should be displayed as a title.</documentation>
+        </property>
+        <property name="level" type="sap.ui.core/TitleLevel" defaultValue="Auto" group="Appearance">
+            <documentation>Defines the semantic level of the title.
+This information is e.g. used by assistive technologies like screenreaders to create a hierarchical site map for faster navigation.
+Depending on this setting either an HTML h1-h6 element is used or when using level &lt;code&gt;Auto&lt;/code&gt; no explicit level information is written (HTML5 header element).
+This property does not influence the style of the control. Use the property &lt;code&gt;titleStyle&lt;/code&gt; for this purpose instead.</documentation>
+        </property>
+        <property name="titleStyle" type="sap.ui.core/TitleLevel" defaultValue="Auto" group="Appearance">
+            <documentation>Defines the style of the title.
+When using the &lt;code&gt;Auto&lt;/code&gt; styling, the appearance of the title depends on the current position of the title (e.g. inside a &lt;code&gt;Toolbar&lt;/code&gt;).
+This default behavior can be overridden by setting a different style explicitly.
+The actual appearance of the title and the different styles always depends on the theme being used.</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" group="Dimension">
+            <documentation>Defines the width of the title.</documentation>
+        </property>
+        <property name="textAlign" type="sap.ui.core/TextAlign" defaultValue="Initial" group="Appearance">
+            <documentation>Defines the alignment of the text within the title. &lt;b&gt;Note:&lt;/b&gt; This property only has an effect if the overall width of the title control is
+larger than the displayed text.</documentation>
+        </property>
+        <property name="wrapping" type="sap.ui.core/boolean" defaultValue="false" group="Appearance" since="1.52">
+            <documentation>Enables text wrapping.
+&lt;b&gt;Note:&lt;/b&gt; Wrapping must only be activated if the surrounding container allows flexible heights.</documentation>
+        </property>
+        <property name="wrappingType" type="sap.m/WrappingType" defaultValue="Normal" group="Appearance" since="1.60">
+            <documentation>Defines the type of text wrapping to be used (hyphenated or normal).
+
+&lt;b&gt;Note:&lt;/b&gt; This property takes effect only when the &lt;code&gt;wrapping&lt;/code&gt;
+property is set to &lt;code&gt;true&lt;/code&gt;.</documentation>
+        </property>
+    </properties>
+    <associations>
+        <association name="title" type="sap.ui.core/Title" cardinality="0..1">
+            <documentation>Defines a relationship to a generic title description.
+If such a title element is associated, the properties text, level and tooltip (text only) of this element are consumed.
+The corresponding properties of the title control are ignored.</documentation>
+        </association>
+    </associations>
+</control>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>InfoLabel</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The &lt;code&gt;InfoLabel&lt;/code&gt; is a small non-interactive control which contains text information and non-semantic color chosen from a list of predefined color schemes. It serves the purpose to attract the user attention to some piece of information (state, quantity, condition, etc.).
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+
+The control visualizes text information without user interaction. The text inside the control is always in upper case. It can have smaller or larger side paddings which can be specified by the &lt;code&gt;renderMode&lt;/code&gt; property.
+The  text-background color pair can be changed by setting a digit between 1 and 9 that corresponds to the 9 predefined color combinations of the &lt;code&gt;colorScheme&lt;/code&gt; property.
+The control is designed to be vertically aligned with UI5 Input and Button control families.
+When using &lt;code&gt;InfoLabel&lt;/code&gt; in non-editable &lt;code&gt;Forms&lt;/code&gt;, &lt;code&gt;Tables&lt;/code&gt;, etc., set &lt;code&gt;displayOnly=true&lt;/code&gt; for best visual results.
+
+&lt;h3&gt;Usage Guidelines&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;If the text is longer than the width of the control, it doesn’t wrap. Instead, it’s represented as ellipsis. &lt;/li&gt;
+&lt;li&gt;When truncated, the full text in the control is not visible. Therefore, it’s recommended to make more space for longer items to be fully displayed.&lt;/li&gt;
+&lt;li&gt;Colors are not semantic and have no visual representation in sap_belize_hcb and sap_belize_hcw themes.&lt;/li&gt;
+&lt;li&gt;The control shows plain text only, formatting is not visualized.&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+    <since>1.54</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="text" type="sap.ui.core/string" defaultValue="" bindable="bindable">
+            <documentation>Specifies the text inside the &lt;code&gt;InfoLabel&lt;/code&gt; control.</documentation>
+        </property>
+        <property name="renderMode" type="sap.tnt/RenderMode" defaultValue="Loose" group="Appearance">
+            <documentation>Specifies the type of the &lt;code&gt;InfoLabel&lt;/code&gt; paddings - loose or narrow.
+&lt;b&gt;Note:&lt;/b&gt; By default the padding is loose. It is recommended to use narrow (smaller) paddings for numeric texts.</documentation>
+        </property>
+        <property name="colorScheme" type="sap.ui.core/int" defaultValue="7" group="Misc">
+            <documentation>Specifies the fill and text color of the control. Accepts a digit as a value.
+You can choose from 9 predefined background and text color combinations.
+The color schemes are non-semantic, you can select them according to your own preferences.
+The default &lt;code&gt;colorScheme&lt;/code&gt; is 7.</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" group="Dimension">
+            <documentation>Specifies the width of the &lt;code&gt;InfoLabel&lt;/code&gt; control. By default, the &lt;code&gt;InfoLabel&lt;/code&gt; control has the width of the content. Set this property to restrict the width to a custom value.</documentation>
+        </property>
+        <property name="displayOnly" type="sap.ui.core/boolean" defaultValue="false" group="Appearance">
+            <documentation>Determines if the &lt;code&gt;InfoLabel&lt;/code&gt; is in &lt;code&gt;displayOnly&lt;/code&gt; mode.
+When set to &lt;code&gt;true&lt;/code&gt; the control size adjusts to fit other controls, for example non-editable &lt;code&gt;Forms&lt;/code&gt;.</documentation>
+        </property>
+        <property name="textDirection" type="sap.ui.core/TextDirection" defaultValue="Inherit" group="Appearance">
+            <documentation>Available options for the text direction are LTR and RTL. By default the control inherits the text direction from its parent control.</documentation>
+        </property>
+    </properties>
+</control>

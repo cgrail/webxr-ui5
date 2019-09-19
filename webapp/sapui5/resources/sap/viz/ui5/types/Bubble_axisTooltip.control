@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ui5/types/Bubble_axisTooltip</name>
+    <derived/>
+    <documentation>Set tooltip related properties.</documentation>
+    <since>1.7.2</since>
+    <deprecation since="1.19">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+    <baseType>sap.viz/ui5/core/BaseStructuredType</baseType>
+    <properties>
+        <property name="visible" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>enabled/disabled tooltip.</documentation>
+        </property>
+        <property name="formatString" type="sap.ui.core/string[]">
+            <documentation>Set format string for small tooltip.The first one is applied to xAxis and the second one is applied to yAxis.Any character in "MDYHSAmdyhsa#?%0@" is reserved as a token for format code.</documentation>
+        </property>
+    </properties>
+</control>

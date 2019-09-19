@@ -1,0 +1,38 @@
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+						 xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:uxap="sap.uxap" xmlns:build="sap.build">
+
+	<uxap:actions>
+		<template:with path="facetCandidate>Target" helper="sap.ui.model.odata.AnnotationHelper.resolvePath" var="target">
+			<template:if test="{target>Data}" build:metadata="#ignore">
+				<template:repeat list="{target>Data}" var="dataField">
+					<template:if test="{= ${dataField>RecordType} === 'com.sap.vocabularies.UI.v1.DataFieldForAction' || ${dataField>RecordType} === 'com.sap.vocabularies.UI.v1.DataFieldForIntentBasedNavigation'}">
+						<template:with path="dataField>Action"	helper="sap.ui.model.odata.AnnotationHelper.gotoFunctionImport"	var="action">
+							<Button
+								id="action::{path: 'dataField>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromDataField'}::{path: 'facetCandidate>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}::FormAction"
+								text="{path: 'dataField>Label', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}"
+								type="Transparent"
+								press="._templateEventHandlers.onCallAction" enabled="{ui>/enabled}"
+								visible="{parts: [{path: 'action>sap:applicable-path'}, {path: 'entitySet>entityType'}, {path: 'dataField>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.actionControl'}"
+								build:metadata="#pattern:ActionButton;staticProp:text:Label;condition:datafield>RecordType:com.sap.vocabularies.UI.v1.DataFieldForAction">
+								<customData>
+									<core:CustomData key="Type"
+										value="{dataField>RecordType}" />
+									<core:CustomData key="Action"
+										value="{path: 'dataField>Action', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}" />
+									<core:CustomData key="Label"
+										value="{path: 'dataField>Label', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}" />
+									<core:CustomData key="InvocationGrouping"
+										value="{= ${dataField>InvocationGrouping/EnumMember}}"/>
+									<template:if test="{= ${dataField>RecordType} === 'com.sap.vocabularies.UI.v1.DataFieldForIntentBasedNavigation'}">
+										<core:CustomData key="SemanticObject"
+											value="{path: 'dataField>SemanticObject', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}" />
+									</template:if>
+								</customData>
+							</Button>
+						</template:with>
+					</template:if>
+				</template:repeat>
+			</template:if>
+		</template:with>
+	</uxap:actions>
+</core:FragmentDefinition>

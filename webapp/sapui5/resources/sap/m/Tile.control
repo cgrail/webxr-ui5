@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Tile</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A tile to be displayed in the tile container. Use this
+tile as the base class for specialized tile implementations.
+Use the renderer _addOuterClass methods to add a style class to the main
+surface of the Tile. In this class set the background color, gradients
+or background images.
+Instead of implementing the default render method in the renderer, implement
+your content HTML in the _renderContent method of the specialized tile.</documentation>
+    <since>1.12</since>
+    <deprecation since="1.50">replaced by {@link sap.m.GenericTile}</deprecation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="removable" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Determines whether the tile is movable within the surrounding tile container. The remove event is fired by the tile container.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="press" allowPreventDefault="false">
+            <documentation>Tap event is raised if the user taps or clicks the control.</documentation>
+        </event>
+    </events>
+</control>

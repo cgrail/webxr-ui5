@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>DynamicPageTitleArea</name>
+    <derived/>
+    <documentation>Defines the areas within the &lt;code&gt;sap.f.DynamicPageTitle&lt;/code&gt;.</documentation>
+    <since>1.50</since>
+    <deprecation since="1.54"></deprecation>
+    <enumeration>
+        <value name="Begin">
+            <documentation>The area includes the &lt;code&gt;heading&lt;/code&gt;, &lt;code&gt;expandedContent&lt;/code&gt; and &lt;code&gt;snappedContent&lt;/code&gt; aggregations,
+positioned in the beginning area of the {@link sap.f.DynamicPageTitle}.</documentation>
+        </value>
+        <value name="Middle">
+            <documentation>The area includes the &lt;code&gt;content&lt;/code&gt; aggregation,
+positioned in the middle part of the {@link sap.f.DynamicPageTitle}.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

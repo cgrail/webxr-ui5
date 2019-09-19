@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>SelectList</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The &lt;code&gt;sap.m.SelectList&lt;/code&gt; displays a list of items that allows the user to select an item.</documentation>
+    <since>1.26.0</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="enabled" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Indicates whether the user can change the selection.</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" defaultValue="auto" group="Dimension">
+            <documentation>Sets the width of the control.</documentation>
+        </property>
+        <property name="maxWidth" type="sap.ui.core/CSSSize" defaultValue="100%" group="Dimension">
+            <documentation>Sets the maximum width of the control.</documentation>
+        </property>
+        <property name="selectedKey" type="sap.ui.core/string" defaultValue="" group="Data">
+            <documentation>Key of the selected item.
+
+&lt;b&gt;Note: &lt;/b&gt; If duplicate keys exist, the first item matching the key is used.</documentation>
+        </property>
+        <property name="selectedItemId" type="sap.ui.core/string" defaultValue="" group="Misc">
+            <documentation>ID of the selected item.</documentation>
+        </property>
+        <property name="showSecondaryValues" type="sap.ui.core/boolean" defaultValue="false" group="Misc" since="1.32.3">
+            <documentation>Indicates whether the text values of the &lt;code&gt;additionalText&lt;/code&gt; property of a
+{@link sap.ui.core.ListItem} are shown.</documentation>
+        </property>
+        <property name="keyboardNavigationMode" type="sap.m/SelectListKeyboardNavigationMode" defaultValue="Delimited" group="Behavior" since="1.38">
+            <documentation>Defines the keyboard navigation mode.
+
+&lt;b&gt;Note:&lt;/b&gt; The &lt;code&gt;sap.m.SelectListKeyboardNavigationMode.None&lt;/code&gt; enumeration value,
+is only intended for use in some composite controls that handles keyboard navigation by themselves.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="selectionChange" allowPreventDefault="false">
+            <documentation>This event is fired when the selection has changed.
+
+&lt;b&gt;Note: &lt;/b&gt; The selection can be changed by pressing a non-selected item or
+via keyboard and after the enter or space key is pressed.</documentation>
+            <parameters>
+                <parameter name="selectedItem" type="sap.ui.core/Item">
+                    <documentation>The selected item.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="itemPress" since="1.32.4" allowPreventDefault="false">
+            <documentation>This event is fired when an item is pressed.</documentation>
+            <parameters>
+                <parameter name="item" type="sap.ui.core/Item">
+                    <documentation>The pressed item.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations default="items">
+        <aggregation name="items" type="sap.ui.core/Item" cardinality="0..n" bindable="bindable">
+            <documentation>Defines the items contained within this control.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="selectedItem" type="sap.ui.core/Item" cardinality="0..1">
+            <documentation>Sets or retrieves the selected item from the aggregation named items.</documentation>
+        </association>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n" since="1.27.0">
+            <documentation>Association to controls / IDs which label this control (see WAI-ARIA attribute &lt;code&gt;aria-labelledby&lt;/code&gt;).</documentation>
+        </association>
+    </associations>
+</control>

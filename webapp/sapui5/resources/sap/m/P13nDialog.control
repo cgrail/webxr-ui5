@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>P13nDialog</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The P13nDialog control provides a dialog that contains one or more panels. On each of the panels, one or more changes with regards to a
+       table can be processed. For example, a panel to set a column to invisible, change the order of the columns or a panel to sort or filter
+       tables.</documentation>
+    <since>1.26.0</since>
+    <baseType>sap.m/Dialog</baseType>
+    <properties>
+        <property name="initialVisiblePanelType" type="sap.ui.core/string" group="Misc">
+            <documentation>This property determines which panel is initially shown when dialog is opened. If not defined then the first visible
+panel of &lt;code&gt;panels&lt;/code&gt; aggregation is taken. Setting value after the dialog is opened has no effect anymore.
+Due to extensibility reason the type should be &lt;code&gt;string&lt;/code&gt;. So it is feasible to add a custom panel without
+expanding the type.</documentation>
+        </property>
+        <property name="showReset" type="sap.ui.core/boolean" defaultValue="false" group="Appearance">
+            <documentation>This property determines whether the 'Restore' button is shown inside the dialog. If this property is set to true, clicking the
+'Reset' button will trigger the &lt;code&gt;reset&lt;/code&gt; event sending a notification that model data must be reset.</documentation>
+        </property>
+        <property name="showResetEnabled" type="sap.ui.core/boolean" defaultValue="false" group="Appearance" since="1.36.0">
+            <documentation>This property determines whether the 'Restore' button is enabled and is taken into account only if &lt;code&gt;showReset&lt;/code&gt; is set
+to &lt;code&gt;true&lt;/code&gt;.</documentation>
+        </property>
+        <property name="validationExecutor" type="sap.ui.core/object" group="Misc">
+            <documentation>Calls the validation listener once all panel-relevant validation checks have been done. This callback function is called in order
+to perform cross-model validation checks.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="ok" allowPreventDefault="false">
+            <documentation>Event fired if the 'ok' button in &lt;code&gt;P13nDialog&lt;/code&gt; is clicked.</documentation>
+        </event>
+        <event name="cancel" allowPreventDefault="false">
+            <documentation>Event fired if the 'cancel' button in &lt;code&gt;P13nDialog&lt;/code&gt; is clicked.</documentation>
+        </event>
+        <event name="reset" allowPreventDefault="false">
+            <documentation>Event fired if the 'reset' button in &lt;code&gt;P13nDialog&lt;/code&gt; is clicked.</documentation>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="panels" type="sap.m/P13nPanel" cardinality="0..n" bindable="bindable">
+            <documentation>The dialog panels displayed in the dialog.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

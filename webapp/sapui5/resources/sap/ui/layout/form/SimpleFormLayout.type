@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>form/SimpleFormLayout</name>
+    <derived/>
+    <documentation>Available &lt;code&gt;FormLayouts&lt;/code&gt; used to render a &lt;code&gt;SimpleForm&lt;/code&gt;.</documentation>
+    <since>1.16.0</since>
+    <enumeration>
+        <value name="ResponsiveLayout">
+            <documentation>Uses the &lt;code&gt;ResponsiveLayout&lt;/code&gt; layout to render the &lt;code&gt;SimpleForm&lt;/code&gt; control</documentation>
+        </value>
+        <value name="GridLayout">
+            <documentation>Uses the &lt;code&gt;GridLayout&lt;/code&gt; layout to render the &lt;code&gt;SimpleForm&lt;/code&gt; control</documentation>
+        </value>
+        <value name="ResponsiveGridLayout" since="1.16.0">
+            <documentation>Uses the &lt;code&gt;ResponsiveGridLayout&lt;/code&gt; layout to render the &lt;code&gt;SimpleForm&lt;/code&gt; control</documentation>
+        </value>
+        <value name="ColumnLayout" since="1.56.0">
+            <documentation>Uses the &lt;code&gt;ColumnLayout&lt;/code&gt; layout to render the &lt;code&gt;SimpleForm&lt;/code&gt; control</documentation>
+        </value>
+    </enumeration>
+</simple-type>

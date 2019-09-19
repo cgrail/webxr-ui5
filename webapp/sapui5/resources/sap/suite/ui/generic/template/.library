@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<library xmlns="http://www.sap.com/sap.ui.library.xsd">
+
+	<name>sap.suite.ui.generic.template</name>
+	<vendor>SAP SE</vendor>
+	<copyright>SAP UI development toolkit for HTML5 (SAPUI5)
+
+		(c) Copyright 2009-2015 SAP SE. All rights reserved
+	</copyright>
+	<version>1.64.0</version>
+
+	<documentation>Library with generic Suite UI templates.</documentation>
+
+	<dependencies>
+		<dependency>
+			<libraryName>sap.ui.core</libraryName>
+		</dependency>
+		<dependency>
+			<libraryName>sap.ui.table</libraryName>
+			<lazy>true</lazy>
+		</dependency>
+		<dependency>
+			<libraryName>sap.ui.comp</libraryName>
+			<lazy>true</lazy>
+		</dependency>
+		<dependency>
+			<libraryName>sap.uxap</libraryName>
+			<lazy>true</lazy>
+		</dependency>
+		<dependency>
+			<libraryName>sap.ui.layout</libraryName>
+			<lazy>true</lazy>
+		</dependency>
+		<dependency>
+			<libraryName>sap.suite.ui.microchart</libraryName>
+			<lazy>true</lazy>
+		</dependency>
+		<dependency>
+			<libraryName>sap.viz</libraryName>
+			<lazy>true</lazy>
+		</dependency>
+		<dependency>
+			<libraryName>sap.ui.generic.app</libraryName>
+		</dependency>
+		<dependency>
+			<libraryName>sap.ushell</libraryName>
+		</dependency>
+		<dependency>
+			<libraryName>sap.m</libraryName>
+		</dependency>
+		<dependency>
+			<libraryName>sap.f</libraryName>
+		</dependency>
+	</dependencies>
+
+	<appData>
+		<!-- excludes for the JSDoc -->
+		<jsdoc xmlns="http://www.sap.com/ui5/buildext/jsdoc">
+			<exclude name="sap.suite.ui.generic.template.js."/>
+		</jsdoc>
+		<!-- excludes for the JSCoverage -->
+		<jscoverage xmlns="http://www.sap.com/ui5/buildext/jscoverage">
+			<exclude name="sap.collaboration."/>
+			<exclude name="sap.f."/>
+			<exclude name="sap.ovp."/>
+			<exclude name="sap.suite.ui.generic.template.AnalyticalListPage."/>
+			<exclude name="jquery.sap.xml."/>
+			<exclude name="sap.chart." />
+			<exclude name="sap.m." />
+			<exclude name="sap.suite.ui.commons." />
+			<exclude name="sap.suite.ui.microchart." />
+			<exclude name="sap.ui." />
+			<exclude name="sap.ushell." />
+			<exclude name="sap.uxap." />
+			<exclude name="sap.viz." />
+			<exclude name="*" /> <!-- exclude files within current folder -->
+		</jscoverage>
+		<releasenotes
+			xmlns="http://www.sap.com/ui5/buildext/releasenotes"
+			url="../../../../../../test-resources/sap/suite/ui/generic/template/relnotes/changes-{major}.{minor}.json"
+			resolve="lib" />
+		<documentation xmlns="http://www.sap.com/ui5/buildext/documentation"
+			indexUrl="../../../../../../test-resources/sap/suite/ui/generic/template/demokit/docuindex.json"
+			resolve="lib"/>
+	</appData>
+
+</library>

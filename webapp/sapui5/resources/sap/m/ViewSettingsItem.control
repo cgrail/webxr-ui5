@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ViewSettingsItem</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>ViewSettingsItem is used for modelling filter behaviour in the ViewSettingsDialog.
+It is derived from a core Item, but does not support the base class properties "textDirection" and "enabled", setting these properties will not have any effects.
+Apps should use the core Item's property &lt;code&gt;key/&lt;/code&gt; and provide a unique value for it. Not providing a key
+may lead to unexpected behavior of the sap.m.ViewSettingsDialog.</documentation>
+    <since>1.16</since>
+    <baseType>sap.ui.core/Item</baseType>
+    <properties>
+        <property name="selected" type="sap.ui.core/boolean" defaultValue="false" group="Behavior">
+            <documentation>Selected state of the item. If set to "true", the item will be displayed as selected in the view settings dialog.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="itemPropertyChanged" allowPreventDefault="false">
+            <documentation>Let the outside world know that some of its properties has changed.</documentation>
+            <parameters>
+                <parameter name="changedItem" type="sap.m/ViewSettingsItem">
+                    <documentation>Instance of the item that changed.</documentation>
+                </parameter>
+                <parameter name="propertyKey" type="sap.ui.core/string">
+                    <documentation>Key of the changed property.</documentation>
+                </parameter>
+                <parameter name="propertyValue" type="sap.ui.core/any">
+                    <documentation>Value of the changed property.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+</control>

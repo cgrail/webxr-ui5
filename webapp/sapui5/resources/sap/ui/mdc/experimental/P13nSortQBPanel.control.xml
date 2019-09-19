@@ -1,0 +1,59 @@
+<core:FragmentDefinition xmlns:m="sap.m"
+						 xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+	<l:VerticalLayout class="sapMP13nColumnsPanel">
+
+		<m:Table id="IDTable" mode="None" rememberSelections="false" keyboardMode="Edit"
+				 items="{path:'JSONItems>/items', templateShareable:false}">
+			<m:columns>
+				<m:Column>
+					<m:header>
+						<m:Text text="Sort By"/>
+					</m:header>
+				</m:Column>
+				<m:Column minScreenWidth="40rem" demandPopin="true">
+					<m:header>
+						<m:Text text="Sort Order"/>
+					</m:header>
+				</m:Column>
+				<m:Column minScreenWidth="40rem" demandPopin="true" popinDisplay="WithoutHeader">
+					<m:header>
+						<m:Text text=""/>
+					</m:header>
+				</m:Column>
+			</m:columns>
+			<m:items>
+				<m:ColumnListItem selected="{JSONItems>selected}" type="Inactive">
+					<m:cells>
+
+						<m:ComboBox selectedKey="{JSONItems>comboboxKey}" width="100%"
+									selectionChange="onSelectionChange"
+									items="{path:'JSONItems>availableItems', templateShareable:false}">
+							<m:items>
+								<core:Item key="{JSONItems>comboboxKey}" text="{JSONItems>text}"/>
+							</m:items>
+						</m:ComboBox>
+
+						<m:Select selectedKey="{JSONItems>sortOrder}" width="100%" enabled="{JSONItems>selected}"
+								  change="onChangeSortOrderBySelection">
+							<m:items>
+								<core:Item key="Ascending" text="Ascending"/>
+								<core:Item key="Descending" text="Descending"/>
+							</m:items>
+						</m:Select>
+
+						<m:HBox>
+							<m:Button type="Transparent" icon="sap-icon://sys-cancel" press="onPressRemove"/>
+							<m:Button type="Transparent" icon="sap-icon://add" press="onPressAdd"/>
+							<m:Button type="Transparent" icon="sap-icon://slim-arrow-up" press="onPressUp"
+									  enabled="{= ${JSONItems>/items}.indexOf(${JSONItems>}) > 0}"/>
+							<m:Button type="Transparent" icon="sap-icon://slim-arrow-down" press="onPressDown"
+									  enabled="{= ${JSONItems>/items}.length-1 > ${JSONItems>/items}.indexOf(${JSONItems>})}"/>
+						</m:HBox>
+
+					</m:cells>
+				</m:ColumnListItem>
+			</m:items>
+		</m:Table>
+
+	</l:VerticalLayout>
+</core:FragmentDefinition>

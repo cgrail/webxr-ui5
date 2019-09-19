@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>CollectionInspector</name>
+    <derived/>
+    <documentation>CollectionInspector</documentation>
+    <since>1.9.0</since>
+    <deprecation since="1.38"></deprecation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="sidebarVisible" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>Defines if the list of collection items is visible on the left</documentation>
+        </property>
+        <property name="fitParent" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>If set to true, control will fit parents content area</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="collectionSelected" allowPreventDefault="false">
+            <documentation>Event is fired if user selects a collection</documentation>
+        </event>
+        <event name="itemSelectionChanged" allowPreventDefault="false">
+            <documentation>Fires when an item in a collection is selected</documentation>
+        </event>
+        <event name="editCollection" allowPreventDefault="false">
+            <documentation>Fires when the edit button is clicked</documentation>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="collections" type="sap.ui.ux3/Collection" cardinality="0..n">
+            <documentation>Collections which are displayed in the COllectionInspector</documentation>
+        </aggregation>
+        <aggregation name="content" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>All controls that are currently displayed</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="selectedCollection" type="sap.ui.ux3/Collection" cardinality="0..1">
+            <documentation>Collection which is currently selected</documentation>
+        </association>
+    </associations>
+</control>

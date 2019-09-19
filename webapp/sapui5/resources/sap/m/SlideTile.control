@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>SlideTile</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The control that displays multiple GenericTile controls as changing slides.</documentation>
+    <since>1.34</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="displayTime" type="sap.ui.core/int" defaultValue="5000" group="Appearance">
+            <documentation>The time of the slide display in milliseconds.</documentation>
+        </property>
+        <property name="transitionTime" type="sap.ui.core/int" defaultValue="500" group="Appearance">
+            <documentation>The time of the slide changing in milliseconds.</documentation>
+        </property>
+        <property name="scope" type="sap.m/GenericTileScope" defaultValue="Display" group="Misc" since="1.46.0">
+            <documentation>Changes the visualization in order to enable additional actions with the SlideTile control.</documentation>
+        </property>
+        <property name="sizeBehavior" type="sap.m/TileSizeBehavior" defaultValue="Responsive">
+            <documentation>If set to &lt;code&gt;TileSizeBehavior.Small&lt;/code&gt;, the tile size is the same as it would be on a small-screened phone (374px wide and lower),
+ regardless of the screen size of the actual device being used.
+ If set to &lt;code&gt;TileSizeBehavior.Responsive&lt;/code&gt;, the tile size adapts to the size of the screen.
+ This property has to be set consistently for the &lt;code&gt;SlideTile&lt;/code&gt; along with all its inner &lt;code&gt;GenericTile&lt;/code&gt;
+ elements, so that they match one another visually.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="press" since="1.46.0" allowPreventDefault="false">
+            <documentation>The event is fired when the user chooses the tile. The event is available only in Actions scope.</documentation>
+            <parameters>
+                <parameter name="scope" type="sap.m/GenericTileScope" since="1.46.0">
+                    <documentation>The current scope the SlideTile was in when the event occurred.</documentation>
+                </parameter>
+                <parameter name="action" type="sap.ui.core/string" since="1.46.0">
+                    <documentation>The action that was pressed on the tile. In the Actions scope, the available actions are Press and Remove.</documentation>
+                </parameter>
+                <parameter name="domRef" type="sap.ui.core/any" since="1.46.0">
+                    <documentation>The Element's DOM Element.
+In Actions scope the domRef points to the DOM Element of the remove button (if pressed) or the more icon.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations default="tiles">
+        <aggregation name="tiles" type="sap.m/GenericTile" cardinality="0..n" bindable="bindable">
+            <documentation>The set of Generic Tiles to be shown in the control.</documentation>
+        </aggregation>
+        <aggregation name="_pausePlayIcon" type="sap.ui.core/Icon" cardinality="0..1" visibility="hidden">
+            <documentation>The pause/play icon that is being used to display the pause/play state of the control.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

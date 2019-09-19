@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>DataSet</name>
+    <derived/>
+    <documentation>DataSet</documentation>
+    <deprecation since="1.38">Use a container by choice from the {@link sap.m} library, instead.</deprecation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="showToolbar" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>show Toolbar</documentation>
+        </property>
+        <property name="showFilter" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>show filter</documentation>
+        </property>
+        <property name="showSearchField" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Show/hide SearchField in Toolbar</documentation>
+        </property>
+        <property name="multiSelect" type="sap.ui.core/boolean" defaultValue="false" group="Behavior">
+            <documentation>Selection mode of the DataSet</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="selectionChanged" allowPreventDefault="false">
+            <documentation>selection Changed</documentation>
+            <parameters>
+                <parameter name="oldLeadSelectedIndex" type="sap.ui.core/int">
+                    <documentation>Old lead selected index</documentation>
+                </parameter>
+                <parameter name="newLeadSelectedIndex" type="sap.ui.core/int">
+                    <documentation>New lead selected index</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="search" allowPreventDefault="false">
+            <documentation>Event which is fired when the user triggers a search</documentation>
+            <parameters>
+                <parameter name="query" type="sap.ui.core/string">
+                    <documentation>The search query</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="items" type="sap.ui.ux3/DataSetItem" cardinality="0..n" bindable="bindable">
+            <documentation>Aggregation of DataSetItems</documentation>
+        </aggregation>
+        <aggregation name="views" type="sap.ui.ux3/DataSetView" cardinality="0..n">
+            <documentation>views</documentation>
+        </aggregation>
+        <aggregation name="filter" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Filter control (e.g. a FacetFilter) for the DataSet</documentation>
+        </aggregation>
+        <aggregation name="_viewSwitches" type="sap.ui.core/Control" cardinality="0..n" visibility="hidden">
+            <documentation>Internally managed by Dataset</documentation>
+        </aggregation>
+        <aggregation name="_toolbar" type="sap.ui.commons/Toolbar" cardinality="0..1" visibility="hidden">
+            <documentation>A Toolbar, internally managed by Dataset</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="selectedView" type="sap.ui.ux3/DataSetView" cardinality="0..1">
+            <documentation>Selected view of the Dataset</documentation>
+        </association>
+    </associations>
+    <methods>
+        <method name="getLeadSelection" type="sap.ui.core/int">
+            <documentation>Returns the LeadSelection index</documentation>
+        </method>
+        <method name="setLeadSelection" type="sap.ui.core/void">
+            <documentation>Set the LeadSelection index</documentation>
+            <parameters>
+                <parameter name="iIndex" type="sap.ui.core/int">
+                    <documentation>set LeadSelection index</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="addToolbarItem" type="sap.ui.core/void">
+            <documentation>add a toolbarItem to the toolbar</documentation>
+            <parameters>
+                <parameter name="oToolbarItem" type="sap.ui.commons/ToolbarItem">
+                    <documentation>ToolbarItem</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="removeToolbarItem" type="sap.ui.core/void">
+            <documentation>remove a toolbarItem to the toolbar</documentation>
+            <parameters>
+                <parameter name="oToolbarItem" type="sap.ui.commons/ToolbarItem">
+                    <documentation></documentation>
+                </parameter>
+            </parameters>
+        </method>
+    </methods>
+</control>

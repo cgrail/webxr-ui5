@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ui5/types/Tooltip_closeButton</name>
+    <derived/>
+    <documentation>Define the background and border color of tooltip close button.</documentation>
+    <since>1.7.2</since>
+    <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+    <baseType>sap.viz/ui5/core/BaseStructuredType</baseType>
+    <properties>
+        <property name="backgroundColor" type="sap.ui.core/string" defaultValue="#ffffff">
+            <documentation>Property backgroundColor</documentation>
+        </property>
+        <property name="borderColor" type="sap.ui.core/string" defaultValue="#cccccc">
+            <documentation>Property borderColor</documentation>
+        </property>
+    </properties>
+</control>

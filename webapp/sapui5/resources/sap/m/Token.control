@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Token</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>&lt;h3&gt;Overview&lt;/h3&gt;
+Tokens are small items of information (similar to tags) that mainly serve to visualize previously selected items.
+Tokens are manipulated by a {@link sap.m.Tokenizer Tokenizer}.
+&lt;h3&gt;Structure&lt;/h3&gt;
+The tokens store single text items or sometimes key-value pairs, such as "John Miller (ID1234567)".
+Each token also contains a delete icon, which is invisible if the token is in edit mode.
+
+&lt;h3&gt;Usage&lt;/h3&gt;
+&lt;h4&gt;When to use:&lt;/h4&gt;
+Tokens can only be used with the Tokenizer as a container.</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="selected" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>Indicates the current selection status of the token.</documentation>
+        </property>
+        <property name="key" type="sap.ui.core/string" defaultValue="" group="Misc">
+            <documentation>Key of the token.</documentation>
+        </property>
+        <property name="text" type="sap.ui.core/string" defaultValue="" group="Misc">
+            <documentation>Displayed text of the token.</documentation>
+        </property>
+        <property name="editable" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Indicates the editable status of the token. If it is set to &lt;code&gt;true&lt;/code&gt;, token displays a delete icon.</documentation>
+        </property>
+        <property name="textDirection" type="sap.ui.core/TextDirection" defaultValue="Inherit" group="Appearance" since="1.28.0">
+            <documentation>This property specifies the text directionality with enumerated options. By default, the control inherits text direction from the DOM.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="delete" allowPreventDefault="false">
+            <documentation>This event is fired if the user clicks the token's delete icon.</documentation>
+        </event>
+        <event name="press" allowPreventDefault="false">
+            <documentation>This event is fired when the user clicks on the token.</documentation>
+        </event>
+        <event name="select" allowPreventDefault="false">
+            <documentation>This event is fired when the token gets selected.</documentation>
+        </event>
+        <event name="deselect" allowPreventDefault="false">
+            <documentation>This event is fired when the token gets deselected.</documentation>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="deleteIcon" type="sap.ui.core/Icon" cardinality="0..1" visibility="hidden">
+            <documentation>The delete icon.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="ariaDescribedBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / IDs which describe this control (see WAI-ARIA attribute aria-describedby).</documentation>
+        </association>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / IDs which label this control (see WAI-ARIA attribute aria-labelledby).</documentation>
+        </association>
+    </associations>
+</control>

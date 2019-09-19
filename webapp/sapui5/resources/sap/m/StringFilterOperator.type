@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>StringFilterOperator</name>
+    <derived/>
+    <documentation>Types of string filter operators.</documentation>
+    <since>1.42</since>
+    <enumeration>
+        <value name="Equals">
+            <documentation>Checks if the text is equal with the search string.</documentation>
+        </value>
+        <value name="Contains">
+            <documentation>Checks if the text contains the search string.</documentation>
+        </value>
+        <value name="StartsWith">
+            <documentation>Checks if the text starts with the search string.</documentation>
+        </value>
+        <value name="AnyWordStartsWith">
+            <documentation>Checks if any word in the text starts with the search string.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

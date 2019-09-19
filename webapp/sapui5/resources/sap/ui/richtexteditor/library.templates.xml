@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Library name="sap.ui.richtexteditor" xmlns="http://www.sap.com/ui5/ide/templates/xmlview">
+<Template name="sap.ui.richtexteditor.RichTextEditor" alias="RichTextEditor,Editor">
+	<jsTemplate><![CDATA[new sap.ui.richtexteditor.RichTextEditor({
+	id: "${id}", // sap.ui.core.ID
+	blocked: false, // boolean
+	busy: false, // boolean
+	busyIndicatorDelay: 1000, // int
+	busyIndicatorSize: sap.ui.core.BusyIndicatorSize.Medium, // sap.ui.core.BusyIndicatorSize, since 1.54
+	visible: true, // boolean
+	fieldGroupIds: [], // string[], since 1.31
+	value: "", // string
+	textDirection: sap.ui.core.TextDirection.Inherit, // sap.ui.core.TextDirection
+	width: undefined, // sap.ui.core.CSSSize
+	height: undefined, // sap.ui.core.CSSSize
+	editorType: "TinyMCE4", // string
+	editorLocation: "js/tiny_mce4/tinymce.js", // string
+	editable: true, // boolean
+	showGroupFontStyle: true, // boolean
+	showGroupTextAlign: true, // boolean
+	showGroupStructure: true, // boolean
+	showGroupFont: false, // boolean
+	showGroupClipboard: true, // boolean
+	showGroupInsert: false, // boolean
+	showGroupLink: false, // boolean
+	showGroupUndo: false, // boolean
+	wrapping: true, // boolean
+	required: false, // boolean
+	sanitizeValue: true, // boolean
+	plugins: [], // object[]
+	useLegacyTheme: true, // boolean
+	buttonGroups: [], // object[]
+	customToolbar: false, // boolean, since 1.48
+	tooltip: undefined, // sap.ui.core.TooltipBase
+	customData: [], // sap.ui.core.CustomData
+	dependents: [], // sap.ui.core.Element, since 1.19
+	dragDropConfig: [], // sap.ui.core.dnd.DragDropBase, since 1.56
+	customButtons: [], // sap.ui.core.Control, since 1.48
+	validateFieldGroup: [function (oEvent) {
+		var ${control} = oEvent.getSource();
+	}, this],
+	change: [function (oEvent) {
+		var ${control} = oEvent.getSource();
+	}, this],
+	ready: [function (oEvent) {
+		var ${control} = oEvent.getSource();
+	}, this],
+	readyRecurring: [function (oEvent) {
+		var ${control} = oEvent.getSource();
+	}, this],
+	beforeEditorInit: [function (oEvent) {
+		var ${control} = oEvent.getSource();
+	}, this]
+})
+]]></jsTemplate>
+	<xmlTemplate><![CDATA[<RichTextEditor xmlns="sap.ui.richtexteditor"
+	id="${id}"
+	blocked="false"
+	busy="false"
+	busyIndicatorDelay="1000"
+	busyIndicatorSize="Medium"
+	visible="true"
+	fieldGroupIds=""
+	value=""
+	textDirection="Inherit"
+	width=""
+	height=""
+	editorType="TinyMCE4"
+	editorLocation="js/tiny_mce4/tinymce.js"
+	editable="true"
+	showGroupFontStyle="true"
+	showGroupTextAlign="true"
+	showGroupStructure="true"
+	showGroupFont="false"
+	showGroupClipboard="true"
+	showGroupInsert="false"
+	showGroupLink="false"
+	showGroupUndo="false"
+	wrapping="true"
+	required="false"
+	sanitizeValue="true"
+	plugins=""
+	useLegacyTheme="true"
+	buttonGroups=""
+	customToolbar="false"
+	validateFieldGroup=""
+	change=""
+	ready=""
+	readyRecurring=""
+	beforeEditorInit="">
+		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+		<dependents></dependents> <!-- sap.ui.core.Element, since 1.19 -->
+		<dragDropConfig></dragDropConfig> <!-- sap.ui.core.dnd.DragDropBase, since 1.56 -->
+		<customButtons></customButtons> <!-- sap.ui.core.Control, since 1.48 -->
+</RichTextEditor>
+]]></xmlTemplate>
+</Template>
+</Library>

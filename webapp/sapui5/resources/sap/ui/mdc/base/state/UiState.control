@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>base/state/UiState</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Creates a new instance of an UiState class.</documentation>
+    <since>1.61</since>
+    <baseType>sap.ui.core/Element</baseType>
+    <aggregations>
+        <aggregation name="sortOrders" type="sap.ui.mdc/base/state/SortOrder" cardinality="0..n">
+            <documentation>Sort Orders</documentation>
+        </aggregation>
+        <aggregation name="selectOptions" type="sap.ui.mdc/base/state/SelectOption" cardinality="0..n">
+            <documentation>Select Options</documentation>
+        </aggregation>
+    </aggregations>
+</control>

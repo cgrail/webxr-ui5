@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>RowRepeaterFilter</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>This element is used by the RowRepeater and allows to define a filter in this context along with the related data such as a text and an icon.</documentation>
+    <deprecation since="1.38">Instead, use the &lt;code&gt;sap.ui.table.Table&lt;/code&gt; control.</deprecation>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="text" type="sap.ui.core/string" group="Appearance">
+            <documentation>The filter title if needed for display.</documentation>
+        </property>
+        <property name="icon" type="sap.ui.core/string" group="Appearance">
+            <documentation>The filter icon if needed for display.</documentation>
+        </property>
+        <property name="filters" type="sap.ui.core/object" group="Data">
+            <documentation>The set of filter objects.</documentation>
+        </property>
+    </properties>
+</control>

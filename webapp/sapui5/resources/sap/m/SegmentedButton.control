@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>SegmentedButton</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A horizontal control made of multiple buttons, which can display a title or an image.
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+
+The &lt;code&gt;SegmentedButton&lt;/code&gt; shows a group of buttons. When the user clicks or taps
+one of the buttons, it stays in a pressed state. It automatically resizes the buttons
+to fit proportionally within the control. When no width is set, the control uses the available width.</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="width" type="sap.ui.core/CSSSize" group="Misc">
+            <documentation>Defines the width of the SegmentedButton control. If not set, it uses the minimum required width to make all buttons inside of the same size (based on the biggest button).</documentation>
+        </property>
+        <property name="enabled" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Disables all the buttons in the SegmentedButton control. When disabled all the buttons look grey and you cannot focus or click on them.</documentation>
+        </property>
+        <property name="selectedKey" type="sap.ui.core/string" defaultValue="" group="Data" since="1.28.0" bindable="bindable">
+            <documentation>Key of the selected item. If no item to this key is found in the items aggregation, no changes will apply. Only the items aggregation is affected. If duplicate keys exist, the first item matching the key is used.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="select" allowPreventDefault="false">
+            <documentation>Fires when the user selects a button, which returns the ID and button object.</documentation>
+            <deprecation since="1.52">replaced by &lt;code&gt;selectionChange&lt;/code&gt; event</deprecation>
+            <parameters>
+                <parameter name="button" type="sap.m/Button">
+                    <documentation>Reference to the button, that has been selected.</documentation>
+                </parameter>
+                <parameter name="id" type="sap.ui.core/string">
+                    <documentation>ID of the button, which has been selected.</documentation>
+                </parameter>
+                <parameter name="key" type="sap.ui.core/string" since="1.28.0">
+                    <documentation>Key of the button, which has been selected. This property is only filled when the control is initiated with the items aggregation.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="selectionChange" since="1.52" allowPreventDefault="false">
+            <documentation>Fires when the user selects an item, which returns the item object.</documentation>
+            <parameters>
+                <parameter name="item" type="sap.m/SegmentedButtonItem">
+                    <documentation>Reference to the item, that has been selected.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations default="buttons">
+        <aggregation name="buttons" type="sap.m/Button" cardinality="0..n">
+            <documentation>The buttons of the SegmentedButton control. The items set in this aggregation are used as an interface for the buttons displayed by the control. Only the properties ID, icon, text, enabled and textDirections of the Button control are evaluated. Setting other properties of the button will have no effect. Alternatively, you can use the createButton method to add buttons.</documentation>
+            <deprecation since="1.28.0">replaced by &lt;code&gt;items&lt;/code&gt; aggregation</deprecation>
+        </aggregation>
+        <aggregation name="items" type="sap.m/SegmentedButtonItem" since="1.28" cardinality="0..n" bindable="bindable">
+            <documentation>Aggregation of items to be displayed. The items set in this aggregation are used as an interface for the buttons displayed by the control.
+The "items" and "buttons" aggregations should NOT be used simultaneously as it causes the control to work incorrectly.</documentation>
+        </aggregation>
+        <aggregation name="_select" type="sap.m/Select" cardinality="0..1" visibility="hidden">
+            <documentation>Hidden aggregation that holds an instance of sap.m.Select to be used in some contexts as a representation of the segmented button (for example, in a popover with little space).</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="selectedButton" type="sap.m/Button" cardinality="0..1">
+            <documentation>A reference to the currently selected button control. By default or if the association is set to false (null, undefined, "", false), the first button will be selected.
+If the association is set to an invalid value (for example, an ID of a button that does not exist) the selection on the SegmentedButton will be removed.</documentation>
+            <deprecation since="1.52">replaced by &lt;code&gt;selectedItem&lt;/code&gt; association</deprecation>
+        </association>
+        <association name="selectedItem" type="sap.m/SegmentedButtonItem" cardinality="0..1" since="1.52">
+            <documentation>A reference to the currently selected item control.</documentation>
+        </association>
+        <association name="ariaDescribedBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / IDs, which describe this control (see WAI-ARIA attribute aria-describedby).</documentation>
+        </association>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / IDs, which label this control (see WAI-ARIA attribute aria-labelledby).</documentation>
+        </association>
+    </associations>
+    <methods>
+        <method name="createButton" type="sap.m/Button" since="1.28.0">
+            <documentation>Adds a Button with a text as title, a URI for an icon, enabled and textDirection.
+Only one is allowed.</documentation>
+            <parameters>
+                <parameter name="text" type="sap.ui.core/string">
+                    <documentation>Defines the title text of the newly created Button</documentation>
+                </parameter>
+                <parameter name="uRI" type="sap.ui.core/URI">
+                    <documentation>Icon to be displayed as graphical element within the Button.</documentation>
+                </parameter>
+                <parameter name="enabled" type="sap.ui.core/boolean">
+                    <documentation>Enables the control (default is true). Buttons that are disabled have other colors than enabled ones, depending on custom settings.</documentation>
+                </parameter>
+                <parameter name="textDirection" type="sap.ui.core/TextDirection">
+                    <documentation>Element's text directionality with enumerated options</documentation>
+                </parameter>
+            </parameters>
+        </method>
+    </methods>
+</control>

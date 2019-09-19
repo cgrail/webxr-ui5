@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>LightBoxItem</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Represents an item which is displayed within an sap.m.LightBox. This item holds all properties of the image as
+well as the title and subtitle.</documentation>
+    <since>1.42</since>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="imageSrc" type="sap.ui.core/URI" defaultValue="" group="Appearance">
+            <documentation>Source for the image. This property is mandatory. If not set the popup will not open</documentation>
+        </property>
+        <property name="alt" type="sap.ui.core/string" defaultValue="" group="Appearance">
+            <documentation>Alt value for the image</documentation>
+        </property>
+        <property name="title" type="sap.ui.core/string" defaultValue="" group="Appearance">
+            <documentation>Title text for the image. This property is mandatory.</documentation>
+        </property>
+        <property name="subtitle" type="sap.ui.core/string" defaultValue="" group="Appearance">
+            <documentation>Subtitle text for the image</documentation>
+        </property>
+    </properties>
+    <aggregations>
+        <aggregation name="_image" type="sap.m/Image" cardinality="0..1" visibility="hidden">
+            <documentation>The image aggregation inside the LightBoxItem control.</documentation>
+        </aggregation>
+        <aggregation name="_title" type="sap.m/Text" cardinality="0..1" visibility="hidden">
+            <documentation>The title aggregation inside the LightBoxItem control.</documentation>
+        </aggregation>
+        <aggregation name="_subtitle" type="sap.m/Text" cardinality="0..1" visibility="hidden">
+            <documentation>The subtitle aggregation inside the LightBoxItem control.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

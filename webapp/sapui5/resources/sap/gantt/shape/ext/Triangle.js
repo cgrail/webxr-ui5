@@ -1,0 +1,7 @@
+/*!
+ * SAP UI development toolkit for HTML5 (SAPUI5)
+
+		(c) Copyright 2009-2015 SAP SE. All rights reserved
+	
+ */
+sap.ui.define(["sap/gantt/shape/Path"],function(P){"use strict";var T=P.extend("sap.gantt.shape.ext.Triangle",{metadata:{properties:{isClosed:{type:"boolean",defaultValue:true},base:{type:"float",defaultValue:10},height:{type:"float",defaultValue:10},distanceOfyAxisHeight:{type:"float",defaultValue:5}}}});T.prototype.init=function(){var r=sap.ui.getCore().getLibraryResourceBundle("sap.gantt");this.setProperty("ariaLabel",r.getText("ARIA_TRIANGLE"));};T.prototype.getD=function(d,r){var D;if(this.mShapeConfig.hasShapeProperty("d")){D=this._configFirst("d",d);}else{var n=this.getBase(d,r);var a=this.getHeight(d,r);var b=this.getDistanceOfyAxisHeight(d,r);var c=this.getHeight(d,r)/2;var C=this.getRotationCenter(d,r);if(C&&C.length===2&&jQuery.isNumeric(n)&&jQuery.isNumeric(a)&&jQuery.isNumeric(b)&&jQuery.isNumeric(c)){D="M "+C.join(" ")+" m 0 "+c+" l -"+b+" 0 l "+b+" -"+a+" l "+Number(n-b)+" "+a+" l -"+Number(n-b)+" 0 z";}}if(this.isValid(D)){return D;}else{jQuery.sap.log.warning("Triangle shape generated invalid d: "+D+" from the given data: "+d);return null;}};T.prototype.getBase=function(d){return this._configFirst("base",d,true);};T.prototype.getHeight=function(d){return this._configFirst("height",d,true);};T.prototype.getDistanceOfyAxisHeight=function(d){return this._configFirst("distanceOfyAxisHeight",d,true);};return T;},true);

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>AnalyticalTable</name>
+    <derived/>
+    <documentation>Table which handles analytical OData backends. The AnalyticalTable only works with an AnalyticalBinding and
+correctly annotated OData services. Please check on the SAP Annotations for OData Version 2.0 documentation for further details.</documentation>
+    <baseType>sap.ui.table/Table</baseType>
+    <properties>
+        <property name="sumOnTop" type="sap.ui.core/boolean" defaultValue="false" group="Appearance">
+            <documentation>Specifies if the total values should be displayed in the group headers or on bottom of the row. Does not affect the total sum.
+
+The value of the property is only taken into account if no parameter is given in the binding information. Changes to this property after
+the table is bound do not have any effect unless an explicit (re-)bind of the &lt;code&gt;rows&lt;/code&gt; aggregation is done.
+
+Example:
+&lt;pre&gt;
+  oTable.bindRows({
+    path: "...",
+    parameters: {
+      sumOnTop: true
+    }
+  });
+&lt;/pre&gt;</documentation>
+            <deprecation since="1.44.0">please use the corresponding binding parameter &lt;code&gt;sumOnTop&lt;/code&gt; instead.</deprecation>
+        </property>
+        <property name="numberOfExpandedLevels" type="sap.ui.core/int" defaultValue="0" group="Misc">
+            <documentation>Number of levels, which should be opened initially (on first load of data).
+
+The value of the property is only taken into account if no parameter is given in the binding information. Changes to this property after
+the table is bound do not have any effect unless an explicit (re-)bind of the &lt;code&gt;rows&lt;/code&gt; aggregation is done.
+
+Example:
+&lt;pre&gt;
+  oTable.bindRows({
+    path: "...",
+    parameters: {
+      numberOfExpandedLevels: 1
+    }
+  });
+&lt;/pre&gt;</documentation>
+            <deprecation since="1.44.0">please use the corresponding binding parameter &lt;code&gt;numberOfExpandedLevels&lt;/code&gt; instead.</deprecation>
+        </property>
+        <property name="autoExpandMode" type="sap.ui.core/string" defaultValue="Bundled" group="Misc">
+            <documentation>The kind of auto expansion algorithm, e.g. optimized filter conditions, per level requests, ...
+Must be a value of &lt;code&gt;sap.ui.table.TreeAutoExpandMode&lt;/code&gt;.
+
+The value of the property is only taken into account if no parameter is given in the binding information. Changes to this property after
+the table is bound do not have any effect unless an explicit (re-)bind of the &lt;code&gt;rows&lt;/code&gt; aggregation is done.
+
+Example:
+&lt;pre&gt;
+  oTable.bindRows({
+    path: "...",
+    parameters: {
+      autoExpandMode: "Bundled"
+    }
+  });
+&lt;/pre&gt;</documentation>
+            <deprecation since="1.44.0">please use the corresponding binding parameter &lt;code&gt;autoExpandMode&lt;/code&gt; instead.</deprecation>
+        </property>
+        <property name="columnVisibilityMenuSorter" type="sap.ui.core/any" group="Appearance">
+            <documentation>Functions which is used to sort the column visibility menu entries e.g.: function(ColumnA, ColumnB) { return 0 = equals, &lt;0 lower, &gt;0 greater }; Other values than functions will be ignored.</documentation>
+        </property>
+        <property name="collapseRecursive" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>Setting collapseRecursive to true means, that when collapsing a node all subsequent child nodes will also be collapsed.
+
+Calling the setter of this property only has an effect when the tables &lt;code&gt;rows&lt;/code&gt; aggregation is already bound and
+the binding supports this feature.</documentation>
+        </property>
+        <property name="dirty" type="sap.ui.core/boolean" group="Appearance">
+            <documentation>If dirty the content of the Table will be overlayed.</documentation>
+            <deprecation since="1.21.2">replaced by {@link sap.ui.table.Table#setShowOverlay}</deprecation>
+        </property>
+    </properties>
+    <methods>
+        <method name="getContextByIndex" type="sap.ui.core/object">
+            <documentation>Returns the context of a row by its index.</documentation>
+            <parameters>
+                <parameter name="index" type="sap.ui.core/int">
+                    <documentation>Index of the row to return the context from.</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="getTotalSize" type="sap.ui.core/int">
+            <documentation>Returns the total size of the data entries.</documentation>
+        </method>
+        <method name="expand" type="sap.ui.table/AnalyticalTable">
+            <documentation>Expands one or more rows.</documentation>
+            <parameters>
+                <parameter name="rowIndex" type="sap.ui.core/int">
+                    <documentation>A single index or an array of indices of the rows to be expanded</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="collapse" type="sap.ui.table/AnalyticalTable">
+            <documentation>Collapses one or more rows.</documentation>
+            <parameters>
+                <parameter name="rowIndex" type="sap.ui.core/int">
+                    <documentation>A single index, or an array of indices of the rows to be collapsed</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="collapseAll" type="sap.ui.table/AnalyticalTable">
+            <documentation>Collapses all nodes (and their child nodes if collapseRecursive is activated).</documentation>
+        </method>
+        <method name="isExpanded" type="sap.ui.core/boolean">
+            <documentation>Checks whether the row is expanded or collapsed.</documentation>
+            <parameters>
+                <parameter name="rowIndex" type="sap.ui.core/int">
+                    <documentation>The index of the row to be checked</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="isIndexSelected" type="sap.ui.core/boolean">
+            <documentation>Checks if the row at the given index is selected.</documentation>
+            <parameters>
+                <parameter name="rowIndex" type="sap.ui.core/int">
+                    <documentation>The row index for which the selection state should be retrieved</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="setSelectedIndex" type="sap.ui.table/AnalyticalTable">
+            <documentation>In an &lt;code&gt;AnalyticalTable&lt;/code&gt; control you can only select indices, which correspond to the currently visualized tree.
+Invisible nodes (e.g. collapsed child nodes) cannot be selected via Index, because they do not
+correspond to an &lt;code&gt;AnalyticalTable&lt;/code&gt; row.</documentation>
+            <parameters>
+                <parameter name="rowIndex" type="sap.ui.core/int">
+                    <documentation>The row index which will be selected (in case it exists)</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="getSelectedIndices" type="sap.ui.core/int[]">
+            <documentation>Returns an array containing the row indices of all selected tree nodes (in ascending order).
+
+Please be aware of the following:
+Due to performance/network traffic reasons, the getSelectedIndices function returns only all indices
+of actually selected rows/tree nodes. Unknown rows/nodes (as in "not yet loaded" to the client), will not be
+returned.</documentation>
+        </method>
+        <method name="setSelectionInterval" type="sap.ui.table/AnalyticalTable">
+            <documentation>Sets the selection of the &lt;code&gt;AnalyticalTable&lt;/code&gt; control to the given range (including boundaries).
+
+&lt;b&gt;Note:&lt;/b&gt; The previous selection will be lost/overridden. If this is not the required behavior,
+please use &lt;code&gt;addSelectionInterval&lt;/code&gt; and &lt;code&gt;removeSelectionInterval&lt;/code&gt;.</documentation>
+            <parameters>
+                <parameter name="fromIndex" type="sap.ui.core/int">
+                    <documentation>the start index of the selection range</documentation>
+                </parameter>
+                <parameter name="toIndex" type="sap.ui.core/int">
+                    <documentation>the end index of the selection range</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="addSelectionInterval" type="sap.ui.table/AnalyticalTable">
+            <documentation>Marks a range of tree nodes as selected, starting with iFromIndex going to iToIndex.
+The nodes are referenced via their absolute row index.
+Please be aware that the absolute row index only applies to the tree which is visualized by the &lt;code&gt;AnalyticalTable&lt;/code&gt; control.
+Invisible nodes (collapsed child nodes) will not be taken into account.
+
+Please also take notice of the fact, that "addSelectionInterval" does not change any other selection.
+To override the current selection, please use "setSelctionInterval" or for a single entry use "setSelectedIndex".</documentation>
+            <parameters>
+                <parameter name="fromIndex" type="sap.ui.core/int">
+                    <documentation>The starting index of the range which will be selected.</documentation>
+                </parameter>
+                <parameter name="toIndex" type="sap.ui.core/int">
+                    <documentation>The starting index of the range which will be selected.</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="removeSelectionInterval" type="sap.ui.table/AnalyticalTable">
+            <documentation>All rows/tree nodes inside the range (including boundaries) will be deselected.
+The nodes are referenced with their absolute row index.
+Please be aware that the absolute row index only applies to the tree which is visualized by the &lt;code&gt;AnalyticalTable&lt;/code&gt; control.
+Invisible nodes (collapsed child nodes) will not be taken into account.</documentation>
+            <parameters>
+                <parameter name="fromIndex" type="sap.ui.core/int">
+                    <documentation>The starting index of the range which will be deselected.</documentation>
+                </parameter>
+                <parameter name="toIndex" type="sap.ui.core/int">
+                    <documentation>The starting index of the range which will be deselected.</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="selectAll" type="sap.ui.table/AnalyticalTable">
+            <documentation>Selects all available nodes/rows.
+
+Explanation of the SelectAll function and what to expect from its behavior:
+All rows/nodes stored locally on the client are selected.
+In addition all subsequent rows/tree nodes, which will be paged into view are also immediately selected.
+However, due to obvious performance/network traffic reasons, the SelectAll function will NOT retrieve any data from the backend.</documentation>
+        </method>
+        <method name="getSelectedIndex" type="sap.ui.core/int[]">
+            <documentation>Retrieves the lead selection index. The lead selection index is, among other things, used to determine the
+start/end of a selection range, when using Shift-Click to select multiple entries at once.</documentation>
+        </method>
+    </methods>
+</control>

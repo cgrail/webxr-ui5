@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smarttable/ExportType</name>
+    <derived/>
+    <documentation>Provides the type of services available for export in the &lt;code&gt;SmartTable&lt;/code&gt; control.</documentation>
+    <enumeration>
+        <value name="GW">
+            <documentation>Gateway backend spreadsheet export service is used</documentation>
+        </value>
+        <value name="UI5Client">
+            <documentation>UI5 client-side spreadsheet export service is used (default as of UI5 version 1.52)</documentation>
+        </value>
+    </enumeration>
+</simple-type>

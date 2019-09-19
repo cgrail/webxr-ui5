@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>DropdownBox</name>
+    <derived/>
+    <documentation>The control provides a field that allows end users to an entry out of a list of pre-defined items.
+The choosable items can be provided in the form of a complete &lt;code&gt;ListBox&lt;/code&gt;, single &lt;code&gt;ListItems&lt;/code&gt;.</documentation>
+    <deprecation since="1.38">replaced by {@link sap.m.ComboBox}</deprecation>
+    <baseType>sap.ui.commons/ComboBox</baseType>
+    <properties>
+        <property name="searchHelpEnabled" type="sap.ui.core/boolean" defaultValue="false" group="Behavior">
+            <documentation>Whether the DropdownBox's search help should be enabled.</documentation>
+        </property>
+        <property name="searchHelpText" type="sap.ui.core/string" group="Appearance">
+            <documentation>(optional) The text to use for the search help entry.</documentation>
+        </property>
+        <property name="searchHelpAdditionalText" type="sap.ui.core/string" group="Appearance">
+            <documentation>(optional) The additional Text to use for the search help entry.</documentation>
+        </property>
+        <property name="searchHelpIcon" type="sap.ui.core/URI" group="Appearance">
+            <documentation>(optional) The URI of the icon to use for the search help entry.</documentation>
+        </property>
+        <property name="maxHistoryItems" type="sap.ui.core/int" defaultValue="0" group="Behavior">
+            <documentation>Maximum number of history items in the list.
+
+If 0 no history is displayed or stored. The history is locally stored on the client.
+Therefore do not activate this feature when this control handles confidential data.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="searchHelp" allowPreventDefault="false">
+            <documentation>Event fired whenever the configured searchHelpItem is clicked or the searchHelpItem is configured and F4 key is pressed.</documentation>
+            <parameters>
+                <parameter name="value" type="sap.ui.core/string">
+                    <documentation>The current value of the DropdownBox.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <methods>
+        <method name="clearHistory">
+            <documentation>Using this method the history of the DropdownBox can be cleared.
+This might be necessary if the items of the DropdownBox have changed. Otherwise invalid items may appear in the history.</documentation>
+        </method>
+    </methods>
+</control>

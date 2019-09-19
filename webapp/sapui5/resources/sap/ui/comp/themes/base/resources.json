@@ -1,0 +1,117 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": ".theming",
+			"theme": "base"
+		},
+		{
+			"name": "DateRangeType.css",
+			"theme": "base"
+		},
+		{
+			"name": "DialogContent.css",
+			"theme": "base"
+		},
+		{
+			"name": "FieldListNode.css",
+			"theme": "base"
+		},
+		{
+			"name": "FieldSelector.css",
+			"theme": "base"
+		},
+		{
+			"name": "FilterBar.css",
+			"theme": "base"
+		},
+		{
+			"name": "FullScreenDialog.css",
+			"theme": "base"
+		},
+		{
+			"name": "GroupElement.css",
+			"theme": "base"
+		},
+		{
+			"name": "MultiCurrency.css",
+			"theme": "base"
+		},
+		{
+			"name": "NavigationPopover.css",
+			"theme": "base"
+		},
+		{
+			"name": "SmartChart.css",
+			"theme": "base"
+		},
+		{
+			"name": "SmartField.css",
+			"theme": "base"
+		},
+		{
+			"name": "SmartForm.css",
+			"theme": "base"
+		},
+		{
+			"name": "SmartLink.css",
+			"theme": "base"
+		},
+		{
+			"name": "SmartMultiEdit.css",
+			"theme": "base"
+		},
+		{
+			"name": "SmartTable.css",
+			"theme": "base"
+		},
+		{
+			"name": "TransportDialog.css",
+			"theme": "base"
+		},
+		{
+			"name": "ValueHelpDialog.css",
+			"theme": "base"
+		},
+		{
+			"name": "VariantManagement.css",
+			"theme": "base"
+		},
+		{
+			"name": "library-RTL-dbg.css",
+			"isDebug": true,
+			"theme": "base"
+		},
+		{
+			"name": "library-RTL.css",
+			"theme": "base"
+		},
+		{
+			"name": "library-dbg.css",
+			"isDebug": true,
+			"theme": "base"
+		},
+		{
+			"name": "library-parameters.json",
+			"theme": "base"
+		},
+		{
+			"name": "library.css",
+			"theme": "base"
+		},
+		{
+			"name": "library.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "library.source.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "shared.css",
+			"theme": "base"
+		}
+	]
+}

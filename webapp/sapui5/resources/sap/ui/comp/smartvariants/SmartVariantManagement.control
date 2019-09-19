@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartvariants/SmartVariantManagement</name>
+    <derived/>
+    <documentation>&lt;h3&gt;Overview&lt;/h3&gt;
+       The &lt;code&gt;SmartVariantManagement&lt;/code&gt; control is a specialization of the
+       {@link sap.ui.comp.variants.VariantManagement VariantManagement} control and communicates with the flexibility library that offers
+       SAPUI5 flexibility services to manage the variants.&lt;br&gt;
+       &lt;h3&gt;Usage&lt;/h3&gt;
+       You can use this control in combination with the following controls:
+       &lt;ul&gt;
+       &lt;li&gt;&lt;code&gt;SmartFilterBar&lt;/code&gt;&lt;/li&gt;
+       &lt;li&gt;&lt;code&gt;SmartChart&lt;/code&gt;&lt;/li&gt;
+       &lt;li&gt;&lt;code&gt;SmartTable&lt;/code&gt;&lt;/li&gt;
+       &lt;/ul&gt;</documentation>
+    <baseType>sap.ui.comp/variants/VariantManagement</baseType>
+    <properties>
+        <property name="persistencyKey" type="sap.ui.core/string" group="Misc">
+            <documentation>Key used to access personalization data.</documentation>
+        </property>
+        <property name="entitySet" type="sap.ui.core/string" group="Misc">
+            <documentation>The OData entity set whose metadata is used to create the variant items based on the SelectionPresentationVariant annotation.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="initialise" allowPreventDefault="false">
+            <documentation>This event is fired when the SmartVariantManagement control is initialized.</documentation>
+            <deprecation since="1.38.0">Replaced by providing the personalizable control and the callback via the &lt;code&gt;initialise&lt;/code&gt;-method.</deprecation>
+        </event>
+        <event name="save" allowPreventDefault="false">
+            <documentation>This event is fired after a variant has been saved.</documentation>
+            <parameters>
+                <parameter name="tile" type="sap.ui.core/boolean">
+                    <documentation>If the property &lt;code&gt;showCreateTile&lt;/code&gt; is set, the Create Tile checkbox is shown and its value is passed to this
+event parameter.&lt;br&gt;
+If the property &lt;code&gt;showCreateTile&lt;/code&gt; is not set, this event parameter is skipped.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="afterSave" allowPreventDefault="false">
+            <documentation>This event is fired after all changes are successfully stored.</documentation>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="personalizableControls" type="sap.ui.comp/smartvariants/PersonalizableInfo" cardinality="0..n">
+            <documentation>All controls that rely on variant handling have to be added to this aggregation.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

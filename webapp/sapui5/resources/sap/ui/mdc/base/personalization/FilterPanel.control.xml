@@ -1,0 +1,38 @@
+<core:FragmentDefinition xmlns:m="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout">
+	<l:VerticalLayout>
+		<m:Bar>
+			<m:contentMiddle>
+				<m:OverflowToolbar>
+					<m:SearchField id="idSearchField" liveChange="onSearchFieldLiveChange" width="100%">
+						<m:layoutData>
+							<m:OverflowToolbarLayoutData shrinkable="true" moveToOverflow="false" priority="High"/>
+						</m:layoutData>
+					</m:SearchField>
+				</m:OverflowToolbar>
+			</m:contentMiddle>
+		</m:Bar>
+		<m:ScrollContainer id="idScrollContainer" horizontal="false" vertical="true" width="100%" height="100%">
+			<m:Table id="idList" mode="None" rememberSelections="false" items="{path:'$this>/items', templateShareable:false}">
+				<m:columns>
+					<m:Column vAlign="Middle">
+						<m:Text text="{$this.i18n>filter.ADAPT_COLUMN_DESCRIPTION}"/>
+					</m:Column>
+					<m:Column vAlign="Middle">
+						<m:Text text="{$this.i18n>filter.ADAPT_COLUMN_VALUE}"/>
+					</m:Column>
+				</m:columns>
+				<m:items>
+					<m:ColumnListItem type="Active" class="sapUiSmallMarginBegin">
+						<m:cells>
+							<m:Label wrapping="true" required="{$this>required}" text="{$this>text}" tooltip="{$this>tooltip}"/>
+							<!--<m:Input will be added during the runtime -->
+						</m:cells>
+					</m:ColumnListItem>
+				</m:items>
+			</m:Table>
+		</m:ScrollContainer>
+	</l:VerticalLayout>
+</core:FragmentDefinition>
+

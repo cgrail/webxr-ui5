@@ -1,0 +1,47 @@
+<!--
+/**
+ * OData v4 ValueHelp
+ * @param metadataContext:entitySet context to the EntitySet
+ * @param metadataContext:property context to the property that should be rendered
+ * @param idPrefix default 'VH' Prefix for the id
+ * @returns
+ */
+-->
+
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m"
+	xmlns:mdc="sap.ui.mdc.base"
+	xmlns:unittest="http://schemas.sap.com/sapui5/preprocessorextension/sap.fe.unittesting/1"
+	xmlns:log="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	template:require="{
+		MODEL: 'sap/ui/model/odata/v4/AnnotationHelper',
+		FIELD: 'sap/ui/mdc/odata/v4/field/FieldHelper',
+		ID: 'sap/ui/mdc/odata/v4/StableIdHelper'
+	}">
+	<template:with path="property>" helper="FIELD.valueHelpProperty" var="property">
+	<template:with path="entitySet>@sapui.name" var="esName">
+		<template:if test="{=
+					${property>@com.sap.vocabularies.Common.v1.ValueListReferences} ||
+					${property>@com.sap.vocabularies.Common.v1.ValueListMapping} ||
+					${property>@com.sap.vocabularies.Common.v1.ValueList} ||
+					['Edm.Date','Edm.DateTime','Edm.DateTimeOffset'].indexOf(${property>$Type}) &gt; -1
+				}">
+			<!-- Value Help -->
+			<template:if test="{= ${property>@com.sap.vocabularies.Common.v1.ValueListReferences} ||
+									${property>@com.sap.vocabularies.Common.v1.ValueListMapping} ||
+									${property>@com.sap.vocabularies.Common.v1.ValueList} }">
+				<mdc:FieldValueHelp
+					unittest:id="a"
+					log:sourcePath="/{esName>}/{property>@@FIELD.propertyName}"
+					id="{= ID.generate([${this>idPrefix} || 'VH',${property>$@sapui.name}]) }"
+					showConditionPanel="true"
+					noDialog="{= ${property>@@MODEL.getValueListType} === 'Fixed'}"
+					open="sap.ui.mdc.odata.v4.ValueListHelper.showValueListInfo('/{esName>}/{property>@@FIELD.propertyName}',$\{$source>\},$\{$parameters>/suggestion\}))">
+					<mdc:FieldValueHelpMTableWrapper />
+				</mdc:FieldValueHelp>
+			</template:if>
+		</template:if>
+	</template:with>
+	</template:with>
+</core:FragmentDefinition>

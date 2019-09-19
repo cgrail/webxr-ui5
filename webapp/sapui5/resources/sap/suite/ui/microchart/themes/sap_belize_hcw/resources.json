@@ -1,0 +1,106 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": ".theming",
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "AreaMicroChart.less",
+			"designtime": true,
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "BulletMicroChart.less",
+			"designtime": true,
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "ColumnMicroChart.less",
+			"designtime": true,
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "ComparisonMicroChart.less",
+			"designtime": true,
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "DeltaMicroChart.less",
+			"designtime": true,
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "HarveyBallMicroChart.less",
+			"designtime": true,
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "InteractiveBarChart.less",
+			"designtime": true,
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "InteractiveDonutChart.less",
+			"designtime": true,
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "InteractiveLineChart.less",
+			"designtime": true,
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "LineMicroChart.less",
+			"designtime": true,
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "RadialMicroChart.less",
+			"designtime": true,
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "SharedStyles.less",
+			"designtime": true,
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "StackedBarMicroChart.less",
+			"designtime": true,
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "library-RTL-dbg.css",
+			"isDebug": true,
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "library-RTL.css",
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "library-dbg.css",
+			"isDebug": true,
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "library-parameters.json",
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "library.css",
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "library.less",
+			"designtime": true,
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "library.source.less",
+			"designtime": true,
+			"theme": "sap_belize_hcw"
+		}
+	]
+}

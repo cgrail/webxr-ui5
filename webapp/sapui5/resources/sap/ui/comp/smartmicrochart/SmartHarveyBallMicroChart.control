@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartmicrochart/SmartHarveyBallMicroChart</name>
+    <derived/>
+    <documentation>The SmartHarveyBallMicroChart control creates a {@link sap.suite.ui.microchart.HarveyBallMicroChart}
+based on OData metadata and the configuration specified in the &lt;code&gt;mSettings&lt;/code&gt; of the {@link sap.ui.base.ManagedObject}.
+&lt;br&gt;The &lt;code&gt;entitySet&lt;/code&gt; property is required. The entity set is used to fetch OData metadata and
+annotation information from the provided default OData model. The chart's UI is created based on this data.
+&lt;br&gt;
+&lt;b&gt;&lt;i&gt;Note:&lt;/i&gt;&lt;/b&gt;&lt;br&gt;
+Most of the properties are not dynamic and cannot be changed once the control has been
+initialized.</documentation>
+    <since>1.62.0</since>
+    <baseType>sap.ui.comp/smartmicrochart/SmartMicroChartBase</baseType>
+    <properties>
+        <property name="enableAutoBinding" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>If set to &lt;code&gt;true&lt;/code&gt;, the chart is automatically bound using the &lt;code&gt;chartBindingPath&lt;/code&gt;
+property, if it is specified.</documentation>
+        </property>
+    </properties>
+    <associations>
+        <association name="freeText" type="sap.m/Label" cardinality="0..1">
+            <documentation>If the associated control is provided, its &lt;code&gt;text&lt;/code&gt; property is set to
+the free text provided by annotations. The &lt;code&gt;Value&lt;/code&gt; property of the &lt;code&gt;DataPoint&lt;/code&gt;
+annotation should be annotated with this free text. The &lt;code&gt;Label&lt;/code&gt; annotation from the
+&lt;code&gt;OData Common&lt;/code&gt; vocabulary can be used.</documentation>
+        </association>
+    </associations>
+</control>

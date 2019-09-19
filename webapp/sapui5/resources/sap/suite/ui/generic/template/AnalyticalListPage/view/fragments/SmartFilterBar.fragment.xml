@@ -1,0 +1,67 @@
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+						 xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:smartfilterbar="sap.ui.comp.smartfilterbar" xmlns:smartfilterbarext="sap.suite.ui.generic.template.AnalyticalListPage.control"
+						 xmlns:build="sap.build">
+
+	<smartfilterbarext:SmartFilterBarExt id="template::SmartFilterBar" entitySet="{parameter>/entitySet}"
+		entityType="{parameter>/entityType}"
+		smartVariant="template::PageVariant"
+		class="sapSmartTemplatesAnalyticalListPageCompactFilter"
+		persistencyKey="compactFilterPersistencyKey"
+		useToolbar="false"
+		enableBasicSearch="{= !(${entitySet>Org.OData.Capabilities.V1.SearchRestrictions/Searchable/Bool} === 'false') }"
+		initialise="._templateEventHandlers.onSmartFilterBarInitialise"
+		initialized="._templateEventHandlers.onSmartFilterBarInitialized"
+		search="._templateEventHandlers.onSearchButtonPressed"
+		beforeVariantSave="._templateEventHandlers.onBeforeSFBVariantSave"
+		afterVariantLoad="._templateEventHandlers.onAfterSFBVariantLoad"
+		assignedFiltersChanged="._templateEventHandlers.onAssignedFiltersChanged"
+		build:metadata="#pattern:FilterBar;staticProp:enableBasicSearch:AllowFreeSearch"
+		considerAnalyticalParameters="true"
+		reset="{= (${parameter>/settings/hideVisualFilter} === false || ${parameter>/settings/hideVisualFilter} === undefined) ? '._templateEventHandlers.onRestore' : undefined}"
+		filtersDialogClosed="{= (${parameter>/settings/hideVisualFilter} === false || ${parameter>/settings/hideVisualFilter} === undefined) ? '._templateEventHandlers.onDialogClosed' : undefined}"
+		filtersDialogBeforeOpen="{= (${parameter>/settings/hideVisualFilter} === false || ${parameter>/settings/hideVisualFilter} === undefined) ? '._templateEventHandlers.onDialogOpened' : undefined}"
+		filtersDialogSearch="{= (${parameter>/settings/hideVisualFilter} === false || ${parameter>/settings/hideVisualFilter} === undefined) ? '._templateEventHandlers.onDialogSearch' : undefined}"
+		clear="._templateEventHandlers.onDialogClear"
+		filtersDialogSearchForFilters = "{= (${parameter>/settings/hideVisualFilter} === false || ${parameter>/settings/hideVisualFilter} === undefined) ? '._templateEventHandlers.onSearchForFilters' : undefined}"
+		useProvidedNavigationProperties = "{= (${entityType>sap:semantics} === 'aggregate') ? 'true' : 'false'}"
+		>
+		<smartfilterbarext:controlConfiguration>
+			<template:repeat list="{entityType>com.sap.vocabularies.UI.v1.SelectionFields}"
+							 var="selectionField">
+				<smartfilterbar:ControlConfiguration key="{= (${selectionField>PropertyPath}).replace('/', '.') }"
+													 visibleInAdvancedArea="true" groupId="_BASIC"
+													 index="{path: 'selectionField>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getRepeatIndex'}"
+													 build:metadata="#pattern:Filter;staticProp:description:Description:\{path:'selectionField>PropertyPath@@sap:label'\};prop:key:FilterOn"/>
+			</template:repeat>
+			<!-- <template:if test="{parameter>/isDraftEnabled}">
+				<template:with
+						path="entityType>navigationProperty/[${path:'name'} === 'DraftAdministrativeData']/" var="draftAdminData">
+					<template:if test="{= (${draftAdminData>sap:filterable} !== 'false')  &amp;&amp; (${entitySet>com.sap.vocabularies.Common.v1.DraftRoot}) }">
+
+						<smartfilterbar:ControlConfiguration key="EditState" index="0"
+															 label="{i18n>EDITING_STATUS}"
+															 groupId="_BASIC">
+							<smartfilterbar:customControl>
+								<Select selectedKey="0" id="editStateFilter" selectionChange="._templateEventHandlers.onEditStateFilterChanged">
+									<core:Item key="0" text="{i18n>ALL_OBJECTS}"/>
+									<core:Item key="2" text="{i18n>DRAFT_OBJECT_FILTER}"/>
+									<core:Item key="3" text="{i18n>LOCKED_OBJECT_FILTER}"/>
+									<core:Item key="4" text="{i18n>UNSAVED_CHANGES_FILTER}"/>
+									<core:Item key="1" text="{i18n>UNCHANGED}"/>
+								</Select>
+							</smartfilterbar:customControl>
+						</smartfilterbar:ControlConfiguration>
+					</template:if>
+				</template:with>
+			</template:if> -->
+			<core:ExtensionPoint name="SmartFilterBarControlConfigurationExtension|{entitySet>name}"/>
+		</smartfilterbarext:controlConfiguration>
+		<smartfilterbarext:customData>
+			<core:CustomData key="dateFormatSettings" value='\{"UTC":true,"style":"medium"\}'/>
+		</smartfilterbarext:customData>
+		<smartfilterbarext:layoutData>
+			<FlexItemData shrinkFactor="0"/>
+		</smartfilterbarext:layoutData>
+	</smartfilterbarext:SmartFilterBarExt>
+
+</core:FragmentDefinition>

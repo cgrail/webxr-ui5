@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>LayoutType</name>
+    <derived/>
+    <documentation>Layouts, representing the number of columns to be displayed and their relative widths for a {@link sap.f.FlexibleColumnLayout} control.
+
+Each layout has a predefined ratio for the three columns, depending on device size. Based on the device and layout, some columns are hidden.
+For more information, refer to the ratios (in %) for each value, listed below: (dash "-" means non-accessible columns).
+
+&lt;b&gt;Note:&lt;/b&gt; Please note that on a phone device, due to the limited screen size, only one column can be displayed at a time.
+For all two-column layouts, this column is the &lt;code&gt;Mid&lt;/code&gt; column, and for all three-column layouts - the &lt;code&gt;End&lt;/code&gt; column,
+even though the respective column may be hidden on desktop and tablet for that particular layout. Therefore some of the names
+(such as &lt;code&gt;ThreeColumnsMidExpandedEndHidden&lt;/code&gt; for example) are representative of the desktop scenario only.
+
+For more information, see {@link topic:3b9f760da5b64adf8db7f95247879086 Types of Layout} in the documentation.</documentation>
+    <since>1.46</since>
+    <enumeration>
+        <value name="OneColumn">
+            <documentation>Desktop: 100/-/-  only the Begin column is displayed
+
+Tablet:  100/-/-  only the Begin column is displayed
+
+Phone:   100/-/-  only the Begin column is displayed
+
+Use to start with a master page.</documentation>
+        </value>
+        <value name="TwoColumnsBeginExpanded">
+            <documentation>Desktop: 67/33/-  Begin (expanded) and Mid columns are displayed
+
+Tablet:  67/33/-  Begin (expanded) and Mid columns are displayed
+
+Phone:   -/100/-  only the Mid column is displayed
+
+Use to display both a master and a detail page when the user should focus on the master page.</documentation>
+        </value>
+        <value name="TwoColumnsMidExpanded">
+            <documentation>Desktop: 33/67/-  Begin and Mid (expanded) columns are displayed
+
+Tablet:  33/67/-  Begin and Mid (expanded) columns are displayed
+
+Phone:   -/100/-  only the Mid column is displayed
+
+Use to display both a master and a detail page when the user should focus on the detail page.</documentation>
+        </value>
+        <value name="MidColumnFullScreen">
+            <documentation>Desktop: -/100/-  only the Mid column is displayed
+
+Tablet:  -/100/-  only the Mid column is displayed
+
+Phone:   -/100/-  only the Mid column is displayed
+
+Use to display a detail page only, when the user should focus entirely on it.</documentation>
+        </value>
+        <value name="ThreeColumnsMidExpanded">
+            <documentation>Desktop: 25/50/25 Begin, Mid (expanded) and End columns are displayed
+
+Tablet:  0/67/33  Mid (expanded) and End columns are displayed, Begin is accessible by a layout arrow
+
+Phone:   -/-/100  only the End column is displayed
+
+Use to display all three pages (master, detail, detail-detail) when the user should focus on the detail.</documentation>
+        </value>
+        <value name="ThreeColumnsEndExpanded">
+            <documentation>Desktop: 25/25/50 Begin, Mid and End (expanded) columns are displayed
+
+Tablet:  0/33/67  Mid and End (expanded) columns are displayed, Begin is accessible by layout arrows
+
+Phone:   -/-/100  (only the End column is displayed)
+
+Use to display all three pages (master, detail, detail-detail) when the user should focus on the detail-detail.</documentation>
+        </value>
+        <value name="ThreeColumnsMidExpandedEndHidden">
+            <documentation>Desktop: 33/67/0  Begin and Mid (expanded) columns are displayed, End is accessible by a layout arrow
+
+Tablet:  33/67/0  Begin and Mid (expanded) columns are displayed, End is accessible by a layout arrow
+
+Phone:   -/-/100  only the End column is displayed
+
+Use to display the master and detail pages when the user should focus on the detail.
+The detail-detail is still loaded and easily accessible with a layout arrow.</documentation>
+        </value>
+        <value name="ThreeColumnsBeginExpandedEndHidden">
+            <documentation>Desktop: 67/33/0  Begin (expanded) and Mid columns are displayed, End is accessible by layout arrows
+
+Tablet:  67/33/0  Begin (expanded) and Mid columns are displayed, End is accessible by layout arrows
+
+Phone:   -/-/100  only the End column is displayed
+
+Use to display the master and detail pages when the user should focus on the master.
+The detail-detail is still loaded and easily accessible with layout arrows.</documentation>
+        </value>
+        <value name="EndColumnFullScreen">
+            <documentation>Desktop: -/-/100  only the End column is displayed
+
+Tablet:  -/-/100  only the End column is displayed
+
+Phone:   -/-/100  only the End column is displayed
+
+Use to display a detail-detail page only, when the user should focus entirely on it.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

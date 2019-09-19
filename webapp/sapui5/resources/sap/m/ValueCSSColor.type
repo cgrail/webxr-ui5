@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ValueCSSColor</name>
+    <derived/>
+    <documentation>A string type that represents CSS color values, sap.m.ValueColor or less parameter values.
+
+Allowed values are {@link sap.ui.core.CSSColor}, {@link sap.m.ValueColor} or a less parameter name (string).
+In case the less parameter color cannot be determined, the validation fails. You need to check if less parameters are supported on control level.
+An empty string is also allowed and has the same effect as setting no color.</documentation>
+    <final/>
+</simple-type>

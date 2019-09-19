@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>semantic/MainAction</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Serves as a base class for the {@link sap.f.semantic.TitleMainAction} and {@link sap.f.semantic.FooterMainAction} controls.</documentation>
+    <since>1.46.0</since>
+    <baseType>sap.f/semantic/SemanticButton</baseType>
+    <properties>
+        <property name="text" type="sap.ui.core/string" group="Misc">
+            <documentation>Defines &lt;code&gt;MainAction&lt;/code&gt; text</documentation>
+        </property>
+    </properties>
+</control>

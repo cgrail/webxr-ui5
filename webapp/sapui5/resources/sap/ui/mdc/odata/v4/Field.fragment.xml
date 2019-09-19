@@ -1,0 +1,72 @@
+<!--
+/**
+ * OData v4 Field
+ * @param metadataContext:entitySet context to the EntitySet
+ * @param metadataContext:dataField context to the DataField
+ * @param idPrefix default 'F' Prefix for the id
+ * @param vhIdPrefix default 'FVH' Prefix for the value help id
+ * @param editMode Edit Mode of the field (Display,Editable,ReadOnly,Disabled) / Default: display
+ * @param onCallBoundAction event handler to be used to trigger actions
+ ${this>onCallBoundAction}
+ * @returns
+ */
+-->
+
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+						 xmlns:core="sap.ui.core"
+						 xmlns="sap.m"
+						 template:require="{
+							MODEL: 'sap/ui/model/odata/v4/AnnotationHelper',
+							FIELD: 'sap/ui/mdc/odata/v4/field/FieldHelper'
+						 }">
+
+	<template:if
+			test="{= ${dataField>$Type} === 'com.sap.vocabularies.UI.v1.DataField' || ${dataField>$Type} === 'com.sap.vocabularies.UI.v1.DataFieldWithUrl'}">
+		<template:then>
+			<template:with path="dataField>Value" var="property">
+				<core:Fragment fragmentName="sap.ui.mdc.odata.v4.field.DataField" type="XML"/>
+			</template:with>
+		</template:then>
+
+		<template:elseif test="{= ${dataField>$Type} === 'com.sap.vocabularies.UI.v1.DataFieldForAnnotation'}">
+			<template:with path="dataField>Target/$AnnotationPath" var="annotationPath">
+				<core:Fragment fragmentName="sap.ui.mdc.odata.v4.field.DataFieldForAnnotation"
+							   type="XML"/>
+			</template:with>
+		</template:elseif>
+
+		<template:elseif
+				test="{= ${dataField>$Type} === 'com.sap.vocabularies.UI.v1.DataFieldForAction' &amp;&amp; ${dataField>Inline} === true }">
+			<template:with path="dataField>Target/$AnnotationPath" var="annotationPath">
+				<core:Fragment fragmentName="sap.ui.mdc.odata.v4.field.DataFieldForAction" type="XML"/>
+			</template:with>
+		</template:elseif>
+
+		<template:elseif test="{= ${dataField>./@sapui.name}.indexOf('com.sap.vocabularies.UI.v1.DataPoint') > -1}">
+			<template:with path="dataField>Value" var="property">
+				<core:Fragment fragmentName="sap.ui.mdc.odata.v4.field.DataField" type="XML"/>
+			</template:with>
+		</template:elseif>
+
+		<template:elseif test="{= ${dataField>$kind} === 'Property'}">
+			<template:if test="{dataField>@com.sap.vocabularies.UI.v1.DataFieldDefault}">
+				<template:then>
+					<template:with path="dataField>@com.sap.vocabularies.UI.v1.DataFieldDefault" var="dataField">
+						<!-- There is a default data field therefore we jump to it and run the same logic again -->
+						<core:Fragment fragmentName="sap.ui.mdc.odata.v4.field.Field" type="XML"/>
+					</template:with>
+				</template:then>
+
+				<template:else>
+					<!-- TODO: next step, support basic annotations of a property path -->
+					<Text text="{= '{' + ${dataField>@sapui.name} + '}' }"/>
+				</template:else>
+			</template:if>
+		</template:elseif>
+
+		<template:else>
+			<!-- Not supported -->
+		</template:else>
+	</template:if>
+
+</core:FragmentDefinition>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Tokenizer</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>&lt;h3&gt;Overview&lt;/h3&gt;
+A tokenizer is a container for {@link sap.m.Token Tokens}. It also handles all actions associated with the tokens like adding, deleting, selecting and editing.
+&lt;h3&gt;Structure&lt;/h3&gt;
+The tokens are stored in the &lt;code&gt;tokens&lt;/code&gt; aggregation.
+The tokenizer can determine, by setting the &lt;code&gt;editable&lt;/code&gt; property, whether the tokens in it are editable.
+Still the Token itself can determine if it is &lt;code&gt;editable&lt;/code&gt;. This allows you to have non-editable Tokens in an editable Tokenizer.
+
+&lt;h3&gt;Usage&lt;/h3&gt;
+&lt;h4&gt;When to use:&lt;/h4&gt;
+The tokenizer can only be used as part of {@link sap.m.MultiComboBox MultiComboBox},{@link sap.m.MultiInput MultiInput} or {@link sap.ui.comp.valuehelpdialog.ValueHelpDialog ValueHelpDialog}</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="editable" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>true if tokens shall be editable otherwise false</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" group="Dimension">
+            <documentation>Defines the width of the Tokenizer.</documentation>
+        </property>
+        <property name="maxWidth" type="sap.ui.core/CSSSize" defaultValue="100%" group="Dimension">
+            <documentation>Defines the maximum width of the Tokenizer.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="tokenChange" allowPreventDefault="false">
+            <documentation>fired when the tokens aggregation changed (add / remove token)</documentation>
+            <parameters>
+                <parameter name="type" type="sap.ui.core/string">
+                    <documentation>type of tokenChange event.
+There are four TokenChange types: "added", "removed", "removedAll", "tokensChanged".
+Use Tokenizer.TokenChangeType.Added for "added",	Tokenizer.TokenChangeType.Removed for "removed", Tokenizer.TokenChangeType.RemovedAll for "removedAll" and Tokenizer.TokenChangeType.TokensChanged for "tokensChanged".</documentation>
+                </parameter>
+                <parameter name="token" type="sap.m/Token">
+                    <documentation>the added token or removed token.
+This parameter is used when tokenChange type is "added" or "removed".</documentation>
+                </parameter>
+                <parameter name="tokens" type="sap.m/Token[]">
+                    <documentation>the array of removed tokens.
+This parameter is used when tokenChange type is "removedAll".</documentation>
+                </parameter>
+                <parameter name="addedTokens" type="sap.m/Token[]">
+                    <documentation>the array of tokens that are added.
+This parameter is used when tokenChange type is "tokenChanged".</documentation>
+                </parameter>
+                <parameter name="removedTokens" type="sap.m/Token[]">
+                    <documentation>the array of tokens that are removed.
+This parameter is used when tokenChange type is "tokenChanged".</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="tokenUpdate" allowPreventDefault="true">
+            <documentation>Fired when the tokens aggregation changed due to a user interaction (add / remove token)</documentation>
+            <parameters>
+                <parameter name="type" type="sap.ui.core/string">
+                    <documentation>Type of tokenChange event.
+There are two TokenUpdate types: "added", "removed"
+Use Tokenizer.TokenUpdateType.Added for "added" and Tokenizer.TokenUpdateType.Removed for "removed".</documentation>
+                </parameter>
+                <parameter name="addedTokens" type="sap.m/Token[]">
+                    <documentation>The array of tokens that are added.
+This parameter is used when tokenUpdate type is "added".</documentation>
+                </parameter>
+                <parameter name="removedTokens" type="sap.m/Token[]">
+                    <documentation>The array of tokens that are removed.
+This parameter is used when tokenUpdate type is "removed".</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations default="tokens">
+        <aggregation name="tokens" type="sap.m/Token" cardinality="0..n">
+            <documentation>the currently displayed tokens</documentation>
+        </aggregation>
+        <aggregation name="_tokensInfo" type="sap.ui.core/InvisibleText" cardinality="0..1" visibility="hidden">
+            <documentation>Hidden text used for accesibility</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="ariaDescribedBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / ids which describe this control (see WAI-ARIA attribute aria-describedby).</documentation>
+        </association>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / ids which label this control (see WAI-ARIA attribute aria-labelledby).</documentation>
+        </association>
+    </associations>
+</control>

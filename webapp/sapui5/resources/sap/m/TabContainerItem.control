@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>TabContainerItem</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>An item to be used in a TabContainer.</documentation>
+    <since>1.34</since>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="name" type="sap.ui.core/string" defaultValue="" group="Misc">
+            <documentation>Determines the text to be displayed for the item.</documentation>
+        </property>
+        <property name="additionalText" type="sap.ui.core/string" defaultValue="" group="Misc">
+            <documentation>Determines additional text to be displayed for the item.</documentation>
+            <developmentState state="experimental" since="1.63">Disclaimer: this property is in a beta state - incompatible API changes may be done before its official public release. Use at your own discretion.</developmentState>
+        </property>
+        <property name="icon" type="sap.ui.core/URI" group="Appearance">
+            <documentation>Defines the icon to be displayed as graphical element within the &lt;code&gt;TabContainerItem&lt;/code&gt;.
+It can be an image or an icon from the icon font.</documentation>
+            <developmentState state="experimental" since="1.63">Disclaimer: this property is in a beta state - incompatible API changes may be done before its official public release. Use at your own discretion.</developmentState>
+        </property>
+        <property name="iconTooltip" type="sap.ui.core/string" group="Accessibility">
+            <documentation>Determines the tooltip text of the &lt;code&gt;TabContainerItem&lt;/code&gt;'s icon.</documentation>
+            <developmentState state="experimental" since="1.63">Disclaimer: this property is in a beta state - incompatible API changes may be done before its official public release. Use at your own discretion.</developmentState>
+        </property>
+        <property name="key" type="sap.ui.core/string" group="Data">
+            <documentation>Determines the name of the item. Can be used as input for subsequent actions.</documentation>
+        </property>
+        <property name="modified" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>Shows if a control is edited (default is false). Items that are marked as modified have a * symbol to indicate that they haven't been saved.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="itemPropertyChanged" allowPreventDefault="false">
+            <documentation>Sends information that some of the properties have changed.</documentation>
+            <parameters>
+                <parameter name="itemChanged" type="sap.m/TabContainerItem">
+                    <documentation>The item changed.</documentation>
+                </parameter>
+                <parameter name="propertyKey" type="sap.ui.core/string">
+                    <documentation>The key of the property.</documentation>
+                </parameter>
+                <parameter name="propertyValue" type="sap.ui.core/any">
+                    <documentation>The value of the property.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="content" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>The content displayed for this item.</documentation>
+        </aggregation>
+        <aggregation name="_image" type="sap.ui.core/Control" cardinality="0..1" visibility="hidden">
+            <documentation>Icon / Image for the &lt;code&gt;TabContainerItem&lt;/code&gt; are managed in this aggregation.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

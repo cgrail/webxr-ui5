@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>form/GridElementData</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The &lt;code&gt;GridLayout&lt;/code&gt;-specific layout data for &lt;code&gt;FormElement&lt;/code&gt; fields.</documentation>
+    <since>1.16.0</since>
+    <baseType>sap.ui.core/LayoutData</baseType>
+    <properties>
+        <property name="hCells" type="sap.ui.layout/form/GridElementCells" defaultValue="auto" group="Appearance">
+            <documentation>Number of cells in horizontal direction.
+
+If set to &lt;code&gt;auto&lt;/code&gt;, the size is determined by the number of fields and the available cells. For labels the auto size is 3 cells.
+
+If set to &lt;code&gt;full&lt;/code&gt;, only one field is allowed within the &lt;code&gt;FormElement&lt;/code&gt;. It gets the full width of the row and the label is displayed above.
+
+&lt;b&gt;Note:&lt;/b&gt; For labels, the full size setting has no effect.</documentation>
+        </property>
+        <property name="vCells" type="sap.ui.core/int" defaultValue="1" group="Appearance">
+            <documentation>Number of cells in vertical direction.
+
+&lt;b&gt;Note:&lt;/b&gt; This property has no effect on labels.</documentation>
+        </property>
+    </properties>
+</control>

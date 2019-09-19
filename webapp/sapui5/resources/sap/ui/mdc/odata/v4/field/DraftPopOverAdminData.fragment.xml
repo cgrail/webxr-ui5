@@ -1,0 +1,33 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+	template:require="{
+		FIELD: 'sap/ui/mdc/odata/v4/field/FieldHelper'
+	}"
+    xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1">
+    <Popover title="{= !%{IsActiveEntity} ? ${i18n>draft.DRAFT_OBJECT} : (%{HasDraftEntity} ? (%{DraftAdministrativeData/InProcessByUser} ? ${i18n>draft.LOCKED_OBJECT} : ${i18n>draft.UNSAVED_CHANGES}) : '') }"
+        showHeader="true"
+        contentWidth="15.625rem"
+        verticalScrolling="false"
+        class="sapUiContentPadding">
+        <endButton>
+            <Button icon="sap-icon://decline" press=".closeDraftAdminPopover" />
+        </endButton>
+        <VBox class="sapUiContentPadding">
+            <!-- For No draft info scenario -->
+            <VBox visible="{= !%{IsActiveEntity} &amp;&amp; !%{DraftAdministrativeData/LastChangeDateTime}}">
+                <Text text="{= ${i18n>draft.LOCKED_OBJECT_POPOVER_NO_DATA_TEXT} }"></Text>
+            </VBox>
+            <!-- For Draft Scenario just disply last chaged time -->
+            <VBox visible="{= !%{IsActiveEntity} &amp;&amp; %{DraftAdministrativeData/LastChangeDateTime}}">
+                <Text text="{parts:[ {path: 'i18n>draft.LAST_CHANGE_TEXT'}, {path: 'DraftAdministrativeData/LastChangeDateTime'}] }"></Text>
+            </VBox>
+            <!-- For Unsaved Chages/ Locked, display both the user info and last changed time -->
+            <VBox visible="{= %{IsActiveEntity} &amp;&amp; %{DraftAdministrativeData/LastChangeDateTime} }">
+                <Text text="{path: 'entitySet>$Type', formatter: 'FIELD.getBindingForDraftAdminBlockInPopover'}"></Text>
+                <Text class="sapUiSmallMarginTop"
+                    text="{parts:[ {path: 'i18n>draft.LAST_CHANGE_TEXT'}, {path: 'DraftAdministrativeData/LastChangeDateTime'}] }"></Text>
+            </VBox>
+        </VBox>
+    </Popover>
+</core:FragmentDefinition>

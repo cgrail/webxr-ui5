@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>upload/Uploader</name>
+    <derived/>
+    <documentation>A basic implementation for uploading and downloading one or multiple files.</documentation>
+    <since>1.62</since>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="uploadUrl" type="sap.ui.core/string">
+            <documentation>URL where the next file is going to be uploaded to.</documentation>
+        </property>
+        <property name="downloadUrl" type="sap.ui.core/string">
+            <documentation>URL where the next file is going to be download from.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="uploadStarted" allowPreventDefault="false">
+            <documentation>The event is fired just after the POST request was sent.</documentation>
+            <parameters>
+                <parameter name="item" type="sap.m/upload/UploadSetItem">
+                    <documentation>The item that is going to be deleted.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="uploadProgressed" allowPreventDefault="false">
+            <documentation>The event is fired every time an XHR request reports progress in uploading.</documentation>
+            <parameters>
+                <parameter name="item" type="sap.m/upload/UploadSetItem">
+                    <documentation>The item that is going to be deleted.</documentation>
+                </parameter>
+                <parameter name="loaded" type="any">
+                    <documentation>The number of bytes transferred since the beginning of the operation.
+This doesn't include headers and other overhead, but only the content itself</documentation>
+                </parameter>
+                <parameter name="total" type="any">
+                    <documentation>The total number of bytes of content that will be transferred during the operation.
+If the total size is unknown, this value is zero.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="uploadCompleted" allowPreventDefault="false">
+            <documentation>The event is fired when an XHR request reports successful completion of upload process.</documentation>
+            <parameters>
+                <parameter name="item" type="sap.m/upload/UploadSetItem">
+                    <documentation>The item that is going to be deleted.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="uploadAborted" allowPreventDefault="false">
+            <documentation>The event is fired when an XHR request reports its abortion.</documentation>
+            <parameters>
+                <parameter name="item" type="sap.m/upload/UploadSetItem">
+                    <documentation>The item that is going to be deleted.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+</control>

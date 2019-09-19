@@ -1,0 +1,91 @@
+/* NOTE: This file was generated as an optimized version of "library.source.less" for the Theme Designer. */
+
+/*!
+ * ${copyright}
+ */
+
+@import "../sap_belize/library.less";
+@import "../../../../../../../Base/baseLib/sap_belize_plus/base.less"; /* ORIGINAL IMPORT PATH: "../../../../../../sap/ui/core/themes/sap_belize_plus/base.less" */
+
+@import "../../../../../../sap/ui/core/themes/sap_belize_plus/global.less";
+
+/* START "SharedStyles.less" */
+/* =================================================================== */
+/* CSS Styles which are used in more than one control within this lib. */
+/* =================================================================== */
+.sapSuiteUiMicroChartNoData {
+  background: fade(@sapUiGroupContentBackground , 80%);
+  border-color: @sapUiGroupContentBorderColor;
+}
+
+/* END "SharedStyles.less" */
+
+
+/* START "AreaMicroChart.less" */
+/* ========================================================================================== */
+/* CSS for control sap.suite.ui.microchart/AreaMicroChart.control for 'sap_belize_plus' theme */
+/* ========================================================================================== */
+/* END "AreaMicroChart.less" */
+
+/* START "InteractiveBarChart.less" */
+/* ============================================================ */
+/* CSS for control sap.suite.ui.microchart/InteractiveBarChart  */
+/* Belize Plus Theme                                            */
+/* ============================================================ */
+
+@_sap_suite_ui_microchart_InteractiveBarChart_BarBackground:				lighten(saturate(@sapUiBrand, 40), 30);
+@_sap_suite_ui_microchart_InteractiveBarChart_BarHoverBackground: 			fade(lighten(saturate(@sapUiBrand, 40), 30), 20);
+@_sap_suite_ui_microchart_InteractiveBarChart_BarSelectedBackground:		fade(lighten(saturate(@sapUiBrand, 40), 30), 20);
+@_sap_suite_ui_microchart_InteractiveBarChart_BarSelectedHoverBackground:	fade(lighten(saturate(@sapUiBrand, 40), 30), 40);
+@_sap_suite_ui_microchart_InteractiveBarChart_BarHoverBorder:				fade(@sapUiHighlight, 60);
+
+/* END "InteractiveBarChart.less" */
+
+/* START "InteractiveDonutChart.less" */
+/* ===================================================================== */
+/* CSS for control sap.suite.ui.microchart/InteractiveDonutChart.control */
+/* Belize Plus Theme                                                     */
+/* ===================================================================== */
+
+@_sap_suite_ui_microchart_InteractiveDonutChart_SegmentHoverBackground: 		fade(lighten(saturate(@sapUiBrand, 40), 30), 20);
+@_sap_suite_ui_microchart_InteractiveDonutChart_SegmentSelectedBackground: 		fade(lighten(saturate(@sapUiBrand, 40), 30), 20);
+@_sap_suite_ui_microchart_InteractiveDonutChart_SegmentSelectedHoverBackground:	fade(lighten(saturate(@sapUiBrand, 40), 30), 40);
+@_sap_suite_ui_microchart_InteractiveDonutChart_SegmentBorder:					fade(lighten(saturate(@sapUiBrand, 40), 30), 80);
+@_sap_suite_ui_microchart_InteractiveDonutChart_SegmentFillColor:				lighten(saturate(@sapUiBrand, 40), 30);
+@_sap_suite_ui_microchart_InteractiveDonutChart_SegmentBorderHover:		        fade(@sapUiHighlight, 40);
+@_sap_suite_ui_microchart_InteractiveDonutChart_SegmentBorderHoverSelected:		fade(@sapUiHighlight, 80);
+
+/* END "InteractiveDonutChart.less" */
+
+/* START "InteractiveLineChart.less" */
+/* ============================================================ */
+/* CSS for control sap.suite.ui.microchart/InteractiveLineChart */
+/* Belize Plus Theme                                            */
+/* ============================================================ */
+
+@_sap_suite_ui_microchart_InteractiveLineChart_LineColor:						lighten(saturate(@sapUiBrand, 40), 30);
+@_sap_suite_ui_microchart_InteractiveLineChart_SectionHoverBackground:			fade(lighten(saturate(@sapUiBrand, 40), 30), 20);
+@_sap_suite_ui_microchart_InteractiveLineChart_SectionSelectedBackground:		fade(lighten(saturate(@sapUiBrand, 40), 30), 20);
+@_sap_suite_ui_microchart_InteractiveLineChart_SectionSelectedHoverBackground:	fade(lighten(saturate(@sapUiBrand, 40), 30), 40);
+@_sap_suite_ui_microchart_InteractiveLineChart_BottomLabelBorderColor:			lighten(@sapUiChartGridlineColor, 40);
+@_sap_suite_ui_microchart_InteractiveLineChart_DividerColor:					lighten(@sapUiChartGridlineColor, 40);
+
+@_sap_suite_ui_microchart_InteractiveLineChart_SelectedPointBorder:				mix(@sapUiGlobalBackgroundColor, lighten(saturate(@sapUiBrand, 40), 30), 80%);
+@_sap_suite_ui_microchart_InteractiveLineChart_HoverPointBorder:				mix(@sapUiGlobalBackgroundColor, lighten(saturate(@sapUiBrand, 40), 30), 80%);
+@_sap_suite_ui_microchart_InteractiveLineChart_SelectedHoverPointBorder:		mix(@sapUiGlobalBackgroundColor, lighten(saturate(@sapUiBrand, 40), 30), 60%);
+
+/* END "InteractiveLineChart.less" */
+
+/* START "StackedBarMicroChart.less" */
+/* ============================================================ */
+/* CSS for sap.suite.ui.microchart/StackedBarMicroChart control */
+/* Belize Plus Theme                                            */
+/* ============================================================ */
+
+.sapSuiteStackedMCBar:not(:last-child) {
+	min-width: 2px;
+	border-right: 1px solid @sapUiBaseColor;
+}
+
+/* END "StackedBarMicroChart.less" */
+

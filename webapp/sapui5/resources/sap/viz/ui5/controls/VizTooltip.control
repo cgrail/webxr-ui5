@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ui5/controls/VizTooltip</name>
+    <derived/>
+    <documentation>Viz Chart Tooltip</documentation>
+    <since>1.44.0</since>
+    <baseType>sap.viz/ui5/controls/common/BaseControl</baseType>
+    <properties>
+        <property name="formatString" type="sap.ui.core/any">
+            <documentation>The pattern is used to format the measures/timeDimensions displayed in Tooltip. 
+If value type of format string is String or an object with 'formatPattern' and 'dataUnit' values defined, the value will be used to format all measures(not works with TimeDimension). The value of ‘formatPattern’ here is a string to define the format pattern of numbers, and value of ‘dataUnit’ is a postfix string to indicate the unit of measure.
+If value type is Object whose key is measure/timeDimension name, the possible value type is string or an object with ‘formatPattern’ and ‘dataUnit’ values defined. And each string value will be used to format the specified measure or time dimension.
+And TimeDimension does not support 'dataUnit'.</documentation>
+        </property>
+    </properties>
+</control>

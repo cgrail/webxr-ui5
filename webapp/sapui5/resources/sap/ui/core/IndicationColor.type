@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>IndicationColor</name>
+    <derived/>
+    <documentation>Colors to highlight certain UI elements.
+In contrast to the &lt;code&gt;ValueState&lt;/code&gt; the semantic meaning must be defined by the application.</documentation>
+    <since>1.62.0</since>
+    <enumeration>
+        <value name="Indication01">
+            <documentation>Indication Color 1</documentation>
+        </value>
+        <value name="Indication02">
+            <documentation>Indication Color 2</documentation>
+        </value>
+        <value name="Indication03">
+            <documentation>Indication Color 3</documentation>
+        </value>
+        <value name="Indication04">
+            <documentation>Indication Color 4</documentation>
+        </value>
+        <value name="Indication05">
+            <documentation>Indication Color 5</documentation>
+        </value>
+    </enumeration>
+</simple-type>

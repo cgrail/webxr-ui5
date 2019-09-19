@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>MenuItem</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Standard item to be used inside a menu. A menu item represents an action which can be selected by the user in the menu or
+it can provide a submenu to organize the actions hierarchically.</documentation>
+    <since>1.21.0</since>
+    <baseType>sap.ui.unified/MenuItemBase</baseType>
+    <properties>
+        <property name="text" type="sap.ui.core/string" defaultValue="" group="Appearance">
+            <documentation>Defines the text which should be displayed on the item.</documentation>
+        </property>
+        <property name="icon" type="sap.ui.core/URI" defaultValue="" group="Appearance">
+            <documentation>Defines the icon of the {@link sap.ui.core.IconPool sap.ui.core.IconPool} or an image which should be displayed on the item.</documentation>
+        </property>
+    </properties>
+    <associations>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / IDs which label this control (see WAI-ARIA attribute aria-labelledby).</documentation>
+        </association>
+    </associations>
+</control>

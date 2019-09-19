@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>UIComponent</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Base Class for UIComponent.
+
+If you are extending a UIComponent make sure you read the {@link #.extend} documentation since the metadata is special.</documentation>
+    <since>1.9.2</since>
+    <abstract/>
+    <aggregations>
+        <aggregation name="rootControl" type="sap.ui.core/Control" cardinality="0..1" visibility="hidden">
+            <documentation>The root control of the UIComponent.
+
+The root control should be created inside the function {@link sap.ui.core.UIComponent#createContent}.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

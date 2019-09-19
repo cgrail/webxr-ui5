@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>NavigationItem</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Is the item to be used within the NavigationBar</documentation>
+    <deprecation since="1.38">Instead, use the &lt;code&gt;sap.m.IconTabBar&lt;/code&gt;, &lt;code&gt;sap.m.TabContainer&lt;/code&gt; or &lt;code&gt;sap.uxap.ObjectPageLayout&lt;/code&gt; control.</deprecation>
+    <baseType>sap.ui.core/Item</baseType>
+    <properties>
+        <property name="visible" type="sap.ui.core/boolean" defaultValue="true" group="Appearance" since="1.9.0">
+            <documentation>Whether the NavigationItem is currently visible. When making NavigationItems invisible at runtime it is the application's responsibility to make sure it is not the currently selected one - or to select another one in this case.</documentation>
+        </property>
+        <property name="href" type="sap.ui.core/URI" group="Behavior">
+            <documentation>Defines the link target URL. This property is optional and should only be set when required!
+The use of the href property is to not only allow users to navigate in-place by left-clicking NavigationItems, but also to allow right-click and then "open in new tab" or "open in new window". As long as href is not set, an empty window will open and stay blank. But when href is set, the new window/tab will load this URL and it is the application's responsibility to display what the user expects (e.g. the Shell, with the respective NavigationItem being selected).</documentation>
+        </property>
+    </properties>
+    <aggregations default="subItems">
+        <aggregation name="subItems" type="sap.ui.ux3/NavigationItem" cardinality="0..n">
+            <documentation>Any NavigationItems on the next hierarchy level connected to this NavigationItem</documentation>
+        </aggregation>
+    </aggregations>
+</control>

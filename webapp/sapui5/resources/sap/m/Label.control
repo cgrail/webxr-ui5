@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Label</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Provides a textual label for other controls.
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+Labels are used as titles for single controls or groups of controls.
+Labels for required fields are marked with an asterisk.
+
+Label appearance can be influenced by properties, such as &lt;code&gt;textAlign&lt;/code&gt;,
+&lt;code&gt;design&lt;/code&gt;, &lt;code&gt;displayOnly&lt;/code&gt;, &lt;code&gt;wrapping&lt;/code&gt; and
+&lt;code&gt;wrappingType&lt;/code&gt;.
+
+As of version 1.50, the default value of the &lt;code&gt;wrapping&lt;/code&gt; property is set
+to &lt;code&gt;false&lt;/code&gt;.
+
+As of version 1.60, you can hyphenate the label's text with the use of the
+&lt;code&gt;wrappingType&lt;/code&gt; property. For more information, see
+{@link topic:6322164936f047de941ec522b95d7b70 Text Controls Hyphenation}.
+
+&lt;h3&gt;Usage&lt;/h3&gt;
+&lt;h4&gt;When to use&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;It's recommended to use the &lt;code&gt;Label&lt;/code&gt; in Form controls.&lt;/li&gt;
+&lt;li&gt;Use title case for labels.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;When not to use&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt; It is not recommended to use labels in Bold.&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="design" type="sap.m/LabelDesign" defaultValue="Standard" group="Appearance">
+            <documentation>Sets the design of a Label to either Standard or Bold.</documentation>
+        </property>
+        <property name="text" type="sap.ui.core/string" group="Misc">
+            <documentation>Determines the Label text to be displayed.</documentation>
+        </property>
+        <property name="textAlign" type="sap.ui.core/TextAlign" defaultValue="Begin" group="Appearance">
+            <documentation>Available alignment settings are "Begin", "Center", "End", "Left", and "Right".</documentation>
+        </property>
+        <property name="textDirection" type="sap.ui.core/TextDirection" defaultValue="Inherit" group="Appearance">
+            <documentation>Options for the text direction are RTL and LTR. Alternatively, the control can inherit the text direction from its parent container.</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" defaultValue="" group="Dimension">
+            <documentation>Determines the width of the label.</documentation>
+        </property>
+        <property name="required" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>Indicates that user input is required for input control labeled by the sap.m.Label.
+When the property is set to true and associated input field is empty an asterisk character is added to the label text.</documentation>
+        </property>
+        <property name="displayOnly" type="sap.ui.core/boolean" defaultValue="false" group="Appearance" since="1.50.0">
+            <documentation>Determines if the label is in displayOnly mode.
+
+&lt;b&gt;Note:&lt;/b&gt; This property should be used only in Form controls in preview mode.</documentation>
+        </property>
+        <property name="wrapping" type="sap.ui.core/boolean" defaultValue="false" group="Appearance" since="1.50">
+            <documentation>Determines the wrapping of the text within the &lt;code&gt;Label&lt;/code&gt;.
+If set to true the &lt;code&gt;Label&lt;/code&gt; will wrap, when set to false the &lt;code&gt;Label&lt;/code&gt; will be truncated and replaced with ellipsis which is the default behavior.</documentation>
+        </property>
+        <property name="wrappingType" type="sap.m/WrappingType" defaultValue="Normal" group="Appearance" since="1.60">
+            <documentation>Defines the type of text wrapping to be used (hyphenated or normal).
+
+&lt;b&gt;Note:&lt;/b&gt; This property takes effect only when the &lt;code&gt;wrapping&lt;/code&gt;
+property is set to &lt;code&gt;true&lt;/code&gt;.</documentation>
+        </property>
+        <property name="vAlign" type="sap.ui.core/VerticalAlign" defaultValue="Inherit" group="Appearance" since="1.54">
+            <documentation>Specifies the vertical alignment of the &lt;code&gt;Label&lt;/code&gt; related to the tallest and lowest element on the line.</documentation>
+        </property>
+    </properties>
+    <associations>
+        <association name="labelFor" type="sap.ui.core/Control" cardinality="0..1">
+            <documentation>Association to the labeled control.
+By default the label set the for attribute to the ID of the labeled control. This can be changed by implementing the function getIdForLabel on the labelled control.</documentation>
+        </association>
+    </associations>
+</control>

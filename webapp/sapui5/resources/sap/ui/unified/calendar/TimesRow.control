@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>calendar/TimesRow</name>
+    <derived/>
+    <documentation>Renders a row of time items using ItemNavigation. There is no paging or navigation outside the rendered area implemented.
+This is done inside the CalendarTimeInterval.
+If used inside the CalendarTimeInterval the properties and aggregation are directly taken from the parent
+(to not duplicate and synchronize DateRanges and so on...).
+
+The TimesRow works with JavaScript Date objects.</documentation>
+    <since>1.32.0</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="date" type="sap.ui.core/object" group="Data">
+            <documentation>A date as JavaScript Date object. The month including this date is rendered and this date is focused initially (if no other focus is set).
+If the date property is not in the range &lt;code&gt;startDate&lt;/code&gt; + &lt;code&gt;items&lt;/code&gt; in the rendering phase,
+it is set to the &lt;code&gt;startDate&lt;/code&gt;.
+So after setting the &lt;code&gt;startDate&lt;/code&gt; the date should be set to be in the visible range.</documentation>
+        </property>
+        <property name="startDate" type="sap.ui.core/object" group="Data">
+            <documentation>Start date, as JavaScript Date object, of the row.</documentation>
+        </property>
+        <property name="items" type="sap.ui.core/int" defaultValue="12" group="Appearance">
+            <documentation>Number of time items displayed</documentation>
+        </property>
+        <property name="intervalMinutes" type="sap.ui.core/int" defaultValue="60" group="Appearance">
+            <documentation>Size of on time interval in minutes, default is 60 minutes.
+
+&lt;b&gt;Note:&lt;/b&gt; the start of the interval calculation is always &lt;code&gt;startDat&lt;/code&gt; at 00:00.
+
+An interval longer than 720 minutes is not allowed. Please use the &lt;code&gt;DatesRow&lt;/code&gt; instead.
+
+A day must be divisible by this interval size. One interval must not include more than one day.</documentation>
+        </property>
+        <property name="intervalSelection" type="sap.ui.core/boolean" defaultValue="false" group="Behavior">
+            <documentation>If set, interval selection is allowed</documentation>
+        </property>
+        <property name="singleSelection" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>If set, only a single month or interval, if intervalSelection is enabled, can be selected
+
+&lt;b&gt;Note:&lt;/b&gt; Selection of multiple intervals is not supported in the current version.</documentation>
+        </property>
+        <property name="showHeader" type="sap.ui.core/boolean" defaultValue="false" group="Appearance">
+            <documentation>If set, a header with the years is shown to visualize what month belongs to what year.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="select" allowPreventDefault="false">
+            <documentation>Time selection changed</documentation>
+        </event>
+        <event name="focus" allowPreventDefault="false">
+            <documentation>Time focus changed</documentation>
+            <parameters>
+                <parameter name="date" type="sap.ui.core/object">
+                    <documentation>date, as JavaScript Date object, of the focused time.</documentation>
+                </parameter>
+                <parameter name="notVisible" type="sap.ui.core/boolean">
+                    <documentation>If set, the focused date is not rendered yet. (This happens by navigating out of the visible area.)</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="selectedDates" type="sap.ui.unified/DateRange" cardinality="0..n">
+            <documentation>Date ranges for selected dates.
+If &lt;code&gt;singleSelection&lt;/code&gt; is set, only the first entry is used.</documentation>
+        </aggregation>
+        <aggregation name="specialDates" type="sap.ui.unified/DateTypeRange" cardinality="0..n">
+            <documentation>Date ranges with type to visualize special item in the row.
+If one day is assigned to more than one type, only the first one will be used.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / IDs which label this control (see WAI-ARIA attribute aria-labelledby).</documentation>
+        </association>
+        <association name="legend" type="sap.ui.unified/CalendarLegend" cardinality="0..1" since="1.38.5">
+            <documentation>Association to the &lt;code&gt;CalendarLegend&lt;/code&gt; explaining the colors of the &lt;code&gt;specialDates&lt;/code&gt;.
+
+&lt;b&gt;Note&lt;/b&gt; The legend does not have to be rendered but must exist, and all required types must be assigned.</documentation>
+        </association>
+    </associations>
+    <methods>
+        <method name="displayDate" type="sap.ui.unified/calendar/TimesRow">
+            <documentation>Displays the given date without setting the focus</documentation>
+            <parameters>
+                <parameter name="date" type="sap.ui.core/object">
+                    <documentation>JavaScript Date object for focused date.</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="checkDateFocusable" type="sap.ui.core/boolean">
+            <documentation>Checks if a date is focusable in the current rendered output.
+This means that if it is not rendered, it is not focusable.</documentation>
+            <parameters>
+                <parameter name="date" type="sap.ui.core/object">
+                    <documentation>JavaScript Date object for focused date.</documentation>
+                </parameter>
+            </parameters>
+        </method>
+    </methods>
+</control>

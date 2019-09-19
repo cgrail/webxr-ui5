@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>dnd/DragDropInfo</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Provides the configuration for drag-and-drop operations.
+&lt;b&gt;Note:&lt;/b&gt; This configuration might be ignored due to control {@link sap.ui.core.Element.extend metadata} restrictions.</documentation>
+    <since>1.52</since>
+    <baseType>sap.ui.core/dnd/DropInfo</baseType>
+    <properties>
+        <property name="sourceAggregation" type="sap.ui.core/string">
+            <documentation>The name of the aggregation from which all children can be dragged. If undefined, the control itself can be dragged.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="dragStart" allowPreventDefault="true">
+            <documentation>This event is fired when the user starts dragging an element.</documentation>
+        </event>
+        <event name="dragEnd" since="1.56" allowPreventDefault="false">
+            <documentation>This event is fired when a drag operation is being ended.</documentation>
+        </event>
+    </events>
+    <associations>
+        <association name="targetElement" type="sap.ui.core/Element" cardinality="0..1">
+            <documentation>The target element for this drag and drop action. If undefined, the control with this drag and drop configuration itself is the target.
+Leaving this empty, but defining source and target aggregation, allows you to reorder the children within a control, for example.</documentation>
+        </association>
+    </associations>
+</control>

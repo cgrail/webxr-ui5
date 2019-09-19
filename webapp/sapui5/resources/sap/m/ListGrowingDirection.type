@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ListGrowingDirection</name>
+    <derived/>
+    <documentation>Defines the growing direction of the &lt;code&gt;sap.m.List&lt;/code&gt; or &lt;code&gt;sap.m.Table&lt;/code&gt;.</documentation>
+    <since>1.40.0</since>
+    <enumeration>
+        <value name="Downwards">
+            <documentation>User has to scroll down to load more items or the growing button is displayed at the bottom.</documentation>
+        </value>
+        <value name="Upwards">
+            <documentation>User has to scroll up to load more items or the growing button is displayed at the top.
+
+&lt;b&gt;Note:&lt;/b&gt; If this option is active, there should not be any other control than &lt;code&gt;sap.m.List&lt;/code&gt;
+inside its &lt;code&gt;ScollContainer&lt;/code&gt;.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartfield/ObjectStatus</name>
+    <derived/>
+    <documentation>Defines a possible object status control to be rendered. The smart field may ignore the proposal.</documentation>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="criticality" type="sap.ui.core/any" group="Misc">
+            <documentation>Optional attribute, which can be set, if the control type has the value ObjectStatus.</documentation>
+        </property>
+        <property name="criticalityRepresentationType" type="sap.ui.comp/smartfield/CriticalityRepresentationType" defaultValue="WithIcon" group="Misc">
+            <documentation>Optional attribute, which can be set to control how the criticality is visualized.</documentation>
+        </property>
+    </properties>
+</control>

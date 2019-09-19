@@ -1,0 +1,1 @@
+sap.ui.define(["jquery.sap.global"],function(q){"use strict";var C=function(){var c=[];this.attach=function(a){c.push(a);};this.detach=function(a){var i=c.indexOf(a);if(i!==-1){c.splice(i,1);return true;}return false;};this.execute=function(a){for(var i=0;i<c.length;i++){c[i](a);}};};return C;});

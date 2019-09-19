@@ -1,0 +1,93 @@
+<!--
+/**
+ * OData v4 Table
+
+ * mandatory parameters:
+ * @param metadataContext:collection mandatory context to a collection (entitySet or 1:n navigation)
+ * @param metadataContext:presentation mandatory context to a presentation (lineItem w or w/o qualifier / PV)
+ * optional parameters:
+ * @param [id] of the table
+ * @param [rows] list binding information for rows - if not specified it is created from the metadata information
+ * @param [type] the table type (ResponsiveTable, GridTable) / Default: ResponsiveTable
+ * @param [editMode] edit mode of the table / fields (Display,Editable,ReadOnly,Disabled) / Default: Display
+ * @param [rowPress] event handler to react on row press
+ * @param [rowAction] Specifies the possible actions available on the table row (Navigation,null) / Default: null
+ * @param [selectionMode] Specifies the selection mode (None,Single,Multi,Auto) / Default: None - should be Auto
+ * @param [busy] the busy mode of table
+ * @param [onCallBoundAction] event handler to be used to trigger actions. if specified all available actions in the
+             annotations are rendered, either in the toolbar or as inline actions. Toolbar actions require a
+             selectedContextsModel and an id as well as well
+ * @param [onCreate] event handler to be used to create new documents. if specified and if collection is creatable
+             a + button is rendered. the visibility of the button can be controlled via creatable property
+ * @param [creatable] boolean to decide if a create (+) button is rendered. onCreate needs to be specified / Default: true
+ * @param [selectedContextsModel] name of a model in which the selected contexts are stored (under /$contexts/)
+ * @param [groupId] of the table. It is added as parameter only if it is set by application developer, else model
+			takes it directly from binding.
+ * @param [showDelete]. Parameter which helps to not show the delete button on the table in display mode in object page.(Default value: false)
+ * @param [onDelete]. event handler to be used to delete the objects from the table. The delete button will not be rendered if this is not provided.
+ * @param [threshold] Parameter which sets the threshold for the mdc table (Default:undefined)
+ * @param [height] Parameter which sets the height for the mdc table (Default:"")
+ * @param [onDataReceived] event handler to react on dataReceived event of table.
+ */
+-->
+
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m"
+						 xmlns:mdc="sap.ui.mdc"
+						 xmlns:log="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+						 xmlns:macro="sap.ui.mdc.odata.v4"
+						 xmlns:core="sap.ui.core"
+						template:require="{
+							COMMON: 'sap/ui/mdc/odata/v4/CommonHelper',
+							TABLE: 'sap/ui/mdc/odata/v4/table/TableHelper'
+						}">
+
+	<mdc:Table
+			log:type="{collection>$kind}"
+			id="{this>id}"
+			busy="{this>busy}"
+			type="{= ${this>type} || 'ResponsiveTable'}"
+			metadataDelegate="sap/ui/mdc/odata/v4/TableDelegate"
+			rowPress="{this>rowPress}"
+			rowAction="{this>rowAction}"
+			rows="{= ${this>rows} || '{path:\'' + (${collection>$kind} === 'EntitySet' ? '/' : '') + ${collection>@sapui.name} + '\',parameters:{id: \'' + ${this>id}  +'\'' + TABLE.getRestrictionsPath(${collection>@}) + (${this>groupId} ? ', $$groupId : \'' + ${this>groupId} + '\'' : '') + ', $count : true }, events : {dataReceived : \'' + ${this>onDataReceived} + '\'}}'}"
+			selectionMode="{= ${this>selectionMode} || 'None'}"
+			selectionChange="{= ${this>selectedContextsModel} ? ('sap.ui.mdc.odata.v4.table.TableRuntime.setContexts(${$source>/}, \'' + ${this>selectedContextsModel} + '\', \'' + ${this>id} + '\', \'' + ${collection>@Org.OData.Capabilities.V1.DeleteRestrictions/Deletable/$Path} + '\')') : undefined}"
+			showRowCount="true"
+			header="{collection>./@com.sap.vocabularies.UI.v1.HeaderInfo/TypeNamePlural}"
+			threshold="{this>threshold}"
+			height="{this>height}"
+	>
+		<mdc:dependents>
+			<template:with path="presentation>@sapui.name" var="nameOfAnnotation">
+				<template:if test="{= ${collection>$kind} === 'NavigationProperty'}">
+					<template:then>
+						<template:with path="collection>" helper="COMMON.gotoTargetEntitySet" var="targetCollection">
+						<template:repeat list="{presentation>}" var="dataField">
+							<!-- <template:if test="{= (!${dataField>Action} &amp;&amp; !${dataField>SemanticObject} &amp;&amp; !${dataField>Inline}) &amp;&amp; ${dataField>@@.FIELD.isNotAlwaysHidden} }"> -->
+							<template:with path="dataField>Value" var="item">
+								<macro:ValueHelp idPrefix="TableVH{this>id}" metadataContexts="{model: 'targetCollection', path:'',  name: 'entitySet'},{model: 'item', path:'',  name: 'property'}" />
+							</template:with>
+							<!-- </template:if> -->
+						</template:repeat>
+						</template:with>
+					</template:then>
+					<template:else>
+						<template:repeat list="{presentation>}" var="dataField">
+							<!-- <template:if test="{= (!${dataField>Action} &amp;&amp; !${dataField>SemanticObject} &amp;&amp; !${dataField>Inline}) &amp;&amp; ${dataField>@@.FIELD.isNotAlwaysHidden} }"> -->
+							<template:with path="dataField>Value" var="item">
+								<macro:ValueHelp idPrefix="TableVH{this>id}" metadataContexts="{model: 'collection', path:'',  name: 'entitySet'},{model: 'item', path:'',  name: 'property'}" />
+							</template:with>
+							<!-- </template:if> -->
+						</template:repeat>
+					</template:else>
+				</template:if>
+			</template:with>
+		</mdc:dependents>
+		<mdc:actions>
+			<core:Fragment fragmentName="sap.ui.mdc.odata.v4.table.Actions" type="XML"/>
+		</mdc:actions>
+		<mdc:columns>
+			<core:Fragment fragmentName="sap.ui.mdc.odata.v4.table.Columns" type="XML"/>
+		</mdc:columns>
+	</mdc:Table>
+</core:FragmentDefinition>

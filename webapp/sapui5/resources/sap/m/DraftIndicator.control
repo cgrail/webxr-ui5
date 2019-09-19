@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>DraftIndicator</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A draft indicator is {@link sap.m.Label}.</documentation>
+    <since>1.32.0</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="state" type="sap.m/DraftIndicatorState" defaultValue="Clear" group="Behavior">
+            <documentation>State of the indicator. Could be "Saving", "Saved" and "Clear".</documentation>
+        </property>
+        <property name="minDisplayTime" type="sap.ui.core/int" defaultValue="1500" group="Behavior">
+            <documentation>Minimum time in milliseconds for showing the draft indicator</documentation>
+        </property>
+    </properties>
+    <aggregations>
+        <aggregation name="_label" type="sap.m/Label" cardinality="0..1" visibility="hidden">
+            <documentation>The State is managed in this aggregation</documentation>
+        </aggregation>
+    </aggregations>
+</control>

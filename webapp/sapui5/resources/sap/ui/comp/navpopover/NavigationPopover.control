@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>navpopover/NavigationPopover</name>
+    <derived/>
+    <documentation>The NavigationPopover control is used to present information in a specific format. &lt;b&gt;Note&lt;/b&gt;: This control is used by the
+       {@link sap.ui.comp.navpopover.NavigationPopoverHandler NavigationPopoverHandler} and must not be used manually.</documentation>
+    <baseType>sap.m/ResponsivePopover</baseType>
+    <properties>
+        <property name="semanticObjectName" type="sap.ui.core/string" group="Misc" since="1.28.0">
+            <documentation>The name of the semantic object.</documentation>
+            <deprecation since="1.40.0">The property &lt;code&gt;semanticObjectName&lt;/code&gt; is obsolete as target determination is no longer done by
+            NavigationPopover. Instead the NavigationPopoverHandler is responsible for target determination.</deprecation>
+        </property>
+        <property name="semanticAttributes" type="sap.ui.core/object" group="Misc" since="1.28.0">
+            <documentation>Describes the semantic attributes. The attribute has to be a map.</documentation>
+            <deprecation since="1.40.0">The property &lt;code&gt;semanticAttributes&lt;/code&gt; is obsolete as target determination is no longer done by
+            NavigationPopover. Instead the NavigationPopoverHandler is responsible for target determination.</deprecation>
+        </property>
+        <property name="appStateKey" type="sap.ui.core/string" group="Misc" since="1.28.0">
+            <documentation>The application state key passed to retrieve the navigation targets.</documentation>
+            <deprecation since="1.40.0">The property &lt;code&gt;appStateKey&lt;/code&gt; is obsolete as target determination is no longer done by
+            NavigationPopover. Instead the NavigationPopoverHandler is responsible for target determination.</deprecation>
+        </property>
+        <property name="mainNavigationId" type="sap.ui.core/string" group="Misc" since="1.28.0">
+            <documentation>Sets the description of the main navigation link. If &lt;code&gt;mainNavigation&lt;/code&gt; also contains an href description, then
+&lt;code&gt;mainNavigationId&lt;/code&gt; is displayed. If &lt;code&gt;mainNavigationId&lt;/code&gt; is set to an empty string &lt;code&gt;''&lt;/code&gt;,
+neither description nor subtitle are displayed.</documentation>
+        </property>
+        <property name="availableActionsPersonalizationText" type="sap.ui.core/string" defaultValue="undefined" group="Misc" since="1.44.0">
+            <documentation>Determines the text of personalization link. If this property is set to some string, choosing the personalization link will trigger
+the &lt;code&gt;availableActionsPersonalizationPress&lt;/code&gt; event. If this property is not set, the personalization link is not shown.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="targetsObtained" since="1.28.0" allowPreventDefault="false">
+            <documentation>The navigation targets that are shown.</documentation>
+            <deprecation since="1.40.0">The event &lt;code&gt;navigationTargetsObtained&lt;/code&gt; is obsolete as target determination is no longer done
+            by NavigationPopover. Instead the NavigationPopoverHandler is responsible for target determination. The event
+            &lt;code&gt;navigationTargetsObtained&lt;/code&gt; is fired from NavigationPopoverHandler after navigation targets are
+            determined.</deprecation>
+        </event>
+        <event name="navigate" since="1.28.0" allowPreventDefault="false">
+            <documentation>This event is fired when a link is chosen.</documentation>
+            <parameters>
+                <parameter name="text" type="sap.ui.core/string">
+                    <documentation>The UI text shown in the chosen link</documentation>
+                </parameter>
+                <parameter name="href" type="sap.ui.core/string">
+                    <documentation>The navigation target of the chosen link</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="availableActionsPersonalizationPress" since="1.44.0" allowPreventDefault="false">
+            <documentation>This event is fired when personalization of &lt;code&gt;availableActions&lt;/code&gt; is chosen.</documentation>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="availableActions" type="sap.ui.comp/navpopover/LinkData" since="1.28.0" cardinality="0..n">
+            <documentation>A list of available actions shown as links.</documentation>
+        </aggregation>
+        <aggregation name="mainNavigation" type="sap.ui.comp/navpopover/LinkData" since="1.28.0" cardinality="0..1">
+            <documentation>The main navigation link. If &lt;code&gt;mainNavigationId&lt;/code&gt; is not set then &lt;code&gt;text&lt;/code&gt; of &lt;code&gt;mainNavigation&lt;/code&gt;
+is displayed. Otherwise the &lt;code&gt;mainNavigationId&lt;/code&gt; is displayed.</documentation>
+        </aggregation>
+        <aggregation name="ownNavigation" type="sap.ui.comp/navpopover/LinkData" since="1.28.0" cardinality="0..1">
+            <documentation>The navigation taking the user back to the source application.</documentation>
+            <deprecation since="1.40.0">The property &lt;code&gt;ownNavigation&lt;/code&gt; is obsolete as target determination is no longer done by
+            NavigationPopover. Instead the NavigationPopoverHandler is responsible for target determination.</deprecation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="source" type="sap.ui.core/Control" cardinality="0..1" since="1.28.0">
+            <documentation>Source control for which the popover is displayed.</documentation>
+        </association>
+        <association name="extraContent" type="sap.ui.core/Control" cardinality="0..1" since="1.28.0">
+            <documentation>In addition to main navigation link and available links some additional content can be displayed in the popover.</documentation>
+        </association>
+        <association name="component" type="sap.ui.core/Element" cardinality="0..1">
+            <documentation>The parent component.</documentation>
+        </association>
+    </associations>
+</control>

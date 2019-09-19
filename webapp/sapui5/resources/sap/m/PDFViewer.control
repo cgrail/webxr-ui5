@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>PDFViewer</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>&lt;p&gt;This control enables you to display PDF documents within your app.
+It can be embedded in your user interface layout, or you can set it to open in a popup dialog.&lt;/p&gt;
+&lt;p&gt;Please note that the PDF Viewer control can be fully displayed on desktop devices only. On mobile
+devices, only the toolbar with a download button is visible.&lt;/p&gt;</documentation>
+    <since>1.48</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="height" type="sap.ui.core/CSSSize" defaultValue="100%" group="Dimension">
+            <documentation>Defines the height of the PDF viewer control, respective to the height of
+the parent container. Can be set to a percent, pixel, or em value.</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" defaultValue="100%" group="Dimension">
+            <documentation>Defines the width of the PDF viewer control, respective to the width of the
+parent container. Can be set to a percent, pixel, or em value.</documentation>
+        </property>
+        <property name="source" type="sap.ui.core/URI" group="Misc">
+            <documentation>Specifies the path to the PDF file to display. Can be set to a relative or
+an absolute path.&lt;br&gt;
+Optionally, this property can also be set to a data URI path or a blob URL
+in all major web browsers except Internet Explorer and Microsoft Edge, provided
+that this data URI or blob URL is whitelisted in advance.</documentation>
+        </property>
+        <property name="errorMessage" type="sap.ui.core/string" group="Misc">
+            <documentation>A custom error message that is displayed when the PDF file cannot be loaded.</documentation>
+            <deprecation since="1.50.0">replaced by {@link sap.m.PDFViewer#getErrorPlaceholderMessage}.</deprecation>
+        </property>
+        <property name="errorPlaceholderMessage" type="sap.ui.core/string" group="Misc">
+            <documentation>A custom text that is displayed instead of the PDF file content when the PDF
+file cannot be loaded.</documentation>
+        </property>
+        <property name="popupHeaderTitle" type="sap.ui.core/string" group="Misc">
+            <documentation>A custom title for the PDF viewer popup dialog. Works only if the PDF viewer
+is set to open in a popup dialog.</documentation>
+            <deprecation since="1.50.0">replaced by {@link sap.m.PDFViewer#getTitle}.</deprecation>
+        </property>
+        <property name="title" type="sap.ui.core/string" group="Misc">
+            <documentation>A custom title for the PDF viewer.</documentation>
+        </property>
+        <property name="showDownloadButton" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Shows or hides the download button.</documentation>
+        </property>
+        <property name="displayType" type="sap.m/PDFViewerDisplayType" defaultValue="Auto" group="Misc">
+            <documentation>Defines how the PDF viewer should be displayed.
+&lt;ul&gt;
+&lt;li&gt;If set to &lt;code&gt;Link&lt;/code&gt;, the PDF viewer appears as a toolbar with a download
+button that can be used to download the PDF file.&lt;br&gt;
+When the {@link #open} method is called, the user can either open the PDF file in a
+new tab or download it.&lt;/li&gt;
+&lt;li&gt;If set to &lt;code&gt;Embedded&lt;/code&gt;, the PDF viewer appears embedded in the parent
+container and displays either the PDF document or the message defined by the
+&lt;code&gt;errorPlaceholderMessage&lt;/code&gt; property.&lt;/li&gt;
+&lt;li&gt;If set to &lt;code&gt;Auto&lt;/code&gt;, the appearance of the PDF viewer depends on the
+device being used:
+&lt;ul&gt;
+&lt;li&gt;On mobile devices (phones, tablets), the the PDF viewer appears as a toolbar with
+a download button.&lt;/li&gt;
+&lt;li&gt;On desktop devices, the PDF viewer is embedded in its parent container.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="loaded" allowPreventDefault="false">
+            <documentation>This event is fired when a PDF file is loaded. If the PDF is loaded in smaller chunks,
+this event is fired as often as defined by the browser's plugin. This may happen after
+a couple chunks are processed.</documentation>
+        </event>
+        <event name="error" allowPreventDefault="false">
+            <documentation>This event is fired when there is an error loading the PDF file.</documentation>
+        </event>
+        <event name="sourceValidationFailed" allowPreventDefault="false">
+            <documentation>This event is fired when the PDF viewer control cannot check the loaded content. For
+example, the default configuration of the Mozilla Firefox browser may not allow checking
+the loaded content. This may also happen when the source PDF file is stored in a different
+domain.
+If you want no error message to be displayed when this event is fired, call the
+preventDefault() method inside the event handler.</documentation>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="errorPlaceholder" type="sap.ui.core/Control" cardinality="0..1">
+            <documentation>A custom control that can be used instead of the error message specified by the
+errorPlaceholderMessage property.</documentation>
+        </aggregation>
+        <aggregation name="popupButtons" type="sap.m/Button" cardinality="0..n">
+            <documentation>A multiple aggregation for buttons that can be added to the footer of the popup
+dialog. Works only if the PDF viewer is set to open in a popup dialog.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

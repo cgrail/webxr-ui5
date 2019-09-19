@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ShellHeadUserItem</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>User Header Action Item of the Shell.</documentation>
+    <since>1.22.0</since>
+    <deprecation since="1.44.0"></deprecation>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="username" type="sap.ui.core/string" defaultValue="" group="Appearance">
+            <documentation>The name of the user.</documentation>
+        </property>
+        <property name="showPopupIndicator" type="sap.ui.core/boolean" defaultValue="true" group="Accessibility" since="1.27.0">
+            <documentation>The user item is intended to be used for user settings. Normally these settings are done via a Menu or Dialog.
+If this property is set to true an indicator for such a popup mechanismn is shown in the item.</documentation>
+        </property>
+        <property name="image" type="sap.ui.core/URI" group="Appearance">
+            <documentation>An image of the user, normally a URI to an image but also an icon from the sap.ui.core.IconPool is possible.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="press" allowPreventDefault="false">
+            <documentation>Event is fired when the user presses the button.</documentation>
+        </event>
+    </events>
+    <associations>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / ids which label this control (see WAI-ARIA attribute aria-labelledby).</documentation>
+        </association>
+    </associations>
+</control>

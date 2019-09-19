@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>InteractiveLineChart</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The InteractiveLineChart control belongs to a chart control group in the MicroChart library having a number of interactive features.</documentation>
+    <since>1.42.0</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="displayedPoints" type="sap.ui.core/int" defaultValue="6" group="Appearance">
+            <documentation>The maximum number of points to be displayed on the chart.</documentation>
+        </property>
+        <property name="precedingPoint" type="sap.ui.core/float" defaultValue="0" group="Data">
+            <documentation>Abstract invisible point outside of the chart that ensures that the graph flows smoothly into the visible part of the chart.</documentation>
+        </property>
+        <property name="succeedingPoint" type="sap.ui.core/float" defaultValue="0" group="Data">
+            <documentation>Abstract invisible point outside of the chart that ensures that the graph flows smoothly out of the visible part of the chart.</documentation>
+        </property>
+        <property name="selectionEnabled" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>If this property is set to true, one or multiple points are selectable.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="selectionChanged" allowPreventDefault="false">
+            <documentation>Event is fired when a user has selected or deselected a point.</documentation>
+            <parameters>
+                <parameter name="selectedPoints" type="sap.suite.ui.microchart/InteractiveLineChartPoint[]">
+                    <documentation>All points which are in selected state.</documentation>
+                </parameter>
+                <parameter name="point" type="sap.suite.ui.microchart/InteractiveLineChartPoint">
+                    <documentation>The point which is pressed.</documentation>
+                </parameter>
+                <parameter name="selected" type="sap.ui.core/boolean">
+                    <documentation>The selection state of the point which is pressed.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="press" allowPreventDefault="false">
+            <documentation>The event is fired only in non-interactive mode when the user presses the chart; in this mode, the points and surrounding areas are not selectable. Non-interactive mode is decided upon internally, depending on the size of the areas surrounding the points.</documentation>
+        </event>
+    </events>
+    <aggregations default="points">
+        <aggregation name="points" type="sap.suite.ui.microchart/InteractiveLineChartPoint" cardinality="0..n" bindable="bindable">
+            <documentation>Points displayed in the chart.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls which label this control (see WAI-ARIA attribute aria-labelledby).</documentation>
+        </association>
+    </associations>
+</control>

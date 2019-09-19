@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartlist/ListType</name>
+    <derived/>
+    <documentation>Provides enumeration sap.ui.comp.smartlist.ListType. A subset of list types that fit to a simple API returning one string.</documentation>
+    <since>1.48</since>
+    <enumeration>
+        <value name="List">
+            <documentation>A list (sap.m.List) control shall be created as the content of the SmartList, if no list already exists (default)</documentation>
+        </value>
+        <value name="Tree">
+            <documentation>A tree (sap.m.Tree) control shall be created as the content of the SmartList, if no list/tree already exists</documentation>
+        </value>
+    </enumeration>
+</simple-type>

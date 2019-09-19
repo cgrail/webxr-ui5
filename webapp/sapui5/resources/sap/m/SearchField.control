@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>SearchField</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>An input field to search for a specific item.
+&lt;h3&gt;Overview&lt;/h3&gt;
+A search field is needed when the user needs to find specific information in large amounts of data.
+The search field is also the control of choice for filtering down
+a given amount of information.
+&lt;h3&gt;Structure&lt;/h3&gt;
+The search input field can be used in two ways:
+&lt;ul&gt;
+&lt;li&gt;Manual search - The search is triggered after the user presses the search button.
+Manual search uses a “starts with” approach.&lt;/li&gt;
+&lt;li&gt;Live search (search-as-you-type) - The search is triggered after each button press.
+A suggestion list is shown below the search field.  Live search uses a “contains” approach.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Usage&lt;/h3&gt;
+&lt;h4&gt;When to use:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt; Use live search whenever possible. &lt;/li&gt;
+&lt;li&gt; Use a manual search only if the amount of data is too large and if your app would otherwise run
+into performance issues. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Responsive Behavior&lt;/h3&gt;
+On mobile devices, there is no refresh button in the search field. "Pull Down to Refresh" is used instead.
+The "Pull Down to Refresh" arrow icon is animated and spins to signal that the user should release it.</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="value" type="sap.ui.core/string" group="Data" bindable="bindable">
+            <documentation>Input Value.</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" group="Appearance">
+            <documentation>Defines the CSS width of the input. If not set, width is 100%.</documentation>
+        </property>
+        <property name="enabled" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Boolean property to enable the control (default is true).</documentation>
+        </property>
+        <property name="visible" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>Invisible inputs are not rendered.</documentation>
+        </property>
+        <property name="maxLength" type="sap.ui.core/int" defaultValue="0" group="Behavior">
+            <documentation>Maximum number of characters. Value '0' means the feature is switched off.</documentation>
+        </property>
+        <property name="placeholder" type="sap.ui.core/string" group="Misc">
+            <documentation>Text shown when no value available. Default placeholder text is the word "Search" in the current local language (if supported) or in English.</documentation>
+        </property>
+        <property name="showMagnifier" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Set to false to hide the magnifier icon.</documentation>
+            <deprecation since="1.16.0">This parameter is deprecated. Use "showSearchButton" instead.</deprecation>
+        </property>
+        <property name="showRefreshButton" type="sap.ui.core/boolean" defaultValue="false" group="Behavior" since="1.16">
+            <documentation>Set to true to display a refresh button in place of the search icon. By pressing the refresh button or F5 key on keyboard, the user can reload the results list without changing the search string.</documentation>
+        </property>
+        <property name="refreshButtonTooltip" type="sap.ui.core/string" group="Misc" since="1.16">
+            <documentation>Tooltip text of the refresh button. If it is not set, the  Default tooltip text is the word "Refresh" in the current local language (if supported) or in English. Tooltips are not displayed on touch devices.</documentation>
+        </property>
+        <property name="showSearchButton" type="sap.ui.core/boolean" defaultValue="true" group="Behavior" since="1.23">
+            <documentation>Set to true to show the search button with the magnifier icon.
+If false, both the search and refresh buttons are not displayed even if the "showRefreshButton" property is true.</documentation>
+        </property>
+        <property name="enableSuggestions" type="sap.ui.core/boolean" defaultValue="false" group="Behavior" since="1.34">
+            <documentation>If true, a &lt;code&gt;suggest&lt;/code&gt; event is fired when user types in the input and when the input is focused.
+On a phone device, a full screen dialog with suggestions is always shown even if the suggestions list is empty.</documentation>
+        </property>
+        <property name="selectOnFocus" type="sap.ui.core/boolean" defaultValue="true" group="Behavior" since="1.20">
+            <documentation>Normally, search text is selected for copy when the SearchField is focused by keyboard navigation. If an application re-renders the SearchField during the liveChange event, set this property to false to disable text selection by focus.</documentation>
+            <deprecation since="1.38">This parameter is deprecated and has no effect in run time. The cursor position of a focused search field is restored after re-rendering automatically.</deprecation>
+        </property>
+    </properties>
+    <events>
+        <event name="search" allowPreventDefault="false">
+            <documentation>Event which is fired when the user triggers a search.</documentation>
+            <parameters>
+                <parameter name="query" type="sap.ui.core/string">
+                    <documentation>The search query string.</documentation>
+                </parameter>
+                <parameter name="suggestionItem" type="sap.m/SuggestionItem" since="1.34">
+                    <documentation>Suggestion list item in case if the user has selected an item from the suggestions list.</documentation>
+                </parameter>
+                <parameter name="refreshButtonPressed" type="sap.ui.core/boolean" since="1.16">
+                    <documentation>Indicates if the user pressed the refresh icon.</documentation>
+                </parameter>
+                <parameter name="clearButtonPressed" type="sap.ui.core/boolean" since="1.34">
+                    <documentation>Indicates if the user pressed the clear icon.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="liveChange" since="1.9.1" allowPreventDefault="false">
+            <documentation>This event is fired when the value of the search field is changed by a user - e.g. at each key press. Do not invalidate or re-render a focused search field, especially during the liveChange event.</documentation>
+            <parameters>
+                <parameter name="newValue" type="sap.ui.core/string">
+                    <documentation>Current search string.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="suggest" since="1.34" allowPreventDefault="false">
+            <documentation>This event is fired when the search field is initially focused or its value is changed by the user.
+This event means that suggestion data should be updated, in case if suggestions are used.
+Use the value parameter to create new suggestions for it.</documentation>
+            <parameters>
+                <parameter name="suggestValue" type="sap.ui.core/string">
+                    <documentation>Current search string of the search field.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations default="suggestionItems">
+        <aggregation name="suggestionItems" type="sap.m/SuggestionItem" since="1.34" cardinality="0..n">
+            <documentation>&lt;code&gt;SuggestionItems&lt;/code&gt; are the items which will be shown in the suggestions list.
+The following properties can be used:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;key&lt;/code&gt; is not displayed and may be used as internal technical field&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;text&lt;/code&gt; is displayed as normal suggestion text&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;icon&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;description&lt;/code&gt; - additional text may be used to visually display search item type or category&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="ariaDescribedBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / ids which describe this control (see WAI-ARIA attribute aria-describedby).</documentation>
+        </association>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / ids which label this control (see WAI-ARIA attribute aria-labelledby).</documentation>
+        </association>
+    </associations>
+</control>

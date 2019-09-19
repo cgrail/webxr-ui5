@@ -1,0 +1,16 @@
+<core:FragmentDefinition
+	xmlns="sap.suite.ui.microchart"
+	xmlns:core="sap.ui.core"
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1">
+	<template:with path="bulletMicroChart>MeasureAttributes/0/" var="MeasureAttribute">
+		<BulletMicroChart class="sapUiSmallMargin"
+			targetValue="{MeasureAttribute>DataPoint/$AnnotationPath/TargetValue@@.MODEL.value}"
+			forecastValue="{MeasureAttribute>DataPoint/$AnnotationPath/ForecastValue@@.MODEL.value}">
+			<actual>
+				<BulletMicroChartData value="{MeasureAttribute>Measure@@.MODEL.value}"
+					color="{parts:[{path: 'MeasureAttribute>DataPoint/$AnnotationPath/'}, {path:'MeasureAttribute>Measure/'}],
+						formatter: 'sap.ui.mdc.odata.v4.microchart.MicroChart._helper.getMicroChartColor'}"/>
+			</actual>
+		</BulletMicroChart>
+	</template:with>
+</core:FragmentDefinition>

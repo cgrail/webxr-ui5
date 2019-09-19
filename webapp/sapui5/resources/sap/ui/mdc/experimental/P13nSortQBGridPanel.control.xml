@@ -1,0 +1,40 @@
+<core:FragmentDefinition xmlns:m="sap.m"
+						 xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+	<l:VerticalLayout id="IDVerticalLayout" content="{path:'JSONItems>/items', templateShareable:false}" width="100%"
+					  class="sapMP13nColumnsPanel sapUiSmallMarginBottom sapUiSmallMarginTop">
+		<l:Grid width="100%" hSpacing="1" vSpacing="0" containerQuery="true">
+
+			<m:ComboBox selectedKey="{JSONItems>comboboxKey}" selectionChange="onSelectionChange" change="onChangeComboBox"
+						items="{path:'JSONItems>availableItems', templateShareable:false}" width="100%">
+				<core:Item key="{JSONItems>comboboxKey}" text="{JSONItems>text}"/>
+				<m:layoutData>
+					<l:GridData span="XL3 L5 M12 S12"/>
+				</m:layoutData>
+			</m:ComboBox>
+
+			<m:Select selectedKey="{JSONItems>sortOrder}" enabled="{JSONItems>selected}" width="100%"
+					  change="onChangeSortOrderBySelection">
+				<m:layoutData>
+					<l:GridData span="XL2 L4 M8 S12"/>
+				</m:layoutData>
+				<m:items>
+					<core:Item key="Ascending" text="Ascending"/>
+					<core:Item key="Descending" text="Descending"/>
+				</m:items>
+			</m:Select>
+
+			<m:HBox fitContainer="false">
+				<m:Button type="Transparent" icon="sap-icon://sys-cancel" press="onPressRemove"/>
+				<m:Button type="Transparent" icon="sap-icon://add" press="onPressAdd"/>
+				<m:Button type="Transparent" icon="sap-icon://slim-arrow-up" press="onPressUp"
+						  enabled="{= ${JSONItems>/items}.indexOf(${JSONItems>}) > 0}"/>
+				<m:Button type="Transparent" icon="sap-icon://slim-arrow-down" press="onPressDown"
+						  enabled="{= ${JSONItems>/items}.length-1 > ${JSONItems>/items}.indexOf(${JSONItems>})}"/>
+				<m:layoutData>
+					<l:GridData span="XL2 L3 M4 S12"/>
+				</m:layoutData>
+			</m:HBox>
+		</l:Grid>
+
+	</l:VerticalLayout>
+</core:FragmentDefinition>

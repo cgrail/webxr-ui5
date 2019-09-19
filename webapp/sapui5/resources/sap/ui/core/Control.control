@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Control</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Base Class for Controls.
+
+Controls provide the following features:
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Rendering&lt;/b&gt;: the &lt;code&gt;RenderManager&lt;/code&gt; only expects instances of class &lt;code&gt;Control&lt;/code&gt;
+    in its {@link sap.ui.core.RenderManager#renderControl renderControl} method.
+    By convention, each control class has an associated static class that takes care of rendering
+    the control (its 'Renderer').&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;show / hide&lt;/b&gt;: a control can be hidden, although it is still part of the control tree,
+    see property {@link #getVisible visible}&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;local busy indicator&lt;/b&gt;: marks a control visually as 'busy', see properties {@link #getBusy busy}
+    and {@link #getBusyIndicatorDelay busyIndicatorDelay}&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;field groups&lt;/b&gt;: by assigning the same group ID to a set of editable controls, they form a
+    group which can be validated together. See property {@link #getFieldGroupIds fieldGroupIds}
+    and event {@link #event:validateFieldGroup validateFieldGroup}.
+    The term &lt;i&gt;field&lt;/i&gt; was chosen as most often this feature will be used to group editable
+    fields in a form.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;custom style classes&lt;/b&gt;: all controls allow to add custom CSS classes to their rendered DOM
+    without modifying their renderer code. See methods {@link #addStyleClass addStyleClass},
+    {@link #removeStyleClass removeStyleClass}, {@link #toggleStyleClass toggleStyleClass}
+    and {@link #hasStyleClass hasStyleClass}.&lt;/br&gt;
+    The necessary implementation is encapsulated in {@link sap.ui.core.CustomStyleClassSupport
+    CustomStyleClassSupport} and can be applied to selected element classes as well.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;browser events&lt;/b&gt;: by calling the methods {@link #attachBrowserEvent attachBrowserEvent} and
+    {@link #detachBrowserEvent detachBrowserEvent}, consumers can let the control class take care of
+    registering / de-registering a given set of event listeners to the control's root DOM node.
+    The framework will adapt the registration whenever the DOM node changes (e.g. before or after
+    rendering or when the control is destroyed).&lt;/li&gt;
+&lt;/ul&gt;
+
+See section "{@link topic:91f1703b6f4d1014b6dd926db0e91070 Developing OpenUI5/SAPUI5 Controls}"
+in the documentation for an introduction to control development.</documentation>
+    <abstract/>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="blocked" type="sap.ui.core/boolean" defaultValue="false">
+            <documentation>Whether the control is currently in blocked state.</documentation>
+        </property>
+        <property name="busy" type="sap.ui.core/boolean" defaultValue="false">
+            <documentation>Whether the control is currently in busy state.</documentation>
+        </property>
+        <property name="busyIndicatorDelay" type="sap.ui.core/int" defaultValue="1000">
+            <documentation>The delay in milliseconds, after which the busy indicator will show up for this control.</documentation>
+        </property>
+        <property name="busyIndicatorSize" type="sap.ui.core/BusyIndicatorSize" defaultValue="Medium" since="1.54">
+            <documentation>The size of the BusyIndicator. For controls with a width smaller 3rem a
+&lt;code&gt;sap.ui.core.BusyIndicatorSize.Small&lt;/code&gt; should be used.
+If the size could vary in width and the width could get smaller than 3rem, the
+&lt;code&gt;sap.ui.core.BusyIndicatorSize.Auto&lt;/code&gt; option could be used.
+The default is set to &lt;code&gt;sap.ui.core.BusyIndicatorSize.Medium&lt;/code&gt;
+For a full screen BusyIndicator use &lt;code&gt;sap.ui.core.BusyIndicatorSize.Large&lt;/code&gt;.</documentation>
+        </property>
+        <property name="visible" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>Whether the control should be visible on the screen.
+
+If set to false, a placeholder will be rendered to mark the location of the invisible
+control in the DOM of the current page. The placeholder will be hidden and have
+zero dimensions (&lt;code&gt;display: none&lt;/code&gt;).
+
+See {@link sap.ui.core.RenderManager#writeInvisiblePlaceholderData RenderManager#writeInvisiblePlaceholderData} for details.</documentation>
+        </property>
+        <property name="fieldGroupIds" type="sap.ui.core/string[]" defaultValue="[]" since="1.31">
+            <documentation>The IDs of a logical field group that this control belongs to.
+
+All fields in a logical field group should share the same &lt;code&gt;fieldGroupId&lt;/code&gt;.
+Once a logical field group is left, the &lt;code&gt;validateFieldGroup&lt;/code&gt; event is raised.
+
+For backward compatibility with older releases, field group IDs are syntactically not
+limited, but it is suggested to use only valid {@link sap.ui.core.ID}s.
+
+See {@link #attachValidateFieldGroup}.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="validateFieldGroup" allowPreventDefault="false">
+            <documentation>Event is fired if a logical field group defined by &lt;code&gt;fieldGroupIds&lt;/code&gt; of a control was left
+or the user explicitly pressed a key combination that triggers validation.
+
+Listen to this event to validate data of the controls belonging to a field group.
+See {@link #setFieldGroupIds}.</documentation>
+            <parameters>
+                <parameter name="fieldGroupIds" type="sap.ui.core/string[]">
+                    <documentation>field group IDs of the logical field groups to validate</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+</control>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>DynamicPage</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A layout control, representing a web page, consisting of a title, header with dynamic behavior, a content area, and an optional floating footer.
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+
+The control consist of several components:
+
+&lt;ul&gt;&lt;li&gt;{@link sap.f.DynamicPageTitle DynamicPageTitle} - consists of a heading
+on the left side, content in the middle, and actions on the right. The displayed
+content changes based on the current mode of the {@link sap.f.DynamicPageHeader
+DynamicPageHeader}.&lt;/li&gt;
+&lt;li&gt;{@link sap.f.DynamicPageHeader DynamicPageHeader} - a generic container, which
+can contain a single layout control and does not care about the content alignment
+and responsiveness. The header works in two modes - expanded and snapped and its
+behavior can be adjusted with the help of different properties.&lt;/li&gt;
+&lt;li&gt;Content area - a generic container, which can have a single UI5 layout control
+and does not care about the content alignment and responsiveness.&lt;/li&gt;
+&lt;li&gt;Footer - positioned at the bottom with a small offset and used for additional
+actions, the footer floats above the content. It can be any {@link sap.m.IBar}
+control.&lt;/li&gt;&lt;/ul&gt;
+
+&lt;h3&gt;Usage&lt;/h3&gt;
+
+Use the &lt;code&gt;DynamicPage&lt;/code&gt; if you need to have a title, that is always visible
+and a header, that has configurable Expanding/Snapping functionality.
+If you don't need the Expanding/Snapping functionality it is better to use the
+{@link sap.m.Page} as a lighter control.
+
+&lt;ul&gt;&lt;b&gt;Notes:&lt;/b&gt;
+&lt;li&gt;If you're displaying a {@link sap.m.FlexBox} with non-adaptive content
+(doesn't stretch to fill the available space), it is recommended to set the
+&lt;code&gt;fitContainer&lt;/code&gt; property of the {@link sap.m.FlexBox FlexBox} to
+&lt;code&gt;false&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;If you are displaying a {@link sap.ui.table.Table}, keep in mind that it is
+non-adaptive and may cause unpredicted behavior for the &lt;code&gt;DynamicPage&lt;/code&gt;
+on smaller screen sizes, such as mobile.&lt;/li&gt;
+&lt;li&gt;Snapping of the {@link sap.f.DynamicPageTitle DynamicPageTitle} is not supported in the following case:
+When the &lt;code&gt;DynamicPage&lt;/code&gt; has a scroll bar, the control usually scrolls to the snapping point - the point,
+where the {@link sap.f.DynamicPageHeader DynamicPageHeader} is scrolled out completely.
+However, when there is a scroll bar, but not enough content to reach the snapping point,
+the snapping is not possible using scrolling.&lt;/li&gt;
+&lt;li&gt;When using {@link sap.ui.layout.form.Form},
+{@link sap.m.Panel}, {@link sap.m.Table} and {@link sap.m.List} controls in the content of
+&lt;code&gt;DynamicPage&lt;/code&gt;, you need to adjust their left text offset if you want to achieve vertical alignment
+between the &lt;code&gt;sap.f.DynamicPageHeader&lt;/code&gt;`s  content and &lt;code&gt;DynamicPage&lt;/code&gt;`s content.
+For more information, see the documentation for the &lt;code&gt;content&lt;/code&gt; aggregation.&lt;/li&gt;&lt;/ul&gt;
+
+&lt;h3&gt;Responsive Behavior&lt;/h3&gt;
+
+The responsive behavior of the &lt;code&gt;DynamicPage&lt;/code&gt; depends on the behavior of
+the content that is displayed. To adjust the &lt;code&gt;DynamicPage&lt;/code&gt; content
+padding, the &lt;code&gt;sapUiContentPadding&lt;/code&gt;, &lt;code&gt;sapUiNoContentPadding&lt;/code&gt;,
+and &lt;code&gt;sapUiResponsiveContentPadding&lt;/code&gt; CSS classes can be used.</documentation>
+    <since>1.42</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="preserveHeaderStateOnScroll" type="sap.ui.core/boolean" defaultValue="false" group="Behavior">
+            <documentation>Preserves the current header state when scrolling.
+For example, if the user expands the header by clicking on the title and then scrolls down the page, the header will remain expanded.
+
+&lt;b&gt;Note:&lt;/b&gt; Based on internal rules, the value of the property is not always taken into account - for example,
+when the control is rendered on tablet or mobile and the control`s title and header
+are with height larger than the given threshold.</documentation>
+        </property>
+        <property name="headerExpanded" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Determines whether the header is expanded.
+
+The header can be also expanded/collapsed by user interaction,
+which requires the property to be internally mutated by the control to reflect the changed state.
+
+&lt;b&gt;Note:&lt;/b&gt; As of version 1.48, you can initialize the control in collapsed header state by setting this property to &lt;code&gt;false&lt;/code&gt;.</documentation>
+        </property>
+        <property name="toggleHeaderOnTitleClick" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Determines whether the user can switch between the expanded/collapsed states of the
+&lt;code&gt;DynamicPageHeader&lt;/code&gt; by clicking on the &lt;code&gt;DynamicPageTitle&lt;/code&gt;
+or by using the expand/collapse visual indicators,
+positioned at the bottom of the &lt;code&gt;DynamicPageTitle&lt;/code&gt; and the &lt;code&gt;DynamicPageHeader&lt;/code&gt;.
+If set to &lt;code&gt;false&lt;/code&gt;, the &lt;code&gt;DynamicPageTitle&lt;/code&gt; is not clickable,
+the visual indicators are not available and the application
+must provide other means for expanding/collapsing the &lt;code&gt;DynamicPageHeader&lt;/code&gt;, if necessary.
+
+&lt;b&gt;Note: &lt;/b&gt; This property is taken into account only if a non-empty &lt;code&gt;header&lt;/code&gt; aggregation is provided.</documentation>
+        </property>
+        <property name="showFooter" type="sap.ui.core/boolean" defaultValue="false" group="Behavior">
+            <documentation>Determines whether the footer is visible.</documentation>
+        </property>
+        <property name="fitContent" type="sap.ui.core/boolean" defaultValue="false" group="Behavior">
+            <documentation>Optimizes &lt;code&gt;DynamicPage&lt;/code&gt; responsiveness on small screens and behavior
+when expanding/collapsing the &lt;code&gt;DynamicPageHeader&lt;/code&gt;.
+
+&lt;b&gt;Note:&lt;/b&gt; It is recommended to use this property when displaying content
+of adaptive controls that stretch to fill the available space. Such controls may be
+{@link sap.ui.table.Table} and {@link sap.ui.table.AnalyticalTable} depending on their settings.</documentation>
+        </property>
+    </properties>
+    <aggregations>
+        <aggregation name="title" type="sap.f/DynamicPageTitle" cardinality="0..1">
+            <documentation>&lt;code&gt;DynamicPage&lt;/code&gt; title.</documentation>
+        </aggregation>
+        <aggregation name="header" type="sap.f/DynamicPageHeader" cardinality="0..1">
+            <documentation>&lt;code&gt;DynamicPage&lt;/code&gt; header.</documentation>
+        </aggregation>
+        <aggregation name="content" type="sap.ui.core/Control" cardinality="0..1">
+            <documentation>&lt;code&gt;DynamicPage&lt;/code&gt; content.
+
+&lt;b&gt;Note: &lt;/b&gt; You can change the default paddings by adding the following CSS classes:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;sapUiContentPadding&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sapUiNoContentPadding&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sapUiResponsiveContentPadding&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+For more information, see
+{@link topic:c71f6df62dae47ca8284310a6f5fc80a Using Container Content Padding CSS Classes}.
+
+&lt;b&gt;Note:&lt;/b&gt; The SAP Fiori Design guidelines require that the
+&lt;code&gt;DynamicPageHeader&lt;/code&gt;'s content and the &lt;code&gt;DynamicPage&lt;/code&gt;'s content
+are aligned vertically. When using {@link sap.ui.layout.form.Form},
+{@link sap.m.Panel}, {@link sap.m.Table} and {@link sap.m.List} in the content area of
+&lt;code&gt;DynamicPage&lt;/code&gt;, if the content is not already aligned, you need to adjust
+their left text offset to achieve the vertical alignment. To do this, apply the
+&lt;code&gt;sapFDynamicPageAlignContent&lt;/code&gt; CSS class to them and set their &lt;code&gt;width&lt;/code&gt;
+property to &lt;code&gt;auto&lt;/code&gt; (if not set by default).
+
+Example:
+
+&lt;pre&gt;
+&lt;code&gt; &amp;lt;Panel class=“sapFDynamicPageAlignContent” width=“auto”&amp;gt;&amp;lt;/Panel&amp;gt; &lt;/code&gt;
+&lt;/pre&gt;
+
+Please keep in mind that the alignment is not possible in the following cases:
+&lt;ul&gt;
+&lt;li&gt; When the controls are placed in an {@link sap.ui.layout.Grid} or other layout
+controls that use &lt;code&gt;overflow:hidden&lt;/code&gt; CSS property&lt;/li&gt;
+&lt;li&gt; In case any of the following CSS classes is applied to
+&lt;code&gt;DynamicPage&lt;/code&gt;: &lt;code&gt;sapUiContentPadding&lt;/code&gt;,
+&lt;code&gt;sapUiNoContentPadding&lt;/code&gt; or &lt;code&gt;sapUiResponsiveContentPadding&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+        </aggregation>
+        <aggregation name="footer" type="sap.m/IBar" cardinality="0..1">
+            <documentation>&lt;code&gt;DynamicPage&lt;/code&gt; floating footer.</documentation>
+        </aggregation>
+        <aggregation name="landmarkInfo" type="sap.f/DynamicPageAccessibleLandmarkInfo" since="1.61" cardinality="0..1">
+            <documentation>Accessible landmark settings to be applied on the containers of the &lt;code&gt;sap.f.DynamicPage&lt;/code&gt; control.
+
+If not set, no landmarks will be written.</documentation>
+        </aggregation>
+        <aggregation name="_scrollBar" type="sap.ui.core/Control" cardinality="0..1" visibility="hidden">
+            <documentation>&lt;code&gt;DynamicPage&lt;/code&gt; custom &lt;code&gt;ScrollBar&lt;/code&gt;.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

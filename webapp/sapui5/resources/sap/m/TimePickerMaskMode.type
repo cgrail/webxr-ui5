@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>TimePickerMaskMode</name>
+    <derived/>
+    <documentation>Different modes for the &lt;code&gt;sap.m.TimePicker&lt;/code&gt; mask.</documentation>
+    <since>1.54</since>
+    <enumeration>
+        <value name="On">
+            <documentation>&lt;code&gt;MaskInput&lt;/code&gt; is enabled for the &lt;code&gt;sap.m.TimePicker&lt;/code&gt;.</documentation>
+        </value>
+        <value name="Off">
+            <documentation>&lt;code&gt;MaskInput&lt;/code&gt; is disabled for the &lt;code&gt;sap.m.TimePicker&lt;/code&gt;.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

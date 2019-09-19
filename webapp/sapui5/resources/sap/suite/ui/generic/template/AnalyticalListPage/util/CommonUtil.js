@@ -1,0 +1,1 @@
+sap.ui.define(["sap/ui/base/Object","sap/ui/model/Context","jquery.sap.global"],function(B,C,q){"use strict";var a=B.extend("sap.suite.ui.generic.template.AnalyticalListPage.util.CommonUtil");a.nullify=function(o){if(o){for(var p in o){o[p]=null;}}};return a;},true);

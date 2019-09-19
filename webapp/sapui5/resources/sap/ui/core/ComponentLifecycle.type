@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ComponentLifecycle</name>
+    <derived/>
+    <documentation>Enumeration for different lifecycle behaviors of Components created by the
+ComponentContainer.</documentation>
+    <enumeration>
+        <value name="Legacy">
+            <documentation>Legacy lifecycle means that the ComponentContainer takes care
+to destroy the Component which is associated with the
+ComponentContainer once the ComponentContainer is destroyed but
+not when a new Component is associated.</documentation>
+        </value>
+        <value name="Application">
+            <documentation>Application managed lifecycle means that the Application takes care
+to destroy the Components associated with the ComponentContainer.</documentation>
+        </value>
+        <value name="Container">
+            <documentation>Container managed lifecycle means that the ComponentContainer takes
+care to destroy the Components associated with the ComponentContainer
+once the ComponentContainer is destroyed or a new Component is associated.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

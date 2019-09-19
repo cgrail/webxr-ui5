@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>upload/UploadSet</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>This control allows you to upload one or more files from your devices (desktop, tablet, or phone)
+and attach them to your application.&lt;br&gt;
+This control builds on the {@link sap.m.UploadCollection} control, providing better handling of headers
+and requests, unified behavior of instant and deferred uploads, as well as improved progress indication.</documentation>
+    <since>1.62</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="fileTypes" type="sap.ui.core/string[]">
+            <documentation>Allowed file types for files to be uploaded.
+&lt;br&gt;If this property is not set, any file can be uploaded.</documentation>
+        </property>
+        <property name="maxFileNameLength" type="sap.ui.core/int">
+            <documentation>Maximum length of names of files to be uploaded.
+&lt;br&gt;If set to &lt;code&gt;null&lt;/code&gt; or &lt;code&gt;0&lt;/code&gt;, any files can be uploaded,
+regardless of their names length.</documentation>
+        </property>
+        <property name="maxFileSize" type="sap.ui.core/float">
+            <documentation>Size limit in megabytes for files to be uploaded.
+&lt;br&gt;If set to &lt;code&gt;null&lt;/code&gt; or &lt;code&gt;0&lt;/code&gt;, files of any size can be uploaded.</documentation>
+        </property>
+        <property name="mediaTypes" type="sap.ui.core/string[]">
+            <documentation>Allowed media types for files to be uploaded.
+&lt;br&gt;If this property is not set, any file can be uploaded.</documentation>
+        </property>
+        <property name="noDataText" type="sap.ui.core/string">
+            <documentation>Defines custom text for the 'No data' text label.</documentation>
+        </property>
+        <property name="noDataDescription" type="sap.ui.core/string">
+            <documentation>Defines custom text for the 'No data' description label.</documentation>
+        </property>
+        <property name="instantUpload" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>Defines whether the upload process should be triggered as soon as the file is added.&lt;br&gt;
+If set to &lt;code&gt;false&lt;/code&gt;, no upload is triggered when a file is added.</documentation>
+        </property>
+        <property name="showIcons" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>Defines whether file icons should be displayed.</documentation>
+        </property>
+        <property name="terminationEnabled" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>Defines whether it is allowed to terminate the upload process.</documentation>
+        </property>
+        <property name="uploadEnabled" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>Defines whether the upload action is allowed.</documentation>
+        </property>
+        <property name="uploadUrl" type="sap.ui.core/string">
+            <documentation>URL where the uploaded files will be stored.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="afterItemAdded" allowPreventDefault="false">
+            <documentation>This event is fired when a new file is added to the set of items to be uploaded.</documentation>
+            <parameters>
+                <parameter name="item" type="sap.m/upload/UploadSetItem">
+                    <documentation>The file that has just been added.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="beforeItemAdded" allowPreventDefault="true">
+            <documentation>This event is fired just before a new file is added to the set of items to be uploaded.</documentation>
+            <parameters>
+                <parameter name="item" type="sap.m/upload/UploadSetItem">
+                    <documentation>The file to be added to the set of items to be uploaded.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="beforeItemRemoved" allowPreventDefault="true">
+            <documentation>This event is fired just before the confirmation dialog for 'Remove' action is displayed.</documentation>
+            <parameters>
+                <parameter name="item" type="sap.m/upload/UploadSetItem">
+                    <documentation>The item to be removed from the set of items to be uploaded.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="beforeItemEdited" allowPreventDefault="true">
+            <documentation>This event is fired when the edit button is clicked for an item and no other item is being edited
+at the same time.
+&lt;br&gt;If there is another item that has unsaved changes, the editing of the clicked item cannot be started.</documentation>
+            <parameters>
+                <parameter name="item" type="sap.m/upload/UploadSetItem">
+                    <documentation>The item to be edited.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="beforeUploadStarts" allowPreventDefault="true">
+            <documentation>This event is fired right before the upload process begins.</documentation>
+            <parameters>
+                <parameter name="item" type="sap.m/upload/UploadSetItem">
+                    <documentation>The file whose upload is just about to start.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="uploadCompleted" allowPreventDefault="false">
+            <documentation>This event is fired right after the upload process is finished.</documentation>
+            <parameters>
+                <parameter name="item" type="sap.m/upload/UploadSetItem">
+                    <documentation>The file whose upload has just been completed.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="beforeUploadTermination" allowPreventDefault="true">
+            <documentation>This event is fired right before the upload is terminated.</documentation>
+            <parameters>
+                <parameter name="item" type="sap.m/upload/UploadSetItem">
+                    <documentation>The file whose upload is about to be terminated.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="uploadTerminated" allowPreventDefault="false">
+            <documentation>This event is fired right after the upload is terminated.</documentation>
+            <parameters>
+                <parameter name="item" type="sap.m/upload/UploadSetItem">
+                    <documentation>The file whose upload has just been terminated.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="fileTypeMismatch" allowPreventDefault="false">
+            <documentation>This event is fired in either of the following cases:
+&lt;ul&gt;
+&lt;li&gt;When a file that is selected to be uploaded fails to meet the file type restriction
+(&lt;code&gt;fileType&lt;/code&gt; property).&lt;/li&gt;
+&lt;li&gt;When the file type restriction changes, and the file to be uploaded fails to meet the new
+restriction.&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+            <parameters>
+                <parameter name="item" type="sap.m/upload/UploadSetItem">
+                    <documentation>The file that fails to meet the file type restriction specified in the
+&lt;code&gt;fileType&lt;/code&gt; property.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="fileNameLengthExceeded" allowPreventDefault="false">
+            <documentation>This event is fired in either of the following cases:
+&lt;ul&gt;
+&lt;li&gt;When a file that is selected to be uploaded fails to meet the file name length restriction specified in the
+&lt;code&gt;maxFileNameLength&lt;/code&gt; property.&lt;/li&gt;
+&lt;li&gt;When the file name length restriction changes, and the file to be uploaded fails to meet the new
+restriction.&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+            <parameters>
+                <parameter name="item" type="sap.m/upload/UploadSetItem">
+                    <documentation>The file that fails to meet the file name length restriction specified in the
+&lt;code&gt;maxFileNameLength&lt;/code&gt; property.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="fileSizeExceeded" allowPreventDefault="false">
+            <documentation>This event is fired in either of the following cases:
+&lt;ul&gt;
+&lt;li&gt;When a file that is selected to be uploaded fails to meet the file size restriction specified in the
+&lt;code&gt;maxFileSize&lt;/code&gt; property.&lt;/li&gt;
+&lt;li&gt;When the file size restriction changes, and the file to be uploaded fails to meet the new
+restriction.&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+            <parameters>
+                <parameter name="item" type="sap.m/upload/UploadSetItem">
+                    <documentation>The file that fails to meet the file size restriction specified in the
+&lt;code&gt;maxFileSize&lt;/code&gt; property.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="mediaTypeMismatch" allowPreventDefault="false">
+            <documentation>This event is fired in either of the following cases:
+&lt;ul&gt;
+&lt;li&gt;When a file that is selected to be uploaded fails to meet the media type restriction specified in the
+&lt;code&gt;mediaTypes&lt;/code&gt; property.&lt;/li&gt;
+&lt;li&gt;When the media type restriction changes, and the file to be uploaded fails to meet the new
+restriction.&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+            <parameters>
+                <parameter name="item" type="sap.m/upload/UploadSetItem">
+                    <documentation>The file that fails to meet the media type restriction specified in the
+&lt;code&gt;mediaTypes&lt;/code&gt; property.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="selectionChanged" allowPreventDefault="false">
+            <documentation>This event is fired simultaneously with the respective event in the inner {@link sap.m.List} control.</documentation>
+            <parameters>
+                <parameter name="items" type="sap.m/upload/UploadSetItem[]">
+                    <documentation>Items whose selection status has just been changed.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations default="items">
+        <aggregation name="items" type="sap.m/upload/UploadSetItem" cardinality="0..n">
+            <documentation>Items representing files that have already been uploaded.</documentation>
+        </aggregation>
+        <aggregation name="incompleteItems" type="sap.m/upload/UploadSetItem" cardinality="0..n">
+            <documentation>Items representing files yet to be uploaded.</documentation>
+        </aggregation>
+        <aggregation name="headerFields" type="sap.ui.core/Item" cardinality="0..n">
+            <documentation>Header fields to be included in the header section of an XHR request.</documentation>
+        </aggregation>
+        <aggregation name="toolbar" type="sap.m/OverflowToolbar" cardinality="0..1">
+            <documentation>Main toolbar of the &lt;code&gt;UploadSet&lt;/code&gt; control.</documentation>
+        </aggregation>
+        <aggregation name="uploader" type="sap.m/upload/Uploader" cardinality="0..1">
+            <documentation>Defines the uploader to be used. If not specified, the default implementation is used.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

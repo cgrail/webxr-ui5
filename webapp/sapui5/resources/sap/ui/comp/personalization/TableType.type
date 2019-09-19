@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>personalization/TableType</name>
+    <derived/>
+    <documentation>Provides enumeration sap.ui.comp.personalization.TableType. A subset of table types that fit for table personalization.</documentation>
+    <enumeration>
+        <value name="ResponsiveTable">
+            <documentation>Represents &lt;code&gt;sap.m.Table&lt;/code&gt;.</documentation>
+        </value>
+        <value name="Table">
+            <documentation>Represents &lt;code&gt;sap.ui.table.Table&lt;/code&gt;.</documentation>
+        </value>
+        <value name="AnalyticalTable">
+            <documentation>Represents &lt;code&gt;sap.ui.table.AnalyticalTable&lt;/code&gt;.</documentation>
+        </value>
+        <value name="TreeTable">
+            <documentation>Represents &lt;code&gt;sap.ui.table.TreeTable&lt;/code&gt;.</documentation>
+        </value>
+        <value name="ChartWrapper">
+            <documentation>Represents &lt;code&gt;sap.ui.comp.personalization.ChartWrapper&lt;/code&gt;.</documentation>
+        </value>
+        <value name="SelectionWrapper">
+            <documentation>Represents &lt;code&gt;sap.ui.comp.personalization.SelectionWrapper&lt;/code&gt;.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

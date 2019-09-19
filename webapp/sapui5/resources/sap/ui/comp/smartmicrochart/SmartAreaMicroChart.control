@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartmicrochart/SmartAreaMicroChart</name>
+    <derived/>
+    <documentation>The SmartAreaMicroChart control creates a AreaMicroChart based on OData metadata and the configuration
+       specified. The entitySet attribute must be specified to use the control. This attribute is used to fetch
+       fields from OData metadata, from which Micro Area Chart UI will be generated; it can also be used to fetch
+       the actual chart data.&lt;br&gt;
+       &lt;b&gt;&lt;i&gt;Note:&lt;/i&gt;&lt;/b&gt;&lt;br&gt;
+       Most of the attributes/properties are not dynamic and cannot be changed once the control has been
+       initialised.</documentation>
+    <since>1.38</since>
+    <baseType>sap.ui.comp/smartmicrochart/SmartMicroChartBase</baseType>
+    <properties>
+        <property name="enableAutoBinding" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Only &lt;code&gt;true&lt;/code&gt; value is supported: the chart will be bound to the chartBindingPath or to the entitySet</documentation>
+        </property>
+    </properties>
+</control>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>EditorType</name>
+    <derived/>
+    <documentation>Determines which editor component should be used for editing the text.</documentation>
+    <enumeration>
+        <value name="TinyMCE">
+            <documentation>Uses TinyMCE version 3 as editor (default)</documentation>
+        </value>
+        <value name="TinyMCE4">
+            <documentation>Uses TinyMCE version 4 as editor</documentation>
+        </value>
+    </enumeration>
+</simple-type>

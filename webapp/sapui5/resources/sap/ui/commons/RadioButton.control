@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>RadioButton</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>RadioButton is a control similar to CheckBox, but it allows the user to choose only one of the predefined set of options.
+
+Usually, RadioButton is used in a group with other RadioButtons (with the groupName property or by using
+sap.ui.commons.RadioButtonGroup), thus providing a limited choice for the user. An event is triggered when
+the user makes a change of the selection.</documentation>
+    <deprecation since="1.38">Instead, use the &lt;code&gt;sap.m.RadioButton&lt;/code&gt; control.</deprecation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="text" type="sap.ui.core/string" group="Data">
+            <documentation>Defines the text displayed next to the RadioButton.</documentation>
+        </property>
+        <property name="enabled" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Displays the disabled controls in another color, depending on the customer settings.</documentation>
+        </property>
+        <property name="editable" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Specifies whether the user can select the RadioButton.</documentation>
+        </property>
+        <property name="selected" type="sap.ui.core/boolean" defaultValue="false" group="Data">
+            <documentation>Specifies the select state of the RadioButton.</documentation>
+        </property>
+        <property name="valueState" type="sap.ui.core/ValueState" defaultValue="None" group="Data">
+            <documentation>Enumeration sap.ui.core.ValueState provides state values Error, Success, Warning and None.</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" group="Dimension">
+            <documentation>Determines the control width. By default, it depends on the text length. Alternatively, CSS sizes in % or px can be set.</documentation>
+        </property>
+        <property name="textDirection" type="sap.ui.core/TextDirection" defaultValue="Inherit" group="Appearance">
+            <documentation>Defines the text direction - options are left-to-right (LTR) and right-to-left (RTL). Alternatively, the control can
+inherit the text direction from its parent container.</documentation>
+        </property>
+        <property name="groupName" type="sap.ui.core/string" defaultValue="sapUiRbDefaultGroup" group="Behavior">
+            <documentation>Defines the name of the RadioButtonGroup, in which the current RadioButton belongs to. You can define a new name for
+the group. If no new name is specified, the default is sapUiRbDefaultGroup. By default, when one of the RadioButtons
+in a group is selected, all others are unselected.</documentation>
+        </property>
+        <property name="key" type="sap.ui.core/string" group="Data">
+            <documentation>Can be used for subsequent actions.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="select" allowPreventDefault="false">
+            <documentation>Triggers when the user makes a change on the RadioButton.</documentation>
+        </event>
+    </events>
+    <associations>
+        <association name="ariaDescribedBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / IDs, which describe this control (see WAI-ARIA attribute aria-describedby).</documentation>
+        </association>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / IDs, which label this control (see WAI-ARIA attribute aria-labelledby).</documentation>
+        </association>
+    </associations>
+</control>

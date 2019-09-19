@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>hyphenation/Hyphenation</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>This class provides methods for evaluating the possibility of using browser-native hyphenation or initializing and using a third-party hyphenation module.
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+By using this API, a developer can check if browser-native hyphenation is supported for a particular language.
+
+When browser-native hyphenation is not supported or if otherwise required, the API can be used to hyphenate texts. A third-party library "Hyphenopoly" is used in that case.
+
+It is used internally by controls that support the &lt;code&gt;wrappingType:{@link sap.m.WrappingType WrappingType.Hyphenated}&lt;/code&gt; property.
+
+As the class is singleton, an instance should be acquired from {@link sap.ui.core.hyphenation.Hyphenation.getInstance Hyphenation.getInstance}.
+
+&lt;h3&gt;Usage&lt;/h3&gt;
+&lt;h4&gt;When to use:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;To check if browser-native hyphenation is available for particular language.&lt;/li&gt;
+&lt;li&gt;To hyphenate texts if browser-native hyphenation is not available.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;When not to use:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+If the use case is covered by controls that support the property &lt;code&gt;wrappingType:{@link sap.m.WrappingType WrappingType.Hyphenated}&lt;/code&gt;.
+This functionality is supported by {@link sap.m.Title sap.m.Title}, {@link sap.m.Label sap.m.Label} and {@link sap.m.Text sap.m.Text}.
+&lt;/li&gt;
+&lt;li&gt;If browser-native hyphenation is available&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Example&lt;/h3&gt;
+&lt;pre&gt;
+if (!Hyphenation.getInstance().canUseNativeHyphenation("en")) {
+	Hyphenation.getInstance().initialize("en").then(function() {
+		console.log(Hyphenation.getInstance().hyphenate("An example text to hyphenate.", "en"));
+	});
+}
+&lt;/pre&gt;
+
+For more information, see {@link topic:6322164936f047de941ec522b95d7b70 Hyphenation for Text Controls}.
+
+&lt;code&gt;Caution:&lt;/code&gt; Note that as the hyphenation feature uses third-party
+and browser-native tools, we are not responsible for any grammatical incorrectness
+or inconsistencies of the hyphenation. Also, the variety of supported languages is
+outside the scope of our control and may be subject to future changes.</documentation>
+    <since>1.60</since>
+    <events>
+        <event name="error" allowPreventDefault="false">
+            <documentation>Fired if an error with initialization or hyphenation occurs.</documentation>
+            <parameters>
+                <parameter name="sErrorMessage" type="sap.ui.core/string">
+                    <documentation>The message of the error.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+</control>

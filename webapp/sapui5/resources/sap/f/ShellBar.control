@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ShellBar</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A horizontal bar control holding multiple child controls used as application shell header.
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+
+The &lt;code&gt;ShellBar&lt;/code&gt; is used as the uppermost section (shell) of the app. It is fully
+responsive and adaptive, and corresponds to the SAP Fiori Design Guidelines.
+
+&lt;h3&gt;Usage&lt;/h3&gt;
+
+Content specified in the &lt;code&gt;ShellBar&lt;/code&gt; properties and aggregations is automatically
+positioned in dedicated places of the control.</documentation>
+    <since>1.63</since>
+    <developmentState state="experimental" since="1.63">that provides only limited functionality. Also, the API might be changed in future.</developmentState>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="title" type="sap.ui.core/string" defaultValue="" group="Appearance">
+            <documentation>Defines the main title of the control.</documentation>
+        </property>
+        <property name="secondTitle" type="sap.ui.core/string" defaultValue="" group="Appearance">
+            <documentation>Defines the secondary title of the control.</documentation>
+        </property>
+        <property name="homeIcon" type="sap.ui.core/URI" defaultValue="" group="Appearance">
+            <documentation>Defines the URI to the home icon, such as company or product logo.</documentation>
+        </property>
+        <property name="showMenuButton" type="sap.ui.core/boolean" defaultValue="false" group="Appearance">
+            <documentation>Determines whether a hamburger menu button is displayed (as an alternative
+if the &lt;code&gt;menu&lt;/code&gt; aggregation is not used).</documentation>
+        </property>
+        <property name="showNavButton" type="sap.ui.core/boolean" defaultValue="false" group="Appearance">
+            <documentation>Determines whether a back navigation button is displayed.</documentation>
+        </property>
+        <property name="showCopilot" type="sap.ui.core/boolean" defaultValue="false" group="Appearance">
+            <documentation>Determines whether the SAP CoPilot icon is displayed.</documentation>
+        </property>
+        <property name="showSearch" type="sap.ui.core/boolean" defaultValue="false" group="Appearance">
+            <documentation>Determines whether the search button is displayed.</documentation>
+        </property>
+        <property name="showNotifications" type="sap.ui.core/boolean" defaultValue="false" group="Appearance">
+            <documentation>Determines whether the notifications button is displayed.</documentation>
+        </property>
+        <property name="showProductSwitcher" type="sap.ui.core/boolean" defaultValue="false" group="Appearance">
+            <documentation>Determines whether the product switcher button is displayed.</documentation>
+        </property>
+        <property name="notificationsNumber" type="sap.ui.core/string" defaultValue="" group="Appearance" since="1.64">
+            <documentation>Defines the displayed number of upcoming notifications.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="homeIconPressed" allowPreventDefault="false">
+            <documentation>Fired when the &lt;code&gt;homeIcon&lt;/code&gt; is pressed.</documentation>
+            <parameters>
+                <parameter name="icon" type="sap.m/Image">
+                    <documentation>Reference to the image that has been pressed</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="menuButtonPressed" allowPreventDefault="false">
+            <documentation>Fired when the alternative menu button is pressed.</documentation>
+            <parameters>
+                <parameter name="button" type="sap.m/Button">
+                    <documentation>Reference to the button that has been pressed</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="navButtonPressed" allowPreventDefault="false">
+            <documentation>Fired when the navigation/back button is pressed.</documentation>
+            <parameters>
+                <parameter name="button" type="sap.m/Button">
+                    <documentation>Reference to the button that has been pressed</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="copilotPressed" allowPreventDefault="false">
+            <documentation>Fired when the SAP CoPilot icon is pressed.</documentation>
+            <parameters>
+                <parameter name="image" type="sap.m/Image">
+                    <documentation>Reference to the button that has been pressed</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="searchButtonPressed" allowPreventDefault="false">
+            <documentation>Fired when the search button is pressed.</documentation>
+            <parameters>
+                <parameter name="button" type="sap.m/Button">
+                    <documentation>Reference to the button that has been pressed</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="notificationsPressed" allowPreventDefault="false">
+            <documentation>Fired when the notifications button is pressed.</documentation>
+            <parameters>
+                <parameter name="button" type="sap.m/Button">
+                    <documentation>Reference to the button that has been pressed</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="productSwitcherPressed" allowPreventDefault="false">
+            <documentation>Fired when the product switcher button is pressed.</documentation>
+            <parameters>
+                <parameter name="button" type="sap.m/Button">
+                    <documentation>Reference to the button that has been pressed</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="avatarPressed" allowPreventDefault="false">
+            <documentation>Fired when the profile avatar is pressed.</documentation>
+            <parameters>
+                <parameter name="avatar" type="sap.f/Avatar">
+                    <documentation>Reference to the button that has been pressed</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="menu" type="sap.m/Menu" cardinality="0..1">
+            <documentation>The menu attached to the main title.</documentation>
+        </aggregation>
+        <aggregation name="profile" type="sap.f/Avatar" cardinality="0..1">
+            <documentation>The profile avatar.</documentation>
+        </aggregation>
+        <aggregation name="additionalContent" type="sap.f/IShellBar" cardinality="0..n">
+            <documentation>Additional content to be displayed in the control.
+
+&lt;b&gt;Note:&lt;/b&gt; Only controls implementing the &lt;code&gt;{@link sap.f.IShellBar}&lt;/code&gt; interface are allowed.</documentation>
+        </aggregation>
+        <aggregation name="_overflowToolbar" type="sap.m/OverflowToolbar" cardinality="0..1" visibility="hidden">
+            <documentation>Holds the internally created OverflowToolbar.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

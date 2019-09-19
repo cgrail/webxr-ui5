@@ -1,0 +1,119 @@
+<core:FragmentDefinition
+		xmlns="sap.suite.ui.microchart"
+		xmlns:core="sap.ui.core"
+		xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1">
+
+	<AreaMicroChart class="sapUiSmallMargin">
+		<template:with path="areaMicroChart>MeasureAttributes/0/DataPoint/$AnnotationPath/" var="DataPoint">
+			<template:with path="areaMicroChart>Dimensions/0/" var="Dimension">
+				<chart>
+					<AreaMicroChartItem
+							points="{areaMicroChart>@@sap.ui.mdc.odata.v4.microchart.MicroChart._helper.getEntitySetPathBinding}">
+						<points>
+							<AreaMicroChartPoint x="{Dimension>@@.MODEL.value}"
+												 y="{path:'DataPoint>Value@@.MODEL.value', type:'sap.ui.model.odata.type.Decimal'}"/>
+						</points>
+					</AreaMicroChartItem>
+				</chart>
+				<target>
+					<AreaMicroChartItem
+							points="{areaMicroChart>@@sap.ui.mdc.odata.v4.microchart.MicroChart._helper.getEntitySetPathBinding}">
+						<points>
+							<AreaMicroChartPoint x="{Dimension>@@.MODEL.value}"
+												 y="{path:'DataPoint>TargetValue@@.MODEL.value', type:'sap.ui.model.odata.type.Decimal'}"/>
+						</points>
+					</AreaMicroChartItem>
+				</target>
+
+				<template:with path="DataPoint>CriticalityCalculation" var="CriticalityCalculation">
+					<template:if
+							test="{= ${CriticalityCalculation>ImprovementDirection/$EnumMember} === 'com.sap.vocabularies.UI.v1.ImprovementDirectionType/Minimize'}">
+						<template:then>
+							<minThreshold>
+								<AreaMicroChartItem color="Good"
+													points="{areaMicroChart>@@sap.ui.mdc.odata.v4.microchart.MicroChart._helper.getEntitySetPathBinding}">
+									<points>
+										<AreaMicroChartPoint x="{Dimension>@@.MODEL.value}"
+															 y="{path:'CriticalityCalculation>ToleranceRangeHighValue@@.MODEL.value', type:'sap.ui.model.odata.type.Decimal'}"/>
+									</points>
+								</AreaMicroChartItem>
+							</minThreshold>
+							<maxThreshold>
+								<AreaMicroChartItem color="Error"
+													points="{areaMicroChart>@@sap.ui.mdc.odata.v4.microchart.MicroChart._helper.getEntitySetPathBinding}">
+									<points>
+										<AreaMicroChartPoint x="{Dimension>@@.MODEL.value}"
+															 y="{path:'CriticalityCalculation>DeviationRangeHighValue@@.MODEL.value', type:'sap.ui.model.odata.type.Decimal'}"/>
+									</points>
+								</AreaMicroChartItem>
+							</maxThreshold>
+						</template:then>
+						<template:elseif
+								test="{= ${CriticalityCalculation>ImprovementDirection/$EnumMember} === 'com.sap.vocabularies.UI.v1.ImprovementDirectionType/Maximize'}">
+							<minThreshold>
+								<AreaMicroChartItem color="Error"
+													points="{areaMicroChart>@@sap.ui.mdc.odata.v4.microchart.MicroChart._helper.getEntitySetPathBinding}">
+									<points>
+										<AreaMicroChartPoint x="{Dimension>@@.MODEL.value}"
+															 y="{path:'CriticalityCalculation>DeviationRangeLowValue@@.MODEL.value', type:'sap.ui.model.odata.type.Decimal'}"/>
+									</points>
+								</AreaMicroChartItem>
+							</minThreshold>
+							<maxThreshold>
+								<AreaMicroChartItem color="Good"
+													points="{areaMicroChart>@@sap.ui.mdc.odata.v4.microchart.MicroChart._helper.getEntitySetPathBinding}">
+									<points>
+										<AreaMicroChartPoint x="{Dimension>@@.MODEL.value}"
+															 y="{path:'CriticalityCalculation>ToleranceRangeLowValue@@.MODEL.value', type:'sap.ui.model.odata.type.Decimal'}"/>
+									</points>
+								</AreaMicroChartItem>
+							</maxThreshold>
+						</template:elseif>
+						<template:elseif
+								test="{= ${CriticalityCalculation>ImprovementDirection/$EnumMember} === 'com.sap.vocabularies.UI.v1.ImprovementDirectionType/Target'}">
+							<minThreshold>
+								<AreaMicroChartItem color="Error"
+													points="{areaMicroChart>@@sap.ui.mdc.odata.v4.microchart.MicroChart._helper.getEntitySetPathBinding}">
+									<points>
+										<AreaMicroChartPoint x="{Dimension>@@.MODEL.value}"
+															 y="{path:'CriticalityCalculation>DeviationRangeLowValue@@.MODEL.value', type:'sap.ui.model.odata.type.Decimal'}"/>
+									</points>
+								</AreaMicroChartItem>
+							</minThreshold>
+							<maxThreshold>
+								<AreaMicroChartItem color="Error"
+													points="{areaMicroChart>@@sap.ui.mdc.odata.v4.microchart.MicroChart._helper.getEntitySetPathBinding}">
+									<points>
+										<AreaMicroChartPoint x="{Dimension>@@.MODEL.value}"
+															 y="{path:'CriticalityCalculation>DeviationRangeHighValue@@.MODEL.value', type:'sap.ui.model.odata.type.Decimal'}"/>
+									</points>
+								</AreaMicroChartItem>
+							</maxThreshold>
+							<innerMinThreshold>
+								<AreaMicroChartItem color="Good"
+													points="{areaMicroChart>@@sap.ui.mdc.odata.v4.microchart.MicroChart._helper.getEntitySetPathBinding}">
+									<points>
+										<AreaMicroChartPoint x="{Dimension>@@.MODEL.value}"
+															 y="{path:'CriticalityCalculation>ToleranceRangeLowValue@@.MODEL.value', type:'sap.ui.model.odata.type.Decimal'}"/>
+									</points>
+								</AreaMicroChartItem>
+							</innerMinThreshold>
+							<innerMaxThreshold>
+								<AreaMicroChartItem color="Good"
+													points="{areaMicroChart>@@sap.ui.mdc.odata.v4.microchart.MicroChart._helper.getEntitySetPathBinding}">
+									<points>
+										<AreaMicroChartPoint x="{Dimension>@@.MODEL.value}"
+															 y="{path:'CriticalityCalculation>ToleranceRangeHighValue@@.MODEL.value', type:'sap.ui.model.odata.type.Decimal'}"/>
+									</points>
+								</AreaMicroChartItem>
+							</innerMaxThreshold>
+						</template:elseif>
+
+					</template:if>
+				</template:with>
+
+			</template:with>
+		</template:with>
+	</AreaMicroChart>
+
+</core:FragmentDefinition>

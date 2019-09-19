@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>FacetFilterItem</name>
+    <derived/>
+    <documentation>Represents a value for the {@link sap.m.FacetFilterList} control.</documentation>
+    <baseType>sap.m/ListItemBase</baseType>
+    <properties>
+        <property name="key" type="sap.ui.core/string" group="Data">
+            <documentation>Can be used as input for subsequent actions.</documentation>
+        </property>
+        <property name="text" type="sap.ui.core/string" group="Misc">
+            <documentation>Determines the text to be displayed for the item.</documentation>
+        </property>
+        <property name="count" type="sap.ui.core/int" group="Misc">
+            <documentation>Defines the number of objects that match this item in the target data set.</documentation>
+            <deprecation since="1.18.11">replaced by &lt;code&gt;setCounter&lt;/code&gt; method</deprecation>
+        </property>
+    </properties>
+</control>

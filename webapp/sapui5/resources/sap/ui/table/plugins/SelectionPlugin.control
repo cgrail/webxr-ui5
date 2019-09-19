@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>plugins/SelectionPlugin</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Implements the selection methods for a table.</documentation>
+    <since>1.64</since>
+    <developmentState state="experimental" since="1.64"></developmentState>
+    <abstract/>
+    <properties>
+        <property name="selectionMode" type="sap.ui.table/SelectionMode" defaultValue="MultiToggle">
+            <documentation>Defines whether single or multiple items can be selected.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="selectionChange" allowPreventDefault="false">
+            <documentation>This event is fired when the selection is changed.</documentation>
+        </event>
+    </events>
+</control>

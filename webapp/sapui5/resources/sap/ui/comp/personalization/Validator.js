@@ -1,0 +1,7 @@
+/*
+ * ! SAPUI5
+
+		(c) Copyright 2009-2019 SAP SE. All rights reserved
+	
+ */
+sap.ui.define(['sap/ui/comp/library','sap/m/library','sap/ui/core/library'],function(l,M,c){"use strict";var a=c.MessageType;var P=M.P13nPanelType;var T=l.personalization.TableType;var V={checkGroupAndColumns:function(t,s,C,p,r){if(t!==T.AnalyticalTable||!s.group||!s.columns){return Promise.resolve(r);}for(var b in C){var d=s.columns.controller.isColumnSelected(p.columns,b);var g=s.group.controller.isGroupSelected(p.group,b);if(g&&!d){r.push({columnKey:b,panelTypes:[P.group,P.columns],messageType:a.Warning,messageText:sap.ui.getCore().getLibraryResourceBundle("sap.ui.comp").getText("PERSODIALOG_MSG_GROUPING_NOT_POSSIBLE_DESCRIPTION")});}}return Promise.resolve(r);},checkSaveChanges:function(t,s,p,r){if(t!==T.SelectionWrapper){return Promise.resolve(r);}return s.selection.payload.callbackSaveChanges(p).then(function(S){if(S){return r;}r.push({panelTypes:[P.selection],messageType:a.Error,messageText:sap.ui.getCore().getLibraryResourceBundle("sap.ui.comp").getText("PERSODIALOG_MSG_CHANGES_SAVE_FAILED")});return r;});},checkChartConsistency:function(t,s,C,r){if(t!==T.ChartWrapper){return Promise.resolve(r);}var i=s.dimeasure.controller.isChartConsistent(C);if(!i){r.push({panelTypes:[P.dimeasure],messageType:a.Error,messageText:sap.ui.getCore().getLibraryResourceBundle("sap.ui.comp").getText("PERSODIALOG_MSG_VALIDATION_CHARTTYPE")});}return Promise.resolve(r);}};return V;},true);

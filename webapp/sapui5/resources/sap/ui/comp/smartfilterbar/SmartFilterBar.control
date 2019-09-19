@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartfilterbar/SmartFilterBar</name>
+    <derived/>
+    <author>SAP</author>
+    <documentation>The SmartFilterBar control uses the OData metadata of an entity in order to create a FilterBar.&lt;br&gt;
+       Whether a field is visible on the FilterBar, supports type-ahead and value help, for example, is automatically determined. When you use
+       control configurations and group configurations it is possible to configure the FilterBar and adapt it according to your needs.&lt;br&gt;
+       &lt;b&gt;&lt;i&gt;Note:&lt;/i&gt;&lt;/b&gt;&lt;br&gt;
+       Most of the attributes/properties are not dynamic and cannot be changed once the control has been initialized.</documentation>
+    <baseType>sap.ui.comp/filterbar/FilterBar</baseType>
+    <properties>
+        <property name="entityType" type="sap.ui.core/string" group="Misc">
+            <documentation>The OData entity type whose metadata is used to create the SmartFilterBar. &lt;b&gt;Note:&lt;/b&gt; Changing this value after the
+SmartFilterBar is initialized (&lt;code&gt;initialise&lt;/code&gt; event was fired) has no effect.</documentation>
+            <deprecation since="1.40">Use &lt;code&gt;entitySet&lt;/code&gt; property instead of this one, to enable V4 annotation support</deprecation>
+        </property>
+        <property name="entitySet" type="sap.ui.core/string" group="Misc">
+            <documentation>The OData entity set whose metadata is used to create the SmartFilterBar. &lt;b&gt;Note:&lt;/b&gt; Changing this value after the
+SmartFilterBar is initialized (&lt;code&gt;initialise&lt;/code&gt; event was fired) has no effect.</documentation>
+        </property>
+        <property name="resourceUri" type="sap.ui.core/string" group="Misc">
+            <documentation>Optional. The OData service URL. If it is not specified, the service URL from the OData model (this.getModel()) will be used.
+&lt;b&gt;Note:&lt;/b&gt; Changing this value after the SmartFilterBar is initialized (initialise event was fired) has no effect.</documentation>
+            <deprecation since="1.29">Set an ODataModel as the main model on your control/view instead</deprecation>
+        </property>
+        <property name="basicSearchFieldName" type="sap.ui.core/string" group="Misc">
+            <documentation>Name of the field that is the focus of the basic search.</documentation>
+        </property>
+        <property name="enableBasicSearch" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>Enables the basic search field. The entered value can be accessed with
+{@link sap.ui.comp.smartfilterbar.SmartFilterBar#getParameters}. &lt;b&gt;Note:&lt;/b&gt; When the SmartFilterBar control is used with a
+{@link sap.ui.comp.smarttable.SmartTable} control the parameters are handled automatically. Therefore, this must only be enabled
+for OData service entities that support basic search.</documentation>
+        </property>
+        <property name="liveMode" type="sap.ui.core/boolean" defaultValue="false" group="Misc" since="1.40">
+            <documentation>If set the search will be automatically triggered, when a filter value was set via the &lt;B&gt;change&lt;/B&gt; event.&lt;br&gt;
+&lt;b&gt;Note:&lt;/b&gt; The liveMode only operates on non-mobile scenarios.&lt;br&gt;
+Additionally, if liveMode is set, the following applies:
+&lt;ul&gt;
+&lt;li&gt;The error messagebox is not displayed, and the &lt;code&gt;showMessages&lt;/code&gt; property is ignored.&lt;/li&gt;
+&lt;li&gt;The search is triggered after a variant has been selected.&lt;/li&gt;
+&lt;li&gt;Execute on Select for &lt;code&gt;VariantManagement&lt;/code&gt; is not shown and not taken into account&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+        </property>
+        <property name="showMessages" type="sap.ui.core/boolean" defaultValue="true" group="Misc" since="1.40">
+            <documentation>If set to &lt;code&gt;false&lt;/code&gt; eventual errors during the search, will not be displayed in a messagebox.</documentation>
+        </property>
+        <property name="considerAnalyticalParameters" type="sap.ui.core/boolean" defaultValue="false" group="Misc" since="1.42.0">
+            <documentation>Indicates if the analytical parameters (SelectionVariant) must be taken into consideration.</documentation>
+            <developmentState state="experimental" since="1.42.0">This property is NOT stable yet. Use at your own risk.</developmentState>
+        </property>
+        <property name="useDateRangeType" type="sap.ui.core/boolean" group="Misc" since="1.46.0">
+            <documentation>If set to &lt;code&gt;true&lt;/code&gt; all date fields with filter restriction &lt;code&gt;interval&lt;/code&gt; will be treated as
+&lt;code&gt;DateTimeRange&lt;/code&gt; filters. The &lt;code&gt;useDateRangeType&lt;/code&gt; can be set only once during initialization. &lt;b&gt;Note:&lt;/b&gt;
+If this property is set to &lt;code&gt;true&lt;/code&gt; and any date filters with filter restriction &lt;code&gt;interval&lt;/code&gt; were stored as
+part of a variant, the values of these filters cannot be applied. If this property is set to &lt;code&gt;false&lt;/code&gt;, any previously
+stored filters which were treated as type &lt;code&gt;DateTimeRange&lt;/code&gt; based on the former setting, cannot be converted back to the
+standard date interval.</documentation>
+        </property>
+        <property name="suppressSelection" type="sap.ui.core/boolean" defaultValue="false" group="Misc" since="1.44.0">
+            <documentation>If set to &lt;code&gt;true&lt;/code&gt; all search requests will be ignored. This functionality is only intended to be used internally to
+enable an optimal solution when the filter bar is controlled by the smart templates. NOTE: As long as this property is set to
+&lt;code&gt;true&lt;/code&gt;, all search requests will be neglected.</documentation>
+            <developmentState state="experimental" since="1.44.0">This property is NOT stable yet. Use at your own risk.</developmentState>
+        </property>
+        <property name="considerSelectionVariants" type="sap.ui.core/boolean" defaultValue="false" group="Misc" since="1.48.0">
+            <documentation>Indicates if the annotation &lt;code&gt;com.sap.vocabularies.UI.v1.SelectionVariant&lt;/code&gt; is taken into account.</documentation>
+        </property>
+        <property name="defaultSelectionVariantName" type="sap.ui.core/string" group="Misc" since="1.48.0">
+            <documentation>Determines one specific variant that is based on the &lt;code&gt;com.sap.vocabularies.UI.v1.SelectionVariant&lt;/code&gt; annotation, which
+is then used as the default variant.&lt;br&gt;
+This property is only relevant in case &lt;code&gt;considerSelectionVariants&lt;/code&gt; is set to &lt;code&gt;true&lt;/code&gt; and will only be
+applied if there is no user-defined default variant specified.</documentation>
+        </property>
+        <property name="useProvidedNavigationProperties" type="sap.ui.core/boolean" defaultValue="false" group="Misc" since="1.48">
+            <documentation>If set to &lt;code&gt;true&lt;/code&gt;, only the navigation properties mentioned in property
+{@link sap.ui.comp.smartfilterbar.SmartFilterBarl#getNavigationProperties} are checked for further filters.</documentation>
+        </property>
+        <property name="navigationProperties" type="sap.ui.core/string" defaultValue="" group="Misc" since="1.48">
+            <documentation>This property is only evaluated if the property
+{@link sap.ui.comp.smartfilterbar.SmartFilterBar#getUseProvidedNavigationProperties} is set to &lt;code&gt;true&lt;/code&gt;. It contains a
+comma-separated list of navigation property names which are checked for filters.&lt;br&gt;</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="pendingChange" since="1.36" allowPreventDefault="false">
+            <documentation>This event is fired after the pending state of the &lt;code&gt;FilterBar&lt;/code&gt; control changes.</documentation>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="controlConfiguration" type="sap.ui.comp/smartfilterbar/ControlConfiguration" cardinality="0..n">
+            <documentation>Using control configurations you can add additional configuration to filter fields, for example set custom labels, change the order
+of fields, or change the filter field control type. &lt;b&gt;Note:&lt;/b&gt; Changing the values here after the SmartFilter is initialized (&lt;code&gt;initialise&lt;/code&gt;
+event was fired) has no effect.</documentation>
+        </aggregation>
+        <aggregation name="groupConfiguration" type="sap.ui.comp/smartfilterbar/GroupConfiguration" cardinality="0..n">
+            <documentation>Provides the possibility to add additional configuration to groups. Groups are used to show fields in the advanced area of the
+SmartFilterBar. With additional configuration, you can for example set custom labels or change the order of groups. &lt;b&gt;Note:&lt;/b&gt;
+Changing the values here after the SmartFilter is initialized (&lt;code&gt;initialise&lt;/code&gt; event was fired) has no effect.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="smartVariant" type="sap.ui.comp/smartvariants/SmartVariantManagement" cardinality="0..1" since="1.38">
+            <documentation>Identifies the SmartVariant control which should be used for the personalization.</documentation>
+        </association>
+    </associations>
+    <methods>
+        <method name="applyVariant" type="sap.ui.core/void">
+            <documentation>Applies the current variant as opposed to &lt;code&gt;fetchVariant&lt;/code&gt;. The variant is retrieved via the flex layer.</documentation>
+            <parameters>
+                <parameter name="variant" type="sap.ui.core/object">
+                    <documentation>The variant that must be applied. oVariant must contain a valid JSON object.</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="fetchVariant" type="sap.ui.core/object">
+            <documentation>Retrieves the currently visible filters and the values for storing them as variants. The result will be passed on as a JSON object to the
+callee smart variant control.</documentation>
+        </method>
+    </methods>
+</control>

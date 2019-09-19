@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>HeaderContainer</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The container that provides a horizontal layout. It provides a horizontal scrolling on the mobile devices.
+On the desktop, it provides scroll left and scroll right buttons. This control supports keyboard navigation.
+You can use left and right arrow keys to navigate through the inner content. The Home key puts focus on the first control and the End key puts focus on the last control.
+Use Enter or Space key to choose the control.</documentation>
+    <since>1.44.0</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="scrollStep" type="sap.ui.core/int" defaultValue="300" group="Behavior">
+            <documentation>Number of pixels to scroll when the user chooses Next or Previous buttons. Relevant only for desktop.</documentation>
+        </property>
+        <property name="scrollStepByItem" type="sap.ui.core/int" defaultValue="1" group="Behavior">
+            <documentation>Number of items to scroll when the user chose Next or Previous buttons. Relevant only for desktop.
+Have priority over 'ScrollStep'. Have to be positive number.</documentation>
+        </property>
+        <property name="scrollTime" type="sap.ui.core/int" defaultValue="500" group="Behavior">
+            <documentation>Scroll animation time in milliseconds.</documentation>
+        </property>
+        <property name="showOverflowItem" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Indicates whether the incomplete item on the edge of visible area is displayed or hidden.</documentation>
+        </property>
+        <property name="showDividers" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>If set to true, it shows dividers between the different content controls.</documentation>
+        </property>
+        <property name="orientation" type="sap.ui.core/Orientation" defaultValue="Horizontal" group="Appearance">
+            <documentation>The orientation of the HeaderContainer. There are two orientation modes: horizontal and vertical. In horizontal mode
+the content controls are displayed next to each other, in vertical mode the content controls are displayed
+on top of each other.</documentation>
+        </property>
+        <property name="backgroundDesign" type="sap.m/BackgroundDesign" defaultValue="Transparent" group="Appearance">
+            <documentation>Specifies the background color of the content. The visualization of the different options depends on the used theme.</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" group="Appearance">
+            <documentation>The width of the whole HeaderContainer. If not specified, it is rendered as '100%' in horizontal orientation and as 'auto' in vertical orientation.</documentation>
+        </property>
+        <property name="height" type="sap.ui.core/CSSSize" group="Appearance">
+            <documentation>The height of the whole HeaderContainer. If not specified, it is rendered as 'auto' in horizontal orientation and as '100%' in vertical orientation.</documentation>
+        </property>
+    </properties>
+    <aggregations default="content">
+        <aggregation name="content" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Content to add to HeaderContainer.</documentation>
+        </aggregation>
+        <aggregation name="_scrollContainer" type="sap.m/ScrollContainer" cardinality="0..1" visibility="hidden">
+            <documentation>Scroll container for smooth scrolling on different platforms.</documentation>
+        </aggregation>
+        <aggregation name="_prevButton" type="sap.ui.core/Control" cardinality="0..1" visibility="hidden">
+            <documentation>Button that allows to scroll to previous section.</documentation>
+        </aggregation>
+        <aggregation name="_nextButton" type="sap.ui.core/Control" cardinality="0..1" visibility="hidden">
+            <documentation>Button that allows to scroll to next section.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n" since="1.62.0">
+            <documentation>Controls or IDs that label controls in the &lt;code&gt;content&lt;/code&gt; aggregation.
+Each ariaLabelledBy item is assigned to its appropriate counterpart in the &lt;code&gt;content&lt;/code&gt; aggregation.
+&lt;br&gt;If you want to annotate all the controls in the &lt;code&gt;content&lt;/code&gt; aggregation, add the same number of items to the &lt;code&gt;ariaLabelledBy&lt;/code&gt; annotation.
+&lt;br&gt;Can be used by screen reader software.</documentation>
+        </association>
+    </associations>
+</control>

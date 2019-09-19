@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>state/UIState</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Creates a new instance of an UIState class.</documentation>
+    <since>1.50</since>
+    <properties>
+        <property name="presentationVariant" type="sap.ui.core/object">
+            <documentation>Object representing the presentation variant. The structure looks like:
+
+&lt;pre&gt;&lt;code&gt;
+{
+	ContextUrl: {string},
+	MaxItems: {int},
+ SortOrder: [],
+	GroupBy: [],
+	Total: [],
+	RequestAtLeast: [],
+	Visualizations: []
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;b&gt;Note:&lt;/b&gt;
+&lt;ul&gt;
+&lt;li&gt; &lt;code&gt;PresentationVariantID&lt;/code&gt; property is not provided&lt;/li&gt;
+&lt;li&gt; &lt;code&gt;Text&lt;/code&gt; property is not provided because it is translated text&lt;/li&gt;
+&lt;li&gt; &lt;code&gt;TotalBy&lt;/code&gt; is not supported yet&lt;/li&gt;
+&lt;li&gt; &lt;code&gt;IncludeGrandTotal&lt;/code&gt; is not supported yet&lt;/li&gt;
+&lt;li&gt; &lt;code&gt;InitialExpansionLevel&lt;/code&gt; is not supported yet&lt;/li&gt;
+&lt;li&gt; &lt;code&gt;Title&lt;/code&gt; of &lt;code&gt;Visualizations.Content&lt;/code&gt; property is not provided because it is translated text&lt;/li&gt;
+&lt;li&gt; &lt;code&gt;Description&lt;/code&gt; of &lt;code&gt;Visualizations.Content&lt;/code&gt; property is not provided because it is translated text&lt;/li&gt;
+&lt;li&gt; &lt;code&gt;VariantName&lt;/code&gt; property is not part of specified DataSuiteFormat yet
+&lt;/ul&gt;</documentation>
+        </property>
+        <property name="selectionVariant" type="sap.ui.core/object">
+            <documentation>Object representing the selection variant. The structure looks like:
+
+&lt;pre&gt;&lt;code&gt;
+{
+ SelectionVariant: {
+     SelectionVariantID: {string},
+		Parameters: [],
+		SelectOptions: []
+}
+&lt;/code&gt;&lt;/pre&gt;</documentation>
+        </property>
+        <property name="variantName" type="sap.ui.core/string">
+            <documentation>Variant name.</documentation>
+        </property>
+        <property name="valueTexts" type="sap.ui.core/object">
+            <documentation>Structure containing filter value keys and its corresponding descriptions.
+
+&lt;pre&gt;&lt;code&gt;
+{
+	Texts: [
+		{
+			Language: string,
+			ContextUrl: string,
+			PropertyTexts: [
+				{
+					PropertyName: string,
+					ValueTexts: [
+						{
+							PropertyValue: string,
+							Text: string
+						}
+					]
+				}
+			]
+		}
+	]
+}
+&lt;/code&gt;&lt;/pre&gt;</documentation>
+        </property>
+    </properties>
+</control>

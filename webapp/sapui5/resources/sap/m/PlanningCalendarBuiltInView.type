@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>PlanningCalendarBuiltInView</name>
+    <derived/>
+    <documentation>A list of the default built-in views in a {@link sap.m.PlanningCalendar}, described by their keys.</documentation>
+    <since>1.50</since>
+    <enumeration>
+        <value name="Hour">
+            <documentation>Represents the key of the built-in view, in which the intervals have the size of one hour.</documentation>
+        </value>
+        <value name="Day">
+            <documentation>Represents the key of the built-in view, in which the intervals have the size of one day.</documentation>
+        </value>
+        <value name="Month">
+            <documentation>Represents the key of the built-in view, in which the intervals have the size of one month.</documentation>
+        </value>
+        <value name="Week">
+            <documentation>Represents the key of the built-in view, in which the intervals have the size of one day
+where 7 days are displayed, starting with the first day of the week.</documentation>
+        </value>
+        <value name="OneMonth" value="One Month">
+            <documentation>Represents the key of the built-in view, in which the intervals have the size of one day
+where 31 days are displayed, starting with the first day of the month.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

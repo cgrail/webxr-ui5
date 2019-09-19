@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>RatingIndicator</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The rating indicator is used to display a specific number of icons that are used to rate an item. Additionally it is also used to display the average over all ratings.
+&lt;h3&gt;Structure&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The rating indicator can use different icons (default: stars) which are defined as URIs in the properties &lt;code&gt;iconHovered&lt;/code&gt;, &lt;code&gt;iconSelected&lt;/code&gt; and &lt;code&gt;iconUnselected&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;The rating indicator can display half-values ({@link sap.m.RatingIndicatorVisualMode visualMode} = Half) when it is used to show the average. Half-values can't be selected by the user.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Usage&lt;/h3&gt;
+The preferred number of icons is between 5 (default) and 7.
+&lt;h3&gt;Responsive Behavior&lt;/h3&gt;
+You can display icons in 4 recommended sizes:
+&lt;ul&gt;
+&lt;li&gt;large - 32px&lt;/li&gt;
+&lt;li&gt;medium(default) - 22px&lt;/li&gt;
+&lt;li&gt;small - 16px&lt;/li&gt;
+&lt;li&gt;XS - 12px&lt;/li&gt;
+&lt;/ul&gt;
+&lt;b&gt;Note:&lt;/b&gt; If no icon size is set, the rating indicator will set it according to the content density.&lt;/h4&gt;</documentation>
+    <since>1.14</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="enabled" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Value "true" is required to let the user rate with this control. It is recommended to set this parameter to "false" for the "Small" size which is meant for indicating a value only</documentation>
+        </property>
+        <property name="maxValue" type="sap.ui.core/int" defaultValue="5" group="Behavior">
+            <documentation>The number of displayed rating symbols</documentation>
+        </property>
+        <property name="value" type="sap.ui.core/float" defaultValue="0" group="Behavior" bindable="bindable">
+            <documentation>The indicated value of the rating</documentation>
+        </property>
+        <property name="iconSize" type="sap.ui.core/CSSSize" group="Behavior">
+            <documentation>The Size of the image or icon to be displayed. The default value depends on the theme. Please be sure that the size is corresponding to a full pixel value as some browsers don't support subpixel calculations. Recommended size is 1.375rem (22px) for normal, 1rem (16px) for small, and 2rem (32px) for large icons correspondingly.</documentation>
+        </property>
+        <property name="iconSelected" type="sap.ui.core/URI" group="Behavior">
+            <documentation>The URI to the icon font icon or image that will be displayed for selected rating symbols. A star icon will be used if the property is not set</documentation>
+        </property>
+        <property name="iconUnselected" type="sap.ui.core/URI" group="Behavior">
+            <documentation>The URI to the icon font icon or image that will be displayed for all unselected rating symbols. A star icon will be used if the property is not set</documentation>
+        </property>
+        <property name="iconHovered" type="sap.ui.core/URI" group="Behavior">
+            <documentation>The URI to the icon font icon or image that will be displayed for hovered rating symbols. A star icon will be used if the property is not set</documentation>
+        </property>
+        <property name="visualMode" type="sap.m/RatingIndicatorVisualMode" defaultValue="Half" group="Behavior">
+            <documentation>Defines how float values are visualized: Full, Half (see enumeration RatingIndicatorVisualMode)</documentation>
+        </property>
+        <property name="displayOnly" type="sap.ui.core/boolean" defaultValue="false" group="Behavior" since="1.50.0">
+            <documentation>The RatingIndicator in displayOnly mode is not interactive, not editable, not focusable, and not in the tab chain. This setting is used for forms in review mode.</documentation>
+        </property>
+        <property name="editable" type="sap.ui.core/boolean" defaultValue="true" group="Behavior" since="1.52.0">
+            <documentation>Defines whether the user is allowed to edit the RatingIndicator. If editable is false the control is focusable, and in the tab chain but not interactive.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="change" allowPreventDefault="false">
+            <documentation>The event is fired when the user has done a rating.</documentation>
+            <parameters>
+                <parameter name="value" type="sap.ui.core/int">
+                    <documentation>The rated value</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="liveChange" allowPreventDefault="false">
+            <documentation>This event is triggered during the dragging period, each time the rating value changes.</documentation>
+            <parameters>
+                <parameter name="value" type="sap.ui.core/float">
+                    <documentation>The current value of the rating after a live change event.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <associations>
+        <association name="ariaDescribedBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / ids which describe this control (see WAI-ARIA attribute aria-describedby).</documentation>
+        </association>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / ids which label this control (see WAI-ARIA attribute aria-labelledby).</documentation>
+        </association>
+    </associations>
+</control>

@@ -1,0 +1,112 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": ".library"
+		},
+		{
+			"name": ".theming"
+		},
+		{
+			"name": "library-dbg.js",
+			"module": "sap/ui/generic/template/library.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/comp/library.js",
+				"sap/ui/core/library.js",
+				"sap/ui/generic/app/library.js"
+			]
+		},
+		{
+			"name": "library-h2-preload-dbg.js",
+			"module": "sap/ui/generic/template/library-h2-preload.js",
+			"isDebug": true,
+			"merged": true,
+			"required": [
+				"sap/ui/comp/library.js",
+				"sap/ui/core/library.js",
+				"sap/ui/generic/app/library.js"
+			],
+			"included": [
+				"sap/ui/generic/template/library.js",
+				"sap/ui/generic/template/manifest.json"
+			]
+		},
+		{
+			"name": "library-h2-preload.js",
+			"module": "sap/ui/generic/template/library-h2-preload.js",
+			"merged": true,
+			"required": [
+				"sap/ui/comp/library.js",
+				"sap/ui/core/library.js",
+				"sap/ui/generic/app/library.js"
+			],
+			"included": [
+				"sap/ui/generic/template/library.js",
+				"sap/ui/generic/template/manifest.json"
+			]
+		},
+		{
+			"name": "library-h2-preload.js.map",
+			"isDebug": true
+		},
+		{
+			"name": "library-preload.js",
+			"module": "sap/ui/generic/template/library-preload.js",
+			"merged": true,
+			"required": [
+				"sap/ui/comp/library.js",
+				"sap/ui/core/library.js",
+				"sap/ui/generic/app/library.js"
+			],
+			"included": [
+				"sap/ui/generic/template/library.js",
+				"sap/ui/generic/template/manifest.json"
+			]
+		},
+		{
+			"name": "library-preload.js.map",
+			"isDebug": true
+		},
+		{
+			"name": "library-preload.json",
+			"module": "sap/ui/generic/template/library-preload.json",
+			"merged": true,
+			"required": [
+				"sap/ui/comp/library-preload.json",
+				"sap/ui/comp/library.js",
+				"sap/ui/core/library-preload.json",
+				"sap/ui/core/library.js",
+				"sap/ui/generic/app/library.js"
+			],
+			"included": [
+				"sap/ui/generic/template/library.js",
+				"sap/ui/generic/template/manifest.json"
+			]
+		},
+		{
+			"name": "library.dependencies.json",
+			"designtime": true
+		},
+		{
+			"name": "library.dependencies.xml",
+			"designtime": true
+		},
+		{
+			"name": "library.js",
+			"module": "sap/ui/generic/template/library.js",
+			"required": [
+				"sap/ui/comp/library.js",
+				"sap/ui/core/library.js",
+				"sap/ui/generic/app/library.js"
+			]
+		},
+		{
+			"name": "manifest.json",
+			"module": "sap/ui/generic/template/manifest.json"
+		},
+		{
+			"name": "resources.json"
+		}
+	]
+}

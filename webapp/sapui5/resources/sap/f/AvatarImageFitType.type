@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>AvatarImageFitType</name>
+    <derived/>
+    <documentation>Types of image size and position that determine how an image fits in the {@link sap.f.Avatar} control area.</documentation>
+    <since>1.46</since>
+    <enumeration>
+        <value name="Cover">
+            <documentation>The image is scaled to be large enough so that the control area is completely covered.</documentation>
+        </value>
+        <value name="Contain">
+            <documentation>The image is scaled to the largest size so that both its width and height can fit in the control area.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

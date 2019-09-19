@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Button</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Enables users to trigger actions such as save or print. For the button UI, you can define some text or an icon, or both.</documentation>
+    <deprecation since="1.38">replaced by {@link sap.m.Button}</deprecation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="text" type="sap.ui.core/string" defaultValue="" group="Appearance">
+            <documentation>Button text displayed at runtime.</documentation>
+        </property>
+        <property name="enabled" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Boolean property to enable the control (default is true). Buttons that are disabled have other colors than enabled ones, depending on custom settings.</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" group="Dimension">
+            <documentation>Control width as common CSS-size (px or % as unit, for example)</documentation>
+        </property>
+        <property name="helpId" type="sap.ui.core/string" defaultValue="" group="Behavior">
+            <documentation>Unique identifier used for help service</documentation>
+        </property>
+        <property name="icon" type="sap.ui.core/URI" defaultValue="" group="Appearance">
+            <documentation>Icon to be displayed as graphical element within the button.
+This can be a URI to an image or an icon font URI.</documentation>
+        </property>
+        <property name="iconHovered" type="sap.ui.core/URI" defaultValue="" group="Appearance">
+            <documentation>Icon to be displayed as graphical element within the button when it is hovered (only if also a base icon was specified). If not specified the base icon is used.
+If an icon font icon is used, this property is ignored.</documentation>
+        </property>
+        <property name="iconSelected" type="sap.ui.core/URI" defaultValue="" group="Appearance">
+            <documentation>Icon to be displayed as graphical element within the button when it is selected (only if also a base icon was specified). If not specified the base or hovered icon is used.
+If an icon font icon is used, this property is ignored.</documentation>
+        </property>
+        <property name="iconFirst" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>If set to true (default), the display sequence is 1. icon 2. control text .</documentation>
+        </property>
+        <property name="height" type="sap.ui.core/CSSSize" group="Dimension">
+            <documentation>Specifies the button height. If this property is set, the height which is specified by the underlying theme is not used any longer.</documentation>
+        </property>
+        <property name="styled" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>Indicates if the button is styled. If not it is rendered as native HTML-button. In this case a custom styling can be added usig addStyleClass.</documentation>
+        </property>
+        <property name="lite" type="sap.ui.core/boolean" defaultValue="false" group="Appearance">
+            <documentation>The button is rendered as lite button.</documentation>
+        </property>
+        <property name="style" type="sap.ui.commons/ButtonStyle" defaultValue="Default" group="Appearance">
+            <documentation>Style of the button.
+(e.g. emphasized)</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="press" allowPreventDefault="false">
+            <documentation>Event is fired when the user presses the control.</documentation>
+        </event>
+    </events>
+    <associations>
+        <association name="ariaDescribedBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / ids which describe this control (see WAI-ARIA attribute aria-describedby).</documentation>
+        </association>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / ids which label this control (see WAI-ARIA attribute aria-labelledby).</documentation>
+        </association>
+    </associations>
+    <methods>
+        <method name="focus" type="sap.ui.core/void">
+            <documentation>Puts the focus to the button.</documentation>
+        </method>
+    </methods>
+</control>

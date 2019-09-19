@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Wizard</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Enables users to accomplish a single goal which consists of multiple dependable sub-tasks.
+&lt;h3&gt;Overview&lt;/h3&gt;
+The sap.m.Wizard helps users complete a complex and unfamiliar task by dividing it into sections and guiding the user through it.
+The wizard has two main areas - a navigation area at the top showing the step sequence and a content area below it.
+&lt;h3&gt;Structure&lt;/h3&gt;
+&lt;h4&gt;Navigation Area&lt;/h4&gt;
+The top most area of the wizard is occupied by the navigation area. It shows the sequence of {@link sap.m.WizardStep wizard steps}.
+&lt;ul&gt;
+&lt;li&gt;The minimum number of steps is 3 and the maximum is 8 and are stored in the &lt;code&gt;steps&lt;/code&gt; aggregation.&lt;/li&gt;
+&lt;li&gt;Steps can be branching depending on choices the user made in their input - this is set by the &lt;code&gt;enableBranching&lt;/code&gt; property. &lt;/li&gt;
+&lt;li&gt;Steps can have different visual representations - numbers or icons. You can add labels for better readability &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Content&lt;/h4&gt;
+The content occupies the main part of the page. It can hold any type of input controls. The content is kept in {@link sap.m.WizardStep wizard steps}.
+&lt;h4&gt;Next Step Button&lt;/h4&gt;
+The next step button is displayed below the content. It can be hidden by setting &lt;code&gt;showNextButton&lt;/code&gt; to &lt;code&gt;false&lt;/code&gt; and displayed, for example,
+only after the user has filled all mandatory fields.
+&lt;h3&gt;Usage&lt;/h3&gt;
+&lt;h4&gt;When to use:&lt;/h4&gt;
+When the user has to accomplish a long or unfamiliar task.
+&lt;h4&gt;When not to use:&lt;/h4&gt;
+When the user has to accomplish a routine task that is clear and familiar.
+When the task has only two steps or less.
+&lt;h3&gt;Responsive Behavior&lt;/h3&gt;
+On mobile devices the steps in the StepNavigator are grouped together and overlap. Tapping on them will show a popover to select the step to navigate to.</documentation>
+    <since>1.30</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="width" type="sap.ui.core/CSSSize" defaultValue="auto" group="Appearance">
+            <documentation>Determines the width of the Wizard.</documentation>
+        </property>
+        <property name="height" type="sap.ui.core/CSSSize" defaultValue="100%" group="Appearance">
+            <documentation>Determines the height of the Wizard.</documentation>
+        </property>
+        <property name="showNextButton" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Controls the visibility of the next button. The developers can choose to control the flow of the
+steps either through the API (with &lt;code&gt;nextStep&lt;/code&gt; and &lt;code&gt;previousStep&lt;/code&gt; methods) or let the user click
+the next button, and control it with &lt;code&gt;validateStep&lt;/code&gt; or &lt;code&gt;invalidateStep&lt;/code&gt; methods.</documentation>
+        </property>
+        <property name="finishButtonText" type="sap.ui.core/string" defaultValue="Review" group="Appearance">
+            <documentation>Changes the text of the finish button for the last step.
+This property can be used only if &lt;code&gt;showNextButton&lt;/code&gt; is set to true.
+By default the text of the button is "Review".</documentation>
+        </property>
+        <property name="enableBranching" type="sap.ui.core/boolean" defaultValue="false" group="Behavior" since="1.32">
+            <documentation>Enables the branching functionality of the Wizard.
+Branching gives the developer the ability to define multiple routes a user
+is able to take based on the input in the current step.
+It is up to the developer to programatically check for what is the input in the
+current step and set a concrete next step amongs the available subsequent steps.
+Note: If this property is set to false, &lt;code&gt;next&lt;/code&gt; and &lt;code&gt;subSequentSteps&lt;/code&gt;
+associations of the WizardStep control are ignored.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="stepActivate" allowPreventDefault="false">
+            <documentation>The StepActivated event is fired every time a new step is activated.</documentation>
+            <parameters>
+                <parameter name="index" type="sap.ui.core/int">
+                    <documentation>The index of the activated step as a parameter. One-based.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="complete" allowPreventDefault="false">
+            <documentation>The complete event is fired when the user clicks the finish button of the Wizard.
+The finish button is only available on the last step of the Wizard.</documentation>
+        </event>
+    </events>
+    <aggregations default="steps">
+        <aggregation name="steps" type="sap.m/WizardStep" cardinality="0..n">
+            <documentation>The wizard steps to be included in the content of the control.</documentation>
+        </aggregation>
+        <aggregation name="_progressNavigator" type="sap.ui.core/Control" since="1.32" cardinality="0..1" visibility="hidden">
+            <documentation>The progress navigator for the wizard.</documentation>
+        </aggregation>
+        <aggregation name="_nextButton" type="sap.m/Button" cardinality="0..1" visibility="hidden">
+            <documentation>The next button for the wizard.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="currentStep" type="sap.m/WizardStep" cardinality="0..1" since="1.50">
+            <documentation>This association controls the current activated step of the wizard (meaning the last step)
+For example if we have A-&gt;B-&gt;C-&gt;D steps, we are on step A and we setCurrentStep(C) A,B and C are going to be activated. D will still remain unvisited.
+The parameter needs to be a Wizard step that is part of the current Wizard</documentation>
+        </association>
+    </associations>
+</control>

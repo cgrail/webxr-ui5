@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>RoadMapStep</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Step used within a RoadMap Control.</documentation>
+    <deprecation since="1.38">Instead, use the &lt;code&gt;sap.m.Wizard&lt;/code&gt; control.</deprecation>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="label" type="sap.ui.core/string" group="Misc">
+            <documentation>Label of the step</documentation>
+        </property>
+        <property name="enabled" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Specifies whether the user shall be allowed to click a step, or not</documentation>
+        </property>
+        <property name="expanded" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>This property is only relevant when using sub steps.</documentation>
+            <deprecation since="1.10.5">Note that sub steps will not be supported in future. This feature might be removed in one of the next releases.</deprecation>
+        </property>
+        <property name="visible" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Step is visible</documentation>
+        </property>
+    </properties>
+    <aggregations default="subSteps">
+        <aggregation name="subSteps" type="sap.ui.commons/RoadMapStep" cardinality="0..n">
+            <documentation>Sub steps for the current step. Will be displayed only in the case that the step is expanded. Otherwise, special arrows show the availability
+of sub steps. One level of sub steps supported.</documentation>
+            <deprecation since="1.10.5">Sub steps will not be supported in future. This feature might be removed in one of the next releases.</deprecation>
+        </aggregation>
+    </aggregations>
+</control>

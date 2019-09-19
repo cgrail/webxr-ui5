@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ComboBoxBase</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>An abstract class for combo boxes.</documentation>
+    <since>1.22.0</since>
+    <abstract/>
+    <baseType>sap.m/ComboBoxTextField</baseType>
+    <properties>
+        <property name="showSecondaryValues" type="sap.ui.core/boolean" defaultValue="false" group="Misc" since="1.60">
+            <documentation>Indicates whether the text values of the &lt;code&gt;additionalText&lt;/code&gt; property of a
+{@link sap.ui.core.ListItem} are shown.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="loadItems" since="1.38" allowPreventDefault="false">
+            <documentation>This event is fired when the end user clicks the combo box button to open the dropdown list and
+the data used to display items is not already loaded.
+Alternatively, it is fired after the user moves the cursor to the combo box text
+field and perform an action that requires data to be loaded. For example,
+pressing F4 to open the dropdown list or typing something in the text field fires the event.
+
+&lt;b&gt;Note:&lt;/b&gt; Use this feature in performance critical scenarios only.
+Loading the data lazily (on demand) to defer initialization has several implications for the
+end user experience. For example, the busy indicator has to be shown while the items are being
+loaded and assistive technology software also has to announce the state changes
+(which may be confusing for some screen reader users).
+
+&lt;b&gt;Note&lt;/b&gt;: Currently the &lt;code&gt;sap.m.MultiComboBox&lt;/code&gt; does not support this event.</documentation>
+        </event>
+    </events>
+    <aggregations default="items">
+        <aggregation name="items" type="sap.ui.core/Item" cardinality="0..n" bindable="bindable">
+            <documentation>Defines the items contained within this control.</documentation>
+        </aggregation>
+        <aggregation name="picker" type="sap.ui.core/PopupInterface" cardinality="0..1" visibility="hidden">
+            <documentation>Internal aggregation to hold the inner picker popup.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>form/ColumnContainerData</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The &lt;code&gt;ColumnLayout&lt;/code&gt;-specific layout data for the &lt;code&gt;FormContainer&lt;/code&gt; element.
+
+Depending on its size, the &lt;code&gt;Form&lt;/code&gt; control is divided into 1, 2, 3 or 4 columns
+by the &lt;code&gt;ColumnLayout&lt;/code&gt; control.
+Using &lt;code&gt;ColumnContainerData&lt;/code&gt;, the size of the &lt;code&gt;FormContainer&lt;/code&gt; element can be influenced.</documentation>
+    <since>1.56.0</since>
+    <baseType>sap.ui.core/LayoutData</baseType>
+    <properties>
+        <property name="columnsXL" type="sap.ui.layout/form/ColumnsXL" defaultValue="2" group="Appearance">
+            <documentation>Number of columns the &lt;code&gt;FormContainer&lt;/code&gt; element uses if the &lt;code&gt;Form&lt;/code&gt; control has extra-large size.
+
+The number of columns for extra-large size must not be smaller than the number of columns for large size.</documentation>
+        </property>
+        <property name="columnsL" type="sap.ui.layout/form/ColumnsL" defaultValue="2" group="Appearance">
+            <documentation>Number of columns the &lt;code&gt;FormContainer&lt;/code&gt; element uses if the &lt;code&gt;Form&lt;/code&gt; control has large size.
+
+The number of columns for large size must not be smaller than the number of columns for medium size.</documentation>
+        </property>
+        <property name="columnsM" type="sap.ui.layout/form/ColumnsM" defaultValue="1" group="Appearance">
+            <documentation>Number of columns the &lt;code&gt;FormContainer&lt;/code&gt; element uses if the &lt;code&gt;Form&lt;/code&gt; control has medium size.</documentation>
+        </property>
+    </properties>
+</control>

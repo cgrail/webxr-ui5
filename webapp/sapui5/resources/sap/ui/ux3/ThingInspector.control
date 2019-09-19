@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ThingInspector</name>
+    <derived/>
+    <documentation>Thing Inspector</documentation>
+    <deprecation since="1.38">There is not an exact replacement.</deprecation>
+    <baseType>sap.ui.ux3/Overlay</baseType>
+    <properties>
+        <property name="firstTitle" type="sap.ui.core/string" group="Misc">
+            <documentation>First Line of the Thing Inspector Title</documentation>
+        </property>
+        <property name="type" type="sap.ui.core/string" group="Misc">
+            <documentation>Thing type</documentation>
+        </property>
+        <property name="icon" type="sap.ui.core/URI" group="Misc">
+            <documentation>Thing Icon Url</documentation>
+        </property>
+        <property name="secondTitle" type="sap.ui.core/string" group="Misc">
+            <documentation>Second Line of the Thing Inspector Title</documentation>
+        </property>
+        <property name="followState" type="sap.ui.ux3/FollowActionState" defaultValue="Default" group="Misc">
+            <documentation>Follow State of a Thing</documentation>
+        </property>
+        <property name="flagState" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>State of Flag Action</documentation>
+        </property>
+        <property name="favoriteState" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>State Of favorite Action</documentation>
+        </property>
+        <property name="favoriteActionEnabled" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Favorite action enabled/disabled. If disabled the action will be invisible.</documentation>
+        </property>
+        <property name="updateActionEnabled" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Update action enabled/disabled. If disabled the action will be invisible.</documentation>
+        </property>
+        <property name="followActionEnabled" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Follow action enabled/disabled. If disabled the action will be invisible.</documentation>
+        </property>
+        <property name="flagActionEnabled" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Flag action enabled/disabled. If disabled the action will be invisible.</documentation>
+        </property>
+        <property name="headerType" type="sap.ui.ux3/ThingViewerHeaderType" defaultValue="Standard" group="Misc" since="1.16.3">
+            <documentation>Defines which header type should be used.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="actionSelected" allowPreventDefault="false">
+            <documentation>Further thing related Action selected</documentation>
+            <parameters>
+                <parameter name="id" type="sap.ui.core/string">
+                    <documentation>Id of selected ThingAction</documentation>
+                </parameter>
+                <parameter name="action" type="sap.ui.ux3/ThingAction">
+                    <documentation>Selected ThingAction</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="facetSelected" allowPreventDefault="true">
+            <documentation>Event for facet selection. The application is responsible for displaying the correct content for the selected one. The ThingInspector will currently always mark the first facet as selected.</documentation>
+            <parameters>
+                <parameter name="id" type="sap.ui.core/string">
+                    <documentation>Id of selected NavigationItem</documentation>
+                </parameter>
+                <parameter name="item" type="sap.ui.ux3/NavigationItem">
+                    <documentation>The selected NavigationItem</documentation>
+                </parameter>
+                <parameter name="key" type="sap.ui.core/string">
+                    <documentation>Key of selected NavigationItem</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="feedSubmit" allowPreventDefault="false">
+            <documentation>Fired when a new feed entry is submitted.</documentation>
+            <parameters>
+                <parameter name="text" type="sap.ui.core/string">
+                    <documentation>Feed text</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="actions" type="sap.ui.ux3/ThingAction" cardinality="0..n">
+            <documentation>Actions of a Thing</documentation>
+        </aggregation>
+        <aggregation name="headerContent" type="sap.ui.ux3/ThingGroup" cardinality="0..n">
+            <documentation>ThingGroups for the header content</documentation>
+        </aggregation>
+        <aggregation name="facets" type="sap.ui.ux3/NavigationItem" cardinality="0..n">
+            <documentation>Thing Inspector facets</documentation>
+        </aggregation>
+        <aggregation name="facetContent" type="sap.ui.ux3/ThingGroup" cardinality="0..n">
+            <documentation>ThingGroups for content of the selected facet</documentation>
+        </aggregation>
+        <aggregation name="actionBar" type="sap.ui.ux3/ActionBar" cardinality="0..1">
+            <documentation>ActionBar. If no actionBar is set a default ActionBar will be created.</documentation>
+        </aggregation>
+        <aggregation name="thingViewer" type="sap.ui.ux3/ThingViewer" cardinality="0..1" visibility="hidden">
+            <documentation>The ThingViewer managed by this ThingInspector</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="selectedFacet" type="sap.ui.ux3/NavigationItem" cardinality="0..1">
+            <documentation>The Facet that is currently selected.</documentation>
+        </association>
+    </associations>
+</control>

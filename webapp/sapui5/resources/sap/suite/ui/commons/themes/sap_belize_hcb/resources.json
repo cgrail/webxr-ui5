@@ -1,0 +1,111 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": ".theming",
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "CalculationBuilder.less",
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "MicroProcessFlow.less",
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "NetworkGraph.less",
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "NetworkGroup.less",
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "NetworkLine.less",
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "NetworkNode.less",
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "ProcessFlow.less",
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "ProcessFlowConnection.less",
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "ProcessFlowConnectionLabel.less",
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "ProcessFlowLaneHeader.less",
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "ProcessFlowNode.less",
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "StatusIndicator.less",
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "TAccount.less",
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "Timeline.less",
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "library-RTL-dbg.css",
+			"isDebug": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "library-RTL.css",
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "library-dbg.css",
+			"isDebug": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "library-parameters.json",
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "library.css",
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "library.less",
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "library.source.less",
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		}
+	]
+}

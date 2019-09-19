@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>TriStateCheckBox</name>
+    <derived/>
+    <documentation>TriStateCheckBox to reflect mixed state for checkboxes. The control can display three states, namely checked, unchecked and mixed. However, mixed state cannot be directly reached by user interaction on the particular control.
+It can be only set by the control's public toggle function, to make a behaviour possible which is e.g. required in checkbox trees.</documentation>
+    <since>1.7.2</since>
+    <deprecation since="1.38"></deprecation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="selectionState" type="sap.ui.commons/TriStateCheckBoxState" defaultValue="Unchecked" group="Data">
+            <documentation>Defines the states of the checkbox</documentation>
+        </property>
+        <property name="text" type="sap.ui.core/string" group="Appearance">
+            <documentation>Defines the text displayed next to the check box</documentation>
+        </property>
+        <property name="enabled" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Using this property, the control could be disabled, if required.</documentation>
+        </property>
+        <property name="editable" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Specifies whether the user shall be allowed to flag the check box</documentation>
+        </property>
+        <property name="valueState" type="sap.ui.core/ValueState" defaultValue="None" group="Data">
+            <documentation>Accepts the core enumeration ValueState.type that supports 'None', 'Error', 'Warning' and 'Success'.</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" group="Dimension">
+            <documentation>The width can be set to an absolute value. If no value is set, the control width results from the text length.</documentation>
+        </property>
+        <property name="textDirection" type="sap.ui.core/TextDirection" defaultValue="Inherit" group="Appearance">
+            <documentation>The value can be set to LTR or RTL. Otherwise, the control inherits the text direction from its parent control.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="change" allowPreventDefault="false">
+            <documentation>Event is triggered when the control status is changed by the user by flagging or unflagging the checkbox.</documentation>
+            <parameters>
+                <parameter name="selectionState" type="sap.ui.core/string">
+                    <documentation>Checks whether the box is flagged or not flagged.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <methods>
+        <method name="toggle">
+            <documentation>Method called whenever a user clicks on a tri-state checkbox</documentation>
+            <parameters>
+                <parameter name="destState" type="sap.ui.commons/TriStateCheckBoxState">
+                    <documentation>destined selection state of checkbox</documentation>
+                </parameter>
+            </parameters>
+        </method>
+    </methods>
+</control>

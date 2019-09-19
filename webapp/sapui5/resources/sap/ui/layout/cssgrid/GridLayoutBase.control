@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>cssgrid/GridLayoutBase</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Applies a sap.ui.layout.cssgrid.GridSettings to a provided DOM element or Control.</documentation>
+    <since>1.60</since>
+    <abstract/>
+</control>

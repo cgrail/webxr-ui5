@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartfield/ControlContextType</name>
+    <derived/>
+    <documentation>Enumeration of the different contexts supported by the SmartField, if it is using an OData model.</documentation>
+    <enumeration>
+        <value name="None" value="">
+            <documentation>No special context is selected. The Smart Field applies its internal defaults.</documentation>
+        </value>
+        <value name="ResponsiveTable" value="responsiveTable">
+            <documentation>Also the UoM layout is influenced.</documentation>
+        </value>
+        <value name="Form" value="form">
+            <documentation>Behaves currently exactly like &lt;code&gt;sap.ui.comp.smartfield.ControlContextType.None&lt;/code&gt;.</documentation>
+        </value>
+        <value name="Table" value="table">
+            <documentation>If this is selected the UoM layout is influenced.</documentation>
+        </value>
+        <value name="SmartFormGrid" value="smartFormGrid">
+            <documentation>If this is selected the UoM layout is influenced.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

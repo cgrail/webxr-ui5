@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Toolbar</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A horizontal row of items where in many cases the single toolbar items are buttons containing icons. Note that all controls with the
+sap.ui.commons.ToolbarItem interface can be used as item: Button, ComboBox, TextField.</documentation>
+    <deprecation since="1.38">replaced by {@link sap.m.Toolbar}</deprecation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="width" type="sap.ui.core/CSSSize" defaultValue="auto" group="Dimension">
+            <documentation>When there is not enough space for the toolbar to display all items, the rightmost items are overflowing into a drop-down menu.</documentation>
+        </property>
+        <property name="design" type="sap.ui.commons/ToolbarDesign" defaultValue="Flat" group="Appearance">
+            <documentation>Design settings are theme-dependent.</documentation>
+        </property>
+        <property name="standalone" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>Per default, tool bars have the stand alone status.
+Alternatively, they can be nested in other controls and then inherit the design from their parent control.</documentation>
+        </property>
+    </properties>
+    <aggregations default="items">
+        <aggregation name="items" type="sap.ui.commons/ToolbarItem" cardinality="0..n">
+            <documentation>Aggregating the tool bar items.</documentation>
+        </aggregation>
+        <aggregation name="rightItems" type="sap.ui.commons/ToolbarItem" cardinality="0..n">
+            <documentation>Aggregating the right side tool bar items.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

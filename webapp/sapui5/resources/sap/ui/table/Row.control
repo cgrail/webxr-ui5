@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Row</name>
+    <derived/>
+    <documentation>The row.</documentation>
+    <baseType>sap.ui.core/Element</baseType>
+    <aggregations default="cells">
+        <aggregation name="cells" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>The controls for the cells.</documentation>
+        </aggregation>
+        <aggregation name="_rowAction" type="sap.ui.table/RowAction" cardinality="0..1" visibility="hidden"/>
+        <aggregation name="_settings" type="sap.ui.table/RowSettings" cardinality="0..1" visibility="hidden"/>
+    </aggregations>
+    <methods>
+        <method name="getIndex" type="sap.ui.core/int">
+            <documentation>Returns the index of the row in the table or -1 if not added to a table. This
+function considers the scroll position of the table and also takes fixed rows and
+fixed bottom rows into account.</documentation>
+        </method>
+    </methods>
+</control>

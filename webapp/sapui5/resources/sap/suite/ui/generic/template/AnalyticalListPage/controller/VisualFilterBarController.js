@@ -1,0 +1,1 @@
+sap.ui.define(["sap/ui/core/mvc/Controller"],function(C){"use strict";var v=C.extend("sap.suite.ui.generic.template.AnalyticalListPage.controller.VisualFilterBarController",{init:function(s){this.oState=s;var o=this.oState.oController.getOwnerComponent();this._filterBar=this.oState.alr_visualFilterBar;this._filterBar.setEntitySet(o.getEntitySet());}});return v;});

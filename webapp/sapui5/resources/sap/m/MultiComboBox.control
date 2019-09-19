@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>MultiComboBox</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The MultiComboBox control provides a list box with items and a text field allowing the user to either type a value directly into the control or choose from the list of existing items.
+
+A drop-down list for selecting and filtering values.
+&lt;h3&gt;Overview&lt;/h3&gt;
+The MultiComboBox control is commonly used to enable users to select one or more options from a predefined list. The control provides an editable input field to filter the list, and a dropdown arrow of available options.
+The select options in the list have checkboxes that permit multi-selection. Entered values are displayed as {@link sap.m.Token tokens}.
+&lt;h3&gt;Structure&lt;/h3&gt;
+The MultiComboBox consists of the following elements:
+&lt;ul&gt;
+&lt;li&gt; Input field - displays the selected option/s as token/s. Users can type to filter the list.
+&lt;li&gt; Drop-down arrow - expands\collapses the option list.&lt;/li&gt;
+&lt;li&gt; Option list - the list of available options.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Usage&lt;/h3&gt;
+&lt;h4&gt;When to use:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;The user needs to select one or more options from a long list of options (maximum of approximately 200).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;When not to use:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;The user needs to choose between two options such as ON or OFF and YES or NO. In this case, consider using a {@link sap.m.Switch switch} control instead&lt;/li&gt;
+&lt;li&gt;You need to display more that one attribute. In this case, consider using the {@link sap.m.SelectDialog select dialog} or value help dialog instead.&lt;/li&gt;
+&lt;li&gt;The user needs to search on multiple attributes. In this case, consider using the {@link sap.m.SelectDialog select dialog} or value help dialog instead.&lt;/li&gt;
+&lt;li&gt;Your use case requires all available options to be displayed right away, without any user interaction. In this case, consider using the {@link sap.m.Checkbox checkboxes} instead.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Responsive Behavior&lt;/h3&gt;
+If there are many tokens, the control shows only the last selected tokens that fit and for the others a label N-more is provided.
+In case the length of the last selected token is exceeding the width of the control, only a label N-Items is shown. In both cases, pressing on the label will show the tokens in a popup.
+&lt;u&gt;On Phones:&lt;/u&gt;
+&lt;ul&gt;
+&lt;li&gt;A new full-screen dialog opens where all items from the option list are shown.&lt;/li&gt;
+&lt;li&gt;You can select and deselect items from the option list.&lt;/li&gt;
+&lt;li&gt;With the help of a toggle button you can switch between showing all tokens and only selected ones.&lt;/li&gt;
+&lt;li&gt;You can filter the option list by entering a value in the input.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;u&gt;On Tablets:&lt;/u&gt;
+&lt;ul&gt;
+&lt;li&gt;The auto-complete suggestions appear below or above the input field.&lt;/li&gt;
+&lt;li&gt;You can review the tokens by swiping them to left or right.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;u&gt;On Desktop:&lt;/u&gt;
+&lt;ul&gt;
+&lt;li&gt;The auto-complete suggestions appear below or above the input field.&lt;/li&gt;
+&lt;li&gt;You can review the tokens by pressing the right or left arrows on the keyboard.&lt;/li&gt;
+&lt;li&gt;You can select single tokens or a range of tokens and you can copy/cut/delete them.&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+    <since>1.22.0</since>
+    <baseType>sap.m/ComboBoxBase</baseType>
+    <properties>
+        <property name="selectedKeys" type="sap.ui.core/string[]" defaultValue="[]" group="Data">
+            <documentation>Keys of the selected items. If the key has no corresponding item, no changes will apply. If duplicate keys exists the first item matching the key is used.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="selectionChange" allowPreventDefault="false">
+            <documentation>Event is fired when selection of an item is changed.
+Note: please do not use the "change" event inherited from sap.m.InputBase</documentation>
+            <parameters>
+                <parameter name="changedItem" type="sap.ui.core/Item">
+                    <documentation>Item which selection is changed</documentation>
+                </parameter>
+                <parameter name="selected" type="sap.ui.core/boolean">
+                    <documentation>Selection state: true if item is selected, false if
+item is not selected</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="selectionFinish" allowPreventDefault="false">
+            <documentation>Event is fired when user has finished a selection of items in a list box and list box has been closed.</documentation>
+            <parameters>
+                <parameter name="selectedItems" type="sap.ui.core/Item[]">
+                    <documentation>The selected items which are selected after list box has been closed.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <associations>
+        <association name="selectedItems" type="sap.ui.core/Item" cardinality="0..n">
+            <documentation>Provides getter and setter for the selected items from
+the aggregation named items.</documentation>
+        </association>
+    </associations>
+    <methods>
+        <method name="removeSelectedKeys" type="sap.m/MultiComboBox">
+            <documentation>Removes selected items. Only items with valid keys are removed.</documentation>
+            <parameters>
+                <parameter name="keys" type="sap.ui.core/string[]">
+                    <documentation>An array of item keys that identifies the items to be removed</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="addSelectedKeys" type="sap.m/MultiComboBox">
+            <documentation>Adds selected items. Only items with valid keys are added as selected.</documentation>
+            <parameters>
+                <parameter name="keys" type="sap.ui.core/string[]">
+                    <documentation>An array of item keys that identifies the items to be added as selected</documentation>
+                </parameter>
+            </parameters>
+        </method>
+    </methods>
+</control>

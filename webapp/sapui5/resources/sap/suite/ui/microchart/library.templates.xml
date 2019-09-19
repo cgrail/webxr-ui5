@@ -1,0 +1,1142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Library name="sap.suite.ui.microchart" xmlns="http://www.sap.com/ui5/ide/templates/xmlview">
+<Template name="sap.suite.ui.microchart.AreaMicroChart" alias="AreaMicroChart,Chart">
+	<jsTemplate><![CDATA[new sap.suite.ui.microchart.AreaMicroChart({
+	id: "${id}", // sap.ui.core.ID
+	blocked: false, // boolean
+	busy: false, // boolean
+	busyIndicatorDelay: 1000, // int
+	busyIndicatorSize: sap.ui.core.BusyIndicatorSize.Medium, // sap.ui.core.BusyIndicatorSize, since 1.54
+	visible: true, // boolean
+	fieldGroupIds: [], // string[], since 1.31
+	size: sap.m.Size.Auto, // sap.m.Size
+	width: undefined, // sap.ui.core.CSSSize
+	height: undefined, // sap.ui.core.CSSSize
+	maxXValue: undefined, // float
+	minXValue: undefined, // float
+	maxYValue: undefined, // float
+	minYValue: undefined, // float
+	view: sap.suite.ui.microchart.AreaMicroChartViewType.Normal, // sap.suite.ui.microchart.AreaMicroChartViewType
+	colorPalette: [], // string[]
+	showLabel: true, // boolean
+	isResponsive: false, // boolean, since 1.38.0
+	tooltip: undefined, // sap.ui.core.TooltipBase
+	customData: [], // sap.ui.core.CustomData
+	dependents: [], // sap.ui.core.Element, since 1.19
+	dragDropConfig: [], // sap.ui.core.dnd.DragDropBase, since 1.56
+	chart: undefined, // sap.suite.ui.microchart.AreaMicroChartItem
+	maxThreshold: undefined, // sap.suite.ui.microchart.AreaMicroChartItem
+	innerMaxThreshold: undefined, // sap.suite.ui.microchart.AreaMicroChartItem
+	innerMinThreshold: undefined, // sap.suite.ui.microchart.AreaMicroChartItem
+	minThreshold: undefined, // sap.suite.ui.microchart.AreaMicroChartItem
+	target: undefined, // sap.suite.ui.microchart.AreaMicroChartItem
+	firstXLabel: undefined, // sap.suite.ui.microchart.AreaMicroChartLabel
+	firstYLabel: undefined, // sap.suite.ui.microchart.AreaMicroChartLabel
+	lastXLabel: undefined, // sap.suite.ui.microchart.AreaMicroChartLabel
+	lastYLabel: undefined, // sap.suite.ui.microchart.AreaMicroChartLabel
+	maxLabel: undefined, // sap.suite.ui.microchart.AreaMicroChartLabel
+	minLabel: undefined, // sap.suite.ui.microchart.AreaMicroChartLabel
+	lines: [], // sap.suite.ui.microchart.AreaMicroChartItem
+	ariaLabelledBy: [], // sap.ui.core.Control, since 1.60.0
+	validateFieldGroup: [function (oEvent) {
+		var ${control} = oEvent.getSource();
+	}, this],
+	press: [function (oEvent) {
+		var ${control} = oEvent.getSource();
+	}, this]
+})
+]]></jsTemplate>
+	<xmlTemplate><![CDATA[<AreaMicroChart xmlns="sap.suite.ui.microchart"
+	id="${id}"
+	blocked="false"
+	busy="false"
+	busyIndicatorDelay="1000"
+	busyIndicatorSize="Medium"
+	visible="true"
+	fieldGroupIds=""
+	size="Auto"
+	width=""
+	height=""
+	maxXValue=""
+	minXValue=""
+	maxYValue=""
+	minYValue=""
+	view="Normal"
+	colorPalette=""
+	showLabel="true"
+	isResponsive="false"
+	ariaLabelledBy=""
+	validateFieldGroup=""
+	press="">
+		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+		<dependents></dependents> <!-- sap.ui.core.Element, since 1.19 -->
+		<dragDropConfig></dragDropConfig> <!-- sap.ui.core.dnd.DragDropBase, since 1.56 -->
+		<chart></chart> <!-- sap.suite.ui.microchart.AreaMicroChartItem -->
+		<maxThreshold></maxThreshold> <!-- sap.suite.ui.microchart.AreaMicroChartItem -->
+		<innerMaxThreshold></innerMaxThreshold> <!-- sap.suite.ui.microchart.AreaMicroChartItem -->
+		<innerMinThreshold></innerMinThreshold> <!-- sap.suite.ui.microchart.AreaMicroChartItem -->
+		<minThreshold></minThreshold> <!-- sap.suite.ui.microchart.AreaMicroChartItem -->
+		<target></target> <!-- sap.suite.ui.microchart.AreaMicroChartItem -->
+		<firstXLabel></firstXLabel> <!-- sap.suite.ui.microchart.AreaMicroChartLabel -->
+		<firstYLabel></firstYLabel> <!-- sap.suite.ui.microchart.AreaMicroChartLabel -->
+		<lastXLabel></lastXLabel> <!-- sap.suite.ui.microchart.AreaMicroChartLabel -->
+		<lastYLabel></lastYLabel> <!-- sap.suite.ui.microchart.AreaMicroChartLabel -->
+		<maxLabel></maxLabel> <!-- sap.suite.ui.microchart.AreaMicroChartLabel -->
+		<minLabel></minLabel> <!-- sap.suite.ui.microchart.AreaMicroChartLabel -->
+		<lines></lines> <!-- sap.suite.ui.microchart.AreaMicroChartItem -->
+</AreaMicroChart>
+]]></xmlTemplate>
+</Template>
+<Template name="sap.suite.ui.microchart.AreaMicroChartItem" alias="AreaMicroChartItem,Item">
+	<jsTemplate><![CDATA[new sap.suite.ui.microchart.AreaMicroChartItem({
+	id: "${id}", // sap.ui.core.ID
+	color: "Neutral", // sap.m.ValueCSSColor
+	title: undefined, // string
+	tooltip: undefined, // sap.ui.core.TooltipBase
+	customData: [], // sap.ui.core.CustomData
+	dependents: [], // sap.ui.core.Element, since 1.19
+	dragDropConfig: [], // sap.ui.core.dnd.DragDropBase, since 1.56
+	points: [] // sap.suite.ui.microchart.AreaMicroChartPoint
+})
+]]></jsTemplate>
+	<xmlTemplate><![CDATA[<AreaMicroChartItem xmlns="sap.suite.ui.microchart"
+	id="${id}"
+	color="Neutral"
+	title="">
+		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+		<dependents></dependents> <!-- sap.ui.core.Element, since 1.19 -->
+		<dragDropConfig></dragDropConfig> <!-- sap.ui.core.dnd.DragDropBase, since 1.56 -->
+		<points></points> <!-- sap.suite.ui.microchart.AreaMicroChartPoint -->
+</AreaMicroChartItem>
+]]></xmlTemplate>
+</Template>
+<Template name="sap.suite.ui.microchart.AreaMicroChartLabel" alias="AreaMicroChartLabel,Label">
+	<jsTemplate><![CDATA[new sap.suite.ui.microchart.AreaMicroChartLabel({
+	id: "${id}", // sap.ui.core.ID
+	color: "Neutral", // sap.m.ValueCSSColor
+	label: "", // string
+	tooltip: undefined, // sap.ui.core.TooltipBase
+	customData: [], // sap.ui.core.CustomData
+	dependents: [], // sap.ui.core.Element, since 1.19
+	dragDropConfig: [] // sap.ui.core.dnd.DragDropBase, since 1.56
+})
+]]></jsTemplate>
+	<xmlTemplate><![CDATA[<AreaMicroChartLabel xmlns="sap.suite.ui.microchart"
+	id="${id}"
+	color="Neutral"
+	label="">
+		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+		<dependents></dependents> <!-- sap.ui.core.Element, since 1.19 -->
+		<dragDropConfig></dragDropConfig> <!-- sap.ui.core.dnd.DragDropBase, since 1.56 -->
+</AreaMicroChartLabel>
+]]></xmlTemplate>
+</Template>
+<Template name="sap.suite.ui.microchart.AreaMicroChartPoint" alias="AreaMicroChartPoint,Point">
+	<jsTemplate><![CDATA[new sap.suite.ui.microchart.AreaMicroChartPoint({
+	id: "${id}", // sap.ui.core.ID
+	x: undefined, // float
+	y: undefined, // float
+	tooltip: undefined, // sap.ui.core.TooltipBase
+	customData: [], // sap.ui.core.CustomData
+	dependents: [], // sap.ui.core.Element, since 1.19
+	dragDropConfig: [] // sap.ui.core.dnd.DragDropBase, since 1.56
+})
+]]></jsTemplate>
+	<xmlTemplate><![CDATA[<AreaMicroChartPoint xmlns="sap.suite.ui.microchart"
+	id="${id}"
+	x=""
+	y="">
+		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+		<dependents></dependents> <!-- sap.ui.core.Element, since 1.19 -->
+		<dragDropConfig></dragDropConfig> <!-- sap.ui.core.dnd.DragDropBase, since 1.56 -->
+</AreaMicroChartPoint>
+]]></xmlTemplate>
+</Template>
+<Template name="sap.suite.ui.microchart.BulletMicroChart" alias="BulletMicroChart,Chart">
+	<jsTemplate><![CDATA[new sap.suite.ui.microchart.BulletMicroChart({
+	id: "${id}", // sap.ui.core.ID
+	blocked: false, // boolean
+	busy: false, // boolean
+	busyIndicatorDelay: 1000, // int
+	busyIndicatorSize: sap.ui.core.BusyIndicatorSize.Medium, // sap.ui.core.BusyIndicatorSize, since 1.54
+	visible: true, // boolean
+	fieldGroupIds: [], // string[], since 1.31
+	size: sap.m.Size.Auto, // sap.m.Size
+	mode: sap.suite.ui.microchart.BulletMicroChartModeType.Actual, // sap.suite.ui.microchart.BulletMicroChartModeType
+	scale: "", // string
+	forecastValue: undefined, // float
+	targetValue: undefined, // float
+	minValue: undefined, // float
+	maxValue: undefined, // float
+	showActualValue: true, // boolean
+	showDeltaValue: true, // boolean
+	showActualValueInDeltaMode: false, // boolean
+	showTargetValue: true, // boolean
+	showValueMarker: false, // boolean
+	showThresholds: true, // boolean
+	actualValueLabel: "", // string
+	deltaValueLabel: "", // string
+	targetValueLabel: "", // string
+	width: undefined, // sap.ui.core.CSSSize
+	height: undefined, // sap.ui.core.CSSSize
+	scaleColor: sap.suite.ui.microchart.CommonBackgroundType.MediumLight, // sap.suite.ui.microchart.CommonBackgroundType
+	isResponsive: false, // boolean, since 1.38.0
+	tooltip: undefined, // sap.ui.core.TooltipBase
+	customData: [], // sap.ui.core.CustomData
+	dependents: [], // sap.ui.core.Element, since 1.19
+	dragDropConfig: [], // sap.ui.core.dnd.DragDropBase, since 1.56
+	actual: undefined, // sap.suite.ui.microchart.BulletMicroChartData
+	thresholds: [], // sap.suite.ui.microchart.BulletMicroChartData
+	ariaLabelledBy: [], // sap.ui.core.Control, since 1.60.0
+	validateFieldGroup: [function (oEvent) {
+		var ${control} = oEvent.getSource();
+	}, this],
+	press: [function (oEvent) {
+		var ${control} = oEvent.getSource();
+	}, this]
+})
+]]></jsTemplate>
+	<xmlTemplate><![CDATA[<BulletMicroChart xmlns="sap.suite.ui.microchart"
+	id="${id}"
+	blocked="false"
+	busy="false"
+	busyIndicatorDelay="1000"
+	busyIndicatorSize="Medium"
+	visible="true"
+	fieldGroupIds=""
+	size="Auto"
+	mode="Actual"
+	scale=""
+	forecastValue=""
+	targetValue=""
+	minValue=""
+	maxValue=""
+	showActualValue="true"
+	showDeltaValue="true"
+	showActualValueInDeltaMode="false"
+	showTargetValue="true"
+	showValueMarker="false"
+	showThresholds="true"
+	actualValueLabel=""
+	deltaValueLabel=""
+	targetValueLabel=""
+	width=""
+	height=""
+	scaleColor="MediumLight"
+	isResponsive="false"
+	ariaLabelledBy=""
+	validateFieldGroup=""
+	press="">
+		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+		<dependents></dependents> <!-- sap.ui.core.Element, since 1.19 -->
+		<dragDropConfig></dragDropConfig> <!-- sap.ui.core.dnd.DragDropBase, since 1.56 -->
+		<actual></actual> <!-- sap.suite.ui.microchart.BulletMicroChartData -->
+		<thresholds></thresholds> <!-- sap.suite.ui.microchart.BulletMicroChartData -->
+</BulletMicroChart>
+]]></xmlTemplate>
+</Template>
+<Template name="sap.suite.ui.microchart.BulletMicroChartData" alias="BulletMicroChartData,Data">
+	<jsTemplate><![CDATA[new sap.suite.ui.microchart.BulletMicroChartData({
+	id: "${id}", // sap.ui.core.ID
+	value: 0, // float
+	color: sap.m.ValueColor.Neutral, // sap.m.ValueColor
+	tooltip: undefined, // sap.ui.core.TooltipBase
+	customData: [], // sap.ui.core.CustomData
+	dependents: [], // sap.ui.core.Element, since 1.19
+	dragDropConfig: [] // sap.ui.core.dnd.DragDropBase, since 1.56
+})
+]]></jsTemplate>
+	<xmlTemplate><![CDATA[<BulletMicroChartData xmlns="sap.suite.ui.microchart"
+	id="${id}"
+	value="0"
+	color="Neutral">
+		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+		<dependents></dependents> <!-- sap.ui.core.Element, since 1.19 -->
+		<dragDropConfig></dragDropConfig> <!-- sap.ui.core.dnd.DragDropBase, since 1.56 -->
+</BulletMicroChartData>
+]]></xmlTemplate>
+</Template>
+<Template name="sap.suite.ui.microchart.ColumnMicroChart" alias="ColumnMicroChart,Chart">
+	<jsTemplate><![CDATA[new sap.suite.ui.microchart.ColumnMicroChart({
+	id: "${id}", // sap.ui.core.ID
+	blocked: false, // boolean
+	busy: false, // boolean
+	busyIndicatorDelay: 1000, // int
+	busyIndicatorSize: sap.ui.core.BusyIndicatorSize.Medium, // sap.ui.core.BusyIndicatorSize, since 1.54
+	visible: true, // boolean
+	fieldGroupIds: [], // string[], since 1.31
+	size: sap.m.Size.Auto, // sap.m.Size
+	width: undefined, // sap.ui.core.CSSSize
+	height: undefined, // sap.ui.core.CSSSize
+	isResponsive: false, // boolean, since 1.38.0
+	showTopLabels: true, // boolean
+	showBottomLabels: true, // boolean
+	allowColumnLabels: false, // boolean, since 1.60.0
+	tooltip: undefined, // sap.ui.core.TooltipBase
+	customData: [], // sap.ui.core.CustomData
+	dependents: [], // sap.ui.core.Element, since 1.19
+	dragDropConfig: [], // sap.ui.core.dnd.DragDropBase, since 1.56
+	columns: [], // sap.suite.ui.microchart.ColumnMicroChartData
+	leftTopLabel: undefined, // sap.suite.ui.microchart.ColumnMicroChartLabel
+	rightTopLabel: undefined, // sap.suite.ui.microchart.ColumnMicroChartLabel
+	leftBottomLabel: undefined, // sap.suite.ui.microchart.ColumnMicroChartLabel
+	rightBottomLabel: undefined, // sap.suite.ui.microchart.ColumnMicroChartLabel
+	ariaLabelledBy: [], // sap.ui.core.Control, since 1.60.0
+	validateFieldGroup: [function (oEvent) {
+		var ${control} = oEvent.getSource();
+	}, this],
+	press: [function (oEvent) {
+		var ${control} = oEvent.getSource();
+	}, this]
+})
+]]></jsTemplate>
+	<xmlTemplate><![CDATA[<ColumnMicroChart xmlns="sap.suite.ui.microchart"
+	id="${id}"
+	blocked="false"
+	busy="false"
+	busyIndicatorDelay="1000"
+	busyIndicatorSize="Medium"
+	visible="true"
+	fieldGroupIds=""
+	size="Auto"
+	width=""
+	height=""
+	isResponsive="false"
+	showTopLabels="true"
+	showBottomLabels="true"
+	allowColumnLabels="false"
+	ariaLabelledBy=""
+	validateFieldGroup=""
+	press="">
+		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+		<dependents></dependents> <!-- sap.ui.core.Element, since 1.19 -->
+		<dragDropConfig></dragDropConfig> <!-- sap.ui.core.dnd.DragDropBase, since 1.56 -->
+		<columns></columns> <!-- sap.suite.ui.microchart.ColumnMicroChartData -->
+		<leftTopLabel></leftTopLabel> <!-- sap.suite.ui.microchart.ColumnMicroChartLabel -->
+		<rightTopLabel></rightTopLabel> <!-- sap.suite.ui.microchart.ColumnMicroChartLabel -->
+		<leftBottomLabel></leftBottomLabel> <!-- sap.suite.ui.microchart.ColumnMicroChartLabel -->
+		<rightBottomLabel></rightBottomLabel> <!-- sap.suite.ui.microchart.ColumnMicroChartLabel -->
+</ColumnMicroChart>
+]]></xmlTemplate>
+</Template>
+<Template name="sap.suite.ui.microchart.ColumnMicroChartData" alias="ColumnMicroChartData,Data">
+	<jsTemplate><![CDATA[new sap.suite.ui.microchart.ColumnMicroChartData({
+	id: "${id}", // sap.ui.core.ID
+	color: "Neutral", // sap.m.ValueCSSColor
+	label: "", // string
+	displayValue: undefined, // string
+	value: undefined, // float
+	tooltip: undefined, // sap.ui.core.TooltipBase
+	customData: [], // sap.ui.core.CustomData
+	dependents: [], // sap.ui.core.Element, since 1.19
+	dragDropConfig: [], // sap.ui.core.dnd.DragDropBase, since 1.56
+	press: [function (oEvent) {
+		var ${control} = oEvent.getSource();
+	}, this]
+})
+]]></jsTemplate>
+	<xmlTemplate><![CDATA[<ColumnMicroChartData xmlns="sap.suite.ui.microchart"
+	id="${id}"
+	color="Neutral"
+	label=""
+	displayValue=""
+	value=""
+	press="">
+		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+		<dependents></dependents> <!-- sap.ui.core.Element, since 1.19 -->
+		<dragDropConfig></dragDropConfig> <!-- sap.ui.core.dnd.DragDropBase, since 1.56 -->
+</ColumnMicroChartData>
+]]></xmlTemplate>
+</Template>
+<Template name="sap.suite.ui.microchart.ColumnMicroChartLabel" alias="ColumnMicroChartLabel,Label">
+	<jsTemplate><![CDATA[new sap.suite.ui.microchart.ColumnMicroChartLabel({
+	id: "${id}", // sap.ui.core.ID
+	color: "Neutral", // sap.m.ValueCSSColor
+	label: "", // string
+	tooltip: undefined, // sap.ui.core.TooltipBase
+	customData: [], // sap.ui.core.CustomData
+	dependents: [], // sap.ui.core.Element, since 1.19
+	dragDropConfig: [] // sap.ui.core.dnd.DragDropBase, since 1.56
+})
+]]></jsTemplate>
+	<xmlTemplate><![CDATA[<ColumnMicroChartLabel xmlns="sap.suite.ui.microchart"
+	id="${id}"
+	color="Neutral"
+	label="">
+		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+		<dependents></dependents> <!-- sap.ui.core.Element, since 1.19 -->
+		<dragDropConfig></dragDropConfig> <!-- sap.ui.core.dnd.DragDropBase, since 1.56 -->
+</ColumnMicroChartLabel>
+]]></xmlTemplate>
+</Template>
+<Template name="sap.suite.ui.microchart.ComparisonMicroChart" alias="ComparisonMicroChart,Chart">
+	<jsTemplate><![CDATA[new sap.suite.ui.microchart.ComparisonMicroChart({
+	id: "${id}", // sap.ui.core.ID
+	blocked: false, // boolean
+	busy: false, // boolean
+	busyIndicatorDelay: 1000, // int
+	busyIndicatorSize: sap.ui.core.BusyIndicatorSize.Medium, // sap.ui.core.BusyIndicatorSize, since 1.54
+	visible: true, // boolean
+	fieldGroupIds: [], // string[], since 1.31
+	size: sap.m.Size.Auto, // sap.m.Size
+	scale: "", // string
+	minValue: undefined, // float, since 1.42.0
+	maxValue: undefined, // float, since 1.42.0
+	view: sap.suite.ui.microchart.ComparisonMicroChartViewType.Normal, // sap.suite.ui.microchart.ComparisonMicroChartViewType
+	colorPalette: [], // string[]
+	shrinkable: false, // boolean
+	width: undefined, // sap.ui.core.CSSSize
+	height: undefined, // sap.ui.core.CSSSize
+	isResponsive: false, // boolean, since 1.38.0
+	tooltip: undefined, // sap.ui.core.TooltipBase
+	customData: [], // sap.ui.core.CustomData
+	dependents: [], // sap.ui.core.Element, since 1.19
+	dragDropConfig: [], // sap.ui.core.dnd.DragDropBase, since 1.56
+	data: [], // sap.suite.ui.microchart.ComparisonMicroChartData
+	ariaLabelledBy: [], // sap.ui.core.Control, since 1.60.0
+	validateFieldGroup: [function (oEvent) {
+		var ${control} = oEvent.getSource();
+	}, this],
+	press: [function (oEvent) {
+		var ${control} = oEvent.getSource();
+	}, this]
+})
+]]></jsTemplate>
+	<xmlTemplate><![CDATA[<ComparisonMicroChart xmlns="sap.suite.ui.microchart"
+	id="${id}"
+	blocked="false"
+	busy="false"
+	busyIndicatorDelay="1000"
+	busyIndicatorSize="Medium"
+	visible="true"
+	fieldGroupIds=""
+	size="Auto"
+	scale=""
+	minValue=""
+	maxValue=""
+	view="Normal"
+	colorPalette=""
+	shrinkable="false"
+	width=""
+	height=""
+	isResponsive="false"
+	ariaLabelledBy=""
+	validateFieldGroup=""
+	press="">
+		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+		<dependents></dependents> <!-- sap.ui.core.Element, since 1.19 -->
+		<dragDropConfig></dragDropConfig> <!-- sap.ui.core.dnd.DragDropBase, since 1.56 -->
+		<data></data> <!-- sap.suite.ui.microchart.ComparisonMicroChartData -->
+</ComparisonMicroChart>
+]]></xmlTemplate>
+</Template>
+<Template name="sap.suite.ui.microchart.ComparisonMicroChartData" alias="ComparisonMicroChartData,Data">
+	<jsTemplate><![CDATA[new sap.suite.ui.microchart.ComparisonMicroChartData({
+	id: "${id}", // sap.ui.core.ID
+	value: 0, // float
+	color: "Neutral", // sap.m.ValueCSSColor
+	title: "", // string
+	displayValue: "", // string
+	tooltip: undefined, // sap.ui.core.TooltipBase
+	customData: [], // sap.ui.core.CustomData
+	dependents: [], // sap.ui.core.Element, since 1.19
+	dragDropConfig: [], // sap.ui.core.dnd.DragDropBase, since 1.56
+	press: [function (oEvent) {
+		var ${control} = oEvent.getSource();
+	}, this]
+})
+]]></jsTemplate>
+	<xmlTemplate><![CDATA[<ComparisonMicroChartData xmlns="sap.suite.ui.microchart"
+	id="${id}"
+	value="0"
+	color="Neutral"
+	title=""
+	displayValue=""
+	press="">
+		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+		<dependents></dependents> <!-- sap.ui.core.Element, since 1.19 -->
+		<dragDropConfig></dragDropConfig> <!-- sap.ui.core.dnd.DragDropBase, since 1.56 -->
+</ComparisonMicroChartData>
+]]></xmlTemplate>
+</Template>
+<Template name="sap.suite.ui.microchart.DeltaMicroChart" alias="DeltaMicroChart,Chart">
+	<jsTemplate><![CDATA[new sap.suite.ui.microchart.DeltaMicroChart({
+	id: "${id}", // sap.ui.core.ID
+	blocked: false, // boolean
+	busy: false, // boolean
+	busyIndicatorDelay: 1000, // int
+	busyIndicatorSize: sap.ui.core.BusyIndicatorSize.Medium, // sap.ui.core.BusyIndicatorSize, since 1.54
+	visible: true, // boolean
+	fieldGroupIds: [], // string[], since 1.31
+	value1: undefined, // float
+	value2: undefined, // float
+	title1: undefined, // string
+	title2: undefined, // string
+	displayValue1: undefined, // string
+	displayValue2: undefined, // string
+	deltaDisplayValue: undefined, // string
+	color: "Neutral", // sap.m.ValueCSSColor
+	view: sap.suite.ui.microchart.DeltaMicroChartViewType.Normal, // sap.suite.ui.microchart.DeltaMicroChartViewType, since 1.61.0
+	width: undefined, // sap.ui.core.CSSSize
+	height: undefined, // sap.ui.core.CSSSize
+	size: sap.m.Size.Auto, // sap.m.Size
+	isResponsive: false, // boolean, since 1.38.0
+	tooltip: undefined, // sap.ui.core.TooltipBase
+	customData: [], // sap.ui.core.CustomData
+	dependents: [], // sap.ui.core.Element, since 1.19
+	dragDropConfig: [], // sap.ui.core.dnd.DragDropBase, since 1.56
+	ariaLabelledBy: [], // sap.ui.core.Control, since 1.60.0
+	validateFieldGroup: [function (oEvent) {
+		var ${control} = oEvent.getSource();
+	}, this],
+	press: [function (oEvent) {
+		var ${control} = oEvent.getSource();
+	}, this]
+})
+]]></jsTemplate>
+	<xmlTemplate><![CDATA[<DeltaMicroChart xmlns="sap.suite.ui.microchart"
+	id="${id}"
+	blocked="false"
+	busy="false"
+	busyIndicatorDelay="1000"
+	busyIndicatorSize="Medium"
+	visible="true"
+	fieldGroupIds=""
+	value1=""
+	value2=""
+	title1=""
+	title2=""
+	displayValue1=""
+	displayValue2=""
+	deltaDisplayValue=""
+	color="Neutral"
+	view="Normal"
+	width=""
+	height=""
+	size="Auto"
+	isResponsive="false"
+	ariaLabelledBy=""
+	validateFieldGroup=""
+	press="">
+		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+		<dependents></dependents> <!-- sap.ui.core.Element, since 1.19 -->
+		<dragDropConfig></dragDropConfig> <!-- sap.ui.core.dnd.DragDropBase, since 1.56 -->
+</DeltaMicroChart>
+]]></xmlTemplate>
+</Template>
+<Template name="sap.suite.ui.microchart.HarveyBallMicroChart" alias="HarveyBallMicroChart,Chart">
+	<jsTemplate><![CDATA[new sap.suite.ui.microchart.HarveyBallMicroChart({
+	id: "${id}", // sap.ui.core.ID
+	blocked: false, // boolean
+	busy: false, // boolean
+	busyIndicatorDelay: 1000, // int
+	busyIndicatorSize: sap.ui.core.BusyIndicatorSize.Medium, // sap.ui.core.BusyIndicatorSize, since 1.54
+	visible: true, // boolean
+	fieldGroupIds: [], // string[], since 1.31
+	total: undefined, // float
+	totalLabel: undefined, // string
+	totalScale: undefined, // string
+	formattedLabel: false, // boolean
+	showTotal: true, // boolean
+	showFractions: true, // boolean
+	size: sap.m.Size.Auto, // sap.m.Size
+	colorPalette: [], // string[]
+	width: undefined, // sap.ui.core.CSSSize
+	height: undefined, // sap.ui.core.CSSSize, since 1.62.0
+	alignContent: sap.suite.ui.microchart.HorizontalAlignmentType.Left, // sap.suite.ui.microchart.HorizontalAlignmentType, since 1.62.0
+	isResponsive: false, // boolean, since 1.38.0
+	tooltip: undefined, // sap.ui.core.TooltipBase
+	customData: [], // sap.ui.core.CustomData
+	dependents: [], // sap.ui.core.Element, since 1.19
+	dragDropConfig: [], // sap.ui.core.dnd.DragDropBase, since 1.56
+	items: [], // sap.suite.ui.microchart.HarveyBallMicroChartItem
+	ariaLabelledBy: [], // sap.ui.core.Control, since 1.60.0
+	validateFieldGroup: [function (oEvent) {
+		var ${control} = oEvent.getSource();
+	}, this],
+	press: [function (oEvent) {
+		var ${control} = oEvent.getSource();
+	}, this]
+})
+]]></jsTemplate>
+	<xmlTemplate><![CDATA[<HarveyBallMicroChart xmlns="sap.suite.ui.microchart"
+	id="${id}"
+	blocked="false"
+	busy="false"
+	busyIndicatorDelay="1000"
+	busyIndicatorSize="Medium"
+	visible="true"
+	fieldGroupIds=""
+	total=""
+	totalLabel=""
+	totalScale=""
+	formattedLabel="false"
+	showTotal="true"
+	showFractions="true"
+	size="Auto"
+	colorPalette=""
+	width=""
+	height=""
+	alignContent="Left"
+	isResponsive="false"
+	ariaLabelledBy=""
+	validateFieldGroup=""
+	press="">
+		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+		<dependents></dependents> <!-- sap.ui.core.Element, since 1.19 -->
+		<dragDropConfig></dragDropConfig> <!-- sap.ui.core.dnd.DragDropBase, since 1.56 -->
+		<items></items> <!-- sap.suite.ui.microchart.HarveyBallMicroChartItem -->
+</HarveyBallMicroChart>
+]]></xmlTemplate>
+</Template>
+<Template name="sap.suite.ui.microchart.HarveyBallMicroChartItem" alias="HarveyBallMicroChartItem,Item">
+	<jsTemplate><![CDATA[new sap.suite.ui.microchart.HarveyBallMicroChartItem({
+	id: "${id}", // sap.ui.core.ID
+	color: "Neutral", // sap.m.ValueCSSColor
+	fraction: 0, // float
+	fractionLabel: undefined, // string
+	fractionScale: undefined, // string
+	formattedLabel: false, // boolean
+	tooltip: undefined, // sap.ui.core.TooltipBase
+	customData: [], // sap.ui.core.CustomData
+	dependents: [], // sap.ui.core.Element, since 1.19
+	dragDropConfig: [] // sap.ui.core.dnd.DragDropBase, since 1.56
+})
+]]></jsTemplate>
+	<xmlTemplate><![CDATA[<HarveyBallMicroChartItem xmlns="sap.suite.ui.microchart"
+	id="${id}"
+	color="Neutral"
+	fraction="0"
+	fractionLabel=""
+	fractionScale=""
+	formattedLabel="false">
+		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+		<dependents></dependents> <!-- sap.ui.core.Element, since 1.19 -->
+		<dragDropConfig></dragDropConfig> <!-- sap.ui.core.dnd.DragDropBase, since 1.56 -->
+</HarveyBallMicroChartItem>
+]]></xmlTemplate>
+</Template>
+<Template name="sap.suite.ui.microchart.InteractiveBarChart" alias="InteractiveBarChart,Chart">
+	<jsTemplate><![CDATA[new sap.suite.ui.microchart.InteractiveBarChart({
+	id: "${id}", // sap.ui.core.ID
+	blocked: false, // boolean
+	busy: false, // boolean
+	busyIndicatorDelay: 1000, // int
+	busyIndicatorSize: sap.ui.core.BusyIndicatorSize.Medium, // sap.ui.core.BusyIndicatorSize, since 1.54
+	visible: true, // boolean
+	fieldGroupIds: [], // string[], since 1.31
+	displayedBars: 3, // int
+	labelWidth: "40%", // sap.ui.core.Percentage
+	selectionEnabled: true, // boolean
+	min: undefined, // float
+	max: undefined, // float
+	tooltip: undefined, // sap.ui.core.TooltipBase
+	customData: [], // sap.ui.core.CustomData
+	dependents: [], // sap.ui.core.Element, since 1.19
+	dragDropConfig: [], // sap.ui.core.dnd.DragDropBase, since 1.56
+	bars: [], // sap.suite.ui.microchart.InteractiveBarChartBar
+	ariaLabelledBy: [], // sap.ui.core.Control
+	validateFieldGroup: [function (oEvent) {
+		var ${control} = oEvent.getSource();
+	}, this],
+	selectionChanged: [function (oEvent) {
+		var ${control} = oEvent.getSource();
+	}, this],
+	press: [function (oEvent) {
+		var ${control} = oEvent.getSource();
+	}, this]
+})
+]]></jsTemplate>
+	<xmlTemplate><![CDATA[<InteractiveBarChart xmlns="sap.suite.ui.microchart"
+	id="${id}"
+	blocked="false"
+	busy="false"
+	busyIndicatorDelay="1000"
+	busyIndicatorSize="Medium"
+	visible="true"
+	fieldGroupIds=""
+	displayedBars="3"
+	labelWidth="40%"
+	selectionEnabled="true"
+	min=""
+	max=""
+	ariaLabelledBy=""
+	validateFieldGroup=""
+	selectionChanged=""
+	press="">
+		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+		<dependents></dependents> <!-- sap.ui.core.Element, since 1.19 -->
+		<dragDropConfig></dragDropConfig> <!-- sap.ui.core.dnd.DragDropBase, since 1.56 -->
+		<bars></bars> <!-- sap.suite.ui.microchart.InteractiveBarChartBar -->
+</InteractiveBarChart>
+]]></xmlTemplate>
+</Template>
+<Template name="sap.suite.ui.microchart.InteractiveBarChartBar" alias="InteractiveBarChartBar,Bar">
+	<jsTemplate><![CDATA[new sap.suite.ui.microchart.InteractiveBarChartBar({
+	id: "${id}", // sap.ui.core.ID
+	label: undefined, // string
+	selected: false, // boolean
+	displayedValue: undefined, // string
+	color: sap.m.ValueColor.Neutral, // sap.m.ValueColor, since 1.50.0
+	value: undefined, // float
+	tooltip: undefined, // sap.ui.core.TooltipBase
+	customData: [], // sap.ui.core.CustomData
+	dependents: [], // sap.ui.core.Element, since 1.19
+	dragDropConfig: [] // sap.ui.core.dnd.DragDropBase, since 1.56
+})
+]]></jsTemplate>
+	<xmlTemplate><![CDATA[<InteractiveBarChartBar xmlns="sap.suite.ui.microchart"
+	id="${id}"
+	label=""
+	selected="false"
+	displayedValue=""
+	color="Neutral"
+	value="">
+		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+		<dependents></dependents> <!-- sap.ui.core.Element, since 1.19 -->
+		<dragDropConfig></dragDropConfig> <!-- sap.ui.core.dnd.DragDropBase, since 1.56 -->
+</InteractiveBarChartBar>
+]]></xmlTemplate>
+</Template>
+<Template name="sap.suite.ui.microchart.InteractiveDonutChart" alias="InteractiveDonutChart,Chart">
+	<jsTemplate><![CDATA[new sap.suite.ui.microchart.InteractiveDonutChart({
+	id: "${id}", // sap.ui.core.ID
+	blocked: false, // boolean
+	busy: false, // boolean
+	busyIndicatorDelay: 1000, // int
+	busyIndicatorSize: sap.ui.core.BusyIndicatorSize.Medium, // sap.ui.core.BusyIndicatorSize, since 1.54
+	visible: true, // boolean
+	fieldGroupIds: [], // string[], since 1.31
+	displayedSegments: 3, // int
+	selectionEnabled: true, // boolean
+	tooltip: undefined, // sap.ui.core.TooltipBase
+	customData: [], // sap.ui.core.CustomData
+	dependents: [], // sap.ui.core.Element, since 1.19
+	dragDropConfig: [], // sap.ui.core.dnd.DragDropBase, since 1.56
+	segments: [], // sap.suite.ui.microchart.InteractiveDonutChartSegment
+	ariaLabelledBy: [], // sap.ui.core.Control
+	validateFieldGroup: [function (oEvent) {
+		var ${control} = oEvent.getSource();
+	}, this],
+	selectionChanged: [function (oEvent) {
+		var ${control} = oEvent.getSource();
+	}, this],
+	press: [function (oEvent) {
+		var ${control} = oEvent.getSource();
+	}, this]
+})
+]]></jsTemplate>
+	<xmlTemplate><![CDATA[<InteractiveDonutChart xmlns="sap.suite.ui.microchart"
+	id="${id}"
+	blocked="false"
+	busy="false"
+	busyIndicatorDelay="1000"
+	busyIndicatorSize="Medium"
+	visible="true"
+	fieldGroupIds=""
+	displayedSegments="3"
+	selectionEnabled="true"
+	ariaLabelledBy=""
+	validateFieldGroup=""
+	selectionChanged=""
+	press="">
+		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+		<dependents></dependents> <!-- sap.ui.core.Element, since 1.19 -->
+		<dragDropConfig></dragDropConfig> <!-- sap.ui.core.dnd.DragDropBase, since 1.56 -->
+		<segments></segments> <!-- sap.suite.ui.microchart.InteractiveDonutChartSegment -->
+</InteractiveDonutChart>
+]]></xmlTemplate>
+</Template>
+<Template name="sap.suite.ui.microchart.InteractiveDonutChartSegment" alias="InteractiveDonutChartSegment,Segment">
+	<jsTemplate><![CDATA[new sap.suite.ui.microchart.InteractiveDonutChartSegment({
+	id: "${id}", // sap.ui.core.ID
+	label: undefined, // string
+	selected: false, // boolean
+	value: undefined, // float
+	displayedValue: undefined, // string
+	color: sap.m.ValueColor.Neutral, // sap.m.ValueColor, since 1.50.0
+	tooltip: undefined, // sap.ui.core.TooltipBase
+	customData: [], // sap.ui.core.CustomData
+	dependents: [], // sap.ui.core.Element, since 1.19
+	dragDropConfig: [] // sap.ui.core.dnd.DragDropBase, since 1.56
+})
+]]></jsTemplate>
+	<xmlTemplate><![CDATA[<InteractiveDonutChartSegment xmlns="sap.suite.ui.microchart"
+	id="${id}"
+	label=""
+	selected="false"
+	value=""
+	displayedValue=""
+	color="Neutral">
+		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+		<dependents></dependents> <!-- sap.ui.core.Element, since 1.19 -->
+		<dragDropConfig></dragDropConfig> <!-- sap.ui.core.dnd.DragDropBase, since 1.56 -->
+</InteractiveDonutChartSegment>
+]]></xmlTemplate>
+</Template>
+<Template name="sap.suite.ui.microchart.InteractiveLineChart" alias="InteractiveLineChart,Chart">
+	<jsTemplate><![CDATA[new sap.suite.ui.microchart.InteractiveLineChart({
+	id: "${id}", // sap.ui.core.ID
+	blocked: false, // boolean
+	busy: false, // boolean
+	busyIndicatorDelay: 1000, // int
+	busyIndicatorSize: sap.ui.core.BusyIndicatorSize.Medium, // sap.ui.core.BusyIndicatorSize, since 1.54
+	visible: true, // boolean
+	fieldGroupIds: [], // string[], since 1.31
+	displayedPoints: 6, // int
+	precedingPoint: 0, // float
+	succeedingPoint: 0, // float
+	selectionEnabled: true, // boolean
+	tooltip: undefined, // sap.ui.core.TooltipBase
+	customData: [], // sap.ui.core.CustomData
+	dependents: [], // sap.ui.core.Element, since 1.19
+	dragDropConfig: [], // sap.ui.core.dnd.DragDropBase, since 1.56
+	points: [], // sap.suite.ui.microchart.InteractiveLineChartPoint
+	ariaLabelledBy: [], // sap.ui.core.Control
+	validateFieldGroup: [function (oEvent) {
+		var ${control} = oEvent.getSource();
+	}, this],
+	selectionChanged: [function (oEvent) {
+		var ${control} = oEvent.getSource();
+	}, this],
+	press: [function (oEvent) {
+		var ${control} = oEvent.getSource();
+	}, this]
+})
+]]></jsTemplate>
+	<xmlTemplate><![CDATA[<InteractiveLineChart xmlns="sap.suite.ui.microchart"
+	id="${id}"
+	blocked="false"
+	busy="false"
+	busyIndicatorDelay="1000"
+	busyIndicatorSize="Medium"
+	visible="true"
+	fieldGroupIds=""
+	displayedPoints="6"
+	precedingPoint="0"
+	succeedingPoint="0"
+	selectionEnabled="true"
+	ariaLabelledBy=""
+	validateFieldGroup=""
+	selectionChanged=""
+	press="">
+		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+		<dependents></dependents> <!-- sap.ui.core.Element, since 1.19 -->
+		<dragDropConfig></dragDropConfig> <!-- sap.ui.core.dnd.DragDropBase, since 1.56 -->
+		<points></points> <!-- sap.suite.ui.microchart.InteractiveLineChartPoint -->
+</InteractiveLineChart>
+]]></xmlTemplate>
+</Template>
+<Template name="sap.suite.ui.microchart.InteractiveLineChartPoint" alias="InteractiveLineChartPoint,Point">
+	<jsTemplate><![CDATA[new sap.suite.ui.microchart.InteractiveLineChartPoint({
+	id: "${id}", // sap.ui.core.ID
+	label: undefined, // string
+	secondaryLabel: undefined, // string
+	selected: false, // boolean
+	value: undefined, // float
+	displayedValue: undefined, // string
+	color: sap.m.ValueColor.Neutral, // sap.m.ValueColor, since 1.50.0
+	tooltip: undefined, // sap.ui.core.TooltipBase
+	customData: [], // sap.ui.core.CustomData
+	dependents: [], // sap.ui.core.Element, since 1.19
+	dragDropConfig: [] // sap.ui.core.dnd.DragDropBase, since 1.56
+})
+]]></jsTemplate>
+	<xmlTemplate><![CDATA[<InteractiveLineChartPoint xmlns="sap.suite.ui.microchart"
+	id="${id}"
+	label=""
+	secondaryLabel=""
+	selected="false"
+	value=""
+	displayedValue=""
+	color="Neutral">
+		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+		<dependents></dependents> <!-- sap.ui.core.Element, since 1.19 -->
+		<dragDropConfig></dragDropConfig> <!-- sap.ui.core.dnd.DragDropBase, since 1.56 -->
+</InteractiveLineChartPoint>
+]]></xmlTemplate>
+</Template>
+<Template name="sap.suite.ui.microchart.LineMicroChart" alias="LineMicroChart,Chart">
+	<jsTemplate><![CDATA[new sap.suite.ui.microchart.LineMicroChart({
+	id: "${id}", // sap.ui.core.ID
+	blocked: false, // boolean
+	busy: false, // boolean
+	busyIndicatorDelay: 1000, // int
+	busyIndicatorSize: sap.ui.core.BusyIndicatorSize.Medium, // sap.ui.core.BusyIndicatorSize, since 1.54
+	visible: true, // boolean
+	fieldGroupIds: [], // string[], since 1.31
+	size: sap.m.Size.Auto, // sap.m.Size
+	threshold: 0, // float
+	showThresholdLine: true, // boolean
+	showThresholdValue: false, // boolean
+	thresholdDisplayValue: undefined, // string
+	minXValue: undefined, // float
+	maxXValue: undefined, // float
+	minYValue: undefined, // float
+	maxYValue: undefined, // float
+	leftTopLabel: undefined, // string
+	rightTopLabel: undefined, // string
+	leftBottomLabel: undefined, // string
+	rightBottomLabel: undefined, // string
+	showTopLabels: true, // boolean
+	showBottomLabels: true, // boolean
+	color: Neutral, // any
+	showPoints: false, // boolean
+	width: undefined, // sap.ui.core.CSSSize
+	height: undefined, // sap.ui.core.CSSSize
+	tooltip: undefined, // sap.ui.core.TooltipBase
+	customData: [], // sap.ui.core.CustomData
+	dependents: [], // sap.ui.core.Element, since 1.19
+	dragDropConfig: [], // sap.ui.core.dnd.DragDropBase, since 1.56
+	points: [], // sap.suite.ui.microchart.LineMicroChartPoint
+	lines: [], // sap.suite.ui.microchart.LineMicroChartLine
+	ariaLabelledBy: [], // sap.ui.core.Control, since 1.60.0
+	validateFieldGroup: [function (oEvent) {
+		var ${control} = oEvent.getSource();
+	}, this],
+	press: [function (oEvent) {
+		var ${control} = oEvent.getSource();
+	}, this]
+})
+]]></jsTemplate>
+	<xmlTemplate><![CDATA[<LineMicroChart xmlns="sap.suite.ui.microchart"
+	id="${id}"
+	blocked="false"
+	busy="false"
+	busyIndicatorDelay="1000"
+	busyIndicatorSize="Medium"
+	visible="true"
+	fieldGroupIds=""
+	size="Auto"
+	threshold="0"
+	showThresholdLine="true"
+	showThresholdValue="false"
+	thresholdDisplayValue=""
+	minXValue=""
+	maxXValue=""
+	minYValue=""
+	maxYValue=""
+	leftTopLabel=""
+	rightTopLabel=""
+	leftBottomLabel=""
+	rightBottomLabel=""
+	showTopLabels="true"
+	showBottomLabels="true"
+	color="Neutral"
+	showPoints="false"
+	width=""
+	height=""
+	ariaLabelledBy=""
+	validateFieldGroup=""
+	press="">
+		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+		<dependents></dependents> <!-- sap.ui.core.Element, since 1.19 -->
+		<dragDropConfig></dragDropConfig> <!-- sap.ui.core.dnd.DragDropBase, since 1.56 -->
+		<points></points> <!-- sap.suite.ui.microchart.LineMicroChartPoint -->
+		<lines></lines> <!-- sap.suite.ui.microchart.LineMicroChartLine -->
+</LineMicroChart>
+]]></xmlTemplate>
+</Template>
+<Template name="sap.suite.ui.microchart.LineMicroChartEmphasizedPoint" alias="LineMicroChartEmphasizedPoint,Point">
+	<jsTemplate><![CDATA[new sap.suite.ui.microchart.LineMicroChartEmphasizedPoint({
+	id: "${id}", // sap.ui.core.ID
+	x: 0, // float
+	y: 0, // float
+	color: "Neutral", // sap.m.ValueCSSColor
+	show: false, // boolean
+	tooltip: undefined, // sap.ui.core.TooltipBase
+	customData: [], // sap.ui.core.CustomData
+	dependents: [], // sap.ui.core.Element, since 1.19
+	dragDropConfig: [] // sap.ui.core.dnd.DragDropBase, since 1.56
+})
+]]></jsTemplate>
+	<xmlTemplate><![CDATA[<LineMicroChartEmphasizedPoint xmlns="sap.suite.ui.microchart"
+	id="${id}"
+	x="0"
+	y="0"
+	color="Neutral"
+	show="false">
+		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+		<dependents></dependents> <!-- sap.ui.core.Element, since 1.19 -->
+		<dragDropConfig></dragDropConfig> <!-- sap.ui.core.dnd.DragDropBase, since 1.56 -->
+</LineMicroChartEmphasizedPoint>
+]]></xmlTemplate>
+</Template>
+<Template name="sap.suite.ui.microchart.LineMicroChartLine" alias="LineMicroChartLine,Line">
+	<jsTemplate><![CDATA[new sap.suite.ui.microchart.LineMicroChartLine({
+	id: "${id}", // sap.ui.core.ID
+	color: undefined, // any
+	showPoints: undefined, // boolean
+	type: sap.suite.ui.microchart.LineType.Solid, // sap.suite.ui.microchart.LineType
+	tooltip: undefined, // sap.ui.core.TooltipBase
+	customData: [], // sap.ui.core.CustomData
+	dependents: [], // sap.ui.core.Element, since 1.19
+	dragDropConfig: [], // sap.ui.core.dnd.DragDropBase, since 1.56
+	points: [] // sap.suite.ui.microchart.LineMicroChartPoint
+})
+]]></jsTemplate>
+	<xmlTemplate><![CDATA[<LineMicroChartLine xmlns="sap.suite.ui.microchart"
+	id="${id}"
+	color=""
+	showPoints=""
+	type="Solid">
+		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+		<dependents></dependents> <!-- sap.ui.core.Element, since 1.19 -->
+		<dragDropConfig></dragDropConfig> <!-- sap.ui.core.dnd.DragDropBase, since 1.56 -->
+		<points></points> <!-- sap.suite.ui.microchart.LineMicroChartPoint -->
+</LineMicroChartLine>
+]]></xmlTemplate>
+</Template>
+<Template name="sap.suite.ui.microchart.LineMicroChartPoint" alias="LineMicroChartPoint,Point">
+	<jsTemplate><![CDATA[new sap.suite.ui.microchart.LineMicroChartPoint({
+	id: "${id}", // sap.ui.core.ID
+	x: 0, // float
+	y: 0, // float
+	tooltip: undefined, // sap.ui.core.TooltipBase
+	customData: [], // sap.ui.core.CustomData
+	dependents: [], // sap.ui.core.Element, since 1.19
+	dragDropConfig: [] // sap.ui.core.dnd.DragDropBase, since 1.56
+})
+]]></jsTemplate>
+	<xmlTemplate><![CDATA[<LineMicroChartPoint xmlns="sap.suite.ui.microchart"
+	id="${id}"
+	x="0"
+	y="0">
+		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+		<dependents></dependents> <!-- sap.ui.core.Element, since 1.19 -->
+		<dragDropConfig></dragDropConfig> <!-- sap.ui.core.dnd.DragDropBase, since 1.56 -->
+</LineMicroChartPoint>
+]]></xmlTemplate>
+</Template>
+<Template name="sap.suite.ui.microchart.RadialMicroChart" alias="RadialMicroChart,Chart">
+	<jsTemplate><![CDATA[new sap.suite.ui.microchart.RadialMicroChart({
+	id: "${id}", // sap.ui.core.ID
+	blocked: false, // boolean
+	busy: false, // boolean
+	busyIndicatorDelay: 1000, // int
+	busyIndicatorSize: sap.ui.core.BusyIndicatorSize.Medium, // sap.ui.core.BusyIndicatorSize, since 1.54
+	visible: true, // boolean
+	fieldGroupIds: [], // string[], since 1.31
+	total: undefined, // float
+	fraction: undefined, // float
+	percentage: undefined, // float
+	valueColor: "Neutral", // sap.m.ValueCSSColor
+	size: sap.m.Size.Auto, // sap.m.Size, since 1.44.0
+	width: undefined, // sap.ui.core.CSSSize, since 1.62.0
+	height: undefined, // sap.ui.core.CSSSize, since 1.62.0
+	alignContent: sap.suite.ui.microchart.HorizontalAlignmentType.Left, // sap.suite.ui.microchart.HorizontalAlignmentType, since 1.62.0
+	tooltip: undefined, // sap.ui.core.TooltipBase
+	customData: [], // sap.ui.core.CustomData
+	dependents: [], // sap.ui.core.Element, since 1.19
+	dragDropConfig: [], // sap.ui.core.dnd.DragDropBase, since 1.56
+	ariaLabelledBy: [], // sap.ui.core.Control, since 1.60.0
+	validateFieldGroup: [function (oEvent) {
+		var ${control} = oEvent.getSource();
+	}, this],
+	press: [function (oEvent) {
+		var ${control} = oEvent.getSource();
+	}, this]
+})
+]]></jsTemplate>
+	<xmlTemplate><![CDATA[<RadialMicroChart xmlns="sap.suite.ui.microchart"
+	id="${id}"
+	blocked="false"
+	busy="false"
+	busyIndicatorDelay="1000"
+	busyIndicatorSize="Medium"
+	visible="true"
+	fieldGroupIds=""
+	total=""
+	fraction=""
+	percentage=""
+	valueColor="Neutral"
+	size="Auto"
+	width=""
+	height=""
+	alignContent="Left"
+	ariaLabelledBy=""
+	validateFieldGroup=""
+	press="">
+		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+		<dependents></dependents> <!-- sap.ui.core.Element, since 1.19 -->
+		<dragDropConfig></dragDropConfig> <!-- sap.ui.core.dnd.DragDropBase, since 1.56 -->
+</RadialMicroChart>
+]]></xmlTemplate>
+</Template>
+<Template name="sap.suite.ui.microchart.StackedBarMicroChart" alias="StackedBarMicroChart,Chart">
+	<jsTemplate><![CDATA[new sap.suite.ui.microchart.StackedBarMicroChart({
+	id: "${id}", // sap.ui.core.ID
+	blocked: false, // boolean
+	busy: false, // boolean
+	busyIndicatorDelay: 1000, // int
+	busyIndicatorSize: sap.ui.core.BusyIndicatorSize.Medium, // sap.ui.core.BusyIndicatorSize, since 1.54
+	visible: true, // boolean
+	fieldGroupIds: [], // string[], since 1.31
+	size: sap.m.Size.Auto, // sap.m.Size
+	maxValue: undefined, // float
+	precision: 1, // int
+	width: undefined, // sap.ui.core.CSSSize
+	height: undefined, // sap.ui.core.CSSSize
+	showLabels: true, // boolean
+	tooltip: undefined, // sap.ui.core.TooltipBase
+	customData: [], // sap.ui.core.CustomData
+	dependents: [], // sap.ui.core.Element, since 1.19
+	dragDropConfig: [], // sap.ui.core.dnd.DragDropBase, since 1.56
+	bars: [], // sap.suite.ui.microchart.StackedBarMicroChartBar
+	ariaLabelledBy: [], // sap.ui.core.Control, since 1.60.0
+	validateFieldGroup: [function (oEvent) {
+		var ${control} = oEvent.getSource();
+	}, this],
+	press: [function (oEvent) {
+		var ${control} = oEvent.getSource();
+	}, this]
+})
+]]></jsTemplate>
+	<xmlTemplate><![CDATA[<StackedBarMicroChart xmlns="sap.suite.ui.microchart"
+	id="${id}"
+	blocked="false"
+	busy="false"
+	busyIndicatorDelay="1000"
+	busyIndicatorSize="Medium"
+	visible="true"
+	fieldGroupIds=""
+	size="Auto"
+	maxValue=""
+	precision="1"
+	width=""
+	height=""
+	showLabels="true"
+	ariaLabelledBy=""
+	validateFieldGroup=""
+	press="">
+		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+		<dependents></dependents> <!-- sap.ui.core.Element, since 1.19 -->
+		<dragDropConfig></dragDropConfig> <!-- sap.ui.core.dnd.DragDropBase, since 1.56 -->
+		<bars></bars> <!-- sap.suite.ui.microchart.StackedBarMicroChartBar -->
+</StackedBarMicroChart>
+]]></xmlTemplate>
+</Template>
+<Template name="sap.suite.ui.microchart.StackedBarMicroChartBar" alias="StackedBarMicroChartBar,Bar">
+	<jsTemplate><![CDATA[new sap.suite.ui.microchart.StackedBarMicroChartBar({
+	id: "${id}", // sap.ui.core.ID
+	value: 0, // float
+	valueColor: undefined, // sap.m.ValueCSSColor
+	displayValue: undefined, // string
+	tooltip: undefined, // sap.ui.core.TooltipBase
+	customData: [], // sap.ui.core.CustomData
+	dependents: [], // sap.ui.core.Element, since 1.19
+	dragDropConfig: [] // sap.ui.core.dnd.DragDropBase, since 1.56
+})
+]]></jsTemplate>
+	<xmlTemplate><![CDATA[<StackedBarMicroChartBar xmlns="sap.suite.ui.microchart"
+	id="${id}"
+	value="0"
+	valueColor=""
+	displayValue="">
+		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+		<dependents></dependents> <!-- sap.ui.core.Element, since 1.19 -->
+		<dragDropConfig></dragDropConfig> <!-- sap.ui.core.dnd.DragDropBase, since 1.56 -->
+</StackedBarMicroChartBar>
+]]></xmlTemplate>
+</Template>
+</Library>

@@ -1,0 +1,54 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": ".theming",
+			"theme": "base"
+		},
+		{
+			"name": "RichTextEditor.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "icons.gif",
+			"theme": "base"
+		},
+		{
+			"name": "icons.png",
+			"theme": "base"
+		},
+		{
+			"name": "library-RTL-dbg.css",
+			"isDebug": true,
+			"theme": "base"
+		},
+		{
+			"name": "library-RTL.css",
+			"theme": "base"
+		},
+		{
+			"name": "library-dbg.css",
+			"isDebug": true,
+			"theme": "base"
+		},
+		{
+			"name": "library-parameters.json",
+			"theme": "base"
+		},
+		{
+			"name": "library.css",
+			"theme": "base"
+		},
+		{
+			"name": "library.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "library.source.less",
+			"designtime": true,
+			"theme": "base"
+		}
+	]
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>GenericTagDesign</name>
+    <derived/>
+    <documentation>Design modes for the &lt;code&gt;GenericTag&lt;/code&gt; control.</documentation>
+    <since>1.62.0</since>
+    <enumeration>
+        <value name="Full">
+            <documentation>Everything from the control is rendered.</documentation>
+        </value>
+        <value name="StatusIconHidden">
+            <documentation>Everything from the control is rendered except the status icon.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>AreaMicroChartViewType</name>
+    <derived/>
+    <documentation>Enum of available views for the area micro chart concerning the position of the labels.</documentation>
+    <since>1.34</since>
+    <enumeration>
+        <value name="Normal">
+            <documentation>The view with labels on the top and bottom.</documentation>
+        </value>
+        <value name="Wide">
+            <documentation>The view with labels on the left and right.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartfield/CriticalityRepresentationType</name>
+    <derived/>
+    <documentation>The different options to visualize the ObjectStatus control.</documentation>
+    <enumeration>
+        <value name="WithoutIcon">
+            <documentation>If this is selected, the sap.m.ObjectStatus control does not visualize the criticality using an icon.</documentation>
+        </value>
+        <value name="WithIcon">
+            <documentation>If this is selected, the sap.m.ObjectStatus control visualizes the criticality using an icon.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

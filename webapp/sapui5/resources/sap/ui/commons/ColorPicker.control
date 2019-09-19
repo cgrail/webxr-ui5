@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ColorPicker</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>This control gives the user the opportunity to choose a color. The color can be defined using HEX-, RGB- or HSV-values or a CSS colorname.</documentation>
+    <deprecation since="1.38">replaced by {@link sap.ui.unified.ColorPicker}</deprecation>
+    <baseType>sap.ui.unified/ColorPicker</baseType>
+</control>

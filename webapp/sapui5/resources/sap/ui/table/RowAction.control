@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>RowAction</name>
+    <derived/>
+    <documentation>The &lt;code&gt;RowAction&lt;/code&gt; control allows to display multiple action items which can be selected by the user.
+If more action items are available as the available space allows to display an overflow mechanism is provided.
+This control must only be used in the context of the &lt;code&gt;sap.ui.table.Table&lt;/code&gt; control to define row actions.</documentation>
+    <since>1.45.0</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="visible" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Whether the control should be visible on the screen. If set to &lt;code&gt;false&lt;/code&gt;, the control is hidden.</documentation>
+        </property>
+    </properties>
+    <aggregations default="items">
+        <aggregation name="items" type="sap.ui.table/RowActionItem" cardinality="0..n">
+            <documentation>The action items which should be displayed.</documentation>
+        </aggregation>
+        <aggregation name="_icons" type="sap.ui.core/Icon" cardinality="0..n" visibility="hidden"/>
+        <aggregation name="_menu" type="sap.ui.unified/Menu" cardinality="0..1" visibility="hidden"/>
+    </aggregations>
+</control>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>CalendarLegend</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A legend for the Calendar Control. Displays special dates colors with their corresponding description. The aggregation specialDates can be set herefor.</documentation>
+    <since>1.24.0</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="standardItems" type="sap.ui.core/string[]" defaultValue="[Today,Selected,WorkingDay,NonWorkingDay]" group="Misc" since="1.54">
+            <documentation>Determines the standard items related to the calendar days, such as, today, selected, working and non-working.
+Values must be one of &lt;code&gt;sap.ui.unified.StandardCalendarLegendItem&lt;/code&gt;.
+Note: for versions 1.50 and 1.52, this property was defined in the the subclass &lt;code&gt;sap.m.PlanningCalendarLegend&lt;/code&gt;</documentation>
+        </property>
+        <property name="columnWidth" type="sap.ui.core/CSSSize" defaultValue="120px" group="Misc">
+            <documentation>Defines the width of the created columns in which the items are arranged.</documentation>
+        </property>
+    </properties>
+    <aggregations>
+        <aggregation name="items" type="sap.ui.unified/CalendarLegendItem" cardinality="0..n">
+            <documentation>Items to be displayed.</documentation>
+        </aggregation>
+        <aggregation name="_standardItems" type="sap.ui.unified/CalendarLegendItem" cardinality="0..n" visibility="hidden"/>
+    </aggregations>
+</control>

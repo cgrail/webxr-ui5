@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>FileUploader</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The framework generates an input field and a button with text "Browse ...".
+The API supports features such as on change uploads (the upload starts immediately after
+a file has been selected), file uploads with explicit calls, adjustable control sizes,
+text display after uploads, or tooltips containing complete file paths.</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="value" type="sap.ui.core/string" defaultValue="" group="Data">
+            <documentation>Value of the path for file upload.</documentation>
+        </property>
+        <property name="enabled" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Disabled controls have different colors, depending on customer settings.</documentation>
+        </property>
+        <property name="uploadUrl" type="sap.ui.core/URI" defaultValue="" group="Data">
+            <documentation>Used when URL address is on a remote server.</documentation>
+        </property>
+        <property name="name" type="sap.ui.core/string" group="Data">
+            <documentation>Unique control name for identification on the server side after sending data to the server.</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" defaultValue="" group="Misc">
+            <documentation>Specifies the displayed control width.</documentation>
+        </property>
+        <property name="uploadOnChange" type="sap.ui.core/boolean" defaultValue="false" group="Behavior">
+            <documentation>If set to "true", the upload immediately starts after file selection. With the default setting, the upload needs to be explicitly triggered.</documentation>
+        </property>
+        <property name="additionalData" type="sap.ui.core/string" group="Data">
+            <documentation>Additional data that is sent to the back end service. Data will be transmitted as value of a hidden input where the name is derived from the name property with suffix -data.</documentation>
+        </property>
+        <property name="sameFilenameAllowed" type="sap.ui.core/boolean" defaultValue="false" group="Behavior">
+            <documentation>If the FileUploader is configured to upload the file directly after the file is selected it is not allowed to upload a file with the same name again. If a user should be allowed to upload a file with the same name again this parameter has to be "true". A typical use case would be if the files have different paths.</documentation>
+        </property>
+        <property name="buttonText" type="sap.ui.core/string" group="Misc">
+            <documentation>The Button text can be overwritten using this property.</documentation>
+        </property>
+        <property name="fileType" type="sap.ui.core/string[]" group="Data">
+            <documentation>The chosen files will be checked against an array of file types. If at least one file does not fit the file type restriction the upload is prevented.
+Example: ["jpg", "png", "bmp"].</documentation>
+        </property>
+        <property name="multiple" type="sap.ui.core/boolean" defaultValue="false" group="Behavior">
+            <documentation>Allows multiple files to be chosen and uploaded from the same folder.
+This property is not supported by Internet Explorer 9.
+
+&lt;b&gt;Note:&lt;/b&gt; Keep in mind that the various operating systems for mobile devices
+can react differently to the property so that fewer upload functions may be
+available in some cases.</documentation>
+        </property>
+        <property name="maximumFileSize" type="sap.ui.core/float" group="Data">
+            <documentation>A file size limit in megabytes which prevents the upload if at least one file exceeds it. This property is not supported by Internet Explorer 9.</documentation>
+        </property>
+        <property name="mimeType" type="sap.ui.core/string[]" group="Data">
+            <documentation>The chosen files will be checked against an array of mime types. If at least one file does not fit the mime type restriction the upload is prevented.
+&lt;b&gt;Note:&lt;/b&gt; This property is not supported by Internet Explorer &amp; Edge.
+Example: mimeType ["image/png", "image/jpeg"].</documentation>
+        </property>
+        <property name="sendXHR" type="sap.ui.core/boolean" defaultValue="false" group="Behavior">
+            <documentation>If set to "true", the request will be sent as XHR request instead of a form submit. This property is not supported by Internet Explorer 9.</documentation>
+        </property>
+        <property name="placeholder" type="sap.ui.core/string" group="Appearance">
+            <documentation>Placeholder for the text field.</documentation>
+        </property>
+        <property name="style" type="sap.ui.core/string" group="Appearance">
+            <documentation>Style of the button. "Transparent, "Accept", "Reject", or "Emphasized" is allowed.</documentation>
+        </property>
+        <property name="buttonOnly" type="sap.ui.core/boolean" defaultValue="false" group="Appearance">
+            <documentation>If set to "true", the FileUploader will be rendered as Button only, without showing the InputField.</documentation>
+        </property>
+        <property name="useMultipart" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>If set to "false", the request will be sent as file only request instead of a multipart/form-data request. Only one file could be uploaded using this type of request. Required for sending such a request is to set the property "sendXHR" to "true". This property is not supported by Internet Explorer 9.</documentation>
+        </property>
+        <property name="maximumFilenameLength" type="sap.ui.core/int" group="Data" since="1.24.0">
+            <documentation>The maximum length of a filename which the FileUploader will accept. If the maximum filename length is exceeded, the corresponding Event 'filenameLengthExceed' is fired.</documentation>
+        </property>
+        <property name="valueState" type="sap.ui.core/ValueState" defaultValue="None" group="Data" since="1.24.0">
+            <documentation>Visualizes warnings or errors related to the text field. Possible values: Warning, Error, Success, None.</documentation>
+        </property>
+        <property name="valueStateText" type="sap.ui.core/string" group="Misc" since="1.52">
+            <documentation>Custom text for the value state message pop-up.
+
+&lt;b&gt;Note:&lt;/b&gt; If not specified, a default text, based on the value state type, will be used instead.</documentation>
+        </property>
+        <property name="icon" type="sap.ui.core/URI" defaultValue="" group="Appearance" since="1.26.0">
+            <documentation>Icon to be displayed as graphical element within the button.
+This can be a URI to an image or an icon font URI.</documentation>
+        </property>
+        <property name="iconHovered" type="sap.ui.core/URI" defaultValue="" group="Appearance" since="1.26.0">
+            <documentation>Icon to be displayed as graphical element within the button when it is hovered (only if also a base icon was specified). If not specified the base icon is used.
+If an icon font icon is used, this property is ignored.</documentation>
+        </property>
+        <property name="iconSelected" type="sap.ui.core/URI" defaultValue="" group="Appearance" since="1.26.0">
+            <documentation>Icon to be displayed as graphical element within the button when it is selected (only if also a base icon was specified). If not specified the base or hovered icon is used.
+If an icon font icon is used, this property is ignored.</documentation>
+        </property>
+        <property name="iconFirst" type="sap.ui.core/boolean" defaultValue="true" group="Appearance" since="1.26.0">
+            <documentation>If set to true (default), the display sequence is 1. icon 2. control text.</documentation>
+        </property>
+        <property name="iconOnly" type="sap.ui.core/boolean" defaultValue="false" group="Appearance" since="1.26.0">
+            <documentation>If set to true, the button is displayed without any text.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="change" allowPreventDefault="false">
+            <documentation>Event is fired when the value of the file path has been changed.</documentation>
+            <parameters>
+                <parameter name="newValue" type="sap.ui.core/string">
+                    <documentation>New file path value.</documentation>
+                </parameter>
+                <parameter name="files" type="sap.ui.core/object[]">
+                    <documentation>Files.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="uploadComplete" allowPreventDefault="false">
+            <documentation>Event is fired as soon as the upload request is completed (either successful or unsuccessful). To see if the upload request was successful, check the 'state' parameter for a value 2xx.
+The uploads actual progress can be retrieved via the 'uploadProgress' Event.
+However this covers only the client side of the Upload process and does not give any success status from the server.</documentation>
+            <parameters>
+                <parameter name="fileName" type="sap.ui.core/string">
+                    <documentation>The name of a file to be uploaded.</documentation>
+                </parameter>
+                <parameter name="response" type="sap.ui.core/string">
+                    <documentation>Response message which comes from the server. On the server side this response has to be put within the &amp;quot;body&amp;quot; tags of the response document of the iFrame.
+It can consist of a return code and an optional message. This does not work in cross-domain scenarios.</documentation>
+                </parameter>
+                <parameter name="readyStateXHR" type="sap.ui.core/string">
+                    <documentation>ReadyState of the XHR request. Required for receiving a readyState is to set the property "sendXHR" to "true". This property is not supported by Internet Explorer 9.</documentation>
+                </parameter>
+                <parameter name="status" type="sap.ui.core/string">
+                    <documentation>Status of the XHR request. Required for receiving a status is to set the property "sendXHR" to "true". This property is not supported by Internet Explorer 9.</documentation>
+                </parameter>
+                <parameter name="responseRaw" type="sap.ui.core/string">
+                    <documentation>Http-Response which comes from the server. Required for receiving "responseRaw" is to set the property "sendXHR" to true. This property is not supported by Internet Explorer 9.</documentation>
+                </parameter>
+                <parameter name="headers" type="sap.ui.core/object">
+                    <documentation>Http-Response-Headers which come from the server. provided as a JSON-map, i.e. each header-field is reflected by a property in the header-object, with the property value reflecting the header-field's content.
+Required for receiving "header" is to set the property "sendXHR" to true.
+This property is not supported by Internet Explorer 9.</documentation>
+                </parameter>
+                <parameter name="requestHeaders" type="sap.ui.core/object[]">
+                    <documentation>Http-Request-Headers. Required for receiving "header" is to set the property "sendXHR" to true. This property is not supported by Internet Explorer 9.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="typeMissmatch" allowPreventDefault="false">
+            <documentation>Event is fired when the type of a file does not match the mimeType or fileType property.</documentation>
+            <parameters>
+                <parameter name="fileName" type="sap.ui.core/string">
+                    <documentation>The name of a file to be uploaded.</documentation>
+                </parameter>
+                <parameter name="fileType" type="sap.ui.core/string">
+                    <documentation>The file ending of a file to be uploaded.</documentation>
+                </parameter>
+                <parameter name="mimeType" type="sap.ui.core/string">
+                    <documentation>The MIME type of a file to be uploaded.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="fileSizeExceed" allowPreventDefault="false">
+            <documentation>Event is fired when the size of a file is above the maximumFileSize property.
+This event is not supported by Internet Explorer 9 (same restriction as for the property maximumFileSize).</documentation>
+            <parameters>
+                <parameter name="fileName" type="sap.ui.core/string">
+                    <documentation>The name of a file to be uploaded.</documentation>
+                </parameter>
+                <parameter name="fileSize" type="sap.ui.core/string">
+                    <documentation>The size in MB of a file to be uploaded.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="fileAllowed" allowPreventDefault="false">
+            <documentation>Event is fired when the file is allowed for upload on client side.</documentation>
+        </event>
+        <event name="uploadProgress" since="1.24.0" allowPreventDefault="false">
+            <documentation>Event is fired after the upload has started and before the upload is completed and contains progress information related to the running upload.
+Depending on file size, band width and used browser the event is fired once or multiple times.
+This is event is only supported with property sendXHR set to true, i.e. the event is not supported in Internet Explorer 9.</documentation>
+            <parameters>
+                <parameter name="lengthComputable" type="sap.ui.core/boolean">
+                    <documentation>Indicates whether or not the relative upload progress can be calculated out of loaded and total.</documentation>
+                </parameter>
+                <parameter name="loaded" type="sap.ui.core/float">
+                    <documentation>The number of bytes of the file which have been uploaded by to the time the event was fired.</documentation>
+                </parameter>
+                <parameter name="total" type="sap.ui.core/float">
+                    <documentation>The total size of the file to be uploaded in byte.</documentation>
+                </parameter>
+                <parameter name="fileName" type="sap.ui.core/string">
+                    <documentation>The name of a file to be uploaded.</documentation>
+                </parameter>
+                <parameter name="requestHeaders" type="sap.ui.core/object[]">
+                    <documentation>Http-Request-Headers. Required for receiving "header" is to set the property "sendXHR" to true.
+This property is not supported by Internet Explorer 9.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="uploadAborted" since="1.24.0" allowPreventDefault="false">
+            <documentation>Event is fired after the current upload has been aborted.
+This is event is only supported with property sendXHR set to true, i.e. the event is not supported in Internet Explorer 9.</documentation>
+            <parameters>
+                <parameter name="fileName" type="sap.ui.core/string">
+                    <documentation>The name of a file to be uploaded.</documentation>
+                </parameter>
+                <parameter name="requestHeaders" type="sap.ui.core/object[]">
+                    <documentation>Http-Request-Headers. Required for receiving "header" is to set the property "sendXHR" to true.
+This property is not supported by Internet Explorer 9.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="filenameLengthExceed" since="1.24.0" allowPreventDefault="false">
+            <documentation>Event is fired, if the filename of a chosen file is longer than the value specified with the maximumFilenameLength property.</documentation>
+            <parameters>
+                <parameter name="fileName" type="sap.ui.core/string">
+                    <documentation>The filename, which is longer than specified by the value of the property maximumFilenameLength.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="uploadStart" since="1.30.0" allowPreventDefault="false">
+            <documentation>Event is fired before an upload is started.</documentation>
+            <parameters>
+                <parameter name="fileName" type="sap.ui.core/string">
+                    <documentation>The name of a file to be uploaded.</documentation>
+                </parameter>
+                <parameter name="requestHeaders" type="sap.ui.core/object[]">
+                    <documentation>Http-Request-Headers. Required for receiving "header" is to set the property "sendXHR" to true.
+This property is not supported by Internet Explorer 9.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="parameters" type="sap.ui.unified/FileUploaderParameter" since="1.12.2" cardinality="0..n">
+            <documentation>The parameters for the FileUploader which are rendered as a hidden inputfield.</documentation>
+        </aggregation>
+        <aggregation name="headerParameters" type="sap.ui.unified/FileUploaderParameter" cardinality="0..n">
+            <documentation>The header parameters for the FileUploader which are only submitted with XHR requests. Header parameters are not supported by Internet Explorer 9.</documentation>
+        </aggregation>
+        <aggregation name="xhrSettings" type="sap.ui.unified/FileUploaderXHRSettings" since="1.52" cardinality="0..1">
+            <documentation>Settings for the &lt;code&gt;XMLHttpRequest&lt;/code&gt; object.
+&lt;b&gt;Note:&lt;/b&gt; This aggregation is only used when the &lt;code&gt;sendXHR&lt;/code&gt; property is set to &lt;code&gt;true&lt;/code&gt;.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="ariaDescribedBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / IDs which describe this control (see WAI-ARIA attribute aria-describedby).</documentation>
+        </association>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / IDs which label this control (see WAI-ARIA attribute aria-labelledby).</documentation>
+        </association>
+    </associations>
+    <methods>
+        <method name="clear" type="sap.ui.unified/FileUploader" since="1.25.0">
+            <documentation>Clears the content of the &lt;code&gt;FileUploader&lt;/code&gt;.
+
+&lt;b&gt;Note:&lt;/b&gt; The attached additional data however is retained.</documentation>
+        </method>
+        <method name="upload" type="sap.ui.core/void">
+            <documentation>Starts the upload (as defined by uploadUrl).</documentation>
+            <parameters>
+                <parameter name="preProcessFiles" type="sap.ui.core/boolean">
+                    <documentation>Set to &lt;code&gt;true&lt;/code&gt; to allow pre-processing of the files before sending the request.</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="abort" since="1.24.0">
+            <documentation>Aborts the currently running upload.</documentation>
+            <parameters>
+                <parameter name="headerParameterName" type="sap.ui.core/string">
+                    <documentation>The name of the parameter within the &lt;code&gt;headerParameters&lt;/code&gt; aggregation to be checked.</documentation>
+                </parameter>
+                <parameter name="headerParameterValue" type="sap.ui.core/string">
+                    <documentation>The value of the parameter within the &lt;code&gt;headerParameters&lt;/code&gt; aggregation to be checked.</documentation>
+                </parameter>
+            </parameters>
+        </method>
+    </methods>
+</control>

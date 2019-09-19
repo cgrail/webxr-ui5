@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartfilterbar/SelectOptionSign</name>
+    <derived/>
+    <documentation>The different options to define Sign for Select Options used in SmartFilter control.</documentation>
+    <enumeration>
+        <value name="I">
+            <documentation>Sign Include</documentation>
+        </value>
+        <value name="include" value="I">
+            <documentation>Sign Include</documentation>
+        </value>
+        <value name="E">
+            <documentation>Sign Exclude</documentation>
+        </value>
+        <value name="exclude" value="E">
+            <documentation>Sign Exclude</documentation>
+        </value>
+    </enumeration>
+</simple-type>

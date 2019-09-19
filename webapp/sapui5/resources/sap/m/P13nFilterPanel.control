@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>P13nFilterPanel</name>
+    <derived/>
+    <documentation>The P13nFilterPanel control is used to define filter-specific settings for table personalization.</documentation>
+    <since>1.26.0</since>
+    <baseType>sap.m/P13nPanel</baseType>
+    <properties>
+        <property name="maxIncludes" type="sap.ui.core/string" defaultValue="-1" group="Misc">
+            <documentation>Defines the maximum number of include filters.</documentation>
+        </property>
+        <property name="maxExcludes" type="sap.ui.core/string" defaultValue="-1" group="Misc">
+            <documentation>Defines the maximum number of exclude filters.</documentation>
+        </property>
+        <property name="containerQuery" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>Defines if the &lt;code&gt;mediaQuery&lt;/code&gt; or a &lt;code&gt;ContainerResize&lt;/code&gt; is used for layout update. If the
+&lt;code&gt;ConditionPanel&lt;/code&gt; is used in a dialog, the property must be set to &lt;code&gt;true&lt;/code&gt;.</documentation>
+        </property>
+        <property name="layoutMode" type="sap.ui.core/string" group="Misc">
+            <documentation>Can be used to control the layout behavior. Default is "" which will automatically change the layout. With "Desktop", "Table"
+or"Phone" you can set a fixed layout.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="addFilterItem" allowPreventDefault="false">
+            <documentation>Event raised if a filter item has been added.</documentation>
+        </event>
+        <event name="removeFilterItem" allowPreventDefault="false">
+            <documentation>Event raised if a filter item has been removed.</documentation>
+        </event>
+        <event name="updateFilterItem" allowPreventDefault="false">
+            <documentation>Event raised if a filter item has been updated.</documentation>
+        </event>
+        <event name="filterItemChanged" allowPreventDefault="false">
+            <documentation>Event raised if a filter item has been changed. reason can be added, updated or removed.</documentation>
+            <developmentState state="experimental" since="1.56"></developmentState>
+            <parameters>
+                <parameter name="reason" type="sap.ui.core/string">
+                    <documentation>reason for the changeFilterItem event. Value can be added, updated or removed.</documentation>
+                </parameter>
+                <parameter name="key" type="sap.ui.core/string">
+                    <documentation>key of the changed filterItem</documentation>
+                </parameter>
+                <parameter name="index" type="sap.ui.core/int">
+                    <documentation>index of the changed filterItem</documentation>
+                </parameter>
+                <parameter name="itemData" type="sap.ui.core/object">
+                    <documentation>JSON object of the changed filterItem instance (in case of reason=="removed" the itemData parameter does not exist)</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="content" type="sap.ui.core/Control" cardinality="0..n" visibility="hidden">
+            <documentation>Contains content for include and exclude panels.</documentation>
+        </aggregation>
+        <aggregation name="filterItems" type="sap.m/P13nFilterItem" cardinality="0..n" bindable="bindable">
+            <documentation>Defines filter items.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

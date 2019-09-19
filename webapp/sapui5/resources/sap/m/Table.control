@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Table</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>&lt;code&gt;sap.m.Table&lt;/code&gt; control provides a set of sophisticated and convenience functions for responsive table design.
+To render the &lt;code&gt;sap.m.Table&lt;/code&gt; properly, the order of the &lt;code&gt;columns&lt;/code&gt; aggregation should match with the order of the items &lt;code&gt;cells&lt;/code&gt; aggregation (&lt;code&gt;sap.m.ColumnListItem&lt;/code&gt;). Also &lt;code&gt;sap.m.Table&lt;/code&gt; requires at least one visible &lt;code&gt;sap.m.Column&lt;/code&gt; in &lt;code&gt;columns&lt;/code&gt; aggregation.
+For mobile devices, the recommended limit of table rows is 100 (based on 4 columns) to assure proper performance. To improve initial rendering on large tables, use the &lt;code&gt;growing&lt;/code&gt; feature.
+
+See section "{@link topic:5eb6f63e0cc547d0bdc934d3652fdc9b Creating Tables}" and "{@link topic:38855e06486f4910bfa6f4485f7c2bac Configuring Responsive Behavior of a Table}"
+in the documentation for an introduction to &lt;code&gt;sap.m.Table&lt;/code&gt; control.</documentation>
+    <since>1.16</since>
+    <baseType>sap.m/ListBase</baseType>
+    <properties>
+        <property name="backgroundDesign" type="sap.m/BackgroundDesign" defaultValue="Translucent" group="Appearance">
+            <documentation>Sets the background style of the table. Depending on the theme, you can change the state of the background from &lt;code&gt;Solid&lt;/code&gt; to &lt;code&gt;Translucent&lt;/code&gt; or to &lt;code&gt;Transparent&lt;/code&gt;.</documentation>
+        </property>
+        <property name="fixedLayout" type="sap.ui.core/boolean" defaultValue="true" group="Behavior" since="1.22">
+            <documentation>Defines the algorithm to be used to layout the table cells, rows, and columns.
+By default, a table is rendered with fixed layout algorithm. This means the horizontal layout only depends on the table's width and the width of the columns, not the contents of the cells. Cells in subsequent rows do not affect column widths. This allows a browser to layout the table faster than the auto table layout since the browser can begin to display the table once the first row has been analyzed.
+
+When this property is set to &lt;code&gt;false&lt;/code&gt;, &lt;code&gt;sap.m.Table&lt;/code&gt; is rendered with auto layout algorithm. This means, the width of the table and its cells depends on the contents of the cells. The column width is set by the widest unbreakable content inside the cells. This can make the rendering slow, since the browser needs to read through all the content in the table before determining the final layout.
+&lt;b&gt;Note:&lt;/b&gt; Since &lt;code&gt;sap.m.Table&lt;/code&gt; does not have its own scrollbars, setting &lt;code&gt;fixedLayout&lt;/code&gt; to false can force the table to overflow, which may cause visual problems. It is suggested to use this property when a table has a few columns in wide screens or within the horizontal scroll container (e.g &lt;code&gt;sap.m.Dialog&lt;/code&gt;) to handle overflow.
+In auto layout mode the &lt;code&gt;width&lt;/code&gt; property of &lt;code&gt;sap.m.Column&lt;/code&gt; is taken into account as a minimum width.</documentation>
+        </property>
+        <property name="showOverlay" type="sap.ui.core/boolean" defaultValue="false" group="Appearance" since="1.22.1">
+            <documentation>Setting this property to &lt;code&gt;true&lt;/code&gt; will show an overlay on top of the table content and prevents the user interaction with it.</documentation>
+        </property>
+        <property name="alternateRowColors" type="sap.ui.core/boolean" defaultValue="false" group="Appearance" since="1.52">
+            <documentation>Enables alternating table row colors.
+&lt;b&gt;Note:&lt;/b&gt; This property can only be used with the Belize and Belize Deep themes.
+Alternate row coloring is not available for the High Contrast Black/White themes.</documentation>
+        </property>
+        <property name="popinLayout" type="sap.m/PopinLayout" defaultValue="Block" group="Appearance" since="1.52">
+            <documentation>Defines the layout in which the table pop-in rows are rendered.
+&lt;b&gt;Note:&lt;/b&gt; The &lt;code&gt;demandPopin&lt;/code&gt; and &lt;code&gt;minScreenWidth&lt;/code&gt; properties of the &lt;code&gt;Column&lt;/code&gt; control must be configured appropriately.</documentation>
+        </property>
+        <property name="contextualWidth" type="sap.ui.core/string" defaultValue="Inherit" group="Behavior" since="1.60">
+            <documentation>Defines the contextual width for the &lt;code&gt;sap.m.Table&lt;/code&gt; control. By defining this property the table adapts the pop-in behavior based on the container in which the table is placed or the configured contextual width.
+By default, &lt;code&gt;sap.m.Table&lt;/code&gt; renders in pop-in behavior only depending on the window size or device.
+
+For example, by setting the &lt;code&gt;contextualWidth&lt;/code&gt; property to 600px or Tablet, the table can be placed in a container with 600px width, where the pop-in is used.
+You can use specific CSS sizes (for example, 600px or 600), you can also use the &lt;code&gt;sap.m.ScreenSize&lt;/code&gt; enumeration (for example, Phone, Tablet, Desktop, Small, Medium, Large, ....).
+If this property is set to &lt;code&gt;Auto&lt;/code&gt;, the &lt;code&gt;ResizeHandler&lt;/code&gt; will manage the contextual width of the table.
+&lt;b&gt;Note:&lt;/b&gt; Only "Inherit", "Auto", and pixel-based CSS sizes (for example, 200, 200px) can be applied to the &lt;code&gt;contextualWidth&lt;/code&gt; property. Due to the rendering cost, we recommend to use the valid value mentioned before except for "Auto".</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="beforeOpenContextMenu" since="1.54" allowPreventDefault="true">
+            <documentation>Fired when the context menu is opened.
+When the context menu is opened, the binding context of the item is set to the given &lt;code&gt;contextMenu&lt;/code&gt;.</documentation>
+            <parameters>
+                <parameter name="listItem" type="sap.m/ColumnListItem">
+                    <documentation>Item in which the context menu was opened.</documentation>
+                </parameter>
+                <parameter name="column" type="sap.m/Column">
+                    <documentation>Column in which the context menu was opened.
+&lt;b&gt;Note:&lt;/b&gt; This parameter might be undefined for the items that are not part of a column definition.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="paste" since="1.60" allowPreventDefault="true">
+            <documentation>This event gets fired when the user pastes content from the clipboard to the table.
+Pasting can be done via the context menu or the standard paste keyboard shortcut, if the focus is inside the table.</documentation>
+            <parameters>
+                <parameter name="data" type="sap.ui.core/string[][]">
+                    <documentation>2D array of strings with data from the clipboard. The first dimension represents the rows, and the
+second dimension represents the cells of the tabular data.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="columns" type="sap.m/Column" cardinality="0..n">
+            <documentation>Defines the columns of the table.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>LineMicroChart</name>
+    <derived/>
+    <documentation>Chart that displays the history of values as segmented lines along a threshold line. The scale is optional and showing the points is also optional.
+&lt;br&gt;Note: You can assign a custom tooltip for this microchart. The custom tooltip can be set using expression binding. When no custom tooltip is defined, the tooltip is generated automatically based on the logic described in {@link sap.ui.core.Element#getTooltip_AsString}. For a combination of a generated and a custom tooltip, use &lt;code&gt;((AltText))&lt;/code&gt; inside of the tooltip string.</documentation>
+    <since>1.48.0</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="size" type="sap.m/Size" defaultValue="Auto" group="Appearance">
+            <documentation>The size of the chart. If not set, the default size is applied based on the type of the device.</documentation>
+        </property>
+        <property name="threshold" type="sap.ui.core/float" defaultValue="0" group="Appearance">
+            <documentation>Determines the chart threshold which is used for vertical normalization.
+If the threshold does not belong to the value range given by minYValue...maxYValue, the threshold is ignored.
+By setting the threshold property's value to null, the threshold is disabled and excluded from range calculations.</documentation>
+        </property>
+        <property name="showThresholdLine" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>If this property is set to &lt;code&gt;false&lt;/code&gt;, the threshold line is hidden.</documentation>
+        </property>
+        <property name="showThresholdValue" type="sap.ui.core/boolean" defaultValue="false" group="Appearance">
+            <documentation>If this property is set to &lt;code&gt;false&lt;/code&gt;, the threshold value is hidden.
+&lt;br&gt;If this property is set to &lt;code&gt;true&lt;/code&gt;, the value will be shown only if the
+&lt;code&gt;showThresholdLine&lt;/code&gt; property is also set to &lt;code&gt;true&lt;/code&gt;.</documentation>
+        </property>
+        <property name="thresholdDisplayValue" type="sap.ui.core/string" group="Appearance">
+            <documentation>Overrides the threshold value with a string that is shown instead.</documentation>
+        </property>
+        <property name="minXValue" type="sap.ui.core/float" group="Appearance">
+            <documentation>If this property is set, it indicates the value the X-axis starts with.</documentation>
+        </property>
+        <property name="maxXValue" type="sap.ui.core/float" group="Appearance">
+            <documentation>If this property is set, it indicates the value the X-axis ends with.</documentation>
+        </property>
+        <property name="minYValue" type="sap.ui.core/float" group="Appearance">
+            <documentation>If this property is set, it indicates the value the Y-axis starts with.</documentation>
+        </property>
+        <property name="maxYValue" type="sap.ui.core/float" group="Appearance">
+            <documentation>If this property is set, it indicates the value the Y-axis ends with.</documentation>
+        </property>
+        <property name="leftTopLabel" type="sap.ui.core/string" group="Data">
+            <documentation>Describes the left top label of the chart.
+The label color is determined by the color property of the first LineMicroChartPoint in the points aggregation.
+The space for the label is not reserved if the label is not set.</documentation>
+        </property>
+        <property name="rightTopLabel" type="sap.ui.core/string" group="Data">
+            <documentation>Describes the right top label of the chart.
+The label color is determined by the color property of the last LineMicroChartPoint in the points aggregation.
+The space for the label is not reserved if the label is not set.</documentation>
+        </property>
+        <property name="leftBottomLabel" type="sap.ui.core/string" group="Data">
+            <documentation>Describes the left bottom label of the chart.
+The label color is set internally.
+The space for the label is not reserved if the label is not set.</documentation>
+        </property>
+        <property name="rightBottomLabel" type="sap.ui.core/string" group="Data">
+            <documentation>Describes the right bottom label of the chart.
+The label color is set automatically.
+The space for the label is not reserved if the label is not set.</documentation>
+        </property>
+        <property name="showTopLabels" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>If this property is set to &lt;code&gt;false&lt;/code&gt;, both top labels are hidden.</documentation>
+        </property>
+        <property name="showBottomLabels" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>If this property is set to &lt;code&gt;false&lt;/code&gt;, both bottom labels are hidden.</documentation>
+        </property>
+        <property name="color" type="sap.ui.core/any" defaultValue="Neutral" group="Appearance">
+            <documentation>Describes the color of the chart.
+&lt;br&gt;In conjunction with emphasized points, it is only used if all points have the sap.m.ValueColor.Neutral color.
+&lt;br&gt;The color can be set as an {@link sap.m.ValueCSSColor} or as a plain object. It has the 'above|' and 'below' properties that determine the color of the graph above and below the threshold, respectively.
+
+&lt;br&gt;The &lt;code&gt;color&lt;/code&gt; property of {@link sap.suite.ui.microchart.LineMicroChartLine} has priority over this property in case it is set.</documentation>
+        </property>
+        <property name="showPoints" type="sap.ui.core/boolean" defaultValue="false" group="Appearance">
+            <documentation>Defines if the control renders the points or not.
+&lt;br&gt;If emphasized points are used, there is no effect.
+&lt;br&gt;If the value is true, the points in the aggregation are shown.
+
+&lt;br&gt;The &lt;code&gt;showPoints&lt;/code&gt; property of the {@link sap.suite.ui.microchart.LineMicroChartLine} control has priority over this property in case it is set.</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" group="Misc">
+            <documentation>The width of the chart. Overrides the width specified in the &lt;code&gt;size&lt;/code&gt; property.</documentation>
+        </property>
+        <property name="height" type="sap.ui.core/CSSSize" group="Misc">
+            <documentation>The height of the chart. Overrides the height specified in the &lt;code&gt;size&lt;/code&gt; property.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="press" allowPreventDefault="false">
+            <documentation>The event is triggered when the chart is pressed.</documentation>
+        </event>
+    </events>
+    <aggregations default="points">
+        <aggregation name="points" type="sap.suite.ui.microchart/LineMicroChartPoint" cardinality="0..n" bindable="bindable">
+            <documentation>Aggregation that contains all data points that should be provided in an ordered way.
+If both the &lt;code&gt;points&lt;/code&gt; and &lt;code&gt;lines&lt;/code&gt; aggregations are used, the chart
+is rendered based on the &lt;code&gt;points&lt;/code&gt; aggregation, while the lines from the &lt;code&gt;lines&lt;/code&gt; aggregations are ignored.
+&lt;br&gt;The &lt;code&gt;points&lt;/code&gt; aggregation can be used to ensure backward compatibility.
+However in general, the &lt;code&gt;lines&lt;/code&gt; aggregation should be preferred.</documentation>
+        </aggregation>
+        <aggregation name="lines" type="sap.suite.ui.microchart/LineMicroChartLine" cardinality="0..n" bindable="bindable">
+            <documentation>Aggregation that containes lines with data points.
+&lt;br&gt;This aggregation should be used instead of the &lt;code&gt;points&lt;/code&gt; aggregation.</documentation>
+        </aggregation>
+        <aggregation name="_line" type="sap.suite.ui.microchart/LineMicroChartLine" cardinality="0..1" visibility="hidden">
+            <documentation>{@link sap.suite.ui.microchart.LineMicroChartLine} for the cases when a single line with the legacy &lt;code&gt;points&lt;/code&gt; aggregation is used.
+Rest of the control can than work with LineMicroChartLines, regardless of this use case.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n" since="1.60.0">
+            <documentation>Controls or IDs that label this control. Can be used by screen reader software.</documentation>
+        </association>
+    </associations>
+</control>

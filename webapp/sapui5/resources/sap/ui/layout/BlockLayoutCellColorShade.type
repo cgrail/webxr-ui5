@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>BlockLayoutCellColorShade</name>
+    <derived/>
+    <documentation>A string type that is used inside the BlockLayoutCell to set a predefined set of color shades for the cells.
+The colors are defined with sap.ui.layout.BlockLayoutCellColorSet. And this is for the shades only.</documentation>
+    <since>1.48</since>
+    <enumeration>
+        <value name="ShadeA">
+            <documentation>Shade A</documentation>
+        </value>
+        <value name="ShadeB">
+            <documentation>Shade B</documentation>
+        </value>
+        <value name="ShadeC">
+            <documentation>Shade C</documentation>
+        </value>
+        <value name="ShadeD">
+            <documentation>Shade D</documentation>
+        </value>
+        <value name="ShadeE">
+            <documentation>Shade E - available only for Fiori 3 theme</documentation>
+        </value>
+        <value name="ShadeF">
+            <documentation>Shade F - available only for Fiori 3 theme</documentation>
+        </value>
+    </enumeration>
+</simple-type>

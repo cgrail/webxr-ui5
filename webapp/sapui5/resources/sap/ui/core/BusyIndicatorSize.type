@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>BusyIndicatorSize</name>
+    <derived/>
+    <documentation>Configuration options for the BusyIndicator size</documentation>
+    <enumeration>
+        <value name="Auto">
+            <documentation>Type: automatic size detection</documentation>
+        </value>
+        <value name="Small">
+            <documentation>Type: small size</documentation>
+        </value>
+        <value name="Medium">
+            <documentation>Type: Medium size</documentation>
+        </value>
+        <value name="Large">
+            <documentation>Type: Large size</documentation>
+        </value>
+    </enumeration>
+</simple-type>

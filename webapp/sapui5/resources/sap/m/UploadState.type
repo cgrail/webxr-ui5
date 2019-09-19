@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>UploadState</name>
+    <derived/>
+    <documentation>States of the upload process for {@link sap.m.UploadCollectionItem}.</documentation>
+    <enumeration>
+        <value name="Complete">
+            <documentation>The file has been uploaded successfuly.</documentation>
+        </value>
+        <value name="Error">
+            <documentation>The file cannot be uploaded due to an error.</documentation>
+        </value>
+        <value name="Ready">
+            <documentation>The file is awaiting an explicit command to start being uploaded.</documentation>
+        </value>
+        <value name="Uploading">
+            <documentation>The file is currently being uploaded.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

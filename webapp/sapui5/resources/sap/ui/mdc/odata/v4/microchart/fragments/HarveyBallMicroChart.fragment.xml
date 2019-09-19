@@ -1,0 +1,14 @@
+<core:FragmentDefinition
+	xmlns="sap.suite.ui.microchart"
+	xmlns:core="sap.ui.core"
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1">
+	<template:with path="harveyBallMicroChart>MeasureAttributes/0/" var="MeasureAttribute">
+		<HarveyBallMicroChart totalScale="M" total="{MeasureAttribute>DataPoint/$AnnotationPath/TargetValue@@.MODEL.value}">
+			<items>
+				<HarveyBallMicroChartItem fractionScale="M" fraction="{MeasureAttribute>Measure@@.MODEL.value}"
+					color="{parts:[{path: 'MeasureAttribute>DataPoint/$AnnotationPath/'}, {path:'MeasureAttribute>Measure/'}],
+						formatter: 'sap.ui.mdc.odata.v4.microchart.MicroChart._helper.getMicroChartColor'}"/>
+			</items>
+		</HarveyBallMicroChart>
+	</template:with>
+</core:FragmentDefinition>

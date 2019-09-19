@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>NavigationListItem</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The NavigationListItem control represents an action, which can be selected by the user.
+It can provide sub items.</documentation>
+    <since>1.34</since>
+    <baseType>sap.ui.core/Item</baseType>
+    <properties>
+        <property name="icon" type="sap.ui.core/URI" defaultValue="" group="Misc">
+            <documentation>Specifies the icon for the item.</documentation>
+        </property>
+        <property name="expanded" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Specifies if the item is expanded.</documentation>
+        </property>
+        <property name="hasExpander" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Specifies if the item has an expander.</documentation>
+        </property>
+        <property name="visible" type="sap.ui.core/boolean" defaultValue="true" group="Appearance" since="1.52">
+            <documentation>Specifies if the item should be shown.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="select" allowPreventDefault="false">
+            <documentation>Fired when this item is selected.</documentation>
+            <parameters>
+                <parameter name="item" type="sap.ui.core/Item">
+                    <documentation>The selected item.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations default="items">
+        <aggregation name="items" type="sap.tnt/NavigationListItem" cardinality="0..n">
+            <documentation>The sub items.</documentation>
+        </aggregation>
+        <aggregation name="_expandIconControl" type="sap.ui.core/Icon" cardinality="0..1" visibility="hidden"/>
+    </aggregations>
+</control>

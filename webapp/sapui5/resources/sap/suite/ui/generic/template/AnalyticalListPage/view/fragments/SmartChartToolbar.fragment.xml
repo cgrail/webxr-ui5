@@ -1,0 +1,21 @@
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+						 xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:build="sap.build">
+
+	<OverflowToolbar id="template::ChartToolbar" design="Transparent">
+		<ToolbarSpacer/>
+		<!-- Custom Action Breakout -->
+		<template:repeat list="{parameter>/manifest/sap.ui5/extends/extensions/sap.ui.controllerExtensions/sap.suite.ui.generic.template.AnalyticalListPage.view.AnalyticalListPage/sap.ui.generic.app}" var="tmpEntitySet">
+
+			<core:Fragment fragmentName="sap.suite.ui.generic.template.AnalyticalListPage.view.fragments.ChartActions"
+					type="XML"/>
+
+		</template:repeat>
+		<!-- Annotated Action Buttons -->
+		<template:with path="workingContext>chartPath" helper=".ALPHelper.resolveMetaModelPath" var="chart">
+			<template:with path="chart>Actions" var="collection">
+				<core:Fragment fragmentName="sap.suite.ui.generic.template.fragments.AnnotatedActionButtons" type="XML"/>
+			</template:with>
+		</template:with>
+	</OverflowToolbar>
+
+</core:FragmentDefinition>

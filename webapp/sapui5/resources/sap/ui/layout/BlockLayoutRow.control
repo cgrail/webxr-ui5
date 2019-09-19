@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>BlockLayoutRow</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The BlockLayoutRow is used as an aggregation to the BlockLayout. It aggregates Block Layout  cells.
+The BlockLayoutRow has 2 rendering modes - scrollable and non scrollable.</documentation>
+    <since>1.34</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="scrollable" type="sap.ui.core/boolean" defaultValue="false" group="Appearance">
+            <documentation>Sets the rendering mode of the BlockLayoutRow to scrollable. In scrollable mode, the cells get
+aligned side by side, with horizontal scroll bar for the row.</documentation>
+        </property>
+        <property name="rowColorSet" type="sap.ui.layout/BlockRowColorSets" group="Appearance" since="1.42">
+            <documentation>Defines background type for that row.
+There might be several rows with the same type</documentation>
+        </property>
+    </properties>
+    <aggregations default="content">
+        <aggregation name="content" type="sap.ui.layout/BlockLayoutCell" cardinality="0..n">
+            <documentation>The content cells to be included in the row.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="accentCells" type="sap.ui.layout/BlockLayoutCell" cardinality="0..n" since="1.42">
+            <documentation>Cells that would be accented.
+*Note:* This association has visual impact only for BlockLayouts with background types "Mixed" and "Accent".
+
+Mixed: In this type, areas of 25% (on desktop) can have a dark background color. Per section one area can be dark.
+Accent: Every section can contain multiple gray blocks, which are used alternately, beginning with the bright one</documentation>
+        </association>
+    </associations>
+</control>

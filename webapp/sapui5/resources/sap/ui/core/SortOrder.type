@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>SortOrder</name>
+    <derived/>
+    <documentation>Sort order of a column</documentation>
+    <since>1.61.0</since>
+    <enumeration>
+        <value name="None">
+            <documentation>Sorting is not applied.</documentation>
+        </value>
+        <value name="Ascending">
+            <documentation>Sorting is done in ascending order.</documentation>
+        </value>
+        <value name="Descending">
+            <documentation>Sorting is done in descending order.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

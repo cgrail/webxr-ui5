@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ObjectPageSection</name>
+    <derived/>
+    <documentation>Top-level information container of an {@link sap.uxap.ObjectPageLayout}.
+
+The &lt;code&gt;ObjectPageSection&lt;/code&gt;'s purpose is to aggregate subsections.
+
+&lt;b&gt;Note:&lt;/b&gt; This control is intended to be used only as part of the &lt;code&gt;ObjectPageLayout&lt;/code&gt;.</documentation>
+    <since>1.26</since>
+    <baseType>sap.uxap/ObjectPageSectionBase</baseType>
+    <properties>
+        <property name="showTitle" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>Determines whether to display the Section title or not.</documentation>
+        </property>
+        <property name="titleUppercase" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>Determines whether the Section title is displayed in upper case.</documentation>
+        </property>
+    </properties>
+    <aggregations default="subSections">
+        <aggregation name="subSections" type="sap.uxap/ObjectPageSubSection" cardinality="0..n">
+            <documentation>The list of Subsections.</documentation>
+        </aggregation>
+        <aggregation name="ariaLabelledBy" type="sap.ui.core/InvisibleText" cardinality="0..1" visibility="hidden">
+            <documentation>Screen Reader ariaLabelledBy</documentation>
+        </aggregation>
+        <aggregation name="_showHideAllButton" type="sap.m/Button" cardinality="0..1" visibility="hidden"/>
+        <aggregation name="_showHideButton" type="sap.m/Button" cardinality="0..1" visibility="hidden"/>
+    </aggregations>
+    <associations>
+        <association name="selectedSubSection" type="sap.uxap/ObjectPageSubSection" cardinality="0..1">
+            <documentation>The most recently selected Subsection by the user.</documentation>
+        </association>
+    </associations>
+</control>

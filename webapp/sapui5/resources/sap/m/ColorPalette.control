@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ColorPalette</name>
+    <derived/>
+    <documentation>Represents a predefined range of colors for easier selection.
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+The &lt;code&gt;ColorPalette&lt;/code&gt; provides the users with a range of predefined colors.
+
+You can customize them with the use of the &lt;code&gt;colors&lt;/code&gt; property.
+You can specify a &lt;code&gt;defaultColor&lt;/code&gt; and display a "Default color" button
+for the user to choose directly. You can display a "More colors..." button
+that opens an additional color picker for the user to choose specific colors
+that are not present in the predefined range.
+
+&lt;h3&gt;Usage&lt;/h3&gt;
+
+The palette is intended for users, who don't want to check and remember the
+different values of the colors and spend large amount of time to configure the
+right color through the color picker.
+
+The control can be embedded in a form or can be opened as popover (by use of thin
+wrapper control &lt;code&gt;sap.m.ColorPalettePopover&lt;code&gt;).</documentation>
+    <since>1.54</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="colors" type="sap.ui.core/CSSColor[]" defaultValue="[gold,darkorange,indianred,darkmagenta,cornflowerblue,deepskyblue,darkcyan,olivedrab,darkslategray,azure,white,lightgray,darkgray,dimgray,black]" group="Appearance">
+            <documentation>Defines the List of colors displayed in the palette. Minimum is 2 colors, maximum is 15 colors.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="colorSelect" allowPreventDefault="false">
+            <documentation>Fired when the user selects a color.</documentation>
+            <parameters>
+                <parameter name="value" type="sap.ui.core/CSSColor">
+                    <documentation>The color that is returned when user chooses the "Default color" button.</documentation>
+                </parameter>
+                <parameter name="defaultAction" type="sap.ui.core/boolean">
+                    <documentation>Denotes if the color has been chosen by selecting the "Default Color" button (true or false)</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="_defaultColorButton" type="sap.m/Button" cardinality="0..1" visibility="hidden"/>
+        <aggregation name="_moreColorsButton" type="sap.m/Button" cardinality="0..1" visibility="hidden"/>
+    </aggregations>
+</control>

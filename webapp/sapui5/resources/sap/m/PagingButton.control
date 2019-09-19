@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>PagingButton</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Enables users to navigate between items/entities.</documentation>
+    <since>1.30</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="count" type="sap.ui.core/int" defaultValue="1" group="Data">
+            <documentation>Determines the total count of items/entities that the control navigates through.
+The minimum number of items/entities is 1.</documentation>
+        </property>
+        <property name="position" type="sap.ui.core/int" defaultValue="1" group="Data">
+            <documentation>Determines the current position in the items/entities that the control navigates through.
+Starting (minimum) number is 1.</documentation>
+        </property>
+        <property name="nextButtonTooltip" type="sap.ui.core/string" defaultValue="" group="Appearance" since="1.36">
+            <documentation>Determines the tooltip of the next button.</documentation>
+        </property>
+        <property name="previousButtonTooltip" type="sap.ui.core/string" defaultValue="" group="Appearance" since="1.36">
+            <documentation>Determines the tooltip of the previous button.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="positionChange" allowPreventDefault="false">
+            <documentation>Fired when the current position is changed.</documentation>
+            <parameters>
+                <parameter name="newPosition" type="sap.ui.core/int">
+                    <documentation>The number of the new position.</documentation>
+                </parameter>
+                <parameter name="oldPosition" type="sap.ui.core/int">
+                    <documentation>The number of the old position.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="previousButton" type="sap.m/Button" cardinality="0..1" visibility="hidden"/>
+        <aggregation name="nextButton" type="sap.m/Button" cardinality="0..1" visibility="hidden"/>
+    </aggregations>
+</control>

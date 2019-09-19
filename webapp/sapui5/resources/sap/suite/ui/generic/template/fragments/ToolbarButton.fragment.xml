@@ -1,0 +1,56 @@
+<core:FragmentDefinition
+    xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+    xmlns="sap.m" xmlns:build="sap.build" xmlns:core="sap.ui.core">
+
+    <template:if test="{= ${dataField>RecordType} === 'com.sap.vocabularies.UI.v1.DataFieldForAction'}">
+        <template:then>
+            <Button
+                id="{parts: [{path: 'dataField>'}, {path: 'facet>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartForDatafieldActionButton'}{= ${parameter>/settings/quickVariantSelectionX} ? ${path: 'tabItem>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getSuffixFromIconTabFilterKey'} : ''}{= (${chartItem>}) ? '::chart' : ''}"
+                text="{path: 'dataField>Label', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}"
+                press="._templateEventHandlers.onCallActionFromToolBar"
+                enabled="{parts: [{path: 'dataField>'}, {path: 'facet>'}, {path: 'entityType>'}, {path: 'device>/system/phone'}, {path: 'tabItem>'},{path: 'chartItem>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.buildAnnotatedActionButtonEnablementExpression'}"
+                type="Transparent"
+                visible="{= ${path: 'dataField>com.sap.vocabularies.UI.v1.Hidden'} ? ${path: 'dataField>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getBindingForHiddenPath'} : ${path: 'dataField>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getActionButtonVisibility'}}"
+                build:metadata="#pattern:ActionButton;staticProp:text:Label;staticProp::Importance:\{dataField>com.sap.vocabularies.UI.v1.Importance/EnumMember\};condition:datafield>RecordType:com.sap.vocabularies.UI.v1.DataFieldForAction">
+                <layoutData>
+                    <OverflowToolbarLayoutData priority = "{dataField>com.sap.vocabularies.UI.v1.Importance/EnumMember}"/>
+                </layoutData>
+                <customData>
+                    <core:CustomData key="Type"
+                        value="{dataField>RecordType}" />
+                    <core:CustomData key="Action"
+                        value="{path: 'dataField>Action', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}" />
+                    <core:CustomData key="Label"
+                        value="{path: 'dataField>Label', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}" />
+                    <core:CustomData key="InvocationGrouping"
+                        value="{= ${dataField>InvocationGrouping/EnumMember}}"/>
+                </customData>
+            </Button>
+        </template:then>
+        <template:elseif test="{= ${dataField>RecordType} === 'com.sap.vocabularies.UI.v1.DataFieldForIntentBasedNavigation'}">
+            <Button
+                id="{parts: [{path: 'dataField>'}, {path: 'facet>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartForDatafieldActionButton'}{= ${parameter>/settings/quickVariantSelectionX} ? ${path: 'tabItem>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getSuffixFromIconTabFilterKey'} : ''}{= (${chartItem>}) ? '::chart' : ''}"
+                text="{path: 'dataField>Label', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}"
+                press="._templateEventHandlers.onDataFieldForIntentBasedNavigation"
+                enabled="{parts: [{path: 'dataField>'}, {path: 'facet>'}, {path: 'entityType>'}, {path: 'device>/system/phone'}, {path: 'tabItem>'}, {path: 'chartItem>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.buildAnnotatedActionButtonEnablementExpression'}"
+                visible="{path: 'dataField>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.buildVisibilityExprOfDataFieldForIntentBasedNaviButton'}"
+                type="Transparent"
+                build:metadata="#pattern:ActionButton;staticProp:text:Label;staticProp::Importance:\{dataField>com.sap.vocabularies.UI.v1.Importance/EnumMember\};condition:datafield>RecordType:com.sap.vocabularies.UI.v1.DataFieldForAction">
+                <layoutData>
+                    <OverflowToolbarLayoutData priority = "{dataField>com.sap.vocabularies.UI.v1.Importance/EnumMember}"/>
+                </layoutData>
+                <customData>
+                    <core:CustomData key="Type"
+                        value="{dataField>RecordType}" />
+                    <core:CustomData key="SemanticObject"
+                        value="{path: 'dataField>SemanticObject', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}" />
+                    <core:CustomData key="Action"
+                        value="{path: 'dataField>Action', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}" />
+                    <core:CustomData key="Label"
+                        value="{path: 'dataField>Label', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}" />
+                </customData>
+            </Button>
+        </template:elseif>
+    </template:if>
+
+</core:FragmentDefinition>

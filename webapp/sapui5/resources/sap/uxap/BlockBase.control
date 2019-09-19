@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>BlockBase</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The main element that holds the content that is displayed in an
+{@link sap.uxap.ObjectPageLayout ObjectPageLayout}, but not necessarily only there.
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+
+The blocks give the flexibility to combine different content types.
+
+A block is a control that:
+&lt;ul&gt;
+&lt;li&gt;Has modes and a view associated to each mode. At rendering time, the view associated to the mode is rendered.&lt;/li&gt;
+&lt;li&gt;Can use all view types for storing its internal control tree (XML, JS, JSON, HTML)&lt;/li&gt;
+&lt;/ul&gt;
+
+As any UI5 view, the XML view can have a controller which automatically comes with a
+&lt;code&gt;this.oParentBlock&lt;/code&gt; attribute (so that the controller can interact with the block).
+If the controller implements the &lt;code&gt;onParentBlockModeChange&lt;/code&gt; method, this method will
+be called with the &lt;code&gt;sMode&lt;/code&gt; parameter when the view is used or reused by the block.</documentation>
+    <since>1.26</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="mode" type="sap.ui.core/string" group="Appearance">
+            <documentation>Determines the mode of the block.
+When block is used inside ObjectPage this mode is inherited my the SubSection.
+The mode of the block is changed when SubSection mode changes.</documentation>
+        </property>
+        <property name="visible" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>Determines the visibility of the block.</documentation>
+        </property>
+        <property name="columnLayout" type="sap.uxap/BlockBaseColumnLayout" defaultValue="auto" group="Behavior">
+            <documentation>Determines on how many columns the layout will be rendered.
+Allowed values are integers from 1 to 4 and "auto".</documentation>
+        </property>
+        <property name="formAdjustment" type="sap.uxap/BlockBaseFormAdjustment" defaultValue="BlockColumns" group="Behavior">
+            <documentation>Determines if the block should automatically adjust its inner forms.
+Allowed values are "BlockColumns" and "OneColumn" and "None".
+If the value is "BlockColumns", then the inner form will have as many columns as the colspan of its parent block.
+If the value is "OneColumn", the inner form will have exactly one column, regardless the colspan of its parent block.
+If the value is "None", no automatic adjustment of inner forms will be made and the form will keep its original column count.</documentation>
+        </property>
+        <property name="showSubSectionMore" type="sap.ui.core/boolean" defaultValue="false" group="Behavior">
+            <documentation>Determines whether the show more button should be shown.
+
+&lt;b&gt;Note:&lt;/b&gt; The property will take effect if the &lt;code&gt;BlockBase&lt;/code&gt; is inside &lt;code&gt;ObjectPageSubSection&lt;/code&gt;
+and would be ignored in case the &lt;code&gt;BlockBase&lt;/code&gt; is nested inside another &lt;code&gt;BlockBase&lt;/code&gt;.</documentation>
+        </property>
+    </properties>
+    <aggregations default="mappings">
+        <aggregation name="mappings" type="sap.uxap/ModelMapping" cardinality="0..n">
+            <documentation>Map external UI5 model and internal Block model</documentation>
+        </aggregation>
+        <aggregation name="_views" type="sap.ui.core/Control" cardinality="0..n" visibility="hidden" singularName="view">
+            <documentation>Internal aggregation that contains all views inside this Block</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="selectedView" type="sap.ui.core/Control" cardinality="0..1">
+            <documentation>The view that is rendered now.
+Can be used as getter for the rendered view.</documentation>
+        </association>
+    </associations>
+</control>

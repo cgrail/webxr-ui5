@@ -1,0 +1,105 @@
+{
+  "_version": "1.9.0",
+  "sap.app": {
+    "id": "sap.ui.vtm",
+    "type": "library",
+    "embeds": [],
+    "applicationVersion": {
+      "version": "1.64.0"
+    },
+    "title": "SAPUI5 Visual Tree Mapper.",
+    "description": "SAPUI5 Visual Tree Mapper.",
+    "resources": "resources.json",
+    "offline": true
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "supportedThemes": [
+      "base",
+      "sap_belize",
+      "sap_belize_hcb",
+      "sap_belize_plus",
+      "sap_bluecrystal",
+      "sap_hcb"
+    ]
+  },
+  "sap.ui5": {
+    "dependencies": {
+      "minUI5Version": "1.64",
+      "libs": {
+        "sap.ui.core": {
+          "minVersion": "1.64.0"
+        },
+        "sap.ui.unified": {
+          "minVersion": "1.64.0",
+          "lazy": true
+        },
+        "sap.m": {
+          "minVersion": "1.64.0",
+          "lazy": true
+        },
+        "sap.ui.layout": {
+          "minVersion": "1.64.0",
+          "lazy": true
+        }
+      }
+    },
+    "library": {
+      "i18n": false,
+      "content": {
+        "controls": [
+          "sap.ui.vtm.Panel",
+          "sap.ui.vtm.Tree",
+          "sap.ui.vtm.Text",
+          "sap.ui.vtm.Viewport",
+          "sap.ui.vtm.MessagesPopover",
+          "sap.ui.vtm.Progress",
+          "sap.ui.vtm.ProgressDialog",
+          "sap.ui.vtm.SelectColumnsDialog"
+        ],
+        "elements": [
+          "sap.ui.vtm.Vtm",
+          "sap.ui.vtm.Column",
+          "sap.ui.vtm.Lookup",
+          "sap.ui.vtm.ViewableLoadInfo",
+          "sap.ui.vtm.Viewable",
+          "sap.ui.vtm.Scene",
+          "sap.ui.vtm.SceneNode",
+          "sap.ui.vtm.Extension",
+          "sap.ui.vtm.DisplayGroup",
+          "sap.ui.vtm.TreeCollections",
+          "sap.ui.vtm.extensions.MessageStatusCalculationExtension",
+          "sap.ui.vtm.extensions.MessageStatusIconClickExtension",
+          "sap.ui.vtm.extensions.ViewportSelectionLinkingExtension",
+          "sap.ui.vtm.extensions.SelectionLinkingExtension",
+          "sap.ui.vtm.extensions.VisibilityIconClickExtension",
+          "sap.ui.vtm.extensions.DisplayStateCalculationExtension",
+          "sap.ui.vtm.extensions.ViewLinkingExtension",
+          "sap.ui.vtm.extensions.InitialViewExtension",
+          "sap.ui.vtm.extensions.LoadProgressExtension",
+          "sap.ui.vtm.extensions.SceneNodeHoverHighlightExtension",
+          "sap.ui.vtm.extensions.SceneNodeHoverTooltipExtension"
+        ],
+        "types": [
+          "sap.ui.vtm.Matrix"
+        ],
+        "interfaces": [
+          "sap.ui.vtm.interfaces.IDisplayStateCalculationExtension",
+          "sap.ui.vtm.interfaces.IInitialViewExtension",
+          "sap.ui.vtm.interfaces.IDownloadProgressExtension",
+          "sap.ui.vtm.interfaces.ILoadProgressExtension",
+          "sap.ui.vtm.interfaces.IMessageStatusCalculationExtension",
+          "sap.ui.vtm.interfaces.IMessageStatusIconClickExtension",
+          "sap.ui.vtm.interfaces.IMessageStatusHeaderIconClickExtension",
+          "sap.ui.vtm.interfaces.ISelectionLinkingExtension",
+          "sap.ui.vtm.interfaces.ISceneNodeHoverHighlightExtension",
+          "sap.ui.vtm.interfaces.ISceneNodeHoverTooltipExtension",
+          "sap.ui.vtm.interfaces.IViewLinkingExtension",
+          "sap.ui.vtm.interfaces.IViewportSelectionLinkingExtension",
+          "sap.ui.vtm.interfaces.IVisibilityIconClickExtension",
+          "sap.ui.vtm.interfaces.IVisibilityHeaderIconClickExtension"
+        ]
+      }
+    }
+  }
+}

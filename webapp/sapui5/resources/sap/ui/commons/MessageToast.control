@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>MessageToast</name>
+    <derived/>
+    <documentation>Responsible for displaying the new incoming messages, one at the time, on top of the MessageBar.</documentation>
+    <deprecation since="1.4.0">Instead, use the &lt;code&gt;sap.m.MessageToast&lt;/code&gt; control.</deprecation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="anchorId" type="sap.ui.core/string" group="Misc">
+            <documentation>ID of the anchor on top of which the MessageToast is to render.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="next" allowPreventDefault="false">
+            <documentation>Fired once the &lt;code&gt;toast()&lt;/code&gt; method is over, so that the MessageBar can "toast" another message if needed.</documentation>
+        </event>
+    </events>
+    <methods>
+        <method name="toast" type="sap.ui.core/void">
+            <documentation>Triggers the toasting of a message, on top of the MessageBar.
+If no message is supplied, displays the "Multiple new messages..." message.
+
+Receives the list of Messages to be displayed,
+and re-renders this Control if it is visible.</documentation>
+            <parameters>
+                <parameter name="message" type="sap.ui.commons/Message">
+                    <documentation>The Message to be toasted.</documentation>
+                </parameter>
+                <parameter name="anchorId" type="sap.ui.core/string">
+                    <documentation>DOM ID of the anchor against which the Toast Arrow should align for a given Toast.</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="isIdle" type="sap.ui.core/boolean">
+            <documentation>Returns the idle state of the control. Returns true if no message is being toasted.</documentation>
+        </method>
+    </methods>
+</control>

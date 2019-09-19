@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>semantic/SemanticButton</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A base class for the available semantic actions, such as {@link sap.f.semantic.AddAction AddAction},
+{@link sap.f.semantic.CloseAction CloseAction}, etc.</documentation>
+    <since>1.46.0</since>
+    <abstract/>
+    <baseType>sap.f/semantic/SemanticControl</baseType>
+    <properties>
+        <property name="enabled" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Determines whether the &lt;code&gt;SemanticButton&lt;/code&gt; is enabled.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="press" allowPreventDefault="false">
+            <documentation>Fired when the user selects the &lt;code&gt;SemanticButton&lt;/code&gt;.</documentation>
+        </event>
+    </events>
+</control>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>cssgrid/CSSGrid</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A layout control, used to create full page layouts or user interface elements.
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+
+A two-dimensional layout control based on the native-browser CSS display grid which can handle both columns and rows.
+The control can be used along with {@link sap.m.FlexBox} which is the one-dimensional alternative for layouting.
+
+With properties it is possible to define:
+&lt;ul&gt;
+&lt;li&gt;columns, rows and their sizes in the grid&lt;/li&gt;
+&lt;li&gt;vertical and horizontal gaps between the grid items&lt;/li&gt;
+&lt;li&gt;the flow algorithm when new items are added in the grid&lt;/li&gt;
+&lt;/ul&gt;
+
+The dimensions of the grid items are defined on a &lt;code&gt;CSSGrid&lt;/code&gt; level. Every item can override its size by
+specifying how many columns and/or rows it will take in the &lt;code&gt;CSSGrid&lt;/code&gt;. Every item can override its position
+by specifying from which column and/or row it will start. The configuration of a single item is done
+with {@link sap.ui.layout.cssgrid.GridItemLayoutData GridItemLayoutData}.
+
+&lt;h3&gt;Terminology&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Grid - The container which has all grid settings&lt;/li&gt;
+&lt;li&gt;Gutters - The gap between the rows and columns&lt;/li&gt;
+&lt;li&gt;Grid areas - Items that take more than one row and/or column&lt;/li&gt;
+&lt;li&gt;Grid cells - The items of the Grid&lt;/li&gt;
+&lt;li&gt;Grid lines - The lines around and between the rows and columns&lt;/li&gt;
+&lt;li&gt;Grid tracks - The space between any two lines in the grid&lt;/li&gt;
+&lt;li&gt;"fr" Unit - A special grid unit (short from "fraction") which represents a fraction of the available space in the grid&lt;/li&gt;
+&lt;li&gt;Implicit and Explicit grid - Explicit grid consists of rows and columns defined with &lt;code&gt;gridTemplateColumns&lt;/code&gt; and &lt;code&gt;gridTemplateRows&lt;/code&gt;. The grid
+also creates rows and columns on its own when needed. Their dimensions are defined with &lt;code&gt;gridAutoColumns&lt;/code&gt; and &lt;code&gt;gridAutoRows&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Structure&lt;/h3&gt;
+The &lt;code&gt;CSSGrid&lt;/code&gt; has the following elements:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;items&lt;/code&gt; - The items of the &lt;code&gt;CSSGrid&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;customLayout&lt;/code&gt; - An aggregation used to pass the &lt;code&gt;CSSGrid&lt;/code&gt; configuration. Used for templating.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Usage&lt;/h3&gt;
+
+For general cases, use the &lt;code&gt;CSSGrid&lt;/code&gt; properties to configure how the layout should look.
+For Box case (equal sized items), use &lt;code&gt;customLayout&lt;/code&gt; aggregation with {@link sap.ui.layout.cssgrid.GridBoxLayout GridBoxLayout}
+For Grids which need different configurations based on available width, use &lt;code&gt;customLayout&lt;/code&gt; aggregation with {@link sap.ui.layout.cssgrid.GridResponsiveLayout GridResponsiveLayout}
+To set a specific position to an item or define its dimensions in the grid, pass &lt;code&gt;layoutData&lt;/code&gt; of type {@link sap.ui.layout.cssgrid.GridItemLayoutData GridItemLayoutData}
+
+&lt;i&gt;When to use&lt;/i&gt;
+&lt;ul&gt;
+&lt;li&gt;If a two-dimensional layout configuration is needed (both columns and rows are defined)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;i&gt;When not to use&lt;/i&gt;
+&lt;ul&gt;
+&lt;li&gt;If the layout needs to be defined only by one dimension (either column or row, not both). Use {@link sap.m.FlexBox FlexBox} instead.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Responsive behavior&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Fully configurable by the developer. It is possible to create a "breathing" columns layout which means columns width will grow/shrink depending on grid size.&lt;/li&gt;
+&lt;li&gt;It is possible to pass a {@link sap.ui.layout.cssgrid.GridResponsiveLayout GridResponsiveLayout} to the &lt;code&gt;customLayout&lt;/code&gt; aggregation of
+the &lt;code&gt;CSSGrid&lt;/code&gt; and configure how it will look in different breakpoints (S, M, L, XL).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Current Limitations&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;No support for IE11.&lt;/li&gt;
+&lt;li&gt;No support for Edge version 15.&lt;/li&gt;
+&lt;li&gt;No alignment and ordering&lt;/li&gt;
+&lt;li&gt;No Named grid areas and lines&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+    <since>1.60</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="width" type="sap.ui.core/CSSSize" defaultValue="100%">
+            <documentation>The width of the control</documentation>
+        </property>
+        <property name="gridTemplateColumns" type="sap.ui.layout/cssgrid/CSSGridTrack" defaultValue="">
+            <documentation>Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns MDN web docs: grid-template-columns}
+
+&lt;b&gt;Note:&lt;/b&gt; Not supported in IE11, Edge 15.</documentation>
+        </property>
+        <property name="gridTemplateRows" type="sap.ui.layout/cssgrid/CSSGridTrack" defaultValue="">
+            <documentation>Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows MDN web docs: grid-template-rows}
+
+&lt;b&gt;Note:&lt;/b&gt; Not supported in IE11, Edge 15.</documentation>
+        </property>
+        <property name="gridRowGap" type="sap.ui.core/CSSSize" defaultValue="">
+            <documentation>Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-gap MDN web docs: grid-row-gap}
+
+&lt;b&gt;Note:&lt;/b&gt; Not supported in IE11, Edge 15.</documentation>
+        </property>
+        <property name="gridColumnGap" type="sap.ui.core/CSSSize" defaultValue="">
+            <documentation>Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-gap MDN web docs: grid-column-gap}
+
+&lt;b&gt;Note:&lt;/b&gt; Not supported in IE11, Edge 15.</documentation>
+        </property>
+        <property name="gridGap" type="sap.ui.layout/cssgrid/CSSGridGapShortHand" defaultValue="">
+            <documentation>Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-gap MDN web docs: grid-gap}
+It is a shorthand for gridRowGap and gridColumnGap. If some of them is set, the gridGap value will have less priority and will be overwritten.
+
+&lt;b&gt;Note:&lt;/b&gt; Not supported in IE11, Edge 15.</documentation>
+        </property>
+        <property name="gridAutoRows" type="sap.ui.layout/cssgrid/CSSGridTrack" defaultValue="">
+            <documentation>Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-rows MDN web docs: grid-auto-rows}
+
+&lt;b&gt;Note:&lt;/b&gt; Not supported in IE11, Edge 15.</documentation>
+        </property>
+        <property name="gridAutoColumns" type="sap.ui.layout/cssgrid/CSSGridTrack" defaultValue="">
+            <documentation>Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-columns MDN web docs: grid-auto-columns}
+
+&lt;b&gt;Note:&lt;/b&gt; Not supported in IE11, Edge 15.</documentation>
+        </property>
+        <property name="gridAutoFlow" type="sap.ui.layout/cssgrid/CSSGridAutoFlow" defaultValue="Row">
+            <documentation>Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow MDN web docs: grid-auto-flow}
+
+&lt;b&gt;Note:&lt;/b&gt; Not supported in IE11, Edge 15.</documentation>
+        </property>
+    </properties>
+    <aggregations default="items">
+        <aggregation name="customLayout" type="sap.ui.layout/cssgrid/GridLayoutBase" cardinality="0..1">
+            <documentation>Defines a custom Grid layout for the control. If provided, it will override all of the grid properties.</documentation>
+        </aggregation>
+        <aggregation name="items" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>The items contained by the control.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

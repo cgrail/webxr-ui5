@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>navpopover/SemanticObjectController</name>
+    <derived/>
+    <documentation>The &lt;code&gt;SemanticObjectController&lt;/code&gt; control operates as a single entry point for &lt;code&gt;SmartLink&lt;/code&gt; controls created automatically
+by {@link sap.ui.comp.smarttable.SmartTable SmartTable} control, {@link sap.ui.comp.smartchart.SmartChart SmartChart} control,
+{@link sap.ui.comp.smartform.SmartForm SmartForm} control and {@link sap.ui.comp.smartfield.SmartField SmartField} control based on OData metadata.
+Additionally, all events provided by the &lt;code&gt;SmartLink&lt;/code&gt; control are registered by the SemanticObjectController and can be consumed there in
+a single place. As usual, the SemanticObjectController can be defined within the XML view as well as in the code.</documentation>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="ignoredFields" type="sap.ui.core/string" group="Misc" since="1.28.0">
+            <documentation>Comma-separated list of fields that must not be displayed as links.</documentation>
+        </property>
+        <property name="prefetchNavigationTargets" type="sap.ui.core/boolean" defaultValue="false" group="Misc" since="1.28.0">
+            <documentation>If set to &lt;code&gt;true&lt;/code&gt;, the SemanticObjectController will retrieve all navigation targets once and will disable links for
+which no targets were found. Setting this value to &lt;code&gt;true&lt;/code&gt; will trigger an additional roundtrip.</documentation>
+            <deprecation since="1.42.0">The property &lt;code&gt;prefetchNavigationTargets&lt;/code&gt; is obsolete as navigation targets are determined
+            automatically. The SmartLink controls are re-rendered as soon as the asynchronous determination of navigation targets
+            has been completed.</deprecation>
+        </property>
+        <property name="fieldSemanticObjectMap" type="sap.ui.core/object" group="Misc" since="1.28.0">
+            <documentation>Maps the fields to the related semantic objects. When accessing this property for the first time, the mapping will be
+calculated from the metadata within the provided model.</documentation>
+        </property>
+        <property name="entitySet" type="sap.ui.core/string" group="Misc" since="1.28.0">
+            <documentation>The name of the entity set used. If &lt;code&gt;entitySet&lt;/code&gt; has not been defined, the SemanticObjectController tries to retrieve
+the name from its parents. &lt;b&gt;Note:&lt;/b&gt; This is not a dynamic UI5 property.</documentation>
+        </property>
+        <property name="contactAnnotationPaths" type="sap.ui.core/object" since="1.40.0">
+            <documentation>Navigation property that points from the current to the related entity type where the
+&lt;code&gt;com.sap.vocabularies.Communication.v1.Contact&lt;/code&gt; annotation is defined, for example,
+&lt;code&gt; '\{"Supplier":"to_Supplier", "CompanyName":"to_Company"\}' &lt;/code&gt;. An empty string means that the related entity type is
+the current one.</documentation>
+        </property>
+        <property name="enableAvailableActionsPersonalization" type="sap.ui.core/object" since="1.44.0">
+            <documentation>Determines whether the personalization link is shown inside the NavigationPopover control. For example,
+&lt;code&gt; '\{"Supplier":false, "CompanyName":true\}' &lt;/code&gt;.</documentation>
+        </property>
+        <property name="mapFieldToSemanticObject" type="sap.ui.core/boolean" since="1.48.0">
+            <documentation>If set to &lt;code&gt;false&lt;/code&gt;, the SmartLink control will not replace its field name with the according
+&lt;code&gt;semanticObject&lt;/code&gt; property during the calculation of the semantic attributes.</documentation>
+        </property>
+        <property name="forceLinkRendering" type="sap.ui.core/object" since="1.58.0">
+            <documentation>Object containing fields for which the corresponding &lt;code&gt;SmartLink&lt;/code&gt; control is rendered as a link even if &lt;code&gt;contactAnnotationPaths&lt;/code&gt;
+is not set and navigation targets do not exist. Setting this property to &lt;code&gt;true&lt;/code&gt; allows the application, for example, to modify the
+&lt;code&gt;SmartLink&lt;/code&gt; control in the event handler, after the user has clicked on a link and the registered event handler has been called.\n
+
+&lt;b&gt;Note:&lt;/b&gt; The &lt;code&gt;ignoredFields&lt;/code&gt; property and the &lt;code&gt;ignoreLinkRendering&lt;/code&gt; property of the &lt;code&gt;SmartLink&lt;/code&gt; control take precedence
+over &lt;code&gt;forceLinkRendering&lt;/code&gt;.\n
+
+Example of usage: &lt;code&gt; '\{"Supplier":"true", "CompanyName":"true"\}' &lt;/code&gt;</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="navigationTargetsObtained" since="1.28.0" allowPreventDefault="false">
+            <documentation>After the navigation targets have been retrieved, &lt;code&gt;navigationTargetsObtained&lt;/code&gt; is fired and makes it possible you to
+change the targets.</documentation>
+            <parameters>
+                <parameter name="mainNavigation" type="sap.ui.comp/navpopover/LinkData">
+                    <documentation>The main navigation object.</documentation>
+                </parameter>
+                <parameter name="actions" type="sap.ui.comp/navpopover/LinkData[]">
+                    <documentation>Array of available navigation target objects.</documentation>
+                </parameter>
+                <parameter name="ownNavigation" type="sap.ui.comp/navpopover/LinkData">
+                    <documentation>The navigation object for the own application. This navigation option is by default not visible on the popover.</documentation>
+                </parameter>
+                <parameter name="popoverForms" type="sap.ui.layout/form/SimpleForm[]">
+                    <documentation>Array containing contact data.</documentation>
+                </parameter>
+                <parameter name="semanticObject" type="sap.ui.core/string">
+                    <documentation>The semantic object for which the navigation targets have been retrieved.</documentation>
+                </parameter>
+                <parameter name="semanticAttributes" type="sap.ui.core/object">
+                    <documentation>Map containing the semantic attributes.</documentation>
+                </parameter>
+                <parameter name="originalId" type="sap.ui.core/string">
+                    <documentation>The ID of the control that fires this event. If &lt;code&gt;navigationTargetsObtained&lt;/code&gt; is registered on the SmartLink,
+&lt;code&gt;originalId&lt;/code&gt; is the same as the event's source ID which is also the SmartLink's ID. If
+&lt;code&gt;navigationTargetsObtained&lt;/code&gt; is registered on the SemanticObjectController, &lt;code&gt;originalId&lt;/code&gt; helps to
+identify the original SmartLink control which triggered the event.</documentation>
+                </parameter>
+                <parameter name="show" type="sap.ui.core/any">
+                    <documentation>This callback function shows the actual navigation popover. If the &lt;code&gt;navigationTargetsObtained&lt;/code&gt; has been
+registered, the &lt;code&gt;show&lt;/code&gt; function has to be called manually in order to open the navigation popover. Signatures:
+&lt;code&gt;show()&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;show(oMainNavigation, aAvailableActions, oAdditionalContent)&lt;/code&gt; Parameters:
+&lt;ul&gt;
+&lt;li&gt;{sap.ui.comp.navpopover.LinkData | null | undefined} oMainNavigation The main navigation object. With
+&lt;code&gt;null&lt;/code&gt; the main navigation object will be removed. With &lt;code&gt;undefined&lt;/code&gt; the old object will remain.&lt;/li&gt;
+&lt;li&gt;{sap.ui.comp.navpopover.LinkData[] | [] | undefined} aAvailableActions Array containing the cross-application
+navigation links. With empty array all available links will be removed. With &lt;code&gt;undefined&lt;/code&gt; the old links will
+remain.&lt;/li&gt;
+&lt;li&gt;{sap.ui.core.Control | null | undefined} oAdditionalContent Control that will be displayed in extra content section on
+the popover. With &lt;code&gt;null&lt;/code&gt; the main extra content object will be removed. With &lt;code&gt;undefined&lt;/code&gt; the old
+object still remains.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;show(sMainNavigationId, oMainNavigation, aAvailableActions, oAdditionalContent)&lt;/code&gt; Parameters:
+&lt;ul&gt;
+&lt;li&gt;{string | undefined} sMainNavigationId The visible description for the main navigation link. With &lt;code&gt;''&lt;/code&gt;,
+both the description and subtitle will be removed. With &lt;code&gt;undefined&lt;/code&gt;, the description is calculated using the
+binding context of a given source object (for example &lt;code&gt;SmartLink&lt;/code&gt; control).&lt;/li&gt;
+&lt;li&gt;{sap.ui.comp.navpopover.LinkData | null | undefined} oMainNavigation The main navigation object. With
+&lt;code&gt;null&lt;/code&gt; the main navigation object will be removed. With &lt;code&gt;undefined&lt;/code&gt; the old object will remain.&lt;/li&gt;
+&lt;li&gt;{sap.ui.comp.navpopover.LinkData[] | [] | undefined} aAvailableActions Array containing the cross-application
+navigation links. With empty array all available links will be removed. With &lt;code&gt;undefined&lt;/code&gt; the old links will
+remain.&lt;/li&gt;
+&lt;li&gt;{sap.ui.core.Control | null | undefined} oAdditionalContent Control that will be displayed in extra content section on
+the popover. With &lt;code&gt;null&lt;/code&gt; the main extra content object will be removed. With &lt;code&gt;undefined&lt;/code&gt; the old
+object still remains.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="beforePopoverOpens" since="1.28.0" allowPreventDefault="false">
+            <documentation>Event is fired before the navigation popover opens and before navigation target links are retrieved. Event can be used to change
+the parameters used to retrieve the navigation targets. In case of SmartLink, &lt;code&gt;beforePopoverOpens&lt;/code&gt; is fired after the
+link has been clicked.</documentation>
+            <parameters>
+                <parameter name="semanticObject" type="sap.ui.core/string">
+                    <documentation>The semantic object for which the navigation targets will be retrieved.</documentation>
+                </parameter>
+                <parameter name="semanticAttributes" type="sap.ui.core/object">
+                    <documentation>Map containing the semantic attributes calculated from the binding that will be used to retrieve the navigation targets.</documentation>
+                    <deprecation since="1.42.0">The parameter &lt;code&gt;semanticAttributes&lt;/code&gt; is obsolete. Instead use the parameter
+            &lt;code&gt;semanticAttributesOfSemanticObjects&lt;/code&gt;.</deprecation>
+                </parameter>
+                <parameter name="semanticAttributesOfSemanticObjects" type="sap.ui.core/object" since="1.42.0">
+                    <documentation>A map of semantic objects for which the navigation targets will be retrieved and it's semantic attributes calculated from
+the binding context. The semantic attributes will be used as parameters in order to retrieve the navigation targets.</documentation>
+                </parameter>
+                <parameter name="setSemanticAttributes" type="sap.ui.core/any">
+                    <documentation>This callback function enables you to define a changed semantic attributes map. Signatures:
+&lt;code&gt;setSemanticAttributes(oSemanticAttributesMap)&lt;/code&gt; Parameter:
+&lt;ul&gt;
+&lt;li&gt;{object} oSemanticAttributesMap New map containing the semantic attributes&lt;/li&gt;
+&lt;li&gt;{string} sSemanticObject Semantic Object for which the oSemanticAttributesMap belongs&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+                </parameter>
+                <parameter name="setAppStateKey" type="sap.ui.core/any">
+                    <documentation>This callback function sets an application state key that is used over the cross-application navigation. Signatures:
+&lt;code&gt;setAppStateKey(sAppStateKey)&lt;/code&gt; Parameter:
+&lt;ul&gt;
+&lt;li&gt;{string} sAppStateKey&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+                </parameter>
+                <parameter name="originalId" type="sap.ui.core/string">
+                    <documentation>The ID of the control that fires this event. If &lt;code&gt;beforePopoverOpens&lt;/code&gt; is registered on the SmartLink,
+&lt;code&gt;originalId&lt;/code&gt; is the same as the event's source ID which is also the SmartLink's ID. If the
+&lt;code&gt;beforePopoverOpens&lt;/code&gt; is registered on the SemanticObjectController, &lt;code&gt;originalId&lt;/code&gt; helps to
+identify the original SmartLink control which triggered the event.</documentation>
+                </parameter>
+                <parameter name="open" type="sap.ui.core/any">
+                    <documentation>This callback function triggers the retrieval of navigation targets and leads to the opening of the navigation popover.
+Signatures: &lt;code&gt;open()&lt;/code&gt; If &lt;code&gt;beforePopoverOpens&lt;/code&gt; has been registered, &lt;code&gt;open&lt;/code&gt; function
+has to be called manually in order to open the navigation popover.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="navigate" since="1.28.0" allowPreventDefault="false">
+            <documentation>This event is fired after a navigation link on the navigation popover has been clicked. This event is only fired, if the user
+left-clicks the link. Right-clicking the link and selecting 'Open in New Window' etc. in the context menu does not fire the event.</documentation>
+            <parameters>
+                <parameter name="text" type="sap.ui.core/string">
+                    <documentation>The UI text shown in the clicked link.</documentation>
+                </parameter>
+                <parameter name="href" type="sap.ui.core/string">
+                    <documentation>The navigation target of the clicked link.</documentation>
+                </parameter>
+                <parameter name="semanticObject" type="sap.ui.core/string">
+                    <documentation>The semantic object used to retrieve this target.</documentation>
+                </parameter>
+                <parameter name="semanticAttributes" type="sap.ui.core/object">
+                    <documentation>Map containing the semantic attributes used to retrieve this target.</documentation>
+                </parameter>
+                <parameter name="originalId" type="sap.ui.core/string">
+                    <documentation>The ID of the control that fires this event. If &lt;code&gt;navigate&lt;/code&gt; is registered on the SmartLink,
+&lt;code&gt;originalId&lt;/code&gt; is the same as the event's source ID which is the SmartLink's ID. If &lt;code&gt;navigate&lt;/code&gt; is
+registered on the SemanticObjectController, &lt;code&gt;originalId&lt;/code&gt; helps to identify the original SmartLink control
+which triggered the event.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="prefetchDone" since="1.28.0" allowPreventDefault="false">
+            <documentation>If the property &lt;code&gt;prefetchNavigationTargets&lt;/code&gt; is set to &lt;code&gt;true&lt;/code&gt;, event &lt;code&gt;prefetchDone&lt;/code&gt; is fired
+after all navigation targets have been retrieved.</documentation>
+            <deprecation since="1.42.0">The event &lt;code&gt;prefetchDone&lt;/code&gt; is obsolete because it depends on the property
+            &lt;code&gt;prefetchNavigationTargets&lt;/code&gt; which has been deprecated.</deprecation>
+            <parameters>
+                <parameter name="semanticObjects" type="sap.ui.core/object">
+                    <documentation>A map containing all semantic objects as keys for which at least one navigation target has been found. The value for each
+semantic object key is an array containing the available actions found for this semantic object.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+</control>

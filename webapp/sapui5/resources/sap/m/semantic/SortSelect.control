@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>semantic/SortSelect</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A SortSelect is a {@link sap.m.Select} control enhanced with styling according to the semantics of a common "Sort" acton.
+
+A SortSelect cannot be used independently but only as aggregation content of a {@link sap.m.semantic.SemanticPage}.
+
+The sorting options should be added to the &lt;code&gt;items&lt;/code&gt; aggregation of {@link sap.m.semantic.SortSelect} and will be displayed as a pop-up list with support for single-item selection.
+If this simple popup list is not sufficient for your use case, you can implement your own custom dialog by using {@link sap.m.semantic.SortAction} to trigger the dialog opening.</documentation>
+    <since>1.30.0</since>
+    <baseType>sap.m/semantic/SemanticSelect</baseType>
+</control>

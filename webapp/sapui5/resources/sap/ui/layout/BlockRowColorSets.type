@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>BlockRowColorSets</name>
+    <derived/>
+    <documentation>A string type that is used inside the BlockLayoutRow to set predefined set of colors the cells inside
+the control. Color sets depend on sap.ui.layout.BlockBackgroundType</documentation>
+    <enumeration>
+        <value name="ColorSet1">
+            <documentation>sap.ui.layout.BlockBackgroundType.Default: N/A
+sap.ui.layout.BlockBackgroundType.Light: Color Set 1
+sap.ui.layout.BlockBackgroundType.Mixed: Color Set 1
+sap.ui.layout.BlockBackgroundType.Accent: Color Set 1
+sap.ui.layout.BlockBackgroundType.Dashboard: N/A</documentation>
+        </value>
+        <value name="ColorSet2">
+            <documentation>sap.ui.layout.BlockBackgroundType.Default: N/A
+sap.ui.layout.BlockBackgroundType.Light: Color Set 2
+sap.ui.layout.BlockBackgroundType.Mixed: Color Set 2
+sap.ui.layout.BlockBackgroundType.Accent: Color Set 2
+sap.ui.layout.BlockBackgroundType.Dashboard: N/A</documentation>
+        </value>
+        <value name="ColorSet3">
+            <documentation>sap.ui.layout.BlockBackgroundType.Default: N/A
+sap.ui.layout.BlockBackgroundType.Light: Color Set 1
+sap.ui.layout.BlockBackgroundType.Mixed: Color Set 1
+sap.ui.layout.BlockBackgroundType.Accent: Color Set 3
+sap.ui.layout.BlockBackgroundType.Dashboard: N/A</documentation>
+        </value>
+        <value name="ColorSet4">
+            <documentation>sap.ui.layout.BlockBackgroundType.Default: N/A
+sap.ui.layout.BlockBackgroundType.Light: Color Set 2
+sap.ui.layout.BlockBackgroundType.Mixed: Color Set 2
+sap.ui.layout.BlockBackgroundType.Accent: Color Set 4
+sap.ui.layout.BlockBackgroundType.Dashboard: N/A</documentation>
+        </value>
+    </enumeration>
+</simple-type>

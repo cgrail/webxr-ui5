@@ -1,0 +1,425 @@
+{
+  "modules" : [
+    {
+      "name" : "sap/ui/generic/app/AppComponent.js",
+      "size" : 933,
+      "compressedSize" : 242,
+      "required" : ["sap/suite/ui/generic/template/lib/AppComponent.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/ApplicationController.js",
+      "description" : "SAPUI5\n\n(c) Copyright 2009-2019 SAP SE. All rights reserved",
+      "size" : 34649,
+      "compressedSize" : 12212,
+      "required" : ["sap/base/Log.js", "sap/ui/generic/app/transaction/BaseController.js", "sap/ui/generic/app/transaction/TransactionController.js", "sap/ui/generic/app/util/ModelUtil.js", "sap/ui/thirdparty/jquery.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/designtime/library-preload.designtime.js",
+      "size" : 552,
+      "required" : ["ui5loader-autoconfig.js"],
+      "includes" : ["sap/ui/generic/app/designtime/navigation/service/NavigationHandler.designtime.js"]
+    },
+    {
+      "name" : "sap/ui/generic/app/designtime/navigation/service/NavigationHandler.designtime.js",
+      "description" : "Provides the Design Time Metadata for the sap.ui.generic.app.navigation.service.NavigationHandler control.",
+      "size" : 1386,
+      "compressedSize" : 341,
+      "required" : ["ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/fragments/MessageDialog.fragment.xml",
+      "size" : 1108,
+      "required" : ["sap/m/Bar.js", "sap/m/Button.js", "sap/m/Dialog.js", "sap/m/MessageItem.js", "sap/m/MessageView.js", "sap/m/Text.js", "sap/ui/core/Fragment.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/library-h2-preload.js",
+      "size" : 5313,
+      "required" : ["sap/base/Log.js", "sap/base/assert.js", "sap/base/strings/formatMessage.js", "sap/m/Bar.js", "sap/m/Button.js", "sap/m/Dialog.js", "sap/m/MessageBox.js", "sap/m/MessageItem.js", "sap/m/MessageToast.js", "sap/m/MessageView.js", "sap/m/Text.js", "sap/m/VBox.js", "sap/suite/ui/generic/template/lib/AppComponent.js", "sap/ui/base/EventProvider.js", "sap/ui/base/ManagedObject.js", "sap/ui/base/Object.js", "sap/ui/comp/smartfield/SmartField.js", "sap/ui/comp/smartfield/SmartLabel.js", "sap/ui/core/Fragment.js", "sap/ui/core/UIComponent.js", "sap/ui/core/ValueState.js", "sap/ui/core/library.js", "sap/ui/core/routing/HashChanger.js", "sap/ui/core/syncStyleClass.js", "sap/ui/layout/form/SimpleForm.js", "sap/ui/model/Filter.js", "sap/ui/model/FilterOperator.js", "sap/ui/model/resource/ResourceModel.js", "sap/ui/thirdparty/jquery.js", "ui5loader-autoconfig.js"],
+      "includes" : ["sap/ui/generic/app/library.js", "sap/ui/generic/app/manifest.json", "sap/ui/generic/app/AppComponent.js", "sap/ui/generic/app/ApplicationController.js", "sap/ui/generic/app/designtime/navigation/service/NavigationHandler.designtime.js", "sap/ui/generic/app/fragments/MessageDialog.fragment.xml", "sap/ui/generic/app/navigation/service/NavError.js", "sap/ui/generic/app/navigation/service/NavigationHandler.js", "sap/ui/generic/app/navigation/service/PresentationVariant.js", "sap/ui/generic/app/navigation/service/SelectionVariant.js", "sap/ui/generic/app/transaction/BaseController.js", "sap/ui/generic/app/transaction/DraftContext.js", "sap/ui/generic/app/transaction/DraftController.js", "sap/ui/generic/app/transaction/TransactionController.js", "sap/ui/generic/app/util/ActionUtil.js", "sap/ui/generic/app/util/DraftUtil.js", "sap/ui/generic/app/util/MessageUtil.js", "sap/ui/generic/app/util/ModelUtil.js", "sap/ui/generic/app/util/Queue.js"]
+    },
+    {
+      "name" : "sap/ui/generic/app/library-preload.js",
+      "size" : 91379,
+      "required" : ["sap/base/Log.js", "sap/base/assert.js", "sap/base/strings/formatMessage.js", "sap/m/Bar.js", "sap/m/Button.js", "sap/m/Dialog.js", "sap/m/MessageBox.js", "sap/m/MessageItem.js", "sap/m/MessageToast.js", "sap/m/MessageView.js", "sap/m/Text.js", "sap/m/VBox.js", "sap/suite/ui/generic/template/lib/AppComponent.js", "sap/ui/base/EventProvider.js", "sap/ui/base/ManagedObject.js", "sap/ui/base/Object.js", "sap/ui/comp/smartfield/SmartField.js", "sap/ui/comp/smartfield/SmartLabel.js", "sap/ui/core/Fragment.js", "sap/ui/core/UIComponent.js", "sap/ui/core/ValueState.js", "sap/ui/core/library.js", "sap/ui/core/routing/HashChanger.js", "sap/ui/core/syncStyleClass.js", "sap/ui/layout/form/SimpleForm.js", "sap/ui/model/Filter.js", "sap/ui/model/FilterOperator.js", "sap/ui/model/resource/ResourceModel.js", "sap/ui/thirdparty/jquery.js", "ui5loader-autoconfig.js"],
+      "includes" : ["sap/ui/generic/app/AppComponent.js", "sap/ui/generic/app/ApplicationController.js", "sap/ui/generic/app/fragments/MessageDialog.fragment.xml", "sap/ui/generic/app/library.js", "sap/ui/generic/app/manifest.json", "sap/ui/generic/app/navigation/service/NavError.js", "sap/ui/generic/app/navigation/service/NavigationHandler.js", "sap/ui/generic/app/navigation/service/PresentationVariant.js", "sap/ui/generic/app/navigation/service/SelectionVariant.js", "sap/ui/generic/app/transaction/BaseController.js", "sap/ui/generic/app/transaction/DraftContext.js", "sap/ui/generic/app/transaction/DraftController.js", "sap/ui/generic/app/transaction/TransactionController.js", "sap/ui/generic/app/util/ActionUtil.js", "sap/ui/generic/app/util/DraftUtil.js", "sap/ui/generic/app/util/MessageUtil.js", "sap/ui/generic/app/util/ModelUtil.js", "sap/ui/generic/app/util/Queue.js"]
+    },
+    {
+      "name" : "sap/ui/generic/app/library-preload.json",
+      "size" : 0,
+      "required" : ["sap/base/Log.js", "sap/base/assert.js", "sap/base/strings/formatMessage.js", "sap/m/Bar.js", "sap/m/Button.js", "sap/m/Dialog.js", "sap/m/MessageBox.js", "sap/m/MessageItem.js", "sap/m/MessageToast.js", "sap/m/MessageView.js", "sap/m/Text.js", "sap/m/VBox.js", "sap/suite/ui/generic/template/lib/AppComponent.js", "sap/ui/base/EventProvider.js", "sap/ui/base/ManagedObject.js", "sap/ui/base/Object.js", "sap/ui/comp/smartfield/SmartField.js", "sap/ui/comp/smartfield/SmartLabel.js", "sap/ui/core/Fragment.js", "sap/ui/core/UIComponent.js", "sap/ui/core/ValueState.js", "sap/ui/core/library-preload.json", "sap/ui/core/library.js", "sap/ui/core/routing/HashChanger.js", "sap/ui/core/syncStyleClass.js", "sap/ui/layout/form/SimpleForm.js", "sap/ui/model/Filter.js", "sap/ui/model/FilterOperator.js", "sap/ui/model/resource/ResourceModel.js", "sap/ui/thirdparty/jquery.js", "ui5loader-autoconfig.js"],
+      "includes" : ["sap/ui/generic/app/AppComponent.js", "sap/ui/generic/app/ApplicationController.js", "sap/ui/generic/app/fragments/MessageDialog.fragment.xml", "sap/ui/generic/app/library.js", "sap/ui/generic/app/manifest.json", "sap/ui/generic/app/navigation/service/NavError.js", "sap/ui/generic/app/navigation/service/NavigationHandler.js", "sap/ui/generic/app/navigation/service/PresentationVariant.js", "sap/ui/generic/app/navigation/service/SelectionVariant.js", "sap/ui/generic/app/transaction/BaseController.js", "sap/ui/generic/app/transaction/DraftContext.js", "sap/ui/generic/app/transaction/DraftController.js", "sap/ui/generic/app/transaction/TransactionController.js", "sap/ui/generic/app/util/ActionUtil.js", "sap/ui/generic/app/util/DraftUtil.js", "sap/ui/generic/app/util/MessageUtil.js", "sap/ui/generic/app/util/ModelUtil.js", "sap/ui/generic/app/util/Queue.js"]
+    },
+    {
+      "name" : "sap/ui/generic/app/library.js",
+      "description" : "Initialization Code and shared classes of library sap.ui.generic.app.",
+      "size" : 4276,
+      "compressedSize" : 991,
+      "required" : ["sap/ui/core/library.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/manifest.json",
+      "size" : 1549,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle.properties",
+      "size" : 971,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_ar.properties",
+      "size" : 1257,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_bg.properties",
+      "size" : 1503,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_ca.properties",
+      "size" : 916,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_cs.properties",
+      "size" : 960,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_da.properties",
+      "size" : 894,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_de.properties",
+      "size" : 913,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_el.properties",
+      "size" : 1473,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_en.properties",
+      "size" : 877,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_en_US_sappsd.properties",
+      "size" : 1902,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_en_US_saptrc.properties",
+      "size" : 1130,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_es.properties",
+      "size" : 939,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_et.properties",
+      "size" : 905,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_fi.properties",
+      "size" : 903,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_fr.properties",
+      "size" : 946,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_hi.properties",
+      "size" : 1437,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_hr.properties",
+      "size" : 904,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_hu.properties",
+      "size" : 997,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_it.properties",
+      "size" : 930,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_iw.properties",
+      "size" : 1260,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_ja.properties",
+      "size" : 1065,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_kk.properties",
+      "size" : 1438,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_ko.properties",
+      "size" : 1026,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_lt.properties",
+      "size" : 926,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_lv.properties",
+      "size" : 973,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_ms.properties",
+      "size" : 884,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_nl.properties",
+      "size" : 895,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_no.properties",
+      "size" : 906,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_pl.properties",
+      "size" : 962,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_pt.properties",
+      "size" : 912,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_ro.properties",
+      "size" : 949,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_ru.properties",
+      "size" : 1615,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_sh.properties",
+      "size" : 903,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_sk.properties",
+      "size" : 928,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_sl.properties",
+      "size" : 906,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_sv.properties",
+      "size" : 890,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_th.properties",
+      "size" : 1467,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_tr.properties",
+      "size" : 924,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_uk.properties",
+      "size" : 1504,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_vi.properties",
+      "size" : 1060,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_zh_CN.properties",
+      "size" : 950,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/messagebundle_zh_TW.properties",
+      "size" : 951,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/navigation/service/NavError.js",
+      "description" : "! SAPUI5\n\n(c) Copyright 2009-2019 SAP SE. All rights reserved",
+      "size" : 1171,
+      "compressedSize" : 419,
+      "required" : ["sap/ui/base/Object.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/navigation/service/NavigationHandler.js",
+      "description" : "! @copyright@",
+      "size" : 81716,
+      "compressedSize" : 20260,
+      "required" : ["sap/base/Log.js", "sap/base/assert.js", "sap/ui/base/Object.js", "sap/ui/core/UIComponent.js", "sap/ui/core/routing/HashChanger.js", "sap/ui/generic/app/library.js", "sap/ui/generic/app/navigation/service/NavError.js", "sap/ui/generic/app/navigation/service/SelectionVariant.js", "sap/ui/model/resource/ResourceModel.js", "sap/ui/thirdparty/jquery.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/navigation/service/PresentationVariant.js",
+      "description" : "! @copyright@",
+      "size" : 11515,
+      "compressedSize" : 3411,
+      "required" : ["sap/base/Log.js", "sap/ui/base/Object.js", "sap/ui/generic/app/navigation/service/NavError.js", "sap/ui/thirdparty/jquery.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/navigation/service/SelectionVariant.js",
+      "description" : "! @copyright@",
+      "size" : 32123,
+      "compressedSize" : 7762,
+      "required" : ["sap/base/Log.js", "sap/ui/base/Object.js", "sap/ui/generic/app/navigation/service/NavError.js", "sap/ui/thirdparty/jquery.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/transaction/BaseController.js",
+      "description" : "SAPUI5\n\n(c) Copyright 2009-2019 SAP SE. All rights reserved",
+      "size" : 38055,
+      "compressedSize" : 10927,
+      "required" : ["sap/base/Log.js", "sap/ui/base/EventProvider.js", "sap/ui/generic/app/util/DraftUtil.js", "sap/ui/generic/app/util/ModelUtil.js", "sap/ui/generic/app/util/Queue.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/transaction/DraftContext.js",
+      "description" : "SAPUI5\n\n(c) Copyright 2009-2019 SAP SE. All rights reserved",
+      "size" : 13463,
+      "compressedSize" : 4238,
+      "required" : ["sap/ui/base/Object.js", "sap/ui/generic/app/util/ModelUtil.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/transaction/DraftController.js",
+      "description" : "SAPUI5\n\n(c) Copyright 2009-2019 SAP SE. All rights reserved",
+      "size" : 22864,
+      "compressedSize" : 8102,
+      "required" : ["sap/base/Log.js", "sap/ui/generic/app/transaction/BaseController.js", "sap/ui/generic/app/transaction/DraftContext.js", "sap/ui/thirdparty/jquery.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/transaction/TransactionController.js",
+      "description" : "SAPUI5\n\n(c) Copyright 2009-2019 SAP SE. All rights reserved",
+      "size" : 12176,
+      "compressedSize" : 3877,
+      "required" : ["sap/ui/generic/app/transaction/BaseController.js", "sap/ui/generic/app/transaction/DraftController.js", "sap/ui/generic/app/util/ModelUtil.js", "sap/ui/thirdparty/jquery.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/util/ActionUtil.js",
+      "size" : 20498,
+      "compressedSize" : 8510,
+      "required" : ["sap/base/Log.js", "sap/base/strings/formatMessage.js", "sap/m/Dialog.js", "sap/m/MessageBox.js", "sap/m/Text.js", "sap/m/VBox.js", "sap/ui/base/ManagedObject.js", "sap/ui/comp/smartfield/SmartField.js", "sap/ui/comp/smartfield/SmartLabel.js", "sap/ui/generic/app/util/ModelUtil.js", "sap/ui/layout/form/SimpleForm.js", "sap/ui/thirdparty/jquery.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/util/DraftUtil.js",
+      "description" : "SAPUI5\n\n(c) Copyright 2009-2019 SAP SE. All rights reserved",
+      "size" : 1582,
+      "compressedSize" : 378,
+      "required" : ["ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/util/MessageUtil.js",
+      "size" : 13895,
+      "compressedSize" : 4520,
+      "required" : ["sap/m/MessageToast.js", "sap/ui/core/ValueState.js", "sap/ui/core/syncStyleClass.js", "sap/ui/model/Filter.js", "sap/ui/model/FilterOperator.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/util/ModelUtil.js",
+      "description" : "SAPUI5\n\n(c) Copyright 2009-2019 SAP SE. All rights reserved",
+      "size" : 2619,
+      "compressedSize" : 919,
+      "required" : ["ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/ui/generic/app/util/Queue.js",
+      "description" : "SAPUI5\n\n(c) Copyright 2009-2019 SAP SE. All rights reserved",
+      "size" : 4582,
+      "compressedSize" : 1865,
+      "required" : ["sap/ui/thirdparty/jquery.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    }
+  ]
+}

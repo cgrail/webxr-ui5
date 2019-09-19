@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>HarveyBallMicroChart</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A radial chart that displays a value compared to its total.
+&lt;br&gt;Unlike a pie chart, which shows multiple values or sectors, a Harvey Ball microchart shows only one value from a total.
+&lt;br&gt;The sector that represents a value being compared to a total is defined by {@link sap.suite.ui.microchart.HarveyBallMicroChartItem}.
+&lt;br&gt;Note: You can assign a custom tooltip for this microchart. The custom tooltip can be set using expression binding. When no custom tooltip is defined, the tooltip is generated automatically based on the logic described in {@link sap.ui.core.Element#getTooltip_AsString}. For a combination of a generated and a custom tooltip, use &lt;code&gt;((AltText))&lt;/code&gt; inside of the tooltip string. The aggregated data of the microchart can also be customized.</documentation>
+    <since>1.34</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="total" type="sap.ui.core/float" group="Misc">
+            <documentation>The total value. The total value is represented by a full circle, or 360 degrees value on the chart.</documentation>
+        </property>
+        <property name="totalLabel" type="sap.ui.core/string" group="Misc">
+            <documentation>The total label. If specified, it is displayed instead of the total value.</documentation>
+        </property>
+        <property name="totalScale" type="sap.ui.core/string" group="Misc">
+            <documentation>The scaling factor that is displayed next to the total value.</documentation>
+        </property>
+        <property name="formattedLabel" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>If set to &lt;code&gt;true&lt;/code&gt;, the &lt;code&gt;totalLabel&lt;/code&gt; property is used instead of the combination of
+the total value and its scaling factor.
+&lt;br&gt;The default value is &lt;code&gt;false&lt;/code&gt;, which means that the total value, defined by the &lt;code&gt;total&lt;/code&gt;
+property, and the scaling factor, defined by the &lt;code&gt;totalScale&lt;/code&gt; property, are displayed separately.</documentation>
+        </property>
+        <property name="showTotal" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>If set to &lt;code&gt;true&lt;/code&gt;, the total value is displayed next to the chart. The default setting
+is &lt;code&gt;true&lt;/code&gt;.</documentation>
+        </property>
+        <property name="showFractions" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>If set to &lt;code&gt;true&lt;/code&gt;, the fraction values are displayed next to the chart. The default setting is
+&lt;code&gt;true&lt;/code&gt;.</documentation>
+        </property>
+        <property name="size" type="sap.m/Size" defaultValue="Auto" group="Misc">
+            <documentation>The size of the chart. If not set, the default size is applied based on the device type.</documentation>
+        </property>
+        <property name="colorPalette" type="sap.ui.core/string[]" defaultValue="[]" group="Appearance">
+            <documentation>The color palette for the chart. Currently only a single color (first color in the array) is supported.
+&lt;br&gt;If this property is defined, the semantic color defined in the {@link sap.suite.ui.microchart.HarveyBallMicroChartItem}
+is ignored.</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" group="Misc">
+            <documentation>The width of the chart. Overrides the width specified in the &lt;code&gt;size&lt;/code&gt; property.</documentation>
+        </property>
+        <property name="height" type="sap.ui.core/CSSSize" group="Misc" since="1.62.0">
+            <documentation>The height of the chart. Overrides the height specified in the &lt;code&gt;size&lt;/code&gt; property.</documentation>
+        </property>
+        <property name="alignContent" type="sap.suite.ui.microchart/HorizontalAlignmentType" defaultValue="Left" group="Misc" since="1.62.0">
+            <documentation>The alignment of the content. If not set, the &lt;code&gt;Left&lt;/code&gt; alignment type is used.</documentation>
+        </property>
+        <property name="isResponsive" type="sap.ui.core/boolean" defaultValue="false" group="Appearance" since="1.38.0">
+            <documentation>If set to &lt;code&gt;true&lt;/code&gt;, the width and height of the control are determined by the width and height
+of the parent container, in which case the &lt;code&gt;size&lt;/code&gt; and &lt;code&gt;width&lt;/code&gt; properties are ignored.</documentation>
+            <deprecation since="1.62.0"></deprecation>
+        </property>
+    </properties>
+    <events>
+        <event name="press" allowPreventDefault="false">
+            <documentation>This event is fired when the chart is clicked or tapped.</documentation>
+        </event>
+    </events>
+    <aggregations default="items">
+        <aggregation name="items" type="sap.suite.ui.microchart/HarveyBallMicroChartItem" cardinality="0..n" bindable="bindable">
+            <documentation>The set of items. Currently only a single item is supported.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n" since="1.60.0">
+            <documentation>Controls or IDs that label this control. Can be used by screen reader software.</documentation>
+        </association>
+    </associations>
+</control>

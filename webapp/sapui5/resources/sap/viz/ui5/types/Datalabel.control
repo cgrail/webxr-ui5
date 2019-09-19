@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ui5/types/Datalabel</name>
+    <derived/>
+    <documentation>Module sap.viz.ui5.types.Datalabel</documentation>
+    <since>1.7.2</since>
+    <developmentState state="experimental" since="1.7.2">Charting API is not finished yet and might change completely.</developmentState>
+    <deprecation since="1.32.0">The chart controls in the &lt;code&gt;sap.viz.ui5&lt;/code&gt; package (which were always marked as &lt;i&gt;experimental&lt;/i&gt;) have been deprecated since 1.32.0. 
+They are no longer actively developed and won't receive new features or improvements, only important bug fixes. They will only remain in the 
+SAPUI5 distribution for backward compatibility. 
+
+&lt;b&gt;SAP strongly recommends that existing consumers of those controls migrate to the new {@link sap.viz.ui5.controls.VizFrame VizFrame} 
+control to benefit from new charting enhancements and timely support. &lt;/b&gt;
+
+&lt;b&gt;Note&lt;/b&gt;: As the feature set, design and API usage of VizFrame might differ from the old chart controls, make sure you evaluate it thoroughly before migration.</deprecation>
+    <baseType>sap.viz/ui5/core/BaseStructuredType</baseType>
+    <properties>
+        <property name="visible" type="sap.ui.core/boolean" defaultValue="false">
+            <documentation>Set whether the data labels are visible</documentation>
+        </property>
+        <property name="hideWhenOverlap" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>Always show all data labels even they are overlapped</documentation>
+        </property>
+        <property name="isDonut" type="sap.ui.core/boolean" defaultValue="false">
+            <documentation>Set whether the chart is a donut chart. Use only for donut charts.</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="type" type="sap.ui.core/string" defaultValue="value">
+            <documentation>Set the type of label</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="automaticInOutside" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>If set to 'true', the data labels will be automatically placed outside when the data label position property is inside, and vice versa</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="showZero" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>If set to 'true', the value zero is shown in the data labels</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="isGeoChart" type="sap.ui.core/boolean" defaultValue="false">
+            <documentation>Set whether the chart is a geo chart</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="isBubbleChart" type="sap.ui.core/boolean" defaultValue="false">
+            <documentation>Set whether the chart is a bubble chart</documentation>
+            <deprecation since="1.22">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="isStackMode" type="sap.ui.core/boolean" defaultValue="false">
+            <documentation>Set whether the chart is a stack chart. Set for stack chart only.</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="isPercentMode" type="sap.ui.core/boolean" defaultValue="false">
+            <documentation>Set whether the chart is a percent chart. Set for percent chart only.</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="positionPreference" type="sap.ui.core/boolean" defaultValue="false">
+            <documentation>If set to 'true', the data label position is defined by the property 'outsidePosition', regardless of whether the data label value is negative</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="outsideVisible" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>If set to 'true', the data label is visible when it is outside</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="outsidePosition" type="sap.viz/ui5/types/Datalabel_outsidePosition" defaultValue="up">
+            <documentation>If set to 'true', the data label is positioned above the element when it is outside</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="paintingMode" type="sap.viz/ui5/types/Datalabel_paintingMode" defaultValue="rectCoordinate">
+            <documentation>Set painting mode of data labels</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="position" type="sap.viz/ui5/types/Datalabel_position" defaultValue="inside">
+            <documentation>Set position of data labels</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="orientation" type="sap.viz/ui5/types/Datalabel_orientation" defaultValue="vertical">
+            <documentation>Set orientation of data labels</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="respectShapeWidth" type="sap.ui.core/boolean" defaultValue="false">
+            <documentation>If set to 'true', the data label is automatically hidden when bubble width isn't enough to show the whole label in single bubble chart.</documentation>
+            <deprecation since="1.20">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="formatString" type="sap.ui.core/any[]">
+            <documentation>Set the format strings for the data labels. For dual axis charts, the first array is applied to the primary axis and the second array is applied to the second axis. If you enter fewer format strings into an array than there are measures in the respective axis, then the last format string is applied to all remaining measures. The following characters are reserved as tokens for format code: MDYHSAmdyhsa#?%0@. The following is a simple example: [["0.00%"],["0.00%"]].</documentation>
+        </property>
+    </properties>
+</control>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>VBox</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The VBox control builds the container for a vertical flexible box layout. VBox is a convenience control, as it is just a specialized FlexBox control.&lt;br&gt;
+&lt;br&gt;
+&lt;b&gt;Note:&lt;/b&gt; Be sure to check the &lt;code&gt;renderType&lt;/code&gt; setting to avoid issues due to browser inconsistencies.</documentation>
+    <baseType>sap.m/FlexBox</baseType>
+</control>

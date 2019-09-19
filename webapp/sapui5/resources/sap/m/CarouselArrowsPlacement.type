@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>CarouselArrowsPlacement</name>
+    <derived/>
+    <documentation>Carousel arrows align.</documentation>
+    <enumeration>
+        <value name="Content">
+            <documentation>Carousel arrows are placed on the sides of the current Carousel page.</documentation>
+        </value>
+        <value name="PageIndicator">
+            <documentation>Carousel arrows are placed on the sides of the page indicator of the Carousel.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

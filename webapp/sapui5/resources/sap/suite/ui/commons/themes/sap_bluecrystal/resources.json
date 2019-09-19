@@ -1,0 +1,142 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": ".theming",
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "ChartTile.less",
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "FacetOverview.less",
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "GenericTile2X2.less",
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "HeaderContainer.less",
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "KpiTile.less",
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "LinkActionSheet.less",
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "MonitoringTile.less",
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "NumericTile.less",
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "ProcessFlowConnection.less",
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "ProcessFlowConnectionLabel.less",
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "ProcessFlowLaneHeader.less",
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "ProcessFlowNode.less",
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "TargetFilter.less",
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "ThingCollection.less",
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "TileContent2X2.less",
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "UnifiedThingGroup.less",
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "UnifiedThingInspector.less",
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "img-RTL/btn_nav_left_p.png",
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "img-RTL/btn_nav_right_p.png",
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "img/btn_nav_left_p.png",
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "img/btn_nav_right_p.png",
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "library-RTL-dbg.css",
+			"isDebug": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "library-RTL.css",
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "library-dbg.css",
+			"isDebug": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "library-parameters.json",
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "library.css",
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "library.less",
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "library.source.less",
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		}
+	]
+}

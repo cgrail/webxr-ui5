@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartchart/SmartChart</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The SmartChart control creates a chart based on the OData metadata and the provided configuration. To use the control, the &lt;code&gt;entitySet&lt;/code&gt;
+       property must be specified. This property is used to fetch the metadata, from which the chart UI will be generated.&lt;br&gt;
+       Based on the chartType property, this control will render initially the corresponding chart.&lt;br&gt;
+       &lt;b&gt;Note:&lt;/b&gt; Most of the properties are not dynamic and cannot be changed once the control has been initialized.</documentation>
+    <baseType>sap.m/VBox</baseType>
+    <properties>
+        <property name="entitySet" type="sap.ui.core/string" group="Misc">
+            <documentation>The entity set name from which to fetch data and generate the columns.&lt;br&gt;
+&lt;b&gt;Note&lt;/b&gt; This is not a dynamic property.</documentation>
+        </property>
+        <property name="smartFilterId" type="sap.ui.core/string" group="Misc">
+            <documentation>ID of the corresponding SmartFilter control. If specified, the SmartChart control searches for the SmartFilter control (also in the
+closest parent view) and attaches to the relevant events of the SmartFilter control to fetch data, show overlay etc.</documentation>
+        </property>
+        <property name="ignoredFields" type="sap.ui.core/string" group="Misc">
+            <documentation>CSV of fields that must be ignored in the OData metadata by the SmartChart control.&lt;br&gt;
+&lt;b&gt;Note:&lt;/b&gt; No validation is done. Please ensure that you do not add spaces or special characters.</documentation>
+        </property>
+        <property name="requestAtLeastFields" type="sap.ui.core/string" group="Misc">
+            <documentation>CSV of fields that must be always requested by the backend system.&lt;br&gt;
+This property is mainly meant to be used if there is no PresentationVariant annotation.&lt;br&gt;
+If both this property and the PresentationVariant annotation exist, the select request sent to the backend would be a combination
+of both.&lt;br&gt;
+&lt;b&gt;Note:&lt;/b&gt; No validation is done. Please ensure that you do not add spaces or special characters. Also, setting this property
+during runtime, will delete the current drill-stack and lead to a loss of the drill history.</documentation>
+        </property>
+        <property name="ignoreFromPersonalisation" type="sap.ui.core/string" group="Misc">
+            <documentation>CSV of fields that is not shown in the personalization dialog.&lt;br&gt;
+&lt;b&gt;Note:&lt;/b&gt; No validation is done. Please ensure that you do not add spaces or special characters.</documentation>
+        </property>
+        <property name="chartType" type="sap.ui.core/string" group="Misc">
+            <documentation>Specifies the type of chart to be created by the SmartChart control.</documentation>
+        </property>
+        <property name="ignoredChartTypes" type="sap.ui.core/string" group="Misc">
+            <documentation>CSV of fields that is not shown in the list of available chart types.&lt;br&gt;
+&lt;b&gt;Note:&lt;/b&gt; No validation is done. Please ensure that you do not add spaces or special characters.</documentation>
+        </property>
+        <property name="useVariantManagement" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>If set to &lt;code&gt;true&lt;/code&gt;, variants are used. As a prerequisite, you need to specify the persistencyKey property.</documentation>
+        </property>
+        <property name="useChartPersonalisation" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>If set to &lt;code&gt;true&lt;/code&gt;, personalized chart settings are defined. If you want to persist the chart personalization, you need
+to specify the persistencyKey property.</documentation>
+        </property>
+        <property name="header" type="sap.ui.core/string" group="Misc">
+            <documentation>Specifies header text that is shown in the chart.</documentation>
+        </property>
+        <property name="persistencyKey" type="sap.ui.core/string" group="Misc">
+            <documentation>Key used to access personalization data.</documentation>
+        </property>
+        <property name="currentVariantId" type="sap.ui.core/string" group="Misc">
+            <documentation>Retrieves or applies the current variant.</documentation>
+        </property>
+        <property name="enableAutoBinding" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>If set to &lt;code&gt;true&lt;/code&gt;, this enables automatic binding of the chart using the chartBindingPath (if it exists) or entitySet
+property. This happens right after the &lt;code&gt;initialise&lt;/code&gt; event has been fired.</documentation>
+        </property>
+        <property name="chartBindingPath" type="sap.ui.core/string" group="Misc">
+            <documentation>Specifies the path that is used during the binding of the chart. If not specified, the entitySet property is used instead. (used
+only if binding is established internally/automatically - See enableAutoBinding)</documentation>
+        </property>
+        <property name="showDrillButtons" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Controls the visibility of the Drill Up and Drill Down buttons.</documentation>
+        </property>
+        <property name="showZoomButtons" type="sap.ui.core/boolean" defaultValue="true" group="Misc" since="1.36">
+            <documentation>Controls the visibility of the Zoom In and Zoom Out buttons.</documentation>
+        </property>
+        <property name="showSemanticNavigationButton" type="sap.ui.core/boolean" defaultValue="true" group="Misc" since="1.36">
+            <documentation>Controls the visibility of the Navigation button</documentation>
+        </property>
+        <property name="showVariantManagement" type="sap.ui.core/boolean" defaultValue="true" group="Misc" since="1.38">
+            <documentation>Controls the visibility of the Variant Management.</documentation>
+        </property>
+        <property name="showDownloadButton" type="sap.ui.core/boolean" defaultValue="false" group="Misc" since="1.39">
+            <documentation>Controls the visibility of the chart download button.</documentation>
+        </property>
+        <property name="showDetailsButton" type="sap.ui.core/boolean" defaultValue="false" group="Misc" since="1.38">
+            <documentation>Controls the visibility of the Details button. If set to &lt;code&gt;true&lt;/code&gt;, the datapoint tooltip will be disabled as the
+information of selected datapoints will be found in the details popover. This will also set the drill-down button to invisible.</documentation>
+        </property>
+        <property name="showDrillBreadcrumbs" type="sap.ui.core/boolean" defaultValue="false" group="Misc" since="1.38">
+            <documentation>Controls the visibility of the Breadcrumbs control for drilling up within the visible dimensions. If set to &lt;code&gt;true&lt;/code&gt;,
+the toolbar header will be replaced by the Breadcrumbs control. This will also set the drill-up button to invisible.</documentation>
+        </property>
+        <property name="showChartTooltip" type="sap.ui.core/boolean" defaultValue="true" group="Misc" since="1.38">
+            <documentation>Controls the visibility of the chart tooltip. If set to &lt;code&gt;true &lt;/code&gt;, an instance of sap.viz.ui5.controls.VizTooltip will
+be created and shown when hovering over a data point.</documentation>
+        </property>
+        <property name="showLegendButton" type="sap.ui.core/boolean" defaultValue="true" group="Misc" since="1.36">
+            <documentation>Controls the visibility of the Navigation button</documentation>
+        </property>
+        <property name="legendVisible" type="sap.ui.core/boolean" defaultValue="true" group="Misc" since="1.36">
+            <documentation>Set chart's legend properties.</documentation>
+        </property>
+        <property name="selectionMode" type="sap.ui.comp/smartchart/SelectionMode" defaultValue="Multi" group="Misc" since="1.36">
+            <documentation>Chart selection mode. Supported values are {@link sap.ui.comp.smartchart.SelectionMode.Single} or {@link sap.ui.comp.smartchart.SelectionMode.Multi}, case
+insensitive, always return in upper case. Unsupported values will be ignored.</documentation>
+        </property>
+        <property name="showFullScreenButton" type="sap.ui.core/boolean" defaultValue="true" group="Misc" since="1.36">
+            <documentation>Controls the visibility of the FullScreen button.</documentation>
+        </property>
+        <property name="useTooltip" type="sap.ui.core/boolean" defaultValue="true" group="Misc" since="1.36">
+            <documentation>Specifies weather an instance of {@link sap.viz.ui5.controls.VizTooltip} or {@link sap.viz.ui5.controls.Popover} is used.
+If set to &lt;code&gt;true&lt;/code&gt;, a tooltip will be displayed, a popover otherwise.</documentation>
+        </property>
+        <property name="useListForChartTypeSelection" type="sap.ui.core/boolean" defaultValue="true" group="Misc" since="1.38">
+            <documentation>Controls the visualization for chart type selection. If set to &lt;code&gt;true&lt;/code&gt;, the list of available chart types will be
+displayed. If set to &lt;code&gt;false&lt;/code&gt; and there are three or fewer available chart types, the chart types will be displayed as
+separate buttons in the toolbar. If there are more than three chart types, a list will be shown.</documentation>
+            <deprecation since="1.48.0">Setting the property to &lt;code&gt;false&lt;/code&gt; will have no effect on the visualization of chart
+            type selection. &lt;code&gt;SmartChart&lt;/code&gt; will always show a list of chart types.</deprecation>
+        </property>
+        <property name="showChartTypeSelectionButton" type="sap.ui.core/boolean" defaultValue="true" group="Misc" since="1.48">
+            <documentation>Controls the visibility of the chart type selection button.</documentation>
+        </property>
+        <property name="noData" type="sap.ui.core/string" group="Misc" since="1.46">
+            <documentation>Defines the custom text that will be displayed in case no data is found for the current binding.</documentation>
+        </property>
+        <property name="showToolbar" type="sap.ui.core/boolean" defaultValue="true" group="Misc" since="1.54">
+            <documentation>Controls the visibility of the toolbar.</documentation>
+        </property>
+        <property name="toolbarStyle" type="sap.m/ToolbarStyle" group="Appearance" since="1.54">
+            <documentation>Defines the visual style of the smart charts &lt;code&gt;Toolbar&lt;/code&gt;. &lt;b&gt;Note:&lt;/b&gt; The visual styles are theme-dependent.</documentation>
+        </property>
+        <property name="showDimensionsTitle" type="sap.ui.core/boolean" defaultValue="true" group="Misc" since="1.54">
+            <documentation>Controls the visibility of the title in the dimension area of the chart.</documentation>
+        </property>
+        <property name="showMeasuresTitle" type="sap.ui.core/boolean" defaultValue="true" group="Misc" since="1.54">
+            <documentation>Controls the visibility of the title in the measure area of the chart.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="initialise" allowPreventDefault="false">
+            <documentation>This event is fired once the control has been initialized.</documentation>
+        </event>
+        <event name="beforeRebindChart" allowPreventDefault="false">
+            <documentation>This event is fired right before the &lt;code&gt;SmartChart&lt;/code&gt; control triggers the binding / rebinding of the inner chart.&lt;br&gt;
+&lt;b&gt;Note:&lt;/b&gt; In certain cases the inner chart triggers a rebinding by itself. In these cases, the event is not fired.</documentation>
+        </event>
+        <event name="dataReceived" allowPreventDefault="false">
+            <documentation>This event is fired when data is received after binding. This event is fired if the binding for the chart is done by the SmartChart
+control itself.</documentation>
+            <deprecation since="1.56">Use &lt;code&gt;beforeRebindChart&lt;/code&gt; event to attach/listen to the binding "events" directly</deprecation>
+        </event>
+        <event name="afterVariantInitialise" allowPreventDefault="false">
+            <documentation>This event is fired after the variant management in the SmartChart control has been initialized.</documentation>
+        </event>
+        <event name="afterVariantSave" allowPreventDefault="false">
+            <documentation>This event is fired after a variant has been saved. This event can be used to retrieve the ID of the saved variant.</documentation>
+            <parameters>
+                <parameter name="currentVariantId" type="sap.ui.core/string">
+                    <documentation>ID of the currently selected variant</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="afterVariantApply" allowPreventDefault="false">
+            <documentation>This event is fired after a variant has been applied.</documentation>
+            <parameters>
+                <parameter name="currentVariantId" type="sap.ui.core/string">
+                    <documentation>ID of the currently selected variant</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="showOverlay" allowPreventDefault="false">
+            <documentation>This event is fired right before the overlay is shown.</documentation>
+        </event>
+        <event name="fullScreenToggled" since="1.46" allowPreventDefault="false">
+            <documentation>This event is fired right after the full screen mode of the SmartChart control has been changed.</documentation>
+            <parameters>
+                <parameter name="fullScreen" type="sap.ui.core/boolean">
+                    <documentation>If &lt;code&gt;true&lt;/code&gt; the control is in full screen mode</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="selectionDetailsActionPress" since="1.48" allowPreventDefault="false">
+            <documentation>This event is fired when any action in the selection details popover is pressed.</documentation>
+            <developmentState state="experimental" since="1.48"></developmentState>
+            <parameters>
+                <parameter name="action" type="sap.ui.core/Item">
+                    <documentation>The action that has to be processed once the action has been pressed</documentation>
+                </parameter>
+                <parameter name="itemContexts" type="any">
+                    <documentation>If the action is pressed on one of the {@link sap.m.SelectionDetailsItem items}, the parameter contains the
+{@link sap.ui.model.Context context} of the pressed {@link sap.m.SelectionDetailsItem item}. If a custom action or action
+group of the SelectionDetails popover is pressed, this parameter contains all {@link sap.ui.model.Context contexts} of the
+{@link sap.m.SelectionDetailsItem items}.</documentation>
+                </parameter>
+                <parameter name="level" type="any">
+                    <documentation>The action level of action buttons. The available levels are Item, List and Group</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="chartDataChanged" allowPreventDefault="false">
+            <documentation>This event is fired when &lt;code&gt;SmartChart&lt;/code&gt; control data changes, due to changes in the personalization dialog or drill
+operations.&lt;br&gt;
+The data can be changed via sorters, filters or drill-ups/drill-downs.</documentation>
+            <parameters>
+                <parameter name="changeTypes" type="sap.ui.core/object">
+                    <documentation>Object which contains a boolean flag for dimeasure, filter, sort. If set to &lt;code&gt;true&lt;/code&gt;, it has been changed.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="toolbar" type="sap.m/Toolbar" cardinality="0..1">
+            <documentation>A custom toolbar that can be specified by the user to define their own buttons, icons, etc. If this is added, the SmartChart
+control does not create its own toolbar, but uses this one instead. However, if default actions, such as showSemanticNavigation,
+showFullScreenButton etc. are set, these actions are added at the left-hand side of the toolbar.</documentation>
+        </aggregation>
+        <aggregation name="semanticObjectController" type="sap.ui.comp/navpopover/SemanticObjectController" since="1.36" cardinality="0..1">
+            <documentation>The Semantic Object Controller allows the user to specify and overwrite functionality for semantic object navigation.</documentation>
+        </aggregation>
+        <aggregation name="selectionDetailsItemActions" type="sap.ui.core/Item" cardinality="0..n">
+            <documentation>Actions on item level which can be specified for the selection details popover.</documentation>
+            <developmentState state="experimental" since="1.48">since 1.48</developmentState>
+        </aggregation>
+        <aggregation name="selectionDetailsActions" type="sap.ui.core/Item" cardinality="0..n">
+            <documentation>Actions on footer level which can be specified for the selection details popover.</documentation>
+            <developmentState state="experimental" since="1.48">since 1.48</developmentState>
+        </aggregation>
+        <aggregation name="selectionDetailsActionGroups" type="sap.ui.core/Item" cardinality="0..n">
+            <documentation>Actions on group level which can be specified for the selection details popover.</documentation>
+            <developmentState state="experimental" since="1.48">since 1.48</developmentState>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="smartVariant" type="sap.ui.core/Control" cardinality="0..1" since="1.38">
+            <documentation>Identifies the SmartVariant control which should be used for the personalization. Will be ignored if the advanced mode is set.</documentation>
+        </association>
+    </associations>
+</control>

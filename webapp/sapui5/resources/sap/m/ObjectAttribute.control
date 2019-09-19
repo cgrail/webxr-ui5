@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ObjectAttribute</name>
+    <derived/>
+    <documentation>The &lt;code&gt;ObjectAttribute&lt;/code&gt; control displays a text field that can be normal or active.
+The &lt;code&gt;ObjectAttribute&lt;/code&gt; fires a &lt;code&gt;press&lt;/code&gt; event when the user chooses the active text.
+
+&lt;b&gt;Note:&lt;/b&gt; If property &lt;code&gt;active&lt;/code&gt; is set to &lt;code&gt;true&lt;/code&gt;, only the value of the
+&lt;code&gt;text&lt;/code&gt; property is styled and acts as a link. In this case the &lt;code&gt;text&lt;/code&gt;
+property must also be set, as otherwise there will be no link displayed for the user.</documentation>
+    <since>1.12</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="title" type="sap.ui.core/string" group="Misc">
+            <documentation>Defines the ObjectAttribute title.</documentation>
+        </property>
+        <property name="text" type="sap.ui.core/string" group="Misc">
+            <documentation>Defines the ObjectAttribute text.</documentation>
+        </property>
+        <property name="active" type="sap.ui.core/boolean" group="Misc">
+            <documentation>Indicates if the &lt;code&gt;ObjectAttribute&lt;/code&gt; text is selectable for the user.
+
+&lt;b&gt;Note:&lt;/b&gt; As of version 1.48, only the value of the &lt;code&gt;text&lt;/code&gt; property becomes active (styled and acts like a link) as opposed to both the &lt;code&gt;title&lt;/code&gt; and &lt;code&gt;text&lt;/code&gt; in the previous versions. If you set this property to &lt;code&gt;true&lt;/code&gt;, you have to also set the &lt;code&gt;text&lt;/code&gt; property.</documentation>
+        </property>
+        <property name="textDirection" type="sap.ui.core/TextDirection" defaultValue="Inherit" group="Appearance">
+            <documentation>Determines the direction of the text, not including the title.
+Available options for the text direction are LTR (left-to-right) and RTL (right-to-left). By default the control inherits the text direction from its parent control.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="press" allowPreventDefault="false">
+            <documentation>Fires when the user clicks on active text.</documentation>
+            <parameters>
+                <parameter name="domRef" type="sap.ui.core/string">
+                    <documentation>DOM reference of the ObjectAttribute's text to be used for positioning.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="customContent" type="sap.ui.core/Control" cardinality="0..1">
+            <documentation>When the aggregation is set, it replaces the text, active and textDirection properties. This also ignores the press event. The provided control is displayed as an active link in case it is a sap.m.Link.
+&lt;b&gt;Note:&lt;/b&gt; It will only allow sap.m.Text and sap.m.Link controls.</documentation>
+        </aggregation>
+        <aggregation name="_textControl" type="sap.ui.core/Control" cardinality="0..1" visibility="hidden">
+            <documentation>Text control to display title and text property.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

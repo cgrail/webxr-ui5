@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>NavigationList</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The NavigationList control is an interactive control, which provides a choice of
+different items, ordered as a list.</documentation>
+    <since>1.34</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="width" type="sap.ui.core/CSSSize" group="Dimension">
+            <documentation>Specifies the width of the control.</documentation>
+        </property>
+        <property name="expanded" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Specifies if the control is in expanded or collapsed mode.</documentation>
+        </property>
+        <property name="selectedKey" type="sap.ui.core/string" group="Data" since="1.62.0">
+            <documentation>Specifies the currently selected key.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="itemSelect" allowPreventDefault="false">
+            <documentation>Fired when an item is selected.</documentation>
+            <parameters>
+                <parameter name="item" type="sap.ui.core/Item">
+                    <documentation>The selected item.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations default="items">
+        <aggregation name="items" type="sap.tnt/NavigationListItem" cardinality="0..n">
+            <documentation>The items displayed in the list.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="ariaDescribedBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / IDs, which describe this control (see WAI-ARIA attribute aria-describedby).</documentation>
+        </association>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / IDs, which label this control (see WAI-ARIA attribute aria-labelledby).</documentation>
+        </association>
+        <association name="selectedItem" type="sap.tnt/NavigationListItem" cardinality="0..1" since="1.52.0">
+            <documentation>The currently selected &lt;code&gt;NavigationListItem&lt;/code&gt;.</documentation>
+        </association>
+    </associations>
+</control>

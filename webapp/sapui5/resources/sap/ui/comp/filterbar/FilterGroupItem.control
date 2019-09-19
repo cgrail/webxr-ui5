@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>filterbar/FilterGroupItem</name>
+    <derived/>
+    <documentation>Represents a filter belonging to a group other than basic.</documentation>
+    <baseType>sap.ui.comp/filterbar/FilterItem</baseType>
+    <properties>
+        <property name="groupTitle" type="sap.ui.core/string" group="Misc">
+            <documentation>Title of the group.</documentation>
+        </property>
+        <property name="groupName" type="sap.ui.core/string" group="Misc">
+            <documentation>Name of the group.</documentation>
+        </property>
+        <property name="visibleInAdvancedArea" type="sap.ui.core/boolean" defaultValue="false" group="Misc" since="1.24.0">
+            <documentation>If set to true, this filter is visible on the filter bar by default. Mapped against the &lt;code&gt;visibleInFilterBar&lt;/code&gt; property.</documentation>
+            <deprecation since="1.26.1">Replaced by property &lt;code&gt;visibleInFilterBar&lt;/code&gt;</deprecation>
+        </property>
+    </properties>
+</control>

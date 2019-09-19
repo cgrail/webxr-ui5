@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ui5/types/Axis</name>
+    <derived/>
+    <documentation>Module sap.viz.ui5.types.Axis</documentation>
+    <since>1.7.2</since>
+    <developmentState state="experimental" since="1.7.2">Charting API is not finished yet and might change completely.</developmentState>
+    <deprecation since="1.32.0">The chart controls in the &lt;code&gt;sap.viz.ui5&lt;/code&gt; package (which were always marked as &lt;i&gt;experimental&lt;/i&gt;) have been deprecated since 1.32.0. 
+They are no longer actively developed and won't receive new features or improvements, only important bug fixes. They will only remain in the 
+SAPUI5 distribution for backward compatibility. 
+
+&lt;b&gt;SAP strongly recommends that existing consumers of those controls migrate to the new {@link sap.viz.ui5.controls.VizFrame VizFrame} 
+control to benefit from new charting enhancements and timely support. &lt;/b&gt;
+
+&lt;b&gt;Note&lt;/b&gt;: As the feature set, design and API usage of VizFrame might differ from the old chart controls, make sure you evaluate it thoroughly before migration.</deprecation>
+    <baseType>sap.viz/ui5/core/BaseStructuredType</baseType>
+    <properties>
+        <property name="isIndependentMode" type="sap.ui.core/boolean" defaultValue="false">
+            <documentation>Set whether the axis works in independent mode. Currently, this property is used only for boxplot charts.</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="isPercentMode" type="sap.ui.core/boolean" defaultValue="false">
+            <documentation>Show the label as a percentage. For example '0.1' would show as '10'.</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="isKeepFirstAndLastLabel" type="sap.ui.core/boolean" defaultValue="false">
+            <documentation>Try to keep the first label and last label when the space is limited.</documentation>
+            <deprecation since="1.20">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="lineSize" type="sap.ui.core/int" defaultValue="1">
+            <documentation>Set the thickness of the axis line</documentation>
+        </property>
+        <property name="color" type="sap.ui.core/string" defaultValue="#6c6c6c">
+            <documentation>Set the color of the axis line</documentation>
+        </property>
+        <property name="type" type="sap.viz/ui5/types/Axis_type" defaultValue="value">
+            <documentation>Set the axis type</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="visible" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>Set the visibility of the entire axis, including the axis line, gridlines, and labels</documentation>
+        </property>
+        <property name="position" type="sap.viz/ui5/types/Axis_position" defaultValue="bottom">
+            <documentation>Set the position of the axis</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="isTruncateAvailable" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>Set whether truncation logic is available for the category axis</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="forceLabelArea" type="sap.ui.core/boolean" defaultValue="false">
+            <documentation>Set whether the label area is limited to the text area</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="enableLabelSelection" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>Set whether the label selection effect is enabled. For mobile devices, the default value is 'false'.</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="hideTitleFirst" type="sap.ui.core/boolean" defaultValue="false">
+            <documentation>Hide axis title firstly if the space is limited.</documentation>
+            <deprecation since="1.20">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="maxSizeRatio" type="sap.ui.core/float" defaultValue="0.25">
+            <documentation>The ratio to limit axis' space in its container, which only accepts values between 0 and 1(0 and 1 included). All the invalid values would be replaced by default value.</documentation>
+        </property>
+    </properties>
+    <aggregations>
+        <aggregation name="title" type="sap.viz/ui5/types/Axis_title" cardinality="0..1">
+            <documentation>Settings for the axis title</documentation>
+        </aggregation>
+        <aggregation name="gridline" type="sap.viz/ui5/types/Axis_gridline" cardinality="0..1">
+            <documentation>Settings for the gridlines on the axis</documentation>
+        </aggregation>
+        <aggregation name="axisline" type="sap.viz/ui5/types/Axis_axisline" cardinality="0..1">
+            <documentation>Settings for the axis line</documentation>
+        </aggregation>
+        <aggregation name="label" type="sap.viz/ui5/types/Axis_label" cardinality="0..1">
+            <documentation>Settings for the labels on this axis</documentation>
+        </aggregation>
+        <aggregation name="indicator" type="sap.viz/ui5/types/Axis_indicator" cardinality="0..1">
+            <documentation>Settings for the axis indicator</documentation>
+            <deprecation since="1.19">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </aggregation>
+        <aggregation name="scale" type="sap.viz/ui5/types/Axis_scale" cardinality="0..1">
+            <documentation>Set the scale of the value axis. This property only works on value type axes.</documentation>
+        </aggregation>
+        <aggregation name="layoutInfo" type="sap.viz/ui5/types/Axis_layoutInfo" cardinality="0..1">
+            <documentation>Settings for the layout of the category axis. This property only works for category type axes.</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </aggregation>
+        <aggregation name="axisTick" type="sap.viz/ui5/types/Axis_axisTick" cardinality="0..1">
+            <documentation>Settings for the ticks on the axis</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </aggregation>
+    </aggregations>
+</control>

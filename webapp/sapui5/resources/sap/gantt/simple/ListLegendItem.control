@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>simple/ListLegendItem</name>
+    <derived/>
+    <documentation>Aggregation element for the List Legend. A List Legend Item consists of a marker and an associated text. The marker can be any shapes you in shape aggregation.
+If you need to interact with the legend item, set the interactive to true then the item will display a check box in front of the shape and text.</documentation>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property type="sap.ui.core/string" name="legendName"/>
+        <property defaultValue="false" type="sap.ui.core/boolean" name="interactive">
+            <documentation>Indicates whether the check box is visible or not.</documentation>
+        </property>
+        <property defaultValue="true" type="sap.ui.core/boolean" name="selected">
+            <documentation>Indicates whether the check box is selected or not.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event allowPreventDefault="false" name="interactiveChange">
+            <documentation>The event is raised when there is a click action on the checkbox before legend item.</documentation>
+            <parameters>
+                <parameter type="sap.ui.core/string" name="legendName">
+                    <documentation>The shape name of legend item.</documentation>
+                </parameter>
+                <parameter type="sap.ui.core/boolean" name="value">
+                    <documentation>The value indicate that legend is checked or unchecked.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations default="shape">
+        <aggregation cardinality="0..1" type="sap.gantt/simple/BaseShape" name="shape">
+            <documentation>Define a shape class for the List Legend Item.
+The shape will be normalized in the rendering phase.</documentation>
+        </aggregation>
+        <aggregation visibility="hidden" cardinality="0..1" type="sap.m/CheckBox" name="_checkbox"/>
+    </aggregations>
+</control>

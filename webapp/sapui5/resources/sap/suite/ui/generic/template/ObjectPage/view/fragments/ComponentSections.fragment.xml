@@ -1,0 +1,25 @@
+<core:FragmentDefinition template:require="sap.suite.ui.generic.template.js.AnnotationHelperReuseComponents" xmlns:build="sap.build"
+	xmlns:core="sap.ui.core" xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns:uxap="sap.uxap" xmlns="sap.m">
+	<template:alias name=".AH" value="sap.suite.ui.generic.template.js.AnnotationHelperReuseComponents">
+		<template:if build:metadata="#ignore" test="{parameter>/settings/routeConfig/embeddedComponents}">
+			<template:repeat list="{parameter>/settings/routeConfig/embeddedComponents}" var="component">
+				<template:with path="component>" helper=".AH.checkParentExsists" var="leadingComponentContext">	
+						<uxap:ObjectPageSection build:metadata="#pattern:Section;staticProp:title:Title" id="{path: 'component>', formatter: '.AH.formatIdComponentSection'}"
+							visible="{path: 'component>', formatter: '.AH.formatVisibleComponentSection'}"
+							title="{path: 'component>', formatter: '.AH.setComponentSectionTitle' }" titleUppercase="false">
+							<uxap:subSections>
+								<template:if test="{parts: [{path: 'parameter>/settings/routeConfig/embeddedComponents'}, {path:'component>' }], formatter: '.AH.checkEmbeddedSectionisLeading'}">
+									<core:Fragment fragmentName="sap.suite.ui.generic.template.ObjectPage.view.fragments.EmbeddedSubSections" type="XML"/>
+								</template:if>
+								<template:repeat list="{parameter>/settings/routeConfig/embeddedComponents}" var="component">
+									<template:if test="{= ${component>leadingSectionIdOrPath} === ${leadingComponentContext>componentId} &amp;&amp; !${leadingComponentContext>isGroupedComponent}}">
+										<core:Fragment fragmentName="sap.suite.ui.generic.template.ObjectPage.view.fragments.EmbeddedSubSections" type="XML"/>
+									</template:if>
+								</template:repeat>
+							</uxap:subSections>
+						</uxap:ObjectPageSection>
+				</template:with>
+			</template:repeat>
+		</template:if>
+	</template:alias>
+</core:FragmentDefinition>

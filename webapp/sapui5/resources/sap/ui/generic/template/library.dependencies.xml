@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<library  version="2.0" name="sap.ui.generic.template">
+  <module name="sap/ui/generic/template/library-h2-preload.js" size="1455">
+    <requires>
+      <module name="sap/ui/comp/library.js"/>
+      <module name="sap/ui/core/library.js"/>
+      <module name="sap/ui/generic/app/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+    <includes>
+      <module name="sap/ui/generic/template/library.js"/>
+      <module name="sap/ui/generic/template/manifest.json"/>
+    </includes>
+  </module>
+  <module name="sap/ui/generic/template/library-preload.js" size="1284">
+    <requires>
+      <module name="sap/ui/comp/library.js"/>
+      <module name="sap/ui/core/library.js"/>
+      <module name="sap/ui/generic/app/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+    <includes>
+      <module name="sap/ui/generic/template/library.js"/>
+      <module name="sap/ui/generic/template/manifest.json"/>
+    </includes>
+  </module>
+  <module name="sap/ui/generic/template/library-preload.json" size="0">
+    <requires>
+      <module name="sap/ui/comp/library-preload.json"/>
+      <module name="sap/ui/comp/library.js"/>
+      <module name="sap/ui/core/library-preload.json"/>
+      <module name="sap/ui/core/library.js"/>
+      <module name="sap/ui/generic/app/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+    <includes>
+      <module name="sap/ui/generic/template/library.js"/>
+      <module name="sap/ui/generic/template/manifest.json"/>
+    </includes>
+  </module>
+  <module name="sap/ui/generic/template/library.js" size="860" compressedSize="433">
+    <description>Initialization Code and shared classes of library sap.ui.generic.template.</description>
+    <requires>
+      <module name="sap/ui/comp/library.js"/>
+      <module name="sap/ui/core/library.js"/>
+      <module name="sap/ui/generic/app/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/generic/template/manifest.json" size="875">
+  </module>
+</library>

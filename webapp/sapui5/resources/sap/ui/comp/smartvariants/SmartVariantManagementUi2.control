@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartvariants/SmartVariantManagementUi2</name>
+    <derived/>
+    <documentation>The SmartVariantManagementUi2 control is a specialization of the {@link sap.ui.comp.variants.VariantManagement VariantManagement}
+       control and communicates with the Ui2 personalization layer to manage the variants.</documentation>
+    <baseType>sap.ui.comp/variants/VariantManagement</baseType>
+    <events>
+        <event name="initialise" allowPreventDefault="false">
+            <documentation>Once the &lt;code&gt;SmartVariantManagementUi2&lt;/code&gt; control has been initialized, and especially after retrieving the variants via
+the UI2 personalization service, the registered consumer will be notified that this phase has completed</documentation>
+        </event>
+        <event name="afterSave" allowPreventDefault="false">
+            <documentation>Fired after a variant is saved. This event can be used to retrieve the id of the saved variant.</documentation>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="personalizableControl" type="sap.ui.comp/smartvariants/PersonalizableInfo" cardinality="0..1">
+            <documentation>All controls that rely on variant handling have to be added to this aggregation. The only consumer currently known is the
+&lt;code&gt;FilterBar&lt;/code&gt; control.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

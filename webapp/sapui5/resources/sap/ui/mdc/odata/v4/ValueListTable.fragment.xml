@@ -1,0 +1,52 @@
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:macro="sap.ui.mdc.odata.v4" template:require="{
+							MODEL: 'sap/ui/model/odata/v4/AnnotationHelper',
+							VLH: 'sap/ui/mdc/odata/v4/ValueListHelper'
+						 }">
+	<Table id="{source>id}::Table" items="{= '{ path : \'/' + ${valueList>CollectionPath} + '\'}' }" width="26rem">
+		<columns>
+			<template:repeat list="{valueList>Parameters}" var="parameter">
+				<template:with path="parameter>ValueListProperty" var="parameter" helper="VLH.getValueListProperty">
+					<template:if test="{= !(${parameter>@com.sap.vocabularies.UI.v1.Hidden} === true)}">
+						<Column>
+							<template:if test="{parameter>Label}">
+								<template:then>
+									<Label text="{parameter>Label@@MODEL.value}"/>
+								</template:then>
+
+								<template:elseif test="{parameter>@com.sap.vocabularies.Common.v1.Label}">
+									<Label text="{parameter>@com.sap.vocabularies.Common.v1.Label@@MODEL.value}"/>
+								</template:elseif>
+
+								<template:else>
+									<!-- no label found, property path as fallback, to highlight it put it into [] -->
+									<Label text="[{parameter>@sapui.name@@MODEL.value}]"/>
+								</template:else>
+							</template:if>
+						</Column>
+					</template:if>
+				</template:with>
+			</template:repeat>
+		</columns>
+		<items>
+			<ColumnListItem type="Active">
+				<cells>
+					<template:with path="valueList>" helper="VLH.getValueListCollectionEntitySet" var="entitySet">
+						<template:repeat list="{valueList>Parameters}" var="parameter">
+							<template:with path="parameter>ValueListProperty" var="dataField" helper="VLH.getValueListProperty">
+								<template:if test="{= !(${dataField>@com.sap.vocabularies.UI.v1.Hidden} === true)}">
+									<macro:Field idPrefix="{source>id}::Table" editMode="Display" metadataContexts="
+										{ model: 'entitySet', path:'',  name: 'entitySet'},
+										{ model: 'dataField', path:'',  name: 'dataField'}
+									"></macro:Field>
+								</template:if>
+							</template:with>
+						</template:repeat>
+					</template:with>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

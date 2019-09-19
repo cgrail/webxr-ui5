@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>LineMicroChartEmphasizedPoint</name>
+    <derived/>
+    <documentation>Contains the emphasized point of the line micro chart.</documentation>
+    <since>1.48.0</since>
+    <baseType>sap.suite.ui.microchart/LineMicroChartPoint</baseType>
+    <properties>
+        <property name="color" type="sap.m/ValueCSSColor" defaultValue="Neutral" group="Misc">
+            <documentation>Determines the color of the emphasized point.
+The property has an effect only if the 'show' property is true.
+If at least one emphasized point has a color different from Neutral, the graph is grey; otherwise, the graph is blue.</documentation>
+        </property>
+        <property name="show" type="sap.ui.core/boolean" defaultValue="false" group="Appearance">
+            <documentation>Determines whether the chart point should be displayed or not.</documentation>
+        </property>
+    </properties>
+</control>

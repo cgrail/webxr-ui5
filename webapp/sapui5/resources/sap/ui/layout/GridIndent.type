@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>GridIndent</name>
+    <derived/>
+    <documentation>A string type that represents the indent values of the &lt;code&gt;Grid&lt;/code&gt; for large, medium and small screens.
+
+Allowed values are separated by space Letters L, M or S followed by number of columns from 1 to 11
+that the container has to take, for example: &lt;code&gt;L2 M4 S6&lt;/code&gt;, &lt;code&gt;M11&lt;/code&gt;, &lt;code&gt;s10&lt;/code&gt;
+or &lt;code&gt;l4 m4&lt;/code&gt;.
+
+&lt;b&gt;Note:&lt;/b&gt; The parameters must be provided in the order &lt;large medium small&gt;.</documentation>
+    <final/>
+    <pattern>([Xx][Ll](?:[0-9]|1[0-1]))? ?([Ll](?:[0-9]|1[0-1]))? ?([Mm](?:[0-9]|1[0-1]))? ?([Ss](?:[0-9]|1[0-1]))?</pattern>
+</simple-type>

@@ -1,0 +1,38 @@
+<core:FragmentDefinition xmlns:m="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+	<l:VerticalLayout class="sapMP13nColumnsPanel">
+
+		<m:Table id="IDTable" rememberSelections="false"
+				 items="{path:'$this>/items', templateShareable:false}">
+			<m:headerToolbar>
+				<m:OverflowToolbar>
+					<!--<m:ToolbarSpacer></m:ToolbarSpacer>-->
+					<m:SearchField id="IDSearchField" liveChange="onSearchFieldLiveChange">
+						<m:layoutData>
+							<m:OverflowToolbarLayoutData maxWidth="23.077rem" shrinkable="true" moveToOverflow="true"
+														 priority="High"/>
+						</m:layoutData>
+					</m:SearchField>
+				</m:OverflowToolbar>
+			</m:headerToolbar>
+			<m:columns>
+				<m:Column>
+					<m:Text/>
+				</m:Column>
+				<m:Column hAlign="End">
+					<m:Text/>
+				</m:Column>
+			</m:columns>
+			<m:items>
+				<m:ColumnListItem selected="{path:'$this>selected'}" type="Active">
+					<m:cells>
+						<m:Link text="{$this>text}" href="{$this>href}" tooltip="{$this>tooltip}"
+								enabled="{path:'$this>href', formatter:'.formatter.isTrue'}"/>
+						<m:ToggleButton icon="sap-icon://pushpin-off" enabled="true" pressed="{path:'$this>selected'}"
+										type="Transparent"/>
+					</m:cells>
+				</m:ColumnListItem>
+			</m:items>
+		</m:Table>
+
+	</l:VerticalLayout>
+</core:FragmentDefinition>

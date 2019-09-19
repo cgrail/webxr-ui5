@@ -1,0 +1,127 @@
+{
+  "_version": "1.9.0",
+  "sap.app": {
+    "id": "sap.gantt",
+    "type": "library",
+    "embeds": [],
+    "applicationVersion": {
+      "version": "1.64.0"
+    },
+    "title": "UI5 library: sap.gantt",
+    "description": "UI5 library: sap.gantt",
+    "ach": "CA-UI5-CTR-GNT",
+    "resources": "resources.json",
+    "offline": true
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "supportedThemes": [
+      "base",
+      "sap_belize",
+      "sap_belize_hcb",
+      "sap_belize_hcw",
+      "sap_belize_plus",
+      "sap_bluecrystal",
+      "sap_fiori_3",
+      "sap_hcb"
+    ]
+  },
+  "sap.ui5": {
+    "dependencies": {
+      "minUI5Version": "1.64",
+      "libs": {
+        "sap.ui.core": {
+          "minVersion": "1.64.0"
+        },
+        "sap.ui.layout": {
+          "minVersion": "1.64.0"
+        },
+        "sap.ui.table": {
+          "minVersion": "1.64.0"
+        },
+        "sap.m": {
+          "minVersion": "1.64.0"
+        }
+      }
+    },
+    "library": {
+      "i18n": "messagebundle.properties",
+      "content": {
+        "controls": [
+          "sap.gantt.control.Toolbar",
+          "sap.gantt.GanttChart",
+          "sap.gantt.GanttChartWithTable",
+          "sap.gantt.GanttChartContainer",
+          "sap.gantt.axistime.ProportionZoomStrategy",
+          "sap.gantt.legend.LegendContainer",
+          "sap.gantt.legend.ListLegend",
+          "sap.gantt.legend.DimensionLegend",
+          "sap.gantt.simple.GanttChartWithTable",
+          "sap.gantt.simple.ContainerToolbar",
+          "sap.gantt.simple.GanttChartContainer"
+        ],
+        "elements": [
+          "sap.gantt.config.TimeHorizon",
+          "sap.gantt.config.TimeAxis",
+          "sap.gantt.config.ToolbarGroup",
+          "sap.gantt.config.Mode",
+          "sap.gantt.config.ModeGroup",
+          "sap.gantt.config.LayoutGroup",
+          "sap.gantt.config.ExpandChart",
+          "sap.gantt.config.ExpandChartGroup",
+          "sap.gantt.config.TimeZoomGroup",
+          "sap.gantt.config.BirdEyeGroup",
+          "sap.gantt.config.ToolbarScheme",
+          "sap.gantt.config.Hierarchy",
+          "sap.gantt.config.HierarchyColumn",
+          "sap.gantt.config.ColumnAttribute",
+          "sap.gantt.config.GanttChartLayout",
+          "sap.gantt.config.ContainerLayout",
+          "sap.gantt.config.SettingItem",
+          "sap.gantt.config.SettingGroup",
+          "sap.gantt.config.ObjectType",
+          "sap.gantt.config.ChartScheme",
+          "sap.gantt.config.Locale",
+          "sap.gantt.config.Shape",
+          "sap.gantt.def.SvgDefs",
+          "sap.gantt.axistime.AxisTimeStrategyBase",
+          "sap.gantt.AdhocLine",
+          "sap.gantt.simple.GanttRowSettings",
+          "sap.gantt.simple.BaseCalendar",
+          "sap.gantt.simple.BaseChevron",
+          "sap.gantt.simple.BaseDiamond",
+          "sap.gantt.simple.BaseGroup",
+          "sap.gantt.simple.BaseImage",
+          "sap.gantt.simple.BaseLine",
+          "sap.gantt.simple.BasePath",
+          "sap.gantt.simple.BaseRectangle",
+          "sap.gantt.simple.BaseShape",
+          "sap.gantt.simple.BaseText",
+          "sap.gantt.simple.BaseCursor",
+          "sap.gantt.simple.BaseConditionalShape",
+          "sap.gantt.simple.UtilizationBarChart",
+          "sap.gantt.simple.UtilizationLineChart",
+          "sap.gantt.simple.UtilizationChart",
+          "sap.gantt.simple.UtilizationDimension",
+          "sap.gantt.simple.UtilizationPeriod"
+        ],
+        "types": [
+          "sap.gantt.control.ToolbarType",
+          "sap.gantt.SelectionMode",
+          "sap.gantt.shape.ShapeCategory",
+          "sap.gantt.def.filter.MorphologyOperator",
+          "sap.gantt.def.filter.ColorMatrixValue",
+          "sap.gantt.shape.ext.rls.RelationshipType",
+          "sap.gantt.config.ZoomControlType",
+          "sap.gantt.config.BirdEyeRange",
+          "sap.gantt.GenericArray",
+          "sap.gantt.dragdrop.GhostAlignment",
+          "sap.gantt.simple.GanttChartWithTableDisplayType"
+        ],
+        "interfaces": [
+          "sap.gantt.GanttChartBase"
+        ]
+      }
+    }
+  }
+}

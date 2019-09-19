@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>simple/ListLegend</name>
+    <derived/>
+    <documentation>The Legend is a popup window in the GanttChart control wich can be used to display shape/icon-text pairs.</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property group="Data" type="sap.ui.core/string" name="title">
+            <documentation>Title of Legend. The title is displayed on both the legend page and the legend navigation list. Null if not specified</documentation>
+        </property>
+    </properties>
+    <aggregations default="items">
+        <aggregation cardinality="0..n" type="sap.gantt/simple/ListLegendItem" name="items">
+            <documentation>ListLegendItem object aggregation</documentation>
+        </aggregation>
+    </aggregations>
+</control>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Menu</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The &lt;code&gt;sap.m.Menu&lt;/code&gt; control represents a hierarchical menu.
+When opened on mobile devices it occupies the whole screen.</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="title" type="sap.ui.core/string" group="Misc">
+            <documentation>Defines the &lt;code&gt;Menu&lt;/code&gt; title.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="itemSelected" allowPreventDefault="false">
+            <documentation>Fired when a &lt;code&gt;MenuItem&lt;/code&gt; is selected.</documentation>
+            <parameters>
+                <parameter name="item" type="sap.m/MenuItem">
+                    <documentation>The &lt;code&gt;MenuItem&lt;/code&gt; which was selected.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="closed" allowPreventDefault="false">
+            <documentation>Fired when the menu is closed.</documentation>
+        </event>
+    </events>
+    <aggregations default="items">
+        <aggregation name="items" type="sap.m/MenuItem" cardinality="0..n" bindable="bindable">
+            <documentation>Defines the items contained within this control.</documentation>
+        </aggregation>
+        <aggregation name="_dialog" type="sap.m/Dialog" cardinality="0..1" visibility="hidden">
+            <documentation>Internal aggregation that contains the inner &lt;code&gt;sap.m.Dialog&lt;/code&gt; for mobile.</documentation>
+        </aggregation>
+        <aggregation name="_menu" type="sap.ui.unified/Menu" cardinality="0..1" visibility="hidden">
+            <documentation>Internal aggregation that contains the inner &lt;code&gt;sap.ui.unified.Menu&lt;/code&gt; for desktop and tablet.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

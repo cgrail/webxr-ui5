@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ViewSettingsDialog</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Helps the user to sort, filter, or group data within a (master) {@link sap.m.List} or a
+{@link sap.m.Table}. The dialog is triggered by icon buttons in the table toolbar. Each
+button shows a dropdown list icon.
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+
+The &lt;code&gt;ViewSettingsDialog&lt;/code&gt; is a composite control,
+consisting of a modal {@link sap.m.Popover} and several internal lists.
+There are three different tabs (Sort, Group, Filter) in the dialog that can be
+activated by filling the respective associations. If only one association is
+filled, the other tabs are automatically hidden. The selected options can be used
+to create sorters and filters for the table.
+
+&lt;b&gt;Note:&lt;/b&gt; If the app does not offer all three sorting, filtering, and grouping
+operations, but only one of these (such as sort), we recommend placing the
+icon button directly in the toolbar. Do not place sort, filter, or group buttons in
+the footer toolbar if they refer to a table. Place group, sort, and filter buttons
+in the footer toolbar if they refer to a master list.
+
+&lt;h3&gt;Usage&lt;/h3&gt;
+
+&lt;i&gt;When to use?&lt;/i&gt;
+&lt;ul&gt;&lt;li&gt;If you need to allow the user to sort line items in a manageable list or
+table (up to 20 columns)&lt;/li&gt;
+&lt;li&gt;If you need to offer custom filter settings in a manageable list or table
+(up to 20 columns)&lt;/li&gt;
+&lt;li&gt;If you need to allow the user to group line items in a manageable list or
+table (up to 20 columns)&lt;/li&gt;&lt;/ul&gt;
+
+&lt;i&gt;When not to use?&lt;/i&gt;
+&lt;ul&gt;&lt;li&gt;If you have complex tables (more than 20 columns)&lt;/li&gt;
+&lt;li&gt;If you need to rearrange columns within your table (use the
+{@link sap.m.TablePersoDialog} instead)&lt;/li&gt;
+&lt;li&gt;If you need very specific sort, filter, or column sorting options within
+complex tables (use the {@link sap.m.P13nDialog} instead)&lt;/li&gt;&lt;/ul&gt;
+
+&lt;h3&gt;Responsive behavior&lt;/h3&gt;
+
+The popover dialog appears as a modal window on desktop and tablet screen sizes,
+but full screen on smartphones.</documentation>
+    <since>1.16</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="title" type="sap.ui.core/string" group="Behavior">
+            <documentation>Defines the title of the dialog. If not set and there is only one active tab, the dialog uses the default "View" or "Sort", "Group", "Filter" respectively.</documentation>
+        </property>
+        <property name="sortDescending" type="sap.ui.core/boolean" defaultValue="false" group="Behavior">
+            <documentation>Determines whether the sort order is descending or ascending (default).</documentation>
+        </property>
+        <property name="groupDescending" type="sap.ui.core/boolean" defaultValue="false" group="Behavior">
+            <documentation>Determines whether the group order is descending or ascending (default).</documentation>
+        </property>
+        <property name="filterSearchOperator" type="sap.m/StringFilterOperator" defaultValue="StartsWith" group="Behavior" since="1.42">
+            <documentation>Provides a string filter operator which is used when the user searches items in filter details page.
+Possible operators are: &lt;code&gt;AnyWordStartsWith&lt;/code&gt;, &lt;code&gt;Contains&lt;/code&gt;, &lt;code&gt;StartsWith&lt;/code&gt;, &lt;code&gt;Equals&lt;/code&gt;.
+This property will be ignored if a custom callback is provided through &lt;code&gt;setFilterSearchCallback&lt;/code&gt; method.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="confirm" allowPreventDefault="false">
+            <documentation>Indicates that the user has pressed the OK button and the selected sort, group, and filter settings should be applied to the data on this page.
+&lt;/br&gt;&lt;/br&gt;&lt;b&gt;Note:&lt;/b&gt; Custom tabs are not converted to event parameters automatically. For custom tabs, you have to read the state of your controls inside the callback of this event.</documentation>
+            <parameters>
+                <parameter name="sortItem" type="sap.m/ViewSettingsItem">
+                    <documentation>The selected sort item.</documentation>
+                </parameter>
+                <parameter name="sortDescending" type="sap.ui.core/boolean">
+                    <documentation>The selected sort order (true = descending, false = ascending).</documentation>
+                </parameter>
+                <parameter name="groupItem" type="sap.m/ViewSettingsItem">
+                    <documentation>The selected group item.</documentation>
+                </parameter>
+                <parameter name="groupDescending" type="sap.ui.core/boolean">
+                    <documentation>The selected group order (true = descending, false = ascending).</documentation>
+                </parameter>
+                <parameter name="presetFilterItem" type="sap.m/ViewSettingsItem">
+                    <documentation>The selected preset filter item.</documentation>
+                </parameter>
+                <parameter name="filterItems" type="sap.m/ViewSettingsItem[]">
+                    <documentation>The selected filters in an array of ViewSettingsItem.</documentation>
+                </parameter>
+                <parameter name="filterKeys" type="sap.ui.core/object">
+                    <documentation>The selected filter items in an object notation format: { key: boolean }. If a custom control filter was displayed (for example, the user clicked on the filter item), the value for its key is set to true to indicate that there has been an interaction with the control.</documentation>
+                    <deprecation since="1.42">replaced by &lt;code&gt;filterCompoundKeys&lt;/code&gt; event</deprecation>
+                </parameter>
+                <parameter name="filterCompoundKeys" type="sap.ui.core/object" since="1.42">
+                    <documentation>The selected filter items in an object notation format: { parentKey: { key: boolean, key2: boolean, ...  }, ...}. If a custom control filter was displayed (for example, the user clicked on the filter item), the value for its key is set to true to indicate that there has been an interaction with the control.</documentation>
+                </parameter>
+                <parameter name="filterString" type="sap.ui.core/string">
+                    <documentation>The selected filter items in a string format to display in the control's header bar in format "Filtered by: key (subkey1, subkey2, subkey3)".</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="cancel" allowPreventDefault="false">
+            <documentation>Called when the Cancel button is pressed. It can be used to set the state of custom filter controls.</documentation>
+        </event>
+        <event name="resetFilters" allowPreventDefault="false">
+            <documentation>Called when the reset filters button is pressed. It can be used to clear the state of custom filter controls.</documentation>
+        </event>
+        <event name="filterDetailPageOpened" allowPreventDefault="false">
+            <documentation>Fired when the filter detail page is opened.</documentation>
+            <parameters>
+                <parameter name="parentFilterItem" type="sap.m/ViewSettingsFilterItem">
+                    <documentation>The filter item for which the details are opened.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="sortItems" type="sap.m/ViewSettingsItem" since="1.16" cardinality="0..n" bindable="bindable">
+            <documentation>The list of items with key and value that can be sorted over (for example, a list of columns for a table).</documentation>
+        </aggregation>
+        <aggregation name="groupItems" type="sap.m/ViewSettingsItem" since="1.16" cardinality="0..n" bindable="bindable">
+            <documentation>The list of items with key and value that can be grouped on (for example, a list of columns for a table).</documentation>
+        </aggregation>
+        <aggregation name="filterItems" type="sap.m/ViewSettingsItem" since="1.16" cardinality="0..n" bindable="bindable">
+            <documentation>The list of items with key and value that can be filtered on (for example, a list of columns for a table). A filterItem is associated with one or more detail filters.
+
+&lt;b&gt;Note:&lt;/b&gt; It is recommended to use the &lt;code&gt;sap.m.ViewSettingsFilterItem&lt;/code&gt; as it fits best at the filter page.</documentation>
+        </aggregation>
+        <aggregation name="presetFilterItems" type="sap.m/ViewSettingsItem" since="1.16" cardinality="0..n" bindable="bindable">
+            <documentation>The list of preset filter items with key and value that allows the selection of more complex or custom filters.
+These entries are displayed at the top of the filter tab.</documentation>
+        </aggregation>
+        <aggregation name="customTabs" type="sap.m/ViewSettingsCustomTab" since="1.30" cardinality="0..n" bindable="bindable">
+            <documentation>The list of all the custom tabs.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="selectedSortItem" type="sap.m/ViewSettingsItem" cardinality="0..1">
+            <documentation>The sort item that is selected. It can be set by either passing a key or the item itself to the function setSelectedSortItem.</documentation>
+        </association>
+        <association name="selectedGroupItem" type="sap.m/ViewSettingsItem" cardinality="0..1">
+            <documentation>The group item that is selected. It can be set by either passing a key or the item itself to the function setSelectedGroupItem.
+By default 'None' is selected. You can restore back to 'None' by setting this association to empty value.</documentation>
+        </association>
+        <association name="selectedPresetFilterItem" type="sap.m/ViewSettingsItem" cardinality="0..1">
+            <documentation>The preset filter item that is selected. It can be set by either passing a key or the item itself to the function setSelectedPresetFilterItem. Note that either a preset filter OR multiple detail filters can be active at the same time.</documentation>
+        </association>
+    </associations>
+    <methods>
+        <method name="open" type="sap.m/ViewSettingsDialog">
+            <documentation>Opens the ViewSettingsDialog relative to the parent control.</documentation>
+            <parameters>
+                <parameter name="pageId" type="sap.ui.core/string">
+                    <documentation>The ID of the initial page to be opened in the dialog.</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="getSelectedFilterItems" type="sap.m/ViewSettingsItem[]">
+            <documentation>Returns the selected filters as an array of ViewSettingsItems.
+
+It can be used to create matching sorters and filters to apply the selected settings to the data.</documentation>
+        </method>
+        <method name="getSelectedFilterString" type="sap.ui.core/string">
+            <documentation>Gets the filter string in format: "filter name (subfilter1 name, subfilter2
+name, ...), ...".
+For custom and preset filters it will only add the filter name to the resulting string.</documentation>
+        </method>
+        <method name="getSelectedFilterKeys" type="sap.ui.core/object">
+            <documentation>Gets the selected filter object in format {key: boolean}.
+
+It can be used to create matching sorters and filters to apply the selected settings to the data.</documentation>
+            <deprecation since="1.42">replaced by &lt;code&gt;getSelectedFilterCompoundKeys&lt;/code&gt; method</deprecation>
+        </method>
+        <method name="getSelectedFilterCompoundKeys" type="sap.ui.core/object" since="1.42">
+            <documentation>Gets the selected filter object in format { parent_key: { key: boolean, key2: boolean, ...}, ... }.</documentation>
+        </method>
+        <method name="setSelectedFilterKeys" type="sap.m/ViewSettingsDialog">
+            <documentation>Sets the selected filter object in format {key: boolean}.
+&lt;b&gt;Note:&lt;/b&gt; Do not use duplicated item keys with this method.</documentation>
+            <deprecation since="1.42">replaced by &lt;code&gt;setSelectedFilterCompoundKeys&lt;/code&gt; method</deprecation>
+            <parameters>
+                <parameter name="selectedFilterKeys" type="sap.ui.core/object">
+                    <documentation>A configuration object with filter item and sub item keys in the format: { key: boolean }.</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="setSelectedFilterCompoundKeys" type="sap.m/ViewSettingsDialog" since="1.42">
+            <documentation>Sets the selected filter object in format { parent_key: { key: boolean, key2: boolean, ...}, ... }.</documentation>
+            <parameters>
+                <parameter name="selectedFilterKeys" type="sap.ui.core/object">
+                    <documentation>A configuration object with filter item and sub item keys in the format: { parent_key: { key: boolean, key2: boolean, ...}, ... }.</documentation>
+                </parameter>
+            </parameters>
+        </method>
+    </methods>
+</control>

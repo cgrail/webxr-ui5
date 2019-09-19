@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Avatar</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>An image-like control that has different display options for representing images, initials,
+and icons.
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+
+The &lt;code&gt;Avatar&lt;/code&gt; control allows the usage of different content, shapes, and sizes
+depending on the use case.
+
+The content types that can be displayed are either images, icons, or initials. The shape
+can be circular or square. There are several predefined sizes, as well as an option to
+set a custom size.
+
+&lt;h3&gt;Usage&lt;/h3&gt;
+
+Up to two Latin letters can be displayed as initials in an &lt;code&gt;Avatar&lt;/code&gt;. If there
+are more than two letters, or if there's a non-Latin character present, a default image
+placeholder will be created.
+
+There are two options for how the displayed image can fit inside the
+available area:
+&lt;ul&gt;
+&lt;li&gt;Cover - the image is scaled to cover all of the available area&lt;/li&gt;
+&lt;li&gt;Contain - the image is scaled as large as possible while both
+its height and width fit inside the avalable area&lt;/li&gt;
+&lt;/ul&gt;
+&lt;b&gt;Note:&lt;/b&gt; To set a custom size for the &lt;code&gt;Avatar&lt;/code&gt;, you have to choose the &lt;code&gt;Custom&lt;/code&gt;
+value for the &lt;code&gt;displaySize&lt;/code&gt; property. Then, you have to set both the
+&lt;code&gt;customDisplaySize&lt;/code&gt; and &lt;code&gt;customFontSize&lt;/code&gt; properties.</documentation>
+    <since>1.46</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="src" type="sap.ui.core/URI" group="Data">
+            <documentation>Determines the path to the desired image or icon.</documentation>
+        </property>
+        <property name="initials" type="sap.ui.core/string" group="Data">
+            <documentation>Defines the displayed initials.</documentation>
+        </property>
+        <property name="displayShape" type="sap.f/AvatarShape" defaultValue="Circle" group="Appearance">
+            <documentation>Defines the shape of the &lt;code&gt;Avatar&lt;/code&gt;.</documentation>
+        </property>
+        <property name="displaySize" type="sap.f/AvatarSize" defaultValue="S" group="Appearance">
+            <documentation>Sets a predefined display size of the &lt;code&gt;Avatar&lt;/code&gt;.</documentation>
+        </property>
+        <property name="customDisplaySize" type="sap.ui.core/CSSSize" defaultValue="3rem" group="Appearance">
+            <documentation>Specifies custom display size of the &lt;code&gt;Avatar&lt;/code&gt;.
+
+&lt;b&gt;Note:&lt;/b&gt; It takes effect if the &lt;code&gt;displaySize&lt;/code&gt; property is set to &lt;code&gt;Custom&lt;/code&gt;.</documentation>
+        </property>
+        <property name="customFontSize" type="sap.ui.core/CSSSize" defaultValue="1.125rem" group="Appearance">
+            <documentation>Specifies custom font size of the &lt;code&gt;Avatar&lt;/code&gt;.
+
+&lt;b&gt;Note:&lt;/b&gt; It takes effect if the &lt;code&gt;displaySize&lt;/code&gt; property is set to &lt;code&gt;Custom&lt;/code&gt;.</documentation>
+        </property>
+        <property name="imageFitType" type="sap.f/AvatarImageFitType" defaultValue="Cover" group="Appearance">
+            <documentation>Specifies how an image would fit in the &lt;code&gt;Avatar&lt;/code&gt;.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="press" allowPreventDefault="false">
+            <documentation>Fired when the user selects the control.</documentation>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="detailBox" type="sap.m/LightBox" since="1.48" cardinality="0..1" bindable="bindable">
+            <documentation>A &lt;code&gt;sap.m.LightBox&lt;/code&gt; instance, that will be opened automatically when the user interacts with the &lt;code&gt;Avatar&lt;/code&gt; control.
+
+The &lt;code&gt;press&lt;/code&gt; event will still be fired.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="ariaDescribedBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / ids which describe this control (see WAI-ARIA attribute aria-describedby).</documentation>
+        </association>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / ids which label this control (see WAI-ARIA attribute aria-labelledBy).</documentation>
+        </association>
+    </associations>
+</control>

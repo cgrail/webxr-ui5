@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>semantic/GroupSelect</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A GroupSelect is a {@link sap.m.Select} control enhanced with styling according to the semantics of a common "Group" acton.
+
+A GroupSelect cannot be used independently but only as aggregation content of a {@link sap.m.semantic.SemanticPage}.
+
+The grouping options should be added to the &lt;code&gt;items&lt;/code&gt; aggregation of {@link sap.m.semantic.GroupSelect} and will be displayed as a pop-up list with support for single-item selection.
+If this simple popup list is not sufficient for your use case, you can implement your own custom dialog by using {@link sap.m.semantic.GroupAction} to trigger the dialog opening.</documentation>
+    <since>1.30.0</since>
+    <baseType>sap.m/semantic/SemanticSelect</baseType>
+</control>

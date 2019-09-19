@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>AnchorBar</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Displays the titles of the sections and subsections in the {@link sap.uxap.ObjectPageLayout ObjectPageLayout}
+and allows the user to scroll to the respective content.
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+
+The &lt;code&gt;AnchorBar&lt;/code&gt; is internally generated as a menu in the &lt;code&gt;ObjectPageLayout&lt;/code&gt;.
+It displays the sections and subsections and allows the user to directly scroll to the respective
+content by selecting them, while it remains visible at the top of the page (below the page header).</documentation>
+    <since>1.26</since>
+    <baseType>sap.m/Toolbar</baseType>
+    <properties>
+        <property name="showPopover" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>Determines whether to show a Popover with Subsection links when clicking on Section links in the Anchor bar.</documentation>
+        </property>
+        <property name="upperCase" type="sap.ui.core/boolean" defaultValue="false">
+            <documentation>Determines whether the Anchor bar items are displayed in upper case.</documentation>
+        </property>
+        <property name="backgroundDesign" type="sap.m/BackgroundDesign" group="Appearance" since="1.58">
+            <documentation>Determines the background color of the &lt;code&gt;AnchorBar&lt;/code&gt;.
+
+&lt;b&gt;Note:&lt;/b&gt; The default value of &lt;code&gt;backgroundDesign&lt;/code&gt; property is null.
+If the property is not set, the color of the background is &lt;code&gt;@sapUiObjectHeaderBackground&lt;/code&gt;,
+which depends on the specific theme.</documentation>
+        </property>
+    </properties>
+    <aggregations>
+        <aggregation name="_select" type="sap.uxap/HierarchicalSelect" cardinality="0..1" visibility="hidden"/>
+        <aggregation name="_scrollArrowLeft" type="sap.ui.core/Control" cardinality="0..1" visibility="hidden"/>
+        <aggregation name="_scrollArrowRight" type="sap.ui.core/Control" cardinality="0..1" visibility="hidden"/>
+    </aggregations>
+    <associations>
+        <association name="selectedButton" type="sap.m/Button" cardinality="0..1">
+            <documentation>The button that represents the Section being scrolled by the user.</documentation>
+        </association>
+    </associations>
+    <methods>
+        <method name="scrollToSection">
+            <documentation>Scroll to a specific Section.</documentation>
+            <parameters>
+                <parameter name="id" type="sap.ui.core/string">
+                    <documentation>The Section ID to scroll to</documentation>
+                </parameter>
+                <parameter name="duration" type="sap.ui.core/int">
+                    <documentation>Scroll duration (in ms). Default value is 0.</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="getScrollDelegate" type="sap.ui.core/object">
+            <documentation>Returns an sap.ui.core.delegate.ScrollEnablement object used to handle scrolling.</documentation>
+        </method>
+    </methods>
+</control>

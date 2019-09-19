@@ -1,0 +1,43 @@
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+						 xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:build="sap.build" xmlns:core="sap.ui.core">
+	<layout:Grid defaultSpan="XL12 L12 M12 S12" hSpacing="0" vSpacing="0" class="sapSmartTemplatesObjectPageSubSectionGrid">
+
+		<!--
+			isMultiple will return false if there is no navigation property. As we want to create a FacetForm
+			in case of no navigation property in annotation path and if navigation property and isMultiple false
+			we only check for isMultiple
+		-->
+		<template:if test="{path: 'facet>Target', formatter: 'sap.ui.model.odata.AnnotationHelper.isMultiple'}">
+			<template:then>
+				<template:if test="{=${facet>Target/AnnotationPath}.indexOf('com.sap.vocabularies.UI.v1.LineItem') > -1}"
+	                         build:metadata="#ignore">
+					<template:then build:metadata="#ignore">
+						<core:Fragment fragmentName="sap.suite.ui.generic.template.fragments.SmartTable" type="XML"/>
+					</template:then>
+					<template:elseif test="{=${facet>Target/AnnotationPath}.indexOf('com.sap.vocabularies.Communication.v1.Contact') > -1}"
+	                                 build:metadata="#ignore">
+						<core:Fragment fragmentName="sap.suite.ui.generic.template.fragments.Contacts" type="XML"/>
+					</template:elseif>
+	                <template:elseif test="{=${facet>Target/AnnotationPath}.indexOf('com.sap.vocabularies.UI.v1.Chart') > -1}">
+	                            <core:Fragment fragmentName="sap.suite.ui.generic.template.fragments.SmartChart" type="XML"/>
+	                </template:elseif>          			
+	            </template:if>
+			</template:then>
+			<template:elseif test="{= ${facet>RecordType}.indexOf('com.sap.vocabularies.UI.v1.CollectionFacet') > -1 ||
+										(${facet>Target/AnnotationPath}.indexOf('com.sap.vocabularies.UI.v1.FieldGroup') > -1
+									     || ${facet>Target/AnnotationPath}.indexOf('com.sap.vocabularies.UI.v1.Identification') > -1) }">
+				<core:Fragment fragmentName="sap.suite.ui.generic.template.fragments.SmartForm" type="XML"/>
+			</template:elseif>
+			<template:elseif test="{= ${facet>Target/AnnotationPath}.indexOf('com.sap.vocabularies.UI.v1.DataPoint') > -1 }">
+				<template:with path="facet>Target" helper="sap.ui.model.odata.AnnotationHelper.resolvePath" var="dataPoint">
+					<template:if test="{= ${dataPoint>Visualization/EnumMember}.indexOf('com.sap.vocabularies.UI.v1.VisualizationType/Rating') = -1 }">
+						<template:then>
+	                        <core:Fragment fragmentName="sap.suite.ui.generic.template.fragments.SmartForm" type="XML"/>
+						</template:then>
+					</template:if>
+				</template:with>
+			</template:elseif>
+		</template:if>
+
+	</layout:Grid>
+</core:FragmentDefinition>

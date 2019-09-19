@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>AvatarSize</name>
+    <derived/>
+    <documentation>Predefined sizes for the {@link sap.f.Avatar} control.</documentation>
+    <since>1.46</since>
+    <enumeration>
+        <value name="XS">
+            <documentation>Control size - 2rem
+Font size - 0.75rem</documentation>
+        </value>
+        <value name="S">
+            <documentation>Control size - 3rem
+Font size - 1.125rem</documentation>
+        </value>
+        <value name="M">
+            <documentation>Control size - 4rem
+Font size - 1.625rem</documentation>
+        </value>
+        <value name="L">
+            <documentation>Control size - 5rem
+Font size - 2rem</documentation>
+        </value>
+        <value name="XL">
+            <documentation>Control size - 7rem
+Font size - 2.75rem</documentation>
+        </value>
+        <value name="Custom">
+            <documentation>Custom size</documentation>
+        </value>
+    </enumeration>
+</simple-type>

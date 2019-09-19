@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ValueSVGPaintServer</name>
+    <derived/>
+    <documentation>A string type that represents SVG fill color values.
+
+Allowed values are {@link sap.ui.core.CSSColor} and {@link sap.m.ValueColor} and LESS parameter
+The empty string and invalid less parameter fall back to default black color.</documentation>
+    <final/>
+</simple-type>

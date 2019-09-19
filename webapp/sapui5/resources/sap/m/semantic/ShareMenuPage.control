@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>semantic/ShareMenuPage</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A ShareMenuPage is a {@link sap.m.semantic.SemanticPage} with support for "share" menu in the footer.</documentation>
+    <since>1.30.0</since>
+    <baseType>sap.m/semantic/SemanticPage</baseType>
+    <aggregations>
+        <aggregation name="customShareMenuContent" type="sap.m/Button" cardinality="0..n">
+            <documentation>Custom share menu buttons</documentation>
+        </aggregation>
+        <aggregation name="_actionSheet" type="sap.m/ActionSheet" cardinality="0..1" visibility="hidden">
+            <documentation>Wrapped instance of {@link sap.m.ActionSheet}</documentation>
+        </aggregation>
+    </aggregations>
+</control>

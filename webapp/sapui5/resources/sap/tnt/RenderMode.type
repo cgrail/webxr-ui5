@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>RenderMode</name>
+    <derived/>
+    <documentation>Predefined types of &lt;code&gt;InfoLabel&lt;/code&gt;</documentation>
+    <enumeration>
+        <value name="Narrow">
+            <documentation>When type of the content of &lt;code&gt;InfoLabel&lt;/code&gt; is numeric paddings are narrow</documentation>
+        </value>
+        <value name="Loose">
+            <documentation>When type of the content of &lt;code&gt;InfoLabel&lt;/code&gt; is text padding are loose</documentation>
+        </value>
+    </enumeration>
+</simple-type>

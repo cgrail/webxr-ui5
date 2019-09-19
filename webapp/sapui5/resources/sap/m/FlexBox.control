@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>FlexBox</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The &lt;code&gt;sap.m.FlexBox&lt;/code&gt; control builds the container for a flexible box layout.&lt;br&gt;
+&lt;br&gt;
+&lt;b&gt;Note:&lt;/b&gt; Be sure to check the &lt;code&gt;renderType&lt;/code&gt; setting to avoid issues due to browser inconsistencies.</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="height" type="sap.ui.core/CSSSize" defaultValue="" group="Dimension" since="1.9.1">
+            <documentation>The height of the &lt;code&gt;sap.m.FlexBox&lt;/code&gt;. Note that when a percentage is given, for the height to work as expected, the height of the surrounding container must be defined.</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" defaultValue="" group="Dimension" since="1.9.1">
+            <documentation>The width of the &lt;code&gt;sap.m.FlexBox&lt;/code&gt;. Note that when a percentage is given, for the width to work as expected, the width of the surrounding container must be defined.</documentation>
+        </property>
+        <property name="displayInline" type="sap.ui.core/boolean" defaultValue="false" group="Appearance">
+            <documentation>Determines whether the &lt;code&gt;sap.m.FlexBox&lt;/code&gt; is in block or inline mode.</documentation>
+        </property>
+        <property name="direction" type="sap.m/FlexDirection" defaultValue="Row" group="Appearance">
+            <documentation>Determines the direction of the layout of child elements.</documentation>
+        </property>
+        <property name="fitContainer" type="sap.ui.core/boolean" defaultValue="false" group="Appearance">
+            <documentation>Determines whether the &lt;code&gt;sap.m.FlexBox&lt;/code&gt; will be sized to completely fill its container. If the &lt;code&gt;sap.m.FlexBox&lt;/code&gt; is inserted into a Page, the property 'enableScrolling' of the Page needs to be set to 'false' for the FlexBox to fit the entire viewport.</documentation>
+        </property>
+        <property name="renderType" type="sap.m/FlexRendertype" defaultValue="Div" group="Misc">
+            <documentation>Determines whether the layout is rendered as a series of divs or as an unordered list (ul).&lt;br&gt;
+&lt;br&gt;
+We recommend to use &lt;code&gt;Bare&lt;/code&gt; in most cases to avoid layout issues due to browser inconsistencies.</documentation>
+        </property>
+        <property name="justifyContent" type="sap.m/FlexJustifyContent" defaultValue="Start" group="Appearance">
+            <documentation>Determines the layout behavior along the main axis.</documentation>
+        </property>
+        <property name="alignItems" type="sap.m/FlexAlignItems" defaultValue="Stretch" group="Appearance">
+            <documentation>Determines the layout behavior of items along the cross-axis.</documentation>
+        </property>
+        <property name="wrap" type="sap.m/FlexWrap" defaultValue="NoWrap" group="Appearance" since="1.36.0">
+            <documentation>Determines the wrapping behavior of the flex container. This property has no effect in older browsers, e.g. Android Native 4.3 and below.</documentation>
+        </property>
+        <property name="alignContent" type="sap.m/FlexAlignContent" defaultValue="Stretch" group="Appearance" since="1.36.0">
+            <documentation>Determines the layout behavior of container lines when there's extra space along the cross-axis.</documentation>
+        </property>
+        <property name="backgroundDesign" type="sap.m/BackgroundDesign" defaultValue="Transparent" group="Appearance" since="1.38.5">
+            <documentation>Defines the background style of the &lt;code&gt;sap.m.FlexBox&lt;/code&gt;.</documentation>
+        </property>
+    </properties>
+    <aggregations default="items">
+        <aggregation name="items" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Flex items within the flexible box layout</documentation>
+        </aggregation>
+    </aggregations>
+</control>

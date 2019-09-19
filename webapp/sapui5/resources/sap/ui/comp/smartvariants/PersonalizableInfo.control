@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartvariants/PersonalizableInfo</name>
+    <derived/>
+    <documentation>The PersonalizableInfo class describes the personalizable control associated with the &lt;code&gt;SmartVariantManagement&lt;/code&gt; control.</documentation>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="type" type="sap.ui.core/string" group="Misc">
+            <documentation>Describes the type of variant management.</documentation>
+        </property>
+        <property name="dataSource" type="sap.ui.core/string" group="Misc">
+            <documentation>Name of the data service</documentation>
+        </property>
+        <property name="keyName" type="sap.ui.core/string" group="Misc">
+            <documentation>Defines the property name of the personalization key.</documentation>
+        </property>
+    </properties>
+    <associations>
+        <association name="control" type="sap.ui.core/Control" cardinality="0..1">
+            <documentation>Contains the control that can be personalized.</documentation>
+        </association>
+    </associations>
+</control>

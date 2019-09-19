@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>MessageView</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>&lt;strong&gt;&lt;i&gt;Overview&lt;/i&gt;&lt;/strong&gt;
+&lt;br&gt;&lt;br&gt;
+A {@link sap.m.MessageView} is used to display a summarized list of different types of messages (errors, warnings, success and information).
+It provides a handy and systemized way to navigate and explore details for every message.
+It is meant to be embedded into container controls.
+If the MessageView contains only one item, which has either description, markupDescription or longTextUrl, its details page will be displayed initially.
+&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Notes:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;If your application changes its model between two interactions with the MessageView, this could lead to outdated messages being shown.
+To avoid this, you need to call &lt;code&gt;navigateBack&lt;/code&gt; on the MessageView BEFORE opening its container.&lt;/li&gt;
+&lt;li&gt; Messages can have descriptions pre-formatted with HTML markup. In this case, the &lt;code&gt;markupDescription&lt;/code&gt; has to be set to &lt;code&gt;true&lt;/code&gt;. &lt;/li&gt;
+&lt;li&gt; If the message cannot be fully displayed or includes a long description, the MessageView provides navigation to the detailed description. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;strong&gt;&lt;i&gt;Structure&lt;/i&gt;&lt;/strong&gt;
+&lt;br&gt;&lt;br&gt;
+The MessageView stores all messages in an association of type {@link sap.m.MessageItem} named &lt;code&gt;items&lt;/code&gt;.
+&lt;br&gt;
+A set of properties determines how the items are rendered:
+&lt;ul&gt;
+&lt;li&gt; counter - An integer that is used to indicate the number of errors for each type &lt;/li&gt;
+&lt;li&gt; type - The type of message &lt;/li&gt;
+&lt;li&gt; title/subtitle - The title and subtitle of the message&lt;/li&gt;
+&lt;li&gt; description - The long text description of the message&lt;/li&gt;
+&lt;li&gt; activeTitle - Determines whether the title of the item is interactive&lt;/li&gt;
+&lt;/ul&gt;
+&lt;strong&gt;&lt;i&gt;Usage&lt;/i&gt;&lt;/strong&gt;
+&lt;br&gt;&lt;br&gt;
+As part of the messaging concept, MessageView provides a way to centrally manage messages and show them to the user without additional work for the developer.
+
+It also exposes an event {@link sap.m.MessageView#activeTitlePress}, which can be used for navigation from a message to the source of the issue.
+&lt;br&gt;&lt;br&gt;</documentation>
+    <since>1.46</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="asyncDescriptionHandler" type="sap.ui.core/any" group="Behavior">
+            <documentation>Callback function for resolving a promise after description has been asynchronously loaded inside this function</documentation>
+        </property>
+        <property name="asyncURLHandler" type="sap.ui.core/any" group="Behavior">
+            <documentation>Callback function for resolving a promise after a link has been asynchronously validated inside this function</documentation>
+        </property>
+        <property name="groupItems" type="sap.ui.core/boolean" defaultValue="false" group="Behavior">
+            <documentation>Defines whether the MessageItems are grouped or not</documentation>
+        </property>
+        <property name="showDetailsPageHeader" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Defines whether the header of details page will be shown</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="afterOpen" allowPreventDefault="false">
+            <documentation>This event will be fired after the popover is opened</documentation>
+            <parameters>
+                <parameter name="openBy" type="sap.ui.core/Control">
+                    <documentation>This refers to the control which opens the popover</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="itemSelect" allowPreventDefault="false">
+            <documentation>This event will be fired when description is shown</documentation>
+            <parameters>
+                <parameter name="item" type="sap.m/MessageItem">
+                    <documentation>Refers to the message item that is being presented</documentation>
+                </parameter>
+                <parameter name="messageTypeFilter" type="sap.ui.core/MessageType">
+                    <documentation>Refers to the type of messages being shown
+See sap.ui.core.MessageType values for types</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="listSelect" allowPreventDefault="false">
+            <documentation>This event will be fired when one of the lists is shown when (not) filtered  by type</documentation>
+            <parameters>
+                <parameter name="messageTypeFilter" type="sap.ui.core/MessageType">
+                    <documentation>This parameter refers to the type of messages being shown.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="longtextLoaded" allowPreventDefault="false">
+            <documentation>This event will be fired when the long text description data from a remote URL is loaded</documentation>
+        </event>
+        <event name="urlValidated" allowPreventDefault="false">
+            <documentation>This event will be fired when a validation of a URL from long text description is ready</documentation>
+        </event>
+        <event name="activeTitlePress" since="1.58" allowPreventDefault="false">
+            <documentation>This event will be fired when an active title of a MessageItem is pressed</documentation>
+            <parameters>
+                <parameter name="item" type="sap.m/MessageItem">
+                    <documentation>Refers to the message item that contains the active Title</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations default="items">
+        <aggregation name="items" type="sap.m/MessageItem" cardinality="0..n">
+            <documentation>A list with message items.
+If only one item is provided, the initial page will be the details page for the item.</documentation>
+        </aggregation>
+        <aggregation name="headerButton" type="sap.m/Button" cardinality="0..1">
+            <documentation>A custom header button</documentation>
+        </aggregation>
+        <aggregation name="_navContainer" type="sap.m/NavContainer" cardinality="0..1" visibility="hidden">
+            <documentation>A navContainer that contains both details and list pages</documentation>
+        </aggregation>
+    </aggregations>
+</control>

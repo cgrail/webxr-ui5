@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>TabContainer</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A container control for managing multiple tabs, allowing the user to open and edit different items simultaneously.
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+
+The control contains a &lt;code&gt;TabStrip&lt;/code&gt; area where the user can choose which tab to view/edit.
+When the open tabs are more than what can be displayed on the screen, there is an overflow mechanism.
+To access the tabs hidden in the overflow area, the user has to either use the overflow button (left or right arrow)
+to scroll them horizontally or the overflow overview button (down arrow) and view all open items as a list.
+
+Each tab has a title and a &lt;i&gt;Close Tab&lt;/i&gt; button. The title is truncated, if it's longer than 25 characters.
+On desktop, the &lt;i&gt;Close Tab&lt;/i&gt; button is displayed on the currently active tab and for the other tabs it appears on mouse hover.
+On mobile devices, the &lt;i&gt;Close Tab&lt;/i&gt; buttons are always visible.
+
+To show that the open items have unsaved changes, the corresponding tabs can display an asterisk (*) after the title
+as a visual indication that the item is not saved. This is managed by the app developer using
+{@link sap.m.TabContainerItem TabContainerItem}'s &lt;code&gt;modified&lt;/code&gt; property.
+
+&lt;h3&gt;Usage&lt;/h3&gt;
+
+The &lt;code&gt;TabContainer&lt;/code&gt; can have an &lt;i&gt;Add New Tab&lt;/i&gt; button, which appears as a '+' icon on the
+top-right area of the control. When the user clicks or taps this button, the &lt;code&gt;addNewButtonPress&lt;/code&gt; event is fired.
+
+&lt;h3&gt;Responsive behavior&lt;/h3&gt;
+
+The &lt;code&gt;TabContainer&lt;/code&gt; is a full-page container that takes 100% of its parent width and height.
+As the control is expected to occupy the whole parent, it should be the only child of its parent.</documentation>
+    <since>1.34</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="showAddNewButton" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>Defines whether an &lt;i&gt;Add New Tab&lt;/i&gt; button is displayed in the &lt;code&gt;TabStrip&lt;/code&gt;.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="itemClose" allowPreventDefault="true">
+            <documentation>Fired when an item is closed.</documentation>
+            <parameters>
+                <parameter name="item" type="sap.m/TabContainerItem">
+                    <documentation>The item to be closed.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="itemSelect" allowPreventDefault="true">
+            <documentation>Fired when an item is pressed.</documentation>
+            <parameters>
+                <parameter name="item" type="sap.m/TabContainerItem">
+                    <documentation>The selected item.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="addNewButtonPress" allowPreventDefault="false">
+            <documentation>Fired when the &lt;i&gt;Add New Tab&lt;/i&gt; button is pressed.</documentation>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="items" type="sap.m/TabContainerItem" cardinality="0..n" bindable="bindable">
+            <documentation>The items displayed in the &lt;code&gt;TabContainer&lt;/code&gt;.</documentation>
+        </aggregation>
+        <aggregation name="_addNewButton" type="sap.m/Button" cardinality="0..1" visibility="hidden">
+            <documentation>The &lt;i&gt;Add New Tab&lt;/i&gt; button displayed in the &lt;code&gt;TabStrip&lt;/code&gt;.</documentation>
+        </aggregation>
+        <aggregation name="_tabStrip" type="sap.ui.core/Control" cardinality="0..1" visibility="hidden">
+            <documentation>Internal aggregation for managing the tab elements.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="selectedItem" type="sap.m/TabContainerItem" cardinality="0..1">
+            <documentation>Sets or retrieves the selected item from the &lt;code&gt;items&lt;/code&gt; aggregation.</documentation>
+        </association>
+    </associations>
+</control>

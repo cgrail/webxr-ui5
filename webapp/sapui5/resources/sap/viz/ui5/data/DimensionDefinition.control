@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ui5/data/DimensionDefinition</name>
+    <derived/>
+    <documentation>Definition of a single dimension in a dataset</documentation>
+    <since>1.7.2</since>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="axis" type="sap.ui.core/int" group="Misc">
+            <documentation>Number of axis this dimension belongs to. Currently must be 1 or 2.
+Skip this property when use VizFrame.</documentation>
+        </property>
+        <property name="value" type="sap.ui.core/any" group="Data">
+            <documentation>Value for the dimension. Usually bound to some model field.</documentation>
+        </property>
+        <property name="name" type="sap.ui.core/string" group="Misc">
+            <documentation>Name of the dimension as displayed in the chart</documentation>
+        </property>
+        <property name="identity" type="sap.ui.core/string" group="Misc">
+            <documentation>Id of the dimension as displayed in the chart</documentation>
+        </property>
+        <property name="displayValue" type="sap.ui.core/any" group="Data">
+            <documentation>Display value for the dimension. Usually bound to some model field. It doesn't work with 'waterfallType'</documentation>
+        </property>
+        <property name="dataType" type="sap.ui.core/string" group="Misc">
+            <documentation>Data type of the dimension as displayed in the chart. Enumeration: string, number, date. Currently only in time series chart, it is required to set data type to 'date' if this column is going to be fed on 'timeAxis'.</documentation>
+        </property>
+        <property name="sorter" type="sap.ui.core/object">
+            <documentation>&lt;code&gt;Sorter&lt;/code&gt; Object of the dimension. There is a default comparator function, if no custom comparator is given. The function returns -1, 0 or 1, depending on the order of the two items and is suitable to be used as a comparator method for Array.sort. The object contains two entries: 
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;bDescending:&lt;/code&gt;{boolean} (optional) define whether the sort order is descending. Default is false.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;fnComparator:&lt;/code&gt;{function} (optional) a user defined comparator function, which have two input values to compare. The input value is an object, which contains value and displayValue (optional).&lt;/li&gt;   
+&lt;/ul&gt;</documentation>
+        </property>
+    </properties>
+</control>

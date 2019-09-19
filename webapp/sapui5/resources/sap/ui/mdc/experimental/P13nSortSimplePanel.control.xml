@@ -1,0 +1,49 @@
+<core:FragmentDefinition xmlns:m="sap.m"
+						 xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+	<l:VerticalLayout class="sapMP13nColumnsPanel">
+
+		<m:Table id="IDSortOrderTable" mode="SingleSelectLeft" rememberSelections="false"
+				 selectionChange="onChangeSortOrderBySelection" itemPress="onChangeSortOrderByItemPress">
+			<m:columns>
+				<m:Column>
+					<m:header>
+						<m:Text text=""/>
+					</m:header>
+				</m:Column>
+			</m:columns>
+			<m:items>
+				<m:ColumnListItem id="IDAscendingItem" type="Active"
+								  selected="{= ${$this>/@custom/sortOrder} === 'Ascending' ? true: false}">
+					<m:cells>
+						<m:Label text="Ascending"/>
+					</m:cells>
+				</m:ColumnListItem>
+				<m:ColumnListItem id="IDDescendingItem" type="Active"
+								  selected="{= ${$this>/@custom/sortOrder} === 'Ascending' ? false : true}">
+					<m:cells>
+						<m:Label text="Descending"/>
+					</m:cells>
+				</m:ColumnListItem>
+			</m:items>
+		</m:Table>
+
+		<m:Table id="IDTable" mode="SingleSelectLeft" rememberSelections="false" selectionChange="onSelectionChange"
+				 itemPress="onItemPress" items="{path:'JSONItems>/items', templateShareable:false}">
+			<m:columns>
+				<m:Column>
+					<m:header>
+						<m:Text text=""/>
+					</m:header>
+				</m:Column>
+			</m:columns>
+			<m:items>
+				<m:ColumnListItem selected="{JSONItems>selected}" type="Active">
+					<m:cells>
+						<m:Label text="{JSONItems>text}"/>
+					</m:cells>
+				</m:ColumnListItem>
+			</m:items>
+		</m:Table>
+
+	</l:VerticalLayout>
+</core:FragmentDefinition>

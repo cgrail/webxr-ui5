@@ -1,0 +1,35 @@
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+						 xmlns="sap.m"
+						 xmlns:core="sap.ui.core"
+						 template:require="{
+							FIELD: 'sap/ui/mdc/odata/v4/field/FieldHelper',
+							MODEL: 'sap/ui/model/odata/v4/AnnotationHelper'
+						 }">
+
+
+	<template:if test="{= ${dataPoint>Visualization}}">
+        <template:then>
+            <template:if test="{= ${dataPoint>Visualization/$EnumMember} === 'com.sap.vocabularies.UI.v1.VisualizationType/Rating'}">
+                <template:then>
+                    <RatingIndicator enabled="false"
+                        binding="{= ${dataPoint>@@.MODEL.getNavigationBinding} }"
+                        maxValue="{dataPoint>TargetValue@@MODEL.format}"
+                        value="{dataPoint>Value@@MODEL.format}"/>
+                </template:then>
+                <template:elseif test="{= ${dataPoint>Visualization/$EnumMember} === 'com.sap.vocabularies.UI.v1.VisualizationType/Progress'}">
+                    <ProgressIndicator enabled="false"
+                        binding="{= ${dataPoint>@@.MODEL.getNavigationBinding} }"
+                        percentValue="{dataPoint>Value@@MODEL.format}"/>
+                </template:elseif>
+            </template:if>
+        </template:then>
+        <template:else>
+            <template:with path="dataPoint>Value" var="property">
+                <ObjectStatus
+                    icon="{=(${dataPoint>CriticalityRepresentation/$EnumMember} === 'com.sap.vocabularies.UI.v1.CriticalityRepresentationType/WithoutIcon') ? '' : ${path: 'dataPoint>Criticality/$Path', formatter: '.FIELD.buildExpressionForCriticalityIcon'}}"
+                    state="{path: 'dataPoint>Criticality/$Path', formatter: '.FIELD.buildExpressionForCriticalityColor'}"
+                    text="{= ${property>$Path@com.sap.vocabularies.Common.v1.Text} ? ${property>$Path@@.FIELD.buildExpressionForTextValue} : ${property>@@MODEL.format} }"/>
+            </template:with>
+        </template:else>
+    </template:if>
+</core:FragmentDefinition>

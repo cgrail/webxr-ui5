@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartlist/SmartList</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A smart control to simplify using the &lt;code&gt;sap.m.List&lt;/code&gt; and &lt;code&gt;sap.m.Tree&lt;/code&gt; controls in list patterns.
+       &lt;h3&gt;Overview&lt;/h3&gt;
+       The &lt;code&gt;SmartList&lt;/code&gt; control creates a list or tree based on the configuration specified. There is, however, a difference to
+       other smart controls: This control does not use annotations to automatically create its content. Hence, a template must always be
+       provided for this control.
+       &lt;h3&gt;Structure&lt;/h3&gt;
+       The &lt;code&gt;SmartList&lt;/code&gt; control consists of the following elements:
+       &lt;ul&gt;
+       &lt;li&gt; &lt;code&gt;OverflowToolbar&lt;/code&gt; control: Displays the header and other action buttons. Users can add their own toolbar and buttons
+       in the view.&lt;/li&gt;
+       &lt;li&gt; &lt;code&gt;List&lt;/code&gt; or &lt;code&gt;Tree&lt;/code&gt; control: The actual list/tree control. Users can also add this in the view with the
+       required configuration.&lt;/li&gt;
+       &lt;/ul&gt;
+       The &lt;code&gt;entitySet&lt;/code&gt; property must be specified to use the control. This attribute is used to fetch the actual data.&lt;br&gt;
+       The &lt;code&gt;listItemTemplate&lt;/code&gt; aggregation must also be specified with the required item template, such as
+       &lt;code&gt;StandardListItem/StandardTreeItem&lt;/code&gt;, which will be used during binding.
+       &lt;h3&gt;&lt;b&gt;Note:&lt;/b&gt;&lt;/h3&gt;
+       Most of the attributes/properties are not dynamic and cannot be changed once the control has been initialized.</documentation>
+    <since>1.48</since>
+    <baseType>sap.m/VBox</baseType>
+    <properties>
+        <property name="entitySet" type="sap.ui.core/string" group="Misc" since="1.48.0">
+            <documentation>The entity set name from which to fetch data.&lt;br&gt;
+&lt;i&gt;Note:&lt;/i&gt;&lt;br&gt;
+This is not a dynamic UI5 property.</documentation>
+        </property>
+        <property name="selectFields" type="sap.ui.core/string" group="Misc" since="1.48.0">
+            <documentation>CSV of fields that must be selected when request is sent to the backend.&lt;br&gt;
+&lt;i&gt;Note:&lt;/i&gt;&lt;br&gt;
+No validation is done. Please ensure that you do not add spaces or special characters.&lt;br&gt;
+This property is only needed when used together with an &lt;code&gt;ODataModel&lt;/code&gt;.</documentation>
+        </property>
+        <property name="expandFields" type="sap.ui.core/string" group="Misc" since="1.48.0">
+            <documentation>CSV of fields that must be expanded when request is sent to the backend.&lt;br&gt;
+&lt;i&gt;Note:&lt;/i&gt;&lt;br&gt;
+No validation is done. Please ensure that you do not add spaces or special characters.&lt;br&gt;
+This property is only needed when used together with an &lt;code&gt;ODataModel&lt;/code&gt;.</documentation>
+        </property>
+        <property name="showRowCount" type="sap.ui.core/boolean" defaultValue="true" group="Misc" since="1.48.0">
+            <documentation>If set to &lt;code&gt;true&lt;/code&gt; (default), the number of rows is shown along with the header text.&lt;br&gt;
+If set to &lt;code&gt;false&lt;/code&gt;, the number of rows will not be shown on the user interface.&lt;br&gt;
+&lt;i&gt;Note:&lt;/i&gt;&lt;br&gt;
+To avoid sending dedicated OData requests in order to improve your application's performance, you must configure the binding of the
+list as required.</documentation>
+        </property>
+        <property name="header" type="sap.ui.core/string" group="Misc" since="1.48.0">
+            <documentation>Specifies header text that is shown in list.</documentation>
+        </property>
+        <property name="enableAutoBinding" type="sap.ui.core/boolean" defaultValue="false" group="Misc" since="1.48.0">
+            <documentation>When set to &lt;code&gt;true&lt;/code&gt;, this enables automatic binding of the list using the &lt;code&gt;listBindingPath&lt;/code&gt; (if it
+exists) or &lt;code&gt;entitySet&lt;/code&gt; property. This happens right after the &lt;code&gt;initialise&lt;/code&gt; event has been fired.</documentation>
+        </property>
+        <property name="listBindingPath" type="sap.ui.core/string" group="Misc" since="1.48.0">
+            <documentation>Specifies the path that is used during the binding of the list. If not specified, the &lt;code&gt;entitySet&lt;/code&gt; property is used
+instead. (used only if binding is done automatically or when using &lt;code&gt;rebindList&lt;/code&gt;)</documentation>
+        </property>
+        <property name="listType" type="sap.ui.comp/smartlist/ListType" group="Misc" since="1.48.0">
+            <documentation>Specifies the type of list to be created in the &lt;code&gt;SmartList&lt;/code&gt; control.&lt;br&gt;
+&lt;i&gt;Note:&lt;/i&gt;&lt;br&gt;
+If you add a &lt;code&gt;List&lt;/code&gt; or &lt;code&gt;Tree&lt;/code&gt; to the content of the &lt;code&gt;SmartList&lt;/code&gt; control in the view, this
+property has no effect.</documentation>
+        </property>
+        <property name="showFullScreenButton" type="sap.ui.core/boolean" defaultValue="false" group="Misc" since="1.48.0">
+            <documentation>Controls the visibility of the full screen button.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="initialise" since="1.48.0" allowPreventDefault="false">
+            <documentation>Event fired once the control has been initialized.</documentation>
+        </event>
+        <event name="beforeRebindList" since="1.48.0" allowPreventDefault="false">
+            <documentation>Event fired right before the binding is being done.</documentation>
+        </event>
+        <event name="dataReceived" since="1.48.0" allowPreventDefault="false">
+            <documentation>Event fired when data is received after binding. The event is usually only fired if the binding for the list is done by the
+&lt;code&gt;SmartList&lt;/code&gt; control itself.</documentation>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="listItemTemplate" type="sap.m/ListItemBase" since="1.48.0" cardinality="0..1">
+            <documentation>Specifies the template that is used for the inner &lt;code&gt;List&lt;/code&gt; or &lt;code&gt;Tree&lt;/code&gt; control.&lt;br&gt;
+&lt;b&gt;Note:&lt;/b&gt;&lt;br&gt;
+This template is used when binding the &lt;code&gt;items&lt;/code&gt; of &lt;code&gt;sap.m.List&lt;/code&gt; or &lt;code&gt;sap.m.Tree&lt;/code&gt; control, and
+will not be available in the &lt;code&gt;SmartList&lt;/code&gt; control once the binding has been done.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="smartFilter" type="sap.ui.core/Control" cardinality="0..1" since="1.48.0">
+            <documentation>The &lt;code&gt;SmartFilterBar&lt;/code&gt; control to be linked to the &lt;code&gt;SmartList&lt;/code&gt; control. Some events of the
+&lt;code&gt;SmartFilterBar&lt;/code&gt; control are then used to fetch data, show overlay etc.</documentation>
+        </association>
+    </associations>
+</control>

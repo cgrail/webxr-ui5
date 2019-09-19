@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>personalization/ResetType</name>
+    <derived/>
+    <documentation>Provides enumeration sap.ui.comp.personalization.ResetType. A subset of reset types used in table personalization.</documentation>
+    <enumeration>
+        <value name="ResetFull">
+            <documentation>Reset back to Restore (i.e. the version of the table with which the controller was instantiated or via setter updated) was triggered
+(either via API or via reset button)</documentation>
+        </value>
+        <value name="ResetPartial">
+            <documentation>Reset back to the CurrentVariant was triggered</documentation>
+        </value>
+    </enumeration>
+</simple-type>

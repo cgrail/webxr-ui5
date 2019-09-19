@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>DateTimeField</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The &lt;code&gt;sap.m.DateTimeField&lt;/code&gt; control provides a basic functionality for date/time input controls.
+
+To be extended by date and time picker controls. For internal use only.</documentation>
+    <since>1.50.0</since>
+    <abstract/>
+    <baseType>sap.m/InputBase</baseType>
+    <properties>
+        <property name="displayFormat" type="sap.ui.core/string" group="Appearance">
+            <documentation>Determines the format, displayed in the input field.</documentation>
+        </property>
+        <property name="valueFormat" type="sap.ui.core/string" group="Data">
+            <documentation>Determines the format of the value property.</documentation>
+        </property>
+        <property name="dateValue" type="sap.ui.core/object" group="Data">
+            <documentation>Holds a reference to a JavaScript Date Object. The &lt;code&gt;value&lt;/code&gt; (string)
+property will be set according to it. Alternatively, if the &lt;code&gt;value&lt;/code&gt;
+and &lt;code&gt;valueFormat&lt;/code&gt; pair properties are supplied instead,
+the &lt;code&gt;dateValue&lt;/code&gt; will be instantiated according to the parsed
+&lt;code&gt;value&lt;/code&gt;.
+Use &lt;code&gt;dateValue&lt;/code&gt; as a helper property to easily obtain the day, month, year, hours, minutes
+and seconds of the chosen date and time. Although possible to bind it, the recommendation is not to do it.
+When binding is needed, use &lt;code&gt;value&lt;/code&gt; property instead.</documentation>
+        </property>
+        <property name="initialFocusedDateValue" type="sap.ui.core/object" group="Data" since="1.54">
+            <documentation>Holds a reference to a JavaScript Date Object to define the initially focused
+date/time when the picker popup is opened.
+
+&lt;b&gt;Notes:&lt;/b&gt;
+&lt;ul&gt;
+&lt;li&gt;Setting this property does not change the &lt;code&gt;value&lt;/code&gt; property.&lt;/li&gt;
+&lt;li&gt;Depending on the context this property is used in ({@link sap.m.TimePicker},
+{@link sap.m.DatePicker} or {@link sap.m.DateTimePicker}), it takes into account only the time part, only
+the date part or both parts of the JavaScript Date Object.&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+        </property>
+    </properties>
+</control>

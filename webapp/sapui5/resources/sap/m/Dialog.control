@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Dialog</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A popup that interrupts the current processing and prompts the user for an action or an input in a modal mode.
+&lt;h3&gt;Overview&lt;/h3&gt;
+The Dialog control is used to prompt the user for an action or a confirmation. It interrupts the current app processing as it is the only focused UI element and the main screen is dimmed/blocked.
+The content of the Dialog is fully customizable.
+&lt;h3&gt;Structure&lt;/h3&gt;
+A Dialog consists of a title, optional subtitle, content area and a footer for action buttons.
+The Dialog is usually displayed at the center of the screen. Its size and position can be changed by the user.
+To enable this, you need to set the properties &lt;code&gt;resizable&lt;/code&gt; and &lt;code&gt;draggable&lt;/code&gt; accordingly.
+
+There are other specialized types of dialogs:
+&lt;ul&gt;
+&lt;li&gt;{@link sap.m.P13nDialog Personalization Dialog} - used for personalizing sorting, filtering and grouping in tables&lt;/li&gt;
+&lt;li&gt;{@link sap.m.SelectDialog Select Dialog} - used to select one or more items from a comprehensive list&lt;/li&gt;
+&lt;li&gt;{@link sap.m.TableSelectDialog Table Select Dialog} - used to  make a selection from a comprehensive table containing multiple attributes or values&lt;/li&gt;
+&lt;li&gt;{@link sap.ui.comp.valuehelpdialog.ValueHelpDialog Value Help Dialog} - used to help the user find and select single and multiple values&lt;/li&gt;
+&lt;li&gt;{@link sap.m.ViewSettingsDialog View Settings Dialog}  - used to sort, filter, or group data within a (master) list or a table&lt;/li&gt;
+&lt;li&gt;{@link sap.m.BusyDialog Busy Dialog} - used to block the screen and inform the user about an ongoing operation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Usage&lt;/h3&gt;
+&lt;h4&gt;When to use:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;You want to display a system message.&lt;/li&gt;
+&lt;li&gt;You want to interrupt the user’s action.&lt;/li&gt;
+&lt;li&gt;You want to show a message with a short and a long description.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;When not to use:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;You just want to confirm a successful action.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Responsive Behavior&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;If the &lt;code&gt;stretch&lt;/code&gt; property is set to &lt;code&gt;true&lt;/code&gt;, the Dialog displays on full screen.&lt;/li&gt;
+&lt;li&gt;If the &lt;code&gt;contentWidth&lt;/code&gt; and/or &lt;code&gt;contentHeight&lt;/code&gt; properties are set, the Dialog will try to fill those sizes.&lt;/li&gt;
+&lt;li&gt;If there is no specific sizing, the Dialog will try to adjust its size to its content.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Smartphones&lt;/h4&gt;
+If the Dialog has one or two actions, they will cover the entire footer. If there are more actions, they will overflow.
+&lt;h4&gt;Tablets&lt;/h4&gt;
+The action buttons in the toolbar are &lt;b&gt;right-aligned&lt;/b&gt;. Use &lt;b&gt;cozy&lt;/b&gt; mode on tablet devices.
+&lt;h4&gt;Desktop&lt;/h4&gt;
+The action buttons in the toolbar are &lt;b&gt;right-aligned&lt;/b&gt;. Use &lt;b&gt;compact&lt;/b&gt; mode on desktop.</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="icon" type="sap.ui.core/URI" group="Appearance">
+            <documentation>Icon displayed in the Dialog header. This &lt;code&gt;icon&lt;/code&gt; is invisible on the iOS platform and it is density-aware. You can use the density convention (@2, @1.5, etc.) to provide higher resolution image for higher density screen.</documentation>
+        </property>
+        <property name="title" type="sap.ui.core/string" group="Appearance">
+            <documentation>Title text appears in the Dialog header.</documentation>
+        </property>
+        <property name="showHeader" type="sap.ui.core/boolean" defaultValue="true" group="Appearance" since="1.15.1">
+            <documentation>Determines whether the header is shown inside the Dialog. If this property is set to &lt;code&gt;true&lt;/code&gt;, the &lt;code&gt;text&lt;/code&gt; and &lt;code&gt;icon&lt;/code&gt; properties are ignored. This property has a default value &lt;code&gt;true&lt;/code&gt;.</documentation>
+        </property>
+        <property name="type" type="sap.m/DialogType" defaultValue="Standard" group="Appearance">
+            <documentation>The &lt;code&gt;type&lt;/code&gt; of the Dialog. In some themes, the type Message will limit the Dialog width within 480px on tablet and desktop.</documentation>
+        </property>
+        <property name="state" type="sap.ui.core/ValueState" defaultValue="None" group="Appearance" since="1.11.2">
+            <documentation>Affects the &lt;code&gt;icon&lt;/code&gt; and the &lt;code&gt;title&lt;/code&gt; color. If other than &lt;code&gt;none&lt;/code&gt; is set, a predefined icon will be added to the Dialog. Setting the &lt;code&gt;icon&lt;/code&gt; property will overwrite the predefined icon. The default value is &lt;code&gt;none&lt;/code&gt; which doesn't add any icon to the Dialog control. This property is by now only supported by the blue crystal theme.</documentation>
+        </property>
+        <property name="stretchOnPhone" type="sap.ui.core/boolean" defaultValue="false" group="Appearance" since="1.11.2">
+            <documentation>Determines whether the Dialog will be displayed on full screen on a phone.</documentation>
+            <deprecation since="1.13.1">Please use the new stretch property instead. This enables a stretched Dialog even on tablet and desktop. If you want to achieve the same effect as &lt;code&gt;stretchOnPhone&lt;/code&gt;, please set the stretch with jQuery.device.is.phone, then the Dialog is only stretched when it runs on a phone.</deprecation>
+        </property>
+        <property name="stretch" type="sap.ui.core/boolean" defaultValue="false" group="Appearance" since="1.13.1">
+            <documentation>Determines if the Dialog will be stretched to full screen on mobile. On desktop, the Dialog will be stretched to 93% of the viewport. This property is only applicable to a Standard Dialog. Message-type Dialog ignores it.</documentation>
+        </property>
+        <property name="contentWidth" type="sap.ui.core/CSSSize" group="Dimension" since="1.12.1">
+            <documentation>Preferred width of the content in the Dialog. This property affects the width of the Dialog on a phone in landscape mode, a tablet or a desktop, because the Dialog has a fixed width on a phone in portrait mode. If the preferred width is less than the minimum width of the Dialog or more than the available width of the screen, it will be overwritten by the min or max value. The current mininum value of the Dialog width on tablet is 400px.</documentation>
+        </property>
+        <property name="contentHeight" type="sap.ui.core/CSSSize" group="Dimension" since="1.12.1">
+            <documentation>Preferred height of the content in the Dialog. If the preferred height is bigger than the available space on a screen, it will be overwritten by the maximum available height on a screen in order to make sure that the Dialog isn't cut off.</documentation>
+        </property>
+        <property name="horizontalScrolling" type="sap.ui.core/boolean" defaultValue="true" group="Behavior" since="1.15.1">
+            <documentation>Indicates if the user can scroll horizontally inside the Dialog when the content is bigger than the content area.
+The Dialog detects if there's &lt;code&gt;sap.m.NavContainer&lt;/code&gt;, &lt;code&gt;sap.m.Page&lt;/code&gt;, &lt;code&gt;sap.m.ScrollContainer&lt;/code&gt; or &lt;code&gt;sap.m.SplitContainer&lt;/code&gt; as a direct child added to the Dialog. If there is, the Dialog will turn off &lt;code&gt;scrolling&lt;/code&gt; by setting this property to &lt;code&gt;false&lt;/code&gt;, automatically ignoring the existing value of the property.</documentation>
+        </property>
+        <property name="verticalScrolling" type="sap.ui.core/boolean" defaultValue="true" group="Behavior" since="1.15.1">
+            <documentation>Indicates if the user can scroll vertically inside the Dialog when the content is bigger than the content area.
+The Dialog detects if there's &lt;code&gt;sap.m.NavContainer&lt;/code&gt;, &lt;code&gt;sap.m.Page&lt;/code&gt;, &lt;code&gt;sap.m.ScrollContainer&lt;/code&gt; or &lt;code&gt;sap.m.SplitContainer&lt;/code&gt; as a direct child added to the Dialog. If there is, the Dialog will turn off &lt;code&gt;scrolling&lt;/code&gt; by setting this property to &lt;code&gt;false&lt;/code&gt;, automatically ignoring the existing value of this property.</documentation>
+        </property>
+        <property name="resizable" type="sap.ui.core/boolean" defaultValue="false" group="Behavior" since="1.30">
+            <documentation>Indicates whether the Dialog is resizable. If this property is set to &lt;code&gt;true&lt;/code&gt;, the Dialog will have a resize handler in its bottom right corner. This property has a default value &lt;code&gt;false&lt;/code&gt;. The Dialog can be resizable only in desktop mode.</documentation>
+        </property>
+        <property name="draggable" type="sap.ui.core/boolean" defaultValue="false" group="Behavior" since="1.30">
+            <documentation>Indicates whether the Dialog is draggable. If this property is set to &lt;code&gt;true&lt;/code&gt;, the Dialog will be draggable by its header. This property has a default value &lt;code&gt;false&lt;/code&gt;. The Dialog can be draggable only in desktop mode.</documentation>
+        </property>
+        <property name="escapeHandler" type="sap.ui.core/any" group="Behavior" since="1.44">
+            <documentation>This property expects a function with one parameter of type Promise. In the function, you should call either &lt;code&gt;resolve()&lt;/code&gt; or &lt;code&gt;reject()&lt;/code&gt; on the Promise object.&lt;br/&gt;
+The function allows you to define custom behavior which will be executed when the Escape key is pressed. By default, when the Escape key is pressed, the Dialog is immediately closed.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="beforeOpen" allowPreventDefault="false">
+            <documentation>This event will be fired before the Dialog is opened.</documentation>
+        </event>
+        <event name="afterOpen" allowPreventDefault="false">
+            <documentation>This event will be fired after the Dialog is opened.</documentation>
+        </event>
+        <event name="beforeClose" allowPreventDefault="false">
+            <documentation>This event will be fired before the Dialog is closed.</documentation>
+            <parameters>
+                <parameter name="origin" type="sap.m/Button" since="1.9.2">
+                    <documentation>This indicates the trigger of closing the Dialog. If the Dialog is closed by either the &lt;code&gt;leftButton&lt;/code&gt; or the &lt;code&gt;rightButton&lt;/code&gt;, the button that closes the Dialog is set to this parameter. Otherwise, the parameter is set to &lt;code&gt;null&lt;/code&gt;.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="afterClose" allowPreventDefault="false">
+            <documentation>This event will be fired after the Dialog is closed.</documentation>
+            <parameters>
+                <parameter name="origin" type="sap.m/Button" since="1.9.2">
+                    <documentation>This indicates the trigger of closing the Dialog. If the Dialog is closed by either the &lt;code&gt;leftButton&lt;/code&gt; or the &lt;code&gt;rightButton&lt;/code&gt;, the button that closes the Dialog is set to this parameter. Otherwise, the parameter is set to &lt;code&gt;null&lt;/code&gt;.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations default="content">
+        <aggregation name="content" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>The content inside the Dialog.&lt;br/&gt;&lt;b&gt;Note:&lt;/b&gt; When the content of the Dialog is comprised of controls that use &lt;code&gt;position: absolute&lt;/code&gt;, such as &lt;code&gt;SplitContainer&lt;/code&gt;, the Dialog has to have either &lt;code&gt;stretch: true&lt;/code&gt; or &lt;code&gt;contentHeight&lt;/code&gt; set.</documentation>
+        </aggregation>
+        <aggregation name="subHeader" type="sap.m/IBar" since="1.12.2" cardinality="0..1">
+            <documentation>When a &lt;code&gt;subHeader&lt;/code&gt; is assigned to the Dialog, it's rendered directly after the main header in the Dialog. The &lt;code&gt;subHeader&lt;/code&gt; is out of the content area and won't be scrolled when the content size is bigger than the content area size.</documentation>
+        </aggregation>
+        <aggregation name="customHeader" type="sap.m/IBar" since="1.15.1" cardinality="0..1">
+            <documentation>When it is set, the &lt;code&gt;icon&lt;/code&gt;, &lt;code&gt;title&lt;/code&gt; and &lt;code&gt;showHeader&lt;/code&gt; properties are ignored. Only the &lt;code&gt;customHeader&lt;/code&gt; is shown as the header of the Dialog.</documentation>
+        </aggregation>
+        <aggregation name="beginButton" type="sap.m/Button" since="1.15.1" cardinality="0..1">
+            <documentation>The button which is rendered to the left side (right side in RTL mode) of the &lt;code&gt;endButton&lt;/code&gt; in the footer area inside the Dialog. As of version 1.21.1, there's a new aggregation &lt;code&gt;buttons&lt;/code&gt; created with which more than 2 buttons can be added to the footer area of the Dialog. If the new &lt;code&gt;buttons&lt;/code&gt; aggregation is set, any change made to this aggregation has no effect anymore. When running on a phone, this &lt;code&gt;button&lt;/code&gt; (and the &lt;code&gt;endButton&lt;/code&gt; together when set) is (are) rendered at the center of the footer area. When running on other platforms, this &lt;code&gt;button&lt;/code&gt; (and the &lt;code&gt;endButton&lt;/code&gt; together when set) is (are) rendered at the right side (left side in RTL mode) of the footer area.</documentation>
+        </aggregation>
+        <aggregation name="endButton" type="sap.m/Button" since="1.15.1" cardinality="0..1">
+            <documentation>The button which is rendered to the right side (left side in RTL mode) of the &lt;code&gt;beginButton&lt;/code&gt; in the footer area inside the Dialog. As of version 1.21.1, there's a new aggregation &lt;code&gt;buttons&lt;code&gt; created with which more than 2 buttons can be added to the footer area of Dialog. If the new &lt;code&gt;buttons&lt;/code&gt; aggregation is set, any change made to this aggregation has no effect anymore. When running on a phone, this &lt;code&gt;button&lt;/code&gt; (and the &lt;code&gt;beginButton&lt;/code&gt; together when set) is (are) rendered at the center of the footer area. When running on other platforms, this &lt;code&gt;button&lt;/code&gt; (and the &lt;code&gt;beginButton&lt;/code&gt; together when set) is (are) rendered at the right side (left side in RTL mode) of the footer area.</documentation>
+        </aggregation>
+        <aggregation name="buttons" type="sap.m/Button" since="1.21.1" cardinality="0..n">
+            <documentation>Buttons can be added to the footer area of the Dialog through this aggregation. When this aggregation is set, any change to the &lt;code&gt;beginButton&lt;/code&gt; and &lt;code&gt;endButton&lt;/code&gt; has no effect anymore. Buttons which are inside this aggregation are aligned at the right side (left side in RTL mode) of the footer instead of in the middle of the footer.</documentation>
+        </aggregation>
+        <aggregation name="_header" type="sap.ui.core/Control" cardinality="0..1" visibility="hidden">
+            <documentation>The hidden aggregation for internal maintained &lt;code&gt;header&lt;/code&gt;.</documentation>
+        </aggregation>
+        <aggregation name="_title" type="sap.ui.core/Control" cardinality="0..1" visibility="hidden">
+            <documentation>The hidden aggregation for internal maintained &lt;code&gt;title&lt;/code&gt; control.</documentation>
+        </aggregation>
+        <aggregation name="_icon" type="sap.ui.core/Control" cardinality="0..1" visibility="hidden">
+            <documentation>The hidden aggregation for internal maintained &lt;code&gt;icon&lt;/code&gt; control.</documentation>
+        </aggregation>
+        <aggregation name="_toolbar" type="sap.m/OverflowToolbar" cardinality="0..1" visibility="hidden">
+            <documentation>The hidden aggregation for internal maintained &lt;code&gt;toolbar&lt;/code&gt; instance.</documentation>
+        </aggregation>
+        <aggregation name="_valueState" type="sap.ui.core/InvisibleText" cardinality="0..1" visibility="hidden">
+            <documentation>The hidden aggregation for the Dialog state.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="leftButton" type="sap.m/Button" cardinality="0..1">
+            <documentation>&lt;code&gt;LeftButton&lt;/code&gt; is shown at the left edge of the bar in iOS, and at the right side of the bar for the other platforms. Please set this to &lt;code&gt;null&lt;/code&gt; if you want to remove the Left button from the bar. And the button is only removed from the bar, not destroyed. When &lt;code&gt;showHeader&lt;/code&gt; is set to &lt;code&gt;false&lt;/code&gt;, this property will be ignored. Setting &lt;code&gt;leftButton&lt;/code&gt; will also set the &lt;code&gt;beginButton&lt;/code&gt; internally.</documentation>
+            <deprecation since="1.15.1">&lt;code&gt;LeftButton&lt;/code&gt; has been deprecated since 1.15.1. Please use the &lt;code&gt;beginButton&lt;/code&gt; instead which is more RTL friendly.</deprecation>
+        </association>
+        <association name="rightButton" type="sap.m/Button" cardinality="0..1">
+            <documentation>&lt;code&gt;RightButton&lt;/code&gt; is always shown at the right edge of the bar. Please set this to null if you want to remove the Right button from the bar. And the button is only removed from the bar, not destroyed. When &lt;code&gt;showHeader&lt;/code&gt; is set to false, this property will be ignored. Setting &lt;code&gt;rightButton&lt;/code&gt; will also set the &lt;code&gt;endButton&lt;/code&gt; internally.</documentation>
+            <deprecation since="1.15.1">&lt;code&gt;RightButton&lt;/code&gt; has been deprecated since 1.15.1. Please use the &lt;code&gt;endButton&lt;/code&gt; instead which is more RTL friendly.</deprecation>
+        </association>
+        <association name="initialFocus" type="sap.ui.core/Control" cardinality="0..1" since="1.15.0">
+            <documentation>In the Dialog focus is set first on the &lt;code&gt;leftButton&lt;/code&gt; and then on &lt;code&gt;rightButton&lt;/code&gt;, when available. If another control needs to get the focus, set the &lt;code&gt;initialFocus&lt;/code&gt; with the control which should be focused on. Setting &lt;code&gt;initialFocus&lt;/code&gt; to input controls doesn't open the On-Screen keyboard on mobile device as, due to browser limitation, the On-Screen keyboard can't be opened with JavaScript code. The opening of On-Screen keyboard must be triggered by real user action.</documentation>
+        </association>
+        <association name="ariaDescribedBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls/IDs which describe this control (see WAI-ARIA attribute aria-describedby).</documentation>
+        </association>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls/IDs which label this control (see WAI-ARIA attribute aria-labelledby).</documentation>
+        </association>
+    </associations>
+    <methods>
+        <method name="open">
+            <documentation>Open the dialog.</documentation>
+        </method>
+        <method name="close">
+            <documentation>Close the dialog.</documentation>
+        </method>
+        <method name="isOpen" since="1.9.1">
+            <documentation>The method checks if the Dialog is open. It returns &lt;code&gt;true&lt;/code&gt; when the Dialog is currently open (this includes opening and closing animations), otherwise it returns &lt;code&gt;false&lt;/code&gt;.</documentation>
+        </method>
+    </methods>
+</control>

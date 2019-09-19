@@ -1,0 +1,9 @@
+{
+"version":3,
+"file":"sap/ui/vk/designtime/library-preload.designtime.js",
+"sourceroot":".",
+"sources":["Viewport.designtime-dbg.js","library.designtime-dbg.js"],
+"names":[],
+"mappings":";;;;;;;AAQA,gBAAa,4CAAC,GACb,UAAW,CACV,aAEA,MAAO,CACN,QAAS,CACR,MAAO,UACP,MAAO,CACN,IAAK,wCACN,CACD,EACA,UAAW,CACV,OAAQ,mDACT,CACD,EAED,EAAkB;ACdnB,gBAAa,2CAAC,GAAI,UAAW,CAC5B,aACA,MAAO,GACR;",
+"x_com_sap_openui5_sections":[65,443,443,542]
+}

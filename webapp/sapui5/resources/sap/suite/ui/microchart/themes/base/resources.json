@@ -1,0 +1,114 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": ".theming",
+			"theme": "base"
+		},
+		{
+			"name": "AreaMicroChart.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "BulletMicroChart.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "ColumnMicroChart.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "ComparisonMicroChart.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "DeltaMicroChart.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "HarveyBallMicroChart.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "InteractiveBarChart.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "InteractiveDonutChart.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "InteractiveLineChart.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "LineMicroChart.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "RadialMicroChart.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "SharedStyles.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "StackedBarMicroChart.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "img-RTL/stripes.png",
+			"theme": "base"
+		},
+		{
+			"name": "img/stripes.png",
+			"theme": "base"
+		},
+		{
+			"name": "library-RTL-dbg.css",
+			"isDebug": true,
+			"theme": "base"
+		},
+		{
+			"name": "library-RTL.css",
+			"theme": "base"
+		},
+		{
+			"name": "library-dbg.css",
+			"isDebug": true,
+			"theme": "base"
+		},
+		{
+			"name": "library-parameters.json",
+			"theme": "base"
+		},
+		{
+			"name": "library.css",
+			"theme": "base"
+		},
+		{
+			"name": "library.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "library.source.less",
+			"designtime": true,
+			"theme": "base"
+		}
+	]
+}

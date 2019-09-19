@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>FrameType</name>
+    <derived/>
+    <documentation>Enum for possible frame size types for sap.m.TileContent and sap.m.GenericTile control.</documentation>
+    <since>1.34.0</since>
+    <enumeration>
+        <value name="OneByOne">
+            <documentation>The 1x1 frame type.</documentation>
+        </value>
+        <value name="TwoByOne">
+            <documentation>The 2x1 frame type.</documentation>
+        </value>
+        <value name="TwoThirds">
+            <documentation>The 2/3 frame type.</documentation>
+            <deprecation since="1.48.0"></deprecation>
+        </value>
+        <value name="Auto">
+            <documentation>The Auto frame type that adjusts the size of the control to the content.
+Support for this type in sap.m.GenericTile is deprecated since 1.48.0.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

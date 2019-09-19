@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+<library  version="2.0" name="sap.fiori">
+  <module name="sap/fiori/core-ext-dbg.js" size="98" compressedSize="76" excludeFromAllInOne="true" raw="true">
+  </module>
+  <module name="sap/fiori/core-ext-light-dbg.js" size="98" compressedSize="76" excludeFromAllInOne="true" raw="true">
+  </module>
+  <module name="sap/fiori/flp-controls-dbg.js" size="98" compressedSize="76" raw="true">
+  </module>
+  <module name="sap/fiori/library-h2-preload.js" size="1671" dynamicDependencies="true">
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="jquery.sap.resources.js"/>
+      <module name="sap/ui/core/Core.js"/>
+      <module name="sap/ui/core/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+    <includes>
+      <module name="sap/fiori/library.js"/>
+      <module name="sap/fiori/manifest.json"/>
+      <module name="sap/fiori/core-ext-dbg.js"/>
+      <module name="sap/fiori/core-ext-light-dbg.js"/>
+      <module name="sap/fiori/flp-controls-dbg.js"/>
+    </includes>
+  </module>
+  <module name="sap/fiori/library-preload.js" size="1548" dynamicDependencies="true">
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="jquery.sap.resources.js"/>
+      <module name="sap/ui/core/Core.js"/>
+      <module name="sap/ui/core/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+    <includes>
+      <module name="sap/fiori/flp-controls-dbg.js"/>
+      <module name="sap/fiori/library.js"/>
+      <module name="sap/fiori/manifest.json"/>
+    </includes>
+  </module>
+  <module name="sap/fiori/library-preload.json" size="0" dynamicDependencies="true">
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="jquery.sap.resources.js"/>
+      <module name="sap/ui/core/Core.js"/>
+      <module name="sap/ui/core/library-preload.json"/>
+      <module name="sap/ui/core/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+    <includes>
+      <module name="sap/fiori/flp-controls-dbg.js"/>
+      <module name="sap/fiori/library.js"/>
+      <module name="sap/fiori/manifest.json"/>
+    </includes>
+  </module>
+  <module name="sap/fiori/library.js" size="1254" compressedSize="598" dynamicDependencies="true">
+    <description>Initialization Code and shared classes of library sap.fiori.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="jquery.sap.resources.js"/>
+      <module name="sap/ui/core/Core.js"/>
+      <module name="sap/ui/core/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/fiori/manifest.json" size="997">
+  </module>
+</library>

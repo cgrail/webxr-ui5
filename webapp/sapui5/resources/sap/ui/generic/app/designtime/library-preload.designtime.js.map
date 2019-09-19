@@ -1,0 +1,9 @@
+{
+"version":3,
+"file":"sap/ui/generic/app/designtime/library-preload.designtime.js",
+"sourceroot":".",
+"sources":["navigation/service/NavigationHandler.designtime-dbg.js"],
+"names":[],
+"mappings":";;;;;;AAOA,gBAAa,iFAAC,GAAI,UAAW,CAC5B,aACA,MAAO,CACN,YAAa,CAeZ,YAAa,CACZ,UAAW,uCACX,WAAY,yBACZ,OAAQ,CACP,UACD,EACA,UAAW,CACV,8BACD,EACA,MAAO,CACN,UACD,EACA,MAAO,QACR,CACD,CACD,EACD,EAAiB;",
+"x_com_sap_openui5_sections":[74,498]
+}

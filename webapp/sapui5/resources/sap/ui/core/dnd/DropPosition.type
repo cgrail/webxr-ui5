@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>dnd/DropPosition</name>
+    <derived/>
+    <documentation>Configuration options for drop positions.</documentation>
+    <since>1.52.0</since>
+    <enumeration>
+        <value name="On">
+            <documentation>Drop on the control.</documentation>
+        </value>
+        <value name="Between">
+            <documentation>Drop between the controls.</documentation>
+        </value>
+        <value name="OnOrBetween">
+            <documentation>Drop on the control or between the controls.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

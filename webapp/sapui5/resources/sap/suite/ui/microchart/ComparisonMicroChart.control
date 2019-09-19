@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ComparisonMicroChart</name>
+    <derived/>
+    <documentation>Illustrates values as colored bar charts with title, numeric value, and scaling factor in the content area. This control replaces the deprecated sap.suite.ui.commons.ComparisonChart.
+&lt;br&gt;Note: You can assign a custom tooltip for this microchart. The custom tooltip can be set using expression binding. When no custom tooltip is defined, the tooltip is generated automatically based on the logic described in {@link sap.ui.core.Element#getTooltip_AsString}. For a combination of a generated and a custom tooltip, use &lt;code&gt;((AltText))&lt;/code&gt; inside of the tooltip string. The aggregated data of the microchart can also be customized.</documentation>
+    <since>1.34</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="size" type="sap.m/Size" defaultValue="Auto" group="Misc">
+            <documentation>The size of the microchart. If not set, the default size is applied based on the size of the device tile.
+Responsive size takes width and height of the parent container where the bullet micro chart is included.</documentation>
+        </property>
+        <property name="scale" type="sap.ui.core/string" defaultValue="" group="Misc">
+            <documentation>The scaling suffix that is added to the actual and target values.</documentation>
+        </property>
+        <property name="minValue" type="sap.ui.core/float" group="Appearance" since="1.42.0">
+            <documentation>The minimum scale value for the chart used to define the value range of the scale for comparing different values.</documentation>
+        </property>
+        <property name="maxValue" type="sap.ui.core/float" group="Appearance" since="1.42.0">
+            <documentation>The maximum scale value for the chart used to define the value range of the scale for comparing different values.</documentation>
+        </property>
+        <property name="view" type="sap.suite.ui.microchart/ComparisonMicroChartViewType" defaultValue="Normal" group="Appearance">
+            <documentation>The view of the chart. If not set, the Normal view is used by default.</documentation>
+        </property>
+        <property name="colorPalette" type="sap.ui.core/string[]" defaultValue="[]" group="Appearance">
+            <documentation>The color palette for the chart. If this property is set, semantic colors defined in ComparisonData are ignored. Colors from the palette are assigned to each bar consequentially. When all the palette colors are used, assignment of the colors begins from the first palette color.</documentation>
+        </property>
+        <property name="shrinkable" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>If it is set to true, the height of the control is defined by its content.</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" group="Appearance">
+            <documentation>The width of the chart. Overrides the width specified in the &lt;code&gt;size&lt;/code&gt; property.</documentation>
+        </property>
+        <property name="height" type="sap.ui.core/CSSSize" group="Appearance">
+            <documentation>The height of the chart. Overrides the height specified in the &lt;code&gt;size&lt;/code&gt; property.</documentation>
+        </property>
+        <property name="isResponsive" type="sap.ui.core/boolean" defaultValue="false" group="Appearance" since="1.38.0">
+            <documentation>If this set to true, width and height of the control are determined by the width and height of the container in which the control is placed. Size and Width properties are ignored in such case.</documentation>
+            <deprecation since="1.58"></deprecation>
+        </property>
+    </properties>
+    <events>
+        <event name="press" allowPreventDefault="false">
+            <documentation>The event is triggered when the chart is pressed.</documentation>
+        </event>
+    </events>
+    <aggregations default="data">
+        <aggregation name="data" type="sap.suite.ui.microchart/ComparisonMicroChartData" cardinality="0..n" bindable="bindable">
+            <documentation>The comparison chart bar data.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n" since="1.60.0">
+            <documentation>Controls or IDs that label this control. Can be used by screen reader software.</documentation>
+        </association>
+    </associations>
+</control>

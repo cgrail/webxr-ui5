@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartvariants/SmartVariantManagementAdapter</name>
+    <derived/>
+    <documentation>Handles the odata metadata based information. An instance of this class will be created and used by the
+       {@link sap.ui.comp.smartvariants.SmartVariantManagement SmartVariantManagement} control. The adapter transforms odata metadata based
+       SelectionPresentationVariant information to UIState object. For each SelectionPresentationVariant annotation an entry will be added to
+       the VariantManagement control. It will be called by the SmartVariantManagement whenever the user selects the corresponding entry and
+       will provide a valid {@link sap.ui.comp.state.UIState UIState} object.</documentation>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="selectionPresentationVariants" type="sap.ui.core/object" defaultValue="false" group="Misc">
+            <documentation>assign an array of selectionPresentationVariants annotations.</documentation>
+        </property>
+    </properties>
+</control>

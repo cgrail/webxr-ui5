@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>StackedBarMicroChart</name>
+    <derived/>
+    <documentation>Illustrates values as stacked and colored bar charts displaying numeric values (as absolute values or percentages) inside the bars.
+&lt;br&gt;Note: You can assign a custom tooltip for this microchart. The custom tooltip can be set using expression binding. When no custom tooltip is defined, the tooltip is generated automatically based on the logic described in {@link sap.ui.core.Element#getTooltip_AsString}. For a combination of a generated and a custom tooltip, use &lt;code&gt;((AltText))&lt;/code&gt; inside of the tooltip string. The aggregated data of the microchart can also be customized.</documentation>
+    <since>1.44.0</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="size" type="sap.m/Size" defaultValue="Auto" group="Appearance">
+            <documentation>The size of the chart. If not set, the default size is applied based on the size of the device tile.
+Responsive size takes width and height of the parent container where the stacked bar micro chart is included.</documentation>
+        </property>
+        <property name="maxValue" type="sap.ui.core/float" group="Appearance">
+            <documentation>The maximum value can be set to scale StackedBarMicroChartBar values to the same base.
+If maxValue is smaller than the sum of all StackedMicroChartBar values, the maxValue is ignored. All values are shown as percentage values (same behavior as maxValue is not used).
+If maxValue is equal or bigger than the sum of all StackedMicroChartBars, all values are scaled to the value of maxValue and the percentage mode is turned off. Absolute values are shown instead.
+The difference between the sum and maxValue is shown as invisible bar, thus e.g. different StackedBarMicroChart instances can be compared.</documentation>
+        </property>
+        <property name="precision" type="sap.ui.core/int" defaultValue="1" group="Appearance">
+            <documentation>The precision of the rounding for the calculated percentage values of the bars. It defines how many digits after the decimal point are displayed. The default is set to 1 digit.</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" group="Misc">
+            <documentation>The width of the chart. Overrides the width specified in the &lt;code&gt;size&lt;/code&gt; property.</documentation>
+        </property>
+        <property name="height" type="sap.ui.core/CSSSize" group="Misc">
+            <documentation>The height of the chart. Overrides the height specified in the &lt;code&gt;size&lt;/code&gt; property.</documentation>
+        </property>
+        <property name="showLabels" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Defines whether the bar labels should be rendered. If set to &lt;code&gt;true&lt;/code&gt;, the labels that were specified for each bar become visible.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="press" allowPreventDefault="false">
+            <documentation>The event is fired when the user chooses the microchart.</documentation>
+        </event>
+    </events>
+    <aggregations default="bars">
+        <aggregation name="bars" type="sap.suite.ui.microchart/StackedBarMicroChartBar" cardinality="0..n" bindable="bindable">
+            <documentation>The stacked bar chart items.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n" since="1.60.0">
+            <documentation>Controls or IDs that label this control. Can be used by screen reader software.</documentation>
+        </association>
+    </associations>
+</control>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartform/ColumnLayout</name>
+    <derived/>
+    <documentation>If this layout is used in a &lt;code&gt;SmartForm&lt;/code&gt; control, a &lt;code&gt;ColumnLayout&lt;/code&gt; control is used
+to render the &lt;code&gt;Form&lt;/code&gt; control.
+
+&lt;b&gt;Note:&lt;/b&gt; If this layout is used, the &lt;code&gt;useHorizontalLayout&lt;/code&gt; property of the &lt;code&gt;SmartForm&lt;/code&gt; control
+must not be set.</documentation>
+    <since>1.56.0</since>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="columnsXL" type="sap.ui.layout/form/ColumnsXL" defaultValue="2" group="Appearance">
+            <documentation>Number of columns for extra-large size.
+
+The number of columns for extra-large size must not be smaller than the number of columns for large size.</documentation>
+        </property>
+        <property name="columnsL" type="sap.ui.layout/form/ColumnsL" defaultValue="2" group="Appearance">
+            <documentation>Number of columns for large size.
+
+The number of columns for large size must not be smaller than the number of columns for medium size.</documentation>
+        </property>
+        <property name="columnsM" type="sap.ui.layout/form/ColumnsM" defaultValue="1" group="Appearance">
+            <documentation>Number of columns for medium size.</documentation>
+        </property>
+        <property name="labelCellsLarge" type="sap.ui.layout/form/ColumnCells" defaultValue="4" group="Appearance">
+            <documentation>Defines how many cells a label uses if the column is large.</documentation>
+        </property>
+        <property name="emptyCellsLarge" type="sap.ui.layout/form/EmptyCells" defaultValue="0" group="Appearance">
+            <documentation>Defines how many cells are empty at the end of a row.
+This could be used to keep the fields small on large screens.</documentation>
+        </property>
+    </properties>
+</control>

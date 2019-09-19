@@ -1,0 +1,25 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout">
+	<Dialog class="sapUiNoContentPadding" id="messageDialog" state="{settings>/state}" type="Message"
+		showHeader="true" horizontalScrolling="false" draggable="true" 
+		contentHeight="440px" contentWidth="440px" verticalScrolling="false">
+		<content>
+			<MessageView items="{message>/}" showDetailsPageHeader="false" itemSelect="onMessageSelect" groupItems="true">
+				<MessageItem type="{message>type}" title="{message>message}" description="{message>description}" 
+							longtextUrl="{message>descriptionUrl}" groupName="{path:'message>target', formatter:'.getGroupName'}" />
+			</MessageView>
+		</content>
+		<customHeader>
+			<Bar>
+				<contentMiddle>
+					<Text text="{settings>/title}" />
+				</contentMiddle>
+				<contentLeft>
+					<Button icon="sap-icon://nav-back" visible="false" press="onBackButtonPress"/>
+				</contentLeft>
+			</Bar>
+		</customHeader>
+		<buttons>
+			<Button text="{settings>/closeButtonText}" id="Close" press="onMessageDialogClose"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

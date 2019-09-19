@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>PlanningCalendarLegend</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A legend for the {@link sap.m.PlanningCalendar} that displays the special dates and appointments in colors with their corresponding description.
+The &lt;code&gt;PlanningCalendarLegend&lt;/code&gt; extends {@link sap.ui.unified.CalendarLegend} and
+overwrites the default value for property &lt;code&gt;columnWidth&lt;/code&gt; to &lt;code&gt;auto&lt;/code&gt;</documentation>
+    <since>1.50</since>
+    <baseType>sap.ui.unified/CalendarLegend</baseType>
+    <properties>
+        <property name="itemsHeader" type="sap.ui.core/string" defaultValue="Calendar" group="Appearance">
+            <documentation>Defines the text displayed in the header of the items list. It is commonly related to the calendar days.</documentation>
+        </property>
+        <property name="appointmentItemsHeader" type="sap.ui.core/string" defaultValue="Appointments" group="Appearance">
+            <documentation>Defines the text displayed in the header of the appointment items list. It is commonly related to the calendar appointments.</documentation>
+        </property>
+    </properties>
+    <aggregations>
+        <aggregation name="appointmentItems" type="sap.ui.unified/CalendarLegendItem" cardinality="0..n">
+            <documentation>The legend items which show color and type information about the calendar appointments.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

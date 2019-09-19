@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ObjectPageDynamicHeaderTitle</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Represents the static part (header title) of the dynamic header of the {@link sap.uxap.ObjectPageLayout}.
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+
+The &lt;code&gt;ObjectPageDynamicHeaderTitle&lt;/code&gt; is used to represent the most important details of
+the displayed business object, such as the object title and actions that the user can perform.
+
+&lt;b&gt;Note:&lt;/b&gt; The &lt;code&gt;ObjectPageDynamicHeaderTitle&lt;/code&gt; is meant to be used inside the &lt;code&gt;ObjectPageLayout&lt;/code&gt;
+control. Any other usage is not supported and can lead to unexpected behavior.</documentation>
+    <since>1.52</since>
+    <baseType>sap.f/DynamicPageTitle</baseType>
+</control>

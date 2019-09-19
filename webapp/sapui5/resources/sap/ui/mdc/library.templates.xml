@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Library name="sap.ui.mdc" xmlns="http://www.sap.com/ui5/ide/templates/xmlview">
+<Template name="sap.ui.mdc.base.filterbar.ConditionsData" alias="ConditionsData,Data">
+	<jsTemplate><![CDATA[new sap.ui.mdc.base.filterbar.ConditionsData({
+	id: "${id}", // sap.ui.core.ID
+	fieldPath: undefined, // string
+	conditions: [], // object
+	outValues: [], // string[]
+	tooltip: undefined, // sap.ui.core.TooltipBase
+	customData: [], // sap.ui.core.CustomData
+	dependents: [], // sap.ui.core.Element, since 1.19
+	dragDropConfig: [] // sap.ui.core.dnd.DragDropBase, since 1.56
+})
+]]></jsTemplate>
+	<xmlTemplate><![CDATA[<base/filterbar/ConditionsData xmlns="sap.ui.mdc"
+	id="${id}"
+	fieldPath=""
+	conditions="[]"
+	outValues="">
+		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+		<dependents></dependents> <!-- sap.ui.core.Element, since 1.19 -->
+		<dragDropConfig></dragDropConfig> <!-- sap.ui.core.dnd.DragDropBase, since 1.56 -->
+</base/filterbar/ConditionsData>
+]]></xmlTemplate>
+</Template>
+<Template name="sap.ui.mdc.base.filterbar.FilterItemLayout" alias="FilterItemLayout,Layout">
+	<jsTemplate><![CDATA[new sap.ui.mdc.base.filterbar.FilterItemLayout({
+	id: "${id}", // sap.ui.core.ID
+	blocked: false, // boolean
+	busy: false, // boolean
+	busyIndicatorDelay: 1000, // int
+	busyIndicatorSize: sap.ui.core.BusyIndicatorSize.Medium, // sap.ui.core.BusyIndicatorSize, since 1.54
+	visible: true, // boolean
+	fieldGroupIds: [], // string[], since 1.31
+	width: undefined, // sap.ui.core.CSSSize
+	enabled: true, // boolean
+	tooltip: undefined, // sap.ui.core.TooltipBase
+	customData: [], // sap.ui.core.CustomData
+	dependents: [], // sap.ui.core.Element, since 1.19
+	dragDropConfig: [], // sap.ui.core.dnd.DragDropBase, since 1.56
+	content: [], // sap.ui.core.Control
+	validateFieldGroup: [function (oEvent) {
+		var ${control} = oEvent.getSource();
+	}, this]
+})
+]]></jsTemplate>
+	<xmlTemplate><![CDATA[<base/filterbar/FilterItemLayout xmlns="sap.ui.mdc"
+	id="${id}"
+	blocked="false"
+	busy="false"
+	busyIndicatorDelay="1000"
+	busyIndicatorSize="Medium"
+	visible="true"
+	fieldGroupIds=""
+	width=""
+	enabled="true"
+	validateFieldGroup="">
+		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+		<dependents></dependents> <!-- sap.ui.core.Element, since 1.19 -->
+		<dragDropConfig></dragDropConfig> <!-- sap.ui.core.dnd.DragDropBase, since 1.56 -->
+		<content></content> <!-- sap.ui.core.Control -->
+</base/filterbar/FilterItemLayout>
+]]></xmlTemplate>
+</Template>
+<Template name="sap.ui.mdc.base.state.SelectOption" alias="SelectOption,Option">
+	<jsTemplate><![CDATA[new sap.ui.mdc.base.state.SelectOption({
+	id: "${id}", // sap.ui.core.ID
+	propertyName: undefined, // string
+	tooltip: undefined, // sap.ui.core.TooltipBase
+	customData: [], // sap.ui.core.CustomData
+	dependents: [], // sap.ui.core.Element, since 1.19
+	dragDropConfig: [] // sap.ui.core.dnd.DragDropBase, since 1.56
+})
+]]></jsTemplate>
+	<xmlTemplate><![CDATA[<base/state/SelectOption xmlns="sap.ui.mdc"
+	id="${id}"
+	propertyName="">
+		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+		<dependents></dependents> <!-- sap.ui.core.Element, since 1.19 -->
+		<dragDropConfig></dragDropConfig> <!-- sap.ui.core.dnd.DragDropBase, since 1.56 -->
+</base/state/SelectOption>
+]]></xmlTemplate>
+</Template>
+<Template name="sap.ui.mdc.base.state.SortOrder" alias="SortOrder,Order">
+	<jsTemplate><![CDATA[new sap.ui.mdc.base.state.SortOrder({
+	id: "${id}", // sap.ui.core.ID
+	propertyName: undefined, // string
+	descending: undefined, // boolean
+	tooltip: undefined, // sap.ui.core.TooltipBase
+	customData: [], // sap.ui.core.CustomData
+	dependents: [], // sap.ui.core.Element, since 1.19
+	dragDropConfig: [] // sap.ui.core.dnd.DragDropBase, since 1.56
+})
+]]></jsTemplate>
+	<xmlTemplate><![CDATA[<base/state/SortOrder xmlns="sap.ui.mdc"
+	id="${id}"
+	propertyName=""
+	descending="">
+		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+		<dependents></dependents> <!-- sap.ui.core.Element, since 1.19 -->
+		<dragDropConfig></dragDropConfig> <!-- sap.ui.core.dnd.DragDropBase, since 1.56 -->
+</base/state/SortOrder>
+]]></xmlTemplate>
+</Template>
+<Template name="sap.ui.mdc.base.state.UiState" alias="UiState,State">
+	<jsTemplate><![CDATA[new sap.ui.mdc.base.state.UiState({
+	id: "${id}", // sap.ui.core.ID
+	tooltip: undefined, // sap.ui.core.TooltipBase
+	customData: [], // sap.ui.core.CustomData
+	dependents: [], // sap.ui.core.Element, since 1.19
+	dragDropConfig: [], // sap.ui.core.dnd.DragDropBase, since 1.56
+	sortOrders: [], // sap.ui.mdc.base.state.SortOrder
+	selectOptions: [] // sap.ui.mdc.base.state.SelectOption
+})
+]]></jsTemplate>
+	<xmlTemplate><![CDATA[<base/state/UiState xmlns="sap.ui.mdc"
+	id="${id}">
+		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+		<dependents></dependents> <!-- sap.ui.core.Element, since 1.19 -->
+		<dragDropConfig></dragDropConfig> <!-- sap.ui.core.dnd.DragDropBase, since 1.56 -->
+		<sortOrders></sortOrders> <!-- sap.ui.mdc.base.state.SortOrder -->
+		<selectOptions></selectOptions> <!-- sap.ui.mdc.base.state.SelectOption -->
+</base/state/UiState>
+]]></xmlTemplate>
+</Template>
+</Library>

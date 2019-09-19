@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>semantic/SemanticButton</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A semantic button is either a {@link sap.m.Button} or {@link sap.m.semantic.SemanticOverflowToolbarButton} ,
+eligible for aggregation content of a {@link sap.m.semantic.SemanticPage}.</documentation>
+    <since>1.30.0</since>
+    <abstract/>
+    <baseType>sap.m/semantic/SemanticControl</baseType>
+    <properties>
+        <property name="enabled" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>See {@link sap.m.Button#enabled}</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="press" allowPreventDefault="false">
+            <documentation>See {@link sap.m.Button#press}</documentation>
+        </event>
+    </events>
+</control>

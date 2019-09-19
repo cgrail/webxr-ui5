@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ObjectMarkerVisibility</name>
+    <derived/>
+    <documentation>Predefined visibility for ObjectMarker.</documentation>
+    <enumeration>
+        <value name="IconOnly">
+            <documentation>Shows only icon</documentation>
+        </value>
+        <value name="TextOnly">
+            <documentation>Shows only text</documentation>
+        </value>
+        <value name="IconAndText">
+            <documentation>Shows icon and text</documentation>
+        </value>
+    </enumeration>
+</simple-type>

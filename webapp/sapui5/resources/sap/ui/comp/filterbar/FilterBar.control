@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>filterbar/FilterBar</name>
+    <derived/>
+    <author>SAP</author>
+    <documentation>The control displays filters in a user-friendly manner to populate values for a query. The FilterBar consists of a row containing the
+       {@link sap.ui.comp.variants.VariantManagement VariantManagement} control, the related buttons, and an area underneath displaying the
+       filters. The filters are arranged in a logical row that is divided depending on the space available and the width of the filters. The
+       area containing the filters can be hidden or shown using the Hide FilterBar / Show FilterBar button. The Go button triggers the search
+       event, and the Filters button shows the filter dialog.&lt;br&gt;
+       In this dialog, the consumer has full control over the FilterBar. The filters in this dialog are displayed in one column and organized
+       in groups. The filter items of the &lt;code&gt;filterItems&lt;/code&gt; aggregation are grouped in the Basic group . Each filter can be marked as
+       visible in the FilterBar by selecting Add to FilterBar. In addition, the items in the &lt;code&gt;filterGroupItems&lt;/code&gt; aggregation can be
+       marked as part of the current variant. The FilterBar also supports a different UI layout when used inside a value help dialog. In this
+       case the FilterBar consists of two logical areas, one containing the general search button and one the Advanced Search area. The
+       Advanced Search is a collapsible area displaying the advanced filters in two columns.</documentation>
+    <baseType>sap.ui.layout/Grid</baseType>
+    <properties>
+        <property name="persistencyKey" type="sap.ui.core/string" defaultValue="" group="Misc">
+            <documentation>Key used to access personalization data. Only if the persistencyKey is provided, will the &lt;code&gt;VariantManagement&lt;/code&gt; control
+be used.</documentation>
+        </property>
+        <property name="advancedMode" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>The advanced mode is only relevant for the value help scenario. UI representation is different from the standard FilterBar.</documentation>
+        </property>
+        <property name="expandAdvancedArea" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>Collapses/expands the advanced area.</documentation>
+            <deprecation since="1.30.0">Replaced by property &lt;code&gt;filterBarExpanded&lt;/code&gt; This property is mapped to the
+            filterBarExpanded property.</deprecation>
+        </property>
+        <property name="searchEnabled" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Enables/disables the Search button.</documentation>
+            <deprecation since="1.32.0"></deprecation>
+        </property>
+        <property name="filterBarExpanded" type="sap.ui.core/boolean" defaultValue="true" group="Misc" since="1.26.1">
+            <documentation>Shows/hides the filter row.</documentation>
+        </property>
+        <property name="considerGroupTitle" type="sap.ui.core/boolean" defaultValue="false" group="Misc" since="1.28.0">
+            <documentation>If this property is set, then the label for filters will be prefixed with the group title.</documentation>
+        </property>
+        <property name="showClearButton" type="sap.ui.core/boolean" defaultValue="false" group="Misc" since="1.26.1">
+            <documentation>Handles visibility of the Clear button on the Filters dialog.</documentation>
+        </property>
+        <property name="showRestoreButton" type="sap.ui.core/boolean" defaultValue="true" group="Misc" since="1.26.1">
+            <documentation>Handles visibility of the Restore button on the Filters dialog.</documentation>
+        </property>
+        <property name="showGoOnFB" type="sap.ui.core/boolean" defaultValue="true" group="Misc" since="1.28.0">
+            <documentation>Handles visibility of the Go button on the FilterBar.</documentation>
+        </property>
+        <property name="showRestoreOnFB" type="sap.ui.core/boolean" defaultValue="false" group="Misc" since="1.28.0">
+            <documentation>Handles visibility of the Restore button on the FilterBar.</documentation>
+        </property>
+        <property name="showClearOnFB" type="sap.ui.core/boolean" defaultValue="false" group="Misc" since="1.28.0">
+            <documentation>Handles visibility of the Clear button on the FilterBar.</documentation>
+        </property>
+        <property name="showGoButton" type="sap.ui.core/boolean" group="Misc" since="1.26.1">
+            <documentation>Handles visibility of the Go button on the FilterBar.</documentation>
+            <deprecation since="1.28.0">Replaced by property &lt;code&gt;showGoOnFB&lt;/code&gt;</deprecation>
+        </property>
+        <property name="deltaVariantMode" type="sap.ui.core/boolean" defaultValue="true" group="Misc" since="1.34.0">
+            <documentation>Stores the delta as compared to the standard variant.</documentation>
+        </property>
+        <property name="filterContainerWidth" type="sap.ui.core/string" defaultValue="12rem" group="Misc" since="1.34.0">
+            <documentation>Sets the width of the filters container.</documentation>
+        </property>
+        <property name="useToolbar" type="sap.ui.core/boolean" defaultValue="true" group="Misc" since="1.38.0">
+            <documentation>Determines what design should be used. Default is the design with the toolbar. The design with the toolbar is always used on
+phones.</documentation>
+        </property>
+        <property name="header" type="sap.ui.core/string" defaultValue="" group="Misc" since="1.38.0">
+            <documentation>Specifies header text that is shown in the toolbar on the first position. This property is ignored, when &lt;code&gt;useToolbar&lt;/code&gt;
+is set to &lt;code&gt;false&lt;/code&gt;.</documentation>
+        </property>
+        <property name="showFilterConfiguration" type="sap.ui.core/boolean" defaultValue="true" group="Misc" since="1.38.0">
+            <documentation>Handles visibility of the Filters button on the FilterBar.</documentation>
+        </property>
+        <property name="useSnapshot" type="sap.ui.core/boolean" group="Misc" since="1.44">
+            <documentation>Determines the behavior when &lt;code&gt;reset&lt;/code&gt; is executed. &lt;br&gt;
+&lt;b&gt;Note:&lt;/b&gt; This property is only relevant if no variant management is used, and the filter bar is not used in the advanced mode.
+A snapshot shows the current state of the filter bar, just before the Filters dialog is opened.
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;undefined&lt;/code&gt; (default) defines the standard behavior: snapshot will be applied after &lt;code&gt;reset&lt;/code&gt; was
+triggered&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;false&lt;/code&gt; defines that the snapshot will not be applied&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;true&lt;/code&gt;is not considered at all&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="cancel" allowPreventDefault="false">
+            <documentation>This event is fired when the Cancel button on the Filters dialog is pressed and the variant is marked as dirty.</documentation>
+        </event>
+        <event name="reset" allowPreventDefault="false">
+            <documentation>This event is fired when the Restore button is pressed.</documentation>
+            <parameters>
+                <parameter name="selectionSet" type="sap.ui.core/Control[]">
+                    <documentation>Visible controls</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="search" allowPreventDefault="false">
+            <documentation>This event is fired when the Go button is pressed.</documentation>
+            <parameters>
+                <parameter name="selectionSet" type="sap.ui.core/Control[]">
+                    <documentation>Visible controls</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="beforeVariantSave" allowPreventDefault="false">
+            <documentation>This event is fired before a variant is saved. The event can be used to adapt the data of the custom filters, which will be saved
+as variant later.</documentation>
+            <deprecation since="1.48.2">Replaced by the event &lt;code&gt;beforeVariantFetch&lt;/code&gt;</deprecation>
+            <parameters>
+                <parameter name="context" type="sap.ui.core/string">
+                    <documentation>Context of the event. Can also be &lt;code&gt;null&lt;/code&gt; or &lt;code&gt;undefined&lt;/code&gt;</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="beforeVariantFetch" since="1.28.13" allowPreventDefault="false">
+            <documentation>This event is fired before a variant is fetched.</documentation>
+        </event>
+        <event name="afterVariantLoad" allowPreventDefault="false">
+            <documentation>This event is fired after a variant has been loaded and applied to the FilterBar. The event can be used to adapt custom filters
+with data from the variant.</documentation>
+            <parameters>
+                <parameter name="context" type="sap.ui.core/string">
+                    <documentation>Context of the event. Can also be &lt;code&gt;null&lt;/code&gt; or &lt;code&gt;undefined&lt;/code&gt;</documentation>
+                </parameter>
+                <parameter name="executeOnSelect" type="sap.ui.core/boolean" since="1.44.0">
+                    <documentation>executeOnSelect indicates if the variant will trigger search</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="filterChange" allowPreventDefault="false">
+            <documentation>This event is fired when a filter or multiple filters has changed.</documentation>
+        </event>
+        <event name="clear" allowPreventDefault="false">
+            <documentation>This event is fired when the Clear button is pressed. The consumer has to clear all filters.</documentation>
+            <parameters>
+                <parameter name="selectionSet" type="sap.ui.core/Control[]">
+                    <documentation>Visible controls</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="initialise" allowPreventDefault="false">
+            <documentation>This event is fired when the FilterBar is initialized to indicate that metadata are available.</documentation>
+        </event>
+        <event name="initialized" since="1.38.0" allowPreventDefault="false">
+            <documentation>This event is fired after the &lt;code&gt;FilterBar&lt;/code&gt; has been initialized, the user's default variant has been applied, and a
+stable filter state has been achieved. With this event all relevant filter information, for example, for navigation-related
+actions, is available via {@link sap.ui.comp.filterbar.FilterBar#getUiState}.</documentation>
+        </event>
+        <event name="afterVariantSave" allowPreventDefault="false">
+            <documentation>This event is fired after a variant has been saved.</documentation>
+        </event>
+        <event name="filtersDialogClosed" since="1.34.0" allowPreventDefault="false">
+            <documentation>This event is fired after the filters dialog is closed.</documentation>
+            <parameters>
+                <parameter name="context" type="sap.ui.core/string">
+                    <documentation>Context of the event. Can also be &lt;code&gt;null&lt;/code&gt; or &lt;code&gt;undefined&lt;/code&gt;</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="filtersDialogBeforeOpen" since="1.48.0" allowPreventDefault="false">
+            <documentation>This event is fired after the filters dialog is opened.</documentation>
+        </event>
+        <event name="filtersDialogCancel" since="1.48.0" allowPreventDefault="false">
+            <documentation>This event is fired when the Cancel button on the filters dialog is pressed.</documentation>
+        </event>
+        <event name="filtersDialogSearch" since="1.48.0" allowPreventDefault="false">
+            <documentation>This event is fired when the Go button on the filters dialog is pressed.</documentation>
+        </event>
+        <event name="filtersDialogSearchForFilters" since="1.48.0" allowPreventDefault="false">
+            <documentation>This event is fired when search field of the filter dialog is changed.</documentation>
+            <parameters>
+                <parameter name="newValue" type="sap.ui.core/string">
+                    <documentation>Contains the entered search filed value</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="assignedFiltersChanged" since="1.38.0" allowPreventDefault="false">
+            <documentation>This event is fired when the filters information has changed. It indicates specifically that the count of assigned filters may be
+changed. One of the intended reaction to this event would be to call &lt;code&gt;retrieveFiltersWithValuesAsText&lt;/code&gt; method.</documentation>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="filterItems" type="sap.ui.comp/filterbar/FilterItem" cardinality="0..n">
+            <documentation>Filters belonging to the basic group.</documentation>
+            <deprecation since="1.48.0">Use aggregation &lt;code&gt;filterGroupItems&lt;/code&gt; instead.</deprecation>
+        </aggregation>
+        <aggregation name="filterGroupItems" type="sap.ui.comp/filterbar/FilterGroupItem" cardinality="0..n">
+            <documentation>Contains all FilterBar filters. &lt;br&gt;
+&lt;code&gt;Note:&lt;/code&gt;In case a filter has to be added to the basic group
+&lt;ul&gt;
+&lt;li&gt;the property &lt;code&gt;groupName&lt;/code&gt; has to be set to the constant
+&lt;code&gt;sap.ui.comp.filterbar.FilterBar.INTERNAL_GROUP&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;the property &lt;code&gt;groupLabel&lt;/code&gt; will be handled internally and will be ignored, if set&lt;/li&gt;
+&lt;li&gt;the property &lt;code&gt;partOfCurrentVariant&lt;/code&gt; has to be set to &lt;code&gt;true&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;if the property &lt;code&gt;visibleInFilterBar&lt;/code&gt; is set to &lt;code&gt;true&lt;/code&gt;, the property
+&lt;code&gt;partOfCurrentVariant&lt;/code&gt; will be set internally also to &lt;code&gt;true&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+        </aggregation>
+        <aggregation name="_parameters" type="sap.ui.comp/filterbar/FilterGroupItem" cardinality="0..n" visibility="hidden">
+            <documentation>Special handling for analytic parameters.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="basicSearch" type="sap.m/SearchField" cardinality="0..1" since="1.30.0">
+            <documentation>Populates the basic search area on the FilterBar and the Filters dialog.</documentation>
+        </association>
+    </associations>
+</control>

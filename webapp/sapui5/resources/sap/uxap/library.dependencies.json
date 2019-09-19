@@ -1,0 +1,750 @@
+{
+  "modules" : [
+    {
+      "name" : "sap/uxap/AnchorBar.js",
+      "description" : "Provides control sap.uxap.AnchorBar.",
+      "size" : 34321,
+      "compressedSize" : 14896,
+      "required" : ["sap/base/Log.js", "sap/m/Button.js", "sap/m/MenuButton.js", "sap/m/Toolbar.js", "sap/m/library.js", "sap/ui/Device.js", "sap/ui/core/CustomData.js", "sap/ui/core/IconPool.js", "sap/ui/core/Item.js", "sap/ui/core/ResizeHandler.js", "sap/ui/core/delegate/ScrollEnablement.js", "sap/ui/events/F6Navigation.js", "sap/ui/events/KeyCodes.js", "sap/ui/layout/HorizontalLayout.js", "sap/ui/thirdparty/jquery.js", "sap/uxap/AnchorBarRenderer.js", "sap/uxap/HierarchicalSelect.js", "sap/uxap/library.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/AnchorBarRenderer.js",
+      "description" : "! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.",
+      "size" : 2258,
+      "compressedSize" : 1405,
+      "required" : ["sap/m/BarInPageEnabler.js", "sap/m/ToolbarRenderer.js", "sap/ui/core/Renderer.js", "sap/uxap/library.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/BlockBase.js",
+      "description" : "Provides control sap.uxap.BlockBase.",
+      "size" : 25266,
+      "compressedSize" : 9292,
+      "required" : ["sap/base/Log.js", "sap/ui/Device.js", "sap/ui/core/Component.js", "sap/ui/core/Control.js", "sap/ui/core/CustomData.js", "sap/ui/layout/form/ColumnLayout.js", "sap/ui/layout/library.js", "sap/ui/model/Context.js", "sap/ui/thirdparty/jquery.js", "sap/uxap/BlockBaseMetadata.js", "sap/uxap/library.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/BlockBaseMetadata.js",
+      "description" : "Provides class sap.uxap.BlockBaseMetadata",
+      "size" : 3331,
+      "compressedSize" : 1338,
+      "required" : ["sap/base/Log.js", "sap/ui/core/ElementMetadata.js", "sap/ui/thirdparty/jquery.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/BlockBaseRenderer.js",
+      "description" : "! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.",
+      "size" : 979,
+      "compressedSize" : 693,
+      "required" : ["ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/BreadCrumbs.js",
+      "description" : "Provides control sap.uxap.BreadCrumbs.",
+      "size" : 13786,
+      "compressedSize" : 6113,
+      "required" : ["sap/m/Link.js", "sap/m/Select.js", "sap/ui/Device.js", "sap/ui/core/Control.js", "sap/ui/core/Icon.js", "sap/ui/core/InvisibleText.js", "sap/ui/core/Item.js", "sap/ui/core/ResizeHandler.js", "sap/ui/core/delegate/ItemNavigation.js", "sap/ui/thirdparty/jquery.js", "sap/uxap/BreadCrumbsRenderer.js", "sap/uxap/library.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/BreadCrumbsRenderer.js",
+      "description" : "! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.",
+      "size" : 1875,
+      "compressedSize" : 1216,
+      "required" : ["ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/HierarchicalSelect.js",
+      "description" : "Provides control sap.uxap.HierarchicalSelect.",
+      "size" : 5386,
+      "compressedSize" : 2333,
+      "required" : ["sap/m/Select.js", "sap/ui/Device.js", "sap/ui/thirdparty/jquery.js", "sap/ui/thirdparty/jqueryui/jquery-ui-position.js", "sap/uxap/HierarchicalSelectRenderer.js", "sap/uxap/library.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/HierarchicalSelectRenderer.js",
+      "description" : "! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.",
+      "size" : 569,
+      "compressedSize" : 341,
+      "required" : ["sap/m/SelectRenderer.js", "sap/ui/core/Renderer.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/LazyLoading.js",
+      "description" : "! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.",
+      "size" : 12618,
+      "compressedSize" : 4782,
+      "required" : ["sap/base/Log.js", "sap/ui/Device.js", "sap/ui/base/Metadata.js", "sap/ui/thirdparty/jquery.js", "sap/uxap/ObjectPageSubSection.js", "sap/uxap/library.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/ModelMapping.js",
+      "description" : "Provides control sap.uxap.ModelMapping.",
+      "size" : 1473,
+      "compressedSize" : 519,
+      "required" : ["sap/ui/core/Element.js", "sap/uxap/library.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/ObjectImageHelper.js",
+      "description" : "! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.",
+      "size" : 3526,
+      "compressedSize" : 1951,
+      "required" : ["sap/m/Image.js", "sap/ui/base/ManagedObject.js", "sap/ui/core/Icon.js", "sap/ui/core/IconPool.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/ObjectPageAccessibleLandmarkInfo.js",
+      "description" : "Provides control sap.uxap.ObjectPageAccessibleLandmarkInfo.",
+      "size" : 4812,
+      "compressedSize" : 967,
+      "required" : ["sap/ui/core/Element.js", "sap/uxap/library.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/ObjectPageDynamicHeaderContent.js",
+      "description" : "Provides control sap.uxap.ObjectPageDynamicHeaderContent.",
+      "size" : 3590,
+      "compressedSize" : 921,
+      "required" : ["sap/base/Log.js", "sap/f/DynamicPageHeader.js", "sap/uxap/ObjectPageDynamicHeaderContentRenderer.js", "sap/uxap/library.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/ObjectPageDynamicHeaderContentRenderer.js",
+      "description" : "! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.",
+      "size" : 461,
+      "compressedSize" : 287,
+      "required" : ["sap/f/DynamicPageHeaderRenderer.js", "sap/ui/core/Renderer.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/ObjectPageDynamicHeaderTitle.js",
+      "description" : "Provides control sap.uxap.ObjectPageDynamicHeaderTitle.",
+      "size" : 5437,
+      "compressedSize" : 1603,
+      "required" : ["sap/base/Log.js", "sap/f/DynamicPageTitle.js", "sap/uxap/ObjectPageDynamicHeaderContent.js", "sap/uxap/ObjectPageDynamicHeaderTitleRenderer.js", "sap/uxap/library.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/ObjectPageDynamicHeaderTitleRenderer.js",
+      "description" : "! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.",
+      "size" : 454,
+      "compressedSize" : 286,
+      "required" : ["sap/f/DynamicPageTitleRenderer.js", "sap/ui/core/Renderer.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/ObjectPageHeader.js",
+      "description" : "Provides control sap.uxap.ObjectPageHeader.",
+      "size" : 42250,
+      "compressedSize" : 19565,
+      "required" : ["sap/m/ActionSheet.js", "sap/m/Breadcrumbs.js", "sap/m/Button.js", "sap/m/library.js", "sap/ui/Device.js", "sap/ui/core/Control.js", "sap/ui/core/CustomData.js", "sap/ui/core/IconPool.js", "sap/ui/core/ResizeHandler.js", "sap/ui/thirdparty/jquery.js", "sap/uxap/ObjectImageHelper.js", "sap/uxap/ObjectPageHeaderActionButton.js", "sap/uxap/ObjectPageHeaderContent.js", "sap/uxap/ObjectPageHeaderRenderer.js", "sap/uxap/library.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/ObjectPageHeaderActionButton.js",
+      "description" : "Provides control sap.uxap.ObjectPageHeaderActionButton.",
+      "size" : 5211,
+      "compressedSize" : 2460,
+      "required" : ["sap/m/Button.js", "sap/uxap/ObjectPageHeaderActionButtonRenderer.js", "sap/uxap/library.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/ObjectPageHeaderActionButtonRenderer.js",
+      "description" : "! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.",
+      "size" : 492,
+      "compressedSize" : 276,
+      "required" : ["sap/m/ButtonRenderer.js", "sap/ui/core/Renderer.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/ObjectPageHeaderContent.js",
+      "description" : "Provides control sap.uxap.ObjectPageHeaderContent.",
+      "size" : 8742,
+      "compressedSize" : 3249,
+      "required" : ["sap/m/Button.js", "sap/ui/core/Control.js", "sap/uxap/ObjectImageHelper.js", "sap/uxap/ObjectPageHeaderContentRenderer.js", "sap/uxap/library.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/ObjectPageHeaderContentRenderer.js",
+      "description" : "! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.",
+      "size" : 7063,
+      "compressedSize" : 3325,
+      "required" : ["sap/uxap/ObjectImageHelper.js", "sap/uxap/ObjectPageHeaderRenderer.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/ObjectPageHeaderLayoutData.js",
+      "description" : "Provides control sap.uxap.ObjectPageHeaderLayoutData.",
+      "size" : 2689,
+      "compressedSize" : 719,
+      "required" : ["sap/ui/core/LayoutData.js", "sap/uxap/library.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/ObjectPageHeaderRenderer.js",
+      "description" : "! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.",
+      "size" : 12922,
+      "compressedSize" : 6379,
+      "required" : ["sap/ui/Device.js", "sap/uxap/ObjectImageHelper.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/ObjectPageLayout.js",
+      "description" : "Provides control sap.uxap.ObjectPageLayout.",
+      "size" : 157427,
+      "compressedSize" : 65194,
+      "required" : ["sap/base/Log.js", "sap/base/assert.js", "sap/m/ScrollBar.js", "sap/ui/Device.js", "sap/ui/base/ManagedObjectObserver.js", "sap/ui/core/Control.js", "sap/ui/core/ResizeHandler.js", "sap/ui/core/delegate/ScrollEnablement.js", "sap/ui/core/library.js", "sap/ui/dom/getScrollbarSize.js", "sap/ui/events/KeyCodes.js", "sap/ui/thirdparty/jquery.js", "sap/uxap/LazyLoading.js", "sap/uxap/ObjectPageHeaderContent.js", "sap/uxap/ObjectPageLayoutABHelper.js", "sap/uxap/ObjectPageLayoutRenderer.js", "sap/uxap/ObjectPageSection.js", "sap/uxap/ObjectPageSectionBase.js", "sap/uxap/ObjectPageSubSection.js", "sap/uxap/ThrottledTaskHelper.js", "sap/uxap/library.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/ObjectPageLayoutABHelper.js",
+      "description" : "! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.",
+      "size" : 10778,
+      "compressedSize" : 4932,
+      "required" : ["sap/m/Button.js", "sap/m/Menu.js", "sap/m/MenuButton.js", "sap/m/MenuItem.js", "sap/ui/base/ManagedObjectObserver.js", "sap/ui/base/Metadata.js", "sap/ui/core/CustomData.js", "sap/ui/core/IconPool.js", "sap/ui/thirdparty/jquery.js", "sap/uxap/AnchorBar.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/ObjectPageLayoutRenderer.js",
+      "description" : "! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.",
+      "size" : 12984,
+      "compressedSize" : 6327,
+      "required" : ["sap/ui/Device.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/ObjectPageLazyLoader.js",
+      "description" : "Provides control sap.uxap.ObjectPageLazyLoader.",
+      "size" : 2584,
+      "compressedSize" : 751,
+      "required" : ["sap/base/assert.js", "sap/ui/core/Element.js", "sap/ui/core/StashedControlSupport.js", "sap/uxap/library.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/ObjectPageSection.js",
+      "description" : "Provides control sap.uxap.ObjectPageSection.",
+      "size" : 11742,
+      "compressedSize" : 6448,
+      "required" : ["sap/m/Button.js", "sap/m/library.js", "sap/ui/Device.js", "sap/ui/core/InvisibleText.js", "sap/ui/core/StashedControlSupport.js", "sap/uxap/ObjectPageSectionBase.js", "sap/uxap/ObjectPageSectionRenderer.js", "sap/uxap/ObjectPageSubSection.js", "sap/uxap/library.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/ObjectPageSectionBase.js",
+      "description" : "Provides control sap.uxap.ObjectPageSectionBase.",
+      "size" : 17362,
+      "compressedSize" : 6405,
+      "required" : ["sap/base/Log.js", "sap/ui/core/Control.js", "sap/ui/core/library.js", "sap/ui/dom/jquery/Focusable.js", "sap/ui/events/KeyCodes.js", "sap/ui/thirdparty/jquery.js", "sap/uxap/library.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/ObjectPageSectionRenderer.js",
+      "description" : "! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.",
+      "size" : 2222,
+      "compressedSize" : 1521,
+      "required" : ["ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/ObjectPageSubSection.js",
+      "description" : "Provides control sap.uxap.ObjectPageSubSection.",
+      "size" : 31966,
+      "compressedSize" : 13725,
+      "required" : ["sap/base/Log.js", "sap/m/Button.js", "sap/m/TitlePropagationSupport.js", "sap/m/library.js", "sap/ui/Device.js", "sap/ui/base/DataType.js", "sap/ui/base/ManagedObjectObserver.js", "sap/ui/core/StashedControlSupport.js", "sap/ui/dom/jquery/Focusable.js", "sap/ui/events/KeyCodes.js", "sap/ui/layout/Grid.js", "sap/ui/layout/GridData.js", "sap/ui/thirdparty/jquery.js", "sap/uxap/BlockBase.js", "sap/uxap/ObjectPageLazyLoader.js", "sap/uxap/ObjectPageSectionBase.js", "sap/uxap/ObjectPageSubSectionRenderer.js", "sap/uxap/library.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/ObjectPageSubSectionRenderer.js",
+      "description" : "! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.",
+      "size" : 3417,
+      "compressedSize" : 2283,
+      "required" : ["ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/ThrottledTaskHelper.js",
+      "description" : "! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.",
+      "size" : 2724,
+      "compressedSize" : 1407,
+      "required" : ["sap/ui/base/Object.js", "sap/ui/thirdparty/jquery.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/changeHandler/MoveObjectPageSection.js",
+      "description" : "! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.",
+      "size" : 1542,
+      "compressedSize" : 775,
+      "required" : ["sap/ui/fl/changeHandler/MoveControls.js", "sap/ui/thirdparty/jquery.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/changeHandler/RenameObjectPageSection.js",
+      "description" : "! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.",
+      "size" : 3805,
+      "compressedSize" : 1708,
+      "required" : ["sap/ui/fl/Utils.js", "sap/ui/fl/changeHandler/BaseRename.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/component/Component.js",
+      "description" : "! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.",
+      "size" : 3836,
+      "compressedSize" : 1768,
+      "required" : ["sap/base/Log.js", "sap/ui/core/Component.js", "sap/ui/core/UIComponent.js", "sap/ui/core/library.js", "sap/uxap/library.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/component/ObjectPageComponentContainer.js",
+      "description" : "! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.",
+      "size" : 2686,
+      "compressedSize" : 1286,
+      "required" : ["sap/base/Log.js", "sap/ui/core/Component.js", "sap/ui/core/ComponentContainer.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/component/ObjectPageLayoutUXDrivenFactory.controller.js",
+      "description" : "! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.",
+      "size" : 4254,
+      "compressedSize" : 1701,
+      "required" : ["jquery.sap.global.js", "sap/base/Log.js", "sap/base/util/ObjectPath.js", "sap/ui/base/ManagedObject.js", "sap/ui/core/mvc/Controller.js", "sap/ui/model/BindingMode.js", "sap/ui/model/Context.js", "sap/ui/thirdparty/jquery.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/component/ObjectPageLayoutUXDrivenFactory.view.xml",
+      "size" : 2714,
+      "required" : ["sap/ui/core/mvc/XMLView.js", "sap/uxap/ObjectPageLayout.js", "sap/uxap/ObjectPageSection.js", "sap/uxap/ObjectPageSubSection.js", "sap/uxap/component/ObjectPageLayoutUXDrivenFactory.controller.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/designtime/BlockBase.designtime.js",
+      "description" : "Provides the Design Time Metadata for the sap.uxap.BlockBase control.",
+      "size" : 374,
+      "compressedSize" : 250,
+      "required" : ["ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/designtime/ObjectPageHeader.designtime.js",
+      "description" : "Provides the Design Time Metadata for the sap.uxap.ObjectPageHeader control",
+      "size" : 638,
+      "compressedSize" : 427,
+      "required" : ["ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/designtime/ObjectPageHeaderActionButton.designtime.js",
+      "description" : "Provides the Design Time Metadata for the sap.uxap.ObjectPageHeaderActionButton control",
+      "size" : 728,
+      "compressedSize" : 429,
+      "required" : ["ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/designtime/ObjectPageLayout.create.fragment.xml",
+      "size" : 743,
+      "required" : ["sap/m/Text.js", "sap/ui/core/Fragment.js", "sap/uxap/ObjectPageHeader.js", "sap/uxap/ObjectPageLayout.js", "sap/uxap/ObjectPageSection.js", "sap/uxap/ObjectPageSubSection.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/designtime/ObjectPageLayout.designtime.js",
+      "description" : "Provides the Design Time Metadata for the sap.uxap.ObjectPageLayout control",
+      "size" : 2323,
+      "compressedSize" : 1586,
+      "required" : ["sap/uxap/library.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/designtime/ObjectPageSection.designtime.js",
+      "description" : "Provides the Design Time Metadata for the sap.uxap.ObjectPageSection control",
+      "size" : 1605,
+      "compressedSize" : 1029,
+      "required" : ["sap/uxap/library.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/designtime/ObjectPageSubSection.designtime.js",
+      "description" : "Provides the Design Time Metadata for the sap.uxap.ObjectPageSubSection control",
+      "size" : 1022,
+      "compressedSize" : 678,
+      "required" : ["ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/designtime/library-preload.designtime.js",
+      "size" : 4339,
+      "required" : ["sap/uxap/library.js", "ui5loader-autoconfig.js"],
+      "includes" : ["sap/uxap/designtime/BlockBase.designtime.js", "sap/uxap/designtime/ObjectPageHeader.designtime.js", "sap/uxap/designtime/ObjectPageHeaderActionButton.designtime.js", "sap/uxap/designtime/ObjectPageLayout.designtime.js", "sap/uxap/designtime/ObjectPageSection.designtime.js", "sap/uxap/designtime/ObjectPageSubSection.designtime.js", "sap/uxap/designtime/library.designtime.js"]
+    },
+    {
+      "name" : "sap/uxap/designtime/library.designtime.js",
+      "description" : "Initialization of designtime Code and shared classes for the library sap.ui.layout.",
+      "size" : 308,
+      "compressedSize" : 205,
+      "required" : ["ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/flexibility/ObjectPageDynamicHeaderTitle.flexibility.js",
+      "description" : "! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.",
+      "size" : 827,
+      "compressedSize" : 578,
+      "required" : ["sap/f/changeHandler/MoveDynamicPageTitleActions.js", "sap/m/changeHandler/CombineButtons.js", "sap/m/changeHandler/SplitMenuButton.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/flexibility/ObjectPageHeader.flexibility.js",
+      "description" : "! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.",
+      "size" : 617,
+      "compressedSize" : 442,
+      "required" : ["sap/m/changeHandler/CombineButtons.js", "sap/m/changeHandler/SplitMenuButton.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/flexibility/ObjectPageHeaderActionButton.flexibility.js",
+      "description" : "! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.",
+      "size" : 457,
+      "compressedSize" : 384,
+      "required" : ["sap/ui/fl/changeHandler/BaseRename.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/flexibility/ObjectPageLayout.flexibility.js",
+      "description" : "! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.",
+      "size" : 413,
+      "compressedSize" : 314,
+      "required" : ["sap/uxap/changeHandler/MoveObjectPageSection.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/flexibility/ObjectPageSection.flexibility.js",
+      "description" : "! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.",
+      "size" : 752,
+      "compressedSize" : 560,
+      "required" : ["sap/uxap/changeHandler/RenameObjectPageSection.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/flexibility/ObjectPageSubSection.flexibility.js",
+      "description" : "! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.",
+      "size" : 840,
+      "compressedSize" : 619,
+      "required" : ["sap/m/changeHandler/CombineButtons.js", "sap/m/changeHandler/SplitMenuButton.js", "sap/ui/fl/changeHandler/BaseRename.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/library-h2-preload.js",
+      "size" : 13552,
+      "required" : ["jquery.sap.global.js", "sap/base/Log.js", "sap/base/assert.js", "sap/base/util/ObjectPath.js", "sap/f/DynamicPageHeader.js", "sap/f/DynamicPageHeaderRenderer.js", "sap/f/DynamicPageTitle.js", "sap/f/DynamicPageTitleRenderer.js", "sap/f/changeHandler/MoveDynamicPageTitleActions.js", "sap/m/ActionSheet.js", "sap/m/BarInPageEnabler.js", "sap/m/Breadcrumbs.js", "sap/m/Button.js", "sap/m/ButtonRenderer.js", "sap/m/Image.js", "sap/m/Link.js", "sap/m/Menu.js", "sap/m/MenuButton.js", "sap/m/MenuItem.js", "sap/m/ScrollBar.js", "sap/m/Select.js", "sap/m/SelectRenderer.js", "sap/m/Text.js", "sap/m/TitlePropagationSupport.js", "sap/m/Toolbar.js", "sap/m/ToolbarRenderer.js", "sap/m/changeHandler/CombineButtons.js", "sap/m/changeHandler/SplitMenuButton.js", "sap/m/library.js", "sap/ui/Device.js", "sap/ui/base/DataType.js", "sap/ui/base/ManagedObject.js", "sap/ui/base/ManagedObjectObserver.js", "sap/ui/base/Metadata.js", "sap/ui/base/Object.js", "sap/ui/core/Component.js", "sap/ui/core/ComponentContainer.js", "sap/ui/core/Control.js", "sap/ui/core/Core.js", "sap/ui/core/CustomData.js", "sap/ui/core/Element.js", "sap/ui/core/ElementMetadata.js", "sap/ui/core/Fragment.js", "sap/ui/core/Icon.js", "sap/ui/core/IconPool.js", "sap/ui/core/InvisibleText.js", "sap/ui/core/Item.js", "sap/ui/core/LayoutData.js", "sap/ui/core/Renderer.js", "sap/ui/core/ResizeHandler.js", "sap/ui/core/StashedControlSupport.js", "sap/ui/core/UIComponent.js", "sap/ui/core/delegate/ItemNavigation.js", "sap/ui/core/delegate/ScrollEnablement.js", "sap/ui/core/library.js", "sap/ui/core/mvc/Controller.js", "sap/ui/core/mvc/XMLView.js", "sap/ui/dom/getScrollbarSize.js", "sap/ui/dom/jquery/Focusable.js", "sap/ui/events/F6Navigation.js", "sap/ui/events/KeyCodes.js", "sap/ui/fl/Utils.js", "sap/ui/fl/changeHandler/BaseRename.js", "sap/ui/fl/changeHandler/MoveControls.js", "sap/ui/layout/Grid.js", "sap/ui/layout/GridData.js", "sap/ui/layout/HorizontalLayout.js", "sap/ui/layout/form/ColumnLayout.js", "sap/ui/layout/library.js", "sap/ui/model/BindingMode.js", "sap/ui/model/Context.js", "sap/ui/support/library.js", "sap/ui/thirdparty/jquery.js", "sap/ui/thirdparty/jqueryui/jquery-ui-position.js", "ui5loader-autoconfig.js"],
+      "includes" : ["sap/uxap/library.js", "sap/uxap/manifest.json", "sap/uxap/AnchorBar.js", "sap/uxap/AnchorBarRenderer.js", "sap/uxap/BlockBase.js", "sap/uxap/BlockBaseMetadata.js", "sap/uxap/BlockBaseRenderer.js", "sap/uxap/BreadCrumbs.js", "sap/uxap/BreadCrumbsRenderer.js", "sap/uxap/HierarchicalSelect.js", "sap/uxap/HierarchicalSelectRenderer.js", "sap/uxap/LazyLoading.js", "sap/uxap/ModelMapping.js", "sap/uxap/ObjectImageHelper.js", "sap/uxap/ObjectPageAccessibleLandmarkInfo.js", "sap/uxap/ObjectPageDynamicHeaderContent.js", "sap/uxap/ObjectPageDynamicHeaderContentRenderer.js", "sap/uxap/ObjectPageDynamicHeaderTitle.js", "sap/uxap/ObjectPageDynamicHeaderTitleRenderer.js", "sap/uxap/ObjectPageHeader.js", "sap/uxap/ObjectPageHeaderActionButton.js", "sap/uxap/ObjectPageHeaderActionButtonRenderer.js", "sap/uxap/ObjectPageHeaderContent.js", "sap/uxap/ObjectPageHeaderContentRenderer.js", "sap/uxap/ObjectPageHeaderLayoutData.js", "sap/uxap/ObjectPageHeaderRenderer.js", "sap/uxap/ObjectPageLayout.js", "sap/uxap/ObjectPageLayoutABHelper.js", "sap/uxap/ObjectPageLayoutRenderer.js", "sap/uxap/ObjectPageLazyLoader.js", "sap/uxap/ObjectPageSection.js", "sap/uxap/ObjectPageSectionBase.js", "sap/uxap/ObjectPageSectionRenderer.js", "sap/uxap/ObjectPageSubSection.js", "sap/uxap/ObjectPageSubSectionRenderer.js", "sap/uxap/ThrottledTaskHelper.js", "sap/uxap/changeHandler/MoveObjectPageSection.js", "sap/uxap/changeHandler/RenameObjectPageSection.js", "sap/uxap/component/Component.js", "sap/uxap/component/ObjectPageComponentContainer.js", "sap/uxap/component/ObjectPageLayoutUXDrivenFactory.controller.js", "sap/uxap/component/ObjectPageLayoutUXDrivenFactory.view.xml", "sap/uxap/designtime/BlockBase.designtime.js", "sap/uxap/designtime/ObjectPageHeader.designtime.js", "sap/uxap/designtime/ObjectPageHeaderActionButton.designtime.js", "sap/uxap/designtime/ObjectPageLayout.create.fragment.xml", "sap/uxap/designtime/ObjectPageLayout.designtime.js", "sap/uxap/designtime/ObjectPageSection.designtime.js", "sap/uxap/designtime/ObjectPageSubSection.designtime.js", "sap/uxap/designtime/library.designtime.js", "sap/uxap/flexibility/ObjectPageDynamicHeaderTitle.flexibility.js", "sap/uxap/flexibility/ObjectPageHeader.flexibility.js", "sap/uxap/flexibility/ObjectPageHeaderActionButton.flexibility.js", "sap/uxap/flexibility/ObjectPageLayout.flexibility.js", "sap/uxap/flexibility/ObjectPageSection.flexibility.js", "sap/uxap/flexibility/ObjectPageSubSection.flexibility.js", "sap/uxap/library.support.js", "sap/uxap/rules/ObjectPageLayout.support.js"]
+    },
+    {
+      "name" : "sap/uxap/library-preload.js",
+      "size" : 206616,
+      "required" : ["jquery.sap.global.js", "sap/base/Log.js", "sap/base/assert.js", "sap/base/util/ObjectPath.js", "sap/f/DynamicPageHeader.js", "sap/f/DynamicPageHeaderRenderer.js", "sap/f/DynamicPageTitle.js", "sap/f/DynamicPageTitleRenderer.js", "sap/f/changeHandler/MoveDynamicPageTitleActions.js", "sap/m/ActionSheet.js", "sap/m/BarInPageEnabler.js", "sap/m/Breadcrumbs.js", "sap/m/Button.js", "sap/m/ButtonRenderer.js", "sap/m/Image.js", "sap/m/Link.js", "sap/m/Menu.js", "sap/m/MenuButton.js", "sap/m/MenuItem.js", "sap/m/ScrollBar.js", "sap/m/Select.js", "sap/m/SelectRenderer.js", "sap/m/TitlePropagationSupport.js", "sap/m/Toolbar.js", "sap/m/ToolbarRenderer.js", "sap/m/changeHandler/CombineButtons.js", "sap/m/changeHandler/SplitMenuButton.js", "sap/m/library.js", "sap/ui/Device.js", "sap/ui/base/DataType.js", "sap/ui/base/ManagedObject.js", "sap/ui/base/ManagedObjectObserver.js", "sap/ui/base/Metadata.js", "sap/ui/base/Object.js", "sap/ui/core/Component.js", "sap/ui/core/ComponentContainer.js", "sap/ui/core/Control.js", "sap/ui/core/Core.js", "sap/ui/core/CustomData.js", "sap/ui/core/Element.js", "sap/ui/core/ElementMetadata.js", "sap/ui/core/Icon.js", "sap/ui/core/IconPool.js", "sap/ui/core/InvisibleText.js", "sap/ui/core/Item.js", "sap/ui/core/LayoutData.js", "sap/ui/core/Renderer.js", "sap/ui/core/ResizeHandler.js", "sap/ui/core/StashedControlSupport.js", "sap/ui/core/UIComponent.js", "sap/ui/core/delegate/ItemNavigation.js", "sap/ui/core/delegate/ScrollEnablement.js", "sap/ui/core/library.js", "sap/ui/core/mvc/Controller.js", "sap/ui/core/mvc/XMLView.js", "sap/ui/dom/getScrollbarSize.js", "sap/ui/dom/jquery/Focusable.js", "sap/ui/events/F6Navigation.js", "sap/ui/events/KeyCodes.js", "sap/ui/fl/Utils.js", "sap/ui/fl/changeHandler/BaseRename.js", "sap/ui/fl/changeHandler/MoveControls.js", "sap/ui/layout/Grid.js", "sap/ui/layout/GridData.js", "sap/ui/layout/HorizontalLayout.js", "sap/ui/layout/form/ColumnLayout.js", "sap/ui/layout/library.js", "sap/ui/model/BindingMode.js", "sap/ui/model/Context.js", "sap/ui/thirdparty/jquery.js", "sap/ui/thirdparty/jqueryui/jquery-ui-position.js", "ui5loader-autoconfig.js"],
+      "includes" : ["sap/uxap/AnchorBar.js", "sap/uxap/AnchorBarRenderer.js", "sap/uxap/BlockBase.js", "sap/uxap/BlockBaseMetadata.js", "sap/uxap/BlockBaseRenderer.js", "sap/uxap/BreadCrumbs.js", "sap/uxap/BreadCrumbsRenderer.js", "sap/uxap/HierarchicalSelect.js", "sap/uxap/HierarchicalSelectRenderer.js", "sap/uxap/LazyLoading.js", "sap/uxap/ModelMapping.js", "sap/uxap/ObjectImageHelper.js", "sap/uxap/ObjectPageAccessibleLandmarkInfo.js", "sap/uxap/ObjectPageDynamicHeaderContent.js", "sap/uxap/ObjectPageDynamicHeaderContentRenderer.js", "sap/uxap/ObjectPageDynamicHeaderTitle.js", "sap/uxap/ObjectPageDynamicHeaderTitleRenderer.js", "sap/uxap/ObjectPageHeader.js", "sap/uxap/ObjectPageHeaderActionButton.js", "sap/uxap/ObjectPageHeaderActionButtonRenderer.js", "sap/uxap/ObjectPageHeaderContent.js", "sap/uxap/ObjectPageHeaderContentRenderer.js", "sap/uxap/ObjectPageHeaderLayoutData.js", "sap/uxap/ObjectPageHeaderRenderer.js", "sap/uxap/ObjectPageLayout.js", "sap/uxap/ObjectPageLayoutABHelper.js", "sap/uxap/ObjectPageLayoutRenderer.js", "sap/uxap/ObjectPageLazyLoader.js", "sap/uxap/ObjectPageSection.js", "sap/uxap/ObjectPageSectionBase.js", "sap/uxap/ObjectPageSectionRenderer.js", "sap/uxap/ObjectPageSubSection.js", "sap/uxap/ObjectPageSubSectionRenderer.js", "sap/uxap/ThrottledTaskHelper.js", "sap/uxap/changeHandler/MoveObjectPageSection.js", "sap/uxap/changeHandler/RenameObjectPageSection.js", "sap/uxap/component/Component.js", "sap/uxap/component/ObjectPageComponentContainer.js", "sap/uxap/component/ObjectPageLayoutUXDrivenFactory.controller.js", "sap/uxap/component/ObjectPageLayoutUXDrivenFactory.view.xml", "sap/uxap/flexibility/ObjectPageDynamicHeaderTitle.flexibility.js", "sap/uxap/flexibility/ObjectPageHeader.flexibility.js", "sap/uxap/flexibility/ObjectPageHeaderActionButton.flexibility.js", "sap/uxap/flexibility/ObjectPageLayout.flexibility.js", "sap/uxap/flexibility/ObjectPageSection.flexibility.js", "sap/uxap/flexibility/ObjectPageSubSection.flexibility.js", "sap/uxap/library.js", "sap/uxap/manifest.json"]
+    },
+    {
+      "name" : "sap/uxap/library-preload.json",
+      "size" : 0,
+      "required" : ["jquery.sap.global.js", "sap/base/Log.js", "sap/base/assert.js", "sap/base/util/ObjectPath.js", "sap/f/DynamicPageHeader.js", "sap/f/DynamicPageHeaderRenderer.js", "sap/f/DynamicPageTitle.js", "sap/f/DynamicPageTitleRenderer.js", "sap/f/changeHandler/MoveDynamicPageTitleActions.js", "sap/m/ActionSheet.js", "sap/m/BarInPageEnabler.js", "sap/m/Breadcrumbs.js", "sap/m/Button.js", "sap/m/ButtonRenderer.js", "sap/m/Image.js", "sap/m/Link.js", "sap/m/Menu.js", "sap/m/MenuButton.js", "sap/m/MenuItem.js", "sap/m/ScrollBar.js", "sap/m/Select.js", "sap/m/SelectRenderer.js", "sap/m/TitlePropagationSupport.js", "sap/m/Toolbar.js", "sap/m/ToolbarRenderer.js", "sap/m/changeHandler/CombineButtons.js", "sap/m/changeHandler/SplitMenuButton.js", "sap/m/library-preload.json", "sap/m/library.js", "sap/ui/Device.js", "sap/ui/base/DataType.js", "sap/ui/base/ManagedObject.js", "sap/ui/base/ManagedObjectObserver.js", "sap/ui/base/Metadata.js", "sap/ui/base/Object.js", "sap/ui/core/Component.js", "sap/ui/core/ComponentContainer.js", "sap/ui/core/Control.js", "sap/ui/core/Core.js", "sap/ui/core/CustomData.js", "sap/ui/core/Element.js", "sap/ui/core/ElementMetadata.js", "sap/ui/core/Icon.js", "sap/ui/core/IconPool.js", "sap/ui/core/InvisibleText.js", "sap/ui/core/Item.js", "sap/ui/core/LayoutData.js", "sap/ui/core/Renderer.js", "sap/ui/core/ResizeHandler.js", "sap/ui/core/StashedControlSupport.js", "sap/ui/core/UIComponent.js", "sap/ui/core/delegate/ItemNavigation.js", "sap/ui/core/delegate/ScrollEnablement.js", "sap/ui/core/library-preload.json", "sap/ui/core/library.js", "sap/ui/core/mvc/Controller.js", "sap/ui/core/mvc/XMLView.js", "sap/ui/dom/getScrollbarSize.js", "sap/ui/dom/jquery/Focusable.js", "sap/ui/events/F6Navigation.js", "sap/ui/events/KeyCodes.js", "sap/ui/fl/Utils.js", "sap/ui/fl/changeHandler/BaseRename.js", "sap/ui/fl/changeHandler/MoveControls.js", "sap/ui/layout/Grid.js", "sap/ui/layout/GridData.js", "sap/ui/layout/HorizontalLayout.js", "sap/ui/layout/form/ColumnLayout.js", "sap/ui/layout/library-preload.json", "sap/ui/layout/library.js", "sap/ui/model/BindingMode.js", "sap/ui/model/Context.js", "sap/ui/thirdparty/jquery.js", "sap/ui/thirdparty/jqueryui/jquery-ui-position.js", "ui5loader-autoconfig.js"],
+      "includes" : ["sap/uxap/AnchorBar.js", "sap/uxap/AnchorBarRenderer.js", "sap/uxap/BlockBase.js", "sap/uxap/BlockBaseMetadata.js", "sap/uxap/BlockBaseRenderer.js", "sap/uxap/BreadCrumbs.js", "sap/uxap/BreadCrumbsRenderer.js", "sap/uxap/HierarchicalSelect.js", "sap/uxap/HierarchicalSelectRenderer.js", "sap/uxap/LazyLoading.js", "sap/uxap/ModelMapping.js", "sap/uxap/ObjectImageHelper.js", "sap/uxap/ObjectPageAccessibleLandmarkInfo.js", "sap/uxap/ObjectPageDynamicHeaderContent.js", "sap/uxap/ObjectPageDynamicHeaderContentRenderer.js", "sap/uxap/ObjectPageDynamicHeaderTitle.js", "sap/uxap/ObjectPageDynamicHeaderTitleRenderer.js", "sap/uxap/ObjectPageHeader.js", "sap/uxap/ObjectPageHeaderActionButton.js", "sap/uxap/ObjectPageHeaderActionButtonRenderer.js", "sap/uxap/ObjectPageHeaderContent.js", "sap/uxap/ObjectPageHeaderContentRenderer.js", "sap/uxap/ObjectPageHeaderLayoutData.js", "sap/uxap/ObjectPageHeaderRenderer.js", "sap/uxap/ObjectPageLayout.js", "sap/uxap/ObjectPageLayoutABHelper.js", "sap/uxap/ObjectPageLayoutRenderer.js", "sap/uxap/ObjectPageLazyLoader.js", "sap/uxap/ObjectPageSection.js", "sap/uxap/ObjectPageSectionBase.js", "sap/uxap/ObjectPageSectionRenderer.js", "sap/uxap/ObjectPageSubSection.js", "sap/uxap/ObjectPageSubSectionRenderer.js", "sap/uxap/ThrottledTaskHelper.js", "sap/uxap/changeHandler/MoveObjectPageSection.js", "sap/uxap/changeHandler/RenameObjectPageSection.js", "sap/uxap/component/Component.js", "sap/uxap/component/ObjectPageComponentContainer.js", "sap/uxap/component/ObjectPageLayoutUXDrivenFactory.controller.js", "sap/uxap/component/ObjectPageLayoutUXDrivenFactory.view.xml", "sap/uxap/flexibility/ObjectPageDynamicHeaderTitle.flexibility.js", "sap/uxap/flexibility/ObjectPageHeader.flexibility.js", "sap/uxap/flexibility/ObjectPageHeaderActionButton.flexibility.js", "sap/uxap/flexibility/ObjectPageLayout.flexibility.js", "sap/uxap/flexibility/ObjectPageSection.flexibility.js", "sap/uxap/flexibility/ObjectPageSubSection.flexibility.js", "sap/uxap/library.js", "sap/uxap/manifest.json"]
+    },
+    {
+      "name" : "sap/uxap/library-preload.support.js",
+      "size" : 5890,
+      "required" : ["sap/ui/support/library.js", "ui5loader-autoconfig.js"],
+      "includes" : ["sap/uxap/library.support.js", "sap/uxap/rules/ObjectPageLayout.support.js"]
+    },
+    {
+      "name" : "sap/uxap/library.js",
+      "description" : "Initialization Code and shared classes of library sap.uxap.",
+      "size" : 10583,
+      "compressedSize" : 3065,
+      "required" : ["sap/m/library.js", "sap/ui/Device.js", "sap/ui/base/DataType.js", "sap/ui/core/Core.js", "sap/ui/core/library.js", "sap/ui/layout/library.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/library.support.js",
+      "description" : "Adds support rules of the sap.uxap library to the support infrastructure.",
+      "size" : 457,
+      "compressedSize" : 302,
+      "required" : ["sap/uxap/rules/ObjectPageLayout.support.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/manifest.json",
+      "size" : 1944,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle.properties",
+      "size" : 4801,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_ar.properties",
+      "size" : 6815,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_bg.properties",
+      "size" : 7940,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_ca.properties",
+      "size" : 4927,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_cs.properties",
+      "size" : 4939,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_da.properties",
+      "size" : 4718,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_de.properties",
+      "size" : 4750,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_el.properties",
+      "size" : 8822,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_en.properties",
+      "size" : 4631,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_en_US.properties",
+      "size" : 71,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_en_US_sappsd.properties",
+      "size" : 8766,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_en_US_saptrc.properties",
+      "size" : 5461,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_es.properties",
+      "size" : 4924,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_et.properties",
+      "size" : 4733,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_fi.properties",
+      "size" : 4821,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_fr.properties",
+      "size" : 4903,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_hi.properties",
+      "size" : 7639,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_hr.properties",
+      "size" : 4852,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_hu.properties",
+      "size" : 5105,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_it.properties",
+      "size" : 4870,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_iw.properties",
+      "size" : 6710,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_ja.properties",
+      "size" : 6097,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_kk.properties",
+      "size" : 7992,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_ko.properties",
+      "size" : 5526,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_lt.properties",
+      "size" : 5008,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_lv.properties",
+      "size" : 5150,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_ms.properties",
+      "size" : 4728,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_nl.properties",
+      "size" : 4652,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_no.properties",
+      "size" : 4658,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_pl.properties",
+      "size" : 4915,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_pt.properties",
+      "size" : 4997,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_ro.properties",
+      "size" : 4892,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_ru.properties",
+      "size" : 7777,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_sh.properties",
+      "size" : 4842,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_sk.properties",
+      "size" : 5078,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_sl.properties",
+      "size" : 4720,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_sv.properties",
+      "size" : 4821,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_th.properties",
+      "size" : 7637,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_tr.properties",
+      "size" : 5021,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_uk.properties",
+      "size" : 7887,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_vi.properties",
+      "size" : 6005,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_zh_CN.properties",
+      "size" : 5167,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/messagebundle_zh_TW.properties",
+      "size" : 5179,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/uxap/rules/ObjectPageLayout.support.js",
+      "description" : "Defines support rules of the ObjectPageHeader control of sap.uxap library.",
+      "size" : 5257,
+      "compressedSize" : 2747,
+      "required" : ["sap/ui/support/library.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<interface xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>IToolbar</name>
+    <derived/>
+    <documentation>Interface for controls which are suitable as a Toolbar for RichTextEditor.</documentation>
+    <since>1.50</since>
+</interface>

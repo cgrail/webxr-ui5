@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Carousel</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The carousel allows the user to browse through a set of items by swiping right or left.
+&lt;h3&gt;Overview&lt;/h3&gt;
+The control is mostly used for showing a gallery of images, but can hold any sap.m control.
+&lt;h3&gt;Structure&lt;/h3&gt;
+The carousel consists of a the following elements:
+&lt;ul&gt;
+&lt;li&gt;Content area - displays the different items.&lt;/li&gt;
+&lt;li&gt;Navigation - arrows to the left and right for switching between items.&lt;/li&gt;
+&lt;li&gt;(optional) Paging - indicator at the bottom to show the current position in the set.&lt;/li&gt;
+&lt;/ul&gt;
+The paging indicator can be configured as follows:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;showPageIndicator&lt;/code&gt; - determines if the indicator is displayed.&lt;/li&gt;
+&lt;li&gt;If the pages are less than 9, the page indicator is represented with bullets.&lt;/li&gt;
+&lt;li&gt;If the pages are 9 or more, the page indicator is numeric.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pageIndicatorPlacement&lt;/code&gt; - determines where the indicator is located. Default (&lt;code&gt;sap.m.PlacementType.Bottom&lt;/code&gt;) - below the content.&lt;/li&gt;
+&lt;/ul&gt;
+Additionally, you can also change the location of the navigation arrows.
+By setting &lt;code&gt;arrowsPlacement&lt;/code&gt; to &lt;code&gt;sap.m.CarouselArrowsPlacement.PageIndicator&lt;/code&gt;, the arrows will be located at the bottom by the paging indicator.
+&lt;h3&gt;Usage&lt;/h3&gt;
+&lt;h4&gt; When to use&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;The items you want to display are very different from each other.&lt;/li&gt;
+&lt;li&gt;You want to display the items one after the other.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt; When not to use&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;The items you want to display need to be visible at the same time.&lt;/li&gt;
+&lt;li&gt;The items you want to display are uniform and very similar&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Responsive Behavior&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;On touch devices, navigation is performed with swipe gestures (swipe right or swipe left).&lt;/li&gt;
+&lt;li&gt;On desktop, navigation is done with the navigation arrows.&lt;/li&gt;
+&lt;li&gt;The paging indicator (when activated) is visible on each form factor.&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="height" type="sap.ui.core/CSSSize" defaultValue="100%" group="Dimension">
+            <documentation>The height of the carousel. Note that when a percentage value is used, the height of the surrounding container must be defined.</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" defaultValue="100%" group="Dimension">
+            <documentation>The width of the carousel. Note that when a percentage value is used, the height of the surrounding container must be defined.</documentation>
+        </property>
+        <property name="loop" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>Defines whether the carousel should loop, i.e show the first page after the last page is reached and vice versa.</documentation>
+        </property>
+        <property name="showPageIndicator" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>Show or hide carousel's page indicator.</documentation>
+        </property>
+        <property name="pageIndicatorPlacement" type="sap.m/PlacementType" defaultValue="Bottom" group="Appearance">
+            <documentation>Defines where the carousel's page indicator is displayed. Possible values are sap.m.PlacementType.Top, sap.m.PlacementType.Bottom. Other values are ignored and the default value will be applied. The default value is sap.m.PlacementType.Bottom.</documentation>
+        </property>
+        <property name="showBusyIndicator" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>Show or hide busy indicator in the carousel when loading pages after swipe.</documentation>
+            <deprecation since="1.18.7">Since 1.18.7 pages are no longer loaded or unloaded. Therefore busy indicator is not necessary any longer.</deprecation>
+        </property>
+        <property name="arrowsPlacement" type="sap.m/CarouselArrowsPlacement" defaultValue="Content" group="Appearance">
+            <documentation>Defines where the carousel's arrows are placed. Default is &lt;code&gt;sap.m.CarouselArrowsPlacement.Content&lt;/code&gt; used to
+place the arrows on the sides of the carousel. Alternatively &lt;code&gt;sap.m.CarouselArrowsPlacement.PageIndicator&lt;/code&gt; can
+be used to place the arrows on the sides of the page indicator.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="loadPage" allowPreventDefault="false">
+            <documentation>Carousel requires a new page to be loaded. This event may be used to fill the content of that page</documentation>
+            <deprecation since="1.18.7">Since 1.18.7 pages are no longer loaded or unloaded</deprecation>
+            <parameters>
+                <parameter name="pageId" type="sap.ui.core/string">
+                    <documentation>Id of the page which will be loaded</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="unloadPage" allowPreventDefault="false">
+            <documentation>Carousel does not display a page any longer and unloads it. This event may be used to clean up the content of that page.</documentation>
+            <deprecation since="1.18.7">Since 1.18.7 pages are no longer loaded or unloaded</deprecation>
+            <parameters>
+                <parameter name="pageId" type="sap.ui.core/string">
+                    <documentation>Id of the page which will be unloaded</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="pageChanged" allowPreventDefault="false">
+            <documentation>This event is fired after a carousel swipe has been completed.
+It is triggered both by physical swipe events and through API carousel manipulations such as calling
+'next', 'previous' or 'setActivePageId' functions.</documentation>
+            <parameters>
+                <parameter name="oldActivePageId" type="sap.ui.core/string">
+                    <documentation>ID of the page which was active before the page change.</documentation>
+                </parameter>
+                <parameter name="newActivePageId" type="sap.ui.core/string">
+                    <documentation>ID of the page which will be active after the page change.</documentation>
+                </parameter>
+                <parameter name="activePages" type="any" since="1.62">
+                    <documentation>Indexes of all active pages after the page change.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="beforePageChanged" allowPreventDefault="false">
+            <documentation>This event is fired before a carousel swipe has been completed.
+It is triggered both by physical swipe events and through API carousel manipulations such as calling
+'next', 'previous' or 'setActivePageId' functions.</documentation>
+            <parameters>
+                <parameter name="activePages" type="any" since="1.63">
+                    <documentation>Indexes of all active pages after the page change.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations default="pages">
+        <aggregation name="pages" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>The content which the carousel displays.</documentation>
+        </aggregation>
+        <aggregation name="customLayout" type="sap.m/CarouselLayout" since="1.62" cardinality="0..1">
+            <documentation>Defines how many pages are displayed in the visible area of the &lt;code&gt;Carousel&lt;/code&gt; control.
+
+&lt;b&gt;Note:&lt;/b&gt; When this property is used, the &lt;code&gt;loop&lt;/code&gt; property is ignored.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="activePage" type="sap.ui.core/Control" cardinality="0..1">
+            <documentation>Provides getter and setter for the currently displayed page. For the setter, argument may be the control itself, which must be member of the carousel's page list, or the control's id.
+The getter will return the control id</documentation>
+        </association>
+    </associations>
+    <methods>
+        <method name="previous" type="sap.m/Carousel">
+            <documentation>Call this method to display the previous page (corresponds to a swipe left). Returns 'this' for method chaining.</documentation>
+        </method>
+        <method name="next" type="sap.m/Carousel">
+            <documentation>Call this method to display the next page (corresponds to a swipe right). Returns 'this' for method chaining.</documentation>
+        </method>
+    </methods>
+</control>

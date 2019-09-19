@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Grid</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A layout control which positions its child controls in a 12 column flow layout.
+
+The &lt;code&gt;Grid&lt;/code&gt; control's children can be specified to take on a variable
+amount of columns depending on available screen size. With this control it is possible
+to achieve flexible layouts and line-breaks for extra large-, large-, medium- and
+small-sized screens, such as large desktop, desktop, tablet, and mobile.
+
+The &lt;code&gt;Grid&lt;/code&gt; control's width can be percentage- or pixel-based and the spacing between
+its columns can be set to various predefined values.
+
+&lt;b&gt;Note:&lt;/b&gt; The visibility of the child control does not affect the horizontal space it occupies.
+This means that even if the control is not visible, its horizontal space will still exist, even if it is empty.</documentation>
+    <since>1.15.0</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="width" type="sap.ui.core/CSSSize" defaultValue="100%" group="Dimension">
+            <documentation>Optional. Defines the width of the &lt;code&gt;Grid&lt;/code&gt;. If not specified, then 100%.</documentation>
+        </property>
+        <property name="vSpacing" type="sap.ui.core/float" defaultValue="1" group="Dimension">
+            <documentation>Optional. Defines the vertical spacing between the rows in the &lt;code&gt;Grid&lt;/code&gt;.
+In rem, allowed values are 0, 0.5, 1 and 2.</documentation>
+        </property>
+        <property name="hSpacing" type="sap.ui.core/float" defaultValue="1" group="Dimension">
+            <documentation>Optional. Defines the horizontal spacing between the content in the &lt;code&gt;Grid&lt;/code&gt;.
+In rem, allowed values are 0, 0.5 , 1 or 2.</documentation>
+        </property>
+        <property name="position" type="sap.ui.layout/GridPosition" defaultValue="Left" group="Dimension">
+            <documentation>Optional. Defines the position of the &lt;code&gt;Grid&lt;/code&gt; in the window or surrounding container.</documentation>
+        </property>
+        <property name="defaultSpan" type="sap.ui.layout/GridSpan" defaultValue="XL3 L3 M6 S12" group="Behavior">
+            <documentation>Optional. A string type that represents the span values of the &lt;code&gt;Grid&lt;/code&gt; for
+large, medium and small screens. Allowed values are separated by space Letters L, M or S followed
+by number of columns from 1 to 12 that the container has to take, for example, &lt;code&gt;L2 M4 S6&lt;/code&gt;,
+&lt;code&gt;M12&lt;/code&gt;, &lt;code&gt;s10&lt;/code&gt; or &lt;code&gt;l4 m4&lt;/code&gt;.
+
+&lt;b&gt;Note:&lt;/b&gt; The parameters must be provided in the order &lt;large medium small&gt;.</documentation>
+        </property>
+        <property name="defaultIndent" type="sap.ui.layout/GridIndent" defaultValue="XL0 L0 M0 S0" group="Behavior">
+            <documentation>Optional. Defines default for the whole Grid numbers of empty columns before the current span begins.
+It can be defined for large, medium and small screens. Allowed values are separated by space Letters
+L, M or S followed by number of columns from 0 to 11 that the container has to take, for example,
+&lt;code&gt;L2 M4 S6&lt;/code&gt;, &lt;code&gt;M11&lt;/code&gt;, &lt;code&gt;s10&lt;/code&gt; or &lt;code&gt;l4 m4&lt;/code&gt;.
+
+&lt;b&gt;Note:&lt;/b&gt; The parameters must be provided in the order &lt;large medium small&gt;.</documentation>
+        </property>
+        <property name="containerQuery" type="sap.ui.core/boolean" defaultValue="false" group="Behavior">
+            <documentation>If set to &lt;code&gt;true&lt;/code&gt;, the current range (large, medium or small) is defined by the size of the
+container surrounding the &lt;code&gt;Grid&lt;/code&gt; instead of the device screen size (media Query).</documentation>
+        </property>
+    </properties>
+    <aggregations default="content">
+        <aggregation name="content" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Controls that are placed into Grid layout.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n" since="1.48.7">
+            <documentation>Association to controls / IDs that label this control (see WAI-ARIA attribute &lt;code&gt;aria-labelledby&lt;/code&gt;).</documentation>
+        </association>
+    </associations>
+</control>

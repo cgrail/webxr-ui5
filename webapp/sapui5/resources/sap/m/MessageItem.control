@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>MessageItem</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A wrapper control used to hold different types of system messages.
+&lt;h3&gt;Structure&lt;/h3&gt;
+The message item holds the basic set of properties for a system message:
+&lt;ul&gt;
+&lt;li&gt; Type, title, subtitle and description &lt;/li&gt;
+&lt;li&gt; If the description contains markup, the &lt;code&gt;markupDescription&lt;/code&gt; needs to be set to true, to ensure it is interpreted correctly. &lt;/li&gt;
+&lt;li&gt; If the long text description can be specified by a URL by setting, the &lt;code&gt;longtextUrl&lt;/code&gt; property. &lt;/li&gt;
+&lt;li&gt; The message item can have a single {@link sap.m.Link} after the description. It is stored in the &lt;code&gt;link&lt;/code&gt; aggregation. &lt;/li&gt;
+&lt;h3&gt;Usage&lt;/h3&gt;
+&lt;b&gt;Note:&lt;/b&gt; The MessageItem control replaces {@link sap.m.MessagePopoverItem} as a more generic wrapper for messages.</documentation>
+    <since>1.46</since>
+    <baseType>sap.ui.core/Item</baseType>
+    <properties>
+        <property name="type" type="sap.ui.core/MessageType" defaultValue="Error" group="Appearance">
+            <documentation>Specifies the type of the message</documentation>
+        </property>
+        <property name="title" type="sap.ui.core/string" defaultValue="" group="Appearance">
+            <documentation>Specifies the title of the message</documentation>
+        </property>
+        <property name="subtitle" type="sap.ui.core/string" group="Misc">
+            <documentation>Specifies the subtitle of the message
+&lt;b&gt;Note:&lt;/b&gt; This is only visible when the &lt;code&gt;title&lt;/code&gt; property is not empty.</documentation>
+        </property>
+        <property name="description" type="sap.ui.core/string" defaultValue="" group="Appearance">
+            <documentation>Specifies detailed description of the message</documentation>
+        </property>
+        <property name="markupDescription" type="sap.ui.core/boolean" defaultValue="false" group="Appearance">
+            <documentation>Specifies if description should be interpreted as markup</documentation>
+        </property>
+        <property name="longtextUrl" type="sap.ui.core/URI" group="Behavior">
+            <documentation>Specifies long text description location URL</documentation>
+        </property>
+        <property name="counter" type="sap.ui.core/int" group="Misc">
+            <documentation>Defines the number of messages for a given message.</documentation>
+        </property>
+        <property name="groupName" type="sap.ui.core/string" defaultValue="" group="Misc">
+            <documentation>Name of a message group the current item belongs to.</documentation>
+        </property>
+        <property name="activeTitle" type="sap.ui.core/boolean" defaultValue="false" group="Misc" since="1.58">
+            <documentation>Defines whether the title of the item will be interactive.</documentation>
+        </property>
+    </properties>
+    <aggregations default="link">
+        <aggregation name="link" type="sap.m/Link" cardinality="0..1">
+            <documentation>Adds an sap.m.Link control which will be displayed at the end of the description of a message.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

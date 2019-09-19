@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>TileSizeBehavior</name>
+    <derived/>
+    <documentation>Describes the behavior of tiles when displayed on a small-screened phone (374px wide and lower).</documentation>
+    <since>1.56.0</since>
+    <enumeration>
+        <value name="Responsive">
+            <documentation>Default behavior: Tiles adapt to the size of the screen, getting smaller on small screens.</documentation>
+        </value>
+        <value name="Small">
+            <documentation>Tiles are small all the time, regardless of the actual screen size.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

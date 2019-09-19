@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>DeltaMicroChart</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Represents the delta of two values as a chart. This control replaces the deprecated sap.suite.ui.commons.DeltaMicroChart.
+&lt;br&gt;Note: You can assign a custom tooltip for this microchart. The custom tooltip can be set using expression binding. When no custom tooltip is defined, the tooltip is generated automatically based on the logic described in {@link sap.ui.core.Element#getTooltip_AsString}. For a combination of a generated and a custom tooltip, use &lt;code&gt;((AltText))&lt;/code&gt; inside of the tooltip string.</documentation>
+    <since>1.34</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="value1" type="sap.ui.core/float" group="Misc">
+            <documentation>The first value for delta calculation.</documentation>
+        </property>
+        <property name="value2" type="sap.ui.core/float" group="Misc">
+            <documentation>The second value for delta calculation.</documentation>
+        </property>
+        <property name="title1" type="sap.ui.core/string" group="Misc">
+            <documentation>The first value title.</documentation>
+        </property>
+        <property name="title2" type="sap.ui.core/string" group="Misc">
+            <documentation>The second value title.</documentation>
+        </property>
+        <property name="displayValue1" type="sap.ui.core/string" group="Misc">
+            <documentation>If this property is set, it is rendered instead of value1.</documentation>
+        </property>
+        <property name="displayValue2" type="sap.ui.core/string" group="Misc">
+            <documentation>If this property is set, it is rendered instead of value2.</documentation>
+        </property>
+        <property name="deltaDisplayValue" type="sap.ui.core/string" group="Misc">
+            <documentation>If this property is set, it is rendered instead of a calculated delta.</documentation>
+        </property>
+        <property name="color" type="sap.m/ValueCSSColor" defaultValue="Neutral" group="Misc">
+            <documentation>The semantic color of the delta value.</documentation>
+        </property>
+        <property name="view" type="sap.suite.ui.microchart/DeltaMicroChartViewType" defaultValue="Normal" group="Appearance" since="1.61.0">
+            <documentation>The view of the chart. If not set, the &lt;code&gt;Normal&lt;/code&gt; view is used by default.</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" group="Misc">
+            <documentation>The width of the chart. Overrides the width specified in the &lt;code&gt;size&lt;/code&gt; property.</documentation>
+        </property>
+        <property name="height" type="sap.ui.core/CSSSize" group="Misc">
+            <documentation>The height of the chart. Overrides the height specified in the &lt;code&gt;size&lt;/code&gt; property.</documentation>
+        </property>
+        <property name="size" type="sap.m/Size" defaultValue="Auto" group="Misc">
+            <documentation>The size of the microchart. If not set, the default size is applied based on the size of the device tile.
+Responsive size takes width and height of the parent container where the delta micro chart is included.</documentation>
+        </property>
+        <property name="isResponsive" type="sap.ui.core/boolean" defaultValue="false" group="Appearance" since="1.38.0">
+            <documentation>If this set to true, width and height of the control are determined by the width and height of the container in which the control is placed. Size and Width properties are ignored in such case.</documentation>
+            <deprecation since="1.61.0"></deprecation>
+        </property>
+    </properties>
+    <events>
+        <event name="press" allowPreventDefault="false">
+            <documentation>The event is triggered when the chart is pressed.</documentation>
+        </event>
+    </events>
+    <associations>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n" since="1.60.0">
+            <documentation>Controls or IDs that label this control. Can be used by screen reader software.</documentation>
+        </association>
+    </associations>
+</control>

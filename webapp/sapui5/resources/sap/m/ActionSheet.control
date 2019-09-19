@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ActionSheet</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The action sheet holds a list of options from which the user can select to complete an action.
+&lt;h3&gt;Overview&lt;/h3&gt;
+The options of the action sheet are represented as {@link sap.m.Button buttons} with icons.
+Elements in the action sheet are left-aligned. Actions should be arranged in order of importance, from top to bottom.
+&lt;h3&gt;Guidelines&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Always display text or text and icons for the actions. Do not use icons only.&lt;/li&gt;
+&lt;li&gt;Always provide a Cancel button on mobile phones.&lt;/li&gt;
+&lt;li&gt;Avoid scrolling on action sheets.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Responsive Behavior&lt;/h3&gt;
+On mobile phones the action sheet is displayed in a {@link sap.m.Dialog dialog}.
+
+On tablets and desktop the action sheet is displayed in a {@link sap.m.Popover popover}.
+
+When an action is triggered, the action sheet closes and you can display a confirmation as a {@link sap.m.MessageToast message toast}.</documentation>
+    <since>1.9.1</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="placement" type="sap.m/PlacementType" defaultValue="Bottom" group="Appearance">
+            <documentation>The ActionSheet behaves as an sap.m.Popover in iPad and this property is the information about on which side will the popover be placed at. Possible values are sap.m.PlacementType.Left, sap.m.PlacementType.Right, sap.m.PlacementType.Top, sap.m.PlacementType.Bottom, sap.m.PlacementType.Horizontal, sap.m.PlacementType.HorizontalPreferedLeft, sap.m.PlacementType.HorizontalPreferedRight, sap.m.PlacementType.Vertical, sap.m.PlacementType.VerticalPreferedTop, sap.m.PlacementType.VerticalPreferedBottom. The default value is sap.m.PlacementType.Bottom.</documentation>
+        </property>
+        <property name="showCancelButton" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>If this is set to true, there will be a cancel button shown below the action buttons. There won't be any cancel button shown in iPad regardless of this property. The default value is set to true.</documentation>
+        </property>
+        <property name="cancelButtonText" type="sap.ui.core/string" group="Appearance">
+            <documentation>This is the text displayed in the cancelButton. Default value is "Cancel", and it's translated according to the current locale setting. This property will be ignored when running either in iPad or showCancelButton is set to false.</documentation>
+        </property>
+        <property name="title" type="sap.ui.core/string" group="Appearance">
+            <documentation>Title will be shown in the header area in iPhone and every Android devices. This property will be ignored in tablets and desktop browser.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="cancelButtonTap" allowPreventDefault="false">
+            <documentation>This event is fired when the cancelButton is tapped. For iPad, this event is also fired when showCancelButton is set to true, and Popover is closed by tapping outside.</documentation>
+            <deprecation since="1.20.0">This event is deprecated, use the cancelButtonPress event instead.</deprecation>
+        </event>
+        <event name="beforeOpen" allowPreventDefault="false">
+            <documentation>This event will be fired before the ActionSheet is opened.</documentation>
+        </event>
+        <event name="afterOpen" allowPreventDefault="false">
+            <documentation>This event will be fired after the ActionSheet is opened.</documentation>
+        </event>
+        <event name="beforeClose" allowPreventDefault="false">
+            <documentation>This event will be fired before the ActionSheet is closed.</documentation>
+        </event>
+        <event name="afterClose" allowPreventDefault="false">
+            <documentation>This event will be fired after the ActionSheet is closed.</documentation>
+        </event>
+        <event name="cancelButtonPress" allowPreventDefault="false">
+            <documentation>This event is fired when the cancelButton is clicked. For iPad, this event is also fired when showCancelButton is set to true, and Popover is closed by clicking outside.</documentation>
+        </event>
+    </events>
+    <aggregations default="buttons">
+        <aggregation name="buttons" type="sap.m/Button" cardinality="0..n">
+            <documentation>These buttons are added to the content area in ActionSheet control. When button is tapped, the ActionSheet is closed before the tap event listener is called.</documentation>
+        </aggregation>
+        <aggregation name="_cancelButton" type="sap.m/Button" cardinality="0..1" visibility="hidden">
+            <documentation>The internally managed cancel button.</documentation>
+        </aggregation>
+        <aggregation name="_invisibleAriaTexts" type="sap.ui.core/InvisibleText" cardinality="0..n" visibility="hidden">
+            <documentation>Hidden texts used for accesibility</documentation>
+        </aggregation>
+    </aggregations>
+    <methods>
+        <method name="openBy">
+            <documentation>Calling this method will make the ActionSheet visible on the screen. The control parameter is the object to which the ActionSheet will be placed.
+It can be not only a UI5 control, but also an existing DOM reference. The side of the placement depends on the &lt;code&gt;placement&lt;/code&gt; property set in the Popover (on tablet and desktop).
+On other platforms, ActionSheet behaves as a standard dialog and this parameter is ignored because dialog is aligned to the screen.</documentation>
+            <parameters>
+                <parameter name="control" type="sap.ui.core/object">
+                    <documentation>The control to which the ActionSheet is opened</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="close">
+            <documentation>Calling this method will make the ActionSheet disappear from the screen.</documentation>
+            <parameters>
+                <parameter name="control" type="sap.ui.core/object">
+                    <documentation>The control to close</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="isOpen" type="sap.ui.core/boolean">
+            <documentation>The method checks if the ActionSheet is open. It returns true when the ActionSheet is currently open (this includes opening and closing animations), otherwise it returns false.</documentation>
+            <parameters>
+                <parameter name="control" type="sap.ui.core/object">
+                    <documentation>The control in question</documentation>
+                </parameter>
+            </parameters>
+        </method>
+    </methods>
+</control>

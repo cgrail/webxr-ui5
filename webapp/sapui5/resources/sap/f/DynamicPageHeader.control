@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>DynamicPageHeader</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Header of the {@link sap.f.DynamicPage}.
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+
+The &lt;code&gt;DynamicPageHeader&lt;/code&gt; control is part of the {@link sap.f.DynamicPage} family
+and is used to serve as header of the {@link sap.f.DynamicPage DynamicPage}.
+
+&lt;h3&gt;Usage&lt;/h3&gt;
+
+The &lt;code&gt;DynamicPageHeader&lt;/code&gt; can hold any layout control and has  two states - expanded
+and collapsed (snapped). The switching between these states happens when:
+
+&lt;ul&gt;&lt;li&gt;the user scrolls below its bottom margin&lt;/li&gt;
+&lt;li&gt;the user clicks on the {@link sap.f.DynamicPageTitle DynamicPageTitle}&lt;/li&gt;
+&lt;li&gt;through the {@link sap.f.DynamicPage DynamicPage} property &lt;code&gt;headerExpanded&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;
+
+&lt;h3&gt;Responsive Behavior&lt;/h3&gt;
+
+The responsive behavior of the &lt;code&gt;DynamicPageHeader&lt;/code&gt; depends on the behavior of the
+content that is displayed.</documentation>
+    <since>1.42</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="pinnable" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>Determines whether the header is pinnable.</documentation>
+        </property>
+        <property name="backgroundDesign" type="sap.m/BackgroundDesign" group="Appearance" since="1.58">
+            <documentation>Determines the background color of the &lt;code&gt;DynamicPageHeader&lt;/code&gt;.
+
+&lt;b&gt;Note:&lt;/b&gt; The default value of &lt;code&gt;backgroundDesign&lt;/code&gt; property is null.
+If the property is not set, the color of the background is &lt;code&gt;@sapUiObjectHeaderBackground&lt;/code&gt;,
+which depends on the specific theme.</documentation>
+        </property>
+    </properties>
+    <aggregations default="content">
+        <aggregation name="content" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>The content of the header.</documentation>
+        </aggregation>
+        <aggregation name="_pinButton" type="sap.m/Button" cardinality="0..1" visibility="hidden">
+            <documentation>The pin/unpin button in the header.</documentation>
+        </aggregation>
+        <aggregation name="_collapseButton" type="sap.m/Button" cardinality="0..1" visibility="hidden">
+            <documentation>Visual indication for expanding/collapsing.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

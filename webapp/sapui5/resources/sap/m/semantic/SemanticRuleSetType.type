@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>semantic/SemanticRuleSetType</name>
+    <derived/>
+    <documentation>Declares the type of semantic ruleset that will govern the styling and positioning of semantic content.</documentation>
+    <since>1.44</since>
+    <enumeration>
+        <value name="Classic">
+            <documentation>The default ruleset type, for which the Share Menu is always in the footer of the page.</documentation>
+        </value>
+        <value name="Optimized">
+            <documentation>Offers an optimized user experience, with displaying the Share Menu in the header, rather than the footer, for Fullscreen mode.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

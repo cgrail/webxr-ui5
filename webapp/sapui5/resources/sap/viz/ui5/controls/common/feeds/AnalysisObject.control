@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ui5/controls/common/feeds/AnalysisObject</name>
+    <derived/>
+    <documentation>AnalysisObject Class</documentation>
+    <since>1.21.0</since>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="uid" type="sap.ui.core/string" group="Misc">
+            <documentation>Uid of analysis object</documentation>
+        </property>
+        <property name="name" type="sap.ui.core/string" group="Misc">
+            <documentation>Name of an analysis object.</documentation>
+        </property>
+        <property name="type" type="sap.ui.core/string" group="Misc">
+            <documentation>Type of an analysis object. Enumeration: Measure, Dimension</documentation>
+        </property>
+        <property name="dataType" type="sap.ui.core/string" group="Misc">
+            <documentation>Data type of an analysis object. Enumeration: string, number, date</documentation>
+        </property>
+    </properties>
+</control>

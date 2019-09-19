@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>WizardStep</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A container control used to aggregate user input controls as part of an sap.m.Wizard.
+&lt;h3&gt;Overview&lt;/h3&gt;
+WizardStep gives the developer the ability to validate, invalidate the step and define subsequent steps.
+The WizardStep control control is supposed to be used only as an aggregation of the {@link sap.m.Wizard Wizard} control,
+and should not be used as a standalone one.
+&lt;h3&gt;Structure&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Each wizard step has a title. Additionally it can have an icon.&lt;/li&gt;
+&lt;li&gt;Each wizard step can be validated by setting the &lt;code&gt;validated&lt;/code&gt; property. This action will trigger the rendering of the Next step button.&lt;/li&gt;
+&lt;li&gt;If the execution needs to branch after a given step, you should set all possible next steps in the &lt;code&gt;subsequentSteps&lt;/code&gt; aggregation.</documentation>
+    <since>1.30</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="title" type="sap.ui.core/string" defaultValue="" group="Appearance">
+            <documentation>Determines the title of the step.
+The title is visualized in the Wizard control.</documentation>
+        </property>
+        <property name="icon" type="sap.ui.core/URI" defaultValue="" group="Appearance">
+            <documentation>Determines the icon that is displayed for this step.
+The icon is visualized in the progress navigation part of the Wizard control.
+&lt;b&gt;Note:&lt;/b&gt; In order for the icon to be displayed, each step in the Wizard should have
+this property defined, otherwise the default numbering will be displayed.</documentation>
+        </property>
+        <property name="validated" type="sap.ui.core/boolean" defaultValue="true" group="Behavior" since="1.32">
+            <documentation>Indicates whether or not the step is validated.
+When a step is validated a Next button is visualized in the Wizard control.</documentation>
+        </property>
+        <property name="optional" type="sap.ui.core/boolean" defaultValue="false" group="Appearance" since="1.54">
+            <documentation>Indicates whether or not the step is optional.
+When a step is optional an "(Optional)" label is displayed under the step's title.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="complete" allowPreventDefault="false">
+            <documentation>This event is fired after the user presses the Next button in the Wizard,
+or on &lt;code&gt;nextStep&lt;/code&gt; method call from the app developer.</documentation>
+        </event>
+        <event name="activate" allowPreventDefault="false">
+            <documentation>This event is fired on next step activation from the Wizard.</documentation>
+        </event>
+    </events>
+    <aggregations default="content">
+        <aggregation name="content" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>The content of the Wizard Step.</documentation>
+        </aggregation>
+        <aggregation name="_nextButton" type="sap.m/Button" since="1.58" cardinality="0..1" visibility="hidden">
+            <documentation>The next button of the Wizard Step.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="subsequentSteps" type="sap.m/WizardStep" cardinality="0..n" since="1.32">
+            <documentation>This association is used only when the &lt;code&gt;enableBranching&lt;/code&gt; property of the Wizard is set to true.
+Use the association to store the next steps that are about to come after the current.
+If this is going to be a final step - leave this association empty.</documentation>
+        </association>
+        <association name="nextStep" type="sap.m/WizardStep" cardinality="0..1" since="1.32">
+            <documentation>The next step to be taken after the step is completed.
+Set this association value in the complete event of the current WizardStep.</documentation>
+        </association>
+    </associations>
+</control>

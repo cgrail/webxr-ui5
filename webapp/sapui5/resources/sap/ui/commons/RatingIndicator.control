@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>RatingIndicator</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>RatingIndicator is used to let the user do some rating on a given topic. The amount of
+rating symbols can be specified, as well as the URIs to the image icons which shall be
+used as rating symbols. When the user performs a rating, an event is fired.</documentation>
+    <deprecation since="1.38">Instead, use the &lt;code&gt;sap.m.RatingIndicator&lt;/code&gt; control.</deprecation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="editable" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Determines if the rating symbols can be edited.</documentation>
+        </property>
+        <property name="maxValue" type="sap.ui.core/int" defaultValue="5" group="Behavior">
+            <documentation>Determines the number of displayed rating symbols</documentation>
+        </property>
+        <property name="value" type="sap.ui.core/float" defaultValue="0" group="Behavior" bindable="bindable">
+            <documentation>Determines the currently selected value. If value is set to sap.ui.commons.RatingIndicator.NoValue,
+the averageValue is shown.</documentation>
+        </property>
+        <property name="averageValue" type="sap.ui.core/float" defaultValue="0" group="Behavior">
+            <documentation>Determines the average value. This value is shown if no value is set.
+This can be used to display an average Value before the user votes.</documentation>
+        </property>
+        <property name="iconSelected" type="sap.ui.core/URI" group="Behavior">
+            <documentation>The URI to the image which shall be displayed for all selected rating symbols.
+Note that when this attribute is used, also the other icon attributes need to be set.</documentation>
+        </property>
+        <property name="iconUnselected" type="sap.ui.core/URI" group="Behavior">
+            <documentation>The URI to the image which shall be displayed for all unselected rating symbols.
+If this attribute is used, a requirement is that all custom icons need to have the same size.
+Note that when this attribute is used also the other icon attributes need to be set.</documentation>
+        </property>
+        <property name="iconHovered" type="sap.ui.core/URI" group="Behavior">
+            <documentation>The URI to the image which is displayed when the mouse hovers onto a rating symbol.
+If used, a requirement is that all custom icons need to have the same size.
+Note that when this attribute is used also the other icon attributes need to be set.</documentation>
+        </property>
+        <property name="visualMode" type="sap.ui.commons/RatingIndicatorVisualMode" defaultValue="Half" group="Behavior">
+            <documentation>Defines how float values are visualized: Full, Half, Continuous
+(see enumeration RatingIndicatorVisualMode)</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="change" allowPreventDefault="false">
+            <documentation>The event is fired when the user has done a rating.</documentation>
+            <parameters>
+                <parameter name="value" type="sap.ui.core/int">
+                    <documentation>The value of the user rating</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <associations>
+        <association name="ariaDescribedBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / ids which describe this control (see WAI-ARIA attribute aria-describedby).</documentation>
+        </association>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / ids which label this control (see WAI-ARIA attribute aria-labelledby).</documentation>
+        </association>
+    </associations>
+</control>

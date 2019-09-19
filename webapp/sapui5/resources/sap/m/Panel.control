@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Panel</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A container control which has a header and content.
+&lt;h3&gt;Overview&lt;/h3&gt;
+The panel is a container for grouping and displaying information. It can be collapsed to save space on the screen.
+&lt;h4&gt;Guidelines:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Nesting two or more panels is not recommended.&lt;/li&gt;
+&lt;li&gt;Do not stack too many panels on one page.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Structure&lt;/h3&gt;
+A panel consists of a title bar with a header text or header toolbar, an info toolbar (optional), and a content area.
+Using the &lt;code&gt;headerToolbar&lt;/code&gt; aggregation, you can add a toolbar with any toolbar content (i.e. custom buttons, spacers, titles) inside the title bar.
+
+There are two types of panels: fixed and expandable. Expendable panels are enabled by the &lt;code&gt;expandable&lt;/code&gt; property.
+Furthermore you can define an expand animation with the property &lt;code&gt;expandAnimation&lt;/code&gt;.
+&lt;h3&gt;Usage&lt;/h3&gt;
+&lt;h4&gt;When to use:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;You need to group or display information and want to give users the option of hiding this information.&lt;/li&gt;
+&lt;li&gt;You want to show additional information on demand (for example, a panel could show optional input fields for an advanced search).&lt;/li&gt;
+&lt;li&gt;You want to create a panel with controls that do not require user interaction and are not part of a form. Depending on the usage, change the &lt;code&gt;accessibleRole&lt;/code&gt; property from the default &lt;code&gt;{@link sap.m.PanelAccessibleRole Form}&lt;/code&gt; to &lt;code&gt;{@link sap.m.PanelAccessibleRole Region}&lt;/code&gt; or &lt;code&gt;{@link sap.m.PanelAccessibleRole Complementary}&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Responsive Behavior&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;If the width of the panel is set to 100% (default), the panel and its children are resized responsively, depending on its parent container.&lt;/li&gt;
+&lt;li&gt;If the panel has a fixed defined height, it will take up the space, even if the panel is collapsed.&lt;/li&gt;
+&lt;li&gt;When the panel is expandable, an arrow icon (pointing to the right) appears in front of the header.&lt;/li&gt;
+&lt;li&gt;When the animation is activated, expand/collapse uses a smooth animation to open or close the content area.&lt;/li&gt;
+&lt;li&gt;When the panel expands/collapses, the arrow icon rotates 90 degrees clockwise/counter-clockwise.&lt;/li&gt;
+&lt;li&gt;When the height uses the default property &lt;code&gt;auto&lt;/code&gt;, the height of the content area is automatically adjusted to match the height of its content.&lt;/li&gt;
+&lt;li&gt;When the height of the panel is set to a fixed size, the content area can be scrolled through.&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+    <since>1.16</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="headerText" type="sap.ui.core/string" defaultValue="" group="Data">
+            <documentation>This property is used to set the header text of the Panel.
+The "headerText" is visible in both expanded and collapsed state.
+Note: This property is overwritten by the "headerToolbar" aggregation.</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" defaultValue="100%" group="Appearance">
+            <documentation>Determines the Panel width.</documentation>
+        </property>
+        <property name="height" type="sap.ui.core/CSSSize" defaultValue="auto" group="Appearance">
+            <documentation>Determines the Panel height.</documentation>
+        </property>
+        <property name="expandable" type="sap.ui.core/boolean" defaultValue="false" group="Appearance" since="1.22">
+            <documentation>Specifies whether the control is expandable.
+This allows for collapsing or expanding the infoToolbar (if available) and content of the Panel.
+Note: If expandable is set to false, the Panel will always be rendered expanded.</documentation>
+        </property>
+        <property name="expanded" type="sap.ui.core/boolean" defaultValue="false" group="Appearance" since="1.22">
+            <documentation>Indicates whether the Panel is expanded or not.
+If expanded is set to true, then both the infoToolbar (if available) and the content are rendered.
+If expanded is set to false, then only the headerText or headerToolbar is rendered.</documentation>
+        </property>
+        <property name="expandAnimation" type="sap.ui.core/boolean" defaultValue="true" group="Behavior" since="1.26">
+            <documentation>Indicates whether the transition between the expanded and the collapsed state of the control is animated.
+By default the animation is enabled.</documentation>
+        </property>
+        <property name="backgroundDesign" type="sap.m/BackgroundDesign" defaultValue="Translucent" group="Appearance" since="1.30">
+            <documentation>This property is used to set the background color of the Panel.
+Depending on the theme you can change the state of the background from "Solid" over "Translucent" to "Transparent".</documentation>
+        </property>
+        <property name="accessibleRole" type="sap.m/PanelAccessibleRole" defaultValue="Form" group="Accessibility" since="1.46">
+            <documentation>This property is used to set the accessible aria role of the Panel.
+Depending on the usage you can change the role from the default &lt;code&gt;Form&lt;/code&gt; to &lt;code&gt;Region&lt;/code&gt; or &lt;code&gt;Complementary&lt;/code&gt;.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="expand" since="1.22" allowPreventDefault="false">
+            <documentation>Indicates that the panel will expand or collapse.</documentation>
+            <parameters>
+                <parameter name="expand" type="sap.ui.core/boolean">
+                    <documentation>If the panel will expand, this is true.
+If the panel will collapse, this is false.</documentation>
+                </parameter>
+                <parameter name="triggeredByInteraction" type="sap.ui.core/boolean" since="1.50">
+                    <documentation>Identifies whether the event is triggered by an user interaction or by calling setExpanded.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations default="content">
+        <aggregation name="content" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Determines the content of the Panel.
+The content will be visible only when the Panel is expanded.</documentation>
+        </aggregation>
+        <aggregation name="headerToolbar" type="sap.m/Toolbar" since="1.16" cardinality="0..1">
+            <documentation>This aggregation allows the use of a custom Toolbar as header for the Panel.
+The "headerToolbar" is visible in both expanded and collapsed state.
+Use it when you want to add extra controls for user interactions in the header.
+Note: This aggregation overwrites "headerText" property.</documentation>
+        </aggregation>
+        <aggregation name="infoToolbar" type="sap.m/Toolbar" since="1.16" cardinality="0..1">
+            <documentation>This aggregation allows the use of a custom Toolbar as information bar for the Panel.
+The "infoToolbar" is placed below the header and is visible only in expanded state.
+Use it when you want to show extra information to the user.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

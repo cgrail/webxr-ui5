@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ObjectPageHeaderLayoutData</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A {@link sap.ui.core.LayoutData} element that can be added to controls used in the
+&lt;code&gt;headerContent&lt;/code&gt; aggregation of the &lt;code&gt;ObjectPageLayout&lt;/code&gt;.
+
+&lt;b&gt;Note:&lt;/b&gt; This element is only taken into account when the &lt;code&gt;sap.uxap.ObjectPageLayout&lt;/code&gt; control is used together with
+&lt;code&gt;sap.uxap.ObjectPageHeader&lt;/code&gt; as value of &lt;code&gt;headerTitle&lt;/code&gt;.</documentation>
+    <since>1.26</since>
+    <baseType>sap.ui.core/LayoutData</baseType>
+    <properties>
+        <property name="visibleS" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>If this property is set the control will be visible (or not) in a small sized layout.</documentation>
+        </property>
+        <property name="visibleM" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>If this property is set the control will be visible (or not) in a medium sized layout.</documentation>
+        </property>
+        <property name="visibleL" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>If this property is set the control will be visible (or not) in a large sized layout.</documentation>
+        </property>
+        <property name="showSeparatorBefore" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>If this property is set the control will display a separator before it.</documentation>
+        </property>
+        <property name="showSeparatorAfter" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>If this property is set the control will display a separator after it.</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" defaultValue="auto" group="Misc">
+            <documentation>If this property is set the control will take the provided size.</documentation>
+        </property>
+    </properties>
+</control>

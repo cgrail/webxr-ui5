@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>P13nPanel</name>
+    <derived/>
+    <documentation>An abstract base type for &lt;code&gt;panels&lt;/code&gt; aggregation in &lt;code&gt;P13nDialog&lt;/code&gt; control.</documentation>
+    <since>1.26.0</since>
+    <abstract/>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="title" type="sap.ui.core/string" group="Appearance">
+            <documentation>Title text appears in the panel.</documentation>
+        </property>
+        <property name="titleLarge" type="sap.ui.core/string" group="Appearance" since="1.30.0">
+            <documentation>Large title text appears e.g. in dialog header in case that only one panel is shown.</documentation>
+        </property>
+        <property name="type" type="sap.ui.core/string" group="Misc">
+            <documentation>Panel type for generic use. Due to extensibility reason the type of &lt;code&gt;type&lt;/code&gt; property should be &lt;code&gt;string&lt;/code&gt;.
+So it is feasible to add a custom panel without expanding the type.</documentation>
+        </property>
+        <property name="verticalScrolling" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Enables the vertical Scrolling on the &lt;code&gt;P13nDialog&lt;/code&gt; when the panel is shown.</documentation>
+        </property>
+        <property name="validationExecutor" type="sap.ui.core/object" group="Misc">
+            <documentation>Callback method which is called in order to validate end user entry.</documentation>
+        </property>
+        <property name="validationListener" type="sap.ui.core/object" group="Misc">
+            <documentation>Callback method which is called in order to register for validation result.</documentation>
+        </property>
+        <property name="changeNotifier" type="sap.ui.core/object" group="Misc">
+            <documentation>Callback which notifies a change on this panel.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="beforeNavigationTo" since="1.28.0" allowPreventDefault="false">
+            <documentation>Due to performance the data of the panel can be requested in lazy mode e.g. when the panel is displayed</documentation>
+        </event>
+    </events>
+    <aggregations default="items">
+        <aggregation name="items" type="sap.m/P13nItem" cardinality="0..n" bindable="bindable">
+            <documentation>Defines personalization items (e.g. columns in the &lt;code&gt;P13nColumnsPanel&lt;/code&gt;).</documentation>
+        </aggregation>
+    </aggregations>
+</control>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Shell</name>
+    <derived/>
+    <documentation>The Shell control can be used as root element of applications. It can contain an App or a &lt;code&gt;SplitApp&lt;/code&gt; control.
+The Shell provides some overarching functionality for the overall application and takes care of visual adaptation, such as a frame around the App, on desktop browser platforms.</documentation>
+    <since>1.12</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="title" type="sap.ui.core/string" group="Misc">
+            <documentation>Defines the application title, which may or may not be displayed outside the actual application, depending on the available screen size.</documentation>
+        </property>
+        <property name="logo" type="sap.ui.core/URI" group="Appearance">
+            <documentation>Defines the logo to be displayed next to the App when the screen is sufficiently large.</documentation>
+        </property>
+        <property name="showLogout" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Determines whether the Logout button should be displayed. Currently, this only happens on very tall screens (1568px height), otherwise, it is always hidden.</documentation>
+        </property>
+        <property name="headerRightText" type="sap.ui.core/string" group="Data">
+            <documentation>Defines texts, such as the name of the logged-in user, which should be displayed on the right side of the header (if there is enough space to display the header at all - this only happens on very tall screens (1568px height), otherwise, it is always hidden).</documentation>
+        </property>
+        <property name="appWidthLimited" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>Determines whether the width of the content (the aggregated App) should be limited or extended to the full screen width.</documentation>
+        </property>
+        <property name="backgroundColor" type="sap.ui.core/CSSColor" group="Appearance" since="1.11.2">
+            <documentation>Defines the background color of the Shell. If set, this color will override the default background defined by the theme. This should only be set when really required.
+Any configured background image will be placed above this colored background.
+Use the backgroundRepeat property to define whether this image should be stretched to cover the complete Shell or whether it should be tiled.</documentation>
+        </property>
+        <property name="backgroundImage" type="sap.ui.core/URI" group="Appearance" since="1.11.2">
+            <documentation>Defines the background image of the Shell. If set, this image will override the default background defined by the theme. This should only be set when really required.
+This background image will be placed above any color set for the background.
+Use the backgroundRepeat property to define whether this image should be stretched to cover the complete Shell or whether it should be tiled.</documentation>
+        </property>
+        <property name="backgroundRepeat" type="sap.ui.core/boolean" defaultValue="false" group="Appearance" since="1.11.2">
+            <documentation>Determines whether the background image (if configured) should be proportionally stretched to cover the whole Shell (false, default) or whether it should be tiled (true).</documentation>
+        </property>
+        <property name="backgroundOpacity" type="sap.ui.core/float" defaultValue="1" group="Appearance" since="1.11.2">
+            <documentation>Defines the opacity of the background image. The opacity can be set between 0 (fully transparent) and 1 (fully opaque).
+This can be used to improve readability of the Shell content by making the background image partly transparent.</documentation>
+        </property>
+        <property name="homeIcon" type="sap.ui.core/object" group="Misc">
+            <documentation>Sets the icon used for the mobile device home screen and the icon to be used for bookmarks by desktop browsers.
+
+This property should be only set once, and as early as possible. Subsequent calls replace the previous icon settings and may lead to different behavior depending on the browser.
+
+Different image sizes for device home screen need to be given as PNG images, an ICO file needs to be given as desktop browser bookmark icon (other file formats may not work in all browsers).
+The &lt;code&gt;precomposed&lt;/code&gt; flag defines whether there is already a glow effect contained in the home screen images (or whether iOS should add such an effect). The given structure could look like this:
+{
+'phone':'phone-icon_57x57.png',
+'phone@2':'phone-retina_114x114.png',
+'tablet':'tablet-icon_72x72.png',
+'tablet@2':'tablet-retina_144x144.png',
+'precomposed':true,
+'favicon':'favicon.ico'
+}
+
+See jQuery.sap.setIcons() for full documentation.</documentation>
+        </property>
+        <property name="titleLevel" type="sap.ui.core/TitleLevel" defaultValue="H1" group="Appearance">
+            <documentation>Defines the semantic level of the title.
+
+This information is used by assistive technologies, such as screen readers to create a hierarchical site map for faster navigation.
+Depending on this setting an HTML h1-h6 element is used.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="logout" allowPreventDefault="false">
+            <documentation>Fires when the user presses the logout button/link.</documentation>
+        </event>
+    </events>
+    <aggregations default="app">
+        <aggregation name="app" type="sap.ui.core/Control" cardinality="0..1">
+            <documentation>A Shell contains an App or a SplitApp (they may be wrapped in a View). Other control types are not allowed.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

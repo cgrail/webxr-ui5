@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ToolbarStyle</name>
+    <derived/>
+    <documentation>Types of visual styles for the {@link sap.m.Toolbar}.
+
+&lt;b&gt;Note:&lt;/b&gt; Keep in mind that the styles are theme-dependent and can differ based on the currently used theme.
+
+To preview the different combinations of &lt;code&gt;sap.m.ToolbarDesign&lt;/code&gt; and &lt;code&gt;sap.m.ToolbarStyle&lt;/code&gt;,
+see the &lt;b&gt;OverflowToolbar - Design and styling&lt;/b&gt; sample of the {@link sap.m.OverflowToolbar} control.</documentation>
+    <since>1.54</since>
+    <enumeration>
+        <value name="Standard">
+            <documentation>Default visual style dependent on the used theme.</documentation>
+        </value>
+        <value name="Clear">
+            <documentation>Simplified visual style dependent on the used theme.
+
+&lt;b&gt;Note:&lt;/b&gt; For the Belize themes, the &lt;code&gt;sap.m.Toolbar&lt;/code&gt; is displayed with no border.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

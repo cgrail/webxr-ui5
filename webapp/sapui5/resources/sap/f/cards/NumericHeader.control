@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>cards/NumericHeader</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A control used to group a set of card attributes in a header.
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+The &lt;code&gt;NumericHeader&lt;/code&gt; shows general information about the card and allows the configuration of a numeric value visualization.
+You can configure the title, subtitle, status text and icon, using properties.
+
+&lt;h3&gt;Usage&lt;/h3&gt;
+To show only basic information, use {@link sap.f.cards.Header Header} instead.
+It is possible to add more side number indicators, using the &lt;code&gt;sideIndicators&lt;/code&gt; aggregation.
+You should always set a title.
+You should always have a maximum of two side indicators.</documentation>
+    <since>1.64</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="title" type="sap.ui.core/string" group="Appearance">
+            <documentation>The title of the card</documentation>
+        </property>
+        <property name="subtitle" type="sap.ui.core/string" group="Appearance">
+            <documentation>The subtitle of the card</documentation>
+        </property>
+        <property name="unitOfMeasurement" type="sap.ui.core/string" group="Data">
+            <documentation>General unit of measurement for the header. Displayed as side information to the subtitle.</documentation>
+        </property>
+        <property name="number" type="sap.ui.core/string" group="Data">
+            <documentation>The numeric value of the main number indicator.
+If the value contains more than five characters, only the first five are displayed. Without rounding the number.</documentation>
+        </property>
+        <property name="scale" type="sap.ui.core/string" group="Data">
+            <documentation>Defines the unit of measurement (scaling prefix) for the main indicator.
+Financial characters can be used for currencies and counters. The International System of Units (SI) prefixes can be used.
+If the unit contains more than three characters, only the first three characters are displayed.</documentation>
+        </property>
+        <property name="trend" type="sap.m/DeviationIndicator" defaultValue="None" group="Appearance">
+            <documentation>The direction of the trend arrow. Shows deviation for the value of the main number indicator.</documentation>
+        </property>
+        <property name="state" type="sap.m/ValueColor" defaultValue="Neutral" group="Appearance">
+            <documentation>The semantic color which represents the state of the main number indicator.</documentation>
+            <developmentState state="experimental" since="1.64">Disclaimer: this property is in a beta state - incompatible API changes may be done before its official public release. Use at your own discretion.</developmentState>
+        </property>
+        <property name="details" type="sap.ui.core/string" group="Appearance">
+            <documentation>Additional text which adds more details to what is shown in the numeric header.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="press" allowPreventDefault="false">
+            <documentation>Fires when the user presses the control.</documentation>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="sideIndicators" type="sap.f/cards/NumericSideIndicator" cardinality="0..n">
+            <documentation>Additional side number indicators. For example "Deviation" and "Target". Not more than two side indicators should be used.</documentation>
+        </aggregation>
+        <aggregation name="_title" type="sap.m/Text" cardinality="0..1" visibility="hidden">
+            <documentation>Used to display title text</documentation>
+        </aggregation>
+        <aggregation name="_subtitle" type="sap.m/Text" cardinality="0..1" visibility="hidden">
+            <documentation>Used to display subtitle text</documentation>
+        </aggregation>
+        <aggregation name="_unitOfMeasurement" type="sap.m/Text" cardinality="0..1" visibility="hidden">
+            <documentation>Shows unit of measurement next to subtitle</documentation>
+        </aggregation>
+        <aggregation name="_details" type="sap.m/Text" cardinality="0..1" visibility="hidden">
+            <documentation>Display details</documentation>
+        </aggregation>
+        <aggregation name="_mainIndicator" type="sap.m/NumericContent" cardinality="0..1" visibility="hidden">
+            <documentation>Displays the main number indicator</documentation>
+        </aggregation>
+    </aggregations>
+</control>

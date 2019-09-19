@@ -1,0 +1,68 @@
+{
+  "_version": "1.9.0",
+  "sap.app": {
+    "id": "sap.ui.table",
+    "type": "library",
+    "embeds": [],
+    "applicationVersion": {
+      "version": "1.64.0"
+    },
+    "title": "Table-like controls, mainly for desktop scenarios.",
+    "description": "Table-like controls, mainly for desktop scenarios.",
+    "ach": "CA-UI5-TBL",
+    "resources": "resources.json",
+    "offline": true
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "supportedThemes": [
+      "base",
+      "sap_hcb"
+    ]
+  },
+  "sap.ui5": {
+    "dependencies": {
+      "minUI5Version": "1.64",
+      "libs": {
+        "sap.ui.core": {
+          "minVersion": "1.64.0"
+        },
+        "sap.ui.unified": {
+          "minVersion": "1.64.0"
+        }
+      }
+    },
+    "library": {
+      "i18n": "messagebundle.properties",
+      "content": {
+        "controls": [
+          "sap.ui.table.AnalyticalColumnMenu",
+          "sap.ui.table.AnalyticalTable",
+          "sap.ui.table.ColumnMenu",
+          "sap.ui.table.Table",
+          "sap.ui.table.TreeTable",
+          "sap.ui.table.RowAction"
+        ],
+        "elements": [
+          "sap.ui.table.AnalyticalColumn",
+          "sap.ui.table.Column",
+          "sap.ui.table.Row",
+          "sap.ui.table.RowActionItem",
+          "sap.ui.table.RowSettings",
+          "sap.ui.table.plugins.SelectionPlugin"
+        ],
+        "types": [
+          "sap.ui.table.NavigationMode",
+          "sap.ui.table.RowActionType",
+          "sap.ui.table.SelectionBehavior",
+          "sap.ui.table.SelectionMode",
+          "sap.ui.table.SortOrder",
+          "sap.ui.table.VisibleRowCountMode",
+          "sap.ui.table.SharedDomRef",
+          "sap.ui.table.TreeAutoExpandMode"
+        ],
+        "interfaces": []
+      }
+    }
+  }
+}

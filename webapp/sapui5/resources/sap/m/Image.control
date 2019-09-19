@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Image</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A wrapper around the IMG tag. The image can be loaded from a remote or local server.
+
+Density related image will be loaded if image with density awareness name in format [imageName]@[densityValue].[extension] is provided. The valid desity values are 1, 1.5, 2. If the original devicePixelRatio isn't one of the three valid numbers, it's rounded up to the nearest one.
+
+There are various size setting options available, and the images can be combined with actions.
+
+From version 1.30, new image mode sap.m.ImageMode.Background is added. When this mode is set, the src property is set using the css style 'background-image'. The properties 'backgroundSize', 'backgroundPosition', 'backgroundRepeat' have effect only when image is in sap.m.ImageMode.Background mode. In order to make the high density image correctly displayed, the 'backgroundSize' should be set to the dimension of the normal density version.</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="src" type="sap.ui.core/URI" group="Data">
+            <documentation>Relative or absolute path to URL where the image file is stored. The path will be adapted to the density aware format according to the density of the device following the convention that [imageName]@[densityValue].[extension]</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" group="Appearance">
+            <documentation>When the empty value is kept, the original size is not changed. It is also possible to make settings for width or height only, the original ratio between width/height is maintained. When 'mode' property is set to sap.m.ImageMode.Background, this property always needs to be set. Otherwise the output DOM element has a 0 size.</documentation>
+        </property>
+        <property name="height" type="sap.ui.core/CSSSize" group="Appearance">
+            <documentation>When the empty value is kept, the original size is not changed. It is also possible to make settings for width or height only, the original ratio between width/height is maintained. When 'mode' property is set to sap.m.ImageMode.Background, this property always needs to be set. Otherwise the output DOM element has a 0 size.</documentation>
+        </property>
+        <property name="decorative" type="sap.ui.core/boolean" defaultValue="true" group="Accessibility">
+            <documentation>A decorative image is included for design reasons. Accessibility tools will ignore decorative images.
+
+Note: If the Image has an image map (useMap is set), this property will be overridden (the image will not be rendered as decorative).
+A decorative image has no ALT attribute, so the Alt property is ignored if the image is decorative.</documentation>
+        </property>
+        <property name="alt" type="sap.ui.core/string" group="Accessibility">
+            <documentation>The alternative text that is displayed in case the Image is not available, or cannot be displayed.
+If the image is set to decorative this property is ignored.</documentation>
+        </property>
+        <property name="useMap" type="sap.ui.core/string" group="Misc">
+            <documentation>The name of the image map that defines the clickable areas</documentation>
+        </property>
+        <property name="densityAware" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>If this is set to &lt;code&gt;true&lt;/code&gt;, one or more network requests will be made
+that try to obtain the density perfect version of the image.
+
+By default, this is set to &lt;code&gt;false&lt;/code&gt;, so the src image is loaded directly
+without attempting to fetch the density perfect image for high-density devices.
+
+&lt;b&gt;Note:&lt;/b&gt; Before 1.60, the default value was set to &lt;code&gt;true&lt;/code&gt;, which
+brought redundant network requests for apps that used the default but did not
+provide density perfect image versions on server-side.
+You should set this property to &lt;code&gt;true&lt;/code&gt; only if you also provide the
+corresponding image versions for high-density devices.</documentation>
+        </property>
+        <property name="activeSrc" type="sap.ui.core/URI" defaultValue="" group="Data">
+            <documentation>The source property which is used when the image is pressed.</documentation>
+        </property>
+        <property name="mode" type="sap.m/ImageMode" defaultValue="Image" group="Misc" since="1.30.0">
+            <documentation>Defines how the src and the activeSrc is output to the Dom Element. When set to sap.m.ImageMode.Image which is the default value, the src (activeSrc) is set to the 'src' attribute of the 'img' tag. When set to sap.m.ImageMode.Background, the src (activeSrc) is set to the CSS style 'background-image' and the root DOM element is rendered as a 'span' tag instead of an 'img' tag.</documentation>
+        </property>
+        <property name="backgroundSize" type="sap.ui.core/string" defaultValue="cover" group="Appearance" since="1.30.0">
+            <documentation>Defines the size of the image in sap.m.ImageMode.Background mode. This property is set on the output DOM element using CSS style 'background-size'. This property takes effect only when the 'mode' property is set to sap.m.ImageMode.Background.</documentation>
+        </property>
+        <property name="backgroundPosition" type="sap.ui.core/string" defaultValue="initial" group="Appearance" since="1.30.0">
+            <documentation>Defines the position of the image in sap.m.ImageMode.Background mode. This property is set on the output DOM element using CSS style 'background-position'. This property takes effect only when the 'mode' property is set to sap.m.ImageMode.Background.</documentation>
+        </property>
+        <property name="backgroundRepeat" type="sap.ui.core/string" defaultValue="no-repeat" group="Appearance" since="1.30.0">
+            <documentation>Defines whether the source image is repeated when the output DOM element is bigger than the source. This property is set on the output DOM element using CSS style 'background-repeat'. This property takes effect only when the 'mode' property is set to sap.m.ImageMode.Background.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="tap" allowPreventDefault="false">
+            <documentation>Event is fired when the user clicks on the control. (This event is deprecated, use the press event instead)</documentation>
+        </event>
+        <event name="press" allowPreventDefault="false">
+            <documentation>Event is fired when the user clicks on the control.</documentation>
+        </event>
+        <event name="load" since="1.36.2" allowPreventDefault="false">
+            <documentation>Event is fired when the image resource is loaded.</documentation>
+        </event>
+        <event name="error" since="1.36.2" allowPreventDefault="false">
+            <documentation>Event is fired when the image resource can't be loaded. If densityAware is set to true, the event is fired when none of the fallback resources can be loaded.</documentation>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="detailBox" type="sap.m/LightBox" cardinality="0..1" bindable="bindable">
+            <documentation>A &lt;code&gt;sap.m.LightBox&lt;/code&gt; instance, that will be opened automatically when the user interacts with the &lt;code&gt;Image&lt;/code&gt; control.
+
+The &lt;code&gt;tap&lt;/code&gt; event will still be fired.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="ariaDescribedBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / ids which describe this control (see WAI-ARIA attribute aria-describedby).</documentation>
+        </association>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / ids which label this control (see WAI-ARIA attribute aria-labelledBy).</documentation>
+        </association>
+    </associations>
+</control>

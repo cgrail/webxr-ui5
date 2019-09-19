@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Popover</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Displays additional information for an object in a compact way.
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+The popover displays additional information for an object in a compact way and without leaving the page. The popover can contain various UI elements such as fields, tables, images, and charts. It can also include actions in the footer.
+&lt;h3&gt;Structure&lt;/h3&gt;
+The popover has three main areas:
+&lt;ul&gt;
+&lt;li&gt;Header (optional) - with a back button and a title&lt;/li&gt;
+&lt;li&gt;Content - holds all the controls&lt;/li&gt;
+&lt;li&gt;Footer (optional) - with additional action buttons&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Guidelines&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Do not overlap popovers.&lt;/li&gt;
+&lt;li&gt;You can determine the {@link sap.m.PlacementType placement} of the popover relative to the control that opens it.&lt;/li&gt;
+&lt;li&gt;Ensure that the content has a basic design and shows only the most important information.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Usage&lt;/h3&gt;
+&lt;h4&gt;When to use:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;You need to define your own structure of controls within the popover.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;When not to use:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;The {@link sap.m.QuickView QuickView} is more appropriate for your use case.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Responsive Behavior&lt;/h3&gt;
+The popover is closed when the user clicks or taps outside the popover or selects an action within the popover. You can prevent this with the &lt;code&gt;modal&lt;/code&gt; property.
+The popover can be resized when the &lt;code&gt;resizable&lt;/code&gt; property is enabled.
+
+&lt;ul&gt;
+&lt;li&gt;{@link sap.m.Popover} is &lt;u&gt;not&lt;/u&gt; responsive on mobile devices - it will always be rendered as a popover and you have to take care of its size and position.&lt;/li&gt;
+&lt;li&gt;{@link sap.m.ResponsivePopover} is adaptive and responsive. It renders as a dialog with a close button in the header on phones, and as a popover on tablets.&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="placement" type="sap.m/PlacementType" defaultValue="Right" group="Behavior">
+            <documentation>This is the information about on which side will the popover be placed at. Possible values are sap.m.PlacementType.Left, sap.m.PlacementType.Right, sap.m.PlacementType.Top, sap.m.PlacementType.Bottom, sap.m.PlacementType.Horizontal, sap.m.PlacementType.HorizontalPreferredLeft, sap.m.PlacementType.HorizontalPreferredRight, sap.m.PlacementType.Vertical, sap.m.PlacementType.VerticalPreferredTop, sap.m.PlacementType.VerticalPreferredBottom, sap.m.PlacementType.Auto. The default value is sap.m.PlacementType.Right. Setting this property while popover is open won't cause any rerendering of the popover, but it will take effect when it's opened again.</documentation>
+        </property>
+        <property name="showHeader" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>If a header should be shown at the top of the popover.</documentation>
+        </property>
+        <property name="title" type="sap.ui.core/string" group="Appearance">
+            <documentation>Title text appears in the header. This property will be ignored when showHeader is set to false.</documentation>
+        </property>
+        <property name="modal" type="sap.ui.core/boolean" defaultValue="false" group="Behavior">
+            <documentation>If the popover will not be closed when tapping outside the popover. It also blocks any interaction with the background. The default value is false.</documentation>
+        </property>
+        <property name="offsetX" type="sap.ui.core/int" defaultValue="0" group="Appearance">
+            <documentation>The offset for the popover placement in the x axis. It's with unit pixel.</documentation>
+        </property>
+        <property name="offsetY" type="sap.ui.core/int" defaultValue="0" group="Appearance">
+            <documentation>The offset for the popover placement in the y axis. It's with unit pixel.</documentation>
+        </property>
+        <property name="showArrow" type="sap.ui.core/boolean" defaultValue="true" group="Appearance" since="1.31">
+            <documentation>Whether Popover arrow should be visible</documentation>
+        </property>
+        <property name="contentWidth" type="sap.ui.core/CSSSize" group="Dimension" since="1.9.0">
+            <documentation>Set the width of the content area inside Popover. When controls which adapt their size to the parent control are added directly into Popover, for example sap.m.Page control, a size needs to be specified to the content area of the Popover. Otherwise, Popover control isn't able to display the content in the right way. This values isn't necessary for controls added to Popover directly which can decide their size by themselves, for exmaple sap.m.List, sap.m.Image etc., only needed for controls that adapt their size to the parent control.</documentation>
+        </property>
+        <property name="contentMinWidth" type="sap.ui.core/CSSSize" defaultValue="" group="Dimension" since="1.36">
+            <documentation>Sets the minimum width of the content area inside popover.</documentation>
+        </property>
+        <property name="contentHeight" type="sap.ui.core/CSSSize" group="Dimension" since="1.9.0">
+            <documentation>Set the height of the content area inside Popover. When controls which adapt their size to the parent control are added directly into Popover, for example sap.m.Page control, a size needs to be specified to the content area of the Popover. Otherwise, Popover control isn't able to display the content in the right way. This values isn't necessary for controls added to Popover directly which can decide their size by themselves, for exmaple sap.m.List, sap.m.Image etc., only needed for controls that adapt their size to the parent control.</documentation>
+        </property>
+        <property name="enableScrolling" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>This property is deprecated. Please use properties verticalScrolling and horizontalScrolling instead. If you still use this property it will be mapped on the new properties verticalScrolling and horizontalScrolling.</documentation>
+            <deprecation since="1.15.0">This property is deprecated. Please use properties verticalScrolling and horizontalScrolling instead. If you still use this property it will be mapped on the new properties verticalScrolling and horizontalScrolling.</deprecation>
+        </property>
+        <property name="verticalScrolling" type="sap.ui.core/boolean" defaultValue="true" group="Misc" since="1.15.0">
+            <documentation>This property indicates if user can scroll vertically inside popover when the content is bigger than the content area. However, when scrollable control (sap.m.ScrollContainer, sap.m.Page) is in the popover, this property needs to be set to false to disable the scrolling in popover in order to make the scrolling in the child control work properly.
+Popover detects if there's sap.m.NavContainer, sap.m.Page, or sap.m.ScrollContainer as direct child added to Popover. If there is, Popover will turn off scrolling by setting this property to false automatically ignoring the existing value of this property.</documentation>
+        </property>
+        <property name="horizontalScrolling" type="sap.ui.core/boolean" defaultValue="true" group="Misc" since="1.15.0">
+            <documentation>This property indicates if user can scroll horizontally inside popover when the content is bigger than the content area. However, when scrollable control (sap.m.ScrollContainer, sap.m.Page) is in the popover, this property needs to be set to false to disable the scrolling in popover in order to make the scrolling in the child control work properly.
+Popover detects if there's sap.m.NavContainer, sap.m.Page, or sap.m.ScrollContainer as direct child added to Popover. If there is, Popover will turn off scrolling by setting this property to false automatically ignoring the existing value of this property.</documentation>
+        </property>
+        <property name="bounce" type="sap.ui.core/boolean" group="Behavior" since="1.16.5">
+            <documentation>Whether bouncing is enabled.</documentation>
+            <deprecation since="1.42">This parameter is obsolete and has no effect.</deprecation>
+        </property>
+        <property name="resizable" type="sap.ui.core/boolean" defaultValue="false" group="Dimension" since="1.36.4">
+            <documentation>Whether resize option is enabled.
+*Note:* This property is effective only on Desktop</documentation>
+            <developmentState state="experimental" since="1.36.4">Do not use directly on Popover while in experimental mode!</developmentState>
+        </property>
+    </properties>
+    <events>
+        <event name="afterOpen" allowPreventDefault="false">
+            <documentation>This event will be fired after the popover is opened.</documentation>
+            <parameters>
+                <parameter name="openBy" type="sap.ui.core/Control">
+                    <documentation>This refers to the control which opens the popover.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="afterClose" allowPreventDefault="false">
+            <documentation>This event will be fired after the popover is closed.</documentation>
+            <parameters>
+                <parameter name="openBy" type="sap.ui.core/Control">
+                    <documentation>This refers to the control which opens the popover.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="beforeOpen" allowPreventDefault="false">
+            <documentation>This event will be fired before the popover is opened.</documentation>
+            <parameters>
+                <parameter name="openBy" type="sap.ui.core/Control">
+                    <documentation>This refers to the control which opens the popover.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="beforeClose" allowPreventDefault="false">
+            <documentation>This event will be fired before the popover is closed.</documentation>
+            <parameters>
+                <parameter name="openBy" type="sap.ui.core/Control">
+                    <documentation>This refers to the control which opens the popover.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations default="content">
+        <aggregation name="content" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>The content inside the popover.</documentation>
+        </aggregation>
+        <aggregation name="customHeader" type="sap.ui.core/Control" cardinality="0..1">
+            <documentation>Any control that needed to be displayed in the header area. When this is set, the showHeader property is ignored, and only this customHeader is shown on the top of popover.</documentation>
+        </aggregation>
+        <aggregation name="subHeader" type="sap.ui.core/Control" since="1.15.1" cardinality="0..1">
+            <documentation>When subHeader is assigned to Popover, it's rendered directly after the main header if there is, or at the beginning of Popover when there's no main header. SubHeader is out of the content area and won't be scrolled when content's size is bigger than the content area's size.</documentation>
+        </aggregation>
+        <aggregation name="footer" type="sap.ui.core/Control" cardinality="0..1">
+            <documentation>This is optional footer which is shown on the bottom of the popover.</documentation>
+        </aggregation>
+        <aggregation name="_internalHeader" type="sap.m/Bar" cardinality="0..1" visibility="hidden">
+            <documentation>This is the hidden aggregation for managing the internally created header.</documentation>
+        </aggregation>
+        <aggregation name="beginButton" type="sap.ui.core/Control" since="1.15.1" cardinality="0..1">
+            <documentation>BeginButton is shown at the left side (right side in RTL mode) inside the header. When showHeader is set to false, the property is ignored.</documentation>
+        </aggregation>
+        <aggregation name="endButton" type="sap.ui.core/Control" since="1.15.1" cardinality="0..1">
+            <documentation>EndButton is always shown at the right side (left side in RTL mode) inside the header. When showHeader is set to false, the property is ignored.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="leftButton" type="sap.m/Button" cardinality="0..1">
+            <documentation>LeftButton is shown at the left edge of the bar in iOS, and at the right side of the bar for the other platforms. Please set this to null if you want to remove the left button from the bar. And the button is only removed from the bar, not destroyed. When showHeader is set to false, this property will be ignored.</documentation>
+            <deprecation since="1.15.1">This property has been deprecated since 1.15.1. Please use the beginButton instead.</deprecation>
+        </association>
+        <association name="rightButton" type="sap.m/Button" cardinality="0..1">
+            <documentation>RightButton is always shown at the right edge of the bar. Please set this to null if you want to remove the right button from the bar. And the button is only removed from the bar, not destroyed. When showHeader is set to false, this property will be ignored.</documentation>
+            <deprecation since="1.15.1">This property has been deprecated since 1.15.1. Please use the endButton instead.</deprecation>
+        </association>
+        <association name="initialFocus" type="sap.ui.core/Control" cardinality="0..1" since="1.15.0">
+            <documentation>Focus on the popover is set in the sequence of &lt;code&gt;beginButton&lt;/code&gt; and &lt;code&gt;endButton&lt;/code&gt;, when available. But if a control other than these two buttons needs to get the focus, set the &lt;code&gt;initialFocus&lt;/code&gt; with the control which should be focused on.</documentation>
+        </association>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / ids which label this control (see WAI-ARIA attribute aria-labelledby).</documentation>
+        </association>
+        <association name="ariaDescribedBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / ids which describe this control (see WAI-ARIA attribute aria-describedby).</documentation>
+        </association>
+    </associations>
+    <methods>
+        <method name="openBy" type="sap.m/Popover">
+            <documentation>Opens the Popover and sets the Popover position according to the {@link #getPlacement() placement} property around the &lt;code&gt;oControl&lt;/code&gt; parameter.</documentation>
+            <parameters>
+                <parameter name="control" type="sap.ui.core/object">
+                    <documentation>This is the control to which the Popover will be placed. It can be not only a UI5 control, but also an existing DOM reference. The side of the placement depends on the placement property set in the Popover.</documentation>
+                </parameter>
+                <parameter name="skipInstanceManager" type="sap.ui.core/boolean">
+                    <documentation>Indicates whether popover should be managed by InstanceManager or not</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="close" type="sap.m/Popover">
+            <documentation>Closes the popover when it's already opened.</documentation>
+        </method>
+        <method name="isOpen" type="sap.ui.core/boolean" since="1.9.1">
+            <documentation>The method checks if the Popover is open. It returns true when the Popover is currently open (this includes opening and closing animations), otherwise it returns false.</documentation>
+        </method>
+    </methods>
+</control>

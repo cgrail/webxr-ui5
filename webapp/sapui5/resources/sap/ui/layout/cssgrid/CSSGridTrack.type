@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>cssgrid/CSSGridTrack</name>
+    <derived/>
+    <documentation>A string type that represents a grid track (the space between two grid lines)</documentation>
+    <since>1.60.0</since>
+    <final/>
+</simple-type>

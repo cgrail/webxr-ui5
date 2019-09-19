@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>CalendarMonthInterval</name>
+    <derived/>
+    <documentation>Calendar with granularity of months displayed in one line.
+
+&lt;b&gt;Note:&lt;/b&gt; JavaScript Date objects are used to set and return the months, mark them as selected or as a special type.
+But the date part of the Date object is not used. If a Date object is returned the date will be set to the 1st of the corresponding month.</documentation>
+    <since>1.32.0</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="width" type="sap.ui.core/CSSSize" group="Dimension">
+            <documentation>Width of the &lt;code&gt;CalendarMonthInterval&lt;/code&gt;. The width of the single months depends on this width.</documentation>
+        </property>
+        <property name="startDate" type="sap.ui.core/object" group="Data">
+            <documentation>Start date of the Interval as JavaScript Date object.
+The month of this Date will be the first month in the displayed row.</documentation>
+        </property>
+        <property name="intervalSelection" type="sap.ui.core/boolean" defaultValue="false" group="Behavior">
+            <documentation>If set, interval selection is allowed</documentation>
+        </property>
+        <property name="singleSelection" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>If set, only a single date or interval, if &lt;code&gt;intervalSelection&lt;/code&gt; is enabled, can be selected
+
+&lt;b&gt;Note:&lt;/b&gt; Selection of multiple intervals is not supported in the current version.</documentation>
+        </property>
+        <property name="months" type="sap.ui.core/int" defaultValue="12" group="Appearance">
+            <documentation>Number of months displayed
+
+&lt;b&gt;Note:&lt;/b&gt; On phones, the maximum number of months displayed in the row is always 6.</documentation>
+        </property>
+        <property name="pickerPopup" type="sap.ui.core/boolean" defaultValue="false" group="Appearance" since="1.34.0">
+            <documentation>If set, the yearPicker opens on a popup</documentation>
+        </property>
+        <property name="minDate" type="sap.ui.core/object" group="Misc" since="1.38.0">
+            <documentation>Minimum date that can be shown and selected in the Calendar. This must be a JavaScript date object.
+
+&lt;b&gt;Note:&lt;/b&gt; If the &lt;code&gt;minDate&lt;/code&gt; is set to be after the &lt;code&gt;maxDate&lt;/code&gt;,
+the &lt;code&gt;maxDate&lt;/code&gt; is set to the end of the month of the &lt;code&gt;minDate&lt;/code&gt;.</documentation>
+        </property>
+        <property name="maxDate" type="sap.ui.core/object" group="Misc" since="1.38.0">
+            <documentation>Maximum date that can be shown and selected in the Calendar. This must be a JavaScript date object.
+
+&lt;b&gt;Note:&lt;/b&gt; If the &lt;code&gt;maxDate&lt;/code&gt; is set to be before the &lt;code&gt;minDate&lt;/code&gt;,
+the &lt;code&gt;minDate&lt;/code&gt; is set to the begin of the month of the &lt;code&gt;maxDate&lt;/code&gt;.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="select" allowPreventDefault="false">
+            <documentation>Month selection changed</documentation>
+        </event>
+        <event name="cancel" allowPreventDefault="false">
+            <documentation>Month selection was cancelled</documentation>
+        </event>
+        <event name="startDateChange" since="1.34.0" allowPreventDefault="false">
+            <documentation>&lt;code&gt;startDate&lt;/code&gt; was changed while navigation in &lt;code&gt;CalendarMonthInterval&lt;/code&gt;</documentation>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="selectedDates" type="sap.ui.unified/DateRange" cardinality="0..n">
+            <documentation>Date ranges for selected dates of the &lt;code&gt;CalendarMonthInterval&lt;/code&gt;.
+
+If &lt;code&gt;singleSelection&lt;/code&gt; is set, only the first entry is used.
+
+&lt;b&gt;Note:&lt;/b&gt; Even if only one day is selected, the whole corresponding month is selected.</documentation>
+        </aggregation>
+        <aggregation name="specialDates" type="sap.ui.unified/DateTypeRange" cardinality="0..n">
+            <documentation>Date ranges with type to visualize special months in the &lt;code&gt;CalendarMonthInterval&lt;/code&gt;.
+If one day is assigned to more than one type, only the first one will be used.
+
+&lt;b&gt;Note:&lt;/b&gt; Even if only one day is set as a special day, the whole corresponding month is displayed in this way.</documentation>
+        </aggregation>
+        <aggregation name="header" type="sap.ui.unified/calendar/Header" cardinality="0..1" visibility="hidden">
+            <documentation>Hidden, for internal use only.</documentation>
+        </aggregation>
+        <aggregation name="monthsRow" type="sap.ui.unified/calendar/MonthsRow" cardinality="0..1" visibility="hidden"/>
+        <aggregation name="yearPicker" type="sap.ui.unified/calendar/YearPicker" cardinality="0..1" visibility="hidden"/>
+        <aggregation name="calendarPicker" type="sap.ui.unified/Calendar" cardinality="0..1" visibility="hidden"/>
+    </aggregations>
+    <associations>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / IDs which label this control (see WAI-ARIA attribute aria-labelledby).</documentation>
+        </association>
+        <association name="legend" type="sap.ui.unified/CalendarLegend" cardinality="0..1" since="1.38.5">
+            <documentation>Association to the &lt;code&gt;CalendarLegend&lt;/code&gt; explaining the colors of the &lt;code&gt;specialDates&lt;/code&gt;.
+
+&lt;b&gt;Note&lt;/b&gt; The legend does not have to be rendered but must exist, and all required types must be assigned.</documentation>
+        </association>
+    </associations>
+    <methods>
+        <method name="focusDate" type="sap.ui.unified/Calendar">
+            <documentation>Sets the focused month of the &lt;code&gt;CalendarMonthInterval&lt;/code&gt;.</documentation>
+            <parameters>
+                <parameter name="datetime" type="any">
+                    <documentation>JavaScript date object for focused date. (The month of this date will be focused.)</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="displayDate" type="sap.ui.unified/CalendarMonthInterval">
+            <documentation>Displays a month in the &lt;code&gt;CalendarMonthInterval&lt;/code&gt; but doesn't set the focus.</documentation>
+            <parameters>
+                <parameter name="datetime" type="any">
+                    <documentation>JavaScript date object for displayed date. (The month of this date will be displayed.)</documentation>
+                </parameter>
+            </parameters>
+        </method>
+    </methods>
+</control>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>CommonBackgroundType</name>
+    <derived/>
+    <documentation>Lists the available theme-specific background colors.</documentation>
+    <since>1.34</since>
+    <enumeration>
+        <value name="Lightest">
+            <documentation>The lightest background color.</documentation>
+        </value>
+        <value name="ExtraLight">
+            <documentation>Extra light background color.</documentation>
+        </value>
+        <value name="Light">
+            <documentation>Light background color.</documentation>
+        </value>
+        <value name="MediumLight">
+            <documentation>Medium light background color.</documentation>
+        </value>
+        <value name="Medium">
+            <documentation>Medium background color.</documentation>
+        </value>
+        <value name="Dark">
+            <documentation>Dark background color.</documentation>
+        </value>
+        <value name="ExtraDark">
+            <documentation>Extra dark background color.</documentation>
+        </value>
+        <value name="Darkest">
+            <documentation>The darkest background color.</documentation>
+        </value>
+        <value name="Transparent">
+            <documentation>The transparent background color.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

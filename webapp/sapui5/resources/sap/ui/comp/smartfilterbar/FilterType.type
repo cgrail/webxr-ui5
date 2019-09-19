@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartfilterbar/FilterType</name>
+    <derived/>
+    <documentation>The available filter types to configure the internal control of a SmartFilterBar control.</documentation>
+    <enumeration>
+        <value name="auto">
+            <documentation>Restrict filter based on metadata.</documentation>
+        </value>
+        <value name="single">
+            <documentation>Restrict filter to a single entry.</documentation>
+        </value>
+        <value name="multiple">
+            <documentation>Restrict filter to multiple entries.</documentation>
+        </value>
+        <value name="interval">
+            <documentation>Restrict filter to an interval.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

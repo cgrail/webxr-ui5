@@ -1,0 +1,42 @@
+<!--
+/**
+ * OData v4 FilterField
+ * @param conditionModelName {String} Name of the condition model to be used
+ * @param idPrefix default 'FF' Prefix for the id
+ * @param vhIdPrefix default 'FFVH' Prefix for the value help id
+ * @param metadataContext:entitySet context to the EntitySet
+ * @param metadataContext:property context to the property that should be rendered
+ * @returns
+ */
+-->
+
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+						 xmlns:core="sap.ui.core"
+						 xmlns="sap.m"
+						 xmlns:mdc="sap.ui.mdc.base"
+						 xmlns:macro="sap.ui.mdc.odata.v4"
+						 xmlns:log="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+						 template:require="{
+							MODEL: 'sap/ui/model/odata/v4/AnnotationHelper',
+							COMMON: 'sap/ui/mdc/odata/v4/CommonHelper',
+							FIELD: 'sap/ui/mdc/odata/v4/field/FieldHelper',
+							ID: 'sap/ui/mdc/odata/v4/StableIdHelper'
+						 }">
+	<template:with path="entitySet>@sapui.name" var="esName">
+		<template:if test="{property>@@COMMON.isPropertyFilterable}">
+			<mdc:FilterField
+				log:sourcePath="/{esName>}/{property>@@FIELD.propertyName}"
+				id="{= ID.generate([${this>idPrefix} || 'FF',${esName>},${property>@@FIELD.propertyName}]) }"
+				label="{property>@com.sap.vocabularies.Common.v1.Label}"
+				dataType="{property>$Type}"
+				display="{property>@/@@FIELD.displayMode}"
+				maxConditions="{= ${property>$Type} === 'Edm.Boolean' ? 1 : undefined}"
+				fieldHelp="{= ${property>$Type} !== 'Edm.Boolean' ? ID.generate([${this>vhIdPrefix} || 'FFVH',${property>@@FIELD.propertyName}]) : undefined}"
+				conditions="{= '{' + ${this>conditionModelName} + '>/conditions/' + ${property>@@FIELD.propertyName} + '}' }"
+				dataTypeConstraints="{property>@@FIELD.constraints}"
+				dataTypeFormatOptions="{property>@@FIELD.formatOptions}"
+				required="{property>@@FIELD.isRequiredInFilter}"
+			/>
+		</template:if>
+	</template:with>
+</core:FragmentDefinition>

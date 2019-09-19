@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>HorizontalAlignmentType</name>
+    <derived/>
+    <documentation>Alignment type for the microchart content.</documentation>
+    <since>1.62</since>
+    <enumeration>
+        <value name="Left">
+            <documentation>Left alignment.</documentation>
+        </value>
+        <value name="Center">
+            <documentation>Center alignment.</documentation>
+        </value>
+        <value name="Right">
+            <documentation>Right alignment.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

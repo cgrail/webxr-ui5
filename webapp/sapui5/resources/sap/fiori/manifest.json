@@ -1,0 +1,46 @@
+{
+  "_version": "1.9.0",
+  "sap.app": {
+    "id": "sap.fiori",
+    "type": "library",
+    "embeds": [],
+    "applicationVersion": {
+      "version": "1.64.0"
+    },
+    "title": "A hybrid UILibrary merged from the most common UILibraries that are used in Fiori apps",
+    "description": "A hybrid UILibrary merged from the most common UILibraries that are used in Fiori apps",
+    "resources": "resources.json",
+    "offline": true
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "supportedThemes": [
+      "base",
+      "sap_belize",
+      "sap_belize_hcb",
+      "sap_belize_hcw",
+      "sap_belize_plus",
+      "sap_bluecrystal",
+      "sap_hcb"
+    ]
+  },
+  "sap.ui5": {
+    "dependencies": {
+      "minUI5Version": "1.64",
+      "libs": {
+        "sap.ui.core": {
+          "minVersion": "1.64.0"
+        }
+      }
+    },
+    "library": {
+      "i18n": false,
+      "content": {
+        "controls": [],
+        "elements": [],
+        "types": [],
+        "interfaces": []
+      }
+    }
+  }
+}

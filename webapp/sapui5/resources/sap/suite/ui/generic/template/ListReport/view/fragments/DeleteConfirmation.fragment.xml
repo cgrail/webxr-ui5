@@ -1,0 +1,21 @@
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+						 xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog id="deleteConfirmationDialog" title="{delete>/text/title}" class="sapUiContentPadding" state="{= ${delete>/lockedItemsCount} !== ${delete>/itemsCount} ? 'Warning' : 'Error' }" ariaLabelledBy="deleteText">
+		<content>
+			<VBox>
+				<Text id="deleteText" text="{delete>/text/text}"/>
+				<CheckBox id="deleteCheckBox"
+						  selected="{delete>/checkboxSelected}"
+						  text="{delete>/text/unsavedChanges}"
+						  visible="{= ${delete>/unsavedChangesItemsCount} > 0 &amp;&amp; ${delete>/unsavedChangesItemsCount} !== ${delete>/itemsCount} &amp;&amp; (${delete>/itemsCount} - ${delete>/lockedItemsCount} !== ${delete>/unsavedChangesItemsCount}) ? true : false }"/>
+				<Text id="undeletableText"  visible="{= ${delete>/undeletableCount} > 0 ? true : false }" text="{delete>/text/undeletableText}" />
+			</VBox>
+		</content>
+		<beginButton>
+			<Button text="{i18n>DELETE}" press="onDelete" visible="{= ${delete>/lockedItemsCount} !== ${delete>/itemsCount} }"/>
+		</beginButton>
+		<endButton>
+			<Button text="{= ${delete>/lockedItemsCount} !== ${delete>/itemsCount} ? ${i18n>CANCEL} : ${i18n>CLOSE} }" press="onCancel"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

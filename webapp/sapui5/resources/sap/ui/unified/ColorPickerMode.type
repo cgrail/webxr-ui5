@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ColorPickerMode</name>
+    <derived/>
+    <documentation>different styles for a ColorPicker.</documentation>
+    <enumeration>
+        <value name="HSV">
+            <documentation>Color picker works with HSV values.</documentation>
+        </value>
+        <value name="HSL">
+            <documentation>Color picker works with HSL values.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

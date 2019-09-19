@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>base/filterbar/ConditionsData</name>
+    <derived/>
+    <documentation>Represents a filter item on the UI.</documentation>
+    <since>1.61.0</since>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="fieldPath" type="sap.ui.core/string">
+            <documentation>Defines the fieldPath of the conditions</documentation>
+        </property>
+        <property name="conditions" type="sap.ui.core/object" defaultValue="[]">
+            <documentation>Sets the conditions that represents the values of the field
+
+This should be bound to a ConditionModel using the fieldPath</documentation>
+        </property>
+        <property name="outValues" type="sap.ui.core/string[]" defaultValue="[]">
+            <documentation>Dependent out values.</documentation>
+        </property>
+    </properties>
+</control>

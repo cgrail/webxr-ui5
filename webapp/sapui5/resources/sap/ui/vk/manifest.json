@@ -1,0 +1,107 @@
+{
+  "_version": "1.9.0",
+  "sap.app": {
+    "id": "sap.ui.vk",
+    "type": "library",
+    "embeds": [],
+    "applicationVersion": {
+      "version": "1.64.0"
+    },
+    "title": "SAPUI5 Visualization Toolkit.",
+    "description": "SAPUI5 Visualization Toolkit.",
+    "ach": "CA-UI5-VTK",
+    "resources": "resources.json",
+    "offline": true
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "supportedThemes": [
+      "base",
+      "sap_belize",
+      "sap_belize_hcb",
+      "sap_belize_hcw",
+      "sap_belize_plus",
+      "sap_bluecrystal",
+      "sap_fiori_3",
+      "sap_hcb"
+    ]
+  },
+  "sap.ui5": {
+    "dependencies": {
+      "minUI5Version": "1.64",
+      "libs": {
+        "sap.ui.core": {
+          "minVersion": "1.64.0"
+        },
+        "sap.ui.unified": {
+          "minVersion": "1.64.0",
+          "lazy": true
+        },
+        "sap.m": {
+          "minVersion": "1.64.0",
+          "lazy": true
+        },
+        "sap.ui.layout": {
+          "minVersion": "1.64.0",
+          "lazy": true
+        }
+      }
+    },
+    "library": {
+      "i18n": false,
+      "content": {
+        "controls": [
+          "sap.ui.vk.ContainerBase",
+          "sap.ui.vk.ContainerContent",
+          "sap.ui.vk.FlexibleControl",
+          "sap.ui.vk.LegendItem",
+          "sap.ui.vk.ListPanel",
+          "sap.ui.vk.ListPanelStack",
+          "sap.ui.vk.MapContainer",
+          "sap.ui.vk.NativeViewport",
+          "sap.ui.vk.Notifications",
+          "sap.ui.vk.Overlay",
+          "sap.ui.vk.RedlineDesign",
+          "sap.ui.vk.RedlineSurface",
+          "sap.ui.vk.SceneTree",
+          "sap.ui.vk.StepNavigation",
+          "sap.ui.vk.Toolbar",
+          "sap.ui.vk.Viewer",
+          "sap.ui.vk.ViewGallery",
+          "sap.ui.vk.Viewport",
+          "sap.ui.vk.ViewportBase",
+          "sap.ui.vk.dvl.Viewport",
+          "sap.ui.vk.threejs.Viewport"
+        ],
+        "elements": [
+          "sap.ui.vk.ContentConnector",
+          "sap.ui.vk.OverlayArea",
+          "sap.ui.vk.RedlineElement",
+          "sap.ui.vk.RedlineElementEllipse",
+          "sap.ui.vk.RedlineElementFreehand",
+          "sap.ui.vk.RedlineElementLine",
+          "sap.ui.vk.RedlineElementText",
+          "sap.ui.vk.RedlineElementRectangle",
+          "sap.ui.vk.ViewStateManager",
+          "sap.ui.vk.ViewStateManagerBase",
+          "sap.ui.vk.dvl.ViewStateManager",
+          "sap.ui.vk.threejs.ViewStateManager"
+        ],
+        "types": [
+          "sap.ui.vk.CameraFOVBindingType",
+          "sap.ui.vk.CameraProjectionType",
+          "sap.ui.vk.ContentResourceSourceCategory",
+          "sap.ui.vk.dvl.GraphicsCoreApi",
+          "sap.ui.vk.SelectionMode",
+          "sap.ui.vk.TransformationMatrix",
+          "sap.ui.vk.VisibilityMode",
+          "sap.ui.vk.ZoomTo"
+        ],
+        "interfaces": [
+          "sap.ui.vk.DecryptionHandler",
+          "sap.ui.vk.AuthorizationHandler"
+        ]
+      }
+    }
+  }
+}

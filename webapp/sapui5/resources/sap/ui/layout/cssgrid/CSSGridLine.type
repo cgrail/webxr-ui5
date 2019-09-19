@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>cssgrid/CSSGridLine</name>
+    <derived/>
+    <documentation>A string type that represents one or two grid lines. Used to define the position and size of a single grid item.
+
+Valid values:
+auto
+inherit
+1
+span 2
+span 2 / 5
+span 2 / -5
+5 / 7
+7 / span 5
+span 7 / span 5</documentation>
+    <since>1.60.0</since>
+    <final/>
+    <pattern>auto|inherit|((span)?(\s)?-?[0-9]+(\s/\s(span)?(\s)?-?[0-9]*)?)?</pattern>
+</simple-type>

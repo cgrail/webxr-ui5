@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartmicrochart/SmartDeltaMicroChart</name>
+    <derived/>
+    <documentation>The SmartDeltaMicroChart control creates a {@link sap.suite.ui.microchart.DeltaMicroChart DeltaMicroChart} based on OData metadata and the configuration
+       specified. The delta micro chart represents the delta of two values as a chart.&lt;br&gt;
+       The &lt;code&gt;entitySet&lt;/code&gt; property is required to use the control.
+       The entity set you specify in this property is used to fetch OData metadata and to generate the micro chart's UI.
+       This property can also be used to fetch actual data.&lt;br&gt;
+       &lt;b&gt;&lt;i&gt;Notes:&lt;/i&gt;&lt;/b&gt;&lt;br&gt;
+       &lt;ul&gt;&lt;li&gt;Most properties are not dynamic and cannot be changed once the control has been
+       initialized.&lt;/li&gt;&lt;li&gt;
+       SmartDeltaMicroChart does not have its own ChartType/Enum annotation.
+       This means that ChartType annotation is not specified and SmartDeltaMicroChart cannot be created with a &lt;code&gt;SmartMicroChart&lt;/code&gt;.&lt;/li&gt;&lt;/ul&gt;</documentation>
+    <since>1.61</since>
+    <baseType>sap.ui.comp/smartmicrochart/SmartMicroChartBase</baseType>
+    <properties>
+        <property name="enableAutoBinding" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>If set to &lt;code&gt;true&lt;/code&gt;, this enables automatic data binding using the &lt;code&gt;chartBindingPath&lt;/code&gt; property 
+, if such a property exists.</documentation>
+        </property>
+    </properties>
+</control>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>InteractiveDonutChart</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The InteractiveDonutChart control belongs to a chart control group in the MicroChart library with a number of interactive features. These interactive features provide more information on a chart value.
+For example, by selecting a segment you can get more details on the displayed value.</documentation>
+    <since>1.42.0</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="displayedSegments" type="sap.ui.core/int" defaultValue="3" group="Appearance">
+            <documentation>Number of segments to be displayed.</documentation>
+        </property>
+        <property name="selectionEnabled" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Switch which enables or disables selection.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="selectionChanged" allowPreventDefault="false">
+            <documentation>Event is fired when a user has selected or deselected a segment or a legend entry.</documentation>
+            <parameters>
+                <parameter name="selectedSegments" type="sap.suite.ui.microchart/InteractiveDonutChartSegment[]">
+                    <documentation>Contains all selected segments.</documentation>
+                </parameter>
+                <parameter name="segment" type="sap.suite.ui.microchart/InteractiveDonutChartSegment">
+                    <documentation>The segment whose selection state has changed.</documentation>
+                </parameter>
+                <parameter name="selected" type="sap.ui.core/boolean">
+                    <documentation>Indicates whether the segment "segment" is selected or not.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="press" allowPreventDefault="false">
+            <documentation>The event is fired when the user presses the chart while its segments are not selectable in non-interactive mode. This is decided internally, depending on the size of the chart.</documentation>
+        </event>
+    </events>
+    <aggregations default="segments">
+        <aggregation name="segments" type="sap.suite.ui.microchart/InteractiveDonutChartSegment" cardinality="0..n" bindable="bindable">
+            <documentation>Aggregation which contains all segments.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls which label this control (see WAI-ARIA attribute aria-labelledby).</documentation>
+        </association>
+    </associations>
+</control>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>CalendarIntervalType</name>
+    <derived/>
+    <documentation>Interval types in a &lt;code&gt;CalendarRow&lt;/code&gt;.</documentation>
+    <since>1.34.0</since>
+    <enumeration>
+        <value name="Hour">
+            <documentation>Intervals have the size of one hour.</documentation>
+        </value>
+        <value name="Day">
+            <documentation>Intervals have the size of one day.</documentation>
+        </value>
+        <value name="Month">
+            <documentation>Intervals have the size of one month.</documentation>
+        </value>
+        <value name="Week" since="1.44">
+            <documentation>Intervals have the size of one day where 7 days are displayed, starting with the first day of the week.
+
+Note: This interval type is NOT supported when creating a custom sap.m.PlanningCalendarView.</documentation>
+        </value>
+        <value name="OneMonth" since="1.46" value="One Month">
+            <documentation>Intervals have the size of one day where 31 days are displayed, starting with the first day of the month.
+
+Note: This interval type is NOT supported when creating a custom sap.m.PlanningCalendarView.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

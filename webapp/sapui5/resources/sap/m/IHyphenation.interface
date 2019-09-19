@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<interface xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>IHyphenation</name>
+    <derived/>
+    <documentation>Represents an Interface for controls that can have their text hyphenated.
+Those controls can use &lt;code&gt;HyphenationSupport&lt;/code&gt; mixin.</documentation>
+</interface>

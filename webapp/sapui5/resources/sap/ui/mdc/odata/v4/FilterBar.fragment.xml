@@ -1,0 +1,105 @@
+<!--
+/**
+ * OData v4 FilterBar
+ * @param [id] of the filterbar
+ * @param [hideBasicSearch] Don't show the basic search field
+ * @param [showAdaptFiltersButton] Handles visibility of the 'Adapt Filters' button on the FilterBar
+ * @param listBindingNames List bindings that must be attached to the condition model
+ * @param conditionModelName {String} Name of the condition model to be used
+ * @param liveMode {Boolean} If set the search will be automatically triggered, when a filter value was changed.
+ * @param draftEditStateModelName {String} Name of draftEditState model that will be bound to a control
+ * @param metadataContext:entitySet context to the EntitySet
+ * @returns
+ */
+-->
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+						 xmlns:core="sap.ui.core"
+						 xmlns:fb="sap.ui.mdc.base.filterbar"
+						 xmlns="sap.m"
+						 xmlns:mdc="sap.ui.mdc.base"
+						 xmlns:macro="sap.ui.mdc.odata.v4"
+						 xmlns:log="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+						 xmlns:macroData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+						 template:require="{
+							ID: 'sap/ui/mdc/odata/v4/StableIdHelper'
+						 }">
+	<template:with path="entitySet>@sapui.name" var="esName">
+		<fb:FilterBar
+			id="{this>id}"
+			conditionModelName="{this>conditionModelName}"
+			liveMode="{this>liveMode}"
+			showAdaptFiltersButton="{this>showAdaptFiltersButton}"
+			macroData:listBindingNames="{this>listBindingNames}"
+			log:entitySet="{entitySet>@sapui.name}"
+		>
+			<fb:dependents>
+				<!-- Create the value help dialogs for the filterbar as dependends of the filterbar -->
+				<template:repeat list="{path:'entitySet>$Type/@com.sap.vocabularies.UI.v1.SelectionFields'}" var="selectionField">
+					<template:with path="selectionField>$PropertyPath" var="item">
+						<macro:ValueHelp idPrefix="FF{this>id}VH" metadataContexts="{model: 'entitySet', path:'',  name: 'entitySet'},{model: 'item', path:'',  name: 'property'}"	/>
+					</template:with>
+				</template:repeat>
+				<!-- TODO filter on properties here and in similar places -->
+				<template:if test="{= !${path:'entitySet>$Type/@com.sap.vocabularies.UI.v1.SelectionFields'}}" >
+					<template:repeat list="{path:'entitySet>$Type'}" var="selectionField">
+						<template:with path="selectionField>" var="item">
+							<macro:ValueHelp idPrefix="FF{this>id}VH" metadataContexts="{model: 'entitySet', path:'',  name: 'entitySet'},{model: 'item', path:'',  name: 'property'}"	/>
+						</template:with>
+					</template:repeat>
+				</template:if>
+			</fb:dependents>
+			<!--
+			The search field is enabled when
+			* it is not hidden using the property hideBasisSearch
+			* there is no SearchRestrictions
+			* the SearchRestrictions has Searchable === true
+			-->
+			<template:if test="{= !${this>hideBasicSearch} &amp;&amp;
+				( !${entitySet>@com.sap.vocabularies.Capabilities.v1.SearchRestrictions}
+				|| ${entitySet>@com.sap.vocabularies.Capabilities.v1.SearchRestrictions/Searchable} )}">
+				<fb:basicSearchField>
+					<mdc:FilterField placeholder="{this.i18n>filterbar.SEARCH}" conditions="{= '{' + ${this>conditionModelName} + '>/conditions/$search}' }" dataType="Edm.String" maxConditions="1"/>
+				</fb:basicSearchField>
+			</template:if>
+			<fb:filterItems>
+			<template:if test="{this>draftEditStateModelName}" >
+				<!-- The control must set the draft edit model using the name ' + ${this>draftEditStateModelName} + ' to the view or container -->
+				<!-- TODO if I don't put that into the condition model how can it be part of variants? Talk to filter bar team -->
+				<mdc:FilterField id="{= ID.generate(['FF',${esName>},'$editState']) }" label="{this.i18n>filterbar.EDITING_STATUS}" maxConditions="1">
+				<ComboBox
+					selectedKey="\{{this>draftEditStateModelName}>/entitySets/{esName>}/editState\}"
+					items="\{{this>draftEditStateModelName}>/editStates\}"
+					 width="100%">
+					<core:Item key="\{{this>draftEditStateModelName}>id\}" text="\{{this>draftEditStateModelName}>name\}" />
+				</ComboBox>
+				</mdc:FilterField>
+			</template:if>
+			<template:repeat list="{path:'entitySet>$Type/@com.sap.vocabularies.UI.v1.SelectionFields'}" var="selectionField">
+				<template:with path="selectionField>$PropertyPath" var="item">
+					<macro:FilterField
+						idPrefix="FF{this>id}"
+						vhIdPrefix="FF{this>id}VH"
+						metadataContexts="{model: 'entitySet', path:'',  name: 'entitySet'},{model: 'item', path:'',  name: 'property'}"
+						conditionModelName="{this>conditionModelName}"
+					/>
+				</template:with>
+			</template:repeat>
+
+			<template:if test="{= !${path:'entitySet>$Type/@com.sap.vocabularies.UI.v1.SelectionFields'}}" >
+				<template:repeat list="{path:'entitySet>$Type'}" var="selectionField">
+					<template:with path="selectionField>" var="item">
+						<macro:FilterField
+							metadataContexts="{model: 'entitySet', path:'',  name: 'entitySet'},{model: 'item', path:'',  name: 'property'}"
+							conditionModelName="{this>conditionModelName}"
+							idPrefix="FF{this>id}"
+							vhIdPrefix="FF{this>id}VH"
+							log:comment="Taken from Properties"
+						/>
+					</template:with>
+				</template:repeat>
+			</template:if>
+
+			</fb:filterItems>
+		</fb:FilterBar>
+	</template:with>
+</core:FragmentDefinition>

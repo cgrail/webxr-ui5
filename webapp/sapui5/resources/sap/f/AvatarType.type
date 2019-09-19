@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>AvatarType</name>
+    <derived/>
+    <documentation>Types of {@link sap.f.Avatar} based on the displayed content.</documentation>
+    <since>1.46</since>
+    <enumeration>
+        <value name="Icon">
+            <documentation>The displayed content is an icon.</documentation>
+        </value>
+        <value name="Image">
+            <documentation>The displayed content is an image.</documentation>
+        </value>
+        <value name="Initials">
+            <documentation>The displayed content is initials.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

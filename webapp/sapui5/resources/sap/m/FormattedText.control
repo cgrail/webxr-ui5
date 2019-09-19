@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>FormattedText</name>
+    <derived/>
+    <documentation>The FormattedText control allows the usage of a limited set of tags for inline display of formatted text in HTML format.</documentation>
+    <since>1.38.0</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="htmlText" type="sap.ui.core/string" defaultValue="" group="Misc">
+            <documentation>Text in HTML format.
+The following tags are supported:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;a&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;abbr&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;blockquote&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;br&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cite&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;code&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;em&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;h1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;h2&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;h3&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;h4&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;h5&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;h6&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;p&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pre&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;strong&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;span&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;u&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dl&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dt&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dl&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ul&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ol&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;li&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;class, style,&lt;/code&gt; and &lt;code&gt;target&lt;/code&gt; attributes are allowed.
+If &lt;code&gt;target&lt;/code&gt; is not set, links open in a new window by default.
+&lt;p&gt;Only safe &lt;code&gt;href&lt;/code&gt; attributes can be used. See {@link module:sap/base/security/URLWhitelist URLWhitelist}.
+
+&lt;b&gt;Note:&lt;/b&gt; Keep in mind that not supported HTML tags and
+the content nested inside them are both not rendered by the control.</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" group="Appearance">
+            <documentation>Optional width of the control in CSS units.</documentation>
+        </property>
+        <property name="convertLinksToAnchorTags" type="sap.m/LinkConversion" defaultValue="None" group="Behavior" since="1.45.5">
+            <documentation>Determines whether strings that appear to be links will be converted to HTML anchor tags,
+and what are the criteria for recognizing them.</documentation>
+        </property>
+        <property name="convertedLinksDefaultTarget" type="sap.ui.core/string" defaultValue="_blank" group="Behavior" since="1.45.5">
+            <documentation>Determines the &lt;code&gt;target&lt;/code&gt; attribute of the generated HTML anchor tags.
+
+&lt;b&gt;Note:&lt;/b&gt; Applicable only if &lt;code&gt;ConvertLinksToAnchorTags&lt;/code&gt; property is used with a value other than &lt;code&gt;sap.m.LinkConversion.None&lt;/code&gt;.
+Options are the standard values for the &lt;code&gt;target&lt;/code&gt; attribute of the HTML anchor tag:
+&lt;code&gt;_self&lt;/code&gt;, &lt;code&gt;_top&lt;/code&gt;, &lt;code&gt;_blank&lt;/code&gt;, &lt;code&gt;_parent&lt;/code&gt;, &lt;code&gt;_search&lt;/code&gt;.</documentation>
+        </property>
+        <property name="height" type="sap.ui.core/CSSSize" group="Appearance">
+            <documentation>Optional height of the control in CSS units.</documentation>
+        </property>
+    </properties>
+</control>

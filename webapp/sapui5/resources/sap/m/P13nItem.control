@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>P13nItem</name>
+    <derived/>
+    <documentation>Base type for &lt;code&gt;items&lt;/code&gt; aggregation in &lt;code&gt;P13nPanel&lt;/code&gt; control.</documentation>
+    <since>1.26.0</since>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="columnKey" type="sap.ui.core/string" group="Data">
+            <documentation>Can be used as input for subsequent actions.</documentation>
+        </property>
+        <property name="text" type="sap.ui.core/string" defaultValue="" group="Misc">
+            <documentation>The text to be displayed for the item.</documentation>
+        </property>
+        <property name="visible" type="sap.ui.core/boolean" group="Misc">
+            <documentation>Defines visibility of column</documentation>
+        </property>
+        <property name="type" type="sap.ui.core/string" defaultValue="text" group="Misc">
+            <documentation>data type of the column (text, numeric or date is supported)</documentation>
+        </property>
+        <property name="typeInstance" type="sap.ui.core/object" group="Misc">
+            <documentation>data type instance of the column. Can be used instead of the type, precision, scale and formatSettings properties</documentation>
+        </property>
+        <property name="precision" type="sap.ui.core/string" group="Misc">
+            <documentation>if type==numeric the precision will be used to format the entered value (maxIntegerDigits of the used Formatter)</documentation>
+        </property>
+        <property name="formatSettings" type="sap.ui.core/object" group="Misc">
+            <documentation>A JSON object containing the formatSettings which will be used to pass additional type/format settings for the entered value.
+if type==time or date or datetime the object will be used for the DateFormatter, TimeFormatter or DateTimeFormatter
+
+&lt;i&gt;Below you can find a brief example&lt;/i&gt;
+
+&lt;pre&gt;&lt;code&gt;
+{
+	UTC: false,
+		style: "medium" //"short" or "long"
+}
+&lt;/code&gt;&lt;/pre&gt;</documentation>
+        </property>
+        <property name="scale" type="sap.ui.core/string" group="Misc">
+            <documentation>if type==numeric the scale will be used to format the entered value (maxFractionDigits of the used Formatter)</documentation>
+        </property>
+        <property name="maxLength" type="sap.ui.core/string" group="Misc">
+            <documentation>specifies the number of characters which can be entered in the value fields of the condition panel</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/string" group="Misc">
+            <documentation>Defines column width</documentation>
+        </property>
+        <property name="isDefault" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>the column with isDefault==true will be used as the selected column item on the conditionPanel</documentation>
+        </property>
+        <property name="values" type="sap.ui.core/string[]" group="Misc" since="1.34.0">
+            <documentation>the array of values for type bool. e.g. ["", "Off", "On"]. The first entry can be empty (used to blank the value field). Next value
+represent the false value, last entry the true value.</documentation>
+        </property>
+        <property name="role" type="sap.ui.core/string" since="1.34.0">
+            <documentation>Defines role. The role is reflected in the manner how the dimension will influence the chart layout.</documentation>
+        </property>
+        <property name="aggregationRole" type="sap.ui.core/string" since="1.34.0">
+            <documentation>Defines aggregation role</documentation>
+        </property>
+        <property name="href" type="sap.ui.core/string" since="1.46.0">
+            <documentation>Defines href of a link.</documentation>
+        </property>
+        <property name="target" type="sap.ui.core/string">
+            <documentation>Defines target of a link.</documentation>
+        </property>
+        <property name="press" type="sap.ui.core/object" since="1.46.0">
+            <documentation>Defines press handler of a link.</documentation>
+        </property>
+        <property name="description" type="sap.ui.core/string" since="1.56.0">
+            <documentation>Defines additional information of the link.</documentation>
+        </property>
+    </properties>
+</control>

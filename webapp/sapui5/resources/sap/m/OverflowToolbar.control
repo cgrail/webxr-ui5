@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>OverflowToolbar</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A container control based on {@link sap.m.Toolbar}, that provides overflow when
+its content does not fit in the visible area.
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+
+The content of the &lt;code&gt;OverflowToolbar&lt;/code&gt; moves into the overflow area from
+right to left when the available space is not enough in the visible area of
+the container. It can be accessed by the user through the overflow button that
+opens it in a popover.
+
+&lt;b&gt;Note:&lt;/b&gt; It is recommended that you use &lt;code&gt;OverflowToolbar&lt;/code&gt; over
+{@link sap.m.Toolbar}, unless you want to avoid overflow in favor of shrinking.
+
+&lt;h3&gt;Usage&lt;/h3&gt;
+
+Different behavior and priorities can be set for each control inside the
+&lt;code&gt;OverflowToolbar&lt;/code&gt;, such as certain controls to appear only in the
+overflow area or to never move there. For more information, see
+{@link sap.m.OverflowToolbarLayoutData} and {@link sap.m.OverflowToolbarPriority}.
+
+&lt;h3&gt;Overflow Behavior&lt;/h3&gt;
+By default, only the following controls can move to the overflow area:
+
+&lt;ul&gt;&lt;li&gt;{@link sap.m.Button}&lt;/li&gt;
+&lt;li&gt;{@link sap.m.CheckBox}&lt;/li&gt;
+&lt;li&gt;{@link sap.m.ComboBox}&lt;/li&gt;
+&lt;li&gt;{@link sap.m.DatePicker}&lt;/li&gt;
+&lt;li&gt;{@link sap.m.DateTimeInput}&lt;/li&gt;
+&lt;li&gt;{@link sap.m.DateTimePicker}&lt;/li&gt;
+&lt;li&gt;{@link sap.m.GenericTag}&lt;/li&gt;
+&lt;li&gt;{@link sap.m.Input}&lt;/li&gt;
+&lt;li&gt;{@link sap.m.Label}&lt;/li&gt;
+&lt;li&gt;{@link sap.m.MenuButton}&lt;/li&gt;
+&lt;li&gt;{@link sap.m.OverflowToolbarButton}&lt;/li&gt;
+&lt;li&gt;{@link sap.m.OverflowToolbarToggleButton}&lt;/li&gt;
+&lt;li&gt;{@link sap.m.SearchField}&lt;/li&gt;
+&lt;li&gt;{@link sap.m.SegmentedButton}&lt;/li&gt;
+&lt;li&gt;{@link sap.m.Select}&lt;/li&gt;
+&lt;li&gt;{@link sap.m.TimePicker}&lt;/li&gt;
+&lt;li&gt;{@link sap.m.ToggleButton}&lt;/li&gt;
+&lt;li&gt;{@link sap.ui.comp.smartfield.SmartField}&lt;/li&gt;
+&lt;li&gt;{@link sap.ui.comp.smartfield.SmartLabel}&lt;/li&gt;&lt;/ul&gt;
+
+Additionally, any control that implements the {@link sap.m.IOverflowToolbarContent} interface may define
+its behavior (most importantly overflow behavior) when placed inside &lt;code&gt;OverflowToolbar&lt;/code&gt;.
+
+&lt;b&gt;Note:&lt;/b&gt; The &lt;code&gt;OverflowToolbar&lt;/code&gt; is an adaptive container that checks the available
+width and hides the part of its content that doesn't fit. It is intended that simple controls,
+such as {@link sap.m.Button} and {@link sap.m.Label} are used as content. Embedding other
+adaptive container controls, such as {@link sap.m.Breadcrumbs}, results in competition for the available
+space - both controls calculate the available space based on the other one's size and both change their
+width at the same time, leading to incorrectly distributed space.
+
+&lt;h3&gt;Responsive behavior&lt;/h3&gt;
+
+The height of the toolbar changes on desktop, tablet, and smartphones.</documentation>
+    <since>1.28</since>
+    <baseType>sap.m/Toolbar</baseType>
+    <aggregations>
+        <aggregation name="_overflowButton" type="sap.m/ToggleButton" cardinality="0..1" visibility="hidden"/>
+        <aggregation name="_popover" type="sap.m/Popover" cardinality="0..1" visibility="hidden"/>
+    </aggregations>
+</control>

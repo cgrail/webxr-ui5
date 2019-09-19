@@ -1,0 +1,22 @@
+<core:FragmentDefinition
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:uxap="sap.uxap"
+	xmlns:layout="sap.ui.layout" xmlns:build="sap.build"
+	xmlns:block="sap.suite.ui.generic.template.ObjectPage.view.fragments">
+	<uxap:ObjectPageSection
+			id="{ExtensionsSectionId>id}"
+			title="{parts: [{path: 'manifestKey>'}, {path: 'manifestViewExtensions>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getExtensionPointFacetTitle'}"
+			titleUppercase="false"
+			visible="{= !${parameter>/isDraftEnabled} &amp;&amp; ${path: 'firstLevelFacet>Target/AnnotationPath', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.isSelf'} === false ? '{= !${ui>/createMode} ? true : false }' : true}">
+		<uxap:subSections>
+			<uxap:ObjectPageSubSection id="{ExtensionsSubSectionId>id}" title=" " class="sapSmartTemplatesObjectPageSubSection">
+				<template:if test="{parts: [{path: 'manifestKey>'}, {path: 'manifestViewExtensions>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.isExtensionPointFacetLazyLoadingEnabled'}">
+					<uxap:customData>
+						<core:CustomData key="strategyForVisibilityChange" value="lazyLoadingAfterHeader"/>
+					</uxap:customData>
+				</template:if>
+				<core:ExtensionPoint name="{manifestKey>}"/>
+			</uxap:ObjectPageSubSection>
+		</uxap:subSections>
+	</uxap:ObjectPageSection>
+</core:FragmentDefinition>

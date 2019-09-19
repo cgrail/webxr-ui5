@@ -1,0 +1,1 @@
+sap.ui.define([],function(){"use strict";var e=Object.create(null);function E(o,p){e[o.getId()]=p;}function t(c,r,s,o,a){var b=a.getId();var p=e[b];delete e[b];p.fnExtensionAPIAvailable(o.extensionAPI);delete p.fnExtensionAPIAvailable;r[s]=p;}return{embeddedComponentMixInto:E,transferEmbeddedComponentProxy:t};});

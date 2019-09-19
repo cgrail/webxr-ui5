@@ -1,0 +1,51 @@
+{
+  "_version": "1.9.0",
+  "sap.app": {
+    "id": "sap.ui.generic.app",
+    "type": "library",
+    "embeds": [],
+    "applicationVersion": {
+      "version": "1.64.0"
+    },
+    "title": "The SAPUI5 library contains classes that are mainly used in smart template applications, but can also be used in any Fiori/UI5 application that uses the OData protocol to communicate with an application server.",
+    "description": "The SAPUI5 library contains classes that are mainly used in smart template applications, but can also be used in any Fiori/UI5 application\n                   that uses the OData protocol to communicate with an application server.",
+    "resources": "resources.json",
+    "offline": true
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "supportedThemes": []
+  },
+  "sap.ui5": {
+    "dependencies": {
+      "minUI5Version": "1.64",
+      "libs": {
+        "sap.ui.core": {
+          "minVersion": "1.64.0"
+        },
+        "sap.ui.comp": {
+          "minVersion": "1.64.0",
+          "lazy": true
+        },
+        "sap.m": {
+          "minVersion": "1.64.0",
+          "lazy": true
+        }
+      }
+    },
+    "library": {
+      "i18n": "messagebundle.properties",
+      "css": false,
+      "content": {
+        "controls": [],
+        "elements": [],
+        "types": [
+          "sap.ui.generic.app.navigation.service.NavType",
+          "sap.ui.generic.app.navigation.service.ParamHandlingMode",
+          "sap.ui.generic.app.navigation.service.SuppressionBehavior"
+        ],
+        "interfaces": []
+      }
+    }
+  }
+}

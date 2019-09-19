@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ComponentContainer</name>
+    <derived/>
+    <documentation>Container that embeds a UIComponent in a control tree.</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="name" type="sap.ui.core/string">
+            <documentation>Component name, the package where the component is contained. This property can only be applied initially.</documentation>
+        </property>
+        <property name="url" type="sap.ui.core/URI">
+            <documentation>The URL of the component. This property can only be applied initially.</documentation>
+        </property>
+        <property name="async" type="sap.ui.core/boolean" defaultValue="false">
+            <documentation>Flag whether the component should be created sync (default) or async. The default
+will be async when initially the property &lt;code&gt;manifest&lt;/code&gt; is set to a truthy
+value and for the property &lt;code&gt;async&lt;/code&gt; no value has been specified.
+This property can only be applied initially.</documentation>
+        </property>
+        <property name="handleValidation" type="sap.ui.core/boolean" defaultValue="false">
+            <documentation>Enable/disable validation handling by MessageManager for this component.
+The resulting Messages will be propagated to the controls.
+This property can only be applied initially.</documentation>
+        </property>
+        <property name="settings" type="sap.ui.core/object">
+            <documentation>The settings object passed to the component when created. This property can only be applied initially.</documentation>
+        </property>
+        <property name="propagateModel" type="sap.ui.core/boolean" defaultValue="false">
+            <documentation>Defines whether binding information is propagated to the component.</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" group="Dimension">
+            <documentation>Container width in CSS size</documentation>
+        </property>
+        <property name="height" type="sap.ui.core/CSSSize" group="Dimension">
+            <documentation>Container height in CSS size</documentation>
+        </property>
+        <property name="lifecycle" type="sap.ui.core/ComponentLifecycle" defaultValue="Legacy">
+            <documentation>Lifecycle behavior for the Component associated by the &lt;code&gt;ComponentContainer&lt;/code&gt;.
+The default behavior is &lt;code&gt;Legacy&lt;/code&gt;. This  means that the &lt;code&gt;ComponentContainer&lt;/code&gt;
+takes care that the Component is destroyed when the &lt;code&gt;ComponentContainer&lt;/code&gt; is destroyed,
+but it is &lt;b&gt;not&lt;/b&gt; destroyed when a new Component is associated.
+If you use the &lt;code&gt;usage&lt;/code&gt; property to create the Component,
+the default behavior is &lt;code&gt;Container&lt;/code&gt;. This means that
+the Component is destroyed when the &lt;code&gt;ComponentContainer&lt;/code&gt; is destroyed or a new
+Component is associated.
+This property must only be applied before a component instance is created.</documentation>
+        </property>
+        <property name="autoPrefixId" type="sap.ui.core/boolean" defaultValue="false">
+            <documentation>Flag, whether to auto-prefix the ID of the nested Component or not. If
+this property is set to true the ID of the Component will be prefixed
+with the ID of the ComponentContainer followed by a single dash.
+This property can only be applied initially.</documentation>
+        </property>
+        <property name="usage" type="sap.ui.core/string">
+            <documentation>The component usage. If the ComponentContainer is used inside a
+Component, this Component can define a usage which will be used for creating
+the Component.
+This property can only be applied initially.</documentation>
+        </property>
+        <property name="manifest" type="sap.ui.core/any">
+            <documentation>Controls when and from where to load the manifest for the Component.
+When set to any truthy value, the manifest will be loaded asynchronously by default
+and evaluated before the Component controller, if it is set to a falsy value
+other than &lt;code&gt;undefined&lt;/code&gt;, the manifest will be loaded after the controller.
+A non-empty string value will be interpreted as the URL location from where to load the manifest.
+A non-null object value will be interpreted as manifest content.
+This property can only be applied initially.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="componentCreated" since="1.50" allowPreventDefault="false">
+            <documentation>Fired when the component instance has been created by the
+ComponentContainer.</documentation>
+            <parameters>
+                <parameter name="component" type="sap.ui.core/UIComponent">
+                    <documentation>Reference to the created component instance</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="componentFailed" since="1.60" allowPreventDefault="false">
+            <documentation>Fired when the creation of the component instance has failed.</documentation>
+            <parameters>
+                <parameter name="reason" type="sap.ui.core/object">
+                    <documentation>The reason object as returned by the component promise</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <associations>
+        <association name="component" type="sap.ui.core/UIComponent" cardinality="0..1">
+            <documentation>The component displayed in this ComponentContainer.</documentation>
+        </association>
+    </associations>
+</control>

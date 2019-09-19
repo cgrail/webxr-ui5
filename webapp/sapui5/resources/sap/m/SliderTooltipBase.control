@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>SliderTooltipBase</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A Control that visualizes &lt;code&gt;Slider&lt;/code&gt; and &lt;code&gt;RangeSlider&lt;/code&gt; tooltips.</documentation>
+    <since>1.56</since>
+    <baseType>sap.ui.core/Control</baseType>
+</control>

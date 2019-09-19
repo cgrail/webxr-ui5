@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>DeltaMicroChartViewType</name>
+    <derived/>
+    <documentation>Lists the views of the delta micro chart concerning the position of titles.</documentation>
+    <since>1.61</since>
+    <enumeration>
+        <value name="Normal">
+            <documentation>Titles are displayed above the bars.</documentation>
+        </value>
+        <value name="Wide">
+            <documentation>Titles are displayed in the same line with the bars.</documentation>
+        </value>
+        <value name="Responsive">
+            <documentation>Behavior changes based on the current width of the chart.
+&lt;code&gt;Normal&lt;/code&gt; view is used for charts up to 192px wide, and &lt;code&gt;Wide&lt;/code&gt; is used for wider charts.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

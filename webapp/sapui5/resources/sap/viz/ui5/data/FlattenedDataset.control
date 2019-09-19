@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ui5/data/FlattenedDataset</name>
+    <derived/>
+    <documentation>A dataset for flattened (redundant) data using a tabular format.</documentation>
+    <since>1.7.2</since>
+    <baseType>sap.viz/ui5/data/Dataset</baseType>
+    <properties>
+        <property name="context" type="sap.ui.core/any">
+            <documentation>Additional data which works with data context in this dataset. The input could be an array. Each item represents a dimension that is added as the additional information based on data context. The input could be a string of dimension id,
+or object like this {id: "name", showInTooltip: true}. If showInTooltip is false, the dimensions set in this API will not show in
+popover or tooltip. However other dimensions in data context will show. In selection event, all dimension information (including the dimension set in this API) will be included.
+Context will be shown by default in tooltip if only set context with string or string of array.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="dataChange" allowPreventDefault="false">
+            <documentation>data change event</documentation>
+        </event>
+        <event name="dataRefresh" allowPreventDefault="false">
+            <documentation>data refresh event</documentation>
+        </event>
+        <event name="dataError" allowPreventDefault="false">
+            <documentation>data error event</documentation>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="dimensions" type="sap.viz/ui5/data/DimensionDefinition" cardinality="0..n">
+            <documentation>List of definitions of all dimensions in this dataset</documentation>
+        </aggregation>
+        <aggregation name="measures" type="sap.viz/ui5/data/MeasureDefinition" cardinality="0..n">
+            <documentation>list of definitions of all measures in this dataset</documentation>
+        </aggregation>
+        <aggregation name="data" type="sap.ui.core/Element" cardinality="0..n" bindable="bindable">
+            <documentation>Data containing dimensions and measures.
+
+&lt;b&gt;Note:&lt;/b&gt; This aggregation can only be bound against a model, it cannot be managed
+programmatically using the aggregation mutator methods like addData.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

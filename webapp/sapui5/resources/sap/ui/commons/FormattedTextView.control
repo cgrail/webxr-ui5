@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>FormattedTextView</name>
+    <derived/>
+    <documentation>The FormattedTextView control allows the usage of a limited set of HTML tags for display.</documentation>
+    <since>1.9.0</since>
+    <deprecation since="1.38">Instead, use the &lt;code&gt;sap.ui.core.HTML&lt;/code&gt; control.</deprecation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="accessibleRole" type="sap.ui.core/AccessibleRole" defaultValue="Document" group="Accessibility">
+            <documentation>The ARIA role for the control.</documentation>
+        </property>
+        <property name="htmlText" type="sap.ui.core/string" defaultValue="" group="Misc">
+            <documentation>Determines text with placeholders.</documentation>
+        </property>
+    </properties>
+    <aggregations>
+        <aggregation name="controls" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Array of controls that should be replaced within htmlText.</documentation>
+        </aggregation>
+    </aggregations>
+    <methods>
+        <method name="setContent">
+            <documentation>Sets text with placeholders and given array of controls.</documentation>
+            <parameters>
+                <parameter name="htmlText" type="sap.ui.core/string">
+                    <documentation>Contains the corresponding HTML text</documentation>
+                </parameter>
+                <parameter name="controls" type="sap.ui.commons/FormattedTextViewControl">
+                    <documentation>Array of controls that should be used within given HTML text</documentation>
+                </parameter>
+            </parameters>
+        </method>
+    </methods>
+</control>

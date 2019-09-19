@@ -1,0 +1,77 @@
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:mdcBase="sap.ui.mdc.base"
+	xmlns:info="sap.ui.mdc.base.info">
+
+	<mdcBase:fieldInfo>
+		<mdcBase:FieldInfo binding="{property>@@FIELD.getNavigationEntity}">
+			<info:ContentHandler>
+				<template:with path="property>" helper="FIELD.getNavigationEntity" var="entityType">
+					<info:linkHandler>
+						<info:LinkHandler>
+							<template:if test="{entityType>./@com.sap.vocabularies.UI.v1.HeaderInfo}">
+								<template:with path="entityType>./@com.sap.vocabularies.UI.v1.HeaderInfo" var="headerInfo">
+									<info:LinkItem isMain="true"
+										text="{headerInfo>Title/Value/@@MODEL.value}"
+										description="{headerInfo>Description/Value/@@MODEL.value}"
+										icon="{headerInfo>ImageUrl/@@MODEL.value || headerInfo>TypeImageUrl/@@MODEL.value}"/>
+								</template:with>
+							</template:if>
+						</info:LinkHandler>
+					</info:linkHandler>
+					<info:additionalContent>
+						<template:repeat list="{entityType>./@com.sap.vocabularies.UI.v1.QuickViewFacets}" var="facet">
+							<template:if test="{= ${facet>Target/$AnnotationPath}.indexOf('com.sap.vocabularies.Communication.v1.Contact') > -1 }">
+								<template:then>
+									<template:with path="facet>Target/$AnnotationPath" var="contact">
+										<HBox class="sapUiSmallMargin">
+											<info:ContactDetails>
+												<info:ContactDetailsItem formattedName="{contact>fn@@MODEL.value}">
+													<template:if test="{contact>tel}">
+														<info:phones>
+															<template:repeat list="{contact>tel}" var="telephone">
+																<info:ContactDetailsPhoneItem uri="{telephone>uri@@MODEL.value}"
+																	types="{= ${telephone>type} &amp;&amp; ${telephone>type/$EnumMember}.split('/').pop() || undefined }"/>
+															</template:repeat>
+														</info:phones>
+													</template:if>
+													<template:if test="{contact>email}">
+														<info:emails>
+															<template:repeat list="{contact>email}" var="emailId">
+																<info:ContactDetailsEmailItem uri="{emailId>address@@MODEL.value}"
+																	types="{= ${emailId>type} &amp;&amp; ${emailId>type/$EnumMember}.split('/').pop() || undefined }"/>
+															</template:repeat>
+														</info:emails>
+													</template:if>
+													<template:if test="{contact>adr}">
+														<info:addresses>
+															<template:repeat list="{contact>adr}" var="address">
+																<info:ContactDetailsAddressItem street="{address>street@@MODEL.value}"
+																	code="{address>code@@MODEL.value}"
+																	locality="{address>locality@@MODEL.value}"
+																	region="{address>region@@MODEL.value}"
+																	country="{address>country@@MODEL.value}"
+																	types="{= ${address>type} &amp;&amp; ${address>type/$EnumMember}.split('/').pop() || undefined }"/>
+															</template:repeat>
+														</info:addresses>
+													</template:if>
+												</info:ContactDetailsItem>
+											</info:ContactDetails>
+										</HBox>
+									</template:with>
+								</template:then>
+								<template:elseif test="{= (${facet>Target/$AnnotationPath}.indexOf('com.sap.vocabularies.UI.v1.FieldGroup') > -1 ||
+													${facet>Target/$AnnotationPath}.indexOf('com.sap.vocabularies.UI.v1.Identification') > -1) ||
+													${facet>Target/$AnnotationPath}.indexOf('com.sap.vocabularies.UI.v1.DataPoint') > -1}">
+													<core:Fragment fragmentName="sap.ui.mdc.odata.v4.FormWrapper" type="XML" />
+								</template:elseif>
+							</template:if>
+						</template:repeat>
+					</info:additionalContent>
+				</template:with>
+			</info:ContentHandler>
+		</mdcBase:FieldInfo>
+	</mdcBase:fieldInfo>
+</core:FragmentDefinition>
+

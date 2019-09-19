@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartchart/SelectionMode</name>
+    <derived/>
+    <documentation>Enumeration for supported selection mode in SmartChart</documentation>
+    <enumeration>
+        <value name="Multi" value="MULTIPLE">
+            <documentation>Multi selection mode, multiple sets of data points can be selected at once.</documentation>
+        </value>
+        <value name="Single" value="SINGLE">
+            <documentation>Single selection mode, only one set of data points can be selected at once.</documentation>
+        </value>
+        <value name="None" value="NONE">
+            <documentation>None selection mode, no data points can be selected.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

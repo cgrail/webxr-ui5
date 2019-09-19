@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>dnd/DropInfo</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Provides the configuration for drop operations.
+&lt;b&gt;Note:&lt;/b&gt; This configuration might be ignored due to control {@link sap.ui.core.Element.extend metadata} restrictions.</documentation>
+    <since>1.56</since>
+    <baseType>sap.ui.core/dnd/DragDropBase</baseType>
+    <properties>
+        <property name="targetAggregation" type="sap.ui.core/string">
+            <documentation>The aggregation name in the drop target control which is the target of this drag-and-drop action. If undefined, the entire
+control is the target. This can be handy if the target control does not have any aggregations or if the drop position within the target does not matter.</documentation>
+        </property>
+        <property name="dropEffect" type="sap.ui.core/dnd/DropEffect" defaultValue="Move">
+            <documentation>Defines the visual drop effect.</documentation>
+        </property>
+        <property name="dropPosition" type="sap.ui.core/dnd/DropPosition" defaultValue="On">
+            <documentation>Defines the position for the drop action, visualized by a rectangle.</documentation>
+        </property>
+        <property name="dropLayout" type="sap.ui.core/dnd/DropLayout" defaultValue="Default">
+            <documentation>Defines the layout of the droppable controls if &lt;code&gt;dropPosition&lt;/code&gt; is set to &lt;code&gt;Between&lt;/code&gt; or &lt;code&gt;OnOrBetween&lt;/code&gt;.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="dragEnter" allowPreventDefault="true">
+            <documentation>This event is fired when a dragged element enters a drop target.</documentation>
+        </event>
+        <event name="dragOver" since="1.56" allowPreventDefault="false">
+            <documentation>This event is fired when an element is being dragged over a valid drop target.</documentation>
+        </event>
+        <event name="drop" allowPreventDefault="false">
+            <documentation>This event is fired when an element is dropped on a valid drop target, as specified by the drag-and-drop info.</documentation>
+        </event>
+    </events>
+</control>

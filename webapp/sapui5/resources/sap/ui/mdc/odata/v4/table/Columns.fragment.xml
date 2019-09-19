@@ -1,0 +1,38 @@
+<core:FragmentDefinition
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	xmlns:mdc="sap.ui.mdc"
+	xmlns:core="sap.ui.core"
+	xmlns:macro="sap.ui.mdc.odata.v4"
+	template:require="{
+		MODEL: 'sap/ui/model/odata/v4/AnnotationHelper',
+		TABLE: 'sap/ui/mdc/odata/v4/table/TableHelper',
+		FIELD: 'sap/ui/mdc/odata/v4/field/FieldHelper',
+		ID: 'sap/ui/mdc/odata/v4/StableIdHelper'
+	}"
+>
+
+	<!-- TODO: the isNotAlwaysHidden helper shall not be in the field but in the common helper so we can also get rid of
+	the dependency to the field helper -->
+	<template:with path="presentation>@sapui.name" var="nameOfAnnotation">
+	<template:repeat list="{presentation>}" var="dataField">
+		<template:if
+				test="{= (!${dataField>Action} &amp;&amp; !${dataField>SemanticObject} &amp;&amp; !${dataField>Inline}) &amp;&amp; ${dataField>@@.FIELD.isNotAlwaysHidden} }">
+			<mdc:Column
+					id="{this>id}::{dataField>@@.FIELD.getStableIdPartFromDataField}::Column"
+					header="{= ${dataField>@@.MODEL.label} || ${dataField>@com.sap.vocabularies.Common.v1.Label} }"
+					dataProperties="{= ${dataField>Value/$Path} }"
+					hAlign="{= (['Edm.Decimal','Edm.DateTimeOffset','Edm.Date'].indexOf(${dataField>Value/$Path/$Type}) >= 0) ? 'End' : (${dataField>Criticality/$Path}) ? 'Center' : 'Begin' }">
+
+				<!-- TODO: the field expects an entitySet - will this work if collection is a navigation? guess we need to jump to its entityset? -->
+				<macro:Field editMode="{= ${this>editMode} ? ${this>editMode} : 'Display'}"
+							 idPrefix="TableF{this>id}"
+							 vhIdPrefix="TableVH{this>id}"
+							 metadataContexts="{ model: 'collection', path:'',  name: 'entitySet'},{ model: 'dataField', path:'',  name: 'dataField'}"
+							 onCallBoundAction="{= ${this>onCallBoundAction} ? ${this>onCallBoundAction} : null}"
+				></macro:Field>
+			</mdc:Column>
+		</template:if>
+	</template:repeat>
+	</template:with>
+
+</core:FragmentDefinition>

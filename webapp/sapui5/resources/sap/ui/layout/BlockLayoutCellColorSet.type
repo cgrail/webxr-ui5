@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>BlockLayoutCellColorSet</name>
+    <derived/>
+    <documentation>A string type that is used inside the BlockLayoutCell to set a predefined set of colors for the cells.</documentation>
+    <since>1.48</since>
+    <enumeration>
+        <value name="ColorSet1">
+            <documentation>Color Set 1</documentation>
+        </value>
+        <value name="ColorSet2">
+            <documentation>Color Set 2</documentation>
+        </value>
+        <value name="ColorSet3">
+            <documentation>Color Set 3</documentation>
+        </value>
+        <value name="ColorSet4">
+            <documentation>Color Set 4</documentation>
+        </value>
+        <value name="ColorSet5">
+            <documentation>Color Set 5</documentation>
+        </value>
+        <value name="ColorSet6">
+            <documentation>Color Set 6</documentation>
+        </value>
+        <value name="ColorSet7">
+            <documentation>Color Set 7</documentation>
+        </value>
+        <value name="ColorSet8">
+            <documentation>Color Set 8</documentation>
+        </value>
+        <value name="ColorSet9">
+            <documentation>Color Set 9</documentation>
+        </value>
+        <value name="ColorSet10">
+            <documentation>Color Set 10</documentation>
+        </value>
+        <value name="ColorSet11">
+            <documentation>Color Set 11</documentation>
+        </value>
+    </enumeration>
+</simple-type>

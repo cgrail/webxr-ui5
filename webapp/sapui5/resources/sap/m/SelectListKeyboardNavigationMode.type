@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>SelectListKeyboardNavigationMode</name>
+    <derived/>
+    <documentation>Defines the keyboard navigation mode.</documentation>
+    <since>1.38</since>
+    <enumeration>
+        <value name="None">
+            <documentation>Keyboard navigation is disabled.</documentation>
+        </value>
+        <value name="Delimited">
+            <documentation>Keyboard navigation is delimited at the last item or first item of the list.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

@@ -1,0 +1,64 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:fl="sap.ui.fl.variants"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:mdcbase="sap.ui.mdc.base"	
+	xmlns:l="sap.ui.layout">
+	<l:Splitter id="rootSplitter" height="100%" width="100%" class="sapMdcValueHelpPanel">
+		<VBox fitContainer= "true">
+			<layoutData>
+				<l:SplitterLayoutData size="auto" />
+			</layoutData>
+
+			<IconTabBar id="iconTabBar" expandable="false" upperCase="true" stretchContentHeight="true" class="sapUiNoContentPadding" select="iconTabSelect">
+				<layoutData>
+					<FlexItemData growFactor= "1" shrinkFactor= "0"/>
+				</layoutData>
+				<items>
+					<IconTabFilter id="fromList" text="{$i18n>valuehelp.SELECTFROMLIST}" key="selectFromList" visible="false">
+						<l:FixFlex>
+							<l:fixContent>
+								<Toolbar width="100%" visible="true">
+									<fl:VariantManagement id="VHPVariantManagementCtrl" modelName="VHPSearchTemplates" editable="false" visible="false" class="sapUiTinyMarginBegin"/>
+									<ToolbarSpacer/>
+									<mdcbase:FilterField
+										id="SearchField2"
+										dataType="sap.ui.model.type.String"
+										maxConditions="1"
+										conditions="{path: '$this>/filterConditions'}"
+										width="30%"/>
+									<ToggleButton id="AdvancedFilter" pressed="true" icon="sap-icon://filter" type="Transparent" press="_handleToggleFilterVisibility"
+										class="sapMBtnTransparent"></ToggleButton>
+									<!-- <ToggleButton visible="false" icon="sap-icon://multiselect-all" type="Transparent" press="handleShowSelected"
+										class="sapMBtnTransparent"></ToggleButton> -->
+								</Toolbar>
+							</l:fixContent>
+
+							<l:flexContent>
+								<l:Splitter id="filterbarSplitter" height="100%" width="100%">
+								</l:Splitter>
+							</l:flexContent>
+						</l:FixFlex>
+					</IconTabFilter>
+
+					<IconTabFilter id="defineCondition" text="{$i18n>valuehelp.DEFINECONDITIONS}" key="defineCondition" visible="false"/>
+				</items>
+			</IconTabBar>
+		</VBox>
+
+		<VBox fitContainer= "true" width="200px" class="sapMdcTokenizerBox">
+			<layoutData>
+				<l:SplitterLayoutData size="210px" />
+			</layoutData>
+			<Tokenizer id="VHPTokenizer" class="sapMdcTokenizer"
+				tokenUpdate="_handleTokenUpdate"
+				tokens="{path: '$this>/conditions', filters:[{path:'isEmpty', operator:'NE', value1:true}]}">
+				<Token id="VHPToken"
+					text="{path: '$this>', type: 'sap.ui.mdc.base.type.ConditionType'}"
+				/>
+			</Tokenizer> 
+		</VBox>
+	</l:Splitter>
+
+</core:FragmentDefinition>

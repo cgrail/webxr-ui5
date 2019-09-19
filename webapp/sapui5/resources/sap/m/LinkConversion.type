@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>LinkConversion</name>
+    <derived/>
+    <documentation>Enumeration for possible link-to-anchor conversion strategy.</documentation>
+    <since>1.45.5</since>
+    <enumeration>
+        <value name="None">
+            <documentation>Default mode (no conversion).</documentation>
+        </value>
+        <value name="ProtocolOnly">
+            <documentation>Valid links with protocols, such as http, https, ftp.</documentation>
+        </value>
+        <value name="All">
+            <documentation>Valid links with protocols, such as http, https, ftp and those starting with the string "www".</documentation>
+        </value>
+    </enumeration>
+</simple-type>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>personalization/AggregationRole</name>
+    <derived/>
+    <documentation>Provides enumeration sap.ui.comp.personalization.AggregationRole. A subset of aggregation roles used in table personalization.</documentation>
+    <enumeration>
+        <value name="Dimension">
+            <documentation>Dimension role.</documentation>
+        </value>
+        <value name="Measure">
+            <documentation>Measure role.</documentation>
+        </value>
+        <value name="NotDimeasure">
+            <documentation>Role which is neither dimension nor measure.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

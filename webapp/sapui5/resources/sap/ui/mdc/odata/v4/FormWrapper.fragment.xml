@@ -1,0 +1,25 @@
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	xmlns="sap.m"
+	xmlns:odata="sap.ui.mdc.odata.v4"
+	xmlns:core="sap.ui.core">
+
+	<HBox class="sapUiSmallMargin">
+		<template:if test="{= ${facet>Target/$AnnotationPath}.indexOf('com.sap.vocabularies.UI.v1.FieldGroup') > -1}">
+			<template:then>
+				<odata:Form metadataContexts="{ model: 'facet', path:'Target/$AnnotationPath/Data', name: 'dataFieldCollection'},{ model:'entitySet',path:'',name:'entitySet'}"
+					editMode="Display"
+					formTitle="{facet>Label}"/>
+			</template:then>
+			<template:elseif test="{= ${facet>Target/$AnnotationPath}.indexOf('com.sap.vocabularies.UI.v1.Identification') > -1}">
+				<odata:Form metadataContexts="{ model: 'facet', path:'Target/$AnnotationPath', name: 'dataFieldCollection'},{ model:'entitySet',path:'',name:'entitySet'}"
+				editMode="Display"
+				formTitle="{facet>Label}"/>
+			</template:elseif>
+			<template:elseif test="{= ${facet>Target/$AnnotationPath}.indexOf('com.sap.vocabularies.UI.v1.DataPoint') > -1}">
+				<odata:Form metadataContexts="{ model: 'facet', path:'', name: 'dataFieldCollection'},{ model:'entitySet',path:'',name:'entitySet'}"
+					editMode="Display"
+					formTitle="{facet>Label}"/>
+			</template:elseif>
+		</template:if>
+	</HBox>
+</core:FragmentDefinition>

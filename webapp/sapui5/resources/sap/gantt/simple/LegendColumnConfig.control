@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>simple/LegendColumnConfig</name>
+    <derived/>
+    <documentation>Enable users to define properties for shapes in one vertical line(column), each LegendColumnConfig affects one column.</documentation>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property type="sap.ui.core/string" name="fill">
+            <documentation>Once this property is set, shapes in one vertical line have the same fill color or fill pattern.</documentation>
+        </property>
+        <property type="sap.ui.core/string" name="text"/>
+        <property type="sap.ui.core/any" name="fillFactory">
+            <documentation>Factory function is used to determine the fill property for different shape classes defined in yDimension config.
+Shape name of the shape class is passed as a parameter to the function.
+The return value should be a color code.</documentation>
+        </property>
+    </properties>
+</control>

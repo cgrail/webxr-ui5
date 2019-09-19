@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>BlockLayout</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The BlockLayout is used to display several objects in a section-based manner.
+&lt;h3&gt;Overview&lt;/h3&gt;
+The BlockLayout uses horizontal and vertical subdivisions, and full-width banners to display a set of elements.
+By placing pictorial and textual elements side-by-side in different blocks, you can establish a visual connection between blocks and between similar elements.
+&lt;h3&gt;Structure&lt;/h3&gt;
+The BlockLayout contains BlockLayout cells. Every cell consists of a title and content. The title can be text or a link.
+
+Special full-width sections of the BlockLayout allow horizontal scrolling through a set of blocks.
+
+The BlockLayout comes in five predefined types for background colors:
+&lt;ul&gt;
+&lt;li&gt;Layout only (default) - a layout scheme and no background colors&lt;/li&gt;
+&lt;li&gt;Light - a layout scheme with light colors&lt;/li&gt;
+&lt;li&gt;Accent - a layout scheme with 11 pre-defined color sets&lt;/li&gt;
+&lt;li&gt;Dashboard - a layout scheme with additional borders and no background colors&lt;/li&gt;
+&lt;/ul&gt;
+Background colors are attached directly to the blocks of the layout.
+
+&lt;b&gt;Note:&lt;/b&gt; With version 1.48 colors can be set for each individual {@link sap.ui.layout.BlockLayoutCell cell}. There are 11 pre-defined color sets, each with 4 different shades for the Belize theme and 6 different shades for the Fiori 3 theme.
+The main colors of the sets can be changed in Theme Designer. To change the background of a particular cell, set &lt;code&gt;backgroundColorSet&lt;/code&gt; (main color)
+and &lt;code&gt;backgroundColorShade&lt;/code&gt; (shade).
+
+&lt;b&gt;Note:&lt;/b&gt; Usage of disabled, emphasized or subtle links as titles is not recommended. Dark background designs, for example Accent, are not fully supported with regards to Аccessibility when used with links as titles.
+
+&lt;h3&gt;Usage&lt;/h3&gt;
+&lt;h4&gt;When to use&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;You want to create a catalogue-like page with sections of blocks.&lt;/li&gt;
+&lt;li&gt;The BlockLayout is intended for developing administrative tools and applications.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;When not to use&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;You want to display properties or features of one content item. Use a {@link sap.uxap.ObjectPageLayout object page} or {@link sap.f.DynamicPage dynamic page} instead.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Responsive Behavior&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The breakpoints of the block layout react to the width of the control itself and not to the actual screen size.&lt;/li&gt;
+&lt;li&gt; On small screens all blocks will wrap to a single scrollable column&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+    <since>1.34</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="background" type="sap.ui.layout/BlockBackgroundType" defaultValue="Default" group="Appearance" since="1.42">
+            <documentation>Determines the background used for the Layout</documentation>
+        </property>
+        <property name="keepFontSize" type="sap.ui.core/boolean" defaultValue="false" group="Behavior" since="1.52">
+            <documentation>Keeps the font-size of the contents as is, independent from the screen size.</documentation>
+        </property>
+    </properties>
+    <aggregations default="content">
+        <aggregation name="content" type="sap.ui.layout/BlockLayoutRow" cardinality="0..n">
+            <documentation>The Rows to be included in the content of the control</documentation>
+        </aggregation>
+    </aggregations>
+</control>

@@ -1,0 +1,88 @@
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m" xmlns:f="sap.f"
+	xmlns:core="sap.ui.core" xmlns:st="sap.suite.ui.generic.template" xmlns:variants="sap.ui.comp.smartvariants"
+	template:require="sap.suite.ui.generic.template.ListReport.AnnotationHelper"
+	xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<template:with path="parameter>/" helper="sap.suite.ui.generic.template.ListReport.AnnotationHelper.createWorkingContext"
+		var="workingContext">
+	<template:with path="entitySet>dummy" var="chartItem">
+		<f:DynamicPage 
+			fitContent="{=((${parameter>/settings/tableType} === 'AnalyticalTable' &amp;&amp; (${entityType>sap:semantics} === 'aggregate')) ||  (${parameter>/settings/tableType} === 'TreeTable' || ${parameter>/settings/treeTable}) || (${parameter>/settings/tableType} === 'GridTable' || ${parameter>/settings/gridTable}))}"
+			id="{:= ${parameter>/stableId}.getStableId({type: 'ListReportPage', subType: 'DynamicPage'})}" 
+			headerExpanded="{_templPriv>/listReport/isHeaderExpanded}" toggleHeaderOnTitleClick="{= (${parameter>/settings/isWorklist}) ? 'false' : 'true'}"
+			preserveHeaderStateOnScroll="{= (${parameter>/settings/tableType} === 'ResponsiveTable' || ${parameter>/settings/tableType} !== 'AnalyticalTable' &amp;&amp; ${parameter>/settings/tableType} !== 'TreeTable' &amp;&amp; ${parameter>/settings/tableType} !== 'GridTable' &amp;&amp; !(${entityType>sap:semantics} === 'aggregate') &amp;&amp; !${parameter>/settings/treeTable} &amp;&amp; !${parameter>/settings/gridTable}) || ${device>/system/phone} ? 'false' : 'true'}"
+			showFooter="{parts: [{path: 'workingContext>lineItem'}, {path: 'parameter>/entitySet'}, {path: 'parameter>/manifest/sap.ui5/extends/extensions/sap.ui.controllerExtensions'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.hasDeterminingActions'}">
+			<f:title>
+				<f:DynamicPageTitle id="{:= ${parameter>/stableId}.getStableId({type: 'ListReportPage', subType: 'DynamicPageTitle'})}">
+					<template:if test="{= ${parameter>/settings/variantManagementHidden} || (${parameter>/settings/isWorklist} &amp;&amp; !${parameter>/settings/smartVariantManagement})}">
+						<template:then>
+							<core:Fragment fragmentName="sap.suite.ui.generic.template.ListReport.view.fragments.TitleVariant" type="XML"/>
+						</template:then>
+						<template:else>
+							<core:Fragment fragmentName="sap.suite.ui.generic.template.ListReport.view.fragments.DefaultVariant" type="XML"/>
+						</template:else>
+					</template:if>
+				</f:DynamicPageTitle>
+			</f:title>
+
+			<f:header visible="{= (!${parameter>/settings/isWorklist}) ? 'true' : 'false'}">
+				<f:DynamicPageHeader
+					id="{:= ${parameter>/stableId}.getStableId({type: 'ListReportPage', subType: 'DynamicPageHeader'})}"
+					pinnable="{= (${parameter>/settings/tableType} === 'ResponsiveTable' || ${parameter>/settings/tableType} !== 'AnalyticalTable' &amp;&amp; ${parameter>/settings/tableType} !== 'TreeTable' &amp;&amp; ${parameter>/settings/tableType} !== 'GridTable' &amp;&amp; !(${entityType>sap:semantics} === 'aggregate') &amp;&amp; !${parameter>/settings/treeTable} &amp;&amp; !${parameter>/settings/gridTable}) || ${device>/system/phone} ? 'true' : 'false'}" visible="{= (!${parameter>/settings/isWorklist}) ? 'true' : 'false'}">
+					<f:content>
+						<core:Fragment fragmentName="sap.suite.ui.generic.template.ListReport.view.fragments.SmartFilterBar" type="XML"/>
+					</f:content>
+				</f:DynamicPageHeader>
+			</f:header>
+
+			<f:content>
+				<template:if test="{parameter>/settings/quickVariantSelectionX}">
+					<template:then>
+						<core:Fragment fragmentName="sap.suite.ui.generic.template.ListReport.view.fragments.IconTabBarWithSmartTable" type="XML"/>
+					</template:then>
+				<template:else>
+					<template:with path="entitySet>dummy" var="tabItem">
+						<template:with path="workingContext>lineItemPath" helper="sap.suite.ui.generic.template.ListReport.AnnotationHelper.resolveMetaModelPath" var="tableAnnotationPath">
+							<core:Fragment fragmentName="sap.suite.ui.generic.template.ListReport.view.fragments.SmartTable" type="XML"/>
+						</template:with>
+					</template:with>
+				</template:else>
+				</template:if>
+			</f:content>
+			<f:footer>
+				<OverflowToolbar id="template::FooterToolbar">
+					<ToolbarSpacer/>
+					<template:repeat
+						list="{parameter>/manifest/sap.ui5/extends/extensions/sap.ui.controllerExtensions/sap.suite.ui.generic.template.ListReport.view.ListReport/sap.ui.generic.app}"
+						var="tmpEntitySet">
+						<template:if test="{= ${tmpEntitySet>EntitySet} === ${parameter>/entitySet} }">
+							<template:repeat list="{tmpEntitySet>Actions}" var="customaction">
+								<!-- check if determining action is not a global action-->
+								<template:if test="{=${customaction>determining} &amp;&amp; !(${customaction>global})}">
+									<Button id="{customaction>id}"
+										enabled="{path: 'customaction>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getBreakoutActionEnabledKey'}"
+										text="{customaction>text}" press="{customaction>press}" type="Transparent">
+										<layoutData>
+											<OverflowToolbarLayoutData priority = "{customaction>importance}"/>
+										</layoutData>
+									</Button>
+								</template:if>
+							</template:repeat>
+						</template:if>
+					</template:repeat>
+					<template:with path="entitySet>dummy" var="facet">
+						<template:with path="workingContext>lineItemPath" helper="sap.suite.ui.generic.template.ListReport.AnnotationHelper.resolveMetaModelPath"
+							var="lineItem">
+							<template:repeat list="{lineItem>}" var="dataField">
+								<template:if
+									test="{= (${dataField>RecordType} === 'com.sap.vocabularies.UI.v1.DataFieldForAction' || ${dataField>RecordType} === 'com.sap.vocabularies.UI.v1.DataFieldForIntentBasedNavigation') &amp;&amp; ${dataField>Determining/Bool} === 'true'}">
+									<core:Fragment fragmentName="sap.suite.ui.generic.template.fragments.DeterminingButton" type="XML"/>
+								</template:if>
+							</template:repeat>
+						</template:with>
+					</template:with>
+				</OverflowToolbar>
+			</f:footer>
+		</f:DynamicPage>
+	</template:with>
+	</template:with>
+</core:FragmentDefinition>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Collection</name>
+    <derived/>
+    <documentation>Collection</documentation>
+    <since>1.9.0</since>
+    <deprecation since="1.38"></deprecation>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="title" type="sap.ui.core/string" group="Appearance">
+            <documentation>Name for the collection</documentation>
+        </property>
+        <property name="editable" type="sap.ui.core/boolean" defaultValue="false" group="Appearance">
+            <documentation>If a collection is editable an edit button will be displayed below the list of items</documentation>
+        </property>
+        <property name="multiSelection" type="sap.ui.core/boolean" defaultValue="false" group="Accessibility">
+            <documentation>Allow multi selection of items in collection</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="selectionChanged" allowPreventDefault="false">
+            <documentation>Fired when ever the selected items changer</documentation>
+        </event>
+        <event name="propertyChanged" allowPreventDefault="false">
+            <documentation>Fires if a property has changed, and the collection inspector needs to do something after that</documentation>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="items" type="sap.ui.core/Item" cardinality="0..n">
+            <documentation>Items in the collection</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="selectedItems" type="sap.ui.core/Item" cardinality="0..n">
+            <documentation>Contains all items that are currently selected</documentation>
+        </association>
+    </associations>
+</control>

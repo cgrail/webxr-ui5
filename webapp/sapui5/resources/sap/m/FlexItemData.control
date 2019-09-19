@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>FlexItemData</name>
+    <derived/>
+    <documentation>Holds layout data for a FlexBox / HBox / VBox.</documentation>
+    <baseType>sap.ui.core/LayoutData</baseType>
+    <properties>
+        <property name="alignSelf" type="sap.m/FlexAlignSelf" defaultValue="Auto" group="Misc">
+            <documentation>Determines cross-axis alignment of individual element (not currently supported in Internet Explorer).</documentation>
+        </property>
+        <property name="order" type="sap.ui.core/int" defaultValue="0" group="Misc">
+            <documentation>Determines the display order of flex items independent of their source code order.</documentation>
+        </property>
+        <property name="growFactor" type="sap.ui.core/float" defaultValue="0" group="Misc">
+            <documentation>Determines the flexibility of the flex item when allocatable space is remaining.</documentation>
+        </property>
+        <property name="shrinkFactor" type="sap.ui.core/float" defaultValue="1" group="Misc" since="1.24.0">
+            <documentation>The shrink factor determines how much the flex item will shrink relative to the rest of the flex items in the flex container when negative free space is distributed.</documentation>
+        </property>
+        <property name="baseSize" type="sap.ui.core/CSSSize" defaultValue="auto" group="Misc" since="1.32.0">
+            <documentation>The base size is the initial main size of the item for the flex algorithm. If set to "auto", this will be the computed size of the item.</documentation>
+        </property>
+        <property name="minHeight" type="sap.ui.core/CSSSize" defaultValue="auto" group="Dimension" since="1.36.0">
+            <documentation>The minimum height of the flex item.</documentation>
+        </property>
+        <property name="maxHeight" type="sap.ui.core/CSSSize" defaultValue="" group="Dimension" since="1.36.0">
+            <documentation>The maximum height of the flex item.</documentation>
+        </property>
+        <property name="minWidth" type="sap.ui.core/CSSSize" defaultValue="auto" group="Dimension" since="1.36.0">
+            <documentation>The minimum height of the flex item.</documentation>
+        </property>
+        <property name="maxWidth" type="sap.ui.core/CSSSize" defaultValue="" group="Dimension" since="1.36.0">
+            <documentation>The maximum height of the flex item.</documentation>
+        </property>
+        <property name="styleClass" type="sap.ui.core/string" defaultValue="" group="Misc">
+            <documentation>The style class will be applied to the flex item and can be used for CSS selectors.</documentation>
+        </property>
+        <property name="backgroundDesign" type="sap.m/BackgroundDesign" defaultValue="Transparent" group="Appearance" since="1.38.5">
+            <documentation>Defines the background style of the flex item.</documentation>
+        </property>
+    </properties>
+</control>

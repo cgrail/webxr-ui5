@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>semantic/SemanticPage</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>An enhanced {@link sap.f.DynamicPage}, that contains controls with semantic-specific meaning.
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+
+Content specified in the &lt;code&gt;sap.f.semantic.SemanticPage&lt;/code&gt; aggregations is automatically
+positioned in dedicated sections of the title or the footer of the page, depending on
+the control's semantics.
+
+The actions in the &lt;code&gt;SemanticPage&lt;/code&gt; title are grouped to text actions or icon actions.
+When an aggregation is set, the actions appear in the following predefined order (from left to right):
+
+&lt;ul&gt;Text actions:
+&lt;li&gt;The main semantic text action - &lt;code&gt;titleMainAction&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Any custom text actions - &lt;code&gt;titleCustomTextActions&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;The semantic text actions - &lt;code&gt;editAction&lt;/code&gt;, &lt;code&gt;deleteAction&lt;/code&gt;, &lt;code&gt;copyAction&lt;/code&gt; and &lt;code&gt;addAction&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;
+
+&lt;ul&gt;Icon actions:
+&lt;li&gt;Any custom icon actions - &lt;code&gt;titleCustomIconActions&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;The simple semantic icon actions - &lt;code&gt;favoriteAction&lt;/code&gt; and &lt;code&gt;flagAction&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;The share menu semantic icon actions as a drop-down list with the following order:
+	&lt;ul&gt;&lt;li&gt;&lt;code&gt;sendEmailAction&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;discussInJamAction&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;shareInJamAction&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;sendMessageAction&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;printAction&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;Any &lt;code&gt;customShareActions&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;The navigation semantic actions - &lt;code&gt;fullScreenAction&lt;/code&gt;, &lt;code&gt;exitFullScreenAction&lt;/code&gt;,
+and &lt;code&gt;closeAction&lt;/li&gt;&lt;/code&gt;&lt;/ul&gt;
+
+The actions in the &lt;code&gt;SemanticPage&lt;/code&gt; footer are positioned either on its left or right area and have the following predefined order:
+
+&lt;ul&gt;Footer left area:
+&lt;li&gt;The semantic text action - &lt;code&gt;messagesIndicator&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;The semantic label - &lt;code&gt;draftIndicator&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;
+
+&lt;ul&gt;Footer right area:
+&lt;li&gt;The main semantic text action - &lt;code&gt;footerMainAction&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;The semantic text actions - &lt;code&gt;positiveAction&lt;/code&gt; and &lt;code&gt;negativeAction&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Any custom text actions - &lt;code&gt;footerCustomActions&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;
+
+&lt;h3&gt;Usage&lt;/h3&gt;
+
+Using the &lt;code&gt;SemanticPage&lt;/code&gt; facilitates the implementation of the SAP Fiori 2.0 design guidelines.
+
+&lt;h3&gt;Responsive behavior&lt;/h3&gt;
+
+The responsive behavior of the &lt;code&gt;SemanticPage&lt;/code&gt; depends on the behavior of the content that is displayed.
+To adjust the &lt;code&gt;SemanticPage&lt;/code&gt; content padding, the &lt;code&gt;sapUiContentPadding&lt;/code&gt;,
+&lt;code&gt;sapUiNoContentPadding&lt;/code&gt;, and &lt;code&gt;sapUiResponsiveContentPadding&lt;/code&gt; CSS classes can be used.</documentation>
+    <since>1.46.0</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="headerExpanded" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Determines whether the header is expanded.
+
+The header can be also expanded/collapsed by user interaction,
+which requires the property to be internally mutated by the control to reflect the changed state.
+
+&lt;b&gt;Note:&lt;/b&gt; Please be aware, that initially collapsed header state is not supported,
+so &lt;code&gt;headerExpanded&lt;/code&gt; should not be set to &lt;code&gt;false&lt;/code&gt; when initializing the control.</documentation>
+        </property>
+        <property name="headerPinnable" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Determines whether the header is pinnable.</documentation>
+        </property>
+        <property name="preserveHeaderStateOnScroll" type="sap.ui.core/boolean" defaultValue="false" group="Behavior">
+            <documentation>Preserves the current header state when scrolling.
+
+For example, if the user expands the header by clicking on the title
+and then scrolls down the page, the header will remain expanded.
+
+&lt;b&gt;Note:&lt;/b&gt; Based on internal rules, the value of the property is not always taken into account - for example,
+when the control is rendered on tablet or mobile and the title and the header
+are with height larger than a given threshold.</documentation>
+        </property>
+        <property name="toggleHeaderOnTitleClick" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Determines whether the user can switch between the expanded/collapsed states of the
+header by clicking on the title.
+
+If set to &lt;code&gt;false&lt;/code&gt;, the title is not clickable and the application
+must provide other means for expanding/collapsing the header, if necessary.</documentation>
+        </property>
+        <property name="showFooter" type="sap.ui.core/boolean" defaultValue="false" group="Behavior">
+            <documentation>Determines whether the footer is visible.</documentation>
+        </property>
+        <property name="titlePrimaryArea" type="sap.f/DynamicPageTitleArea" defaultValue="Begin" group="Appearance" since="1.52">
+            <documentation>Determines which of the title areas (Begin, Middle) is primary.
+
+&lt;b&gt;Note:&lt;/b&gt; The primary area is shrinking at a lower rate, remaining visible as long as it can.</documentation>
+            <deprecation since="1.58">Please use the &lt;code&gt;titleAreaShrinkRatio&lt;/code&gt; property instead.
+The value of &lt;code&gt;titleAreaShrinkRatio&lt;/code&gt; must be set in &lt;code&gt;Heading:Content:Actions&lt;/code&gt; format
+where Heading, Content and Actions are numbers greater than or equal to 0. The greater value a
+section has the faster it shrinks when the screen size is being reduced.
+
+&lt;code&gt;titlePrimaryArea=Begin&lt;/code&gt; can be achieved by setting a low number for the Heading area to
+&lt;code&gt;titleAreaShrinkRatio&lt;/code&gt;, for example &lt;code&gt;1:1.6:1.6&lt;/code&gt;.
+
+&lt;code&gt;titlePrimaryArea=Middle&lt;/code&gt; can be achieved by setting a low number for the Content area to
+&lt;code&gt;titleAreaShrinkRatio&lt;/code&gt;, for example &lt;code&gt;1.6:1:1.6&lt;/code&gt;.</deprecation>
+        </property>
+        <property name="titleAreaShrinkRatio" type="sap.f/DynamicPageTitleShrinkRatio" defaultValue="1:1.6:1.6" group="Appearance" since="1.58">
+            <documentation>Assigns shrinking ratio to the &lt;code&gt;SemanticPage&lt;/code&gt; title areas (Heading, Content, Actions).
+The greater value a section has the faster it shrinks when the screen size is being reduced.
+
+The value must be set in &lt;code&gt;Heading:Content:Actions&lt;/code&gt; format where Title, Content and Actions
+are numbers greater than or equal to 0. If set to 0, the respective area will not shrink.
+
+For example, if &lt;code&gt;2:7:1&lt;/code&gt; is set, the Content area will shrink seven times faster than
+the Actions area. So, when all three areas have width of 500px and the available space is reduced by 100px
+the Title area will be reduced by 20px, the Content area - by 70px and the Actions area - by 10px.
+
+If all the areas have assigned values greater than 1, the numbers are scaled so that at least one of them
+is equal to 1. For example, value of &lt;code&gt;2:4:8&lt;/code&gt; is equal to &lt;code&gt;1:2:4&lt;/code&gt;.
+
+&lt;Note:&gt; When this property is set the &lt;code&gt;titlePrimaryArea&lt;/code&gt; property has no effect.</documentation>
+        </property>
+    </properties>
+    <aggregations default="content">
+        <aggregation name="titleHeading" type="sap.ui.core/Control" cardinality="0..1">
+            <documentation>The &lt;code&gt;SemanticPage&lt;/code&gt; heading.
+
+A typical usage is the &lt;code&gt;sap.m.Title&lt;/code&gt; or any other UI5 control,
+that serves as a heading for an object.
+
+&lt;b&gt;Notes:&lt;/b&gt;
+&lt;ul&gt;
+&lt;li&gt;The control will be placed in the title`s leftmost area.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;titleHeading&lt;/code&gt; is mutually exclusive with &lt;code&gt;titleSnappedHeading&lt;/code&gt;
+and &lt;code&gt;titleExpandedHeading&lt;/code&gt;. If &lt;code&gt;titleHeading&lt;/code&gt; is provided, both
+&lt;code&gt;titleSnappedHeading&lt;/code&gt; and &lt;code&gt;titleExpandedHeading&lt;/code&gt; are ignored.
+&lt;code&gt;titleHeading&lt;/code&gt; is useful when the content of &lt;code&gt;titleSnappedHeading&lt;/code&gt; and
+&lt;code&gt;titleExpandedHeading&lt;/code&gt; needs to be the same as it replaces them both.&lt;/li&gt;
+&lt;li&gt;If the &lt;code&gt;titleSnappedOnMobile&lt;/code&gt; aggregation is set, its content
+overrides this aggregation when the control is viewed on a phone mobile device and
+the &lt;code&gt;SemanticPage&lt;/code&gt; header is in its collapsed (snapped) state.&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+        </aggregation>
+        <aggregation name="titleExpandedHeading" type="sap.ui.core/Control" since="1.58" cardinality="0..1">
+            <documentation>The &lt;code&gt;titleExpandedHeading&lt;/code&gt; is positioned in the &lt;code&gt;SemanticPage&lt;/code&gt; title left area
+and is displayed when the header is in expanded state only.
+Use this aggregation to display a title (or any other UI5 control that serves
+as a heading) that has to be present in expanded state only.
+
+&lt;b&gt;Note:&lt;/b&gt; In order for &lt;code&gt;titleExpandedHeading&lt;/code&gt; to be taken into account,
+&lt;code&gt;titleHeading&lt;/code&gt; has to be empty. Combine &lt;code&gt;titleExpandedHeading&lt;/code&gt; with
+&lt;code&gt;titleSnappedHeading&lt;/code&gt; to switch content when the header switches state.</documentation>
+        </aggregation>
+        <aggregation name="titleSnappedHeading" type="sap.ui.core/Control" since="1.58" cardinality="0..1">
+            <documentation>The &lt;code&gt;titleSnappedHeading&lt;/code&gt; is positioned in the &lt;code&gt;SemanticPage&lt;/code&gt; title left area
+and is displayed when the header is in collapsed (snapped) state only.
+Use this aggregation to display a title (or any other UI5 control that serves
+as a heading) that has to be present in collapsed state only.
+
+&lt;b&gt;Notes:&lt;/b&gt;
+&lt;ul&gt;
+&lt;li&gt;In order for &lt;code&gt;titleSnappedHeading&lt;/code&gt; to be taken into account,
+&lt;code&gt;titleHeading&lt;/code&gt; has to be empty. Combine &lt;code&gt;titleSnappedHeading&lt;/code&gt; with
+&lt;code&gt;titleExpandedHeading&lt;/code&gt; to switch content when the header switches state.&lt;/li&gt;
+&lt;li&gt;If the &lt;code&gt;titleSnappedOnMobile&lt;/code&gt; aggregation is set, its content
+overrides this aggregation when the control is viewed on a phone mobile device and
+the &lt;code&gt;SemanticPage&lt;/code&gt; header is in its collapsed (snapped) state.&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+        </aggregation>
+        <aggregation name="titleBreadcrumbs" type="sap.m/IBreadcrumbs" since="1.52" cardinality="0..1">
+            <documentation>The &lt;code&gt;SemanticPage&lt;/code&gt; breadcrumbs.
+
+A typical usage is the &lt;code&gt;sap.m.Breadcrumbs&lt;/code&gt; control or any other UI5 control,
+that implements the &lt;code&gt;sap.m.IBreadcrumbs&lt;/code&gt; interface.
+
+&lt;b&gt;Notes:&lt;/b&gt;
+&lt;ul&gt;
+&lt;li&gt;The control will be placed in the title`s top-left area.&lt;/li&gt;
+&lt;li&gt;If the &lt;code&gt;titleSnappedOnMobile&lt;/code&gt; aggregation is set, its content
+overrides this aggregation when the control is viewed on a phone mobile device and
+the &lt;code&gt;SemanticPage&lt;/code&gt; header is in its collapsed (snapped) state.&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+        </aggregation>
+        <aggregation name="titleSnappedOnMobile" type="sap.m/Title" since="1.63" cardinality="0..1">
+            <documentation>The only content that is displayed in the &lt;code&gt;SemanticPage&lt;/code&gt; title
+when it is viewed on a phone mobile device and the &lt;code&gt;SemanticPage&lt;/code&gt; header
+is in collapsed (snapped) state.
+
+Using this aggregation enables you to provide a simple, single-line title that
+takes less space on the smaller phone screens when the
+&lt;code&gt;SemanticPage&lt;/code&gt; header is in its collapsed (snapped) state.
+
+&lt;b&gt;Note:&lt;/b&gt; The content set in this aggregation overrides all the other
+&lt;code&gt;SemanticPage&lt;/code&gt; aggregations displayed in the title and is only visible
+on phone mobile devices in collapsed (snapped) state of the
+&lt;code&gt;SemanticPage&lt;/code&gt; header.</documentation>
+        </aggregation>
+        <aggregation name="titleSnappedContent" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>The content, displayed in the title, when the header is in collapsed state.
+
+&lt;b&gt;Notes:&lt;/b&gt;
+&lt;ul&gt;
+&lt;li&gt;The controls will be placed in the title`s left area,
+under the &lt;code&gt;titleHeading&lt;/code&gt; aggregation.&lt;/li&gt;
+&lt;li&gt;If the &lt;code&gt;titleSnappedOnMobile&lt;/code&gt; aggregation is set, its
+content overrides this aggregation when the control is viewed on a phone mobile
+device and the &lt;code&gt;SemanticPage&lt;/code&gt; header is in its collapsed (snapped) state.&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+        </aggregation>
+        <aggregation name="titleExpandedContent" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>The content,displayed in the title, when the header is in expanded state.
+
+&lt;b&gt;Note:&lt;/b&gt; The controls will be placed in the title`s left area,
+under the &lt;code&gt;titleHeading&lt;/code&gt; aggregation.</documentation>
+        </aggregation>
+        <aggregation name="titleContent" type="sap.ui.core/Control" since="1.52" cardinality="0..n">
+            <documentation>The content, displayed in the title.
+
+&lt;b&gt;Notes:&lt;/b&gt;
+&lt;ul&gt;
+&lt;li&gt;The controls will be placed in the middle area.&lt;/li&gt;
+&lt;li&gt;If the &lt;code&gt;titleSnappedOnMobile&lt;/code&gt; aggregation is set, its
+content overrides this aggregation when the control is viewed on a phone mobile
+device and the &lt;code&gt;SemanticPage&lt;/code&gt; header is in its collapsed (snapped) state.&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+        </aggregation>
+        <aggregation name="titleMainAction" type="sap.f/semantic/TitleMainAction" cardinality="0..1">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;SemanticPage&lt;/code&gt; title as first action.
+
+&lt;b&gt;Note:&lt;/b&gt; If the &lt;code&gt;titleSnappedOnMobile&lt;/code&gt; aggregation is set, its
+content overrides this aggregation when the control is viewed on a phone mobile
+device and the &lt;code&gt;SemanticPage&lt;/code&gt; header is in its collapsed (snapped) state.</documentation>
+        </aggregation>
+        <aggregation name="editAction" type="sap.f/semantic/EditAction" since="1.50" cardinality="0..1">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;TextActions&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt; title.
+
+&lt;b&gt;Note:&lt;/b&gt; If the &lt;code&gt;titleSnappedOnMobile&lt;/code&gt; aggregation is set, its
+content overrides this aggregation when the control is viewed on a phone mobile
+device and the &lt;code&gt;SemanticPage&lt;/code&gt; header is in its collapsed (snapped) state.</documentation>
+        </aggregation>
+        <aggregation name="deleteAction" type="sap.f/semantic/DeleteAction" cardinality="0..1">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;TextActions&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt; title.
+
+&lt;b&gt;Note:&lt;/b&gt; If the &lt;code&gt;titleSnappedOnMobile&lt;/code&gt; aggregation is set, its
+content overrides this aggregation when the control is viewed on a phone mobile
+device and the &lt;code&gt;SemanticPage&lt;/code&gt; header is in its collapsed (snapped) state.</documentation>
+        </aggregation>
+        <aggregation name="copyAction" type="sap.f/semantic/CopyAction" cardinality="0..1">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;TextActions&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt; title.
+
+&lt;b&gt;Note:&lt;/b&gt; If the &lt;code&gt;titleSnappedOnMobile&lt;/code&gt; aggregation is set, its
+content overrides this aggregation when the control is viewed on a phone mobile
+device and the &lt;code&gt;SemanticPage&lt;/code&gt; header is in its collapsed (snapped) state.</documentation>
+        </aggregation>
+        <aggregation name="addAction" type="sap.f/semantic/AddAction" cardinality="0..1">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;TextActions&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt; title.
+
+&lt;b&gt;Note:&lt;/b&gt; If the &lt;code&gt;titleSnappedOnMobile&lt;/code&gt; aggregation is set, its
+content overrides this aggregation when the control is viewed on a phone mobile
+device and the &lt;code&gt;SemanticPage&lt;/code&gt; header is in its collapsed (snapped) state.</documentation>
+        </aggregation>
+        <aggregation name="flagAction" type="sap.f/semantic/FlagAction" cardinality="0..1">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;IconActions&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt; title.
+
+&lt;b&gt;Note:&lt;/b&gt; If the &lt;code&gt;titleSnappedOnMobile&lt;/code&gt; aggregation is set, its
+content overrides this aggregation when the control is viewed on a phone mobile
+device and the &lt;code&gt;SemanticPage&lt;/code&gt; header is in its collapsed (snapped) state.</documentation>
+        </aggregation>
+        <aggregation name="favoriteAction" type="sap.f/semantic/FavoriteAction" cardinality="0..1">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;IconActions&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt; title.
+
+&lt;b&gt;Note:&lt;/b&gt; If the &lt;code&gt;titleSnappedOnMobile&lt;/code&gt; aggregation is set, its
+content overrides this aggregation when the control is viewed on a phone mobile
+device and the &lt;code&gt;SemanticPage&lt;/code&gt; header is in its collapsed (snapped) state.</documentation>
+        </aggregation>
+        <aggregation name="fullScreenAction" type="sap.f/semantic/FullScreenAction" cardinality="0..1">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;IconActions&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt; title.
+
+&lt;b&gt;Note:&lt;/b&gt; If the &lt;code&gt;titleSnappedOnMobile&lt;/code&gt; aggregation is set, its
+content overrides this aggregation when the control is viewed on a phone mobile
+device and the &lt;code&gt;SemanticPage&lt;/code&gt; header is in its collapsed (snapped) state.</documentation>
+        </aggregation>
+        <aggregation name="exitFullScreenAction" type="sap.f/semantic/ExitFullScreenAction" cardinality="0..1">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;IconActions&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt; title.
+
+&lt;b&gt;Note:&lt;/b&gt; If the &lt;code&gt;titleSnappedOnMobile&lt;/code&gt; aggregation is set, its
+content overrides this aggregation when the control is viewed on a phone mobile
+device and the &lt;code&gt;SemanticPage&lt;/code&gt; header is in its collapsed (snapped) state.</documentation>
+        </aggregation>
+        <aggregation name="closeAction" type="sap.f/semantic/CloseAction" cardinality="0..1">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;IconActions&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt; title.
+
+&lt;b&gt;Note:&lt;/b&gt; If the &lt;code&gt;titleSnappedOnMobile&lt;/code&gt; aggregation is set, its
+content overrides this aggregation when the control is viewed on a phone mobile
+device and the &lt;code&gt;SemanticPage&lt;/code&gt; header is in its collapsed (snapped) state.</documentation>
+        </aggregation>
+        <aggregation name="titleCustomTextActions" type="sap.m/Button" cardinality="0..n">
+            <documentation>The &lt;code&gt;titleCustomTextActions&lt;/code&gt; are placed in the &lt;code&gt;TextActions&lt;/code&gt; area of the
+&lt;code&gt;SemanticPage&lt;/code&gt; title, right before the semantic text action.
+
+&lt;b&gt;Note:&lt;/b&gt; If the &lt;code&gt;titleSnappedOnMobile&lt;/code&gt; aggregation is set, its
+content overrides this aggregation when the control is viewed on a phone mobile
+device and the &lt;code&gt;SemanticPage&lt;/code&gt; header is in its collapsed (snapped) state.</documentation>
+        </aggregation>
+        <aggregation name="titleCustomIconActions" type="sap.m/OverflowToolbarButton" cardinality="0..n">
+            <documentation>The &lt;code&gt;titleCustomIconActions&lt;/code&gt; are placed in the &lt;code&gt;IconActions&lt;/code&gt; area of the
+&lt;code&gt;SemanticPage&lt;/code&gt; title, right before the semantic icon action.
+
+&lt;b&gt;Note:&lt;/b&gt; If the &lt;code&gt;titleSnappedOnMobile&lt;/code&gt; aggregation is set, its
+content overrides this aggregation when the control is viewed on a phone mobile
+device and the &lt;code&gt;SemanticPage&lt;/code&gt; header is in its collapsed (snapped) state.</documentation>
+        </aggregation>
+        <aggregation name="headerContent" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>The header content.</documentation>
+        </aggregation>
+        <aggregation name="content" type="sap.ui.core/Control" cardinality="0..1">
+            <documentation>The &lt;code&gt;SemanticPage&lt;/code&gt; content.
+
+&lt;b&gt;Note:&lt;/b&gt; The SAP Fiori Design guidelines require that the
+&lt;code&gt;SemanticPage&lt;/code&gt;'s header content and the &lt;code&gt;SemanticPage&lt;/code&gt;'s content
+are aligned vertically. When using {@link sap.ui.layout.form.Form},
+ {@link sap.m.Panel}, {@link sap.m.Table} and {@link sap.m.List} in the content area of
+&lt;code&gt;SemanticPage&lt;/code&gt;, if the content is not already aligned, you need to adjust
+their left text offset to achieve the vertical alignment. To do this, apply the
+&lt;code&gt;sapFSemanticPageAlignContent&lt;/code&gt; CSS class to them and set their &lt;code&gt;width&lt;/code&gt;
+property to &lt;code&gt;auto&lt;/code&gt; (if not set by default).
+
+Example:
+
+&lt;pre&gt;
+&lt;code&gt; &amp;lt;Panel class=“sapFSemanticPageAlignContent” width=“auto”&amp;gt;&amp;lt;/Panel&amp;gt; &lt;/code&gt;
+&lt;/pre&gt;
+
+Please keep in mind that the alignment is not possible when the controls are placed in
+a {@link sap.ui.layout.Grid} or in other layout controls that use
+&lt;code&gt;overflow:hidden&lt;/code&gt; CSS property.</documentation>
+        </aggregation>
+        <aggregation name="footerMainAction" type="sap.f/semantic/FooterMainAction" cardinality="0..1">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;FooterRight&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt;
+footer with default text value set to &lt;code&gt;Save&lt;/code&gt;.</documentation>
+        </aggregation>
+        <aggregation name="messagesIndicator" type="sap.f/semantic/MessagesIndicator" cardinality="0..1">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;FooterLeft&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt;
+footer as a first action.</documentation>
+        </aggregation>
+        <aggregation name="draftIndicator" type="sap.m/DraftIndicator" cardinality="0..1">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;FooterLeft&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt;
+footer as a second action.</documentation>
+        </aggregation>
+        <aggregation name="positiveAction" type="sap.f/semantic/PositiveAction" cardinality="0..1">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;FooterRight&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt;
+footer with default text value set to &lt;code&gt;Accept&lt;/code&gt;.</documentation>
+        </aggregation>
+        <aggregation name="negativeAction" type="sap.f/semantic/NegativeAction" cardinality="0..1">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;FooterRight&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt;
+footer with default text value set to &lt;code&gt;Reject&lt;/code&gt;.</documentation>
+        </aggregation>
+        <aggregation name="footerCustomActions" type="sap.m/Button" cardinality="0..n">
+            <documentation>The &lt;code&gt;footerCustomActions&lt;/code&gt; are placed in the &lt;code&gt;FooterRight&lt;/code&gt; area of the
+&lt;code&gt;SemanticPage&lt;/code&gt; footer, right after the semantic footer actions.
+
+&lt;b&gt;Note:&lt;/b&gt; Buttons that are part of this aggregation will always have their &lt;code&gt;type&lt;/code&gt;
+property set to &lt;code&gt;Transparent&lt;/code&gt; by design.</documentation>
+        </aggregation>
+        <aggregation name="discussInJamAction" type="sap.f/semantic/DiscussInJamAction" cardinality="0..1">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;ShareMenu&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt; title.
+
+&lt;b&gt;Note:&lt;/b&gt; If the &lt;code&gt;titleSnappedOnMobile&lt;/code&gt; aggregation is set, its
+content overrides this aggregation when the control is viewed on a phone mobile
+device and the &lt;code&gt;SemanticPage&lt;/code&gt; header is in its collapsed (snapped) state.</documentation>
+        </aggregation>
+        <aggregation name="saveAsTileAction" type="sap.m/Button" cardinality="0..1">
+            <documentation>A button which is placed in the &lt;code&gt;ShareMenu&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt; title.
+
+&lt;b&gt;Note:&lt;/b&gt; If the &lt;code&gt;titleSnappedOnMobile&lt;/code&gt; aggregation is set, its
+content overrides this aggregation when the control is viewed on a phone mobile
+device and the &lt;code&gt;SemanticPage&lt;/code&gt; header is in its collapsed (snapped) state.</documentation>
+        </aggregation>
+        <aggregation name="shareInJamAction" type="sap.f/semantic/ShareInJamAction" cardinality="0..1">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;ShareMenu&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt; title.
+
+&lt;b&gt;Note:&lt;/b&gt; If the &lt;code&gt;titleSnappedOnMobile&lt;/code&gt; aggregation is set, its
+content overrides this aggregation when the control is viewed on a phone mobile
+device and the &lt;code&gt;SemanticPage&lt;/code&gt; header is in its collapsed (snapped) state.</documentation>
+        </aggregation>
+        <aggregation name="sendMessageAction" type="sap.f/semantic/SendMessageAction" cardinality="0..1">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;ShareMenu&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt; title.
+
+&lt;b&gt;Note:&lt;/b&gt; If the &lt;code&gt;titleSnappedOnMobile&lt;/code&gt; aggregation is set, its
+content overrides this aggregation when the control is viewed on a phone mobile
+device and the &lt;code&gt;SemanticPage&lt;/code&gt; header is in its collapsed (snapped) state.</documentation>
+        </aggregation>
+        <aggregation name="sendEmailAction" type="sap.f/semantic/SendEmailAction" cardinality="0..1">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;ShareMenu&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt; title.
+
+&lt;b&gt;Note:&lt;/b&gt; If the &lt;code&gt;titleSnappedOnMobile&lt;/code&gt; aggregation is set, its
+content overrides this aggregation when the control is viewed on a phone mobile
+device and the &lt;code&gt;SemanticPage&lt;/code&gt; header is in its collapsed (snapped) state.</documentation>
+        </aggregation>
+        <aggregation name="printAction" type="sap.f/semantic/PrintAction" cardinality="0..1">
+            <documentation>A semantic-specific button which is placed in the &lt;code&gt;ShareMenu&lt;/code&gt; area of the &lt;code&gt;SemanticPage&lt;/code&gt; title.
+
+&lt;b&gt;Note:&lt;/b&gt; If the &lt;code&gt;titleSnappedOnMobile&lt;/code&gt; aggregation is set, its
+content overrides this aggregation when the control is viewed on a phone mobile
+device and the &lt;code&gt;SemanticPage&lt;/code&gt; header is in its collapsed (snapped) state.</documentation>
+        </aggregation>
+        <aggregation name="customShareActions" type="sap.m/Button" cardinality="0..n">
+            <documentation>The &lt;code&gt;customShareActions&lt;/code&gt; are placed in the &lt;code&gt;ShareMenu&lt;/code&gt; area of the
+&lt;code&gt;SemanticPage&lt;/code&gt; title, right after the semantic actions.
+
+&lt;b&gt;Note:&lt;/b&gt; If the &lt;code&gt;titleSnappedOnMobile&lt;/code&gt; aggregation is set, its
+content overrides this aggregation when the control is viewed on a phone mobile
+device and the &lt;code&gt;SemanticPage&lt;/code&gt; header is in its collapsed (snapped) state.</documentation>
+        </aggregation>
+        <aggregation name="landmarkInfo" type="sap.f/DynamicPageAccessibleLandmarkInfo" since="1.61" cardinality="0..1">
+            <documentation>Accessible landmark settings to be applied to the containers of the &lt;code&gt;sap.f.SemanticPage&lt;/code&gt; control.
+
+If not set, no landmarks will be written.</documentation>
+        </aggregation>
+        <aggregation name="_dynamicPage" type="sap.f/DynamicPage" cardinality="0..1" visibility="hidden">
+            <documentation>The aggregation holds &lt;code&gt;DynamicPage&lt;/code&gt;, used internally.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

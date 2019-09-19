@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ToolbarSeparator</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Creates a visual separator (theme dependent: padding, margin, line) between the
+preceding and succeeding {@link sap.m.Toolbar} item.</documentation>
+    <since>1.26</since>
+    <baseType>sap.ui.core/Control</baseType>
+</control>

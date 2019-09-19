@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>BusyDialog</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>BusyDialog is used to indicate that the system is busy.
+&lt;h3&gt;Overview&lt;/h3&gt;
+When the busy dialog is displayed, the whole application is blocked.
+&lt;h3&gt;Structure&lt;/h3&gt;
+The busy dialog can hold several elements, most of which are optional.
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;title&lt;/code&gt; - A title for the dialog. By default, there is no title.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;text&lt;/code&gt; - A text displayed above the busy animation.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;showCancelButton&lt;/code&gt; - An optional Cancel button to stop the execution.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;customIcon&lt;/code&gt; - An optional alternative icon to use as a busy animation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Usage&lt;/h3&gt;
+&lt;h4&gt;When to use&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;The operation lasts more than one second.&lt;/li&gt;
+&lt;li&gt;You want to indicate loading in a page-to-page navigation (lightweight version).&lt;/li&gt;
+&lt;li&gt;Offer a Cancel button if you expect the process to run more than 10 seconds.&lt;/li&gt;
+&lt;li&gt; If you do not show a title or text, use the {@link sap.ui.core.InvisibleText invisible text} control to provide the reason for users with assistive technologies.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;When not to use&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;The screen is not supposed to be blocked. Use a {@link sap.m.BusyIndicator} for the specific application part.&lt;/li&gt;
+&lt;li&gt;Do not use the title of the busy dialog. Provide a precise text describing the operation in &lt;code&gt;text&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="text" type="sap.ui.core/string" defaultValue="" group="Appearance">
+            <documentation>Optional text displayed inside the dialog.</documentation>
+        </property>
+        <property name="title" type="sap.ui.core/string" defaultValue="" group="Appearance">
+            <documentation>Sets the title of the BusyDialog. The default value is an empty string.</documentation>
+        </property>
+        <property name="customIcon" type="sap.ui.core/URI" defaultValue="" group="Appearance">
+            <documentation>Icon, used from the BusyIndicator. This icon is invisible in iOS platform and it is density aware. You can use the density convention (@2, @1.5, etc.) to provide higher resolution image for higher density screens.</documentation>
+        </property>
+        <property name="customIconRotationSpeed" type="sap.ui.core/int" defaultValue="1000" group="Appearance">
+            <documentation>Defines the rotation speed of the given image. If GIF file is used, the speed has to be set to 0. The value is in milliseconds.</documentation>
+        </property>
+        <property name="customIconDensityAware" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>If this is set to &lt;code&gt;false&lt;/code&gt;, the source image will be loaded directly without attempting to fetch the density perfect image for high density devices.
+By default, this is set to &lt;code&gt;true&lt;/code&gt; but then one or more requests are sent trying to get the density perfect version of the image.
+
+If bandwidth is the key for the application, set this value to &lt;code&gt;false&lt;/code&gt;.</documentation>
+        </property>
+        <property name="customIconWidth" type="sap.ui.core/CSSSize" defaultValue="44px" group="Appearance">
+            <documentation>Width of the provided icon with default value "44px".</documentation>
+        </property>
+        <property name="customIconHeight" type="sap.ui.core/CSSSize" defaultValue="44px" group="Appearance">
+            <documentation>Height of the provided icon with default value "44px".</documentation>
+        </property>
+        <property name="cancelButtonText" type="sap.ui.core/string" defaultValue="" group="Misc">
+            <documentation>The text of the cancel button. The default text is "Cancel" (translated to the respective language).</documentation>
+        </property>
+        <property name="showCancelButton" type="sap.ui.core/boolean" defaultValue="false" group="Appearance">
+            <documentation>Indicates if the cancel button will be rendered inside the busy dialog. The default value is set to &lt;code&gt;false&lt;/code&gt;.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="close" allowPreventDefault="false">
+            <documentation>Fires when the busy dialog is closed. Note: the BusyDialog will not be closed by the InstanceManager.closeAllDialogs method</documentation>
+            <parameters>
+                <parameter name="cancelPressed" type="sap.ui.core/boolean">
+                    <documentation>Indicates if the close events are triggered by a user, pressing a cancel button or because the operation was terminated.
+This parameter is set to true if the close event is fired by user interaction.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <associations>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / IDs which label this control (see WAI-ARIA attribute aria-labelledby).</documentation>
+        </association>
+    </associations>
+</control>

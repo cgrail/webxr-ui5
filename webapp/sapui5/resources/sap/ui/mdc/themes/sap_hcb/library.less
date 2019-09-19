@@ -1,0 +1,402 @@
+/* NOTE: This file was generated as an optimized version of "library.source.less" for the Theme Designer. */
+
+/*!
+ * ${copyright}
+ */
+@import "../../../../../../Base/baseLib/baseTheme/base.less"; /* ORIGINAL IMPORT PATH: "../../../../../sap/ui/core/themes/base/base.less" */
+
+@import "../../../../../sap/ui/core/themes/base/global.less";
+/* START "BaseField.less" */
+.sapUiMdcBaseField {
+	display: inline-block;
+	box-sizing: border-box;
+}
+
+.sapUiSizeCompact .sapUiMdcBaseFieldIcon>.sapMInputBaseInner {
+	padding-left: 1.525rem;
+}
+
+// .sapUiMdcBaseFieldFH .sapUiMdcFHButton::before, .sapUiMdcBaseFieldIcon::before {
+// 	width: 1.54rem;
+// 	height: 1.54rem;
+// 	font-family: 'SAP-icons';
+// 	position: absolute;
+// 	text-align: center;
+// 	padding-top: 0.25rem;
+// 	overflow: hidden;
+// 	box-sizing: border-box;
+// }
+
+// .sapUiMdcBaseFieldFH.sapUiMdcBaseField:not(.sapMInputBaseReadonly) .sapUiMdcFHButton:hover::before {
+// 	background-color: @sapUiButtonLiteHoverBackground;
+// }
+
+// .sapUiMdcBaseFieldFH.sapUiMdcBaseField:not(.sapMInputBaseReadonly) .sapUiMdcFHButton:active::before {
+// 	background-color: @sapUiButtonLiteActiveBackground;
+// 	color: @sapUiButtonActiveTextColor;
+// 	outline: 1px dotted @sapUiContentContrastFocusColor;
+// }
+
+// .sapUiMdcFHButton {
+// 	cursor: pointer;
+// 	display: none;
+// 	color: @sapUiContentIconColor;
+// }
+// .sapUiMdcBaseFieldFH .sapUiMdcFHButton {
+// 	display:inline-block;
+// 	position:absolute;
+// }
+
+// .sapUiMdcFHButton::before {
+// 	content: attr(data-sap-ui-fieldhelp) "";
+// 	right: 0;
+// }
+
+.sapUiMdcBaseFieldIcon::before {
+	content: attr(data-sap-ui-icon) "";
+	cursor: default;
+}
+
+.sapUiMdcBaseField .sapMInputBaseReadonlyInner  {
+	border: transparent;
+	background-color: transparent;
+}
+
+/* END "BaseField.less" */
+
+/* START "BaseFilterField.less" */
+.sapUiMdcBaseFilterField > .sapMMultiInput > .sapMInputDivWrapper,
+.sapUiSizeCompact .sapUiMdcBaseFilterField > .sapMMultiInput > .sapMInputDivWrapper,
+.sapUiMdcBaseFilterField  > .sapMMultiInput.sapMInputBase,
+.sapUiSizeCompact .sapUiMdcBaseFilterField  > .sapMMultiInput.sapMInputBase {
+    height: auto;
+}
+
+/* END "BaseFilterField.less" */
+
+/* START "ValueHelpDialog.less" */
+
+// let the tokenizer tokens wrap
+.sapMdcTokenizer .sapMToken {
+	display: block;
+}
+
+// make the ITB header height 3rem
+.sapMdcValueHelpPanel .sapMITBHead {
+	margin-top: 0rem;
+}
+
+// make the toolbar height 3rem
+.sapMdcValueHelpPanel .sapMTB {
+    height: 3rem;
+}
+
+// padding between the Define Condition value fields
+.sapMdcValueHelpPanel .sapUiSmallPaddingBegin {
+    padding-left: 1rem;
+}
+
+// makes the IconTab Header hidden when only one tabs exist
+.sapMdcValueHelpPanel .sapMdcNoHeader .sapMITH {
+    visibility: hidden;
+    height: 0px;
+}
+
+.sapMdcValueHelpPanelFilterbar {
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+/* END "ValueHelpDialog.less" */
+
+/* START "InfoPanel.less" */
+// ------------------------------------------------------------------------------
+// --------------- Header -------------------------------------------------------
+// ------------------------------------------------------------------------------
+
+.mdcbaseinfoPanel .sapUiFormTitle {
+  white-space: normal;
+}
+
+.mdcbaseinfoPanel .mdcbaseinfoPanelHeader {
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  padding-right: 1rem;
+}
+
+.mdcbaseinfoPanelTitleH1 .sapMLnk {
+  font-size: 1.5rem;
+}
+
+.mdcbaseinfoPanelTitleH1 .sapMLabel {
+  font-size: 1.5rem;
+}
+
+.mdcbaseinfoPanelTitleH1 .sapMLnkDsbl {
+  opacity: 1;
+  color: @sapUiBaseText;
+}
+
+.mdcbaseinfoPanelThumbnail .mdcbaseinfoPanelListItem .sapMImageContentImageIcon.sapUiIcon {
+  font-size: 2.5rem;
+  font-weight: normal;
+  line-height: 2.5rem;
+  margin-right: .75rem;
+}
+
+.mdcbaseinfoPanelThumbnail .mdcbaseinfoPanelListItem .sapMImageContentImageIcon.sapMImg {
+  font-size: 2.5rem;
+  font-weight: normal;
+  line-height: 3rem;
+  margin-right: .75rem;
+  size: 3rem;
+  height: 3rem;
+  width: 3rem;
+}
+
+// ------------------------------------------------------------------------------
+// --------------- Additional Content -------------------------------------------
+// ------------------------------------------------------------------------------
+
+.mdcbaseinfoPanel .mdcbaseinfoPanelDefaultExtraContent .sapUiFormTitle {
+  color: @sapUiBaseText;
+}
+
+// ------------------------------------------------------------------------------
+// --------------- Separator ----------------------------------------------------
+// ------------------------------------------------------------------------------
+
+.mdcbaseinfoPanel .mdcbaseinfoPanelSeparator {
+  border-bottom: 1px solid;
+  border-bottom-color: @sapUiToolbarSeparatorColor;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+// ------------------------------------------------------------------------------
+// --------------- Links --------------------------------------------------------
+// ------------------------------------------------------------------------------
+
+/* Overwrite background of 'related apps' section */
+.mdcbaseinfoPanelListItem .sapUiFormResLayout.sapUiFormBackgrTranslucent > div {
+  background-color: transparent;
+}
+
+.mdcbaseinfoPanelListItem {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.mdcbaseinfoPanelListItem .sapMImageContentImageIcon.sapUiIcon {
+  font-weight: normal;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  padding-bottom: 0rem;
+  color: @sapUiText;
+}
+
+.mdcbaseinfoPanelListItem .sapMImageContentImageIcon.sapMImg {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.mdcbaseinfoPanelListItem .sapMImageContent {
+  width: auto;
+  height: auto;
+  margin-right: .75rem;
+}
+
+.mdcbaseinfoPanelListItem .sapMImageContentImageIcon {
+  position: relative;
+}
+
+.mdcbaseinfoPanelListItem .sapMFlexItem {
+  display: -webkit-box;
+  display: flex;
+}
+
+.mdcbaseinfoPanelListItem .mdcbaseinfoPanelItemsWithoutGroup {
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+}
+
+.mdcbaseinfoPanelListItem .mdcbaseinfoPanelItemsGroup {
+  padding-top: 0.625rem;
+  padding-bottom: 0.375rem;
+}
+
+.mdcbaseinfoPanelListItem .mdcbaseinfoPanelItemsGroup .sapMLink {
+  padding-bottom: 0.125rem;
+}
+
+.mdcbaseinfoPanelListItem .mdcbaseinfoPanelItemsGroup .sapMText {
+  color: @sapUiContentLabelColor;
+}
+
+// ------------------------------------------------------------------------------
+// --------------- Button -------------------------------------------------------
+// ------------------------------------------------------------------------------
+.mdcbaseinfoPanel .mdcbaseinfoPanelPersonalizationButton {
+  padding-top: 0;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+/* END "InfoPanel.less" */
+
+/* START "SelectionDialog.less" */
+
+/* Overwrite background of selected items */
+.mdcbaseinfoSelectionDialog .sapMLIB.sapMLIBSelected {
+  background: @sapUiListBackground;
+}
+
+/* END "SelectionDialog.less" */
+
+/* START "FilterBar.less" */
+.sapUiMdcBaseFilterBar {
+}
+
+.sapUiMdcBaseFilterBar .sapUiAFLayoutItem,
+.sapUiMdcBaseFilterBar .sapUiAFLayoutEnd,
+.sapUiMdcBaseFilterBar .sapUiAFLayoutSpacer {
+	margin-right: 1rem;
+}
+
+.sapUiMdcBaseFilterBar .sapUiAFLayoutEnd {
+	margin-top: 0.5rem;
+}
+
+.sapUiMdcBaseFilterBar .sapUiMdcBaseFilterBarButtonPaddingRight {
+    padding-right: 0.5rem;
+}
+
+.sapUiMdcBaseFilterBar .sapUiMdcFilterBarPaddingLeft {
+	padding-left: 0.5rem;
+}
+
+.sapUiMdcBaseFilterBar .sapUiAFLayout .sapUiMdcBaseFilterBarLabel.sapMLabel::after {
+	content: ":";
+}
+
+.sapUiMdcBaseFilterBar .sapUiAFLayout .sapUiAFLayoutItem > div {
+    width: 100%;
+}
+
+.sapUiMdcBaseFilterBar .sapUiAFLayout .sapUiAFLayoutItem .sapUiMdcBaseField {
+    width: 100%;
+}
+/* END "FilterBar.less" */
+
+/* START "AdaptFiltersDialog.less" */
+.sapUiMdcBaseFilterBarAdaptDialog {
+}
+
+.sapUiMdcBaseFilterBarAdaptFiltersDialog .sapUiMdcBaseField {
+  width: 100%
+}
+
+.sapUiMdcBaseFilterBarAdaptFiltersDialog .sapMLIB.sapMLIBSelected,
+.sapUiMdcBaseFilterBarAdaptFiltersDialog .sapMLIB.sapMLIBSelected > td {
+  background-color: transparent;
+}
+
+.sapUiMdcBaseFilterBarAdaptFiltersDialog .sapMListBGTranslucent .sapMLIB.sapMListTblRow.sapUiMdcBaseFilterBarAdaptFiltersDialogMarked,
+.sapUiMdcBaseFilterBarAdaptFiltersDialog .sapMListBGTranslucent .sapMLIB.sapMListTblRow.sapUiMdcBaseFilterBarAdaptFiltersDialogMarked:focus,
+.sapUiMdcBaseFilterBarAdaptFiltersDialog .sapMListBGTranslucent .sapMLIB:not(.sapMLIBActive):not(.sapMLIBSelected):not(:hover).sapMListTblRow.sapUiMdcBaseFilterBarAdaptFiltersDialogMarked,
+.sapUiMdcBaseFilterBarAdaptFiltersDialog .sapMListBGTranslucent .sapMLIB:not(.sapMLIBActive):not(.sapMLIBSelected):not(:hover).sapMListTblRow.sapUiMdcBaseFilterBarAdaptFiltersDialogMarked:focus {
+  background-color: @sapUiListSelectionBackgroundColor;
+}
+
+.sapUiMdcBaseFilterBarAdaptFiltersDialog .sapMLIBActive .sapMText,
+.sapUiMdcBaseFilterBarAdaptFiltersDialog .sapMLIBActive .sapMListTblCell .sapMText {
+  color: @sapUiListTextColor;
+}
+
+.sapUiMdcBaseFilterBarAdaptFiltersDialog .sapMLIBActive .sapMCbBg,
+.sapUiMdcBaseFilterBarAdaptFiltersDialog .sapMLIBActive.sapMLIB,
+.sapUiMdcBaseFilterBarAdaptFiltersDialog .sapMLIBActive.sapMLIB > td {
+  background-color: transparent;
+}
+
+.sapUiMdcBaseFilterBarAdaptFiltersDialog .sapMLIBActive .sapMCbBg,
+.sapUiMdcBaseFilterBarAdaptFiltersDialog .sapMLIBActive .sapMCbBg.sapMCbMarkChecked,
+.sapUiMdcBaseFilterBarAdaptFiltersDialog .sapMLIBActive .sapMCbBg.sapMCbBgDis,
+.sapUiMdcBaseFilterBarAdaptFiltersDialog .sapMLIBActive .sapMCbBg.sapMCbBgDis.sapMCbMarkChecked {
+  border-color: @sapUiFieldBorderColor;
+}
+
+.sapUiMdcBaseFilterBarAdaptFiltersDialog .sapMLIBActive .sapMCbBg.sapMCbMarkChecked::before {
+  color: @sapUiSelected;
+}
+
+html.sap-desktop .sapUiMdcBaseFilterBarAdaptFiltersDialog .sapMLIBSelected:not(.sapMLIBActive):not(.sapMALI):hover,
+html.sap-desktop .sapUiMdcBaseFilterBarAdaptFiltersDialog .sapMLIBSelected:not(.sapMLIBActive):not(.sapMALI):hover > td {
+  background-color: @sapUiListHoverBackground;
+}
+
+/* END "AdaptFiltersDialog.less" */
+
+/* START "ChartPersonalizationDialog.less" */
+.sapUiMdcPersonalizationDialog {
+}
+
+.sapUiMdcPersonalizationDialog .sapUiMdcBaseField {
+  width: 100%
+}
+
+.sapUiMdcPersonalizationDialog .sapMLIB.sapMLIBSelected,
+.sapUiMdcPersonalizationDialog .sapMLIB.sapMLIBSelected > td {
+  background-color: transparent;
+}
+
+.sapUiMdcPersonalizationDialog .sapMListBGTranslucent .sapMLIB.sapMListTblRow.sapUiMdcPersonalizationDialogMarked,
+.sapUiMdcPersonalizationDialog .sapMListBGTranslucent .sapMLIB.sapMListTblRow.sapUiMdcPersonalizationDialogMarked:focus,
+.sapUiMdcPersonalizationDialog .sapMListBGTranslucent .sapMLIB:not(.sapMLIBActive):not(.sapMLIBSelected):not(:hover).sapMListTblRow.sapUiMdcPersonalizationDialogMarked,
+.sapUiMdcPersonalizationDialog .sapMListBGTranslucent .sapMLIB:not(.sapMLIBActive):not(.sapMLIBSelected):not(:hover).sapMListTblRow.sapUiMdcPersonalizationDialogMarked:focus {
+  background-color: @sapUiListSelectionBackgroundColor;
+}
+
+.sapUiMdcPersonalizationDialog .sapMLIBActive .sapMText,
+.sapUiMdcPersonalizationDialog .sapMListTbl .sapMLIBActive .sapMLabel,
+.sapUiMdcPersonalizationDialog .sapMLIBActive .sapMLabel,
+.sapUiMdcPersonalizationDialog .sapMLIBActive .sapMListTblCell .sapMText {
+  color: @sapUiListTextColor;
+}
+
+.sapUiMdcPersonalizationDialog .sapMBar {
+	background-color: @sapUiGroupContentBackground;
+}
+
+.sapUiMdcPersonalizationDialog .sapMLIBActive .sapMCbBg,
+.sapUiMdcPersonalizationDialog .sapMLIBActive.sapMLIB,
+.sapUiMdcPersonalizationDialog .sapMLIBActive.sapMLIB > td {
+  background-color: transparent;
+}
+
+.sapUiMdcPersonalizationDialog .sapMLIBActive .sapMCbBg,
+.sapUiMdcPersonalizationDialog .sapMLIBActive .sapMCbBg.sapMCbMarkChecked,
+.sapUiMdcPersonalizationDialog .sapMLIBActive .sapMCbBg.sapMCbBgDis,
+.sapUiMdcPersonalizationDialog .sapMLIBActive .sapMCbBg.sapMCbBgDis.sapMCbMarkChecked {
+  border-color: @sapUiFieldBorderColor;
+}
+
+.sapUiMdcPersonalizationDialog .sapMLIBActive .sapMCbBg.sapMCbMarkChecked::before {
+  color: @sapUiSelected;
+}
+
+html.sap-desktop .sapUiMdcPersonalizationDialog .sapMLIBSelected:not(.sapMLIBActive):not(.sapMALI):hover,
+html.sap-desktop .sapUiMdcPersonalizationDialog .sapMLIBSelected:not(.sapMLIBActive):not(.sapMALI):hover > td {
+  background-color: @sapUiListHoverBackground;
+}
+
+/* END "ChartPersonalizationDialog.less" */
+
+/* START "Table.less" */
+.sapMdcTableHeaderHidden {
+	display: none;
+}
+/* END "Table.less" */
+

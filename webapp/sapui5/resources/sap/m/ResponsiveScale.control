@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ResponsiveScale</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>&lt;strong&gt;&lt;i&gt;Overview&lt;/i&gt;&lt;/strong&gt;
+
+A {@link sap.m.Slider} element represents a scale with tickmarks and labels.
+The purpose of the element is to decouple the scale logic from other controls i.e. Slider / RangeSlider
+
+
+The most important properties of the ResponsiveScale are:
+&lt;ul&gt;
+&lt;li&gt; tickmarksBetweenLabels - Puts a label on every N-th tickmark.&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+    <since>1.46</since>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="tickmarksBetweenLabels" type="sap.ui.core/int" defaultValue="0" group="Appearance">
+            <documentation>Put a label on every N-th tickmark.</documentation>
+        </property>
+    </properties>
+</control>

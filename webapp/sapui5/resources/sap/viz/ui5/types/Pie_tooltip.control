@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ui5/types/Pie_tooltip</name>
+    <derived/>
+    <documentation>Settings for tooltip related properties</documentation>
+    <since>1.7.2</since>
+    <deprecation since="1.19">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+    <baseType>sap.viz/ui5/core/BaseStructuredType</baseType>
+    <properties>
+        <property name="visible" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>Set whether tooltip is enabled</documentation>
+        </property>
+        <property name="valueFormat" type="sap.ui.core/string" defaultValue="n">
+            <documentation>Set the number format of the measure value in tooltip</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="percentageFormat" type="sap.ui.core/string" defaultValue=".0%">
+            <documentation>Set the number format of the percentage label in tooltip</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="formatString" type="sap.ui.core/string[]">
+            <documentation>Set format string of tooltip. The first string is applied to value and the second is applied to percentage.Any character in "MDYHSAmdyhsa#?%0@" is reserved as a token for format code.</documentation>
+        </property>
+    </properties>
+</control>

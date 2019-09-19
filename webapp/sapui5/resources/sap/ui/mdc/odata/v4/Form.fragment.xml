@@ -1,0 +1,70 @@
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:mdc="sap.ui.mdc"
+	xmlns:macro="sap.ui.mdc.odata.v4"
+	xmlns:core="sap.ui.core"
+	xmlns:log="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	template:require="{
+		MODEL: 'sap/ui/model/odata/v4/AnnotationHelper',
+		ID: 'sap/ui/mdc/odata/v4/StableIdHelper'
+	}">
+		<f:Form
+			id="{= ${this>id} || undefined}"
+			editable="false"
+			log:entitySet="{entitySet>@sapui.name}"
+			>
+			<f:dependents>
+				<!-- Create the value help dialogs for the filterbar as dependends of the filterbar -->
+				<template:repeat list="{path:'dataFieldCollection>'}" var="dataField">
+					<!-- <template:if test="{= ${dataField>$Type} !== 'com.sap.vocabularies.UI.v1.DataFieldForAction' &amp;&amp; !${formElements>Target}}"> -->
+						<template:with path="dataField>Value" var="item">
+							<macro:ValueHelp idPrefix="FormVH{this>id}" metadataContexts="{model: 'entitySet', path:'',  name: 'entitySet'},{model: 'item', path:'',  name: 'property'}"	/>
+						</template:with>
+					<!-- </template:if> -->
+				</template:repeat>
+			</f:dependents>
+			<f:layout>
+				<f:ColumnLayout columnsM="1" columnsL="2" columnsXL="2" />
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer title="{this>formTitle}">
+					<f:formElements>
+						<template:with path="dataFieldCollection>" var="formElements">
+							<template:if test="{= ${formElements>Target} &amp;&amp; ${formElements>Target/$AnnotationPath}.indexOf('com.sap.vocabularies.UI.v1.DataPoint') > -1 }">
+								<template:then>
+									<template:with path="formElements>Target/$AnnotationPath" var="dataPoint">
+										<f:FormElement>
+											<f:fields>
+												<macro:Field
+													idPrefix="FormF{this>id}"
+													vhIdPrefix="FormVH{this>id}"
+													metadataContexts="{ model: 'entitySet', path:'',  name: 'entitySet'},{ model: 'dataPoint', path:'',  name: 'dataField'}"
+													editMode="{= ${this>editMode} || 'Display'}" />
+											</f:fields>
+										</f:FormElement>
+									</template:with>
+								</template:then>
+								<template:else>
+									<template:repeat list="{formElements>}" var="dataField">
+										<template:if test="{= ${dataField>$Type} !== 'com.sap.vocabularies.UI.v1.DataFieldForAction'}">
+											<template:then>
+												<f:FormElement label="{dataField>@@.MODEL.label}">
+													<f:fields>
+														<macro:Field editMode="{= ${this>editMode} ? ${this>editMode} : 'Display'}"
+															idPrefix="FormF{this>id}"
+															vhIdPrefix="FormVH{this>id}"
+															metadataContexts="{ model: 'entitySet', path:'',  name: 'entitySet'},{ model: 'dataField', path:'',  name: 'dataField'}"
+															onCallBoundAction="{= ${this>onCallBoundAction} ? ${this>onCallBoundAction} : null}" />
+													</f:fields>
+												</f:FormElement>
+											</template:then>
+										</template:if>
+									</template:repeat>
+								</template:else>
+							</template:if>
+						</template:with>
+					</f:formElements>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+</core:FragmentDefinition>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ui5/types/Axis_gridline</name>
+    <derived/>
+    <documentation>Settings for the gridlines on the axis</documentation>
+    <since>1.7.2</since>
+    <developmentState state="experimental" since="1.7.2">Charting API is not finished yet and might change completely.</developmentState>
+    <deprecation since="1.32.0">The chart controls in the &lt;code&gt;sap.viz.ui5&lt;/code&gt; package (which were always marked as &lt;i&gt;experimental&lt;/i&gt;) have been deprecated since 1.32.0. 
+They are no longer actively developed and won't receive new features or improvements, only important bug fixes. They will only remain in the 
+SAPUI5 distribution for backward compatibility. 
+
+&lt;b&gt;SAP strongly recommends that existing consumers of those controls migrate to the new {@link sap.viz.ui5.controls.VizFrame VizFrame} 
+control to benefit from new charting enhancements and timely support. &lt;/b&gt;
+
+&lt;b&gt;Note&lt;/b&gt;: As the feature set, design and API usage of VizFrame might differ from the old chart controls, make sure you evaluate it thoroughly before migration.</deprecation>
+    <baseType>sap.viz/ui5/core/BaseStructuredType</baseType>
+    <properties>
+        <property name="visible" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>Set the visibility of gridlines on the axis</documentation>
+        </property>
+        <property name="disable" type="sap.ui.core/boolean" defaultValue="false">
+            <documentation>Disable gridline or not</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="showFirstLine" type="sap.ui.core/boolean" defaultValue="false">
+            <documentation>Set whether the first gridline on the axis appears</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="showLastLine" type="sap.ui.core/boolean" defaultValue="false">
+            <documentation>Set whether the last gridline on the axis appears</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </property>
+        <property name="type" type="sap.viz/ui5/types/Axis_gridline_type" defaultValue="line">
+            <documentation>Set the line type of gridlines on the axis</documentation>
+        </property>
+        <property name="color" type="sap.ui.core/string" defaultValue="#d8d8d8">
+            <documentation>Set the color of the gridlines on the axis</documentation>
+        </property>
+        <property name="size" type="sap.ui.core/int" defaultValue="1">
+            <documentation>Set the line size of gridlines on the axis</documentation>
+        </property>
+    </properties>
+</control>

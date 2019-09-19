@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>RadioButton</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>RadioButton is a control similar to a {@link sap.m.CheckBox checkbox}, but it allows you to choose only one of the predefined set of options.
+Multiple radio buttons have to belong to the same group (have the same value for &lt;code&gt;groupName&lt;/code&gt;) in order to be mutually exclusive.
+A wrapper control {@link sap.m.RadioButtonGroup RadioButtonGroup} can be used instead of individual radio buttons.
+&lt;h3&gt;Structure&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Radio buttons can have a value state like Error or Warning.&lt;/li&gt;
+&lt;li&gt;Radio buttons can be arranged vertically by setting the &lt;code&gt;column&lt;/code&gt; to a number higher than 1.&lt;/li&gt;
+&lt;li&gt;Radio button options need to have a {@link sap.m.Label label}.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Usage&lt;/h3&gt;
+&lt;h4&gt;When to use:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;You quickly need to choose between at least two alternatives.&lt;/li&gt;
+&lt;li&gt;You need to place other controls between the radio button options.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;When not to use:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;You want to select multiple values for the same option. Use {@link sap.m.CheckBox checkboxes} instead.&lt;/li&gt;
+&lt;li&gt;When the default value is recommended for most users in most situations. Use a {@link sap.m.Select drop-down} instead as is saves space by not showing all the alternatives.&lt;/li&gt;
+&lt;li&gt;You want have more than 8 options. Use a {@link sap.m.Select drop-down} instead.&lt;/li&gt;
+&lt;li&gt;When the options are mutually exclusive e.g. ON/OFF. Use a {@link sap.m.Switch switch} instead.&lt;/li&gt;
+&lt;li&gt;Avoid using horizontally aligned radio buttons as they will be cut off on phones.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Note:&lt;/b&gt; The order in which the RadioButtons will be selected one after another is determined upon instantiation of the control.
+This order is consistent with the ARIA attributes for position, which the same button will receive when added to specific group.
+
+&lt;b&gt;Example:&lt;/b&gt; If three buttons are created (&lt;code&gt;button1, button2, button3&lt;/code&gt;) in consecutive order, initially they will have the same positions
+and TAB order. However if after that &lt;code&gt;button1&lt;/code&gt; and &lt;code&gt;button3&lt;/code&gt; are moved to a new group and then &lt;code&gt;button2&lt;/code&gt; is added to the
+same group, their TAB order and position in this group will be &lt;code&gt;button1, button3, button2&lt;/code&gt;.</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="enabled" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Specifies if the radio button is disabled.</documentation>
+        </property>
+        <property name="selected" type="sap.ui.core/boolean" defaultValue="false" group="Data">
+            <documentation>Specifies the select state of the radio button</documentation>
+        </property>
+        <property name="groupName" type="sap.ui.core/string" defaultValue="sapMRbDefaultGroup" group="Behavior">
+            <documentation>Name of the radio button group the current radio button belongs to. You can define a new name for the group.
+If no new name is specified, this radio button belongs to the sapMRbDefaultGroup per default. Default behavior of a radio button in a group is that when one of the radio buttons in a group is selected, all others are unselected.</documentation>
+        </property>
+        <property name="text" type="sap.ui.core/string" group="Appearance">
+            <documentation>Specifies the text displayed next to the RadioButton</documentation>
+        </property>
+        <property name="textDirection" type="sap.ui.core/TextDirection" defaultValue="Inherit" group="Appearance">
+            <documentation>Options for the text direction are RTL and LTR. Alternatively, the control can inherit the text direction from its parent container.</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" defaultValue="" group="Dimension">
+            <documentation>Width of the RadioButton or it's label depending on the useEntireWidth property.
+By Default width is set only for the label.</documentation>
+        </property>
+        <property name="useEntireWidth" type="sap.ui.core/boolean" defaultValue="false" group="Appearance" since="1.42">
+            <documentation>Indicates if the given width will be applied for the whole RadioButton or only it's label.
+By Default width is set only for the label.</documentation>
+        </property>
+        <property name="activeHandling" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>This is a flag to switch on activeHandling. When it is switched off,
+there will not be visual changes on active state. Default value is 'true'</documentation>
+        </property>
+        <property name="editable" type="sap.ui.core/boolean" defaultValue="true" group="Behavior" since="1.25">
+            <documentation>Specifies whether the user can select the radio button.</documentation>
+        </property>
+        <property name="valueState" type="sap.ui.core/ValueState" defaultValue="None" group="Data" since="1.25">
+            <documentation>Enumeration sap.ui.core.ValueState provides state values Error, Success, Warning, Information, None</documentation>
+        </property>
+        <property name="textAlign" type="sap.ui.core/TextAlign" defaultValue="Begin" group="Appearance" since="1.28">
+            <documentation>Specifies the alignment of the radio button. Available alignment settings are "Begin", "Center", "End", "Left", and "Right".</documentation>
+        </property>
+        <property name="editableParent" type="sap.ui.core/boolean" defaultValue="true" group="Behavior" since="1.61">
+            <documentation>Specifies if the RadioButton should be editable. This property meant to be used by parent controls (e.g. RadioButtoGroup).</documentation>
+        </property>
+        <property name="posinset" type="sap.ui.core/string" defaultValue="" group="Data" since="1.61">
+            <documentation>Specifies the aria-posinset of the RadioButton.</documentation>
+        </property>
+        <property name="setsize" type="sap.ui.core/string" defaultValue="" group="Data" since="1.61">
+            <documentation>Specifies the aria-setsize of the RadioButton.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="select" allowPreventDefault="false">
+            <documentation>Event is triggered when the user makes a change on the radio button (selecting or unselecting it).</documentation>
+            <parameters>
+                <parameter name="selected" type="sap.ui.core/boolean">
+                    <documentation>Checks whether the RadioButton is active or not.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <associations>
+        <association name="ariaDescribedBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / IDs which describe this control (see WAI-ARIA attribute aria-describedby).</documentation>
+        </association>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / IDs which label this control (see WAI-ARIA attribute aria-labelledby).</documentation>
+        </association>
+    </associations>
+    <methods>
+        <method name="setActiveState" type="sap.ui.core/void">
+            <documentation>Method to set a RadioButton's state to active or inactive.</documentation>
+            <parameters>
+                <parameter name="active" type="sap.ui.core/boolean">
+                    <documentation>- Sets the active state to true or false</documentation>
+                </parameter>
+            </parameters>
+        </method>
+    </methods>
+</control>

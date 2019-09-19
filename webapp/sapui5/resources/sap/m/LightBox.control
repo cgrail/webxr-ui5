@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>LightBox</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Represents a popup containing an image and a footer.
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+
+The purpose of the control is to display an image in its original size as long as this is possible.
+On smaller screens images are scaled down to fit.
+
+&lt;strong&gt;Notes:&lt;/strong&gt;
+&lt;ul&gt;
+    &lt;li&gt;If the image doesn't load in 10 seconds, an error is displayed.&lt;/li&gt;
+    &lt;li&gt;Setting the &lt;code&gt;imageContent&lt;/code&gt; aggregation of the control as well as the source of the image and the title of the image is &lt;u&gt;mandatory&lt;/u&gt;.
+         If the image source is not set, the control will not open.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Structure&lt;/h3&gt;
+
+Each LightBox holds a {@link sap.m.LightBoxItem LightBoxItem} which keeps the properties of the image:
+&lt;ul&gt;
+    &lt;li&gt; imageSrc - The source URI of the image &lt;/li&gt;
+    &lt;li&gt; title - The title of the image &lt;/li&gt;
+    &lt;li&gt; subtitle - The subtitle of the image &lt;/li&gt;
+    &lt;li&gt; alt - The alt text of the image &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Usage&lt;/h3&gt;
+
+The most common use case is to click on an image thumbnail to view it in bigger size.
+When the image that should be displayed in the control cannot be loaded, an error is displayed in the popup.
+
+&lt;h3&gt;Responsive Behavior&lt;/h3&gt;
+
+On a mobile device, flipping the device to landscape will flip the lightbox and the image will be adjusted to fit the new dimensions.
+
+&lt;h3&gt;Additional Information&lt;/h3&gt;
+
+Check out the &lt;a href="/#docs/api/symbols/sap.m.LightBox.html" &gt;API Reference&lt;/a&gt;.</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <aggregations default="imageContent">
+        <aggregation name="imageContent" type="sap.m/LightBoxItem" cardinality="0..n" bindable="bindable">
+            <documentation>Aggregation which holds data about the image and its description. Although multiple LightBoxItems
+may be added to this aggregation only the first one in the list will be taken into account.</documentation>
+        </aggregation>
+        <aggregation name="_closeButton" type="sap.m/Button" cardinality="0..1" visibility="hidden">
+            <documentation>The close button aggregation inside the LightBox control. This button has to have text in it.</documentation>
+        </aggregation>
+        <aggregation name="_errorIcon" type="sap.ui.core/Icon" cardinality="0..1" visibility="hidden">
+            <documentation>The error icon displayed when the image could not be loaded in time.</documentation>
+        </aggregation>
+        <aggregation name="_errorTitle" type="sap.m/Text" cardinality="0..1" visibility="hidden">
+            <documentation>The main error message displayed when the image could not be loaded.</documentation>
+        </aggregation>
+        <aggregation name="_errorSubtitle" type="sap.m/Text" cardinality="0..1" visibility="hidden">
+            <documentation>The detailed error message displayed when the image could not be loaded.</documentation>
+        </aggregation>
+        <aggregation name="_verticalLayout" type="sap.ui.layout/VerticalLayout" cardinality="0..1" visibility="hidden">
+            <documentation>A layout control used to display the error texts when the image could not be loaded.</documentation>
+        </aggregation>
+        <aggregation name="_invisiblePopupText" type="sap.ui.core/InvisibleText" cardinality="0..1" visibility="hidden">
+            <documentation>Hidden text used for accessibility of the popup.</documentation>
+        </aggregation>
+        <aggregation name="_busy" type="sap.m/BusyIndicator" cardinality="0..1" visibility="hidden">
+            <documentation>BusyIndicator for loading state.</documentation>
+        </aggregation>
+    </aggregations>
+    <methods>
+        <method name="open" type="sap.m/LightBox">
+            <documentation>Opens the LightBox.</documentation>
+        </method>
+        <method name="close" type="sap.m/LightBox">
+            <documentation>Closes the LightBox.</documentation>
+        </method>
+    </methods>
+</control>

@@ -1,0 +1,76 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": ".theming",
+			"theme": "sap_belize"
+		},
+		{
+			"name": "HeaderContainer.less",
+			"designtime": true,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "NetworkNode.less",
+			"designtime": true,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "ProcessFlow.less",
+			"designtime": true,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "ProcessFlowConnection.less",
+			"designtime": true,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "ProcessFlowConnectionLabel.less",
+			"designtime": true,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "ProcessFlowLaneHeader.less",
+			"designtime": true,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "ProcessFlowNode.less",
+			"designtime": true,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "library-RTL-dbg.css",
+			"isDebug": true,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "library-RTL.css",
+			"theme": "sap_belize"
+		},
+		{
+			"name": "library-dbg.css",
+			"isDebug": true,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "library-parameters.json",
+			"theme": "sap_belize"
+		},
+		{
+			"name": "library.css",
+			"theme": "sap_belize"
+		},
+		{
+			"name": "library.less",
+			"designtime": true,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "library.source.less",
+			"designtime": true,
+			"theme": "sap_belize"
+		}
+	]
+}

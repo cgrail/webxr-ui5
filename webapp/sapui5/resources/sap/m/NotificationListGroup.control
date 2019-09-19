@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>NotificationListGroup</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The NotificationListItemGroup control is used for grouping {@link sap.m.NotificationListItem notification items} of the same type.
+&lt;h4&gt;Behavior&lt;/h4&gt;
+The group handles specific behavior for different usecases:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;autoPriority&lt;/code&gt; - sets the group priority to the highest priority of an item in the group.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;enableCollapseButtonWhenEmpty&lt;/code&gt; - displays a collapse button for an empty group.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;showEmptyGroup&lt;/code&gt; - determines if the header/footer of an empty group is displayed.&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+    <since>1.34</since>
+    <baseType>sap.m/NotificationListBase</baseType>
+    <properties>
+        <property name="collapsed" type="sap.ui.core/boolean" defaultValue="false" group="Behavior">
+            <documentation>Determines if the group is collapsed or expanded.</documentation>
+        </property>
+        <property name="autoPriority" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Determines if the group will automatically set the priority based on the highest priority of its notifications or get its priority from the developer.</documentation>
+        </property>
+        <property name="showEmptyGroup" type="sap.ui.core/boolean" defaultValue="false" group="Behavior">
+            <documentation>Determines if the group header/footer of the empty group will be always shown. By default groups with 0 notifications are not shown.</documentation>
+        </property>
+        <property name="enableCollapseButtonWhenEmpty" type="sap.ui.core/boolean" defaultValue="false" group="Behavior">
+            <documentation>Determines if the collapse/expand button should be enabled for an empty group.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="onCollapse" since="1.44" allowPreventDefault="false">
+            <documentation>This event is called when collapse property value is changed</documentation>
+            <parameters>
+                <parameter name="collapsed" type="sap.ui.core/boolean">
+                    <documentation>Indicates exact collapse direction</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations default="items">
+        <aggregation name="items" type="sap.m/NotificationListItem" cardinality="0..n">
+            <documentation>The NotificationListItems inside the group.</documentation>
+        </aggregation>
+        <aggregation name="_ariaDetailsText" type="sap.ui.core/InvisibleText" cardinality="0..1" visibility="hidden">
+            <documentation>The details of the NotificationListGroup that will be used to implement the ARIA specification</documentation>
+        </aggregation>
+    </aggregations>
+</control>

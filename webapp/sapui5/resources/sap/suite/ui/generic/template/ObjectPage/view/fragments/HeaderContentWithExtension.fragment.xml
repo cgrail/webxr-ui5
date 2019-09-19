@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m" xmlns:core="sap.ui.core">
+    <template:with path="parameter>/manifest/sap.ui5/extends/extensions/sap.ui.viewExtensions/sap.suite.ui.generic.template.ObjectPage.view.Details" var="manifestViewExtensions">
+        <template:if test="{parts: [{path: 'entitySet>name'}, {path: 'manifestViewExtensions>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.extensionPointReplaceHeaderExists' }">
+            <template:then>
+                <HBox>
+                    <core:ExtensionPoint name="ReplaceHeaderExtensionFacet|{entitySet>name}" />
+                </HBox>
+            </template:then>
+        <template:else>
+            <core:Fragment fragmentName="sap.suite.ui.generic.template.ObjectPage.view.fragments.HeaderContent" type="XML"/>
+        </template:else>
+        </template:if>
+    </template:with>
+</core:FragmentDefinition>

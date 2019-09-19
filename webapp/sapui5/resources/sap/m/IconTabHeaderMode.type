@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>IconTabHeaderMode</name>
+    <derived/>
+    <documentation>Specifies &lt;code&gt;IconTabBar&lt;/code&gt; header mode.</documentation>
+    <enumeration>
+        <value name="Standard">
+            <documentation>Standard. In this mode when the &lt;code&gt;count&lt;/code&gt; and the &lt;code&gt;text&lt;/code&gt; are set, they are displayed in two separate lines.</documentation>
+        </value>
+        <value name="Inline">
+            <documentation>Inline. In this mode when the &lt;code&gt;count&lt;/code&gt; and the &lt;code&gt;text&lt;/code&gt; are set, they are displayed in one line.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

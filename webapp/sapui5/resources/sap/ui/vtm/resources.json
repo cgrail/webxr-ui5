@@ -1,0 +1,1828 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": ".library"
+		},
+		{
+			"name": ".theming"
+		},
+		{
+			"name": "ArrayUtilities-dbg.js",
+			"module": "sap/ui/vtm/ArrayUtilities.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js"
+			]
+		},
+		{
+			"name": "ArrayUtilities.js",
+			"module": "sap/ui/vtm/ArrayUtilities.js",
+			"required": [
+				"jquery.sap.global.js"
+			]
+		},
+		{
+			"name": "CheckEye-dbg.js",
+			"module": "sap/ui/vtm/CheckEye.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Icon.js",
+				"sap/ui/core/IconRenderer.js",
+				"sap/ui/vtm/library.js"
+			]
+		},
+		{
+			"name": "CheckEye.js",
+			"module": "sap/ui/vtm/CheckEye.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Icon.js",
+				"sap/ui/core/IconRenderer.js",
+				"sap/ui/vtm/library.js"
+			]
+		},
+		{
+			"name": "ChildCollectionType-dbg.js",
+			"module": "sap/ui/vtm/ChildCollectionType.js",
+			"isDebug": true
+		},
+		{
+			"name": "ChildCollectionType.js",
+			"module": "sap/ui/vtm/ChildCollectionType.js"
+		},
+		{
+			"name": "Column-dbg.js",
+			"module": "sap/ui/vtm/Column.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/commons/Label.js",
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "Column.js",
+			"module": "sap/ui/vtm/Column.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/commons/Label.js",
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "ColumnTemplates-dbg.js",
+			"module": "sap/ui/vtm/ColumnTemplates.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js"
+			]
+		},
+		{
+			"name": "ColumnTemplates.js",
+			"module": "sap/ui/vtm/ColumnTemplates.js",
+			"required": [
+				"jquery.sap.global.js"
+			]
+		},
+		{
+			"name": "ColumnType-dbg.js",
+			"module": "sap/ui/vtm/ColumnType.js",
+			"isDebug": true
+		},
+		{
+			"name": "ColumnType.js",
+			"module": "sap/ui/vtm/ColumnType.js"
+		},
+		{
+			"name": "DescriptorUtilities-dbg.js",
+			"module": "sap/ui/vtm/DescriptorUtilities.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js"
+			]
+		},
+		{
+			"name": "DescriptorUtilities.js",
+			"module": "sap/ui/vtm/DescriptorUtilities.js",
+			"required": [
+				"jquery.sap.global.js"
+			]
+		},
+		{
+			"name": "DisplayGroup-dbg.js",
+			"module": "sap/ui/vtm/DisplayGroup.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "DisplayGroup.js",
+			"module": "sap/ui/vtm/DisplayGroup.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "Extension-dbg.js",
+			"module": "sap/ui/vtm/Extension.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "Extension.js",
+			"module": "sap/ui/vtm/Extension.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "HashUtilities-dbg.js",
+			"module": "sap/ui/vtm/HashUtilities.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js"
+			]
+		},
+		{
+			"name": "HashUtilities.js",
+			"module": "sap/ui/vtm/HashUtilities.js",
+			"required": [
+				"jquery.sap.global.js"
+			]
+		},
+		{
+			"name": "InternalColumnDescriptor-dbg.js",
+			"module": "sap/ui/vtm/InternalColumnDescriptor.js",
+			"isDebug": true
+		},
+		{
+			"name": "InternalColumnDescriptor.js",
+			"module": "sap/ui/vtm/InternalColumnDescriptor.js"
+		},
+		{
+			"name": "InternalColumns-dbg.js",
+			"module": "sap/ui/vtm/InternalColumns.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/vtm/ColumnType.js",
+				"sap/ui/vtm/InternalColumnDescriptor.js"
+			]
+		},
+		{
+			"name": "InternalColumns.js",
+			"module": "sap/ui/vtm/InternalColumns.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/vtm/ColumnType.js",
+				"sap/ui/vtm/InternalColumnDescriptor.js"
+			]
+		},
+		{
+			"name": "Lookup-dbg.js",
+			"module": "sap/ui/vtm/Lookup.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/vtm/ArrayUtilities.js"
+			]
+		},
+		{
+			"name": "Lookup.js",
+			"module": "sap/ui/vtm/Lookup.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/vtm/ArrayUtilities.js"
+			]
+		},
+		{
+			"name": "MatrixComponent-dbg.js",
+			"module": "sap/ui/vtm/MatrixComponent.js",
+			"isDebug": true
+		},
+		{
+			"name": "MatrixComponent.js",
+			"module": "sap/ui/vtm/MatrixComponent.js"
+		},
+		{
+			"name": "MatrixUtilities-dbg.js",
+			"module": "sap/ui/vtm/MatrixUtilities.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js"
+			]
+		},
+		{
+			"name": "MatrixUtilities.js",
+			"module": "sap/ui/vtm/MatrixUtilities.js",
+			"required": [
+				"jquery.sap.global.js"
+			]
+		},
+		{
+			"name": "MessagesPopover-dbg.js",
+			"module": "sap/ui/vtm/MessagesPopover.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/List.js",
+				"sap/m/Popover.js",
+				"sap/m/PopoverRenderer.js",
+				"sap/ui/vtm/library.js"
+			]
+		},
+		{
+			"name": "MessagesPopover.js",
+			"module": "sap/ui/vtm/MessagesPopover.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/List.js",
+				"sap/m/Popover.js",
+				"sap/m/PopoverRenderer.js",
+				"sap/ui/vtm/library.js"
+			]
+		},
+		{
+			"name": "Panel-dbg.js",
+			"module": "sap/ui/vtm/Panel.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/VBox.js",
+				"sap/ui/commons/Panel.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Title.js",
+				"sap/ui/layout/Splitter.js",
+				"sap/ui/vtm/Tree.js",
+				"sap/ui/vtm/Viewport.js"
+			]
+		},
+		{
+			"name": "Panel.js",
+			"module": "sap/ui/vtm/Panel.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/VBox.js",
+				"sap/ui/commons/Panel.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Title.js",
+				"sap/ui/layout/Splitter.js",
+				"sap/ui/vtm/Tree.js",
+				"sap/ui/vtm/Viewport.js"
+			]
+		},
+		{
+			"name": "PredefinedView-dbg.js",
+			"module": "sap/ui/vtm/PredefinedView.js",
+			"isDebug": true
+		},
+		{
+			"name": "PredefinedView.js",
+			"module": "sap/ui/vtm/PredefinedView.js"
+		},
+		{
+			"name": "Progress-dbg.js",
+			"module": "sap/ui/vtm/Progress.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/ProgressIndicator.js",
+				"sap/m/Text.js",
+				"sap/ui/core/Control.js"
+			]
+		},
+		{
+			"name": "Progress.js",
+			"module": "sap/ui/vtm/Progress.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/ProgressIndicator.js",
+				"sap/m/Text.js",
+				"sap/ui/core/Control.js"
+			]
+		},
+		{
+			"name": "ProgressDialog-dbg.js",
+			"module": "sap/ui/vtm/ProgressDialog.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/Dialog.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/vtm/Progress.js",
+				"sap/ui/vtm/library.js"
+			]
+		},
+		{
+			"name": "ProgressDialog.js",
+			"module": "sap/ui/vtm/ProgressDialog.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/Dialog.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/vtm/Progress.js",
+				"sap/ui/vtm/library.js"
+			]
+		},
+		{
+			"name": "Scene-dbg.js",
+			"module": "sap/ui/vtm/Scene.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/vk/NodeHierarchy.js",
+				"sap/ui/vk/Scene.js",
+				"sap/ui/vk/dvl/GraphicsCore.js",
+				"sap/ui/vtm/ArrayUtilities.js",
+				"sap/ui/vtm/SceneNode.js",
+				"sap/ui/vtm/ViewableLoadInfo.js"
+			]
+		},
+		{
+			"name": "Scene.js",
+			"module": "sap/ui/vtm/Scene.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/vk/NodeHierarchy.js",
+				"sap/ui/vk/Scene.js",
+				"sap/ui/vk/dvl/GraphicsCore.js",
+				"sap/ui/vtm/ArrayUtilities.js",
+				"sap/ui/vtm/SceneNode.js",
+				"sap/ui/vtm/ViewableLoadInfo.js"
+			]
+		},
+		{
+			"name": "SceneNode-dbg.js",
+			"module": "sap/ui/vtm/SceneNode.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/vk/NodeProxy.js",
+				"sap/ui/vtm/ArrayUtilities.js",
+				"sap/ui/vtm/MatrixUtilities.js"
+			]
+		},
+		{
+			"name": "SceneNode.js",
+			"module": "sap/ui/vtm/SceneNode.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/vk/NodeProxy.js",
+				"sap/ui/vtm/ArrayUtilities.js",
+				"sap/ui/vtm/MatrixUtilities.js"
+			]
+		},
+		{
+			"name": "SelectColumnsDialog-dbg.js",
+			"module": "sap/ui/vtm/SelectColumnsDialog.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/TableSelectDialog.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/vtm/ColumnType.js",
+				"sap/ui/vtm/InternalColumns.js",
+				"sap/ui/vtm/Progress.js",
+				"sap/ui/vtm/library.js"
+			]
+		},
+		{
+			"name": "SelectColumnsDialog.js",
+			"module": "sap/ui/vtm/SelectColumnsDialog.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/TableSelectDialog.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/vtm/ColumnType.js",
+				"sap/ui/vtm/InternalColumns.js",
+				"sap/ui/vtm/Progress.js",
+				"sap/ui/vtm/library.js"
+			]
+		},
+		{
+			"name": "SelectionMode-dbg.js",
+			"module": "sap/ui/vtm/SelectionMode.js",
+			"isDebug": true
+		},
+		{
+			"name": "SelectionMode.js",
+			"module": "sap/ui/vtm/SelectionMode.js"
+		},
+		{
+			"name": "Text-dbg.js",
+			"module": "sap/ui/vtm/Text.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/Text.js",
+				"sap/m/TextRenderer.js",
+				"sap/ui/vtm/TextColor.js"
+			]
+		},
+		{
+			"name": "Text.js",
+			"module": "sap/ui/vtm/Text.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/Text.js",
+				"sap/m/TextRenderer.js",
+				"sap/ui/vtm/TextColor.js"
+			]
+		},
+		{
+			"name": "TextColor-dbg.js",
+			"module": "sap/ui/vtm/TextColor.js",
+			"isDebug": true
+		},
+		{
+			"name": "TextColor.js",
+			"module": "sap/ui/vtm/TextColor.js"
+		},
+		{
+			"name": "Tree-dbg.js",
+			"module": "sap/ui/vtm/Tree.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/commons/TextView.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Icon.js",
+				"sap/ui/core/IconPool.js",
+				"sap/ui/layout/HorizontalLayout.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/table/TreeTable.js",
+				"sap/ui/vtm/ArrayUtilities.js",
+				"sap/ui/vtm/CheckEye.js",
+				"sap/ui/vtm/Column.js",
+				"sap/ui/vtm/ColumnType.js",
+				"sap/ui/vtm/InternalColumnDescriptor.js",
+				"sap/ui/vtm/InternalColumns.js",
+				"sap/ui/vtm/Lookup.js",
+				"sap/ui/vtm/MatrixUtilities.js",
+				"sap/ui/vtm/SelectionMode.js",
+				"sap/ui/vtm/Text.js",
+				"sap/ui/vtm/TreeItemUtilities.js",
+				"sap/ui/vtm/library.js"
+			]
+		},
+		{
+			"name": "Tree.js",
+			"module": "sap/ui/vtm/Tree.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/commons/TextView.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Icon.js",
+				"sap/ui/core/IconPool.js",
+				"sap/ui/layout/HorizontalLayout.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/table/TreeTable.js",
+				"sap/ui/vtm/ArrayUtilities.js",
+				"sap/ui/vtm/CheckEye.js",
+				"sap/ui/vtm/Column.js",
+				"sap/ui/vtm/ColumnType.js",
+				"sap/ui/vtm/InternalColumnDescriptor.js",
+				"sap/ui/vtm/InternalColumns.js",
+				"sap/ui/vtm/Lookup.js",
+				"sap/ui/vtm/MatrixUtilities.js",
+				"sap/ui/vtm/SelectionMode.js",
+				"sap/ui/vtm/Text.js",
+				"sap/ui/vtm/TreeItemUtilities.js",
+				"sap/ui/vtm/library.js"
+			]
+		},
+		{
+			"name": "TreeCollections-dbg.js",
+			"module": "sap/ui/vtm/TreeCollections.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/vtm/ArrayUtilities.js"
+			]
+		},
+		{
+			"name": "TreeCollections.js",
+			"module": "sap/ui/vtm/TreeCollections.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/vtm/ArrayUtilities.js"
+			]
+		},
+		{
+			"name": "TreeItemType-dbg.js",
+			"module": "sap/ui/vtm/TreeItemType.js",
+			"isDebug": true
+		},
+		{
+			"name": "TreeItemType.js",
+			"module": "sap/ui/vtm/TreeItemType.js"
+		},
+		{
+			"name": "TreeItemUtilities-dbg.js",
+			"module": "sap/ui/vtm/TreeItemUtilities.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Message.js",
+				"sap/ui/vtm/ArrayUtilities.js"
+			]
+		},
+		{
+			"name": "TreeItemUtilities.js",
+			"module": "sap/ui/vtm/TreeItemUtilities.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Message.js",
+				"sap/ui/vtm/ArrayUtilities.js"
+			]
+		},
+		{
+			"name": "Viewable-dbg.js",
+			"module": "sap/ui/vtm/Viewable.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/vk/ContentResource.js"
+			]
+		},
+		{
+			"name": "Viewable.js",
+			"module": "sap/ui/vtm/Viewable.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/vk/ContentResource.js"
+			]
+		},
+		{
+			"name": "ViewableLoadInfo-dbg.js",
+			"module": "sap/ui/vtm/ViewableLoadInfo.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "ViewableLoadInfo.js",
+			"module": "sap/ui/vtm/ViewableLoadInfo.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "ViewableLoadStatus-dbg.js",
+			"module": "sap/ui/vtm/ViewableLoadStatus.js",
+			"isDebug": true
+		},
+		{
+			"name": "ViewableLoadStatus.js",
+			"module": "sap/ui/vtm/ViewableLoadStatus.js"
+		},
+		{
+			"name": "Viewport-dbg.js",
+			"module": "sap/ui/vtm/Viewport.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/vk/FlexibleControl.js",
+				"sap/ui/vk/FlexibleControlLayoutData.js",
+				"sap/ui/vk/dvl/Viewport.js",
+				"sap/ui/vtm/ViewportHandler.js"
+			]
+		},
+		{
+			"name": "Viewport.js",
+			"module": "sap/ui/vtm/Viewport.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/vk/FlexibleControl.js",
+				"sap/ui/vk/FlexibleControlLayoutData.js",
+				"sap/ui/vk/dvl/Viewport.js",
+				"sap/ui/vtm/ViewportHandler.js"
+			]
+		},
+		{
+			"name": "ViewportHandler-dbg.js",
+			"module": "sap/ui/vtm/ViewportHandler.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/vk/ViewportHandler.js"
+			]
+		},
+		{
+			"name": "ViewportHandler.js",
+			"module": "sap/ui/vtm/ViewportHandler.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/vk/ViewportHandler.js"
+			]
+		},
+		{
+			"name": "Vtm-dbg.js",
+			"module": "sap/ui/vtm/Vtm.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/Toolbar.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/vtm/ArrayUtilities.js",
+				"sap/ui/vtm/Panel.js",
+				"sap/ui/vtm/Scene.js",
+				"sap/ui/vtm/Viewable.js"
+			]
+		},
+		{
+			"name": "Vtm.js",
+			"module": "sap/ui/vtm/Vtm.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/Toolbar.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/vtm/ArrayUtilities.js",
+				"sap/ui/vtm/Panel.js",
+				"sap/ui/vtm/Scene.js",
+				"sap/ui/vtm/Viewable.js"
+			]
+		},
+		{
+			"name": "extensions/DisplayStateCalculationExtension-dbg.js",
+			"module": "sap/ui/vtm/extensions/DisplayStateCalculationExtension.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/vtm/Extension.js"
+			]
+		},
+		{
+			"name": "extensions/DisplayStateCalculationExtension.js",
+			"module": "sap/ui/vtm/extensions/DisplayStateCalculationExtension.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/vtm/Extension.js"
+			]
+		},
+		{
+			"name": "extensions/InitialViewExtension-dbg.js",
+			"module": "sap/ui/vtm/extensions/InitialViewExtension.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/vtm/Extension.js"
+			]
+		},
+		{
+			"name": "extensions/InitialViewExtension.js",
+			"module": "sap/ui/vtm/extensions/InitialViewExtension.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/vtm/Extension.js"
+			]
+		},
+		{
+			"name": "extensions/LoadProgressExtension-dbg.js",
+			"module": "sap/ui/vtm/extensions/LoadProgressExtension.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/vtm/Extension.js"
+			]
+		},
+		{
+			"name": "extensions/LoadProgressExtension.js",
+			"module": "sap/ui/vtm/extensions/LoadProgressExtension.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/vtm/Extension.js"
+			]
+		},
+		{
+			"name": "extensions/MessageStatusCalculationExtension-dbg.js",
+			"module": "sap/ui/vtm/extensions/MessageStatusCalculationExtension.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/vtm/Extension.js"
+			]
+		},
+		{
+			"name": "extensions/MessageStatusCalculationExtension.js",
+			"module": "sap/ui/vtm/extensions/MessageStatusCalculationExtension.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/vtm/Extension.js"
+			]
+		},
+		{
+			"name": "extensions/MessageStatusIconClickExtension-dbg.js",
+			"module": "sap/ui/vtm/extensions/MessageStatusIconClickExtension.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/vtm/Extension.js"
+			]
+		},
+		{
+			"name": "extensions/MessageStatusIconClickExtension.js",
+			"module": "sap/ui/vtm/extensions/MessageStatusIconClickExtension.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/vtm/Extension.js"
+			]
+		},
+		{
+			"name": "extensions/SceneNodeHoverHighlightExtension-dbg.js",
+			"module": "sap/ui/vtm/extensions/SceneNodeHoverHighlightExtension.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/vtm/Extension.js"
+			]
+		},
+		{
+			"name": "extensions/SceneNodeHoverHighlightExtension.js",
+			"module": "sap/ui/vtm/extensions/SceneNodeHoverHighlightExtension.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/vtm/Extension.js"
+			]
+		},
+		{
+			"name": "extensions/SceneNodeHoverTooltipExtension-dbg.js",
+			"module": "sap/ui/vtm/extensions/SceneNodeHoverTooltipExtension.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/vtm/Extension.js",
+				"sap/ui/vtm/ViewportHandler.js"
+			]
+		},
+		{
+			"name": "extensions/SceneNodeHoverTooltipExtension.js",
+			"module": "sap/ui/vtm/extensions/SceneNodeHoverTooltipExtension.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/vtm/Extension.js",
+				"sap/ui/vtm/ViewportHandler.js"
+			]
+		},
+		{
+			"name": "extensions/SelectionLinkingExtension-dbg.js",
+			"module": "sap/ui/vtm/extensions/SelectionLinkingExtension.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/vtm/Extension.js"
+			]
+		},
+		{
+			"name": "extensions/SelectionLinkingExtension.js",
+			"module": "sap/ui/vtm/extensions/SelectionLinkingExtension.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/vtm/Extension.js"
+			]
+		},
+		{
+			"name": "extensions/ViewLinkingExtension-dbg.js",
+			"module": "sap/ui/vtm/extensions/ViewLinkingExtension.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/vtm/Extension.js"
+			]
+		},
+		{
+			"name": "extensions/ViewLinkingExtension.js",
+			"module": "sap/ui/vtm/extensions/ViewLinkingExtension.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/vtm/Extension.js"
+			]
+		},
+		{
+			"name": "extensions/ViewportSelectionLinkingExtension-dbg.js",
+			"module": "sap/ui/vtm/extensions/ViewportSelectionLinkingExtension.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/vtm/Extension.js"
+			]
+		},
+		{
+			"name": "extensions/ViewportSelectionLinkingExtension.js",
+			"module": "sap/ui/vtm/extensions/ViewportSelectionLinkingExtension.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/vtm/Extension.js"
+			]
+		},
+		{
+			"name": "extensions/VisibilityIconClickExtension-dbg.js",
+			"module": "sap/ui/vtm/extensions/VisibilityIconClickExtension.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/vtm/Extension.js"
+			]
+		},
+		{
+			"name": "extensions/VisibilityIconClickExtension.js",
+			"module": "sap/ui/vtm/extensions/VisibilityIconClickExtension.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/vtm/Extension.js"
+			]
+		},
+		{
+			"name": "i18n/messagebundle.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle.properties",
+			"locale": "",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_ar.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_ar.properties",
+			"locale": "ar",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_bg.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_bg.properties",
+			"locale": "bg",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_ca.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_ca.properties",
+			"locale": "ca",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_cs.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_cs.properties",
+			"locale": "cs",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_da.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_da.properties",
+			"locale": "da",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_de.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_de.properties",
+			"locale": "de",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_el.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_el.properties",
+			"locale": "el",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_en.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_en.properties",
+			"locale": "en",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_en_US_sappsd.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_en_US_sappsd.properties",
+			"locale": "en_US_sappsd",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_en_US_saptrc.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_en_US_saptrc.properties",
+			"locale": "en_US_saptrc",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_es.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_es.properties",
+			"locale": "es",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_et.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_et.properties",
+			"locale": "et",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_fi.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_fi.properties",
+			"locale": "fi",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_fr.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_fr.properties",
+			"locale": "fr",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_hi.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_hi.properties",
+			"locale": "hi",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_hr.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_hr.properties",
+			"locale": "hr",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_hu.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_hu.properties",
+			"locale": "hu",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_it.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_it.properties",
+			"locale": "it",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_iw.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_iw.properties",
+			"locale": "iw",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_ja.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_ja.properties",
+			"locale": "ja",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_kk.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_kk.properties",
+			"locale": "kk",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_ko.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_ko.properties",
+			"locale": "ko",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_lt.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_lt.properties",
+			"locale": "lt",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_lv.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_lv.properties",
+			"locale": "lv",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_ms.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_ms.properties",
+			"locale": "ms",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_nl.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_nl.properties",
+			"locale": "nl",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_no.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_no.properties",
+			"locale": "no",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_pl.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_pl.properties",
+			"locale": "pl",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_pt.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_pt.properties",
+			"locale": "pt",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_ro.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_ro.properties",
+			"locale": "ro",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_ru.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_ru.properties",
+			"locale": "ru",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_sh.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_sh.properties",
+			"locale": "sh",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_sk.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_sk.properties",
+			"locale": "sk",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_sl.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_sl.properties",
+			"locale": "sl",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_sv.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_sv.properties",
+			"locale": "sv",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_th.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_th.properties",
+			"locale": "th",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_tr.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_tr.properties",
+			"locale": "tr",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_uk.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_uk.properties",
+			"locale": "uk",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_vi.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_vi.properties",
+			"locale": "vi",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_zh_CN.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_zh_CN.properties",
+			"locale": "zh_CN",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_zh_TW.properties",
+			"module": "sap/ui/vtm/i18n/messagebundle_zh_TW.properties",
+			"locale": "zh_TW",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "library-dbg.js",
+			"module": "sap/ui/vtm/library.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/base/DataType.js",
+				"sap/ui/vtm/ArrayUtilities.js",
+				"sap/ui/vtm/ChildCollectionType.js",
+				"sap/ui/vtm/ColumnTemplates.js",
+				"sap/ui/vtm/ColumnType.js",
+				"sap/ui/vtm/DescriptorUtilities.js",
+				"sap/ui/vtm/HashUtilities.js",
+				"sap/ui/vtm/InternalColumnDescriptor.js",
+				"sap/ui/vtm/InternalColumns.js",
+				"sap/ui/vtm/MatrixComponent.js",
+				"sap/ui/vtm/MatrixUtilities.js",
+				"sap/ui/vtm/PredefinedView.js",
+				"sap/ui/vtm/SelectionMode.js",
+				"sap/ui/vtm/TextColor.js",
+				"sap/ui/vtm/TreeItemType.js",
+				"sap/ui/vtm/TreeItemUtilities.js",
+				"sap/ui/vtm/ViewableLoadStatus.js"
+			]
+		},
+		{
+			"name": "library-h2-preload-dbg.js",
+			"module": "sap/ui/vtm/library-h2-preload.js",
+			"isDebug": true,
+			"merged": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/Dialog.js",
+				"sap/m/List.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/Popover.js",
+				"sap/m/PopoverRenderer.js",
+				"sap/m/ProgressIndicator.js",
+				"sap/m/TableSelectDialog.js",
+				"sap/m/Text.js",
+				"sap/m/TextRenderer.js",
+				"sap/m/Toolbar.js",
+				"sap/m/VBox.js",
+				"sap/ui/base/DataType.js",
+				"sap/ui/commons/Label.js",
+				"sap/ui/commons/Panel.js",
+				"sap/ui/commons/TextView.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/core/Icon.js",
+				"sap/ui/core/IconPool.js",
+				"sap/ui/core/IconRenderer.js",
+				"sap/ui/core/Message.js",
+				"sap/ui/core/Title.js",
+				"sap/ui/layout/HorizontalLayout.js",
+				"sap/ui/layout/Splitter.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/table/TreeTable.js",
+				"sap/ui/vk/ContentResource.js",
+				"sap/ui/vk/FlexibleControl.js",
+				"sap/ui/vk/FlexibleControlLayoutData.js",
+				"sap/ui/vk/NodeHierarchy.js",
+				"sap/ui/vk/NodeProxy.js",
+				"sap/ui/vk/Scene.js",
+				"sap/ui/vk/ViewportHandler.js",
+				"sap/ui/vk/dvl/GraphicsCore.js",
+				"sap/ui/vk/dvl/Viewport.js"
+			],
+			"included": [
+				"sap/ui/vtm/library.js",
+				"sap/ui/vtm/manifest.json",
+				"sap/ui/vtm/ArrayUtilities.js",
+				"sap/ui/vtm/CheckEye.js",
+				"sap/ui/vtm/ChildCollectionType.js",
+				"sap/ui/vtm/Column.js",
+				"sap/ui/vtm/ColumnTemplates.js",
+				"sap/ui/vtm/ColumnType.js",
+				"sap/ui/vtm/DescriptorUtilities.js",
+				"sap/ui/vtm/DisplayGroup.js",
+				"sap/ui/vtm/Extension.js",
+				"sap/ui/vtm/HashUtilities.js",
+				"sap/ui/vtm/InternalColumnDescriptor.js",
+				"sap/ui/vtm/InternalColumns.js",
+				"sap/ui/vtm/Lookup.js",
+				"sap/ui/vtm/MatrixComponent.js",
+				"sap/ui/vtm/MatrixUtilities.js",
+				"sap/ui/vtm/MessagesPopover.js",
+				"sap/ui/vtm/Panel.js",
+				"sap/ui/vtm/PredefinedView.js",
+				"sap/ui/vtm/Progress.js",
+				"sap/ui/vtm/ProgressDialog.js",
+				"sap/ui/vtm/Scene.js",
+				"sap/ui/vtm/SceneNode.js",
+				"sap/ui/vtm/SelectColumnsDialog.js",
+				"sap/ui/vtm/SelectionMode.js",
+				"sap/ui/vtm/Text.js",
+				"sap/ui/vtm/TextColor.js",
+				"sap/ui/vtm/Tree.js",
+				"sap/ui/vtm/TreeCollections.js",
+				"sap/ui/vtm/TreeItemType.js",
+				"sap/ui/vtm/TreeItemUtilities.js",
+				"sap/ui/vtm/Viewable.js",
+				"sap/ui/vtm/ViewableLoadInfo.js",
+				"sap/ui/vtm/ViewableLoadStatus.js",
+				"sap/ui/vtm/Viewport.js",
+				"sap/ui/vtm/ViewportHandler.js",
+				"sap/ui/vtm/Vtm.js",
+				"sap/ui/vtm/extensions/DisplayStateCalculationExtension.js",
+				"sap/ui/vtm/extensions/InitialViewExtension.js",
+				"sap/ui/vtm/extensions/LoadProgressExtension.js",
+				"sap/ui/vtm/extensions/MessageStatusCalculationExtension.js",
+				"sap/ui/vtm/extensions/MessageStatusIconClickExtension.js",
+				"sap/ui/vtm/extensions/SceneNodeHoverHighlightExtension.js",
+				"sap/ui/vtm/extensions/SceneNodeHoverTooltipExtension.js",
+				"sap/ui/vtm/extensions/SelectionLinkingExtension.js",
+				"sap/ui/vtm/extensions/ViewLinkingExtension.js",
+				"sap/ui/vtm/extensions/ViewportSelectionLinkingExtension.js",
+				"sap/ui/vtm/extensions/VisibilityIconClickExtension.js"
+			]
+		},
+		{
+			"name": "library-h2-preload.js",
+			"module": "sap/ui/vtm/library-h2-preload.js",
+			"merged": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/Dialog.js",
+				"sap/m/List.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/Popover.js",
+				"sap/m/PopoverRenderer.js",
+				"sap/m/ProgressIndicator.js",
+				"sap/m/TableSelectDialog.js",
+				"sap/m/Text.js",
+				"sap/m/TextRenderer.js",
+				"sap/m/Toolbar.js",
+				"sap/m/VBox.js",
+				"sap/ui/base/DataType.js",
+				"sap/ui/commons/Label.js",
+				"sap/ui/commons/Panel.js",
+				"sap/ui/commons/TextView.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/core/Icon.js",
+				"sap/ui/core/IconPool.js",
+				"sap/ui/core/IconRenderer.js",
+				"sap/ui/core/Message.js",
+				"sap/ui/core/Title.js",
+				"sap/ui/layout/HorizontalLayout.js",
+				"sap/ui/layout/Splitter.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/table/TreeTable.js",
+				"sap/ui/vk/ContentResource.js",
+				"sap/ui/vk/FlexibleControl.js",
+				"sap/ui/vk/FlexibleControlLayoutData.js",
+				"sap/ui/vk/NodeHierarchy.js",
+				"sap/ui/vk/NodeProxy.js",
+				"sap/ui/vk/Scene.js",
+				"sap/ui/vk/ViewportHandler.js",
+				"sap/ui/vk/dvl/GraphicsCore.js",
+				"sap/ui/vk/dvl/Viewport.js"
+			],
+			"included": [
+				"sap/ui/vtm/library.js",
+				"sap/ui/vtm/manifest.json",
+				"sap/ui/vtm/ArrayUtilities.js",
+				"sap/ui/vtm/CheckEye.js",
+				"sap/ui/vtm/ChildCollectionType.js",
+				"sap/ui/vtm/Column.js",
+				"sap/ui/vtm/ColumnTemplates.js",
+				"sap/ui/vtm/ColumnType.js",
+				"sap/ui/vtm/DescriptorUtilities.js",
+				"sap/ui/vtm/DisplayGroup.js",
+				"sap/ui/vtm/Extension.js",
+				"sap/ui/vtm/HashUtilities.js",
+				"sap/ui/vtm/InternalColumnDescriptor.js",
+				"sap/ui/vtm/InternalColumns.js",
+				"sap/ui/vtm/Lookup.js",
+				"sap/ui/vtm/MatrixComponent.js",
+				"sap/ui/vtm/MatrixUtilities.js",
+				"sap/ui/vtm/MessagesPopover.js",
+				"sap/ui/vtm/Panel.js",
+				"sap/ui/vtm/PredefinedView.js",
+				"sap/ui/vtm/Progress.js",
+				"sap/ui/vtm/ProgressDialog.js",
+				"sap/ui/vtm/Scene.js",
+				"sap/ui/vtm/SceneNode.js",
+				"sap/ui/vtm/SelectColumnsDialog.js",
+				"sap/ui/vtm/SelectionMode.js",
+				"sap/ui/vtm/Text.js",
+				"sap/ui/vtm/TextColor.js",
+				"sap/ui/vtm/Tree.js",
+				"sap/ui/vtm/TreeCollections.js",
+				"sap/ui/vtm/TreeItemType.js",
+				"sap/ui/vtm/TreeItemUtilities.js",
+				"sap/ui/vtm/Viewable.js",
+				"sap/ui/vtm/ViewableLoadInfo.js",
+				"sap/ui/vtm/ViewableLoadStatus.js",
+				"sap/ui/vtm/Viewport.js",
+				"sap/ui/vtm/ViewportHandler.js",
+				"sap/ui/vtm/Vtm.js",
+				"sap/ui/vtm/extensions/DisplayStateCalculationExtension.js",
+				"sap/ui/vtm/extensions/InitialViewExtension.js",
+				"sap/ui/vtm/extensions/LoadProgressExtension.js",
+				"sap/ui/vtm/extensions/MessageStatusCalculationExtension.js",
+				"sap/ui/vtm/extensions/MessageStatusIconClickExtension.js",
+				"sap/ui/vtm/extensions/SceneNodeHoverHighlightExtension.js",
+				"sap/ui/vtm/extensions/SceneNodeHoverTooltipExtension.js",
+				"sap/ui/vtm/extensions/SelectionLinkingExtension.js",
+				"sap/ui/vtm/extensions/ViewLinkingExtension.js",
+				"sap/ui/vtm/extensions/ViewportSelectionLinkingExtension.js",
+				"sap/ui/vtm/extensions/VisibilityIconClickExtension.js"
+			]
+		},
+		{
+			"name": "library-h2-preload.js.map",
+			"isDebug": true
+		},
+		{
+			"name": "library-preload.js",
+			"module": "sap/ui/vtm/library-preload.js",
+			"merged": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/Dialog.js",
+				"sap/m/List.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/Popover.js",
+				"sap/m/PopoverRenderer.js",
+				"sap/m/ProgressIndicator.js",
+				"sap/m/TableSelectDialog.js",
+				"sap/m/Text.js",
+				"sap/m/TextRenderer.js",
+				"sap/m/Toolbar.js",
+				"sap/m/VBox.js",
+				"sap/ui/base/DataType.js",
+				"sap/ui/commons/Label.js",
+				"sap/ui/commons/Panel.js",
+				"sap/ui/commons/TextView.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/core/Icon.js",
+				"sap/ui/core/IconPool.js",
+				"sap/ui/core/IconRenderer.js",
+				"sap/ui/core/Message.js",
+				"sap/ui/core/Title.js",
+				"sap/ui/layout/HorizontalLayout.js",
+				"sap/ui/layout/Splitter.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/table/TreeTable.js",
+				"sap/ui/vk/ContentResource.js",
+				"sap/ui/vk/FlexibleControl.js",
+				"sap/ui/vk/FlexibleControlLayoutData.js",
+				"sap/ui/vk/NodeHierarchy.js",
+				"sap/ui/vk/NodeProxy.js",
+				"sap/ui/vk/Scene.js",
+				"sap/ui/vk/ViewportHandler.js",
+				"sap/ui/vk/dvl/GraphicsCore.js",
+				"sap/ui/vk/dvl/Viewport.js"
+			],
+			"included": [
+				"sap/ui/vtm/ArrayUtilities.js",
+				"sap/ui/vtm/CheckEye.js",
+				"sap/ui/vtm/ChildCollectionType.js",
+				"sap/ui/vtm/Column.js",
+				"sap/ui/vtm/ColumnTemplates.js",
+				"sap/ui/vtm/ColumnType.js",
+				"sap/ui/vtm/DescriptorUtilities.js",
+				"sap/ui/vtm/DisplayGroup.js",
+				"sap/ui/vtm/Extension.js",
+				"sap/ui/vtm/HashUtilities.js",
+				"sap/ui/vtm/InternalColumnDescriptor.js",
+				"sap/ui/vtm/InternalColumns.js",
+				"sap/ui/vtm/Lookup.js",
+				"sap/ui/vtm/MatrixComponent.js",
+				"sap/ui/vtm/MatrixUtilities.js",
+				"sap/ui/vtm/MessagesPopover.js",
+				"sap/ui/vtm/Panel.js",
+				"sap/ui/vtm/PredefinedView.js",
+				"sap/ui/vtm/Progress.js",
+				"sap/ui/vtm/ProgressDialog.js",
+				"sap/ui/vtm/Scene.js",
+				"sap/ui/vtm/SceneNode.js",
+				"sap/ui/vtm/SelectColumnsDialog.js",
+				"sap/ui/vtm/SelectionMode.js",
+				"sap/ui/vtm/Text.js",
+				"sap/ui/vtm/TextColor.js",
+				"sap/ui/vtm/Tree.js",
+				"sap/ui/vtm/TreeCollections.js",
+				"sap/ui/vtm/TreeItemType.js",
+				"sap/ui/vtm/TreeItemUtilities.js",
+				"sap/ui/vtm/Viewable.js",
+				"sap/ui/vtm/ViewableLoadInfo.js",
+				"sap/ui/vtm/ViewableLoadStatus.js",
+				"sap/ui/vtm/Viewport.js",
+				"sap/ui/vtm/ViewportHandler.js",
+				"sap/ui/vtm/Vtm.js",
+				"sap/ui/vtm/extensions/DisplayStateCalculationExtension.js",
+				"sap/ui/vtm/extensions/InitialViewExtension.js",
+				"sap/ui/vtm/extensions/LoadProgressExtension.js",
+				"sap/ui/vtm/extensions/MessageStatusCalculationExtension.js",
+				"sap/ui/vtm/extensions/MessageStatusIconClickExtension.js",
+				"sap/ui/vtm/extensions/SceneNodeHoverHighlightExtension.js",
+				"sap/ui/vtm/extensions/SceneNodeHoverTooltipExtension.js",
+				"sap/ui/vtm/extensions/SelectionLinkingExtension.js",
+				"sap/ui/vtm/extensions/ViewLinkingExtension.js",
+				"sap/ui/vtm/extensions/ViewportSelectionLinkingExtension.js",
+				"sap/ui/vtm/extensions/VisibilityIconClickExtension.js",
+				"sap/ui/vtm/library.js",
+				"sap/ui/vtm/manifest.json"
+			]
+		},
+		{
+			"name": "library-preload.js.map",
+			"isDebug": true
+		},
+		{
+			"name": "library-preload.json",
+			"module": "sap/ui/vtm/library-preload.json",
+			"merged": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/Dialog.js",
+				"sap/m/List.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/Popover.js",
+				"sap/m/PopoverRenderer.js",
+				"sap/m/ProgressIndicator.js",
+				"sap/m/TableSelectDialog.js",
+				"sap/m/Text.js",
+				"sap/m/TextRenderer.js",
+				"sap/m/Toolbar.js",
+				"sap/m/VBox.js",
+				"sap/ui/base/DataType.js",
+				"sap/ui/commons/Label.js",
+				"sap/ui/commons/Panel.js",
+				"sap/ui/commons/TextView.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/core/Icon.js",
+				"sap/ui/core/IconPool.js",
+				"sap/ui/core/IconRenderer.js",
+				"sap/ui/core/Message.js",
+				"sap/ui/core/Title.js",
+				"sap/ui/core/library-preload.json",
+				"sap/ui/layout/HorizontalLayout.js",
+				"sap/ui/layout/Splitter.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/table/TreeTable.js",
+				"sap/ui/vk/ContentResource.js",
+				"sap/ui/vk/FlexibleControl.js",
+				"sap/ui/vk/FlexibleControlLayoutData.js",
+				"sap/ui/vk/NodeHierarchy.js",
+				"sap/ui/vk/NodeProxy.js",
+				"sap/ui/vk/Scene.js",
+				"sap/ui/vk/ViewportHandler.js",
+				"sap/ui/vk/dvl/GraphicsCore.js",
+				"sap/ui/vk/dvl/Viewport.js"
+			],
+			"included": [
+				"sap/ui/vtm/ArrayUtilities.js",
+				"sap/ui/vtm/CheckEye.js",
+				"sap/ui/vtm/ChildCollectionType.js",
+				"sap/ui/vtm/Column.js",
+				"sap/ui/vtm/ColumnTemplates.js",
+				"sap/ui/vtm/ColumnType.js",
+				"sap/ui/vtm/DescriptorUtilities.js",
+				"sap/ui/vtm/DisplayGroup.js",
+				"sap/ui/vtm/Extension.js",
+				"sap/ui/vtm/HashUtilities.js",
+				"sap/ui/vtm/InternalColumnDescriptor.js",
+				"sap/ui/vtm/InternalColumns.js",
+				"sap/ui/vtm/Lookup.js",
+				"sap/ui/vtm/MatrixComponent.js",
+				"sap/ui/vtm/MatrixUtilities.js",
+				"sap/ui/vtm/MessagesPopover.js",
+				"sap/ui/vtm/Panel.js",
+				"sap/ui/vtm/PredefinedView.js",
+				"sap/ui/vtm/Progress.js",
+				"sap/ui/vtm/ProgressDialog.js",
+				"sap/ui/vtm/Scene.js",
+				"sap/ui/vtm/SceneNode.js",
+				"sap/ui/vtm/SelectColumnsDialog.js",
+				"sap/ui/vtm/SelectionMode.js",
+				"sap/ui/vtm/Text.js",
+				"sap/ui/vtm/TextColor.js",
+				"sap/ui/vtm/Tree.js",
+				"sap/ui/vtm/TreeCollections.js",
+				"sap/ui/vtm/TreeItemType.js",
+				"sap/ui/vtm/TreeItemUtilities.js",
+				"sap/ui/vtm/Viewable.js",
+				"sap/ui/vtm/ViewableLoadInfo.js",
+				"sap/ui/vtm/ViewableLoadStatus.js",
+				"sap/ui/vtm/Viewport.js",
+				"sap/ui/vtm/ViewportHandler.js",
+				"sap/ui/vtm/Vtm.js",
+				"sap/ui/vtm/extensions/DisplayStateCalculationExtension.js",
+				"sap/ui/vtm/extensions/InitialViewExtension.js",
+				"sap/ui/vtm/extensions/LoadProgressExtension.js",
+				"sap/ui/vtm/extensions/MessageStatusCalculationExtension.js",
+				"sap/ui/vtm/extensions/MessageStatusIconClickExtension.js",
+				"sap/ui/vtm/extensions/SceneNodeHoverHighlightExtension.js",
+				"sap/ui/vtm/extensions/SceneNodeHoverTooltipExtension.js",
+				"sap/ui/vtm/extensions/SelectionLinkingExtension.js",
+				"sap/ui/vtm/extensions/ViewLinkingExtension.js",
+				"sap/ui/vtm/extensions/ViewportSelectionLinkingExtension.js",
+				"sap/ui/vtm/extensions/VisibilityIconClickExtension.js",
+				"sap/ui/vtm/library.js",
+				"sap/ui/vtm/manifest.json"
+			]
+		},
+		{
+			"name": "library.dependencies.json",
+			"designtime": true
+		},
+		{
+			"name": "library.dependencies.xml",
+			"designtime": true
+		},
+		{
+			"name": "library.js",
+			"module": "sap/ui/vtm/library.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/base/DataType.js",
+				"sap/ui/vtm/ArrayUtilities.js",
+				"sap/ui/vtm/ChildCollectionType.js",
+				"sap/ui/vtm/ColumnTemplates.js",
+				"sap/ui/vtm/ColumnType.js",
+				"sap/ui/vtm/DescriptorUtilities.js",
+				"sap/ui/vtm/HashUtilities.js",
+				"sap/ui/vtm/InternalColumnDescriptor.js",
+				"sap/ui/vtm/InternalColumns.js",
+				"sap/ui/vtm/MatrixComponent.js",
+				"sap/ui/vtm/MatrixUtilities.js",
+				"sap/ui/vtm/PredefinedView.js",
+				"sap/ui/vtm/SelectionMode.js",
+				"sap/ui/vtm/TextColor.js",
+				"sap/ui/vtm/TreeItemType.js",
+				"sap/ui/vtm/TreeItemUtilities.js",
+				"sap/ui/vtm/ViewableLoadStatus.js"
+			]
+		},
+		{
+			"name": "manifest.json",
+			"module": "sap/ui/vtm/manifest.json"
+		},
+		{
+			"name": "resources.json"
+		},
+		{
+			"name": "themes/base/.theming",
+			"theme": "base"
+		},
+		{
+			"name": "themes/base/Panel.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "themes/base/Progress.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "themes/base/SelectColumnsDialog.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "themes/base/Text.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "themes/base/Tooltip.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "themes/base/Tree.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "themes/base/library-RTL-dbg.css",
+			"isDebug": true,
+			"theme": "base"
+		},
+		{
+			"name": "themes/base/library-RTL.css",
+			"theme": "base"
+		},
+		{
+			"name": "themes/base/library-dbg.css",
+			"isDebug": true,
+			"theme": "base"
+		},
+		{
+			"name": "themes/base/library-parameters.json",
+			"theme": "base"
+		},
+		{
+			"name": "themes/base/library.css",
+			"theme": "base"
+		},
+		{
+			"name": "themes/base/library.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "themes/base/library.source.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "themes/sap_belize/.theming",
+			"theme": "sap_belize"
+		},
+		{
+			"name": "themes/sap_belize/library-RTL-dbg.css",
+			"isDebug": true,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "themes/sap_belize/library-RTL.css",
+			"theme": "sap_belize"
+		},
+		{
+			"name": "themes/sap_belize/library-dbg.css",
+			"isDebug": true,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "themes/sap_belize/library-parameters.json",
+			"theme": "sap_belize"
+		},
+		{
+			"name": "themes/sap_belize/library.css",
+			"theme": "sap_belize"
+		},
+		{
+			"name": "themes/sap_belize/library.less",
+			"designtime": true,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "themes/sap_belize/library.source.less",
+			"designtime": true,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "themes/sap_belize_hcb/.theming",
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "themes/sap_belize_hcb/library-RTL-dbg.css",
+			"isDebug": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "themes/sap_belize_hcb/library-RTL.css",
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "themes/sap_belize_hcb/library-dbg.css",
+			"isDebug": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "themes/sap_belize_hcb/library-parameters.json",
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "themes/sap_belize_hcb/library.css",
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "themes/sap_belize_hcb/library.less",
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "themes/sap_belize_hcb/library.source.less",
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "themes/sap_belize_plus/.theming",
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "themes/sap_belize_plus/library-RTL-dbg.css",
+			"isDebug": true,
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "themes/sap_belize_plus/library-RTL.css",
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "themes/sap_belize_plus/library-dbg.css",
+			"isDebug": true,
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "themes/sap_belize_plus/library-parameters.json",
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "themes/sap_belize_plus/library.css",
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "themes/sap_belize_plus/library.less",
+			"designtime": true,
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "themes/sap_belize_plus/library.source.less",
+			"designtime": true,
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "themes/sap_bluecrystal/.theming",
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library-RTL-dbg.css",
+			"isDebug": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library-RTL.css",
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library-dbg.css",
+			"isDebug": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library-parameters.json",
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library.css",
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library.less",
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library.source.less",
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_hcb/.theming",
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/library-RTL-dbg.css",
+			"isDebug": true,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/library-RTL.css",
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/library-dbg.css",
+			"isDebug": true,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/library-parameters.json",
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/library.css",
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/library.less",
+			"designtime": true,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/library.source.less",
+			"designtime": true,
+			"theme": "sap_hcb"
+		}
+	]
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>WrappingType</name>
+    <derived/>
+    <documentation>Available wrapping types for text controls that can be wrapped that enable you
+to display the text as hyphenated.
+
+For more information about text hyphenation, see
+{@link sap.ui.core.hyphenation.Hyphenation} and
+{@link topic:6322164936f047de941ec522b95d7b70 Text Controls Hyphenation}.</documentation>
+    <since>1.60</since>
+    <enumeration>
+        <value name="Normal">
+            <documentation>Normal text wrapping will be used. Words won't break based on hyphenation.</documentation>
+        </value>
+        <value name="Hyphenated">
+            <documentation>Hyphenation will be used to break words on syllables where possible.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

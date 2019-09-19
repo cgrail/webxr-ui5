@@ -1,0 +1,20 @@
+<core:FragmentDefinition
+	xmlns="sap.suite.ui.microchart"
+	xmlns:core="sap.ui.core"
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1">
+	<template:with path="radialMicroChart>MeasureAttributes/0/" var="MeasureAttribute">
+		<template:if test="{= ${MeasureAttribute>Measure} &amp;&amp; ${MeasureAttribute>DataPoint}}">
+			<template:then>
+				<RadialMicroChart size="M"
+					total="{MeasureAttribute>DataPoint/$AnnotationPath/TargetValue@@.MODEL.value}"
+					fraction="{path: 'MeasureAttribute>Measure@@.MODEL.value'}"
+					valueColor="{parts:[{path: 'MeasureAttribute>DataPoint/$AnnotationPath/'}, {path:'MeasureAttribute>Measure/'}],
+						formatter: 'sap.ui.mdc.odata.v4.microchart.MicroChart._helper.getMicroChartColor'}">
+				</RadialMicroChart>
+			</template:then>
+			<template:elseif test="{MeasureAttribute>Measure}">
+				<RadialMicroChart size="M" percentage="{MeasureAttribute>Measure@@.MODEL.value}"></RadialMicroChart>
+			</template:elseif>
+		</template:if>
+	</template:with>
+</core:FragmentDefinition>

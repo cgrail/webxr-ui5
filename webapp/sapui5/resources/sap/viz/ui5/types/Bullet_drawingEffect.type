@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ui5/types/Bullet_drawingEffect</name>
+    <derived/>
+    <documentation>List (Enum) type sap.viz.ui5.types.Bullet_drawingEffect</documentation>
+    <since>1.7.2</since>
+    <developmentState state="experimental" since="1.7.2">Charting API is not finished yet and might change completely.</developmentState>
+    <deprecation since="1.32.0">The chart controls in the &lt;code&gt;sap.viz.ui5&lt;/code&gt; package (which were always marked as &lt;i&gt;experimental&lt;/i&gt;) have been deprecated since 1.32.0.
+They are no longer actively developed and won't receive new features or improvements, only important bug fixes. They will only remain in the
+SAPUI5 distribution for backward compatibility.
+
+&lt;b&gt;SAP strongly recommends that existing consumers of those controls migrate to the new {@link sap.viz.ui5.controls.VizFrame VizFrame}
+control to benefit from new charting enhancements and timely support. &lt;/b&gt;
+
+&lt;b&gt;Note&lt;/b&gt;: As the feature set, design and API usage of VizFrame might differ from the old chart controls, make sure you evaluate it thoroughly before migration.</deprecation>
+    <enumeration>
+        <value name="normal">
+            <documentation>Value normal</documentation>
+        </value>
+        <value name="glossy">
+            <documentation>Value glossy</documentation>
+        </value>
+    </enumeration>
+</simple-type>

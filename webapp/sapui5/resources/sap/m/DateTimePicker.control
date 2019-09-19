@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>DateTimePicker</name>
+    <derived/>
+    <documentation>Enables the users to select date (between 0001-01-01 and 9999-12-31) and time values in a combined input.
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+
+The &lt;code&gt;DateTimePicker&lt;/code&gt; control consists of two parts: the input field and the
+date/time picker.
+
+&lt;b&gt;Note:&lt;/b&gt; The {@link sap.ui.unified.Calendar} is used internally only if the
+&lt;code&gt;DateTimePicker&lt;/code&gt; is opened (not used for the initial rendering). If
+the &lt;code&gt;sap.ui.unified&lt;/code&gt; library is not loaded before the
+&lt;code&gt;DateTimePicker&lt;/code&gt; is opened, it will be loaded upon opening. This
+could lead to a waiting time when the &lt;code&gt;DateTimePicker&lt;/code&gt; is opened for
+the first time. To prevent this, apps using the &lt;code&gt;DateTimePicker&lt;/code&gt;
+should also load the &lt;code&gt;sap.ui.unified&lt;/code&gt; library.
+
+&lt;h3&gt;Usage&lt;/h3&gt;
+
+Use this control if you need a combined date and time input control.
+
+Don't use it if you want to use either a date or a time value. In this case,
+use the {@link sap.m.DatePicker} or the {@link sap.m.TimePicker} controls
+instead.
+
+The user can enter a date by:
+&lt;ul&gt; &lt;li&gt;Using the calendar or a time selector that opens in a popup&lt;/li&gt;
+&lt;li&gt;Typing it in directly in the input field&lt;/li&gt;&lt;/ul&gt;
+
+On app level, there are two options to provide a date for the
+&lt;code&gt;DateTimePicker&lt;/code&gt; - as a string to the &lt;code&gt;value&lt;/code&gt; property
+or as a JavaScript Date object to the &lt;code&gt;dateValue&lt;/code&gt; property (only one
+of these properties should be used at a time):
+
+&lt;ul&gt;&lt;li&gt;Use the &lt;code&gt;value&lt;/code&gt; property if you want to bind the
+&lt;code&gt;DateTimePicker&lt;/code&gt; to a model using the
+&lt;code&gt;sap.ui.model.type.DateTime&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Use the &lt;code&gt;value&lt;/code&gt; property if the date is provided as a string from
+the backend or inside the app (for example, as ABAP type DATS field)&lt;/li&gt;
+&lt;li&gt;Use the &lt;code&gt;dateValue&lt;/code&gt; property if the date is already provided as a
+JavaScript Date object or you want to work with a JavaScript Date object.
+Use &lt;code&gt;dateValue&lt;/code&gt; as a helper property to easily obtain the day, month, year,
+hours, minutes and seconds of the chosen date and time. Although possible to bind it,
+the recommendation is not to do it.
+When binding is needed, use &lt;code&gt;value&lt;/code&gt; property instead&lt;/li&gt;&lt;/ul&gt;
+
+&lt;h3&gt;Formatting&lt;/h3&gt;
+
+All formatting and parsing of dates from and to strings is done using the
+{@link sap.ui.core.format.DateFormat}. If a date is entered by typing it into
+the input field, it must fit to the used date format and locale.
+
+Supported format options are pattern-based on Unicode LDML Date Format notation.
+See {@link http://unicode.org/reports/tr35/#Date_Field_Symbol_Table}
+
+For example, if the &lt;code&gt;valueFormat&lt;/code&gt; is "yyyy-MM-dd-HH-mm-ss", the
+&lt;code&gt;displayFormat&lt;/code&gt; is "MMM d, y, HH:mm:ss", and the used locale is
+English, a valid value string is "2015-07-30-10-30-15", which leads to an output
+of "Jul 30, 2015, 10:30:15".
+
+If no placeholder is set to the &lt;code&gt;DateTimePicker&lt;/code&gt;, the used
+&lt;code&gt;displayFormat&lt;/code&gt; is displayed as a placeholder. If another placeholder
+is needed, it must be set.
+
+&lt;b&gt;Note:&lt;/b&gt; If the string does NOT match the &lt;code&gt;displayFormat&lt;/code&gt;
+(from user input) or the &lt;code&gt;valueFormat&lt;/code&gt; (on app level), the
+{@link sap.ui.core.format.DateFormat} makes an attempt to parse it based on the
+locale settings. For more information, see the respective documentation in the
+API Reference.
+
+&lt;h3&gt;Responsive behavior&lt;/h3&gt;
+
+The &lt;code&gt;DateTimePicker&lt;/code&gt; is responsive and fully adapts to all devices.
+For larger screens, such as tablet or desktop, it opens as a popover. For
+mobile devices, it opens in full screen.</documentation>
+    <since>1.38.0</since>
+    <baseType>sap.m/DatePicker</baseType>
+    <properties>
+        <property name="minutesStep" type="sap.ui.core/int" defaultValue="1" group="Misc" since="1.56">
+            <documentation>Sets the minutes slider step. If the step is less than 1, it will be automatically converted back to 1.
+The minutes slider is populated only by multiples of the step.</documentation>
+        </property>
+        <property name="secondsStep" type="sap.ui.core/int" defaultValue="1" group="Misc" since="1.56">
+            <documentation>Sets the seconds slider step. If the step is less than 1, it will be automatically converted back to 1.
+The seconds slider is populated only by multiples of the step.</documentation>
+        </property>
+    </properties>
+    <aggregations>
+        <aggregation name="_popup" type="sap.m/ResponsivePopover" cardinality="0..1" visibility="hidden">
+            <documentation>Internal aggregation that contains the inner _picker pop-up.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

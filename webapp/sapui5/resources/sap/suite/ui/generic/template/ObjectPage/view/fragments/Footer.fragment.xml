@@ -1,0 +1,67 @@
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+						 xmlns="sap.m" xmlns:core="sap.ui.core">
+
+	<OverflowToolbar id="template::ObjectPage::FooterToolbar">
+
+		<Button id="showMessages"
+				text="{_templPriv>/generic/messageCount}"
+				tooltip="{_templPriv>/generic/messageButtonTooltip}"
+				ariaLabelledBy="showMessagesButtonInvisibleText"
+				press="._templateEventHandlers.onShowMessages" type="Emphasized" icon="sap-icon://message-popup"
+				visible="{= ${ui>/editable} &amp;&amp; ${_templPriv>/generic/messageCount} > 0 }"/>
+		<core:InvisibleText id="showMessagesButtonInvisibleText" text="{i18n>MESSAGE_BUTTON_TYPE}"/>
+		<ToolbarSpacer/>
+		<template:if test="{= ${parameter>/isDraftEnabled} }">
+			<!-- Draft Indicator is only visible in edit mode. In FCL it is invisible in the third column (unless in fullscreen mode). -->
+			<DraftIndicator id="draftStatus" state="{_templPrivGlobal>/generic/draftIndicatorState}"
+							visible="{= ${parameter>/manifest/sap.ui.generic.app/settings/flexibleColumnLayout} ? '{= ${ui>/editable} &amp;&amp; ${_templPrivGlobal>/generic/FCL/lowestDetailViewLevel} === ' + ${parameter>/settings/routeConfig/viewLevel} + ' }' : '{ui>/editable}' }"/>
+		</template:if>
+		<template:if test="{= ${parameter>/isDraftEnabled} &amp;&amp; ${entitySet>com.sap.vocabularies.Common.v1.DraftRoot} }">
+			<Button id="activate" text="{i18n>SAVE}" type="Emphasized"
+					enabled="{ui>/enabled}" press="._templateEventHandlers.onActivate" visible="{ui>/editable}" />
+			<Button id="discard" text="{i18n>CANCEL}" press="._templateEventHandlers.onDiscardDraft"
+					enabled="{ui>/enabled}" visible="{ui>/editable}" />
+		</template:if>
+		<template:if test="{= !${parameter>/isDraftEnabled} }">
+			<Button id="save" text="{i18n>SAVE}" type="Emphasized" press="._templateEventHandlers.onSave"
+					visible="{ui>/editable}" />
+			<Button id="cancel" text="{i18n>CANCEL}" press="._templateEventHandlers.onCancel"
+					visible="{ui>/editable}" />
+		</template:if>
+
+        <template:repeat list="{parameter>/manifest/sap.ui5/extends/extensions/sap.ui.controllerExtensions/sap.suite.ui.generic.template.ObjectPage.view.Details/sap.ui.generic.app}" var="tmpEntitySet">
+            <template:if test="{= ${tmpEntitySet>EntitySet} === ${parameter>/entitySet} }">
+                <template:repeat list="{tmpEntitySet>Header/Actions}" var="customAction">
+                    <template:if test="{= ${customAction>determining} === true}">
+                        <Button id="{customAction>id}"
+                                text="{customAction>text}"
+                                visible="{path: 'customAction>applicablePath', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.actionControlBreakout'}"
+                                press="{customAction>press}" type="Transparent">
+                            <layoutData>
+                                <OverflowToolbarLayoutData priority = "{customaction>importance}"/>
+                            </layoutData>
+                        </Button>
+                    </template:if>
+                </template:repeat>
+            </template:if>
+        </template:repeat>
+		<core:InvisibleText id="canvasFooterInvisibleText" text="{i18n>MESSAGE_BUTTON_TYPE}"/>
+        <template:with path="entitySet>dummy" var="facet">
+            <template:repeat list="{entityType>com.sap.vocabularies.UI.v1.Identification}" var="dataField">
+                <template:if test="{= (${dataField>RecordType} === 'com.sap.vocabularies.UI.v1.DataFieldForAction' || ${dataField>RecordType} === 'com.sap.vocabularies.UI.v1.DataFieldForIntentBasedNavigation') &amp;&amp; ${dataField>Determining/Bool} === 'true'}">
+                    <core:Fragment fragmentName="sap.suite.ui.generic.template.fragments.DeterminingButton" type="XML"/>
+                </template:if>
+            </template:repeat>
+        </template:with>
+
+		<template:if test="{= ${parameter>/isDraftEnabled} &amp;&amp; ${parameter>/settings/routeConfig/parentEntitySet} }">
+			<!-- Apply-button on for draft with an existing parent entity set and only in edit mode -->
+		    <Button id="footerObjectPageBackTo"
+					text="{i18n>APPLY}"
+					type="Emphasized"
+					visible="{ui>/editable}"
+					press="._templateEventHandlers.applyAndUp"/>
+		</template:if>
+	</OverflowToolbar>
+
+</core:FragmentDefinition>

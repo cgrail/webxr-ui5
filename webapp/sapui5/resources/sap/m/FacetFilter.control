@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>FacetFilter</name>
+    <derived/>
+    <documentation>Provides filtering functionality with multiple parameters.
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+
+The &lt;code&gt;FacetFilter&lt;/code&gt; control is used to provide filtering functionality
+with multiple parameters and supports the users in finding the information they
+need from potentially very large data sets.
+
+Your app can have dependencies between facets where selection of filter items in
+one facet list limits the list of valid filters in another facet list.
+
+The &lt;code&gt;FacetFilter&lt;/code&gt; uses {@link sap.m.FacetFilterList FacetFilterList} and
+{@link sap.m.FacetFilterItem FacetFilterItem} to model facets and their associated
+filters.
+
+&lt;b&gt;Note: &lt;/b&gt;{@link sap.m.FacetFilterList FacetFilterList} is a subclass of
+{@link sap.m.List} and supports growing enablement feature via the property
+&lt;code&gt;growing&lt;/code&gt;. When you use this feature, be aware that it only works with
+one-way data binding.
+Having growing feature enabled when the &lt;code&gt;items&lt;/code&gt; aggregation is bound to
+a model with two-way data binding, may lead to unexpected and/or inconsistent
+behavior across browsers, such as unexpected closing of the list.
+
+&lt;h3&gt;Usage&lt;/h3&gt;
+
+Use the &lt;code&gt;FacetFilter&lt;/code&gt; if your app displays a large list of
+items that can be grouped by multiple parameters, for example products by category
+and supplier. With the &lt;code&gt;FacetFilter&lt;/code&gt;, you allow the users
+to dynamically filter the list so it only displays products from the categories and
+suppliers they want to see.
+
+While the {@link sap.m.FacetFilterList} popup is opened (when the user selects a button
+corresponding to the list's name), any other activities leading to focus change will
+close it. For example, when the popup is opened and the app developer loads a
+{@link sap.m.BusyDialog} or any other dialog that obtains the focus, the popup will
+be closed.
+
+&lt;h3&gt;Responsive behavior&lt;/h3&gt;
+
+The &lt;code&gt;FacetFilter&lt;/code&gt; supports the following two types, which
+can be configured using the control's &lt;code&gt;type&lt;/code&gt; property:
+
+&lt;ul&gt;&lt;li&gt;Simple type (default) - only available for desktop and tablet screen sizes.
+The active facets are displayed as individually selectable buttons on the toolbar.&lt;/li&gt;
+&lt;li&gt;Light type - automatically enabled on smart phone sized devices, but also
+available for desktop and tablets. The active facets and selected filter items are
+displayed in the summary bar. When the user selects the summary bar, a navigable
+dialog list of all facets is displayed. When the user selects a facet, the dialog
+scrolls to show the list of filters that are available for the selected facet.&lt;/li&gt;&lt;/ul&gt;
+
+&lt;h3&gt;Additional Information&lt;/h3&gt;
+
+For more information, go to &lt;b&gt;Developer Guide&lt;/b&gt; section in the Demo Kit and navigate to
+&lt;b&gt;More&amp;nbsp;About&amp;nbsp;Controls&lt;/b&gt;&amp;nbsp;&gt;&amp;nbsp;&lt;b&gt;sap.m&lt;/b&gt;&amp;nbsp;&gt;&amp;nbsp;&lt;b&gt;Facet&amp;nbsp;Filter&lt;/b&gt;</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="showPersonalization" type="sap.ui.core/boolean" defaultValue="false" group="Appearance">
+            <documentation>If set to &lt;code&gt;true&lt;/code&gt; and the FacetFilter type is &lt;code&gt;Simple&lt;/code&gt;, then the Add Facet icon will be displayed and each facet button will also have a Facet Remove icon displayed beside it, allowing the user to deactivate the facet.</documentation>
+        </property>
+        <property name="type" type="sap.m/FacetFilterType" defaultValue="Simple" group="Appearance">
+            <documentation>Defines the default appearance of the FacetFilter on the device. Possible values are &lt;code&gt;Simple&lt;/code&gt; (default) and &lt;code&gt;Light&lt;/code&gt;.</documentation>
+        </property>
+        <property name="liveSearch" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Enables/disables live search in the search field of all &lt;code&gt;sap.m.FacetFilterList&lt;/code&gt; instances.</documentation>
+        </property>
+        <property name="showSummaryBar" type="sap.ui.core/boolean" defaultValue="false" group="Behavior">
+            <documentation>Shows the summary bar instead of the FacetFilter buttons bar when set to &lt;code&gt;true&lt;/code&gt;.</documentation>
+        </property>
+        <property name="showReset" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Shows/hides the FacetFilter Reset button.</documentation>
+        </property>
+        <property name="showPopoverOKButton" type="sap.ui.core/boolean" defaultValue="false" group="Appearance">
+            <documentation>If set to &lt;code&gt;true&lt;/code&gt;, an OK button is displayed for every FacetFilterList popover. This button allows the user to close the popover from within the popover instead of having to click outside of it.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="reset" allowPreventDefault="false">
+            <documentation>Fired when the Reset button is pressed to inform that all FacetFilterLists need to be reset.</documentation>
+        </event>
+        <event name="confirm" allowPreventDefault="false">
+            <documentation>Fired when the user confirms filter selection.</documentation>
+        </event>
+    </events>
+    <aggregations default="lists">
+        <aggregation name="lists" type="sap.m/FacetFilterList" cardinality="0..n">
+            <documentation>Collection of FacetFilterList controls.</documentation>
+        </aggregation>
+        <aggregation name="buttons" type="sap.m/Button" cardinality="0..n" visibility="hidden">
+            <documentation>Hidden aggregation of buttons that open each FacetFilterList popover. These buttons are displayed only when the FacetFilter is of type &lt;code&gt;Simple&lt;/code&gt;.</documentation>
+        </aggregation>
+        <aggregation name="removeFacetIcons" type="sap.ui.core/Icon" cardinality="0..n" visibility="hidden">
+            <documentation>Hidden aggregation of icons for setting FacetFilterLists to inactive, thereby, removing the FacetFilter button from the display. The icon is displayed only if personalization is enabled.</documentation>
+        </aggregation>
+        <aggregation name="popover" type="sap.m/Popover" cardinality="0..1" visibility="hidden">
+            <documentation>Hidden aggregation for the FacetFilterLists popover.</documentation>
+        </aggregation>
+        <aggregation name="addFacetButton" type="sap.m/Button" cardinality="0..1" visibility="hidden">
+            <documentation>Hidden aggregation for the Add Facet button. This button allows the user to open the facet dialog and add or configure facets. This is displayed only if personalization is enabled and the FacetFilter is of type &lt;code&gt;Simple&lt;/code&gt;.</documentation>
+        </aggregation>
+        <aggregation name="dialog" type="sap.m/Dialog" cardinality="0..1" visibility="hidden">
+            <documentation>Hidden aggregation for the dialog that displays the facet and filter items pages.</documentation>
+        </aggregation>
+        <aggregation name="summaryBar" type="sap.m/Toolbar" cardinality="0..1" visibility="hidden">
+            <documentation>Hidden aggregation for the summary bar.</documentation>
+        </aggregation>
+        <aggregation name="resetButton" type="sap.m/Button" cardinality="0..1" visibility="hidden">
+            <documentation>Hidden aggregation for the Reset button displayed for FacetFilter of type &lt;code&gt;Simple&lt;/code&gt;.</documentation>
+        </aggregation>
+        <aggregation name="arrowLeft" type="sap.ui.core/Icon" cardinality="0..1" visibility="hidden">
+            <documentation>Hidden aggregation for the arrow that scrolls the facets to the left when the FacetFilter is set to type &lt;code&gt;Simple&lt;/code&gt;.</documentation>
+        </aggregation>
+        <aggregation name="arrowRight" type="sap.ui.core/Icon" cardinality="0..1" visibility="hidden">
+            <documentation>Hidden aggregation for the arrow that scrolls the facets to the right when the FacetFilter is set to type &lt;code&gt;Simple&lt;/code&gt;.</documentation>
+        </aggregation>
+    </aggregations>
+    <methods>
+        <method name="openFilterDialog" type="sap.m/FacetFilter">
+            <documentation>Opens the FacetFilter dialog.</documentation>
+        </method>
+    </methods>
+</control>

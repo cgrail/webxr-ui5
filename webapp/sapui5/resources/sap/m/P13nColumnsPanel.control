@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>P13nColumnsPanel</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The &lt;code&gt;P13nColumnsPanel&lt;/code&gt; control is used to define column-specific settings for table personalization.</documentation>
+    <since>1.26.0</since>
+    <baseType>sap.m/P13nPanel</baseType>
+    <properties>
+        <property name="visibleItemsThreshold" type="sap.ui.core/int" defaultValue="-1" group="Behavior" since="1.26.7">
+            <documentation>Specifies a threshold of visible items. If the end user makes a lot of columns visible, this might cause performance to slow down.
+When this happens, the user can receive a corresponding warning triggered by the &lt;code&gt;visibleItemsThreshold&lt;/code&gt; property. The
+property needs to be activated and set to the required value by the consuming application to ensure that the warning message is
+shown when the threshold has been exceeded. In the following example the message will be shown if more than 100 visible columns are
+selected:
+
+&lt;pre&gt;
+customData&amp;gt;
+core:CustomData key=&amp;quot;p13nDialogSettings&amp;quot;
+value='\{&amp;quot;columns&amp;quot;:\{&amp;quot;visible&amp;quot;: true, &amp;quot;payload&amp;quot;: \{&amp;quot;visibleItemsThreshold&amp;quot;: 3\}\}\}' /&amp;gt;
+/customData&amp;gt;
+&lt;/pre&gt;</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="addColumnsItem" since="1.26.0" allowPreventDefault="false">
+            <documentation>Event raised when a &lt;code&gt;columnsItem&lt;/code&gt; is added.</documentation>
+            <deprecation since="1.50">replaced by extended event {@link sap.m.P13nColumnsPanel#event:changeColumnsItems}</deprecation>
+            <parameters>
+                <parameter name="newItem" type="sap.m/P13nColumnsItem">
+                    <documentation>&lt;code&gt;columnsItem&lt;/code&gt; that needs to be added in the model.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="changeColumnsItems" since="1.26.7" allowPreventDefault="false">
+            <documentation>Event raised if &lt;code&gt;columnsItems&lt;/code&gt; is changed or new one needs to be created in the model.</documentation>
+            <parameters>
+                <parameter name="newItems" type="sap.m/P13nColumnsItem[]">
+                    <documentation>Contains &lt;code&gt;columnsItems&lt;/code&gt; that needs to be created in the model.
+Deprecated as of version 1.50, replaced by new parameter &lt;code&gt;items&lt;/code&gt;.</documentation>
+                    <deprecation since="1.50">replaced by new parameter &lt;code&gt;items&lt;/code&gt;.</deprecation>
+                </parameter>
+                <parameter name="existingItems" type="sap.m/P13nColumnsItem[]">
+                    <documentation>Contains &lt;code&gt;columnsItems&lt;/code&gt; that needs to be changed in the model.
+Deprecated as of version 1.50, replaced by new parameter &lt;code&gt;items&lt;/code&gt;.</documentation>
+                    <deprecation since="1.50">replaced by new parameter &lt;code&gt;items&lt;/code&gt;.</deprecation>
+                </parameter>
+                <parameter name="items" type="sap.ui.core/object[]" since="1.50.0">
+                    <documentation>Array contains an object for each item in &lt;code&gt;items&lt;/code&gt; aggregation enriched with index and visibility information. The item order reflects the current order of columns in the panel.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="setData" since="1.26.7" allowPreventDefault="false">
+            <documentation>Event raised if &lt;code&gt;setData&lt;/code&gt; is called in model. The event serves the purpose of minimizing such calls since they can
+take up a lot of performance.</documentation>
+            <deprecation since="1.50">the event &lt;code&gt;setData&lt;/code&gt; is obsolete.</deprecation>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="columnsItems" type="sap.m/P13nColumnsItem" since="1.26.0" cardinality="0..n" bindable="bindable">
+            <documentation>List of columns that has been changed.</documentation>
+        </aggregation>
+        <aggregation name="content" type="sap.ui.core/Control" cardinality="0..n" visibility="hidden">
+            <documentation>Internal aggregation for the toolbar content.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

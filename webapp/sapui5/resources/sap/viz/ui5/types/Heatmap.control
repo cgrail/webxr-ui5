@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ui5/types/Heatmap</name>
+    <derived/>
+    <documentation>Module sap.viz.ui5.types.Heatmap</documentation>
+    <since>1.7.2</since>
+    <developmentState state="experimental" since="1.7.2">Charting API is not finished yet and might change completely.</developmentState>
+    <deprecation since="1.32.0">The chart controls in the &lt;code&gt;sap.viz.ui5&lt;/code&gt; package (which were always marked as &lt;i&gt;experimental&lt;/i&gt;) have been deprecated since 1.32.0. 
+They are no longer actively developed and won't receive new features or improvements, only important bug fixes. They will only remain in the 
+SAPUI5 distribution for backward compatibility. 
+
+&lt;b&gt;SAP strongly recommends that existing consumers of those controls migrate to the new {@link sap.viz.ui5.controls.VizFrame VizFrame} 
+control to benefit from new charting enhancements and timely support. &lt;/b&gt;
+
+&lt;b&gt;Note&lt;/b&gt;: As the feature set, design and API usage of VizFrame might differ from the old chart controls, make sure you evaluate it thoroughly before migration.</deprecation>
+    <baseType>sap.viz/ui5/core/BaseStructuredType</baseType>
+    <properties>
+        <property name="startColor" type="sap.ui.core/string" defaultValue="#C2E3A9">
+            <documentation>Set the starting color of the heat map</documentation>
+        </property>
+        <property name="endColor" type="sap.ui.core/string" defaultValue="#73C03C">
+            <documentation>Set the end color of the heat map</documentation>
+        </property>
+        <property name="colorPalette" type="sap.ui.core/string[]">
+            <documentation>Set the color palette for the various sectors. For example, ["#748CB2", "#9CC677", "#EACF5E", "#F9AD79", "#D16A7C"].</documentation>
+        </property>
+        <property name="legendValues" type="sap.ui.core/int[]">
+            <documentation>Set the MBC legend values. For example, [10,11,12,13,14,15]. The values in the array should be in ascending order. If the number of values in the array is smaller than the MBC legend segment number, the MBC legend automatically calculates the values according to the data. If the number of values in the legendValues array is larger than MBC legend segment number, then only the first "segment number + 1" values are used.</documentation>
+        </property>
+        <property name="formatRules" type="sap.ui.core/object[]">
+            <documentation>Sample value for formatRules:  [{condition: [{Key1:Value1, Key2:Value2}], color:"#00ff00"}, {condition: [{Key3:Value3}], color:"#00ffff"}].   Each rule has two properties: the "condition" and the "color".   Value1, Value2 and Value3 are values. &lt;br /&gt;  The value of a dimension may be &lt;br /&gt;  1, Single value (string), like "China" . &lt;br /&gt;  2. Array (enumeration), like ["UK","USA"] . &lt;br /&gt;  The value of a measure may be &lt;br /&gt;  1, Single value (number), like 20 . &lt;br /&gt;  2. Arry (enumeration), like [121,122] . &lt;br /&gt;  3. Object (range), like {min:100, max 200} . Min and max are inclusive.   If users want to inlcude 200, but not 100 in the range, they may use {min:100.00001, max:200}.   If users want values larger than 100, they may write {min:100}. &lt;br /&gt;   The color is applied if one or more conditions in the condition array is met.   If multiple rules could apply on the same data point, it is the last rule that takes effect.</documentation>
+        </property>
+    </properties>
+    <aggregations>
+        <aggregation name="border" type="sap.viz/ui5/types/Heatmap_border" cardinality="0..1">
+            <documentation>Settings for the border</documentation>
+        </aggregation>
+        <aggregation name="animation" type="sap.viz/ui5/types/Heatmap_animation" cardinality="0..1">
+            <documentation>Settings for animations in the plot area</documentation>
+        </aggregation>
+        <aggregation name="toolTip" type="sap.viz/ui5/types/Heatmap_tooltip" cardinality="0..1">
+            <documentation>Settings for tooltip</documentation>
+            <deprecation since="1.12">This Property has been deprecated. This interface will be removed from the SAPUI5 delivery in one of the next releases.</deprecation>
+        </aggregation>
+    </aggregations>
+</control>

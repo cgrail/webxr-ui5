@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>filterbar/FilterItem</name>
+    <derived/>
+    <documentation>Represents a filter belonging to the basic group.</documentation>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="label" type="sap.ui.core/string" group="Misc">
+            <documentation>Label of the filter.</documentation>
+        </property>
+        <property name="name" type="sap.ui.core/string" group="Misc">
+            <documentation>Name of the filter. This is an identifier for the filter and has to be unique.</documentation>
+        </property>
+        <property name="mandatory" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>Mandatory flag.</documentation>
+        </property>
+        <property name="visible" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Visibility state of the filter.</documentation>
+        </property>
+        <property name="labelTooltip" type="sap.ui.core/string" group="Misc">
+            <documentation>Tooltip for the filter.</documentation>
+        </property>
+        <property name="controlTooltip" type="sap.ui.core/string" group="Misc" since="1.52.0">
+            <documentation>Tooltip for the filter'c control.</documentation>
+        </property>
+        <property name="partOfCurrentVariant" type="sap.ui.core/boolean" defaultValue="false" group="Misc" since="1.26.1">
+            <documentation>Determines if a filter is part of the currently selected variant. &lt;br&gt;
+&lt;b&gt;Note:&lt;/b&gt; This property can also be changed using the &lt;code&gt;visibleInFilterBar&lt;/code&gt; property and by user interaction in the
+Select Filters dialog or the variant handling.</documentation>
+        </property>
+        <property name="visibleInFilterBar" type="sap.ui.core/boolean" defaultValue="true" group="Misc" since="1.26.1">
+            <documentation>Controls the visibility of a filter item in the filter bar.</documentation>
+        </property>
+        <property name="hiddenFilter" type="sap.ui.core/boolean" defaultValue="false" group="Misc" since="1.44.0">
+            <documentation>A hidden filter will never be visible in the filter bar control</documentation>
+        </property>
+        <property name="entitySetName" type="sap.ui.core/string" group="Misc" since="1.58.0">
+            <documentation>EntitySet name to which the filter belongs</documentation>
+        </property>
+        <property name="entityTypeName" type="sap.ui.core/string" group="Misc" since="1.58.0">
+            <documentation>EntityType name to which the filter belongs</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="change" allowPreventDefault="false">
+            <documentation>This event is fired when one of the properties is changed.</documentation>
+            <parameters>
+                <parameter name="propertyName" type="sap.ui.core/string">
+                    <documentation>Name of the changed property</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="control" type="sap.ui.core/Control" cardinality="0..1">
+            <documentation>The control of the filter.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

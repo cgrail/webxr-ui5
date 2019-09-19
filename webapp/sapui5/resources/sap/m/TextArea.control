@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>TextArea</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A control that is used for multi-line input of text.
+&lt;h3&gt;Overview&lt;/h3&gt;
+The text area is used to enter multiple lines of text. When empty, it can hold a placeholder similar to an {@link sap.m.Input input}.
+You can define the height and width of the text area and also determine specific behavior when handling long texts.
+&lt;h3&gt;Structure&lt;/h3&gt;
+Parameters that determine the size:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;rows&lt;/code&gt; - Number of visible text lines (overruled by &lt;code&gt;height&lt;/code&gt;, if both are set)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cols&lt;/code&gt; - Number of visible characters per line line (overruled by &lt;code&gt;width&lt;/code&gt;, if both are set)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;height&lt;/code&gt; - Height of the control&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;width&lt;/code&gt; - Width of the control&lt;/li&gt;
+&lt;/ul&gt;
+Parameters that determine the behavior:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;growing&lt;/code&gt; - The text area adjusts its size based on the content&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;growingMaxLines&lt;/code&gt; - Threshold for the &lt;code&gt;growing&lt;/code&gt; property (shouldn't exceed the screen size)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;maxLength&lt;/code&gt; - Maximum number of characters that can be entered in a text area&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;wrapping&lt;/code&gt; - The way the entered text is wrapped by the control&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;showExceededText&lt;/code&gt; - Determines how text beyond the &lt;code&gt;maxLength&lt;/code&gt; length is handled&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Usage&lt;/h3&gt;
+&lt;h4&gt;When to use&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;You want to enter multiple lines of text.&lt;/li&gt;
+&lt;li&gt;Always provide labels for a text area.&lt;/li&gt;
+&lt;li&gt;A placeholder does not substitute a label.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Responsive Behavior&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;On smaller screens, you can scroll down the text area to see the entire text. To indicate that the text continues, the control shows only half of the last line.&lt;/li&gt;
+&lt;li&gt;If you have a growing text area, have in mind that its maximum height should not exceed the height of the screen. If that is the case, the screen height is used instead.&lt;/li&gt;
+&lt;li&gt;If &lt;code&gt;showExceededText&lt;/code&gt; is set to TRUE and you paste a longer text, all characters beyond the &lt;code&gt;maxLength&lt;/code&gt; limit are automatically selected.&lt;/li&gt;
+&lt;li&gt;If &lt;code&gt;showExceededText&lt;/code&gt; is set to TRUE, the control will display a counter for the remaining characters.</documentation>
+    <since>1.9.0</since>
+    <baseType>sap.m/InputBase</baseType>
+    <properties>
+        <property name="rows" type="sap.ui.core/int" defaultValue="2" group="Appearance">
+            <documentation>Defines the number of visible text lines for the control.
+&lt;b&gt;Note:&lt;/b&gt; The &lt;code&gt;height&lt;/code&gt; property wins over the &lt;code&gt;rows&lt;/code&gt; property, if both are set.</documentation>
+        </property>
+        <property name="cols" type="sap.ui.core/int" defaultValue="20" group="Appearance">
+            <documentation>Defines the visible width of the control, in average character widths.
+&lt;b&gt;Note:&lt;/b&gt; The &lt;code&gt;width&lt;/code&gt; property wins over the &lt;code&gt;cols&lt;/code&gt; property, if both are set.</documentation>
+        </property>
+        <property name="height" type="sap.ui.core/CSSSize" group="Appearance">
+            <documentation>Defines the height of the control.</documentation>
+        </property>
+        <property name="maxLength" type="sap.ui.core/int" defaultValue="0" group="Behavior">
+            <documentation>Defines the maximum number of characters that the &lt;code&gt;value&lt;/code&gt; can be.</documentation>
+        </property>
+        <property name="showExceededText" type="sap.ui.core/boolean" defaultValue="false" group="Behavior" since="1.48">
+            <documentation>Determines whether the characters, exceeding the maximum allowed character count, are visible in the input field.
+
+If set to &lt;code&gt;false&lt;/code&gt; the user is not allowed to enter more characters than what is set in the &lt;code&gt;maxLength&lt;/code&gt; property.
+If set to &lt;code&gt;true&lt;/code&gt; the characters exceeding the &lt;code&gt;maxLength&lt;/code&gt; value are selected on paste and the counter below
+the input field displays their number.</documentation>
+        </property>
+        <property name="wrapping" type="sap.ui.core/Wrapping" defaultValue="None" group="Behavior">
+            <documentation>Indicates how the control wraps the text, e.g. &lt;code&gt;Soft&lt;/code&gt;, &lt;code&gt;Hard&lt;/code&gt;, &lt;code&gt;Off&lt;/code&gt;.</documentation>
+        </property>
+        <property name="valueLiveUpdate" type="sap.ui.core/boolean" defaultValue="false" group="Behavior" since="1.30">
+            <documentation>Indicates when the &lt;code&gt;value&lt;/code&gt; property gets updated with the user changes. Setting it to &lt;code&gt;true&lt;/code&gt; updates the &lt;code&gt;value&lt;/code&gt; property whenever the user has modified the text shown on the text area.</documentation>
+        </property>
+        <property name="growing" type="sap.ui.core/boolean" defaultValue="false" group="Behavior" since="1.38.0">
+            <documentation>Indicates the ability of the control to automatically grow and shrink dynamically with its content.
+&lt;b&gt;Note:&lt;/b&gt; The &lt;code&gt;height&lt;/code&gt; property is ignored, if this property set to &lt;code&gt;true&lt;/code&gt;.</documentation>
+        </property>
+        <property name="growingMaxLines" type="sap.ui.core/int" defaultValue="0" group="Behavior" since="1.38.0">
+            <documentation>Defines the maximum number of lines that the control can grow.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="liveChange" allowPreventDefault="false">
+            <documentation>Is fired whenever the user has modified the text shown on the text area.</documentation>
+            <parameters>
+                <parameter name="value" type="sap.ui.core/string">
+                    <documentation>The new &lt;code&gt;value&lt;/code&gt; of the control.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="_counter" type="sap.m/Text" cardinality="0..1" visibility="hidden"/>
+    </aggregations>
+</control>

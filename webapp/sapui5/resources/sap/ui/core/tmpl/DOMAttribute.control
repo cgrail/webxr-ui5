@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>tmpl/DOMAttribute</name>
+    <derived/>
+    <documentation>Represents a DOM attribute of a DOM element.</documentation>
+    <since>1.15</since>
+    <deprecation since="1.56"></deprecation>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="name" type="sap.ui.core/string" group="Data">
+            <documentation>Name of the DOM attribute</documentation>
+        </property>
+        <property name="value" type="sap.ui.core/string" group="Data">
+            <documentation>Value of the DOM attribute</documentation>
+        </property>
+    </properties>
+</control>

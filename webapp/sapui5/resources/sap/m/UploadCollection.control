@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>UploadCollection</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>This control allows you to upload single or multiple files from your devices (desktop, tablet or phone) and attach them to the application.
+
+The consuming application needs to take into account that the consistency checks of the model during the upload of the file need to be performed, for example, if the user is editing or deleting a file.
+&lt;br&gt; As of version 1.62, there is an {@link sap.m.upload.UploadSet} control available that is based on this control.
+{@link sap.m.upload.UploadSet} provides enhanced handling of headers and requests, unified behavior of instant
+and deferred uploads, as well as improved progress indication.</documentation>
+    <since>1.26.0</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="fileType" type="sap.ui.core/string[]" group="Data">
+            <documentation>Defines the allowed file types for the upload.
+The chosen files will be checked against an array of file types.
+If at least one file does not fit the file type requirements, the upload is prevented.  Example: ["jpg", "png", "bmp"].</documentation>
+        </property>
+        <property name="maximumFilenameLength" type="sap.ui.core/int" group="Data">
+            <documentation>Specifies the maximum length of a file name.
+If the maximum file name length is exceeded, the corresponding event 'filenameLengthExceed' is triggered.</documentation>
+        </property>
+        <property name="maximumFileSize" type="sap.ui.core/float" group="Data">
+            <documentation>Specifies a file size limit in megabytes that prevents the upload if at least one file exceeds the limit.
+This property is not supported by Internet Explorer 8 and 9.</documentation>
+        </property>
+        <property name="mimeType" type="sap.ui.core/string[]" group="Data">
+            <documentation>Defines the allowed MIME types of files to be uploaded.
+The chosen files will be checked against an array of MIME types.
+If at least one file does not fit the MIME type requirements, the upload is prevented.
+This property is not supported by Internet Explorer 8 and 9. Example: mimeType ["image/png", "image/jpeg"].</documentation>
+        </property>
+        <property name="multiple" type="sap.ui.core/boolean" defaultValue="false" group="Behavior">
+            <documentation>Lets the user select multiple files from the same folder and then upload them.
+Internet Explorer 8 and 9 do not support this property.
+Please note that the various operating systems for mobile devices can react differently to the property so that fewer upload functions may be available in some cases.
+
+If multiple property is set to false, the control shows an error message if more than one file is chosen for drag &amp; drop.</documentation>
+        </property>
+        <property name="noDataText" type="sap.ui.core/string" group="Appearance">
+            <documentation>Allows you to set your own text for the 'No data' text label.</documentation>
+        </property>
+        <property name="noDataDescription" type="sap.ui.core/string" group="Appearance" since="1.46.0">
+            <documentation>Allows you to set your own text for the 'No data' description label.</documentation>
+        </property>
+        <property name="sameFilenameAllowed" type="sap.ui.core/boolean" defaultValue="false" group="Behavior">
+            <documentation>Allows the user to use the same name for a file when editing the file name. 'Same name' refers to an already existing file name in the list.</documentation>
+        </property>
+        <property name="showSeparators" type="sap.m/ListSeparators" defaultValue="All" group="Appearance">
+            <documentation>Defines whether separators are shown between list items.</documentation>
+        </property>
+        <property name="uploadEnabled" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Enables the upload of a file.</documentation>
+        </property>
+        <property name="uploadUrl" type="sap.ui.core/string" defaultValue="../../../upload" group="Data">
+            <documentation>Specifies the URL where the uploaded files have to be stored.</documentation>
+        </property>
+        <property name="instantUpload" type="sap.ui.core/boolean" defaultValue="true" group="Behavior" since="1.30.0">
+            <documentation>If false, no upload is triggered when a file is selected. In addition, if a file was selected, a new FileUploader instance is created to ensure that multiple files from multiple folders can be chosen.</documentation>
+        </property>
+        <property name="numberOfAttachmentsText" type="sap.ui.core/string" group="Appearance" since="1.30.0">
+            <documentation>Sets the title text in the toolbar of the list of attachments.
+To show as well the number of attachments in brackets like the default text does. The number of attachments could be retrieved via "getItems().length".
+If a new title is set, the default is deactivated.
+The default value is set to language-dependent "Attachments (n)".</documentation>
+        </property>
+        <property name="mode" type="sap.m/ListMode" defaultValue="None" group="Behavior" since="1.34.0">
+            <documentation>Defines the selection mode of the control (e.g. None, SingleSelect, MultiSelect, SingleSelectLeft, SingleSelectMaster).
+Since the UploadCollection reacts like a list for attachments, the API is close to the ListBase Interface.
+sap.m.ListMode.Delete mode is not supported and will be automatically set to sap.m.ListMode.None.
+In addition, if instant upload is set to false the mode sap.m.ListMode.MultiSelect is not supported and will be automatically set to sap.m.ListMode.None.</documentation>
+        </property>
+        <property name="uploadButtonInvisible" type="sap.ui.core/boolean" defaultValue="false" group="Appearance" since="1.42.0">
+            <documentation>If true, the button used for uploading files is invisible.</documentation>
+        </property>
+        <property name="terminationEnabled" type="sap.ui.core/boolean" defaultValue="true" group="Behavior" since="1.42.0">
+            <documentation>If true, the button that is used to terminate the instant file upload gets visible.
+The button normally appears when a file is being uploaded.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="change" allowPreventDefault="false">
+            <documentation>The event is triggered when files are selected in the FileUploader dialog. Applications can set parameters and headerParameters which will be dispatched to the embedded FileUploader control.
+Limitation: parameters and headerParameters are not supported by Internet Explorer 9.</documentation>
+            <parameters>
+                <parameter name="documentId" type="sap.ui.core/string">
+                    <documentation>A unique Id of the attached document.
+This parameter is deprecated since 1.28.0. Use the &lt;code&gt;files&lt;/code&gt; parameter instead.</documentation>
+                    <deprecation since="1.28.0">Use the &lt;code&gt;files&lt;/code&gt; parameter instead.</deprecation>
+                </parameter>
+                <parameter name="files" type="sap.ui.core/object[]" since="1.28.0">
+                    <documentation>A FileList of individually selected files from the underlying system. See www.w3.org for the FileList Interface definition.
+Limitation: Internet Explorer 9 supports only single file with property file.name.
+Since version 1.28.0.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="fileDeleted" allowPreventDefault="false">
+            <documentation>The event is triggered when an uploaded attachment is selected and the Delete button is pressed.</documentation>
+            <parameters>
+                <parameter name="documentId" type="sap.ui.core/string">
+                    <documentation>A unique Id of the attached document.
+This parameter is deprecated since 1.28.0. Use the &lt;code&gt;item&lt;/code&gt; parameter instead.</documentation>
+                    <deprecation since="1.28.0">Use the &lt;code&gt;item&lt;/code&gt; parameter instead.</deprecation>
+                </parameter>
+                <parameter name="item" type="sap.m/UploadCollectionItem" since="1.28.0">
+                    <documentation>An item to be deleted from the collection.
+Since version 1.28.0.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="filenameLengthExceed" allowPreventDefault="false">
+            <documentation>The event is triggered when the name of a chosen file is longer than the value specified with the maximumFilenameLength property (only if provided by the application).</documentation>
+            <parameters>
+                <parameter name="documentId" type="sap.ui.core/string">
+                    <documentation>A unique Id of the attached document.
+This parameter is deprecated since 1.28.0. Use the &lt;code&gt;files&lt;/code&gt; parameter instead.</documentation>
+                    <deprecation since="1.28.0">Use the &lt;code&gt;files&lt;/code&gt; parameter instead.</deprecation>
+                </parameter>
+                <parameter name="files" type="sap.ui.core/object[]" since="1.28.0">
+                    <documentation>A FileList of individually selected files from the underlying system.
+Limitation: Internet Explorer 9 supports only single file with property file.name.
+Since version 1.28.0.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="fileRenamed" allowPreventDefault="false">
+            <documentation>The event is triggered when the file name is changed.</documentation>
+            <parameters>
+                <parameter name="documentId" type="sap.ui.core/string">
+                    <documentation>A unique Id of the attached document.
+This parameter is deprecated since 1.28.0. Use the &lt;code&gt;item&lt;/code&gt; parameter instead.</documentation>
+                    <deprecation since="1.28.0">Use the &lt;code&gt;item&lt;/code&gt; parameter instead.</deprecation>
+                </parameter>
+                <parameter name="fileName" type="sap.ui.core/string">
+                    <documentation>The new file name.
+This parameter is deprecated since 1.28.0. Use the &lt;code&gt;item&lt;/code&gt; parameter instead.</documentation>
+                    <deprecation since="1.28.0">Use the &lt;code&gt;item&lt;/code&gt; parameter instead.</deprecation>
+                </parameter>
+                <parameter name="item" type="sap.m/UploadCollectionItem" since="1.28.0">
+                    <documentation>The renamed UI element as an UploadCollectionItem.
+Since 1.28.0.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="fileSizeExceed" allowPreventDefault="false">
+            <documentation>The event is triggered when the file size of an uploaded file is exceeded (only if the maxFileSize property was provided by the application).
+This event is not supported by Internet Explorer 9.</documentation>
+            <parameters>
+                <parameter name="documentId" type="sap.ui.core/string">
+                    <documentation>A unique Id of the attached document.
+This parameter is deprecated since 1.28.0. Use the &lt;code&gt;files&lt;/code&gt; parameter instead.</documentation>
+                    <deprecation since="1.28.0">Use the &lt;code&gt;files&lt;/code&gt; parameter instead.</deprecation>
+                </parameter>
+                <parameter name="fileSize" type="sap.ui.core/string">
+                    <documentation>The size in MB of a file to be uploaded.
+This parameter is deprecated since 1.28.0. Use the &lt;code&gt;files&lt;/code&gt; parameter instead.</documentation>
+                    <deprecation since="1.28.0">Use the &lt;code&gt;files&lt;/code&gt; parameter instead.</deprecation>
+                </parameter>
+                <parameter name="files" type="sap.ui.core/object[]" since="1.28.0">
+                    <documentation>A FileList of individually selected files from the underlying system.
+Limitation: Internet Explorer 9 supports only single file with property file.name.
+Since 1.28.0.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="typeMissmatch" allowPreventDefault="false">
+            <documentation>The event is triggered when the file type or the MIME type don't match the permitted types (only if the fileType property or the mimeType property are provided by the application).</documentation>
+            <parameters>
+                <parameter name="documentId" type="sap.ui.core/string">
+                    <documentation>A unique Id of the attached document.
+This parameter is deprecated since 1.28.0. Use the &lt;code&gt;files&lt;/code&gt; parameter instead.</documentation>
+                    <deprecation since="1.28.0">Use the &lt;code&gt;files&lt;/code&gt; parameter instead.</deprecation>
+                </parameter>
+                <parameter name="fileType" type="sap.ui.core/string">
+                    <documentation>File type.
+This parameter is deprecated since 1.28.0. Use the &lt;code&gt;files&lt;/code&gt; parameter instead.</documentation>
+                    <deprecation since="1.28.0">Use the &lt;code&gt;files&lt;/code&gt; parameter instead.</deprecation>
+                </parameter>
+                <parameter name="mimeType" type="sap.ui.core/string">
+                    <documentation>MIME type.
+This parameter is deprecated since 1.28.0. Use the &lt;code&gt;files&lt;/code&gt; parameter instead.</documentation>
+                    <deprecation since="1.28.0">Use the &lt;code&gt;files&lt;/code&gt; parameter instead.</deprecation>
+                </parameter>
+                <parameter name="files" type="sap.ui.core/object[]" since="1.28.0">
+                    <documentation>A FileList of individually selected files from the underlying system.
+Limitation: Internet Explorer 9 supports only single file.
+Since 1.28.0.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="uploadComplete" allowPreventDefault="false">
+            <documentation>The event is triggered as soon as the upload request is completed.</documentation>
+            <parameters>
+                <parameter name="readyStateXHR" type="sap.ui.core/string">
+                    <documentation>Ready state XHR.
+This parameter is deprecated since 1.28.0. Use the &lt;code&gt;files&lt;/code&gt; parameter instead.</documentation>
+                    <deprecation since="1.28.0">Use the &lt;code&gt;files&lt;/code&gt; parameter instead.</deprecation>
+                </parameter>
+                <parameter name="response" type="sap.ui.core/string">
+                    <documentation>Response of the completed upload request.
+This parameter is deprecated since 1.28.0. Use the &lt;code&gt;files&lt;/code&gt; parameter instead.</documentation>
+                    <deprecation since="1.28.0">Use the &lt;code&gt;files&lt;/code&gt; parameter instead.</deprecation>
+                </parameter>
+                <parameter name="status" type="sap.ui.core/string">
+                    <documentation>Status Code of the completed upload event.
+This parameter is deprecated since 1.28.0. Use the &lt;code&gt;files&lt;/code&gt; parameter instead.</documentation>
+                    <deprecation since="1.28.0">Use the &lt;code&gt;files&lt;/code&gt; parameter instead.</deprecation>
+                </parameter>
+                <parameter name="files" type="sap.ui.core/object[]" since="1.28.0">
+                    <documentation>A list of uploaded files. Each entry contains the following members.
+fileName     : The name of a file to be uploaded.
+response     : Response message which comes from the server. On the server side, this response has to be put within the 'body' tags of the response document of the iFrame. It can consist of a return code and an optional message. This does not work in cross-domain scenarios.
+reponse     : deprecated Since version 1.48.0. This parameter is deprecated, use parameter response instead.
+responseRaw : HTTP-Response which comes from the server. This property is not supported by Internet Explorer Versions lower than 9.
+status      : Status of the XHR request. This property is not supported by Internet Explorer 9 and lower.
+headers     : HTTP-Response-Headers which come from the server. Provided as a JSON-map, i.e. each header-field is reflected by a property in the header-object, with the property value reflecting the header-field's content. This property is not supported by Internet Explorer 9 and lower.
+Since 1.28.0.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="uploadTerminated" allowPreventDefault="false">
+            <documentation>The event is triggered as soon as the upload request was terminated by the user.</documentation>
+            <parameters>
+                <parameter name="fileName" type="sap.ui.core/string">
+                    <documentation>Specifies the name of the file of which the upload is to be terminated.</documentation>
+                </parameter>
+                <parameter name="getHeaderParameter" type="sap.ui.core/any">
+                    <documentation>This callback function returns the corresponding header parameter (type sap.m.UploadCollectionParameter) if available.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="beforeUploadStarts" allowPreventDefault="false">
+            <documentation>The event is triggered before the actual upload starts. An event is fired per file. All the necessary header parameters should be set here.</documentation>
+            <parameters>
+                <parameter name="fileName" type="sap.ui.core/string">
+                    <documentation>Specifies the name of the file to be uploaded.</documentation>
+                </parameter>
+                <parameter name="addHeaderParameter" type="sap.ui.core/any">
+                    <documentation>Adds a header parameter to the file that will be uploaded.</documentation>
+                </parameter>
+                <parameter name="getHeaderParameter" type="sap.ui.core/any">
+                    <documentation>Returns the corresponding header parameter (type sap.m.UploadCollectionParameter) if available.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="selectionChange" since="1.36.0" allowPreventDefault="false">
+            <documentation>Fires when selection is changed via user interaction inside the control.</documentation>
+            <parameters>
+                <parameter name="selectedItem" type="sap.m/UploadCollectionItem">
+                    <documentation>The item whose selection has changed. In &lt;code&gt;MultiSelect&lt;/code&gt; mode, only the topmost selected item is returned. This parameter can be used for single-selection modes.</documentation>
+                </parameter>
+                <parameter name="selectedItems" type="sap.m/UploadCollectionItem[]">
+                    <documentation>Array of items whose selection has changed. This parameter can be used for &lt;code&gt;MultiSelect&lt;/code&gt; mode.</documentation>
+                </parameter>
+                <parameter name="selected" type="sap.ui.core/boolean">
+                    <documentation>Indicates whether the &lt;code&gt;listItem&lt;/code&gt; parameter is selected or not.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations default="items">
+        <aggregation name="items" type="sap.m/UploadCollectionItem" cardinality="0..n" bindable="bindable">
+            <documentation>Uploaded items.</documentation>
+        </aggregation>
+        <aggregation name="headerParameters" type="sap.m/UploadCollectionParameter" cardinality="0..n">
+            <documentation>Specifies the header parameters for the FileUploader that are submitted only with XHR requests.
+Header parameters are not supported by Internet Explorer 8 and 9.</documentation>
+        </aggregation>
+        <aggregation name="parameters" type="sap.m/UploadCollectionParameter" cardinality="0..n">
+            <documentation>Specifies the parameters for the FileUploader that are rendered as a hidden input field.</documentation>
+        </aggregation>
+        <aggregation name="toolbar" type="sap.m/OverflowToolbar" since="1.34.0" cardinality="0..1">
+            <documentation>Specifies the toolbar.</documentation>
+        </aggregation>
+        <aggregation name="infoToolbar" type="sap.m/Toolbar" since="1.44.0" cardinality="0..1">
+            <documentation>Specifies the info toolbar for filtering information. Sorting information will not displayed.</documentation>
+        </aggregation>
+        <aggregation name="_list" type="sap.m/List" since="1.34.0" cardinality="0..1" visibility="hidden">
+            <documentation>Internal aggregation to hold the list in controls tree.</documentation>
+        </aggregation>
+        <aggregation name="_noDataIcon" type="sap.ui.core/Icon" since="1.46.0" cardinality="0..1" visibility="hidden">
+            <documentation>The icon is displayed in no data page</documentation>
+        </aggregation>
+        <aggregation name="_dragDropIcon" type="sap.ui.core/Icon" since="1.46.0" cardinality="0..1" visibility="hidden">
+            <documentation>Internal aggregation to hold the drag and drop icon of indicator.</documentation>
+        </aggregation>
+        <aggregation name="_dragDropText" type="sap.m/Text" since="1.46.0" cardinality="0..1" visibility="hidden">
+            <documentation>Internal aggregation to hold the drag and drop text of indicator.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

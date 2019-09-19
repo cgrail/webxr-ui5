@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>semantic/SemanticPage</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>An enhanced {@link sap.m.Page}, that can contain controls with semantic meaning,
+see {@link sap.m.semantic.SemanticControl}.
+
+&lt;b&gt;Note:&lt;/b&gt; This control implements the SAP Fiori 1.0 design guidelines.
+For SAP Fiori 2.0, see the {@link sap.f.semantic.SemanticPage}.
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+
+The main functionality of the &lt;code&gt;SemanticPage&lt;/code&gt; is to predefine the placement,
+behavior and styles of the page elements.
+
+Content specified in the semantic aggregations will be automatically positioned in
+dedicated sections of the footer or the header of the page.
+
+&lt;h3&gt;Structure&lt;/h3&gt;
+
+The semantics of the content are the following:
+&lt;ul&gt;
+&lt;li&gt;Visual properties (for example, &lt;code&gt;AddAction&lt;/code&gt; will be styled as an icon button)&lt;/li&gt;
+&lt;li&gt;Position in the page (UX guidelines specify that some buttons should be in the header only,
+ while others are in the footer or the "share" menu, so we do the correct positioning)&lt;/li&gt;
+&lt;li&gt;Sequence order (UX guidelines define a specific sequence order of semantic controls with
+respect to each other)&lt;/li&gt;
+&lt;li&gt;Default localized tooltip for icon-only buttons&lt;/li&gt;
+&lt;li&gt;Overflow behavior (UX guidelines define which buttons are allowed to go to the overflow of
+the toolbar when the screen gets narrower). For icon buttons, we ensure that the text label of
+the button appears when the button is in overflow, as specified by UX.&lt;/li&gt;
+&lt;li&gt;Screen reader support (invisible text for reading the semantic type)&lt;/li&gt;
+&lt;/ul&gt;
+
+In addition to the predefined semantic controls, the &lt;code&gt;SemanticPage&lt;/code&gt; can host also
+custom app controls. It preserves most of the API of the {@link sap.m.Page} for specifying page content.
+
+&lt;h3&gt;Usage&lt;/h3&gt;
+
+The app developer only has to specify the action type, and the required styling and
+positioning are automatically added.</documentation>
+    <since>1.30.0</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="title" type="sap.ui.core/string" group="Misc">
+            <documentation>See {@link sap.m.Page#title}</documentation>
+        </property>
+        <property name="titleLevel" type="sap.ui.core/TitleLevel" defaultValue="Auto" group="Appearance">
+            <documentation>See {@link sap.m.Page#titleLevel}</documentation>
+        </property>
+        <property name="showNavButton" type="sap.ui.core/boolean" defaultValue="false" group="Appearance">
+            <documentation>See {@link sap.m.Page#showNavButton}</documentation>
+        </property>
+        <property name="showSubHeader" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>See {@link sap.m.Page#showSubHeader}</documentation>
+        </property>
+        <property name="enableScrolling" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>See {@link sap.m.Page#enableScrolling}</documentation>
+        </property>
+        <property name="showFooter" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>Hides or shows the page footer</documentation>
+        </property>
+        <property name="floatingFooter" type="sap.ui.core/boolean" defaultValue="false" group="Appearance" since="1.40.1">
+            <documentation>Determines whether the floating footer behavior is enabled.
+If set to &lt;code&gt;true&lt;/code&gt;, the content is visible when it's underneath the footer.</documentation>
+        </property>
+        <property name="semanticRuleSet" type="sap.m/semantic/SemanticRuleSetType" defaultValue="Classic" group="Misc" since="1.44">
+            <documentation>Declares the type of semantic ruleset that will govern the styling and positioning of semantic content.</documentation>
+        </property>
+        <property name="backgroundDesign" type="sap.m/PageBackgroundDesign" defaultValue="Standard" group="Appearance" since="1.52">
+            <documentation>Determines the backgound color of the page. For more
+information, see {@link sap.m.Page#backgroundDesign}.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="navButtonPress" allowPreventDefault="false">
+            <documentation>See {@link sap.m.Page#navButtonPress}</documentation>
+        </event>
+    </events>
+    <aggregations default="content">
+        <aggregation name="subHeader" type="sap.m/IBar" cardinality="0..1">
+            <documentation>See {@link sap.m.Page#subHeader}</documentation>
+        </aggregation>
+        <aggregation name="content" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>See {@link sap.m.Page#content}</documentation>
+        </aggregation>
+        <aggregation name="customHeaderContent" type="sap.m/Button" cardinality="0..n">
+            <documentation>Custom header buttons</documentation>
+        </aggregation>
+        <aggregation name="customFooterContent" type="sap.m/Button" cardinality="0..n">
+            <documentation>Custom footer buttons</documentation>
+        </aggregation>
+        <aggregation name="landmarkInfo" type="sap.m/PageAccessibleLandmarkInfo" cardinality="0..1">
+            <documentation>Accessible landmark settings to be applied to the containers of the &lt;code&gt;sap.m.Page&lt;/code&gt; control.
+
+If not set, no landmarks will be written.</documentation>
+        </aggregation>
+        <aggregation name="_page" type="sap.m/Page" cardinality="0..1" visibility="hidden">
+            <documentation>Wrapped instance of {@link sap.m.Page}</documentation>
+        </aggregation>
+    </aggregations>
+</control>

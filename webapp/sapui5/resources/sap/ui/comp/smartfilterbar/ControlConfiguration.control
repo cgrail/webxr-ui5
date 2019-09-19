@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartfilterbar/ControlConfiguration</name>
+    <derived/>
+    <documentation>ControlConfiguration can be used to add additional configuration for filter fields in the SmartFilterBar control, in order to overwrite
+       the default settings from the OData metadata. For instance, it is possible to change the label, index or control type of a filter field.</documentation>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="key" type="sap.ui.core/string" group="Misc">
+            <documentation>The key property corresponds to the field name from the OData service $metadata document.</documentation>
+        </property>
+        <property name="groupId" type="sap.ui.core/string" group="Misc">
+            <documentation>The groupId can be used to move a field from one group to another. The groupId corresponds to the EntityName from the OData
+metadata. It is also possible to move a field from the advanced area to the basic area by specifying the groupId _BASIC.</documentation>
+        </property>
+        <property name="label" type="sap.ui.core/string" group="Misc">
+            <documentation>Using this property it is possible to overwrite the label of a filter field in the SmartFilterBar.</documentation>
+        </property>
+        <property name="visible" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Using this flag it is possible to hide fields from the OData metadata.</documentation>
+        </property>
+        <property name="hasValueHelpDialog" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Specifies whether a value help dialog is available or not.</documentation>
+        </property>
+        <property name="controlType" type="sap.ui.comp/smartfilterbar/ControlType" defaultValue="auto" group="Misc">
+            <documentation>The SmartFilterBar calculates which kind of control will be used for a filter fields based on multiple OData Attributes and
+annotations. Using this property it is possible to overwrite the OData metadata.</documentation>
+        </property>
+        <property name="filterType" type="sap.ui.comp/smartfilterbar/FilterType" defaultValue="auto" group="Misc">
+            <documentation>The filter type specifies whether the filter field is of type single value, multi-value, or interval. The filter type is
+calculated by the {@link sap.ui.comp.smartfilterbar.SmartFilterBar} control based on the OData metadata. Using this property the filter type can be configured manually.</documentation>
+        </property>
+        <property name="index" type="sap.ui.core/int" defaultValue="-1" group="Misc">
+            <documentation>The zero based index can be used to specify the initial order of fields (without any variants).</documentation>
+        </property>
+        <property name="hasTypeAhead" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Property can be used to enable the TypeAhead service. TypeAhead does not work with all controls, e.g it does not work for
+DrodDownListbox</documentation>
+        </property>
+        <property name="mandatory" type="sap.ui.comp/smartfilterbar/MandatoryType" defaultValue="auto" group="Misc">
+            <documentation>Property can be used to overwrite the mandatory state of a filter field. Property can only be set during initialization. Changes at
+runtime will be ignored.</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/string" group="Misc">
+            <documentation>The width of the filter field in a CSS compatible format. The width can be set only once during initialization. Changes at runtime
+will not be reflected. The width will not be applied to custom controls.</documentation>
+        </property>
+        <property name="visibleInAdvancedArea" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>If set to true this field will be added to the advanced area (aka. Dynamic Selection) by default.</documentation>
+        </property>
+        <property name="preventInitialDataFetchInValueHelpDialog" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>In case there are value help annotations for this filter field, it is possible to specify whether the table in the value help
+dialog for this field will be filled initially. The default value is true, which means the table will not be filled as the data
+fetch is prevented.</documentation>
+        </property>
+        <property name="displayBehaviour" type="sap.ui.comp/smartfilterbar/DisplayBehaviour" defaultValue="auto" group="Misc">
+            <documentation>The displayBehaviour specifies how the content should be displayed on certain controls. Ex: DescriptionOnly for Combobox (DropDown
+text) , Description and ID for MultiInput (token text)</documentation>
+        </property>
+        <property name="conditionType" type="sap.ui.core/any" group="Misc">
+            <documentation>The condition Type class name to use for this filter item. Implementation should derive from sap.ui.comp.config.condition.Type</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="change" allowPreventDefault="false">
+            <documentation>Fired when the value of a property, for example isVisible, has changed.</documentation>
+            <parameters>
+                <parameter name="propertyName" type="sap.ui.core/string">
+                    <documentation>Name of the changed property</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="defaultFilterValues" type="sap.ui.comp/smartfilterbar/SelectOption" cardinality="0..n">
+            <documentation>Default value for a filter field.
+The aggreagtion expects {@link sap.ui.comp.smartfilterbar.SelectOption|SelectOption} instances, where the values' format
+(properties &lt;code&gt;low&lt;/code&gt; and &lt;code&gt;high&lt;/code&gt;) match the type of the referneced property and consider also the 
+given constraints of the property.
+
+Samples for valid formats:
+&lt;code&gt;Edm.DateTime&lt;/code&gt; with constraint &lt;code&gt;sap:display-format='Date'&lt;/code&gt;:
+"2018-12-24" (you optionally can provide a time-part and timezone, too, (2018-12-24T00:00:00Z) but this is ignored)
+
+&lt;code&gt;Edm.DateTimeOffset&lt;/code&gt;:
+"2018-12-24T13:55:59Z"
+
+&lt;code&gt;Edm.Time&lt;/code&gt;:
+"PT12H34M56S"
+
+&lt;code&gt;Edm.Boolean&lt;/code&gt;:
+"false"
+
+&lt;code&gt;Edm.Decimal&lt;/code&gt;:
+"2983.12"</documentation>
+        </aggregation>
+        <aggregation name="customControl" type="sap.ui.core/Control" cardinality="0..1">
+            <documentation>If a custom control is specified, the SmartFilterBar will not create a control but use the custom control. Additional services like
+TypeAhead have to implemented manually.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

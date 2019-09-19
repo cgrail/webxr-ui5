@@ -1,0 +1,71 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": ".theming",
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "AreaMicroChart.less",
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "BulletMicroChart.less",
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "ComparisonMicroChart.less",
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "DeltaMicroChart.less",
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "HarveyBallMicroChart.less",
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "RadialMicroChart.less",
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "library-RTL-dbg.css",
+			"isDebug": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "library-RTL.css",
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "library-dbg.css",
+			"isDebug": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "library-parameters.json",
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "library.css",
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "library.less",
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "library.source.less",
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		}
+	]
+}

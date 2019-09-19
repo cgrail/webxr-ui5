@@ -1,0 +1,19 @@
+<core:FragmentDefinition
+		xmlns="sap.suite.ui.microchart"
+		xmlns:core="sap.ui.core"
+		xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1">
+
+	<template:with path="columnMicroChart>MeasureAttributes/0/DataPoint/$AnnotationPath/" var="DataPoint">
+		<template:with path="columnMicroChart>Dimensions/0/" var="Dimension">
+			<ColumnMicroChart class="sapUiSmallMargin"
+							  columns="{columnMicroChart>@@sap.ui.mdc.odata.v4.microchart.MicroChart._helper.getEntitySetPathBinding}">
+				<columns>
+					<ColumnMicroChartData
+							value="{path:'DataPoint>Value@@.MODEL.value', type:'sap.ui.model.odata.type.Decimal'}"
+							color="{DataPoint>Criticality@@.MODEL.value}"/>
+				</columns>
+			</ColumnMicroChart>
+		</template:with>
+	</template:with>
+
+</core:FragmentDefinition>

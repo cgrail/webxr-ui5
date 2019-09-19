@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>IconTabHeader</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>This control displays a number of IconTabFilters and IconTabSeparators. If the available horizontal
+space is exceeded, a horizontal scrolling appears.</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="showSelection" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Defines whether the current selection is visualized.</documentation>
+            <deprecation since="1.15.0">Regarding to changes of this control this property is not needed anymore.</deprecation>
+        </property>
+        <property name="selectedKey" type="sap.ui.core/string" group="Data" since="1.15.0">
+            <documentation>Key of the selected item.
+
+If the key has no corresponding aggregated item, no changes will apply.
+If duplicate keys exists the first item matching, the key is used.</documentation>
+        </property>
+        <property name="visible" type="sap.ui.core/boolean" defaultValue="true" group="Behavior" since="1.15.0">
+            <documentation>Specifies whether the control is rendered.</documentation>
+        </property>
+        <property name="mode" type="sap.m/IconTabHeaderMode" defaultValue="Standard" group="Appearance" since="1.40">
+            <documentation>Specifies the header mode.
+&lt;b&gt;Note:&lt;/b&gt; The Inline mode works only if no icons are set.</documentation>
+        </property>
+        <property name="showOverflowSelectList" type="sap.ui.core/boolean" defaultValue="false" group="Appearance" since="1.42">
+            <documentation>Specifies if the overflow select list is displayed.
+
+The overflow select list represents a list, where all tab filters are displayed,
+so the user can select specific tab filter easier.</documentation>
+        </property>
+        <property name="backgroundDesign" type="sap.m/BackgroundDesign" defaultValue="Solid" group="Appearance" since="1.44">
+            <documentation>Specifies the background color of the header.
+
+Depending on the theme, you can change the state of
+the background color to "Solid", "Translucent", or "Transparent".
+Default is "Solid".</documentation>
+        </property>
+        <property name="enableTabReordering" type="sap.ui.core/boolean" defaultValue="false" group="Behavior" since="1.46">
+            <documentation>Specifies whether tab reordering is enabled. Relevant only for desktop devices.
+The {@link sap.m.IconTabSeparator sap.m.IconTabSeparator} cannot be dragged  and dropped
+Items can be moved around {@link sap.m.IconTabSeparator sap.m.IconTabSeparator}</documentation>
+        </property>
+        <property name="tabDensityMode" type="sap.m/IconTabDensityMode" defaultValue="Cozy" group="Appearance" since="1.56">
+            <documentation>Specifies the visual density mode of the tabs.
+
+The values that can be applied are &lt;code&gt;Cozy&lt;/code&gt;, &lt;code&gt;Compact&lt;/code&gt; and &lt;code&gt;Inherit&lt;/code&gt;.
+&lt;code&gt;Cozy&lt;/code&gt; and &lt;code&gt;Compact&lt;/code&gt; render the control in one of these modes independent of the global density settings.
+The &lt;code&gt;Inherit&lt;/code&gt; value follows the global density settings which are applied.
+For compatibility reasons, the default value is &lt;code&gt;Cozy&lt;/code&gt;.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="select" allowPreventDefault="false">
+            <documentation>Fires when an item is selected.</documentation>
+            <parameters>
+                <parameter name="item" type="sap.m/IconTabFilter" since="1.15.0">
+                    <documentation>The selected item</documentation>
+                </parameter>
+                <parameter name="key" type="sap.ui.core/string" since="1.15.0">
+                    <documentation>The key of the selected item</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="items" type="sap.m/IconTab" cardinality="0..n">
+            <documentation>The items displayed in the IconTabHeader.</documentation>
+        </aggregation>
+        <aggregation name="_overflowButton" type="sap.m/Button" cardinality="0..1" visibility="hidden">
+            <documentation>Internal aggregation for managing the overflow button.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

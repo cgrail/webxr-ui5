@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<library xmlns="http://www.sap.com/sap.ui.library.xsd" >
+
+	<name>sap.ui.server.abap</name>
+	<vendor>SAP SE</vendor>
+	<copyright>SAPUI5
+
+(c) Copyright 2009-2019 SAP SE. All rights reserved</copyright>
+	<version>1.64.0</version>
+
+	<documentation>SAPUI5 front-end server ABAP.</documentation>
+
+	<appData>
+		<releasenotes xmlns="http://www.sap.com/ui5/buildext/releasenotes"
+			url="../../../../../test-resources/sap/ui/server/abap/relnotes/changes-{major}.{minor}.json"
+			resolve="lib" />
+	</appData>
+
+</library>

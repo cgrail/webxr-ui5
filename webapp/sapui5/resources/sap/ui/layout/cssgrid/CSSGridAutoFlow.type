@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>cssgrid/CSSGridAutoFlow</name>
+    <derived/>
+    <documentation>A string type that is used for CSS grid to control how the auto-placement algorithm works,
+specifying exactly how auto-placed items get flowed into the grid.</documentation>
+    <since>1.60.0</since>
+    <enumeration>
+        <value name="Row">
+            <documentation>Insert auto-placed items by filling each row.</documentation>
+        </value>
+        <value name="Column">
+            <documentation>Insert auto-placed items by filling each column.</documentation>
+        </value>
+        <value name="RowDense">
+            <documentation>Insert auto-placed items by filling each row, and fill any holes in the grid.</documentation>
+        </value>
+        <value name="ColumnDense">
+            <documentation>Insert auto-placed items by filling each column, and fill any holes in the grid.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

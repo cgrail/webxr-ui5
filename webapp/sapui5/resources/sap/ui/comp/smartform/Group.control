@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartform/Group</name>
+    <derived/>
+    <documentation>Groups are used to group group elements.</documentation>
+    <baseType>sap.ui.layout/form/FormContainer</baseType>
+    <properties>
+        <property name="useHorizontalLayout" type="sap.ui.core/boolean" group="Misc">
+            <documentation>Specifies whether the groups are rendered in a &lt;code&gt;ResponsiveLayout&lt;/code&gt; with label on top of the group element. Each group will be
+rendered in a new line.
+
+&lt;b&gt;Note:&lt;/b&gt; If &lt;code&gt;Group&lt;/code&gt; is assigned to a &lt;code&gt;SmartForm&lt;/code&gt; control,
+this property is inherited from the &lt;code&gt;SmartForm&lt;/code&gt; control.
+
+So don't set it to a different value from the one in the &lt;code&gt;SmartForm&lt;/code&gt; control. For performance reasons it might
+make sense to set it manually to the same value as the one in the &lt;code&gt;SmartForm&lt;/code&gt; control when creating the &lt;code&gt;Group&lt;/code&gt; element.</documentation>
+        </property>
+        <property name="horizontalLayoutGroupElementMinWidth" type="sap.ui.core/int" group="Misc">
+            <documentation>Specifies the minimal size in pixels of all group elements of the form if horizontal Layout is used.
+
+&lt;b&gt;Note:&lt;/b&gt; If &lt;code&gt;Group&lt;/code&gt; is assigned to a &lt;code&gt;SmartForm&lt;/code&gt; control,
+this property is inherited from the &lt;code&gt;SmartForm&lt;/code&gt; control. So don't set it manually.</documentation>
+            <deprecation since="1.48.0">please do not use this property as it does not have any effect on the current layout of the &lt;code&gt;SmartForm&lt;/code&gt; control.</deprecation>
+        </property>
+        <property name="label" type="sap.ui.core/string" group="Misc">
+            <documentation>Label for the group.</documentation>
+        </property>
+    </properties>
+    <aggregations default="groupElements">
+        <aggregation name="groupElements" type="sap.ui.comp/smartform/GroupElement" cardinality="0..n">
+            <documentation>A &lt;code&gt;GroupElement&lt;/code&gt; is a combination of one label and different controls associated to this label.</documentation>
+        </aggregation>
+        <aggregation name="layout" type="sap.ui.layout/GridData" cardinality="0..1">
+            <documentation>Layout to specify how the group shall be rendered (e.g. span and line-break)
+
+&lt;b&gt;Note:&lt;/b&gt; Do not use &lt;code&gt;layout&lt;/code&gt; and &lt;code&gt;layoutData&lt;/code&gt; aggregations combined.</documentation>
+            <deprecation since="1.48.0">please use &lt;code&gt;layoutData&lt;/code&gt; aggregation instead.</deprecation>
+        </aggregation>
+    </aggregations>
+</control>

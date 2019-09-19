@@ -1,0 +1,9 @@
+{
+"version":3,
+"file":"sap/ui/generic/template/library-preload.js",
+"sourceroot":".",
+"sources":["library-dbg.js","manifest.json"],
+"names":[],
+"mappings":";;;;;;AASA,gBAAa,mCAAC,uBAAwB,sBAAuB,8BAC5D,UAAW,CACX,aAeA,8BACC,IAAK,CAAE,0BACP,QAAS,SACT,YAAa,CAAE,eAAgB,cAAe,sBAC9C,MAAO,GACP,WAAY,GACZ,SAAU,GACV,SAAU,GACV,aAAc,IACf,GAEA,OAAO,wBAER,EAAkB;;;;;",
+"x_com_sap_openui5_sections":[57,527,593,1193]
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>search/SearchProvider</name>
+    <derived/>
+    <documentation>Abstract base class for all SearchProviders which can be e.g. attached to a SearchField.
+
+Do not create instances of this class, but use a concrete subclass instead.</documentation>
+    <abstract/>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="icon" type="sap.ui.core/string" group="Misc">
+            <documentation>Icon of the Search Provider</documentation>
+        </property>
+    </properties>
+    <methods>
+        <method name="suggest">
+            <documentation>Call this function to get suggest values from the search provider.
+The given callback function is called with the suggest value (type 'string', 1st parameter)
+and an array of the suggestions (type '[string]', 2nd parameter).</documentation>
+            <parameters>
+                <parameter name="value" type="sap.ui.core/string">
+                    <documentation>The value for which suggestions are requested.</documentation>
+                </parameter>
+                <parameter name="callback" type="sap.ui.core/any">
+                    <documentation>The callback function which is called when the suggestions are available.</documentation>
+                </parameter>
+            </parameters>
+        </method>
+    </methods>
+</control>

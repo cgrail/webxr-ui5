@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>LineMicroChartLine</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The container containing all the points of the line.</documentation>
+    <since>1.60</since>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="color" type="sap.ui.core/any" group="Appearance">
+            <documentation>Defines the color of the chart.
+&lt;br&gt;In conjunction with emphasized points, this property is only used if all points have the {@link sap.m.ValueColor.Neutral} color.
+The color can be set as an {@link sap.m.ValueCSSColor} or as a plain object. It has the &lt;code&gt;above&lt;/code&gt; and &lt;code&gt;below&lt;/code&gt; properties that determine the color of the graph above and below the threshold, respectively.
+
+&lt;br&gt;This property has priority over the property &lt;code&gt;color&lt;/code&gt; of {@link sap.suite.ui.microchart.LineMicroChart} in case it is set.
+&lt;br&gt;If this property is not defined, the value of the &lt;code&gt;color&lt;/code&gt; property from the parent {@link sap.suite.ui.microchart.LineMicroChart} is used instead.</documentation>
+        </property>
+        <property name="showPoints" type="sap.ui.core/boolean" group="Appearance">
+            <documentation>Defines whether the points are shown.
+&lt;br&gt;If emphasized points are used, this property is ignored.
+&lt;br&gt;If this property is set to &lt;code&gt;true&lt;/code&gt;, the points in the &lt;code&gt;points&lt;/code&gt; aggregation are shown.
+
+&lt;br&gt;This property has priority over the property &lt;code&gt;showPoints&lt;/code&gt; of {@link sap.suite.ui.microchart.LineMicroChart} in case it is set.
+&lt;br&gt;If this property is not defined, the &lt;code&gt;showPoints&lt;/code&gt; property of the {@link sap.suite.ui.microchart.LineMicroChart} is used instead.</documentation>
+        </property>
+        <property name="type" type="sap.suite.ui.microchart/LineType" defaultValue="Solid" group="Appearance">
+            <documentation>Defines the type of the line.</documentation>
+        </property>
+    </properties>
+    <aggregations default="points">
+        <aggregation name="points" type="sap.suite.ui.microchart/LineMicroChartPoint" cardinality="0..n" bindable="bindable">
+            <documentation>Aggregation that contains all data points that should be provided in an ordered way.
+
+&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; Points can be bound without template/factory method.
+&lt;br&gt;This approach is more efficient when many points are used, because no new objects will be created for them
+and only their representation in the model will be kept. See the {@link https://ui5.sap.com/#/sample/sap.suite.ui.microchart.sample.LineMicroChartBinding/preview samples}.
+&lt;br&gt;To use emphasized points, the &lt;code&gt;emphasized&lt;/code&gt; property has to be set in the model of the point and can be used together with the properties &lt;code&gt;show&lt;/code&gt; and &lt;code&gt;color&lt;/code&gt;, as shown in the sample.
+When this binding method is used, the #getPoints method will always return an empty array.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

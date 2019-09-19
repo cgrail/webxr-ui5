@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>OverflowToolbarButton</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Represents an {@link sap.m.Button} that shows its text only when in the overflow area of an {@link sap.m.OverflowToolbar}.
+
+&lt;b&gt;Note:&lt;/b&gt; This control is intended to be used exclusively in the context of the &lt;code&gt;OverflowToolbar&lt;/code&gt;, whenever it is required
+to have buttons that show only an icon in the toolbar, but icon and text in the overflow menu.</documentation>
+    <since>1.28</since>
+    <baseType>sap.m/Button</baseType>
+</control>

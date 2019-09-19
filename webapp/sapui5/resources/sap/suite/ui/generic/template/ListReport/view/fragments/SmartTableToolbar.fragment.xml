@@ -1,0 +1,58 @@
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+						 xmlns:dt="sap.ui.dt"
+						 xmlns:fl="sap.ui.fl"
+						 xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:build="sap.build">
+
+	<OverflowToolbar id="template::ListReport::TableToolbar{= ${parameter>/settings/quickVariantSelectionX} ? ${path: 'tabItem>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getSuffixFromIconTabFilterKey'} : ''}"
+					 dt:designtime="sap/suite/ui/generic/template/designtime/SmartTableToolbar.designtime"
+					 fl:flexibility="sap/suite/ui/generic/template/flexibility/SmartTableToolbar.flexibility"
+					 design="Transparent">
+
+		<core:Fragment fragmentName="sap.suite.ui.generic.template.ListReport.view.fragments.MultipleViewsSingleTableMode" type="XML"/>
+
+		<ToolbarSpacer/>
+
+		<!--add search field to table toolbar if worklist light is set-->
+		<template:if test="{=${parameter>/settings/isWorklist} }">
+			<core:Fragment fragmentName="sap.suite.ui.generic.template.ListReport.view.fragments.SearchField" type="XML"/>
+		</template:if>
+
+		<!-- Custom Action Breakout -->
+			<template:repeat list="{parameter>/manifest/sap.ui5/extends/extensions/sap.ui.controllerExtensions/sap.suite.ui.generic.template.ListReport.view.ListReport/sap.ui.generic.app}" var="tmpEntitySet">
+				<core:Fragment fragmentName="sap.suite.ui.generic.template.ListReport.view.fragments.BreakoutActions"
+						type="XML"/>
+			</template:repeat>
+
+			<template:with path="tableAnnotationPath>" var="collection">
+				<core:Fragment fragmentName="sap.suite.ui.generic.template.fragments.AnnotatedActionButtons" type="XML"/>
+			</template:with>
+
+			<!-- Active object toggle button -->
+			<template:if test="{=${parameter>/manifest/sap.ui.generic.app/settings/showDraftToggle}}">
+				<template:if test="{parameter>/isDraftEnabled}">
+					<template:with path="entitySet>Org.OData.Capabilities.V1.NavigationRestrictions/RestrictedProperties/[${path:'NavigationProperty/NavigationPropertyPath'} === 'DraftAdministrativeData']/" var="draftAdminData">
+						<template:if test="{= (${draftAdminData>FilterRestrictions/Filterable/Bool} !== 'false') &amp;&amp; (${entitySet>com.sap.vocabularies.Common.v1.DraftRoot} || ${entitySet>com.sap.vocabularies.Common.v1.DraftNode}) }">
+							<Button id="activeStateToggle{= ${parameter>/settings/quickVariantSelectionX} ? ${path: 'tabItem>', formatter:'sap.suite.ui.generic.template.js.AnnotationHelper.getSuffixFromIconTabFilterKey'} : ''}" type="Transparent" text="{= ${_templPriv>/listReport/activeObjectEnabled} ? ${i18n>SHOW_ALL_ITEMS} : ${i18n>SHOW_ACTIVE_ITEMS} }" press="._templateEventHandlers.onActiveButtonPress" enabled="{= ${_templPriv>/listReport/vDraftState} === '0'}"/>
+							</template:if>
+					</template:with>
+				</template:if>
+			</template:if>
+
+		<template:with path="entityType>" var="listEntityType">
+			<template:if test="{= !(${parameter>/settings/tableType} === 'TreeTable' || (${parameter>/settings/tableType} !== 'AnalyticalTable' &amp;&amp; ${parameter>/settings/tableType} !== 'GridTable' &amp;&amp; ${parameter>/settings/tableType} !== 'ResponsiveTable' &amp;&amp; ${parameter>/settings/treeTable}))}">
+				<template:with path="entitySet>" var="listEntitySet">
+					<core:Fragment fragmentName="sap.suite.ui.generic.template.fragments.CRUDActionButtons" type="XML"/>
+				</template:with>
+			</template:if>
+		</template:with>
+
+		<!--add sort, filter, group buttons to table toolbar if worklist light is set-->
+		<template:if test="{=${parameter>/settings/isWorklist} }">
+				<OverflowToolbarButton icon="sap-icon://sort" text="{i18n>SORT}" tooltip="{i18n>SORT}" press="._templateEventHandlers.onWorkListTableSettings"/>
+				<OverflowToolbarButton icon="sap-icon://filter" text="{i18n>FILTER}" tooltip="{i18n>FILTER}" press="._templateEventHandlers.onWorkListTableSettings"/>
+				<OverflowToolbarButton icon="sap-icon://group-2" text="{i18n>GROUP}" tooltip="{i18n>GROUP}" press="._templateEventHandlers.onWorkListTableSettings"/>
+				<OverflowToolbarButton icon="sap-icon://action-settings" text="{i18n>COLUMNS}" tooltip="{i18n>COLUMNS}" press="._templateEventHandlers.onWorkListTableSettings"/>
+		</template:if>
+	</OverflowToolbar>
+
+</core:FragmentDefinition>

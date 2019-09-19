@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>dnd/DragInfo</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Provides the configuration for drag operations.
+&lt;b&gt;Note:&lt;/b&gt; This configuration might be ignored due to control {@link sap.ui.core.Element.extend metadata} restrictions.</documentation>
+    <since>1.56</since>
+    <baseType>sap.ui.core/dnd/DragDropBase</baseType>
+    <properties>
+        <property name="sourceAggregation" type="sap.ui.core/string">
+            <documentation>The name of the aggregation from which all children can be dragged. If undefined, the control itself can be dragged.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="dragStart" allowPreventDefault="true">
+            <documentation>This event is fired when the user starts dragging an element.</documentation>
+        </event>
+        <event name="dragEnd" since="1.56" allowPreventDefault="false">
+            <documentation>This event is fired when a drag operation is being ended.</documentation>
+        </event>
+    </events>
+</control>

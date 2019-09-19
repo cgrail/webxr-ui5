@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>MenuButton</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The &lt;code&gt;sap.m.MenuButton&lt;/code&gt; control enables the user to show a hierarchical menu.</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="text" type="sap.ui.core/string" group="Misc">
+            <documentation>Defines the text of the &lt;code&gt;MenuButton&lt;/code&gt;.
+&lt;br/&gt;&lt;b&gt;Note:&lt;/b&gt; In &lt;code&gt;Split&lt;/code&gt; &lt;code&gt;buttonMode&lt;/code&gt; with &lt;code&gt;useDefaultActionOnly&lt;/code&gt;
+set to &lt;code&gt;false&lt;/code&gt;, the text is changed to display the last selected item's text,
+while in &lt;code&gt;Regular&lt;/code&gt; &lt;code&gt;buttonMode&lt;/code&gt; the text stays unchanged.</documentation>
+        </property>
+        <property name="type" type="sap.m/ButtonType" defaultValue="Default" group="Appearance">
+            <documentation>Defines the type of the &lt;code&gt;MenuButton&lt;/code&gt; (for example, Default, Accept, Reject, Back, etc.)</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" group="Misc">
+            <documentation>Defines the width of the &lt;code&gt;MenuButton&lt;/code&gt;.
+&lt;br/&gt;&lt;b&gt;Note:&lt;/b&gt;As per visual design this width can be maximum of 12rem (192px).</documentation>
+        </property>
+        <property name="enabled" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Boolean property to enable the control (default is &lt;code&gt;true&lt;/code&gt;).
+&lt;br/&gt;&lt;b&gt;Note:&lt;/b&gt; Depending on custom settings, the buttons that are disabled have other colors than the enabled ones.</documentation>
+        </property>
+        <property name="icon" type="sap.ui.core/URI" group="Appearance">
+            <documentation>Defines the icon to be displayed as a graphical element within the button.
+It can be an image or an icon from the icon font.</documentation>
+        </property>
+        <property name="activeIcon" type="sap.ui.core/URI" group="Misc">
+            <documentation>The source property of an alternative icon for the active (pressed) state of the button.
+Both active and default icon properties should be defined and of the same type - image or icon font.
+If the &lt;code&gt;icon&lt;/code&gt; property is not set or has a different type, the active icon is not displayed.</documentation>
+        </property>
+        <property name="iconDensityAware" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>When set to &lt;code&gt;true&lt;/code&gt; (default), one or more requests are sent trying to get the
+density perfect version of image if this version of image doesn't exist on the server.
+If only one version of image is provided, set this value to &lt;code&gt;false&lt;/code&gt; to
+avoid the attempt of fetching density perfect image.</documentation>
+        </property>
+        <property name="textDirection" type="sap.ui.core/TextDirection" defaultValue="Inherit" group="Appearance">
+            <documentation>Specifies the element's text directionality with enumerated options.
+By default, the control inherits text direction from the DOM.</documentation>
+        </property>
+        <property name="buttonMode" type="sap.m/MenuButtonMode" defaultValue="Regular" group="Misc">
+            <documentation>Defines whether the &lt;code&gt;MenuButton&lt;/code&gt; is set to &lt;code&gt;Regular&lt;/code&gt; or &lt;code&gt;Split&lt;/code&gt; mode.</documentation>
+        </property>
+        <property name="menuPosition" type="any" defaultValue="BeginBottom" group="Misc" since="1.56.0">
+            <documentation>Specifies the position of the popup menu with enumerated options.
+By default, the control opens the menu at its bottom left side.
+
+&lt;b&gt;Note:&lt;/b&gt; In the case that the menu has no space to show itself in the view port
+of the current window it tries to open itself to
+the inverted direction.</documentation>
+        </property>
+        <property name="useDefaultActionOnly" type="sap.ui.core/boolean" defaultValue="false" group="Behavior">
+            <documentation>Controls whether the default action handler is invoked always or it is invoked only until a menu item is selected.
+Usable only if &lt;code&gt;buttonMode&lt;/code&gt; is set to &lt;code&gt;Split&lt;/code&gt;.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="defaultAction" allowPreventDefault="false">
+            <documentation>Fired when the &lt;code&gt;buttonMode&lt;/code&gt; is set to &lt;code&gt;Split&lt;/code&gt; and the user presses the main button
+unless &lt;code&gt;useDefaultActionOnly&lt;/code&gt; is set to &lt;code&gt;false&lt;/code&gt; and another action
+from the menu has been selected previously.</documentation>
+        </event>
+    </events>
+    <aggregations default="menu">
+        <aggregation name="menu" type="sap.m/Menu" cardinality="0..1">
+            <documentation>Defines the menu that opens for this button.</documentation>
+        </aggregation>
+        <aggregation name="_button" type="sap.ui.core/Control" cardinality="0..1" visibility="hidden">
+            <documentation>Internal aggregation that contains the button part.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="ariaDescribedBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / ids which describe this control (see WAI-ARIA attribute aria-describedby).</documentation>
+        </association>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / ids which label this control (see WAI-ARIA attribute aria-labelledby).</documentation>
+        </association>
+    </associations>
+</control>

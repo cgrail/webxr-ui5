@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>AccordionSection</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Represents a panel which is a container for other controls. The container does not have any layout function.</documentation>
+    <deprecation since="1.38"></deprecation>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="maxHeight" type="sap.ui.core/CSSSize" group="Dimension">
+            <documentation>When the section content exceeds maxHeight, a vertical scroll bar appears.</documentation>
+        </property>
+        <property name="enabled" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>It is required that the used theme supports the control.</documentation>
+        </property>
+        <property name="collapsed" type="sap.ui.core/boolean" defaultValue="false" group="Behavior">
+            <documentation>It is recommended to adjust the settings for the width when the section is set to 'collapsed'.</documentation>
+            <deprecation since="1.34">Use Accordion's "openedSectionsId" property</deprecation>
+        </property>
+        <property name="title" type="sap.ui.core/string" group="Misc">
+            <documentation>Text for the section header</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="scroll" allowPreventDefault="false">
+            <documentation>Event is fired when the user scrolls the panel</documentation>
+            <parameters>
+                <parameter name="left" type="sap.ui.core/int">
+                    <documentation>Horizontal scroll position</documentation>
+                </parameter>
+                <parameter name="top" type="sap.ui.core/int">
+                    <documentation>Vertical scroll position</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations default="content">
+        <aggregation name="content" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Aggregates the controls that are contained in the panel. The control layout is browser-dependent.
+For a stable content layout, use a layout control as direct single child.
+When the panel dimensions are set, the child control may have width and height of 100%;
+when the panel dimensions are not set, the child defines the panel size.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

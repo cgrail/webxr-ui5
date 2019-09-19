@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>RangeSlider</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Represents a numerical interval and two handles to select a sub-range within it.
+&lt;h3&gt;Overview&lt;/h3&gt;
+The purpose of the control is to enable visual selection of sub-ranges within a given interval.
+&lt;h4&gt;Notes:&lt;h4&gt;
+&lt;ul&gt;
+&lt;li&gt;The RangeSlider extends the functionality of the {@link sap.m.Slider Slider}&lt;/li&gt;
+&lt;li&gt;The right and left handle can be moved individually and their positions could therefore switch.&lt;/li&gt;
+&lt;li&gt;The entire range can be moved along the interval.&lt;/li&gt;
+&lt;li&gt;The right and left handle can select the same value&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Usage&lt;/h3&gt;
+The most common usecase is to select and move sub-ranges on a continuous numerical scale.
+
+&lt;h3&gt;Responsive Behavior&lt;/h3&gt;
+You can move the currently selected range by clicking on it and dragging it along the interval.</documentation>
+    <since>1.38</since>
+    <baseType>sap.m/Slider</baseType>
+    <properties>
+        <property name="value2" type="sap.ui.core/float" defaultValue="100" group="Data">
+            <documentation>Current second value of the slider. (Position of the second handle.)
+
+&lt;b&gt;Note:&lt;/b&gt; If the value is not in the valid range (between &lt;code&gt;min&lt;/code&gt; and &lt;code&gt;max&lt;/code&gt;) it will be changed to be in the valid range.
+If it is smaller than &lt;code&gt;value&lt;/code&gt; it will be set to the same value.</documentation>
+        </property>
+        <property name="range" type="sap.ui.core/float[]" defaultValue="[0,100]" group="Data">
+            <documentation>Determines the currently selected range on the slider.
+
+If the value is lower/higher than the allowed minimum/maximum, a warning message will be output to the console.</documentation>
+        </property>
+    </properties>
+</control>

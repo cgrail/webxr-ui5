@@ -1,0 +1,17 @@
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	xmlns="sap.m" xmlns:core="sap.ui.core"
+	xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	xmlns:build="sap.build">
+	<template:with path="parameter>/settings/keyPerformanceIndicators" helper=".ALPHelper.getFilterableKPIs"  var="kpiContext">
+		<template:with path="kpiContext>filterableKPIs" var="kpis">
+			<template:if test="{= (Object.keys(${kpis>}).length === 0) &amp;&amp; (!${parameter>/settings/contentTitle}) }">
+				<OverflowToolbar id="template::contentViewExtension2Toolbar"  design="Transparent">
+					<ToolbarSpacer/>
+					<core:Fragment fragmentName="sap.suite.ui.generic.template.AnalyticalListPage.view.fragments.ContentViewButtons" type="XML"/>
+				</OverflowToolbar>
+			</template:if>
+		</template:with>
+	</template:with>
+	<ExtensionPoint name="AnalyticalListPageContentViewExtension2" xmlns="sap.ui.core">
+	</ExtensionPoint>
+</core:FragmentDefinition>

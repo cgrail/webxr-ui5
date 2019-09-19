@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ToolHeader</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The ToolHeader control is a horizontal container that is most
+commonly used to display buttons, labels, and other various input controls.
+&lt;h4&gt;Overview&lt;/h4&gt;
+The ToolHeader control is based on {@link sap.m.OverflowToolbar}. It contains clearly structured menus of commands that are available across the various apps within the same tool layout.
+&lt;h4&gt;Usage&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;If an app implements side navigation in addition to the tool header menu, the menu icon must be the first item on the left-hand side of the tool header.&lt;/li&gt;
+&lt;li&gt;The app menu and the side navigation must not have any dependencies and must work independently.&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+    <since>1.34</since>
+    <baseType>sap.m/OverflowToolbar</baseType>
+</control>

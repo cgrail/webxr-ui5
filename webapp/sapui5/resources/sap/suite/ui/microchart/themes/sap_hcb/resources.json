@@ -1,0 +1,86 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": ".theming",
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "AreaMicroChart.less",
+			"designtime": true,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "BulletMicroChart.less",
+			"designtime": true,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "ComparisonMicroChart.less",
+			"designtime": true,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "DeltaMicroChart.less",
+			"designtime": true,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "HarveyBallMicroChart.less",
+			"designtime": true,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "InteractiveBarChart.less",
+			"designtime": true,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "InteractiveDonutChart.less",
+			"designtime": true,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "InteractiveLineChart.less",
+			"designtime": true,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "RadialMicroChart.less",
+			"designtime": true,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "library-RTL-dbg.css",
+			"isDebug": true,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "library-RTL.css",
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "library-dbg.css",
+			"isDebug": true,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "library-parameters.json",
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "library.css",
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "library.less",
+			"designtime": true,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "library.source.less",
+			"designtime": true,
+			"theme": "sap_hcb"
+		}
+	]
+}

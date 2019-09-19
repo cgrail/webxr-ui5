@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>SVGLength</name>
+    <derived/>
+    <documentation>A length is a distance measurement, given as a number along with a unit.
+If unit is not provided, the length value represents a distance in the current user coordinate system.</documentation>
+    <baseType>any</baseType>
+    <final/>
+</simple-type>

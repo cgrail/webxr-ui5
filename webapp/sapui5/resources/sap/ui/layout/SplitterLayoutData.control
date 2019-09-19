@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>SplitterLayoutData</name>
+    <derived/>
+    <documentation>Holds layout data for the splitter contents.
+Allowed size values are numeric values ending in "px" and "%" and the
+special case "auto".
+(The CSS value "auto" is used internally to recalculate the size of the content
+dynamically and is not directly set as style property.)</documentation>
+    <since>1.22.0</since>
+    <developmentState state="experimental" since="1.22.0">API is not yet finished and might change completely</developmentState>
+    <baseType>sap.ui.core/LayoutData</baseType>
+    <properties>
+        <property name="resizable" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Determines whether the control in the splitter can be resized or not.</documentation>
+        </property>
+        <property name="size" type="sap.ui.core/CSSSize" defaultValue="auto" group="Dimension">
+            <documentation>Sets the size of the splitter content.</documentation>
+        </property>
+        <property name="minSize" type="sap.ui.core/int" defaultValue="0" group="Dimension">
+            <documentation>Sets the minimum size of the splitter content in px.</documentation>
+        </property>
+    </properties>
+</control>

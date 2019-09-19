@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ObjectPageConfigurationMode</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Used by the &lt;code&gt;sap.uxap.component.Component&lt;/code&gt; how to initialize the &lt;code&gt;ObjectPageLayout&lt;/code&gt; sections and subsections.</documentation>
+    <enumeration>
+        <value name="JsonURL">
+            <documentation>Determines the JSON URL.</documentation>
+        </value>
+        <value name="JsonModel">
+            <documentation>Determines the JSON model.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

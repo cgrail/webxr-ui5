@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>StepInput</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Allows the user to change the input values with predefined increments (steps).
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+
+The &lt;code&gt;StepInput&lt;/code&gt; consists of an input field and buttons with icons to increase/decrease the value.
+
+The user can change the value of the control by pressing the increase/decrease buttons,
+by typing a number directly, by using the keyboard up/down and page up/down,
+or by using the mouse scroll wheel. Decimal values are supported.
+
+&lt;h3&gt;Usage&lt;/h3&gt;
+
+The default step is 1 but the app developer can set a different one.
+
+On desktop, the control supports a larger step, when using the keyboard page up/down keys.
+You can set a multiple of the step with the use of the &lt;code&gt;largerStep&lt;/code&gt; property.
+The default value is 2 (two times the set step). For example, when using the keyboard page up/down keys
+the value increases/decreases with a double of the default step. If the set step is 2, the larger step is also 2
+and the current value is 1, using the page up key will increase the value to 5 (1 + 2*2).
+
+App developers can set a maximum and minimum value for the &lt;code&gt;StepInput&lt;/code&gt;.
+The increase/decrease button and the up/down keyboard navigation become disabled when
+the value reaches the max/min or a new value is entered from the input which is greater/less than the max/min.
+
+&lt;i&gt;When to use&lt;/i&gt;
+&lt;ul&gt;
+&lt;li&gt;To adjust amounts, quantities, or other values quickly.&lt;/li&gt;
+&lt;li&gt;To adjust values for a specific step.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;i&gt;When not to use&lt;/i&gt;
+&lt;ul&gt;
+&lt;li&gt;To enter a static number (for example, postal code, phone number, or ID). In this case,
+use the regular {@link sap.m.Input} instead.&lt;/li&gt;
+&lt;li&gt;To display a value that rarely needs to be adjusted and does not pertain to a particular step.
+In this case, use the regular {@link sap.m.Input} instead.&lt;/li&gt;
+&lt;li&gt;To enter dates and times. In this case, use the {@link sap.m.DatePicker}, {@link sap.m.DateRangeSelection},
+{@link sap.m.TimePicker}, or {@link sap.m.DateTimePicker} instead.&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+    <since>1.40</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="min" type="sap.ui.core/float" group="Data">
+            <documentation>Sets the minimum possible value of the defined range.</documentation>
+        </property>
+        <property name="max" type="sap.ui.core/float" group="Data">
+            <documentation>Sets the maximum possible value of the defined range.</documentation>
+        </property>
+        <property name="step" type="sap.ui.core/float" defaultValue="1" group="Data">
+            <documentation>Increases/decreases the value of the input.
+&lt;ul&gt;&lt;b&gt;Note:&lt;/b&gt; &lt;li&gt;The value of the &lt;code&gt;step&lt;/code&gt; property should not contain more digits after the decimal point than what is set to the &lt;code&gt;displayValuePrecision&lt;/code&gt; property, as it may lead to an increase/decrease that is not visible for the user. For example, if the &lt;code&gt;value&lt;/code&gt; is set to 1.22 and the &lt;code&gt;displayValuePrecision&lt;/code&gt; is set to one digit after the decimal, the user will see 1.2. In this case, if the &lt;code&gt;value&lt;/code&gt; of the &lt;code&gt;step&lt;/code&gt; property is set to 1.005 and the user selects &lt;code&gt;increase&lt;/code&gt;, the resulting value will increase to 1.2261 but the displayed value will remain as 1.2 as it will be rounded to the first digit after the decimal point.&lt;/li&gt; &lt;li&gt;Depending on what is set for the &lt;code&gt;value&lt;/code&gt; and the &lt;code&gt;displayValuePrecision&lt;/code&gt; properties, it is possible the displayed value to be rounded to a higher number, for example to 3.0 when the actual value is 2.99.&lt;/li&gt;&lt;/ul&gt;</documentation>
+        </property>
+        <property name="stepMode" type="sap.m/StepInputStepModeType" defaultValue="AdditionAndSubtraction" group="Data" since="1.54">
+            <documentation>Defines the calculation mode for the provided &lt;code&gt;step&lt;code&gt; and &lt;code&gt;largerStep&lt;/code&gt;.
+
+If the user increases/decreases the value by &lt;code&gt;largerStep&lt;/code&gt;, this calculation will consider
+it as well. For example, if the current &lt;code&gt;value&lt;/code&gt; is 3, &lt;code&gt;step&lt;/code&gt; is 5,
+&lt;code&gt;largerStep&lt;/code&gt; is 5 and the user chooses PageUp, the calculation logic will consider
+the value of 3x5=15 to decide what will be the next &lt;code&gt;value&lt;/code&gt;.</documentation>
+        </property>
+        <property name="largerStep" type="sap.ui.core/float" defaultValue="2" group="Data">
+            <documentation>Increases/decreases the value with a larger value than the set step only when using the PageUp/PageDown keys.
+Default value is 2 times larger than the set step.</documentation>
+        </property>
+        <property name="value" type="sap.ui.core/float" defaultValue="0" group="Data">
+            <documentation>Determines the value of the &lt;code&gt;StepInput&lt;/code&gt; and can be set initially from the app developer.</documentation>
+        </property>
+        <property name="name" type="sap.ui.core/string" group="Misc" since="1.44.15">
+            <documentation>Defines the name of the control for the purposes of form submission.</documentation>
+        </property>
+        <property name="placeholder" type="sap.ui.core/string" group="Misc" since="1.44.15">
+            <documentation>Defines a short hint intended to aid the user with data entry when the control has no value.</documentation>
+        </property>
+        <property name="required" type="sap.ui.core/boolean" defaultValue="false" group="Misc" since="1.44.15">
+            <documentation>Indicates that user input is required. This property is only needed for accessibility purposes when a single relationship between
+the field and a label (see aggregation &lt;code&gt;labelFor&lt;/code&gt; of &lt;code&gt;sap.m.Label&lt;/code&gt;) cannot be established
+(e.g. one label should label multiple fields).</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" group="Dimension">
+            <documentation>Defines the width of the control.</documentation>
+        </property>
+        <property name="valueState" type="sap.ui.core/ValueState" defaultValue="None" group="Data">
+            <documentation>Accepts the core enumeration ValueState.type that supports &lt;code&gt;None&lt;/code&gt;, &lt;code&gt;Error&lt;/code&gt;, &lt;code&gt;Warning&lt;/code&gt; and &lt;code&gt;Success&lt;/code&gt;.</documentation>
+        </property>
+        <property name="valueStateText" type="sap.ui.core/string" group="Misc" since="1.52">
+            <documentation>Defines the text that appears in the value state message pop-up.</documentation>
+        </property>
+        <property name="editable" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Defines whether the control can be modified by the user or not.
+&lt;b&gt;Note:&lt;/b&gt; A user can tab to the non-editable control, highlight it, and copy the text from it.</documentation>
+        </property>
+        <property name="enabled" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Indicates whether the user can interact with the control or not.
+&lt;b&gt;Note:&lt;/b&gt; Disabled controls cannot be focused and they are out of the tab-chain.</documentation>
+        </property>
+        <property name="displayValuePrecision" type="sap.ui.core/int" defaultValue="0" group="Data" since="1.46">
+            <documentation>Determines the number of digits after the decimal point.
+
+The value should be between 0 (default) and 20.
+In case the value is not valid it will be set to the default value.</documentation>
+        </property>
+        <property name="description" type="sap.ui.core/string" group="Misc" since="1.54">
+            <documentation>Determines the description text after the input field, for example units of measurement, currencies.</documentation>
+        </property>
+        <property name="fieldWidth" type="sap.ui.core/CSSSize" defaultValue="50%" group="Appearance" since="1.54">
+            <documentation>Determines the distribution of space between the input field
+and the description text . Default value is 50% (leaving the other
+50% for the description).
+
+&lt;b&gt;Note:&lt;/b&gt; This property takes effect only if the
+&lt;code&gt;description&lt;/code&gt; property is also set.</documentation>
+        </property>
+        <property name="textAlign" type="sap.ui.core/TextAlign" defaultValue="End" group="Appearance" since="1.54">
+            <documentation>Defines the horizontal alignment of the text that is displayed inside the input field.</documentation>
+        </property>
+        <property name="validationMode" type="sap.m/StepInputValidationMode" defaultValue="FocusOut" group="Misc" since="1.54">
+            <documentation>Defines when the validation of the typed value will happen. By default this happens on focus out.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="change" allowPreventDefault="false">
+            <documentation>Is fired when one of the following happens: &lt;br&gt;
+&lt;ol&gt;
+ &lt;li&gt;the text in the input has changed and the focus leaves the input field or the enter key
+ is pressed.&lt;/li&gt;
+ &lt;li&gt;One of the decrement or increment buttons is pressed&lt;/li&gt;
+&lt;/ol&gt;</documentation>
+            <parameters>
+                <parameter name="value" type="sap.ui.core/string">
+                    <documentation>The new &lt;code&gt;value&lt;/code&gt; of the &lt;code&gt;control&lt;/code&gt;.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="_input" type="sap.ui.core/Control" cardinality="0..1" visibility="hidden">
+            <documentation>Internal aggregation that contains the &lt;code&gt;Input&lt;/code&gt;.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / IDs that label this control (see WAI-ARIA attribute aria-labelledby).</documentation>
+        </association>
+        <association name="ariaDescribedBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / IDs which describe this control (see WAI-ARIA attribute aria-describedby).</documentation>
+        </association>
+    </associations>
+</control>

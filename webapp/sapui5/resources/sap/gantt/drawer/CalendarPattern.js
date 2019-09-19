@@ -1,0 +1,7 @@
+/*!
+ * SAP UI development toolkit for HTML5 (SAPUI5)
+
+		(c) Copyright 2009-2015 SAP SE. All rights reserved
+	
+ */
+sap.ui.define(["sap/ui/core/Core","sap/gantt/misc/Format","sap/ui/core/format/DateFormat","sap/gantt/drawer/Drawer","sap/gantt/misc/Utility","sap/ui/thirdparty/d3"],function(C,F,D,a,U){"use strict";var b=a.extend("sap.gantt.drawer.CalendarPattern");b.prototype.drawSvg=function(s,p,P,S,B){this._oStatusSet=S;if(P&&P.getDefNode()&&P.getDefNode().defNodes){var c=P.getDefNode();var e=p+"-calendardefs";var w=U.attributeEqualSelector("id",e);if(!(d3.select(w).empty())){jQuery(w).remove();}var f=this._oStatusSet.aViewBoundary[1]-this._oStatusSet.aViewBoundary[0];if(f<0){f=this._oStatusSet.aViewBoundary[0]-this._oStatusSet.aViewBoundary[1];}var g={height:B,width:f};var h=s.select(w);if(h.empty()){h=s.insert("defs",":first-child").attr("id",e);}var i=h.selectAll(".calendarPattern").data(c.defNodes);i.enter().append("pattern").attr("class","calendarPattern").attr("id",function(d){return d.id;}).attr("patternUnits","userSpaceOnUse").attr("x",0).attr("y",0).attr("width",g.width).attr("height",g.height);i.exit().remove();var j=i.selectAll("rect").data(function(){return this.parentNode.__data__.timeIntervals;});j.enter().append("rect");j.attr("x",function(d){return d.x;}).attr("y",function(d){return d.y;}).attr("width",function(d){return d.width;}).attr("height",g.height).attr("fill",function(d){return d.fill;});j.exit().remove();}};return b;},true);

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>PlanningCalendarStickyMode</name>
+    <derived/>
+    <documentation>Available sticky modes for the {@link sap.m.SinglePlanningCalendar}</documentation>
+    <since>1.62</since>
+    <enumeration>
+        <value name="None">
+            <documentation>Nothing will stick at the top.</documentation>
+        </value>
+        <value name="All">
+            <documentation>Actions toolbar, navigation toolbar and the column headers will be sticky.</documentation>
+        </value>
+        <value name="NavBarAndColHeaders">
+            <documentation>Only the navigation toolbar and column headers will be sticky.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

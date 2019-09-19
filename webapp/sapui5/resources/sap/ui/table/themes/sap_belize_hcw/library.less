@@ -1,0 +1,136 @@
+/* NOTE: This file was generated as an optimized version of "library.source.less" for the Theme Designer. */
+
+/*!
+ * OpenUI5
+ * (c) Copyright 2009-2019 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+
+@import "../base/library.less";
+@import "../../../../../../Base/baseLib/sap_belize_hcw/base.less"; /* ORIGINAL IMPORT PATH: "../../../../../sap/ui/core/themes/sap_belize_hcw/base.less" */
+
+@import "../../../../../sap/ui/core/themes/sap_belize_hcw/global.less";
+
+/* shared local library less parameters */
+@_sap_ui_table_FocusOutlineWidth: 2px;
+
+/* START "Table.less" */
+/* =================================== */
+/* CSS for control sap.ui.table/Table  */
+/* Belize High Contrast White theme    */
+/* =================================== */
+
+@_sap_ui_table_Table_FocusOutlineOffset: -3px;
+
+.sapUiTableHdr {
+	border-bottom: 3px solid @sapUiListHeaderBorderColor;
+}
+
+.sapUiTableTbr,
+.sapUiTableExt {
+	border-bottom: 1px solid @sapUiListHeaderBorderColor;
+	padding: 0.125rem;
+	box-sizing: content-box;
+}
+
+.sapUiTableCnt {
+	border: 1px solid @sapUiListBorderColor;
+}
+
+.sapUiTableColHdrCnt {
+	border-bottom-width: 3px;
+}
+/* END "Table.less" */
+
+/* START "Row.less" */
+/* ================================= */
+/* CSS for control sap.ui.table/Row  */
+/* Belize High Contrast White theme  */
+/* ================================= */
+
+.sapUiTableRowHvr {
+	color: @sapUiContentContrastTextColor;
+}
+/* END "Row.less" */
+
+/* START "Cell.less" */
+/* ================================= */
+/* CSS for sap.ui.table/Cell         */
+/* Belize High Contrast White theme  */
+/* ================================= */
+
+.sapUiTableHeaderCell:not(.sapUiTableRowActionHeaderCell) {
+	&:hover {
+		background-color: @sapUiListHoverBackground;
+	}
+}
+/* END "Cell.less" */
+
+/* START "RowHighlight.less" */
+/* ================================== */
+/* CSS for sap.ui.table/RowHighlight  */
+/* Belize High Contrast White theme   */
+/* ================================== */
+
+.sapUiTableRowHighlight {
+	&.sapUiTableRowHighlightInformation {
+		background-color: @sapUiAccent6;
+	}
+}
+/* END "RowHighlight.less" */
+
+/* START "RowSelection.less" */
+/* ================================== */
+/* CSS for sap.ui.table/RowSelection  */
+/* Belize High Contrast White theme   */
+/* ================================== */
+
+.sapUiTableSelectAllCheckBox,
+.sapUiTableRowSelectionCell {
+	&::before {
+		color: @sapUiContentIconColor;
+	}
+}
+/* END "RowSelection.less" */
+
+/* START "Scrolling.less" */
+/* ================================= */
+/* CSS for sap.ui.table/Scrolling    */
+/* Belize High Contrast White theme  */
+/* ================================= */
+
+html.sap-desktop {
+
+	.sapUiTableHSb::-webkit-scrollbar,
+	.sapUiTableVSb::-webkit-scrollbar {
+		width: @_sap_ui_table_Scrolling_ScrollbarSize;
+		height: @_sap_ui_table_Scrolling_ScrollbarSize;
+		border: none;
+	}
+
+	.sapUiTableHSb::-webkit-scrollbar-thumb,
+	.sapUiTableVSb::-webkit-scrollbar-thumb {
+		border: none;
+		box-shadow: none;
+	}
+
+}
+/* END "Scrolling.less" */
+
+/* START "DragDrop.less" */
+/* ================================= */
+/* CSS for sap.ui.table/DragDrop     */
+/* Belize High Contrast White theme  */
+/* ================================= */
+
+@_sap_ui_table_DragDrop_ColumnDnDHighlightColor: @sapUiContentHelpColor;
+/* END "DragDrop.less" */
+
+/* START "Grouping.less" */
+/* ================================= */
+/* CSS for sap.ui.table/Grouping     */
+/* Belize High Contrast White theme  */
+/* ================================= */
+
+@_sap_ui_table_Grouping_GroupIconBorderWidth: 3px;
+/* END "Grouping.less" */

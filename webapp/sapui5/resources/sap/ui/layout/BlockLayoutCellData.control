@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>BlockLayoutCellData</name>
+    <derived/>
+    <documentation>Holds layout data for the BlockLayoutCells contents.</documentation>
+    <since>1.50.0</since>
+    <baseType>sap.ui.core/LayoutData</baseType>
+    <properties>
+        <property name="sSize" type="sap.ui.core/int" defaultValue="1" group="Appearance">
+            <documentation>Sets the width of the cell for S size of the BlockLayout.</documentation>
+        </property>
+        <property name="mSize" type="sap.ui.core/int" defaultValue="1" group="Appearance">
+            <documentation>Sets the width of the cell for M size of the BlockLayout.</documentation>
+        </property>
+        <property name="lSize" type="sap.ui.core/int" defaultValue="1" group="Appearance">
+            <documentation>Sets the width of the cell for L size of the BlockLayout.</documentation>
+        </property>
+        <property name="xlSize" type="sap.ui.core/int" defaultValue="1" group="Appearance">
+            <documentation>Sets the width of the cell for XL size of the BlockLayout.</documentation>
+        </property>
+    </properties>
+</control>

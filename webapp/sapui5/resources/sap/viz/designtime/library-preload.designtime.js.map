@@ -1,0 +1,9 @@
+{
+"version":3,
+"file":"sap/viz/designtime/library-preload.designtime.js",
+"sourceroot":".",
+"sources":["FlattenedDataset.designtime-dbg.js"],
+"names":[],
+"mappings":";;;;;;AAOA,gBAAa,kDAAC,GACb,QAAS,EAAG,CACX,aAEA,MAAO,CACN,aAAc,CACb,KAAM,CACL,OAAQ,IACT,CACD,CACD,EACD,EAAkB;",
+"x_com_sap_openui5_sections":[63,279]
+}

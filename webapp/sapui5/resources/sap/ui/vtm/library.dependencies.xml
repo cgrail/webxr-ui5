@@ -1,0 +1,819 @@
+<?xml version="1.0" ?>
+<library  version="2.0" name="sap.ui.vtm">
+  <module name="sap/ui/vtm/ArrayUtilities.js" size="14105" compressedSize="2416">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/CheckEye.js" size="1876" compressedSize="721">
+    <description>Provides control sap.ui.vtm.CheckEye.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/core/Icon.js"/>
+      <module name="sap/ui/core/IconRenderer.js"/>
+      <module name="sap/ui/vtm/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/ChildCollectionType.js" size="1651" compressedSize="339">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/Column.js" size="7435" compressedSize="1365">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/commons/Label.js"/>
+      <module name="sap/ui/core/Element.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/ColumnTemplates.js" size="15351" compressedSize="4694">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/ColumnType.js" size="2063" compressedSize="309">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/DescriptorUtilities.js" size="1845" compressedSize="385">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/DisplayGroup.js" size="2921" compressedSize="354">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/core/Element.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/Extension.js" size="7256" compressedSize="1553">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/core/Element.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/HashUtilities.js" size="3943" compressedSize="651">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/InternalColumnDescriptor.js" size="2558" compressedSize="487">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/InternalColumns.js" size="9459" compressedSize="3073">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/vtm/ColumnType.js"/>
+      <module name="sap/ui/vtm/InternalColumnDescriptor.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/Lookup.js" size="6043" compressedSize="949">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/core/Element.js"/>
+      <module name="sap/ui/vtm/ArrayUtilities.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/MatrixComponent.js" size="2565" compressedSize="350">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/MatrixUtilities.js" size="21197" compressedSize="3972">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/MessagesPopover.js" size="6810" compressedSize="2788">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/m/List.js"/>
+      <module name="sap/m/Popover.js"/>
+      <module name="sap/m/PopoverRenderer.js"/>
+      <module name="sap/ui/vtm/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/Panel.js" size="26494" compressedSize="8962">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/m/VBox.js"/>
+      <module name="sap/ui/commons/Panel.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/core/Title.js"/>
+      <module name="sap/ui/layout/Splitter.js"/>
+      <module name="sap/ui/vtm/Tree.js"/>
+      <module name="sap/ui/vtm/Viewport.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/PredefinedView.js" size="1772" compressedSize="269">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/Progress.js" size="2725" compressedSize="1036">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/m/ProgressIndicator.js"/>
+      <module name="sap/m/Text.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/ProgressDialog.js" size="4033" compressedSize="1267">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/m/Dialog.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/vtm/Progress.js"/>
+      <module name="sap/ui/vtm/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/Scene.js" size="47171" compressedSize="11991">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/core/Element.js"/>
+      <module name="sap/ui/vk/NodeHierarchy.js"/>
+      <module name="sap/ui/vk/Scene.js"/>
+      <module name="sap/ui/vk/dvl/GraphicsCore.js"/>
+      <module name="sap/ui/vtm/ArrayUtilities.js"/>
+      <module name="sap/ui/vtm/SceneNode.js"/>
+      <module name="sap/ui/vtm/ViewableLoadInfo.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/SceneNode.js" size="11450" compressedSize="2512">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/core/Element.js"/>
+      <module name="sap/ui/vk/NodeProxy.js"/>
+      <module name="sap/ui/vtm/ArrayUtilities.js"/>
+      <module name="sap/ui/vtm/MatrixUtilities.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/SelectColumnsDialog.js" size="10609" compressedSize="3634">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/m/TableSelectDialog.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/vtm/ColumnType.js"/>
+      <module name="sap/ui/vtm/InternalColumns.js"/>
+      <module name="sap/ui/vtm/Progress.js"/>
+      <module name="sap/ui/vtm/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/SelectionMode.js" size="1394" compressedSize="333">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/Text.js" size="2004" compressedSize="626">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/m/Text.js"/>
+      <module name="sap/m/TextRenderer.js"/>
+      <module name="sap/ui/vtm/TextColor.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/TextColor.js" size="1035" compressedSize="267">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/Tree.js" size="99431" compressedSize="21965">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/commons/TextView.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/core/Icon.js"/>
+      <module name="sap/ui/core/IconPool.js"/>
+      <module name="sap/ui/layout/HorizontalLayout.js"/>
+      <module name="sap/ui/model/json/JSONModel.js"/>
+      <module name="sap/ui/table/TreeTable.js"/>
+      <module name="sap/ui/vtm/ArrayUtilities.js"/>
+      <module name="sap/ui/vtm/CheckEye.js"/>
+      <module name="sap/ui/vtm/Column.js"/>
+      <module name="sap/ui/vtm/ColumnType.js"/>
+      <module name="sap/ui/vtm/InternalColumnDescriptor.js"/>
+      <module name="sap/ui/vtm/InternalColumns.js"/>
+      <module name="sap/ui/vtm/Lookup.js"/>
+      <module name="sap/ui/vtm/MatrixUtilities.js"/>
+      <module name="sap/ui/vtm/SelectionMode.js"/>
+      <module name="sap/ui/vtm/Text.js"/>
+      <module name="sap/ui/vtm/TreeItemUtilities.js"/>
+      <module name="sap/ui/vtm/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/TreeCollections.js" size="21338" compressedSize="4858">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/core/Element.js"/>
+      <module name="sap/ui/vtm/ArrayUtilities.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/TreeItemType.js" size="1574" compressedSize="311">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/TreeItemUtilities.js" size="48098" compressedSize="9497">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/core/Message.js"/>
+      <module name="sap/ui/vtm/ArrayUtilities.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/Viewable.js" size="4664" compressedSize="1156">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/core/Element.js"/>
+      <module name="sap/ui/vk/ContentResource.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/ViewableLoadInfo.js" size="2716" compressedSize="417">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/core/Element.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/ViewableLoadStatus.js" size="1740" compressedSize="383">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/Viewport.js" size="40864" compressedSize="10758">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/m/OverflowToolbar.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/vk/FlexibleControl.js"/>
+      <module name="sap/ui/vk/FlexibleControlLayoutData.js"/>
+      <module name="sap/ui/vk/dvl/Viewport.js"/>
+      <module name="sap/ui/vtm/ViewportHandler.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/ViewportHandler.js" size="2025" compressedSize="799">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/vk/ViewportHandler.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/Vtm.js" size="12243" compressedSize="3082">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/m/Toolbar.js"/>
+      <module name="sap/ui/core/Element.js"/>
+      <module name="sap/ui/vtm/ArrayUtilities.js"/>
+      <module name="sap/ui/vtm/Panel.js"/>
+      <module name="sap/ui/vtm/Scene.js"/>
+      <module name="sap/ui/vtm/Viewable.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/extensions/DisplayStateCalculationExtension.js" size="12802" compressedSize="3967">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/vtm/Extension.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/extensions/InitialViewExtension.js" size="3578" compressedSize="958">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/vtm/Extension.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/extensions/LoadProgressExtension.js" size="7846" compressedSize="3780">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/vtm/Extension.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/extensions/MessageStatusCalculationExtension.js" size="15341" compressedSize="5241">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/vtm/Extension.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/extensions/MessageStatusIconClickExtension.js" size="2950" compressedSize="916">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/vtm/Extension.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/extensions/SceneNodeHoverHighlightExtension.js" size="5668" compressedSize="1609">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/vtm/Extension.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/extensions/SceneNodeHoverTooltipExtension.js" size="7278" compressedSize="2025">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/vtm/Extension.js"/>
+      <module name="sap/ui/vtm/ViewportHandler.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/extensions/SelectionLinkingExtension.js" size="5731" compressedSize="1676">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/vtm/Extension.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/extensions/ViewLinkingExtension.js" size="3557" compressedSize="1231">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/vtm/Extension.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/extensions/ViewportSelectionLinkingExtension.js" size="4495" compressedSize="1374">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/vtm/Extension.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/extensions/VisibilityIconClickExtension.js" size="3805" compressedSize="1239">
+    <description>! SAP UI development toolkit for HTML5 (SAPUI5)&#xA;&#xA;        (c) Copyright 2009-2015 SAP SE. All rights reserved</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/vtm/Extension.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle.properties" size="4669">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_ar.properties" size="6793">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_bg.properties" size="7799">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_ca.properties" size="4910">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_cs.properties" size="5059">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_da.properties" size="4794">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_de.properties" size="4835">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_el.properties" size="7657">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_en.properties" size="4611">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_en_US_sappsd.properties" size="9172">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_en_US_saptrc.properties" size="5692">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_es.properties" size="4927">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_et.properties" size="4846">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_fi.properties" size="5016">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_fr.properties" size="5106">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_hi.properties" size="7353">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_hr.properties" size="4799">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_hu.properties" size="5236">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_it.properties" size="4933">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_iw.properties" size="6518">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_ja.properties" size="5804">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_kk.properties" size="8337">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_ko.properties" size="5465">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_lt.properties" size="5118">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_lv.properties" size="5130">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_ms.properties" size="4695">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_nl.properties" size="4857">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_no.properties" size="4788">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_pl.properties" size="5227">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_pt.properties" size="4864">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_ro.properties" size="4875">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_ru.properties" size="8064">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_sh.properties" size="4776">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_sk.properties" size="5070">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_sl.properties" size="4857">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_sv.properties" size="4872">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_th.properties" size="7212">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_tr.properties" size="5391">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_uk.properties" size="7985">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_vi.properties" size="5832">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_zh_CN.properties" size="5161">
+  </module>
+  <module name="sap/ui/vtm/i18n/messagebundle_zh_TW.properties" size="5209">
+  </module>
+  <module name="sap/ui/vtm/library-h2-preload.js" size="11835">
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/m/Dialog.js"/>
+      <module name="sap/m/List.js"/>
+      <module name="sap/m/OverflowToolbar.js"/>
+      <module name="sap/m/Popover.js"/>
+      <module name="sap/m/PopoverRenderer.js"/>
+      <module name="sap/m/ProgressIndicator.js"/>
+      <module name="sap/m/TableSelectDialog.js"/>
+      <module name="sap/m/Text.js"/>
+      <module name="sap/m/TextRenderer.js"/>
+      <module name="sap/m/Toolbar.js"/>
+      <module name="sap/m/VBox.js"/>
+      <module name="sap/ui/base/DataType.js"/>
+      <module name="sap/ui/commons/Label.js"/>
+      <module name="sap/ui/commons/Panel.js"/>
+      <module name="sap/ui/commons/TextView.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/core/Element.js"/>
+      <module name="sap/ui/core/Icon.js"/>
+      <module name="sap/ui/core/IconPool.js"/>
+      <module name="sap/ui/core/IconRenderer.js"/>
+      <module name="sap/ui/core/Message.js"/>
+      <module name="sap/ui/core/Title.js"/>
+      <module name="sap/ui/layout/HorizontalLayout.js"/>
+      <module name="sap/ui/layout/Splitter.js"/>
+      <module name="sap/ui/model/json/JSONModel.js"/>
+      <module name="sap/ui/table/TreeTable.js"/>
+      <module name="sap/ui/vk/ContentResource.js"/>
+      <module name="sap/ui/vk/FlexibleControl.js"/>
+      <module name="sap/ui/vk/FlexibleControlLayoutData.js"/>
+      <module name="sap/ui/vk/NodeHierarchy.js"/>
+      <module name="sap/ui/vk/NodeProxy.js"/>
+      <module name="sap/ui/vk/Scene.js"/>
+      <module name="sap/ui/vk/ViewportHandler.js"/>
+      <module name="sap/ui/vk/dvl/GraphicsCore.js"/>
+      <module name="sap/ui/vk/dvl/Viewport.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+    <includes>
+      <module name="sap/ui/vtm/library.js"/>
+      <module name="sap/ui/vtm/manifest.json"/>
+      <module name="sap/ui/vtm/ArrayUtilities.js"/>
+      <module name="sap/ui/vtm/CheckEye.js"/>
+      <module name="sap/ui/vtm/ChildCollectionType.js"/>
+      <module name="sap/ui/vtm/Column.js"/>
+      <module name="sap/ui/vtm/ColumnTemplates.js"/>
+      <module name="sap/ui/vtm/ColumnType.js"/>
+      <module name="sap/ui/vtm/DescriptorUtilities.js"/>
+      <module name="sap/ui/vtm/DisplayGroup.js"/>
+      <module name="sap/ui/vtm/Extension.js"/>
+      <module name="sap/ui/vtm/HashUtilities.js"/>
+      <module name="sap/ui/vtm/InternalColumnDescriptor.js"/>
+      <module name="sap/ui/vtm/InternalColumns.js"/>
+      <module name="sap/ui/vtm/Lookup.js"/>
+      <module name="sap/ui/vtm/MatrixComponent.js"/>
+      <module name="sap/ui/vtm/MatrixUtilities.js"/>
+      <module name="sap/ui/vtm/MessagesPopover.js"/>
+      <module name="sap/ui/vtm/Panel.js"/>
+      <module name="sap/ui/vtm/PredefinedView.js"/>
+      <module name="sap/ui/vtm/Progress.js"/>
+      <module name="sap/ui/vtm/ProgressDialog.js"/>
+      <module name="sap/ui/vtm/Scene.js"/>
+      <module name="sap/ui/vtm/SceneNode.js"/>
+      <module name="sap/ui/vtm/SelectColumnsDialog.js"/>
+      <module name="sap/ui/vtm/SelectionMode.js"/>
+      <module name="sap/ui/vtm/Text.js"/>
+      <module name="sap/ui/vtm/TextColor.js"/>
+      <module name="sap/ui/vtm/Tree.js"/>
+      <module name="sap/ui/vtm/TreeCollections.js"/>
+      <module name="sap/ui/vtm/TreeItemType.js"/>
+      <module name="sap/ui/vtm/TreeItemUtilities.js"/>
+      <module name="sap/ui/vtm/Viewable.js"/>
+      <module name="sap/ui/vtm/ViewableLoadInfo.js"/>
+      <module name="sap/ui/vtm/ViewableLoadStatus.js"/>
+      <module name="sap/ui/vtm/Viewport.js"/>
+      <module name="sap/ui/vtm/ViewportHandler.js"/>
+      <module name="sap/ui/vtm/Vtm.js"/>
+      <module name="sap/ui/vtm/extensions/DisplayStateCalculationExtension.js"/>
+      <module name="sap/ui/vtm/extensions/InitialViewExtension.js"/>
+      <module name="sap/ui/vtm/extensions/LoadProgressExtension.js"/>
+      <module name="sap/ui/vtm/extensions/MessageStatusCalculationExtension.js"/>
+      <module name="sap/ui/vtm/extensions/MessageStatusIconClickExtension.js"/>
+      <module name="sap/ui/vtm/extensions/SceneNodeHoverHighlightExtension.js"/>
+      <module name="sap/ui/vtm/extensions/SceneNodeHoverTooltipExtension.js"/>
+      <module name="sap/ui/vtm/extensions/SelectionLinkingExtension.js"/>
+      <module name="sap/ui/vtm/extensions/ViewLinkingExtension.js"/>
+      <module name="sap/ui/vtm/extensions/ViewportSelectionLinkingExtension.js"/>
+      <module name="sap/ui/vtm/extensions/VisibilityIconClickExtension.js"/>
+    </includes>
+  </module>
+  <module name="sap/ui/vtm/library-preload.js" size="135000">
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/m/Dialog.js"/>
+      <module name="sap/m/List.js"/>
+      <module name="sap/m/OverflowToolbar.js"/>
+      <module name="sap/m/Popover.js"/>
+      <module name="sap/m/PopoverRenderer.js"/>
+      <module name="sap/m/ProgressIndicator.js"/>
+      <module name="sap/m/TableSelectDialog.js"/>
+      <module name="sap/m/Text.js"/>
+      <module name="sap/m/TextRenderer.js"/>
+      <module name="sap/m/Toolbar.js"/>
+      <module name="sap/m/VBox.js"/>
+      <module name="sap/ui/base/DataType.js"/>
+      <module name="sap/ui/commons/Label.js"/>
+      <module name="sap/ui/commons/Panel.js"/>
+      <module name="sap/ui/commons/TextView.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/core/Element.js"/>
+      <module name="sap/ui/core/Icon.js"/>
+      <module name="sap/ui/core/IconPool.js"/>
+      <module name="sap/ui/core/IconRenderer.js"/>
+      <module name="sap/ui/core/Message.js"/>
+      <module name="sap/ui/core/Title.js"/>
+      <module name="sap/ui/layout/HorizontalLayout.js"/>
+      <module name="sap/ui/layout/Splitter.js"/>
+      <module name="sap/ui/model/json/JSONModel.js"/>
+      <module name="sap/ui/table/TreeTable.js"/>
+      <module name="sap/ui/vk/ContentResource.js"/>
+      <module name="sap/ui/vk/FlexibleControl.js"/>
+      <module name="sap/ui/vk/FlexibleControlLayoutData.js"/>
+      <module name="sap/ui/vk/NodeHierarchy.js"/>
+      <module name="sap/ui/vk/NodeProxy.js"/>
+      <module name="sap/ui/vk/Scene.js"/>
+      <module name="sap/ui/vk/ViewportHandler.js"/>
+      <module name="sap/ui/vk/dvl/GraphicsCore.js"/>
+      <module name="sap/ui/vk/dvl/Viewport.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+    <includes>
+      <module name="sap/ui/vtm/ArrayUtilities.js"/>
+      <module name="sap/ui/vtm/CheckEye.js"/>
+      <module name="sap/ui/vtm/ChildCollectionType.js"/>
+      <module name="sap/ui/vtm/Column.js"/>
+      <module name="sap/ui/vtm/ColumnTemplates.js"/>
+      <module name="sap/ui/vtm/ColumnType.js"/>
+      <module name="sap/ui/vtm/DescriptorUtilities.js"/>
+      <module name="sap/ui/vtm/DisplayGroup.js"/>
+      <module name="sap/ui/vtm/Extension.js"/>
+      <module name="sap/ui/vtm/HashUtilities.js"/>
+      <module name="sap/ui/vtm/InternalColumnDescriptor.js"/>
+      <module name="sap/ui/vtm/InternalColumns.js"/>
+      <module name="sap/ui/vtm/Lookup.js"/>
+      <module name="sap/ui/vtm/MatrixComponent.js"/>
+      <module name="sap/ui/vtm/MatrixUtilities.js"/>
+      <module name="sap/ui/vtm/MessagesPopover.js"/>
+      <module name="sap/ui/vtm/Panel.js"/>
+      <module name="sap/ui/vtm/PredefinedView.js"/>
+      <module name="sap/ui/vtm/Progress.js"/>
+      <module name="sap/ui/vtm/ProgressDialog.js"/>
+      <module name="sap/ui/vtm/Scene.js"/>
+      <module name="sap/ui/vtm/SceneNode.js"/>
+      <module name="sap/ui/vtm/SelectColumnsDialog.js"/>
+      <module name="sap/ui/vtm/SelectionMode.js"/>
+      <module name="sap/ui/vtm/Text.js"/>
+      <module name="sap/ui/vtm/TextColor.js"/>
+      <module name="sap/ui/vtm/Tree.js"/>
+      <module name="sap/ui/vtm/TreeCollections.js"/>
+      <module name="sap/ui/vtm/TreeItemType.js"/>
+      <module name="sap/ui/vtm/TreeItemUtilities.js"/>
+      <module name="sap/ui/vtm/Viewable.js"/>
+      <module name="sap/ui/vtm/ViewableLoadInfo.js"/>
+      <module name="sap/ui/vtm/ViewableLoadStatus.js"/>
+      <module name="sap/ui/vtm/Viewport.js"/>
+      <module name="sap/ui/vtm/ViewportHandler.js"/>
+      <module name="sap/ui/vtm/Vtm.js"/>
+      <module name="sap/ui/vtm/extensions/DisplayStateCalculationExtension.js"/>
+      <module name="sap/ui/vtm/extensions/InitialViewExtension.js"/>
+      <module name="sap/ui/vtm/extensions/LoadProgressExtension.js"/>
+      <module name="sap/ui/vtm/extensions/MessageStatusCalculationExtension.js"/>
+      <module name="sap/ui/vtm/extensions/MessageStatusIconClickExtension.js"/>
+      <module name="sap/ui/vtm/extensions/SceneNodeHoverHighlightExtension.js"/>
+      <module name="sap/ui/vtm/extensions/SceneNodeHoverTooltipExtension.js"/>
+      <module name="sap/ui/vtm/extensions/SelectionLinkingExtension.js"/>
+      <module name="sap/ui/vtm/extensions/ViewLinkingExtension.js"/>
+      <module name="sap/ui/vtm/extensions/ViewportSelectionLinkingExtension.js"/>
+      <module name="sap/ui/vtm/extensions/VisibilityIconClickExtension.js"/>
+      <module name="sap/ui/vtm/library.js"/>
+      <module name="sap/ui/vtm/manifest.json"/>
+    </includes>
+  </module>
+  <module name="sap/ui/vtm/library-preload.json" size="0">
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/m/Dialog.js"/>
+      <module name="sap/m/List.js"/>
+      <module name="sap/m/OverflowToolbar.js"/>
+      <module name="sap/m/Popover.js"/>
+      <module name="sap/m/PopoverRenderer.js"/>
+      <module name="sap/m/ProgressIndicator.js"/>
+      <module name="sap/m/TableSelectDialog.js"/>
+      <module name="sap/m/Text.js"/>
+      <module name="sap/m/TextRenderer.js"/>
+      <module name="sap/m/Toolbar.js"/>
+      <module name="sap/m/VBox.js"/>
+      <module name="sap/ui/base/DataType.js"/>
+      <module name="sap/ui/commons/Label.js"/>
+      <module name="sap/ui/commons/Panel.js"/>
+      <module name="sap/ui/commons/TextView.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/core/Element.js"/>
+      <module name="sap/ui/core/Icon.js"/>
+      <module name="sap/ui/core/IconPool.js"/>
+      <module name="sap/ui/core/IconRenderer.js"/>
+      <module name="sap/ui/core/Message.js"/>
+      <module name="sap/ui/core/Title.js"/>
+      <module name="sap/ui/core/library-preload.json"/>
+      <module name="sap/ui/layout/HorizontalLayout.js"/>
+      <module name="sap/ui/layout/Splitter.js"/>
+      <module name="sap/ui/model/json/JSONModel.js"/>
+      <module name="sap/ui/table/TreeTable.js"/>
+      <module name="sap/ui/vk/ContentResource.js"/>
+      <module name="sap/ui/vk/FlexibleControl.js"/>
+      <module name="sap/ui/vk/FlexibleControlLayoutData.js"/>
+      <module name="sap/ui/vk/NodeHierarchy.js"/>
+      <module name="sap/ui/vk/NodeProxy.js"/>
+      <module name="sap/ui/vk/Scene.js"/>
+      <module name="sap/ui/vk/ViewportHandler.js"/>
+      <module name="sap/ui/vk/dvl/GraphicsCore.js"/>
+      <module name="sap/ui/vk/dvl/Viewport.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+    <includes>
+      <module name="sap/ui/vtm/ArrayUtilities.js"/>
+      <module name="sap/ui/vtm/CheckEye.js"/>
+      <module name="sap/ui/vtm/ChildCollectionType.js"/>
+      <module name="sap/ui/vtm/Column.js"/>
+      <module name="sap/ui/vtm/ColumnTemplates.js"/>
+      <module name="sap/ui/vtm/ColumnType.js"/>
+      <module name="sap/ui/vtm/DescriptorUtilities.js"/>
+      <module name="sap/ui/vtm/DisplayGroup.js"/>
+      <module name="sap/ui/vtm/Extension.js"/>
+      <module name="sap/ui/vtm/HashUtilities.js"/>
+      <module name="sap/ui/vtm/InternalColumnDescriptor.js"/>
+      <module name="sap/ui/vtm/InternalColumns.js"/>
+      <module name="sap/ui/vtm/Lookup.js"/>
+      <module name="sap/ui/vtm/MatrixComponent.js"/>
+      <module name="sap/ui/vtm/MatrixUtilities.js"/>
+      <module name="sap/ui/vtm/MessagesPopover.js"/>
+      <module name="sap/ui/vtm/Panel.js"/>
+      <module name="sap/ui/vtm/PredefinedView.js"/>
+      <module name="sap/ui/vtm/Progress.js"/>
+      <module name="sap/ui/vtm/ProgressDialog.js"/>
+      <module name="sap/ui/vtm/Scene.js"/>
+      <module name="sap/ui/vtm/SceneNode.js"/>
+      <module name="sap/ui/vtm/SelectColumnsDialog.js"/>
+      <module name="sap/ui/vtm/SelectionMode.js"/>
+      <module name="sap/ui/vtm/Text.js"/>
+      <module name="sap/ui/vtm/TextColor.js"/>
+      <module name="sap/ui/vtm/Tree.js"/>
+      <module name="sap/ui/vtm/TreeCollections.js"/>
+      <module name="sap/ui/vtm/TreeItemType.js"/>
+      <module name="sap/ui/vtm/TreeItemUtilities.js"/>
+      <module name="sap/ui/vtm/Viewable.js"/>
+      <module name="sap/ui/vtm/ViewableLoadInfo.js"/>
+      <module name="sap/ui/vtm/ViewableLoadStatus.js"/>
+      <module name="sap/ui/vtm/Viewport.js"/>
+      <module name="sap/ui/vtm/ViewportHandler.js"/>
+      <module name="sap/ui/vtm/Vtm.js"/>
+      <module name="sap/ui/vtm/extensions/DisplayStateCalculationExtension.js"/>
+      <module name="sap/ui/vtm/extensions/InitialViewExtension.js"/>
+      <module name="sap/ui/vtm/extensions/LoadProgressExtension.js"/>
+      <module name="sap/ui/vtm/extensions/MessageStatusCalculationExtension.js"/>
+      <module name="sap/ui/vtm/extensions/MessageStatusIconClickExtension.js"/>
+      <module name="sap/ui/vtm/extensions/SceneNodeHoverHighlightExtension.js"/>
+      <module name="sap/ui/vtm/extensions/SceneNodeHoverTooltipExtension.js"/>
+      <module name="sap/ui/vtm/extensions/SelectionLinkingExtension.js"/>
+      <module name="sap/ui/vtm/extensions/ViewLinkingExtension.js"/>
+      <module name="sap/ui/vtm/extensions/ViewportSelectionLinkingExtension.js"/>
+      <module name="sap/ui/vtm/extensions/VisibilityIconClickExtension.js"/>
+      <module name="sap/ui/vtm/library.js"/>
+      <module name="sap/ui/vtm/manifest.json"/>
+    </includes>
+  </module>
+  <module name="sap/ui/vtm/library.js" size="17535" compressedSize="3247">
+    <description>Initialization Code and shared classes of library sap.ui.vtm.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/base/DataType.js"/>
+      <module name="sap/ui/vtm/ArrayUtilities.js"/>
+      <module name="sap/ui/vtm/ChildCollectionType.js"/>
+      <module name="sap/ui/vtm/ColumnTemplates.js"/>
+      <module name="sap/ui/vtm/ColumnType.js"/>
+      <module name="sap/ui/vtm/DescriptorUtilities.js"/>
+      <module name="sap/ui/vtm/HashUtilities.js"/>
+      <module name="sap/ui/vtm/InternalColumnDescriptor.js"/>
+      <module name="sap/ui/vtm/InternalColumns.js"/>
+      <module name="sap/ui/vtm/MatrixComponent.js"/>
+      <module name="sap/ui/vtm/MatrixUtilities.js"/>
+      <module name="sap/ui/vtm/PredefinedView.js"/>
+      <module name="sap/ui/vtm/SelectionMode.js"/>
+      <module name="sap/ui/vtm/TextColor.js"/>
+      <module name="sap/ui/vtm/TreeItemType.js"/>
+      <module name="sap/ui/vtm/TreeItemUtilities.js"/>
+      <module name="sap/ui/vtm/ViewableLoadStatus.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/vtm/manifest.json" size="3431">
+  </module>
+</library>

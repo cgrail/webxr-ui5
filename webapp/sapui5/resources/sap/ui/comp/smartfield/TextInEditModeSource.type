@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartfield/TextInEditModeSource</name>
+    <derived/>
+    <documentation>Enumeration of sources from which text values for &lt;code&gt;Codes&lt;/code&gt;/&lt;code&gt;IDs&lt;/code&gt; are fetched in edit mode. The text is usually
+visualized as description/text value for IDs, for example, for LT (Laptop).</documentation>
+    <since>1.54</since>
+    <enumeration>
+        <value name="None">
+            <documentation>The &lt;code&gt;com.sap.vocabularies.UI.v1.TextArrangement&lt;/code&gt; annotation and the value of the &lt;code&gt;displayBehaviour&lt;/code&gt; property of
+the &lt;code&gt;configuration&lt;/code&gt; aggregation are not evaluated.</documentation>
+        </value>
+        <value name="NavigationProperty">
+            <documentation>The text is fetched from the OData model property specified in the &lt;code&gt;Path&lt;/code&gt; attribute of the
+&lt;code&gt;com.sap.vocabularies.Common.v1.Text&lt;/code&gt; annotation.</documentation>
+        </value>
+        <value name="ValueList">
+            <documentation>The text is fetched from the OData model property specified in the &lt;code&gt;Path&lt;/code&gt; attribute of the
+&lt;code&gt;com.sap.vocabularies.Common.v1.Text&lt;/code&gt; annotation of the associated value list entity.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

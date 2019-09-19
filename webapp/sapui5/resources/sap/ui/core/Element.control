@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Element</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Base Class for Elements.</documentation>
+    <abstract/>
+    <properties>
+        <property name="id" type="sap.ui.core/ID">
+            <documentation>The unique identifier within a page, either configured or automatically generated.</documentation>
+        </property>
+    </properties>
+    <aggregations>
+        <aggregation name="tooltip" type="sap.ui.core/TooltipBase" cardinality="0..1">
+            <documentation>The tooltip that should be shown for this Element.
+
+Can either be an instance of a TooltipBase subclass or a simple string.</documentation>
+        </aggregation>
+        <aggregation name="customData" type="sap.ui.core/CustomData" cardinality="0..n">
+            <documentation>Custom Data, a data structure like a map containing arbitrary key value pairs.</documentation>
+        </aggregation>
+        <aggregation name="layoutData" type="sap.ui.core/LayoutData" cardinality="0..1">
+            <documentation>Defines the layout constraints for this control when it is used inside a Layout.
+LayoutData classes are typed classes and must match the embedding Layout.
+See VariantLayoutData for aggregating multiple alternative LayoutData instances to a single Element.</documentation>
+        </aggregation>
+        <aggregation name="dependents" type="sap.ui.core/Element" since="1.19" cardinality="0..n">
+            <documentation>Dependents are not rendered, but their databinding context and lifecycle are bound to the aggregating Element.</documentation>
+        </aggregation>
+        <aggregation name="dragDropConfig" type="sap.ui.core/dnd/DragDropBase" since="1.56" cardinality="0..n">
+            <documentation>Defines the drag-and-drop configuration.
+&lt;b&gt;Note:&lt;/b&gt; This configuration might be ignored due to control {@link sap.ui.core.Element.extend metadata} restrictions.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

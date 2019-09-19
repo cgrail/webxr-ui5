@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>AreaMicroChart</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>&lt;br&gt;Note: You can assign a custom tooltip for this microchart. The custom tooltip can be set using expression binding. When no custom tooltip is defined, the tooltip is generated automatically based on the logic described in {@link sap.ui.core.Element#getTooltip_AsString}. For a combination of a generated and a custom tooltip, use &lt;code&gt;((AltText))&lt;/code&gt; inside of the tooltip string. The aggregated data of the microchart can also be customized.</documentation>
+    <since>1.34</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="size" type="sap.m/Size" defaultValue="Auto" group="Misc">
+            <documentation>The size of the microchart. If not set, the default size is applied based on the size of the device tile.
+Responsive size takes width and height of the parent container where the bullet micro chart is included.</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" group="Misc">
+            <documentation>The width of the chart. Overrides the width specified in the &lt;code&gt;size&lt;/code&gt; property.</documentation>
+        </property>
+        <property name="height" type="sap.ui.core/CSSSize" group="Misc">
+            <documentation>The height of the chart. Overrides the height specified in the &lt;code&gt;size&lt;/code&gt; property.</documentation>
+        </property>
+        <property name="maxXValue" type="sap.ui.core/float" group="Misc">
+            <documentation>If this property is set, it indicates the value the X-axis ends with.</documentation>
+        </property>
+        <property name="minXValue" type="sap.ui.core/float" group="Misc">
+            <documentation>If this property is set it indicates the value X axis ends with.</documentation>
+        </property>
+        <property name="maxYValue" type="sap.ui.core/float" group="Misc">
+            <documentation>If this property is set it indicates the value X axis ends with.</documentation>
+        </property>
+        <property name="minYValue" type="sap.ui.core/float" group="Misc">
+            <documentation>If this property is set it indicates the value X axis ends with.</documentation>
+        </property>
+        <property name="view" type="sap.suite.ui.microchart/AreaMicroChartViewType" defaultValue="Normal" group="Appearance">
+            <documentation>The view of the chart.</documentation>
+        </property>
+        <property name="colorPalette" type="sap.ui.core/string[]" defaultValue="[]" group="Appearance">
+            <documentation>The color palette for the chart. If this property is set,
+semantic colors defined in AreaMicroChartItem are ignored.
+As a result, colors of the palette are assigned to each line.
+When all the palette colors are used up, assignment of the colors starts again from the beginning of the palette.</documentation>
+        </property>
+        <property name="showLabel" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>Determines if the labels are displayed or not.</documentation>
+        </property>
+        <property name="isResponsive" type="sap.ui.core/boolean" defaultValue="false" group="Appearance" since="1.38.0">
+            <documentation>If this set to true, width and height of the control are determined by the width and height of the container in which the control is placed or by the width and height property.</documentation>
+            <deprecation since="1.60"></deprecation>
+        </property>
+    </properties>
+    <events>
+        <event name="press" allowPreventDefault="false">
+            <documentation>The event is triggered when the chart is pressed.</documentation>
+        </event>
+    </events>
+    <aggregations default="lines">
+        <aggregation name="chart" type="sap.suite.ui.microchart/AreaMicroChartItem" cardinality="0..1" bindable="bindable">
+            <documentation>The configuration of the actual values line.
+The color property defines the color of the line.
+Points are rendered in the same sequence as in this aggregation.</documentation>
+        </aggregation>
+        <aggregation name="maxThreshold" type="sap.suite.ui.microchart/AreaMicroChartItem" cardinality="0..1">
+            <documentation>The configuration of the max threshold area. The color property defines the color of the area above the max threshold line. Points are rendered in the same sequence as in this aggregation.</documentation>
+        </aggregation>
+        <aggregation name="innerMaxThreshold" type="sap.suite.ui.microchart/AreaMicroChartItem" cardinality="0..1">
+            <documentation>The configuration of the upper line of the inner threshold area. The color property defines the color of the area between inner thresholds. For rendering of the inner threshold area, both innerMaxThreshold and innerMinThreshold aggregations must be defined. Points are rendered in the same sequence as in this aggregation.</documentation>
+        </aggregation>
+        <aggregation name="innerMinThreshold" type="sap.suite.ui.microchart/AreaMicroChartItem" cardinality="0..1">
+            <documentation>The configuration of the bottom line of the inner threshold area. The color property is ignored. For rendering of the inner threshold area, both innerMaxThreshold and innerMinThreshold aggregations must be defined. Points are rendered in the same sequence as in this aggregation.</documentation>
+        </aggregation>
+        <aggregation name="minThreshold" type="sap.suite.ui.microchart/AreaMicroChartItem" cardinality="0..1">
+            <documentation>The configuration of the min threshold area. The color property defines the color of the area below the min threshold line. Points are rendered in the same sequence as in this aggregation.</documentation>
+        </aggregation>
+        <aggregation name="target" type="sap.suite.ui.microchart/AreaMicroChartItem" cardinality="0..1" bindable="bindable">
+            <documentation>The configuration of the target values line. The color property defines the color of the line. Points are rendered in the same sequence as in this aggregation.</documentation>
+        </aggregation>
+        <aggregation name="firstXLabel" type="sap.suite.ui.microchart/AreaMicroChartLabel" cardinality="0..1">
+            <documentation>The label on X axis for the first point of the chart.</documentation>
+        </aggregation>
+        <aggregation name="firstYLabel" type="sap.suite.ui.microchart/AreaMicroChartLabel" cardinality="0..1">
+            <documentation>The label on Y axis for the first point of the chart.</documentation>
+        </aggregation>
+        <aggregation name="lastXLabel" type="sap.suite.ui.microchart/AreaMicroChartLabel" cardinality="0..1">
+            <documentation>The label on X axis for the last point of the chart.</documentation>
+        </aggregation>
+        <aggregation name="lastYLabel" type="sap.suite.ui.microchart/AreaMicroChartLabel" cardinality="0..1">
+            <documentation>The label on Y axis for the last point of the chart.</documentation>
+        </aggregation>
+        <aggregation name="maxLabel" type="sap.suite.ui.microchart/AreaMicroChartLabel" cardinality="0..1">
+            <documentation>The label for the maximum point of the chart.</documentation>
+        </aggregation>
+        <aggregation name="minLabel" type="sap.suite.ui.microchart/AreaMicroChartLabel" cardinality="0..1">
+            <documentation>The label for the minimum point of the chart.</documentation>
+        </aggregation>
+        <aggregation name="lines" type="sap.suite.ui.microchart/AreaMicroChartItem" cardinality="0..n" bindable="bindable">
+            <documentation>The set of lines.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n" since="1.60.0">
+            <documentation>Controls or IDs that label this control. Can be used by screen reader software.</documentation>
+        </association>
+    </associations>
+</control>

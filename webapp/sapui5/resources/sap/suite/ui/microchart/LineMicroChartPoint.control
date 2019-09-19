@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>LineMicroChartPoint</name>
+    <derived/>
+    <documentation>Contains the point of the line micro chart.</documentation>
+    <since>1.48.0</since>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="x" type="sap.ui.core/float" defaultValue="0" group="Data">
+            <documentation>The point's horizontal position.</documentation>
+        </property>
+        <property name="y" type="sap.ui.core/float" defaultValue="0" group="Data">
+            <documentation>The point's vertical position.</documentation>
+        </property>
+    </properties>
+</control>

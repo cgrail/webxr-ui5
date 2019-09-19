@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+		   xmlns="sap.m"
+		   xmlns:core="sap.ui.core"
+		   xmlns:macro="sap.ui.mdc.odata.v4"
+>
+<macro:FilterBar
+	id="{source>id}::FilterBar"
+	metadataContexts="{model: 'entitySet', path:'',  name: 'entitySet'}"
+	liveMode="true"
+	conditionModelName="filter"
+	hideBasicSearch="true"
+	showAdaptFiltersButton="false">
+</macro:FilterBar>
+</core:FragmentDefinition>

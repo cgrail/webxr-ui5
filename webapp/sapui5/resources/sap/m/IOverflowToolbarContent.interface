@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<interface xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>IOverflowToolbarContent</name>
+    <derived/>
+    <documentation>Interface for controls which can have special behavior inside &lt;code&gt;sap.m.OverflowToolbar&lt;/code&gt;.
+  Controls that implement this interface must provide a &lt;code&gt;getOverflowToolbarConfig&lt;/code&gt; method
+  that accepts no arguments and returns an object with the following fields:
+  &lt;ul&gt;
+      &lt;li&gt;&lt;code&gt;canOverflow&lt;/code&gt; - A boolean that tells whether the control can move to the overflow menu or not.
+
+      &lt;b&gt;Note:&lt;/b&gt; Even if &lt;code&gt;canOverflow&lt;/code&gt; is set to &lt;code&gt;false&lt;/code&gt;, the &lt;code&gt;propsUnrelatedToSize&lt;/code&gt; field is taken into account,
+      allowing to optimize the behavior of controls that do not need to overflow, but are used in an &lt;code&gt;sap.m.OverflowToolbar&lt;/code&gt; regardless.&lt;/li&gt;
+
+      &lt;li&gt;&lt;code&gt;autoCloseEvents&lt;/code&gt; - An array of strings, listing all of the control's events that should trigger the closing of the overflow menu, when fired.&lt;/li&gt;
+
+      &lt;li&gt;&lt;code&gt;invalidationEvents&lt;/code&gt; - An array of strings, listing all of the control's events that should trigger the invalidation of the &lt;code&gt;sap.m.OverflowToolbar&lt;/code&gt;, when fired.&lt;/li&gt;
+
+      &lt;li&gt;&lt;code&gt;propsUnrelatedToSize&lt;/code&gt; - An array of strings, listing all of the control's properties that, when changed, should not cause the overflow toolbar to invalidate.
+
+      &lt;b&gt;Note:&lt;/b&gt; By default &lt;code&gt;sap.m.OverflowToolbar&lt;/code&gt; invalidates whenever any property of a child control changes. This is to ensure that whenever the size of a child control changes, the overflow toolbar's layout is recalculated.
+      Some properties however do not affect control size, making it unnecessary to invalidate the overflow toolbar when they change. You can list them here for optimization purposes.&lt;/li&gt;
+
+      &lt;li&gt;&lt;code&gt;onBeforeEnterOverflow(oControl)&lt;/code&gt; - A callback function that will be invoked before moving the control into the overflow menu. The control instance will be passed as an argument.
+
+      &lt;b&gt;Note:&lt;/b&gt; The context of the function is not the control instance (use the &lt;code&gt;oControl&lt;/code&gt; parameter for this purpose), but rather an internal helper object, associated with the current &lt;code&gt;sap.m.OverflowToolbar&lt;/code&gt; instance.
+      This object only needs to be manipulated in special cases (e.g. when you want to store state on it, rather than on the control instance).&lt;/li&gt;
+
+      &lt;li&gt;&lt;code&gt;onAfterExitOverflow(oControl)&lt;/code&gt; - A callback function that will be invoked after taking the control out of the overflow menu (before moving it back to the toolbar itself). The control instance will be passed as an argument.
+
+      &lt;b&gt;Note:&lt;/b&gt; See: &lt;code&gt;onBeforeEnterOverflow&lt;/code&gt; for details about the function's context.&lt;/li&gt;
+
+      &lt;li&gt;&lt;code&gt;getCustomImportance()&lt;/code&gt; - A function that, if provided, will be called to determine the priority of the control.
+      This function must return a value of type &lt;code&gt;sap.m.OverflowToolbarPriority&lt;/code&gt;. The string "Medium" is also accepted and interpreted as priority between &lt;code&gt;Low&lt;/code&gt; and &lt;code&gt;High&lt;code&gt;.
+
+      &lt;b&gt;Note:&lt;/b&gt; Normally priority in &lt;code&gt;sap.m.OverflowToolbar&lt;/code&gt; is managed with the &lt;code&gt;priority&lt;/code&gt; property of &lt;code&gt;sap.m.OverflowToolbarLayoutData&lt;/code&gt;.
+      However, some controls may have other means of defining priority, such as dedicated properties or other types of layout data for that purpose.
+      In summary, implementing this function allows a control to override the default priority logic (&lt;code&gt;sap.m.OverflowToolbarLayoutData&lt;/code&gt;) by providing its own.&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;b&gt;Important:&lt;/b&gt; In addition, the control can implement a CSS class, scoped with the &lt;code&gt;.sapMOverflowToolbarMenu-CTX&lt;/code&gt; context selector, that will be applied whenever the control is inside the overflow menu.
+  For example, to make your control take up the whole width of the overflow menu, you can add a context class to your control's base CSS file like this:
+
+  &lt;pre&gt;
+      .sapMOverflowToolbarMenu-CTX .sapMyControlClass {
+      	width: 100%;
+      }
+  &lt;/pre&gt;</documentation>
+    <since>1.52</since>
+</interface>

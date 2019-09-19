@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ContentSwitcher</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Switches between two control areas and animates it via CSS transitions</documentation>
+    <since>1.16.0</since>
+    <developmentState state="experimental" since="1.16.0">API is not yet finished and might change completely</developmentState>
+    <deprecation since="1.44.0"></deprecation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="animation" type="sap.ui.core/string" defaultValue="None" group="Appearance">
+            <documentation>Set the used animation when changing content. This just sets a CSS-class named "sapUiUnifiedACSwitcherAnimation" + this value on the root element of the control. The animation has to be implemented in CSS. This also enables applications to implement their own animations via CSS by reacting to the parent class.
+See the types sap.ui.unified.ContentSwitcherAnimation for default implementations.</documentation>
+        </property>
+        <property name="activeContent" type="sap.ui.core/int" defaultValue="1" group="Behavior">
+            <documentation>The number of the currently active content (1 or 2).</documentation>
+        </property>
+    </properties>
+    <aggregations>
+        <aggregation name="content1" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>The controls that should be shown in the first content</documentation>
+        </aggregation>
+        <aggregation name="content2" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>The controls that should be shown in the second content</documentation>
+        </aggregation>
+    </aggregations>
+</control>

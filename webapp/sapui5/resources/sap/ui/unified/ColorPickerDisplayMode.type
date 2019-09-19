@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ColorPickerDisplayMode</name>
+    <derived/>
+    <documentation>Types of a color picker display mode</documentation>
+    <since>1.58.0</since>
+    <enumeration>
+        <value name="Default">
+            <documentation>Default display mode.</documentation>
+        </value>
+        <value name="Large">
+            <documentation>Large display mode.</documentation>
+        </value>
+        <value name="Simplified">
+            <documentation>Simplified display mode.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

@@ -1,0 +1,9 @@
+{
+"version":3,
+"file":"sap/fiori/library-h2-preload.js",
+"sourceroot":".",
+"sources":["library-dbg.js","manifest.json"],
+"names":["jQuery","Core","library","oConfig","sLanguage","aDeliveredLanguages","aLanguages"],
+"mappings":";;;;;;AASA,gBAAa,qBAAC,qBAAsB,iEACnC,SAASA,CAAM,CAAEC,CAAI,CAAEC,CAAwB,CAAE,CAEjD,aAYA,8BACC,IAAK,CAAE,YACP,YAAa,CAAE,gBACf,MAAO,GACP,WAAY,GACZ,SAAU,GACV,SAAU,GACV,QAAS,QACV,GAEA,IAAIC,CAAQ,CAAE,oCACbC,CAAU,CAAED,CAAO,eACnBE,CAAoB,CAAEF,CAAO,iCAC7BG,CAAW,CAAEN,CAAM,mCAAmCI,CAAS,CAAEC,CAAmB,EAGrFD,CAAS,CAACE,CAAU,IAGpB,EAAG,CAAEF,CAAU,EAAG,uBAAwB,CAAE,CAC3CJ,CAAM,+CAAgD,CAAEI,CAAS,EAClE,CAEA,OAAO,UAER;;;;;;;;",
+"x_com_sap_openui5_sections":[46,667,719,1426]
+}

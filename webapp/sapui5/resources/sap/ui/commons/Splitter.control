@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Splitter</name>
+    <derived/>
+    <documentation>Allows to split the screen into two areas. Make sure that the container for the splitter has an absolute height or set an absolute height for the splitter using the height property. Otherwise the height of the splitter is calculated by the height of its contents.</documentation>
+    <deprecation since="1.38">Instead, use the &lt;code&gt;sap.ui.layout.Splitter&lt;/code&gt; control.</deprecation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="splitterOrientation" type="sap.ui.core/Orientation" defaultValue="Vertical" group="Behavior">
+            <documentation>The splitter can have horizontal or vertical orientation.</documentation>
+        </property>
+        <property name="splitterPosition" type="sap.ui.core/Percentage" defaultValue="50%" group="Behavior">
+            <documentation>Position of splitter bar in percentage.
+The default value means that the splitter is positioned in the middle of the area that is available for the splitter.</documentation>
+        </property>
+        <property name="minSizeFirstPane" type="sap.ui.core/Percentage" defaultValue="0%" group="Behavior">
+            <documentation>The minimum size (width for vertical splitter or height for horizontal splitter) of the first Pane</documentation>
+        </property>
+        <property name="minSizeSecondPane" type="sap.ui.core/Percentage" defaultValue="0%" group="Behavior">
+            <documentation>The minimum size (width for vertical splitter or height for horizontal splitter) of the second Pane</documentation>
+        </property>
+        <property name="width" type="sap.ui.commons/SplitterSize" defaultValue="100%" group="Behavior">
+            <documentation>The width of the split area in px or in %</documentation>
+        </property>
+        <property name="height" type="sap.ui.commons/SplitterSize" defaultValue="100%" group="Behavior">
+            <documentation>The height of the split area in px or in %</documentation>
+        </property>
+        <property name="showScrollBars" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Specifies if the browser should display scroll bars or simply cut the content of a splitter pane when the content does not fit into its pane.</documentation>
+        </property>
+        <property name="splitterBarVisible" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>set the splitter bar to be visible or not.</documentation>
+        </property>
+    </properties>
+    <aggregations>
+        <aggregation name="firstPaneContent" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Controls inside the first pane. These are the left ones in case of defining a vertical splitter, and the top ones in case of using the horizontal splitter.</documentation>
+        </aggregation>
+        <aggregation name="secondPaneContent" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Controls inside the second pane. These are the right ones in case of defining a vertical splitter, and the bottom ones in case of using the horizontal splitter.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

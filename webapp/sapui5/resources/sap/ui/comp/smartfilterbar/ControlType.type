@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartfilterbar/ControlType</name>
+    <derived/>
+    <documentation>The available control types to configure the internal control selection of a SmartFilterBar control.</documentation>
+    <enumeration>
+        <value name="auto">
+            <documentation>Shows field based on metadata.</documentation>
+        </value>
+        <value name="input">
+            <documentation>Shows an input field.</documentation>
+        </value>
+        <value name="dropDownList">
+            <documentation>Shows a drop down list field.</documentation>
+        </value>
+        <value name="date">
+            <documentation>Shows a date picker field.</documentation>
+        </value>
+        <value name="dateTimePicker">
+            <documentation>Shows a date time picker field.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

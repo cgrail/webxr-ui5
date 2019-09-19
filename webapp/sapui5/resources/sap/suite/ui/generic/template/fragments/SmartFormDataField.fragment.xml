@@ -1,0 +1,145 @@
+<core:FragmentDefinition xmlns:sfi="sap.ui.comp.smartfield" xmlns:smartlink="sap.ui.comp.navpopover"
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	xmlns:smartField="sap.ui.comp.smartfield"
+	xmlns:smartMultiInput="sap.ui.comp.smartmultiinput"
+	xmlns:dt="sap.ui.dt"
+	template:require="sap.suite.ui.generic.template.changeHandler.js.AnnotationHelperForDesignTime"
+	xmlns="sap.m" xmlns:sfo="sap.ui.comp.smartform" xmlns:build="sap.build"
+	xmlns:core="sap.ui.core">
+
+	<!-- @classdesc @name: Name: sap.suite.ui.generic.template.fragments.SmartFormDataField.fragment.xml
+		@description: This fragment contains label value pairs for the smart form
+		derived from UI.DataFields @param {Collection(UI.DataField)} [dataField] -->
+
+	<!-- Prepare facetId for stableId creation
+		Note: currently only used for AddressFacet, but intentionally placed here to be used by all other stable ids in future
+	-->
+	<template:with path="parameter>/" helper="sap.suite.ui.generic.template.js.StableIdHelper.preparePathForStableId" var="facetId">
+		<template:if test="{= ${facetId>}.buildStableId({ type:'ObjectPage', subType:'StandardFacet', sRecordType: ${facet>RecordType}, sAnnotationPath: ${facet>Target/AnnotationPath} , sAnnotationId: ${facet>ID/String} }) }"/>
+
+		<template:with path="groupFacet>Target" helper="sap.ui.model.odata.AnnotationHelper.gotoEntitySet" var="targetEntitySet">
+			<template:if test="{= ${facet>Target/AnnotationPath}.indexOf('com.sap.vocabularies.UI.v1.DataPoint') > -1 }">
+			<template:then>
+				<sfo:GroupElement>
+					<sfi:SmartField value="{path: 'target>Value', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}"
+									visible="{= ${path: 'dataField>com.sap.vocabularies.UI.v1.Hidden'} ? ${path: 'dataField>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getBindingForHiddenPath'} : true}"
+									fetchValueListReadOnly="false"/>
+				</sfo:GroupElement>
+			</template:then>
+			<template:elseif test="{= ${dataField>RecordType} === 'com.sap.vocabularies.UI.v1.DataFieldForAnnotation' &amp;&amp; ${dataField>Target/AnnotationPath}.indexOf('com.sap.vocabularies.Communication.v1.Contact') > -1}">
+				<sfo:GroupElement id="{path: 'groupFacet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}::{path: 'dataField>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromDataField'}::GroupElement"
+								  binding="{parts: [{path: 'dataField>Target'}, {path: 'entitySet>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getNavigationPathWithExpand'}"
+								  dt:annotation="{parts: [{path: 'parameter>/entityType'}, {path: 'groupFacet>Target/AnnotationPath'},{path: 'dataField>Target/AnnotationPath'}, {path: 'dataField>'},{path: 'targetEntitySet>'}], formatter: 'sap.suite.ui.generic.template.changeHandler.js.AnnotationHelperForDesignTime.createInstanceMetadataWithPath'}"
+								  label="{= ${dataField>Label} ? ${path: 'dataField>Label', formatter: 'sap.ui.model.odata.AnnotationHelper.simplePath'} : ''}">
+						<template:with path="dataField>Target"
+													helper="sap.ui.model.odata.AnnotationHelper.resolvePath" var="contact">
+							<Link
+								text="{path: 'contact>fn', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}"
+								press="._templateEventHandlers.onContactDetails"
+								visible="{= ${path: 'dataField>com.sap.vocabularies.UI.v1.Hidden'} ? ${path: 'dataField>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getBindingForHiddenPath'} : true}"
+								binding="{path: 'dataField>Target'}, formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getNavigationPathWithExpand'}">
+								<customData>
+									<core:CustomData key="Location" value="Section" />
+									<core:CustomData key="contactDetails" value="{= ${path: 'contact>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getCustomDataForContactPopup'}}"/>
+								</customData>
+							</Link>
+
+					</template:with>
+				</sfo:GroupElement>
+			</template:elseif>
+				<template:elseif test="{= ${dataField>RecordType} === 'com.sap.vocabularies.UI.v1.DataFieldForAnnotation' &amp;&amp; ${dataField>Target/AnnotationPath}.indexOf('com.sap.vocabularies.Communication.v1.Address') > -1}">
+					<sfo:GroupElement binding="{parts: [{path: 'dataField>Target'}, {path: 'entitySet>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getNavigationPathWithExpand'}"
+					                  dt:annotation="{parts: [{path: 'parameter>/entityType'}, {path: 'groupFacet>Target/AnnotationPath'},{path: 'dataField>Target/AnnotationPath'}, {path: 'dataField>'},{path: 'targetEntitySet>'}], formatter: 'sap.suite.ui.generic.template.changeHandler.js.AnnotationHelperForDesignTime.createInstanceMetadataWithPath'}"
+					                  label="{= ${dataField>Label} ? ${path: 'dataField>Label', formatter: 'sap.ui.model.odata.AnnotationHelper.simplePath'} : ''}">
+						<template:with path="dataField>Target" helper="sap.ui.model.odata.AnnotationHelper.resolvePath" var="address">
+							<!-- same coding for SmartField is used in AddressFacet.fragment.xml -->
+							<sfi:SmartField id="{:= ${parameter>/stableId}.getStableId({ type:'ObjectPageSection', subType:'AddressValue', sFacet: ${facetId>id}}) }"
+											value="{path: 'address>label', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}"/>
+						</template:with>
+					</sfo:GroupElement>
+				</template:elseif>
+			<template:elseif
+				test="{= ${dataField>RecordType} === 'com.sap.vocabularies.UI.v1.DataFieldWithIntentBasedNavigation' }">
+				<sfo:GroupElement
+					id="{path: 'groupFacet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}::{path: 'dataField>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromDataField'}::GroupElement"
+					dt:annotation="{parts: [{path: 'parameter>/entityType'}, {path: 'groupFacet>Target/AnnotationPath'},{path: 'dataField>Value/Path'}, {path: 'dataField>'},{path: 'targetEntitySet>'}], formatter: 'sap.suite.ui.generic.template.changeHandler.js.AnnotationHelperForDesignTime.createInstanceMetadataWithPath'}"
+					label="{parts: [{path: 'dataField>'}, {path: 'entitySet>'}, {path: 'groupFacet>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getLabelForDFwithIBN'}">
+						<Link
+							text="{parts: [{path: 'dataField>'}, {path: 'entitySet>'}, {path: 'groupFacet>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getLinkTextForDFwithIBN'}"
+							press="._templateEventHandlers.onDataFieldWithIntentBasedNavigation"
+							visible="{= ${path: 'dataField>com.sap.vocabularies.UI.v1.Hidden'} ? ${path: 'dataField>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getBindingForHiddenPath'} : true}"
+							wrapping="true">
+							<customData>
+								<core:CustomData key="SemanticObject"
+									value="{dataField>SemanticObject/String}" />
+								<core:CustomData key="Action" value="{dataField>Action/String}" />
+							</customData>
+						</Link>
+				</sfo:GroupElement>
+			</template:elseif>
+			<template:elseif test="{= ${dataField>RecordType} === 'com.sap.vocabularies.UI.v1.DataFieldWithNavigationPath' }">
+				<sfo:GroupElement
+					id="{path: 'groupFacet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}::{path: 'dataField>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromDataField'}::GroupElement"
+					dt:annotation="{parts: [{path: 'parameter>/entityType'}, {path: 'groupFacet>Target/AnnotationPath'},{path: 'dataField>Value/Path'}, {path: 'dataField>'},{path: 'targetEntitySet>'}], formatter: 'sap.suite.ui.generic.template.changeHandler.js.AnnotationHelperForDesignTime.createInstanceMetadataWithPath'}"
+					label="{parts: [{path: 'dataField>'}, {path: 'entitySet>'}, {path: 'groupFacet>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getLabelForDFwithIBN'}">
+					<smartField:SmartField
+						visible="{= ${path: 'dataField>com.sap.vocabularies.UI.v1.Hidden'} ? ${path: 'dataField>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getBindingForHiddenPath'} : true}"
+						value="{parts: [{path: 'dataField>'}, {path: 'entitySet>'}, {path: 'groupFacet>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getLinkTextForDFwithIBN'}"
+						editable="{ui>/editable}" press="._templateEventHandlers.onDataFieldWithNavigationPath">
+						<smartField:customData>
+							<core:CustomData key="Target" value="{dataField>Target/NavigationPropertyPath}" />
+						</smartField:customData>
+					</smartField:SmartField>
+				</sfo:GroupElement>
+			</template:elseif>
+			<template:else>
+				<template:with path="dataField>Value" helper="sap.ui.model.odata.AnnotationHelper.resolvePath" var="dataFieldValue">
+					<sfo:GroupElement
+						id="{path: 'groupFacet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}::{path: 'dataField>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromDataField'}::GroupElement"
+						dt:annotation="{parts: [{path: 'parameter>/entityType'}, {path: 'groupFacet>Target/AnnotationPath'},{path: 'dataField>Value/Path'}, {path: 'dataField>'},{path: 'targetEntitySet>'}], formatter: 'sap.suite.ui.generic.template.changeHandler.js.AnnotationHelperForDesignTime.createInstanceMetadataWithPath'}">
+						<template:if test="{parts: [{path: 'entitySet>'}, {path: 'dataField>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.checkMultiplicityForDataFieldAssociation'}">
+							<template:then>
+								<sfi:SmartField id="{path: 'groupFacet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}::{path: 'dataField>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromDataField'}::Field"
+										visible="{= ${path: 'dataField>com.sap.vocabularies.UI.v1.Hidden'} ? ${path: 'dataField>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getBindingForHiddenPath'} : true}"
+										value="{path: 'dataField>Value', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getDataFieldValue'}"
+										url="{= ${dataField>Url} ? ${path: 'dataField>Url', formatter: 'sap.ui.model.odata.AnnotationHelper.format'} : ''}"
+										custom:multiLineSettings="{width: '100%', rows: 4}" clientSideMandatoryCheck="false"
+										textLabel="{parts: [{path: 'dataFieldValue>'}, {path: 'dataField>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getDataFieldLabel'}"
+										build:metadata="#pattern:FormElement;staticProp:label:Label:\{dataField>Value@@sap:label\};prop:virtualProp1:Value:\{dataField>Value\};prop:virtualProp2:Url:\{dataField>Url\};staticProp:nullable:Nullable:\{dataField>Value@@sap:nullable\};prop:currency:Currency:\{dataField>Value@@Org.OData.Measures.V1.ISOCurrency\};f4Edit:\{dataField>Value\}"
+										fetchValueListReadOnly="false">
+								<template:if test="${quickView>/} }">
+									<sfi:semanticObjectController>
+										<smartlink:SemanticObjectController ignoredFields="{parts: [{path: 'quickView>/'}, {path: 'dataField>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.disableSemanticObjectLinksOnPopups'}" />
+									</sfi:semanticObjectController>
+								</template:if>
+								<template:if test="{= ${dataField>Criticality} }">
+									<sfi:controlProposal>
+										<sfi:ControlProposal>
+											<sfi:objectStatus>
+												<sfi:ObjectStatus criticality="{path: 'dataField>Criticality', formatter: 'sap.ui.model.odata.AnnotationHelper.simplePath'}"
+															  criticalityRepresentationType="{= (${dataField>CriticalityRepresentation/EnumMember} === 'com.sap.vocabularies.UI.v1.CriticalityRepresentationType/WithoutIcon') ? 'WithoutIcon' : 'WithIcon'}"
+															  build:metadata="#pattern:FormElement;prop:criticality:Criticality;" />
+											</sfi:objectStatus>
+										</sfi:ControlProposal>
+									</sfi:controlProposal>
+								</template:if>
+							</sfi:SmartField>
+						</template:then>
+						<template:else>
+							<smartMultiInput:SmartMultiInput id="{path: 'groupFacet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}::{path: 'dataField>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromDataField'}::MultiInput"
+										visible="{= ${path: 'dataField>com.sap.vocabularies.UI.v1.Hidden'} ? ${path: 'dataField>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getBindingForHiddenPath'} : true}"
+										clientSideMandatoryCheck="false"
+										tokenUpdate="._templateEventHandlers.submitChangesForSmartMultiInput"
+										value="{path: 'dataField>Value', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}"
+										textLabel="{parts: [{path: 'dataFieldValue>'}, {path: 'dataField>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getDataFieldLabel'}"
+										fetchValueListReadOnly="false"/>
+						</template:else>
+						</template:if>
+					</sfo:GroupElement>
+				</template:with>
+			</template:else>
+		</template:if>
+		</template:with>
+	</template:with>
+</core:FragmentDefinition>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartform/GroupElement</name>
+    <derived/>
+    <documentation>A GroupElement is a combination of one label and different controls associated to this label.</documentation>
+    <baseType>sap.ui.layout/form/FormElement</baseType>
+    <properties>
+        <property name="useHorizontalLayout" type="sap.ui.core/boolean" group="Misc">
+            <documentation>Specifies whether the groups shall be rendered in a &lt;code&gt;ResponsiveLayout&lt;/code&gt; with label on top of the group element.
+Each group will be rendered in a new line.
+
+&lt;b&gt;Note:&lt;/b&gt; If &lt;code&gt;Group&lt;/code&gt; is assigned to a &lt;code&gt;SmartForm&lt;/code&gt; control,
+this property is inherited from the &lt;code&gt;SmartForm&lt;/code&gt; control.
+
+So don't set it to a different value from the one in the &lt;code&gt;SmartForm&lt;/code&gt; control. For performance reasons it might
+make sense to set it manually to the same value as the one in the &lt;code&gt;SmartForm&lt;/code&gt; control when creating the &lt;code&gt;GroupElement&lt;/code&gt; element.</documentation>
+        </property>
+        <property name="horizontalLayoutGroupElementMinWidth" type="sap.ui.core/int" group="Misc">
+            <documentation>Specifies the minimal size in pixels of all group elements of the form if horizontal Layout is used.
+
+&lt;b&gt;Note:&lt;/b&gt; If &lt;code&gt;Group&lt;/code&gt; is assigned to a &lt;code&gt;SmartForm&lt;/code&gt; control,
+this property is inherited from the &lt;code&gt;SmartForm&lt;/code&gt; control. So don't set it manually.</documentation>
+            <deprecation since="1.48.0">please do not use this property as it does not have any effect on the current layout of the &lt;code&gt;SmartForm&lt;/code&gt; control.</deprecation>
+        </property>
+        <property name="elementForLabel" type="sap.ui.core/int" defaultValue="0" group="Misc">
+            <documentation>Index of element to be used for label determination</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="visibleChanged" allowPreventDefault="false">
+            <documentation>The event is fired after the visibility of the control has changed.</documentation>
+        </event>
+    </events>
+    <aggregations default="elements">
+        <aggregation name="elements" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Aggregation of controls to be displayed together with a label.
+
+&lt;b&gt;Warning:&lt;/b&gt; Do not put any layout or other container controls in here.
+This could damage the visual layout, keyboard support and screen-reader support.
+Only form controls are allowed. Views are also not supported.
+Allowed controls implement the interface &lt;code&gt;sap.ui.core.IFormContent&lt;/code&gt;.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

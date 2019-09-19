@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>GenericArray</name>
+    <derived/>
+    <baseType>any</baseType>
+    <final/>
+</simple-type>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>cards/NumericSideIndicator</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A control used by &lt;code&gt;sap.f.cards.NumericHeader&lt;/code&gt; to hold a set of side indicator attributes.</documentation>
+    <since>1.64</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="title" type="sap.ui.core/string" group="Appearance">
+            <documentation>The title of the indicator</documentation>
+        </property>
+        <property name="number" type="sap.ui.core/string" group="Data">
+            <documentation>The numeric value</documentation>
+        </property>
+        <property name="unit" type="sap.ui.core/string" group="Data">
+            <documentation>Defines the unit of measurement (scaling prefix) for the numeric value</documentation>
+        </property>
+    </properties>
+    <aggregations>
+        <aggregation name="_title" type="sap.m/Text" cardinality="0..1" visibility="hidden">
+            <documentation>Used to display title</documentation>
+        </aggregation>
+        <aggregation name="_number" type="sap.m/Text" cardinality="0..1" visibility="hidden">
+            <documentation>Used to display the number part of the indicator</documentation>
+        </aggregation>
+        <aggregation name="_unit" type="sap.m/Text" cardinality="0..1" visibility="hidden">
+            <documentation>Used to display the unit of measurement for the number</documentation>
+        </aggregation>
+    </aggregations>
+</control>

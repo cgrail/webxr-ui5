@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ObjectPageHeader</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Represents the static part (header title) of the classic header of the {@link sap.uxap.ObjectPageLayout}.
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+
+The &lt;code&gt;ObjectPageHeader&lt;/code&gt; is used to display the basic information about a business object,
+such as title/description/picture, as well as a list of common actions.
+
+&lt;b&gt;Note:&lt;/b&gt; The &lt;code&gt;ObjectPageHeader&lt;/code&gt; is meant to be used inside the &lt;code&gt;ObjectPageLayout&lt;/code&gt;
+control. Any other usage is not supported and can lead to unexpected behavior.</documentation>
+    <since>1.26</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="objectImageURI" type="sap.ui.core/string">
+            <documentation>The URL of the image, representing the business object</documentation>
+        </property>
+        <property name="objectImageAlt" type="sap.ui.core/string" defaultValue="">
+            <documentation>The text to be used for the Alt and Tooltip attribute of the image, supplied via the objectImageURI property</documentation>
+        </property>
+        <property name="objectImageDensityAware" type="sap.ui.core/boolean" defaultValue="false">
+            <documentation>The value of densityAware for the image, supplied via the objectImageURI property.
+See sap.m.Image for more details on densityAware.</documentation>
+        </property>
+        <property name="objectTitle" type="sap.ui.core/string">
+            <documentation>The title of the object</documentation>
+        </property>
+        <property name="objectSubtitle" type="sap.ui.core/string">
+            <documentation>The description of the object</documentation>
+        </property>
+        <property name="objectImageShape" type="sap.uxap/ObjectPageHeaderPictureShape" defaultValue="Square">
+            <documentation>Determines whether the picture should be displayed in a square or with a circle-shaped mask.</documentation>
+        </property>
+        <property name="isObjectIconAlwaysVisible" type="sap.ui.core/boolean" defaultValue="false">
+            <documentation>Determines whether the icon should always be visible or visible only when the header is snapped.</documentation>
+        </property>
+        <property name="isObjectTitleAlwaysVisible" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>Determines whether the title should always be visible or visible only when the header is snapped.</documentation>
+        </property>
+        <property name="isObjectSubtitleAlwaysVisible" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>Determines whether the subtitle should always be visible or visible only when the header is snapped.</documentation>
+        </property>
+        <property name="isActionAreaAlwaysVisible" type="sap.ui.core/boolean" defaultValue="true">
+            <documentation>Determines whether the action buttons should always be visible or visible only when the header is snapped.</documentation>
+        </property>
+        <property name="headerDesign" type="sap.uxap/ObjectPageHeaderDesign" defaultValue="Light">
+            <documentation>Determines the design of the header - Light or Dark.
+&lt;b&gt;Note: &lt;/b&gt;This property is deprecated. It will continue to work in the Blue Crystal theme,
+but it will not be taken into account for the Belize themes.</documentation>
+            <deprecation since="1.40.1"></deprecation>
+        </property>
+        <property name="showTitleSelector" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>When set to true, the selector arrow icon/image is shown and can be pressed.</documentation>
+        </property>
+        <property name="markFavorite" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>Set the favorite state to true or false. The showMarkers property must be true for this property to take effect.</documentation>
+        </property>
+        <property name="markFlagged" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>Set the flagged state to true or false. The showMarkers property must be true for this property to take effect.</documentation>
+        </property>
+        <property name="showMarkers" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>Indicates if object page header title supports showing markers such as flagged and favorite.</documentation>
+        </property>
+        <property name="markLocked" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>Set the locked state of the objectPageHeader.</documentation>
+        </property>
+        <property name="showPlaceholder" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>Enables support of a placeholder image in case no image is specified or the URL of the provided image is invalid.</documentation>
+        </property>
+        <property name="markChanges" type="sap.ui.core/boolean" defaultValue="false" group="Misc" since="1.34.0">
+            <documentation>Marks that there are unsaved changes in the objectPageHeader.
+The markChanges state cannot be used together with the markLocked state.
+If both are set to true, only the locked state will be displayed.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="titleSelectorPress" allowPreventDefault="false">
+            <documentation>The event is fired when the objectPage header title selector (down-arrow) is pressed</documentation>
+            <parameters>
+                <parameter name="domRef" type="sap.ui.core/string">
+                    <documentation>DOM reference of the title item's icon to be used for positioning.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="markLockedPress" allowPreventDefault="false">
+            <documentation>The event is fired when the Locked button is pressed</documentation>
+            <parameters>
+                <parameter name="domRef" type="sap.ui.core/string">
+                    <documentation>DOM reference of the lock item's icon to be used for positioning.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="markChangesPress" allowPreventDefault="false">
+            <documentation>The event is fired when the unsaved changes button is pressed</documentation>
+            <parameters>
+                <parameter name="domRef" type="sap.ui.core/string" since="1.34.0">
+                    <documentation>DOM reference of the changed item's icon to be used for positioning.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations default="actions">
+        <aggregation name="_breadCrumbs" type="sap.m/Breadcrumbs" cardinality="0..1" visibility="hidden">
+            <documentation>Internal aggregation for the legacy breadCrumbsLinks.</documentation>
+        </aggregation>
+        <aggregation name="breadcrumbs" type="sap.m/Breadcrumbs" since="1.50" cardinality="0..1">
+            <documentation>The breadcrumbs displayed in the &lt;code&gt;ObjectPageHeader&lt;/code&gt;.
+If this aggregation is set, the &lt;code&gt;breadCrumbsLinks&lt;/code&gt; aggregation is omitted.</documentation>
+        </aggregation>
+        <aggregation name="breadCrumbsLinks" type="sap.m/Link" cardinality="0..n" singularName="breadCrumbLink">
+            <documentation>A list of all the active link elements in the BreadCrumbs control.</documentation>
+            <deprecation since="1.50">use the &lt;code&gt;breadcrumbs&lt;/code&gt; aggregation instead.</deprecation>
+        </aggregation>
+        <aggregation name="_overflowButton" type="sap.m/Button" cardinality="0..1" visibility="hidden">
+            <documentation>Internal aggregation for the overflow button in the header.</documentation>
+        </aggregation>
+        <aggregation name="_expandButton" type="sap.m/Button" cardinality="0..1" visibility="hidden">
+            <documentation>Internal aggregation for the expand header button.</documentation>
+        </aggregation>
+        <aggregation name="_objectImage" type="sap.ui.core/Control" cardinality="0..1" visibility="hidden">
+            <documentation>Icon for the identifier line.</documentation>
+        </aggregation>
+        <aggregation name="_placeholder" type="sap.ui.core/Icon" cardinality="0..1" visibility="hidden"/>
+        <aggregation name="_lockIconCont" type="sap.m/Button" cardinality="0..1" visibility="hidden"/>
+        <aggregation name="_lockIcon" type="sap.m/Button" cardinality="0..1" visibility="hidden"/>
+        <aggregation name="_titleArrowIconCont" type="sap.m/Button" cardinality="0..1" visibility="hidden"/>
+        <aggregation name="_titleArrowIcon" type="sap.m/Button" cardinality="0..1" visibility="hidden"/>
+        <aggregation name="_favIcon" type="sap.ui.core/Icon" cardinality="0..1" visibility="hidden"/>
+        <aggregation name="_flagIcon" type="sap.ui.core/Icon" cardinality="0..1" visibility="hidden"/>
+        <aggregation name="_overflowActionSheet" type="sap.m/ActionSheet" cardinality="0..1" visibility="hidden"/>
+        <aggregation name="_changesIconCont" type="sap.m/Button" cardinality="0..1" visibility="hidden"/>
+        <aggregation name="_changesIcon" type="sap.m/Button" cardinality="0..1" visibility="hidden"/>
+        <aggregation name="_sideContentBtn" type="sap.m/Button" cardinality="0..1" visibility="hidden"/>
+        <aggregation name="navigationBar" type="sap.m/Bar" cardinality="0..1">
+            <documentation>An instance of sap.m.Bar to be embedded in the header</documentation>
+        </aggregation>
+        <aggregation name="actions" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>List of actions that will be displayed in the header.
+You can use ObjectPageHeaderActionButton controls to achieve a different visual representation of the action buttons in the action bar and the action sheet (overflow menu).
+You can use ObjectPageHeaderLayoutData to display a visual separator.</documentation>
+        </aggregation>
+        <aggregation name="sideContentButton" type="sap.m/Button" since="1.38.0" cardinality="0..1">
+            <documentation>A button that is used for opening the side content of the page or some additional content.</documentation>
+        </aggregation>
+        <aggregation name="titleSelectorTooltip" type="sap.ui.core/TooltipBase" since="1.56" cardinality="0..1">
+            <documentation>A custom tooltip for the title selector button.
+
+The custom tooltip will be visible if the &lt;code&gt;showTitleSelector&lt;/code&gt;
+property is set to &lt;code&gt;true&lt;/code&gt;.
+
+&lt;b&gt;Note:&lt;/b&gt; If the aggregation is destroyed or set to invalid value, the
+default tooltip will be set. The default tooltip text is "Related options".</documentation>
+        </aggregation>
+    </aggregations>
+</control>

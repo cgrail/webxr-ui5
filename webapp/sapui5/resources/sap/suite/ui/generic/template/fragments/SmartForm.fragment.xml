@@ -1,0 +1,197 @@
+<core:FragmentDefinition
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	xmlns:smartlink="sap.ui.comp.navpopover"
+	xmlns:dt="sap.ui.dt"
+	template:require="sap.suite.ui.generic.template.changeHandler.js.AnnotationHelperForDesignTime"
+	xmlns="sap.m" xmlns:sfo="sap.ui.comp.smartform" xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core" xmlns:build="sap.build" xmlns:layout="sap.ui.layout">
+	<!-- @classdesc @name: Name: sap.suite.ui.generic.template.fragments.SmartForm.fragment.xml
+		@param {Collection(UI.Facet)} [facet] -->
+
+	<sfo:SmartForm id="{path: 'facet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}::Form{path:'blockFacet>', formatter:'sap.suite.ui.generic.template.js.AnnotationHelper.getIdForMoreBlockContent'}"
+				   editable="{ui>/editable}"
+				   class="sapSmartTemplatesSmartForm"
+				   flexEnabled="true"
+				   entityType="{parts: [{path: 'facet>'}, {path: 'entitySet>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getEntityTypesForFormPersonalization'}"
+				   build:metadta="#pattern:Form;">
+		<sfo:semanticObjectController>
+			<smartlink:SemanticObjectController beforePopoverOpens="._templateEventHandlers.onBeforeSemanticObjectLinkPopoverOpens"
+												navigate="._templateEventHandlers.onSemanticObjectLinkPopoverLinkPressed"
+												navigationTargetsObtained="._templateEventHandlers.onSemanticObjectLinkNavigationTargetObtained"
+												forceLinkRendering="{parts: [{path: 'entitySet>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.hasQuickViewFacet'}"/>
+		</sfo:semanticObjectController>
+		<sfo:customData>
+			<core:CustomData key="defaultInputFieldDisplayBehaviour" value="descriptionAndId" />
+			<core:CustomData key="defaultDropDownDisplayBehaviour" value="descriptionOnly" />
+			<core:CustomData key="dateFormatSettings" value='\{"UTC":true,"style":"medium"\}' />
+		</sfo:customData>
+		<sfo:layout>
+			<template:if test="{= ${parameter>/manifest/sap.ui.generic.app/settings/useColumnLayoutForSmartForm} !== false}">
+				<template:then>
+					<sfo:ColumnLayout columnsM="2" columnsL="3" columnsXL="4"/>
+				</template:then>
+				<template:else>
+					<sfo:Layout columnsM="2" columnsL="3" columnsXL="4" labelSpanS="12" labelSpanM="12" labelSpanL="12" labelSpanXL="12" singleGroupFullSize="false" />
+				</template:else>
+			</template:if>
+		</sfo:layout>
+		<sfo:layoutData>
+			<layout:GridData id="{path: 'facet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}::Form::GridData{path:'blockFacet>', formatter:'sap.suite.ui.generic.template.js.AnnotationHelper.getIdForMoreBlockContent'}" />
+		</sfo:layoutData>
+		<!-- If the given facet has subfacets... -->
+		<template:if test="{facet>Facets}" build:metadata="#ignore">
+			<template:then build:metadata="#ignore">
+				<template:repeat list="{facet>Facets}" var="groupFacet">
+					<template:with path="groupFacet>Target" helper="sap.ui.model.odata.AnnotationHelper.gotoEntitySet" var="targetEntitySet">
+					<template:with path="groupFacet>Target" helper="sap.ui.model.odata.AnnotationHelper.resolvePath" var="target">
+						<template:if test="{= ${blockFacet>com.sap.vocabularies.UI.v1.PartOfPreview/Bool} === ${groupFacet>com.sap.vocabularies.UI.v1.PartOfPreview/Bool} || (${groupFacet>com.sap.vocabularies.UI.v1.PartOfPreview/Bool} === 'true' &amp;&amp; !${blockFacet>com.sap.vocabularies.UI.v1.PartOfPreview}) || (${blockFacet>com.sap.vocabularies.UI.v1.PartOfPreview/Bool} === 'true' &amp;&amp; !${groupFacet>com.sap.vocabularies.UI.v1.PartOfPreview})}">
+							<template:then>
+								<sfo:Group id="{path: 'groupFacet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}::FormGroup{path:'blockFacet>', formatter:'sap.suite.ui.generic.template.js.AnnotationHelper.getIdForMoreBlockContent'}"
+										   binding="{parts: [{path: 'groupFacet>Target'}, {path: 'entitySet>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getFormGroupBindingString'}"
+										   label="{= ${groupFacet>Label} ? ${path: 'groupFacet>Label', formatter: 'sap.ui.model.odata.AnnotationHelper.format'} : '' }"
+										   dt:annotation="{parts: [{path: 'parameter>/entityType'}, {path: 'parameter>/constants/annotations/facets'}, {path: 'groupFacet>Target/AnnotationPath'}, {path: 'groupFacet>'},{path: 'targetEntitySet>'}], formatter: 'sap.suite.ui.generic.template.changeHandler.js.AnnotationHelperForDesignTime.createInstanceMetadataWithPath'}"
+										   build:metadata="#pattern:FormGroup;staticProp:label:Title;condition:target>AnnotationType:com.sap.vocabularies.UI.v1.FieldGroup">
+									<template:if test="{target>Data}" build:metadata="#ignore">
+										<template:then build:metadata="#ignore">
+											<template:repeat list="{target>Data}" var="dataField">
+												<template:if test="{parts: [{path: 'entitySet>name'}, {path: 'groupFacet>'}, {path: 'manifestViewExtensions>'}, {path: 'dataField>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.extensionPointReplaceSimpleHeaderFacetExists' }">
+													<template:then>
+														<sfo:GroupElement 
+															id="header::{path: 'groupFacet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}::{path: 'dataField>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromDataField'}::ReplaceFGExtensionEdit"
+															visible="{parts: [{path: 'entitySet>name'}, {path: 'groupFacet>'}, {path: 'manifestViewExtensions>'}, {path: 'dataField>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getVisibilityForExtensionPointReplaceSimpleHeaderFacet' }">
+															<core:ExtensionPoint name="ReplaceSimpleHeaderFacet|{entitySet>name}|{path: 'groupFacet>' , formatter:'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}::{path:'dataField>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromDataField'}" />
+														</sfo:GroupElement>
+													</template:then>
+													<template:else>
+														<template:if test="{= ${dataField>RecordType} !== 'com.sap.vocabularies.UI.v1.DataFieldForAction' &amp;&amp; ${dataField>RecordType} !== 'com.sap.vocabularies.UI.v1.DataFieldForIntentBasedNavigation'}">
+															<core:Fragment fragmentName="sap.suite.ui.generic.template.fragments.SmartFormDataField" type="XML" build:metadata="#ignore" />
+														</template:if>
+													</template:else>
+												</template:if>
+											</template:repeat>
+										</template:then>
+										<template:elseif test="{= ${facet>Target/AnnotationPath}.indexOf('com.sap.vocabularies.UI.v1.DataPoint') > -1 }">
+											<template:with path="facet>Target" helper="sap.ui.model.odata.AnnotationHelper.resolvePath"
+															var="dataPoint">
+												<template:if test="{parts: [{path: 'entitySet>name'}, {path: 'groupFacet>'}, {path: 'manifestViewExtensions>'}, {path: 'dataPoint>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.extensionPointReplaceSimpleHeaderFacetExists' }">
+													<template:then>
+														<sfo:GroupElement 
+															id="header::{path: 'groupFacet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}::{path: 'dataPoint>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromDataPoint'}::ReplaceDPExtensionEdit"
+															visible="{parts: [{path: 'entitySet>name'}, {path: 'groupFacet>'}, {path: 'manifestViewExtensions>'}, {path: 'dataPoint>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getVisibilityForExtensionPointReplaceSimpleHeaderFacet' }">
+															<core:ExtensionPoint name="ReplaceSimpleHeaderFacet|{entitySet>name}|{path: 'groupFacet>' , formatter:'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}::{path:'dataPoint>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromDataPoint'}"/>
+														</sfo:GroupElement>
+													</template:then>
+													<template:else>
+														<core:Fragment fragmentName="sap.suite.ui.generic.template.fragments.SmartFormDataField" type="XML" build:metadata="#ignore" />
+													</template:else>
+												</template:if>
+											</template:with>
+										</template:elseif>
+										<template:else>
+											<template:repeat list="{target>}" var="dataField">
+												<template:if test="{parts: [{path: 'entitySet>name'}, {path: 'groupFacet>'}, {path: 'manifestViewExtensions>'},  {path: 'dataField>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.extensionPointReplaceSimpleHeaderFacetExists' }">
+													<template:then>
+														<sfo:GroupElement 
+															id="header::{path: 'groupFacet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}::{path: 'dataField>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromDataField'}::ReplaceIdentificationExtensionEdit"
+															visible="{parts: [{path: 'entitySet>name'}, {path: 'groupFacet>'}, {path: 'manifestViewExtensions>'},  {path: 'dataField>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getVisibilityForExtensionPointReplaceSimpleHeaderFacet' }">
+															<core:ExtensionPoint name="ReplaceSimpleHeaderFacet|{entitySet>name}|{path: 'groupFacet>' , formatter:'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}::{path:'dataField>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromDataField'}" />
+														</sfo:GroupElement>
+													</template:then>
+													<template:else>
+														<template:if test="{= ${dataField>RecordType} !== 'com.sap.vocabularies.UI.v1.DataFieldForAction' &amp;&amp; ${dataField>RecordType} !== 'com.sap.vocabularies.UI.v1.DataFieldForIntentBasedNavigation'}">
+															<core:Fragment fragmentName="sap.suite.ui.generic.template.fragments.SmartFormDataField" type="XML" build:metadata="#ignore" />
+														</template:if>
+													</template:else>
+												</template:if>
+											</template:repeat>
+										</template:else>
+									</template:if>
+									<template:if test="{= ${groupFacet>Target/AnnotationPath} }">
+										<template:then>
+											<core:ExtensionPoint
+												name="SmartFormExtension|{entitySet>name}|{path: 'groupFacet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}" />
+										</template:then>
+									</template:if>
+
+								</sfo:Group>
+							</template:then>
+						</template:if>
+					</template:with>
+					</template:with>
+				</template:repeat>
+			</template:then>
+			<template:else>
+				<template:with path="facet>" var="groupFacet">
+				<!-- 	Reference Facet -->
+					<template:with path="facet>Target" helper="sap.ui.model.odata.AnnotationHelper.resolvePath" var="target">
+						<sfo:Group id="{path: 'facet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}::FormGroup"
+								   visible="{= ${path: 'facet>com.sap.vocabularies.UI.v1.Hidden'} ? ${path: 'facet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getBindingForHiddenPath'} : true}"
+								   binding="{parts: [{path: 'facet>Target'}, {path: 'entitySet>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getFormGroupBindingString'}">
+							<template:if test="{target>Data}">
+								<template:then>
+									<template:repeat list="{target>Data}" var="dataField">
+										<template:if test="{parts: [{path: 'entitySet>name'}, {path: 'groupFacet>'}, {path: 'manifestViewExtensions>'}, {path: 'dataField>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.extensionPointReplaceSimpleHeaderFacetExists' }">
+											<template:then>
+												<sfo:GroupElement 
+													id="header::{path: 'groupFacet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}::{path: 'dataField>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromDataField'}::ReplaceFGExtensionEdit"
+													visible="{parts: [{path: 'entitySet>name'}, {path: 'groupFacet>'}, {path: 'manifestViewExtensions>'}, {path: 'dataField>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getVisibilityForExtensionPointReplaceSimpleHeaderFacet' }">
+													<core:ExtensionPoint name="ReplaceSimpleHeaderFacet|{entitySet>name}|{path: 'groupFacet>' , formatter:'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}::{path:'dataField>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromDataField'}" />
+												</sfo:GroupElement>
+											</template:then>
+											<template:else>
+												<template:if test="{= ${dataField>RecordType} !== 'com.sap.vocabularies.UI.v1.DataFieldForAction' &amp;&amp; ${dataField>RecordType} !== 'com.sap.vocabularies.UI.v1.DataFieldForIntentBasedNavigation'}">
+													<core:Fragment fragmentName="sap.suite.ui.generic.template.fragments.SmartFormDataField" type="XML" build:metadata="#ignore" />
+												</template:if>
+											</template:else>
+										</template:if>
+									</template:repeat>
+								</template:then>
+								<template:elseif test="{= ${facet>Target/AnnotationPath}.indexOf('com.sap.vocabularies.UI.v1.DataPoint') > -1 }">
+									<template:with path="facet>Target" helper="sap.ui.model.odata.AnnotationHelper.resolvePath"
+													var="dataPoint">
+										<template:if test="{parts: [{path: 'entitySet>name'}, {path: 'groupFacet>'}, {path: 'manifestViewExtensions>'}, {path: 'dataPoint>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.extensionPointReplaceSimpleHeaderFacetExists' }">
+											<template:then>
+												<sfo:GroupElement 
+													id="header::{path: 'groupFacet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}::{path: 'dataPoint>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromDataPoint'}::ReplaceDPExtensionEdit"
+													visible="{parts: [{path: 'entitySet>name'}, {path: 'groupFacet>'}, {path: 'manifestViewExtensions>'}, {path: 'dataPoint>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getVisibilityForExtensionPointReplaceSimpleHeaderFacet' }">
+													<core:ExtensionPoint name="ReplaceSimpleHeaderFacet|{entitySet>name}|{path: 'groupFacet>' , formatter:'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}::{path:'dataPoint>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromDataPoint'}"/>
+												</sfo:GroupElement>
+											</template:then>
+											<template:else>
+												<core:Fragment fragmentName="sap.suite.ui.generic.template.fragments.SmartFormDataField" type="XML" build:metadata="#ignore" />
+											</template:else>
+										</template:if>
+									</template:with>
+								</template:elseif>
+								<template:else>
+									<template:repeat list="{target>}" var="dataField">
+										<template:if test="{parts: [{path: 'entitySet>name'}, {path: 'groupFacet>'}, {path: 'manifestViewExtensions>'}, {path: 'dataField>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.extensionPointReplaceSimpleHeaderFacetExists' }">
+											<template:then>
+												<sfo:GroupElement 
+													id="header::{path: 'groupFacet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}::{path: 'dataField>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromDataField'}::ReplaceIdentificationExtensionEdit"
+													visible="{parts: [{path: 'entitySet>name'}, {path: 'groupFacet>'}, {path: 'manifestViewExtensions>'}, {path: 'dataField>'}], formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getVisibilityForExtensionPointReplaceSimpleHeaderFacet' }">
+													<core:ExtensionPoint name="ReplaceSimpleHeaderFacet|{entitySet>name}|{path: 'groupFacet>' , formatter:'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}::{path:'dataField>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromDataField'}" />
+												</sfo:GroupElement>
+											</template:then>
+											<template:else>
+												<template:if test="{= ${dataField>RecordType} !== 'com.sap.vocabularies.UI.v1.DataFieldForAction' &amp;&amp; ${dataField>RecordType} !== 'com.sap.vocabularies.UI.v1.DataFieldForIntentBasedNavigation'}">
+													<core:Fragment fragmentName="sap.suite.ui.generic.template.fragments.SmartFormDataField" type="XML" build:metadata="#ignore" />
+												</template:if>
+											</template:else>
+										</template:if>
+									</template:repeat>
+								</template:else>
+							</template:if>
+							<template:if test="{= ${groupFacet>Target/AnnotationPath} }">
+								<template:then>
+									<core:ExtensionPoint
+										name="SmartFormExtension|{entitySet>name}|{path: 'groupFacet>', formatter: 'sap.suite.ui.generic.template.js.AnnotationHelper.getStableIdPartFromFacet'}" />
+								</template:then>
+							</template:if>
+						</sfo:Group>
+					</template:with>
+				</template:with>
+			</template:else>
+		</template:if>
+	</sfo:SmartForm>
+</core:FragmentDefinition>

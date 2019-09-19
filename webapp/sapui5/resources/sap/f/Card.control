@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Card</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>A control that represents a container with a predefined header and content.
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+The card is a container for grouping and displaying information.
+
+&lt;h3&gt;Structure&lt;/h3&gt;
+You can control the width and height of the card, using properties.
+The &lt;code&gt;Card&lt;/code&gt; has the following aggregations:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;header&lt;/code&gt; - can be either a {@link sap.f.cards.Header Header} or a {@link sap.f.cards.NumericHeader NumericHeader}
+&lt;li&gt;&lt;code&gt;content&lt;/code&gt; - can be any {@link sap.ui.core.Control Control}.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Guidelines:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;A card should represent a task or visualize a specific set of information.&lt;/li&gt;
+&lt;li&gt;It is recommended to use cards on home page layouts.&lt;/li&gt;
+&lt;li&gt;The card shouldn't be large with a lot of content.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Usage&lt;/h3&gt;
+To show a KPI value or any numeric information, use {@link sap.f.cards.NumericHeader NumericHeader} as a card header.
+For any other use cases, use the regular {@link sap.f.cards.Header Header}.
+Recommended content:
+- List
+- Table
+- Object information
+- Charts
+- Timelines
+- Images
+
+&lt;i&gt;When to use&lt;/i&gt;
+&lt;ul&gt;
+&lt;li&gt;When you need multiple cards on a home page layout.&lt;/li&gt;
+&lt;li&gt;When you have to achieve simple card visualization.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;i&gt;When not to use&lt;/i&gt;
+&lt;ul&gt;
+&lt;li&gt;When you have to reuse the card between applications. For such cases, use: {@link sap.ui.integration.widgets.Card Integration Card}.&lt;/li&gt;
+&lt;li&gt;When you need nesting. For such cases, use: {@link sap.m.Panel Panel}.&lt;/li&gt;
+&lt;li&gt;When the card is not part of a card layout. For such cases, use: {@link sap.m.Panel Panel}.&lt;/li&gt;
+&lt;li&gt;When you need more header configuration flexibility.&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+    <since>1.64</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="width" type="sap.ui.core/CSSSize" defaultValue="100%" group="Appearance">
+            <documentation>Defines the width of the card.</documentation>
+        </property>
+        <property name="height" type="sap.ui.core/CSSSize" defaultValue="auto" group="Appearance">
+            <documentation>Defines the height of the card.</documentation>
+        </property>
+    </properties>
+    <aggregations>
+        <aggregation name="header" type="sap.f/cards/IHeader" cardinality="0..1">
+            <documentation>Defines the header of the card.</documentation>
+        </aggregation>
+        <aggregation name="content" type="sap.ui.core/Control" cardinality="0..1">
+            <documentation>Defines the content of the card.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

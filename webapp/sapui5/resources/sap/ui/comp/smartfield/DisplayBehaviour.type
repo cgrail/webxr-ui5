@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>smartfield/DisplayBehaviour</name>
+    <derived/>
+    <documentation>The different options to define display behavior for the value help of a SmartField control.</documentation>
+    <enumeration>
+        <value name="auto">
+            <documentation>The SmartField chooses the display behavior.</documentation>
+        </value>
+        <value name="descriptionOnly">
+            <documentation>Only the description of the available values is displayed.</documentation>
+        </value>
+        <value name="descriptionAndId">
+            <documentation>Description and ID are displayed for available values.</documentation>
+        </value>
+        <value name="idAndDescription">
+            <documentation>ID and description are displayed for available values.</documentation>
+        </value>
+        <value name="idOnly">
+            <documentation>Shows the ID only.</documentation>
+        </value>
+        <value name="TrueFalse">
+            <documentation>Shows Boolean value as True/False</documentation>
+        </value>
+        <value name="OnOff">
+            <documentation>Shows Boolean value as On/Off</documentation>
+        </value>
+        <value name="YesNo">
+            <documentation>Shows Boolean value as Yes/No</documentation>
+        </value>
+    </enumeration>
+</simple-type>
