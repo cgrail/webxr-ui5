@@ -1,4 +1,14 @@
-<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:control="webar-test.control" controllerName="webar-test.controller.Game">
-	<control:ArView id="arView"/>
-	<Button text="Fire" press="shoot" class="fireButton" icon="sap-icon://target-group"/>
+<mvc:View xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m" 
+	xmlns:control="webar-test.control" 
+	controllerName="webar-test.controller.Game">
+
+	<control:ArView id="arView" 
+		press="shoot"/>
+
+	<Button text="Fire" 
+		press="shoot" 
+		class="fireButton" 
+		icon="sap-icon://target-group"/>
+
 </mvc:View>
